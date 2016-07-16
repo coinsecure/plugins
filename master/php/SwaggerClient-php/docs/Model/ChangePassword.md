@@ -1,0 +1,11 @@
+# ChangePassword
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**password** | **string** |  | 
+**repeat_password** | **string** |  | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

@@ -1,0 +1,12 @@
+# CoinsecureApiDocumentation.VolDataResponse
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**success** | **Boolean** | true | [default to false]
+**message** | [**VolData**](VolData.md) |  | 
+**method** | **String** |  | 
+**title** | **String** |  | 
+**time** | **Date** |  | 
+
+
