@@ -32,7 +32,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
 public class ExchangeBankActionsApi {
-  String basePath = "https://api.coinsecure.in/";
+  String basePath = "https://api.coinsecure.in";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {

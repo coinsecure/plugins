@@ -4,6 +4,7 @@ import io.swagger.client.ApiException;
 import io.swagger.client.model.FailResult;
 import io.swagger.client.model.ValidAddressSearchDataResponse;
 import io.swagger.client.model.ConfirmDataResponse;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -29,11 +30,12 @@ public class BlockchainToolsApiTest {
      */
     @Test
     public void v1bitcoinsearchAddressTest() throws ApiException {
-        String any = null;
-        String accept = null;
-        // ValidAddressSearchDataResponse response = api.v1bitcoinsearchAddress(any, accept);
-
-        // TODO: test validations
+        String any = "0e3e2357e806b6cdb1f70b54c3a3a17b6714ee1f0e68bebb44a74b1efd512098";
+        String bitcoinAddress = "1BywzpJL87T7tMRPFaJ5SUz5FiKexdP1g4";
+        String accept = "JSON";
+        ValidAddressSearchDataResponse response = api.v1bitcoinsearchAddress(bitcoinAddress, accept);
+        
+        System.out.println(response);
     }
     
     /**

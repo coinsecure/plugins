@@ -12,7 +12,7 @@ import java.util.Date;
 /**
  * LastTradeDataResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-16T19:11:03.227Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-17T03:26:03.328Z")
 public class LastTradeDataResponse   {
   
   private Boolean success = false;
