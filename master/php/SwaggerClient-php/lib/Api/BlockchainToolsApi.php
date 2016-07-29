@@ -73,7 +73,7 @@ class BlockchainToolsApi
     {
         if ($apiClient == null) {
             $apiClient = new ApiClient();
-            $apiClient->getConfig()->setHost('https://api.coinsecure.in/');
+            $apiClient->getConfig()->setHost('https://api.coinsecure.in');
         }
 
         $this->apiClient = $apiClient;
