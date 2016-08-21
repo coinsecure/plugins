@@ -1,6 +1,6 @@
 # AccountActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,9 +14,9 @@ Method | HTTP request | Description
 [**v1userkycotpNumber**](AccountActionsApi.md#v1userkycotpNumber) | **GET** /v1/user/kyc/otp/{number} | Send OTP for KYC Link
 [**v1userlogout**](AccountActionsApi.md#v1userlogout) | **DELETE** /v1/user/logout | Logout User
 [**v1usernetkicreate**](AccountActionsApi.md#v1usernetkicreate) | **PUT** /v1/user/netki/create | Create Neki Wallet Name
-[**v1usernetkiupdate**](AccountActionsApi.md#v1usernetkiupdate) | **PATCH** /v1/user/netki/update | Update Netki Address
-[**v1userprofileimagedelete**](AccountActionsApi.md#v1userprofileimagedelete) | **POST** /v1/user/contact | Delete Profile Image
-[**v1userprofileimageupdate**](AccountActionsApi.md#v1userprofileimageupdate) | **PATCH** /v1/user/profile/image/update | Update Profile Image
+[**v1usernetkiupdate**](AccountActionsApi.md#v1usernetkiupdate) | **POST** /v1/user/netki/update | Update Netki Address
+[**v1userprofileimagedeleteNetkiName**](AccountActionsApi.md#v1userprofileimagedeleteNetkiName) | **DELETE** /v1/user/profile/image/delete/{netkiName} | Delete Profile Image
+[**v1userprofileimageupdate**](AccountActionsApi.md#v1userprofileimageupdate) | **POST** /v1/user/profile/image/update | Update Profile Image
 [**v1userprofilephone**](AccountActionsApi.md#v1userprofilephone) | **PUT** /v1/user/profile/phone/new | New Profile Phone
 [**v1userprofilephoneNumber**](AccountActionsApi.md#v1userprofilephoneNumber) | **DELETE** /v1/user/profile/phone/delete | Delete Profile Phone Number
 [**v1userprofilephoneotpNumber**](AccountActionsApi.md#v1userprofilephoneotpNumber) | **GET** /v1/user/profile/phone/otp/{number} | Send OTP for Profile Phone
@@ -571,9 +571,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json, application/xml, application/csv
 
-<a name="v1userprofileimagedelete"></a>
-# **v1userprofileimagedelete**
-> SuccessResult v1userprofileimagedelete(body, authorization, accept)
+<a name="v1userprofileimagedeleteNetkiName"></a>
+# **v1userprofileimagedeleteNetkiName**
+> SuccessResult v1userprofileimagedeleteNetkiName(netkiName, authorization, accept)
 
 Delete Profile Image
 
@@ -587,14 +587,14 @@ Deletes a profile Image.
 
 
 AccountActionsApi apiInstance = new AccountActionsApi();
-NetkiName body = new NetkiName(); // NetkiName | Please enter a valid Netki name associated with your prfile Image.
+String netkiName = "netkiName_example"; // String | 
 String authorization = "authorization_example"; // String | Enter a valid Api Key.
 String accept = "accept_example"; // String | JSON, XML or CSV can be returned (Optional)
 try {
-    SuccessResult result = apiInstance.v1userprofileimagedelete(body, authorization, accept);
+    SuccessResult result = apiInstance.v1userprofileimagedeleteNetkiName(netkiName, authorization, accept);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AccountActionsApi#v1userprofileimagedelete");
+    System.err.println("Exception when calling AccountActionsApi#v1userprofileimagedeleteNetkiName");
     e.printStackTrace();
 }
 ```
@@ -603,7 +603,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NetkiName**](NetkiName.md)| Please enter a valid Netki name associated with your prfile Image. |
+ **netkiName** | **String**|  |
  **authorization** | **String**| Enter a valid Api Key. | [optional]
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional]
 

@@ -1,6 +1,6 @@
 # SwaggerClient::AccountActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,9 +14,9 @@ Method | HTTP request | Description
 [**v1userkycotp_number**](AccountActionsApi.md#v1userkycotp_number) | **GET** /v1/user/kyc/otp/{number} | Send OTP for KYC Link
 [**v1userlogout**](AccountActionsApi.md#v1userlogout) | **DELETE** /v1/user/logout | Logout User
 [**v1usernetkicreate**](AccountActionsApi.md#v1usernetkicreate) | **PUT** /v1/user/netki/create | Create Neki Wallet Name
-[**v1usernetkiupdate**](AccountActionsApi.md#v1usernetkiupdate) | **PATCH** /v1/user/netki/update | Update Netki Address
-[**v1userprofileimagedelete**](AccountActionsApi.md#v1userprofileimagedelete) | **POST** /v1/user/contact | Delete Profile Image
-[**v1userprofileimageupdate**](AccountActionsApi.md#v1userprofileimageupdate) | **PATCH** /v1/user/profile/image/update | Update Profile Image
+[**v1usernetkiupdate**](AccountActionsApi.md#v1usernetkiupdate) | **POST** /v1/user/netki/update | Update Netki Address
+[**v1userprofileimagedelete_netki_name**](AccountActionsApi.md#v1userprofileimagedelete_netki_name) | **DELETE** /v1/user/profile/image/delete/{netkiName} | Delete Profile Image
+[**v1userprofileimageupdate**](AccountActionsApi.md#v1userprofileimageupdate) | **POST** /v1/user/profile/image/update | Update Profile Image
 [**v1userprofilephone**](AccountActionsApi.md#v1userprofilephone) | **PUT** /v1/user/profile/phone/new | New Profile Phone
 [**v1userprofilephone_number**](AccountActionsApi.md#v1userprofilephone_number) | **DELETE** /v1/user/profile/phone/delete | Delete Profile Phone Number
 [**v1userprofilephoneotp_number**](AccountActionsApi.md#v1userprofilephoneotp_number) | **GET** /v1/user/profile/phone/otp/{number} | Send OTP for Profile Phone
@@ -623,8 +623,8 @@ No authorization required
 
 
 
-# **v1userprofileimagedelete**
-> SuccessResult v1userprofileimagedelete(body, opts)
+# **v1userprofileimagedelete_netki_name**
+> SuccessResult v1userprofileimagedelete_netki_name(netki_name, opts)
 
 Delete Profile Image
 
@@ -637,7 +637,7 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::AccountActionsApi.new
 
-body = SwaggerClient::NetkiName.new # NetkiName | Please enter a valid Netki name associated with your prfile Image.
+netki_name = "netki_name_example" # String | 
 
 opts = { 
   authorization: "authorization_example", # String | Enter a valid Api Key.
@@ -646,10 +646,10 @@ opts = {
 
 begin
   #Delete Profile Image
-  result = api_instance.v1userprofileimagedelete(body, opts)
+  result = api_instance.v1userprofileimagedelete_netki_name(netki_name, opts)
   p result
 rescue SwaggerClient::ApiError => e
-  puts "Exception when calling AccountActionsApi->v1userprofileimagedelete: #{e}"
+  puts "Exception when calling AccountActionsApi->v1userprofileimagedelete_netki_name: #{e}"
 end
 ```
 
@@ -657,7 +657,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NetkiName**](NetkiName.md)| Please enter a valid Netki name associated with your prfile Image. | 
+ **netki_name** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | [optional] 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 

@@ -1,20 +1,20 @@
 # \WalletActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1UserWalletCoinAddressNew**](WalletActionsApi.md#V1UserWalletCoinAddressNew) | **Put** /v1/user/wallet/coin/address/new | New Bitcoin Address
-[**V1UserWalletCoinNew**](WalletActionsApi.md#V1UserWalletCoinNew) | **Put** /v1/user/wallet/coin/new | Create New Wallet
-[**V1UserWalletCoinWithdrawInitiate**](WalletActionsApi.md#V1UserWalletCoinWithdrawInitiate) | **Post** /v1/user/wallet/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
-[**V1UserWalletCoinWithdrawSendToExchange**](WalletActionsApi.md#V1UserWalletCoinWithdrawSendToExchange) | **Put** /v1/user/wallet/coin/withdraw/sendToExchange | Send to Exchange
-[**V1UserWalletCoinWithdrawUnverifiedCancel**](WalletActionsApi.md#V1UserWalletCoinWithdrawUnverifiedCancel) | **Delete** /v1/user/wallet/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
-[**V1UserWalletCoinWithdrawVerify**](WalletActionsApi.md#V1UserWalletCoinWithdrawVerify) | **Put** /v1/user/wallet/coin/withdraw/verify | Verify Bitcoin Withdrawal
-[**V1WalletCoinWithdrawNewVerifycode**](WalletActionsApi.md#V1WalletCoinWithdrawNewVerifycode) | **Post** /v1/wallet/coin/withdraw/newVerifycode | Gets a Verification Code
+[**V1userwalletcoinaddressnew**](WalletActionsApi.md#V1userwalletcoinaddressnew) | **Put** /v1/user/wallet/coin/address/new | New Bitcoin Address
+[**V1userwalletcoinnew**](WalletActionsApi.md#V1userwalletcoinnew) | **Put** /v1/user/wallet/coin/new | Create New Wallet
+[**V1userwalletcoinwithdrawinitiate**](WalletActionsApi.md#V1userwalletcoinwithdrawinitiate) | **Post** /v1/user/wallet/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
+[**V1userwalletcoinwithdrawsendToExchange**](WalletActionsApi.md#V1userwalletcoinwithdrawsendToExchange) | **Put** /v1/user/wallet/coin/withdraw/sendToExchange | Send to Exchange
+[**V1userwalletcoinwithdrawunverifiedcancelWithdrawID**](WalletActionsApi.md#V1userwalletcoinwithdrawunverifiedcancelWithdrawID) | **Delete** /v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
+[**V1userwalletcoinwithdrawverify**](WalletActionsApi.md#V1userwalletcoinwithdrawverify) | **Put** /v1/user/wallet/coin/withdraw/verify | Verify Bitcoin Withdrawal
+[**V1walletcoinwithdrawnewVerifycode**](WalletActionsApi.md#V1walletcoinwithdrawnewVerifycode) | **Post** /v1/wallet/coin/withdraw/newVerifycode | Gets a Verification Code
 
 
-# **V1UserWalletCoinAddressNew**
-> WalletAddressDataResponse V1UserWalletCoinAddressNew($body, $authorization, $accept)
+# **V1userwalletcoinaddressnew**
+> WalletAddressDataResponse V1userwalletcoinaddressnew($body, $authorization, $accept)
 
 New Bitcoin Address
 
@@ -44,8 +44,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserWalletCoinNew**
-> WalletAddressDataResponse V1UserWalletCoinNew($body, $authorization, $accept)
+# **V1userwalletcoinnew**
+> WalletAddressDataResponse V1userwalletcoinnew($body, $authorization, $accept)
 
 Create New Wallet
 
@@ -75,8 +75,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserWalletCoinWithdrawInitiate**
-> SuccessResult V1UserWalletCoinWithdrawInitiate($body, $authorization, $accept)
+# **V1userwalletcoinwithdrawinitiate**
+> SuccessResult V1userwalletcoinwithdrawinitiate($body, $authorization, $accept)
 
 Initiate Bitcoin Withdrawal
 
@@ -106,8 +106,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserWalletCoinWithdrawSendToExchange**
-> SuccessResult V1UserWalletCoinWithdrawSendToExchange($body, $authorization, $accept)
+# **V1userwalletcoinwithdrawsendToExchange**
+> SuccessResult V1userwalletcoinwithdrawsendToExchange($body, $authorization, $accept)
 
 Send to Exchange
 
@@ -137,8 +137,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserWalletCoinWithdrawUnverifiedCancel**
-> SuccessResult V1UserWalletCoinWithdrawUnverifiedCancel($authorization, $body, $accept)
+# **V1userwalletcoinwithdrawunverifiedcancelWithdrawID**
+> SuccessResult V1userwalletcoinwithdrawunverifiedcancelWithdrawID($withdrawID, $authorization, $accept)
 
 Cancel Bitcoin Withdrawal
 
@@ -149,8 +149,8 @@ Cancels an unverified withdrawal. You can get the code from /wallet/unverifiedWi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **withdrawID** | **string**|  | 
  **authorization** | **string**| Enter a valid Api Key. | 
- **body** | [**WithdrawId**](WithdrawId.md)|  | 
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
@@ -168,8 +168,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserWalletCoinWithdrawVerify**
-> SuccessResult V1UserWalletCoinWithdrawVerify($authorization, $body, $accept)
+# **V1userwalletcoinwithdrawverify**
+> SuccessResult V1userwalletcoinwithdrawverify($authorization, $body, $accept)
 
 Verify Bitcoin Withdrawal
 
@@ -199,8 +199,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1WalletCoinWithdrawNewVerifycode**
-> SuccessResult V1WalletCoinWithdrawNewVerifycode($body, $authorization, $accept)
+# **V1walletcoinwithdrawnewVerifycode**
+> SuccessResult V1walletcoinwithdrawnewVerifycode($body, $authorization, $accept)
 
 Gets a Verification Code
 

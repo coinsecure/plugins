@@ -1,6 +1,6 @@
 # IO.Swagger.Api.ExchangeTradeDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**V1userexchangebidpending**](ExchangeTradeDataApi.md#v1userexchangebidpending) | **GET** /v1/user/exchange/bid/pending | Pending User Buy Orders
 
 
+<a name="v1exchangeasklow"></a>
 # **V1exchangeasklow**
 > RateDataResponse V1exchangeasklow (string accept = null)
 
@@ -81,6 +82,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1exchangeaskorders"></a>
 # **V1exchangeaskorders**
 > RateVolDataResponse V1exchangeaskorders (string accept = null)
 
@@ -142,6 +144,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1exchangebidhigh"></a>
 # **V1exchangebidhigh**
 > RateDataResponse V1exchangebidhigh (string accept = null)
 
@@ -203,6 +206,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1exchangebidorders"></a>
 # **V1exchangebidorders**
 > RateVolDataResponse V1exchangebidorders (string accept = null)
 
@@ -264,6 +268,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1exchangelasttrade"></a>
 # **V1exchangelastTrade**
 > LastTradeDataResponse V1exchangelastTrade (string accept = null)
 
@@ -325,6 +330,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1exchangemax24hr"></a>
 # **V1exchangemax24Hr**
 > RateDiffDataResponse V1exchangemax24Hr (string accept = null)
 
@@ -386,6 +392,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1exchangemin24hr"></a>
 # **V1exchangemin24Hr**
 > RateDiffDataResponse V1exchangemin24Hr (string accept = null)
 
@@ -447,6 +454,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1exchangeticker"></a>
 # **V1exchangeticker**
 > StandardTickerResultData V1exchangeticker (string accept = null)
 
@@ -508,6 +516,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangeaskcancelled"></a>
 # **V1userexchangeaskcancelled**
 > OrderDataResponse V1userexchangeaskcancelled (string authorization, string accept = null)
 
@@ -571,6 +580,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangeaskcompleted"></a>
 # **V1userexchangeaskcompleted**
 > OrderDataResponse V1userexchangeaskcompleted (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 
@@ -642,6 +652,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangeaskpending"></a>
 # **V1userexchangeaskpending**
 > OrderDataResponse V1userexchangeaskpending (string authorization, string accept = null)
 
@@ -705,6 +716,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebidcancelled"></a>
 # **V1userexchangebidcancelled**
 > OrderDataResponse V1userexchangebidcancelled (string authorization, string accept = null)
 
@@ -768,6 +780,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebidcompleted"></a>
 # **V1userexchangebidcompleted**
 > OrderDataResponse V1userexchangebidcompleted (string authorization, string accept = null)
 
@@ -831,6 +844,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebidpending"></a>
 # **V1userexchangebidpending**
 > OrderDataResponse V1userexchangebidpending (string authorization, string accept = null)
 

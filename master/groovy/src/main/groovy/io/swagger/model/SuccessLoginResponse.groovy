@@ -1,13 +1,16 @@
 package io.swagger.model;
 
 import groovy.transform.Canonical
-import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 @Canonical
 class SuccessLoginResponse {
 
-    String info = null
+    Boolean success = false
+
+    String email = null
+
+    String message = null
 
     String keyType = null
 

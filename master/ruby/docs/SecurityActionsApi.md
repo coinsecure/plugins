@@ -1,19 +1,19 @@
 # SwaggerClient::SecurityActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v1mfaauthyinitiate**](SecurityActionsApi.md#v1mfaauthyinitiate) | **POST** /v1/mfa/authy/initiate | Initiate Authy Registration.
 [**v1mfagainitiate**](SecurityActionsApi.md#v1mfagainitiate) | **POST** /v1/mfa/ga/initiate | Initiate GA Registration.
 [**v1usermfaauthycall**](SecurityActionsApi.md#v1usermfaauthycall) | **GET** /v1/mfa/authy/call | Authy Call Code
-[**v1usermfaauthydisable**](SecurityActionsApi.md#v1usermfaauthydisable) | **DELETE** /v1/user/mfa/authy/disable | Disable Authy
+[**v1usermfaauthydisable_code**](SecurityActionsApi.md#v1usermfaauthydisable_code) | **DELETE** /v1/user/mfa/authy/disable/{code} | Disable Authy
 [**v1usermfaauthyinitiateenable**](SecurityActionsApi.md#v1usermfaauthyinitiateenable) | **PUT** /v1/user/mfa/authy/initiate/enable | Verify Authy Registration
 [**v1usermfaauthysms**](SecurityActionsApi.md#v1usermfaauthysms) | **GET** /v1/mfa/authy/sms | Authy Sms Code
-[**v1usermfagadisable**](SecurityActionsApi.md#v1usermfagadisable) | **DELETE** /v1/user/mfa/ga/disable | Disable Google Authenticator
+[**v1usermfagadisable_code**](SecurityActionsApi.md#v1usermfagadisable_code) | **DELETE** /v1/user/mfa/ga/disable/{code} | Disable Google Authenticator
 [**v1usermfagainitiateenable**](SecurityActionsApi.md#v1usermfagainitiateenable) | **PUT** /v1/user/mfa/ga/initiate/enable | Enable Google Authenticator
-[**v1userpasswordchange**](SecurityActionsApi.md#v1userpasswordchange) | **PATCH** /v1/user/password/change | Change Password.
-[**v1userpasswordreset**](SecurityActionsApi.md#v1userpasswordreset) | **PATCH** /v1/user/password/reset | Reset Password.
+[**v1userpasswordchange**](SecurityActionsApi.md#v1userpasswordchange) | **POST** /v1/user/password/change | Change Password.
+[**v1userpasswordreset**](SecurityActionsApi.md#v1userpasswordreset) | **POST** /v1/user/password/reset | Reset Password.
 
 
 # **v1mfaauthyinitiate**
@@ -70,7 +70,7 @@ No authorization required
 
 
 # **v1mfagainitiate**
-> SuccessResult v1mfagainitiate(body, opts)
+> SuccessResult v1mfagainitiate(opts)
 
 Initiate GA Registration.
 
@@ -83,8 +83,6 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::SecurityActionsApi.new
 
-body = SwaggerClient::MethodCountryMobile.new # MethodCountryMobile | Please Send Valid Json as below.
-
 opts = { 
   authorization: "authorization_example", # String | API object to be added
   accept: "accept_example" # String | JSON, XML or CSV can be returned (Optional)
@@ -92,7 +90,7 @@ opts = {
 
 begin
   #Initiate GA Registration.
-  result = api_instance.v1mfagainitiate(body, opts)
+  result = api_instance.v1mfagainitiate(opts)
   p result
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling SecurityActionsApi->v1mfagainitiate: #{e}"
@@ -103,7 +101,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MethodCountryMobile**](MethodCountryMobile.md)| Please Send Valid Json as below. | 
  **authorization** | **String**| API object to be added | [optional] 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -172,8 +169,8 @@ No authorization required
 
 
 
-# **v1usermfaauthydisable**
-> SuccessResult v1usermfaauthydisable(body, opts)
+# **v1usermfaauthydisable_code**
+> SuccessResult v1usermfaauthydisable_code(code, opts)
 
 Disable Authy
 
@@ -186,7 +183,7 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::SecurityActionsApi.new
 
-body = SwaggerClient::Code.new # Code | Please Send Valid Json as below.
+code = "code_example" # String | 
 
 opts = { 
   authorization: "authorization_example", # String | API object to be added
@@ -195,10 +192,10 @@ opts = {
 
 begin
   #Disable Authy
-  result = api_instance.v1usermfaauthydisable(body, opts)
+  result = api_instance.v1usermfaauthydisable_code(code, opts)
   p result
 rescue SwaggerClient::ApiError => e
-  puts "Exception when calling SecurityActionsApi->v1usermfaauthydisable: #{e}"
+  puts "Exception when calling SecurityActionsApi->v1usermfaauthydisable_code: #{e}"
 end
 ```
 
@@ -206,7 +203,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Code**](Code.md)| Please Send Valid Json as below. | 
+ **code** | **String**|  | 
  **authorization** | **String**| API object to be added | [optional] 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -328,8 +325,8 @@ No authorization required
 
 
 
-# **v1usermfagadisable**
-> SuccessResult v1usermfagadisable(body, opts)
+# **v1usermfagadisable_code**
+> SuccessResult v1usermfagadisable_code(code, opts)
 
 Disable Google Authenticator
 
@@ -342,7 +339,7 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::SecurityActionsApi.new
 
-body = SwaggerClient::Code.new # Code | Please Send Valid Json as below.
+code = "code_example" # String | 
 
 opts = { 
   authorization: "authorization_example", # String | API object to be added
@@ -351,10 +348,10 @@ opts = {
 
 begin
   #Disable Google Authenticator
-  result = api_instance.v1usermfagadisable(body, opts)
+  result = api_instance.v1usermfagadisable_code(code, opts)
   p result
 rescue SwaggerClient::ApiError => e
-  puts "Exception when calling SecurityActionsApi->v1usermfagadisable: #{e}"
+  puts "Exception when calling SecurityActionsApi->v1usermfagadisable_code: #{e}"
 end
 ```
 
@@ -362,7 +359,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Code**](Code.md)| Please Send Valid Json as below. | 
+ **code** | **String**|  | 
  **authorization** | **String**| API object to be added | [optional] 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -395,7 +392,7 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::SecurityActionsApi.new
 
-body = SwaggerClient::CodeCountryMobile.new # CodeCountryMobile | Please Send Valid Json as below.
+body = SwaggerClient::Code.new # Code | Please Send Valid Json as below.
 
 opts = { 
   authorization: "authorization_example", # String | API object to be added
@@ -415,7 +412,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CodeCountryMobile**](CodeCountryMobile.md)| Please Send Valid Json as below. | 
+ **body** | [**Code**](Code.md)| Please Send Valid Json as below. | 
  **authorization** | **String**| API object to be added | [optional] 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 

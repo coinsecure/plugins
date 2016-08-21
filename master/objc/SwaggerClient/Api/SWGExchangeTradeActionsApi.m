@@ -1,11 +1,9 @@
 #import "SWGExchangeTradeActionsApi.h"
 #import "SWGQueryParamCollection.h"
-#import "SWGAskID.h"
-#import "SWGSuccessResult.h"
 #import "SWGFailResult.h"
+#import "SWGSuccessCancelDataResponse.h"
+#import "SWGSuccessOrderDataResponse.h"
 #import "SWGRateVolData.h"
-#import "SWGSuccessResultList.h"
-#import "SWGBidID.h"
 #import "SWGMinFiat.h"
 #import "SWGMaxVol.h"
 
@@ -79,44 +77,41 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
 ///
 /// Cancel Open Sell Order
 /// Cancels a BTC Sell Order. Orders can only be cancelled if they are in a pending state.
-///  @param body Please send the form with valid inputs. 
+///  @param orderID  
 ///
 ///  @param authorization Enter a valid Api Key. (optional)
 ///
-///  @param accept JSON, XML or CSV can be returned (Optional) (optional)
+///  @returns SWGSuccessCancelDataResponse*
 ///
-///  @returns SWGSuccessResult*
-///
--(NSNumber*) v1userexchangeaskcancelWithBody: (SWGAskID*) body
+-(NSNumber*) v1userexchangeaskcancelOrderIDWithOrderID: (NSString*) orderID
     authorization: (NSString*) authorization
-    accept: (NSString*) accept
-    completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler {
-    // verify the required parameter 'body' is set
-    if (body == nil) {
-        NSParameterAssert(body);
+    completionHandler: (void (^)(SWGSuccessCancelDataResponse* output, NSError* error)) handler {
+    // verify the required parameter 'orderID' is set
+    if (orderID == nil) {
+        NSParameterAssert(orderID);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"orderID"] };
             NSError* error = [NSError errorWithDomain:kSWGExchangeTradeActionsApiErrorDomain code:kSWGExchangeTradeActionsApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
     }
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/exchange/ask/cancel"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/exchange/ask/cancel/{orderID}"];
 
     // remove format in URL if needed
     [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (orderID != nil) {
+        pathParams[@"orderID"] = orderID;
+    }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
-    }
-    if (accept != nil) {
-        headerParams[@"accept"] = accept;
     }
     // HTTP header `Accept`
     NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json", @"application/xml", @"application/csv"]];
@@ -136,7 +131,6 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"DELETE"
@@ -149,10 +143,10 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGSuccessResult*"
+                              responseType: @"SWGSuccessCancelDataResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGSuccessResult*)data, error);
+                                    handler((SWGSuccessCancelDataResponse*)data, error);
                                 }
                            }
           ];
@@ -167,12 +161,12 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
 ///
 ///  @param accept JSON, XML or CSV can be returned (Optional) (optional)
 ///
-///  @returns SWGSuccessResultList*
+///  @returns SWGSuccessOrderDataResponse*
 ///
 -(NSNumber*) v1userexchangeasknewWithBody: (SWGRateVolData*) body
     authorization: (NSString*) authorization
     accept: (NSString*) accept
-    completionHandler: (void (^)(SWGSuccessResultList* output, NSError* error)) handler {
+    completionHandler: (void (^)(SWGSuccessOrderDataResponse* output, NSError* error)) handler {
     // verify the required parameter 'body' is set
     if (body == nil) {
         NSParameterAssert(body);
@@ -231,10 +225,10 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGSuccessResultList*"
+                              responseType: @"SWGSuccessOrderDataResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGSuccessResultList*)data, error);
+                                    handler((SWGSuccessOrderDataResponse*)data, error);
                                 }
                            }
           ];
@@ -243,44 +237,41 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
 ///
 /// Cancel Open Buy Order
 /// Cancels a BTC Buy Order. Orders can only be cancelled if they are in a pending state.
-///  @param body Please send the form with valid inputs. 
+///  @param orderID  
 ///
 ///  @param authorization Enter a valid Api Key. (optional)
 ///
-///  @param accept JSON, XML or CSV can be returned (Optional) (optional)
+///  @returns SWGSuccessCancelDataResponse*
 ///
-///  @returns SWGSuccessResult*
-///
--(NSNumber*) v1userexchangebidcancelWithBody: (SWGBidID*) body
+-(NSNumber*) v1userexchangebidcancelOrderIDWithOrderID: (NSString*) orderID
     authorization: (NSString*) authorization
-    accept: (NSString*) accept
-    completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler {
-    // verify the required parameter 'body' is set
-    if (body == nil) {
-        NSParameterAssert(body);
+    completionHandler: (void (^)(SWGSuccessCancelDataResponse* output, NSError* error)) handler {
+    // verify the required parameter 'orderID' is set
+    if (orderID == nil) {
+        NSParameterAssert(orderID);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"orderID"] };
             NSError* error = [NSError errorWithDomain:kSWGExchangeTradeActionsApiErrorDomain code:kSWGExchangeTradeActionsApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
     }
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/exchange/bid/cancel"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/exchange/bid/cancel/{orderID}"];
 
     // remove format in URL if needed
     [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (orderID != nil) {
+        pathParams[@"orderID"] = orderID;
+    }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
-    }
-    if (accept != nil) {
-        headerParams[@"accept"] = accept;
     }
     // HTTP header `Accept`
     NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json", @"application/xml", @"application/csv"]];
@@ -300,7 +291,6 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"DELETE"
@@ -313,10 +303,10 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGSuccessResult*"
+                              responseType: @"SWGSuccessCancelDataResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGSuccessResult*)data, error);
+                                    handler((SWGSuccessCancelDataResponse*)data, error);
                                 }
                            }
           ];
@@ -331,12 +321,12 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
 ///
 ///  @param accept JSON, XML or CSV can be returned (Optional) (optional)
 ///
-///  @returns SWGSuccessResultList*
+///  @returns SWGSuccessOrderDataResponse*
 ///
 -(NSNumber*) v1userexchangebidnewWithBody: (SWGRateVolData*) body
     authorization: (NSString*) authorization
     accept: (NSString*) accept
-    completionHandler: (void (^)(SWGSuccessResultList* output, NSError* error)) handler {
+    completionHandler: (void (^)(SWGSuccessOrderDataResponse* output, NSError* error)) handler {
     // verify the required parameter 'body' is set
     if (body == nil) {
         NSParameterAssert(body);
@@ -395,10 +385,10 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGSuccessResultList*"
+                              responseType: @"SWGSuccessOrderDataResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGSuccessResultList*)data, error);
+                                    handler((SWGSuccessOrderDataResponse*)data, error);
                                 }
                            }
           ];
@@ -413,12 +403,12 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
 ///
 ///  @param accept JSON, XML or CSV can be returned (Optional) (optional)
 ///
-///  @returns SWGSuccessResultList*
+///  @returns SWGSuccessOrderDataResponse*
 ///
 -(NSNumber*) v1userexchangeinstantbuyWithBody: (SWGMinFiat*) body
     authorization: (NSString*) authorization
     accept: (NSString*) accept
-    completionHandler: (void (^)(SWGSuccessResultList* output, NSError* error)) handler {
+    completionHandler: (void (^)(SWGSuccessOrderDataResponse* output, NSError* error)) handler {
     // verify the required parameter 'body' is set
     if (body == nil) {
         NSParameterAssert(body);
@@ -477,10 +467,10 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGSuccessResultList*"
+                              responseType: @"SWGSuccessOrderDataResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGSuccessResultList*)data, error);
+                                    handler((SWGSuccessOrderDataResponse*)data, error);
                                 }
                            }
           ];
@@ -495,12 +485,12 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
 ///
 ///  @param accept JSON, XML or CSV can be returned (Optional) (optional)
 ///
-///  @returns SWGSuccessResultList*
+///  @returns SWGSuccessOrderDataResponse*
 ///
 -(NSNumber*) v1userexchangeinstantsellWithBody: (SWGMaxVol*) body
     authorization: (NSString*) authorization
     accept: (NSString*) accept
-    completionHandler: (void (^)(SWGSuccessResultList* output, NSError* error)) handler {
+    completionHandler: (void (^)(SWGSuccessOrderDataResponse* output, NSError* error)) handler {
     // verify the required parameter 'body' is set
     if (body == nil) {
         NSParameterAssert(body);
@@ -559,10 +549,10 @@ NSInteger kSWGExchangeTradeActionsApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SWGSuccessResultList*"
+                              responseType: @"SWGSuccessOrderDataResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SWGSuccessResultList*)data, error);
+                                    handler((SWGSuccessOrderDataResponse*)data, error);
                                 }
                            }
           ];

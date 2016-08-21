@@ -1,19 +1,19 @@
 # ExchangeBankActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v1userexchangebankcoinwithdrawinitiate**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawinitiate) | **POST** /v1/user/exchange/bank/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 [**v1userexchangebankcoinwithdrawnewVerifycode**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawnewVerifycode) | **POST** /v1/user/exchange/bank/coin/withdraw/newVerifycode | Gets a Verification Code.
-[**v1userexchangebankcoinwithdrawunverifiedcancel**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+[**v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 [**v1userexchangebankcoinwithdrawverify**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawverify) | **PUT** /v1/user/exchange/bank/coin/withdraw/verify | Verify Bitcoin Withdrawal
 [**v1userexchangebankfiataccountnew**](ExchangeBankActionsApi.md#v1userexchangebankfiataccountnew) | **PUT** /v1/user/exchange/bank/fiat/account/new | New Bank Link
-[**v1userexchangebankfiatdepositcancel**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancel) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel | Cancel Unverified Exchange Fiat Deposit
+[**v1userexchangebankfiatdepositcancelDepositID**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancelDepositID) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel/{depositID} | Cancel Unverified Exchange Fiat Deposit
 [**v1userexchangebankfiatdepositnew**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositnew) | **PUT** /v1/user/exchange/bank/fiat/deposit/new | New Exchange Fiat Deposit
 [**v1userexchangebankfiatwithdrawinitiate**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawinitiate) | **POST** /v1/user/exchange/bank/fiat/withdraw/initiate | Initiate Fiat Withdrawal
 [**v1userexchangebankfiatwithdrawnewVerifycode**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawnewVerifycode) | **POST** /v1/user/exchange/bank/fiat/withdraw/newVerifycode | Gets a Fiat Verification Code.
-[**v1userexchangebankfiatwithdrawunverifiedcancel**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel | Cancel Fiat Withdrawal
+[**v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID} | Cancel Fiat Withdrawal
 [**v1userexchangebankfiatwithdrawverify**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawverify) | **PUT** /v1/user/exchange/bank/fiat/withdraw/verify | Verify Fiat Withdrawal
 
 
@@ -115,9 +115,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json, application/xml, application/csv
 
-<a name="v1userexchangebankcoinwithdrawunverifiedcancel"></a>
-# **v1userexchangebankcoinwithdrawunverifiedcancel**
-> SuccessResult v1userexchangebankcoinwithdrawunverifiedcancel(body, authorization, accept)
+<a name="v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID"></a>
+# **v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID**
+> SuccessResult v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID(withdrawID, authorization, accept)
 
 Cancel Bitcoin Withdrawal
 
@@ -131,14 +131,14 @@ Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/excha
 
 
 ExchangeBankActionsApi apiInstance = new ExchangeBankActionsApi();
-WithdrawID body = new WithdrawID(); // WithdrawID | You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified.
+String withdrawID = "withdrawID_example"; // String | 
 String authorization = "authorization_example"; // String | Enter a valid Api Key.
 String accept = "accept_example"; // String | JSON, XML or CSV can be returned (Optional)
 try {
-    SuccessResult result = apiInstance.v1userexchangebankcoinwithdrawunverifiedcancel(body, authorization, accept);
+    SuccessResult result = apiInstance.v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID(withdrawID, authorization, accept);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling ExchangeBankActionsApi#v1userexchangebankcoinwithdrawunverifiedcancel");
+    System.err.println("Exception when calling ExchangeBankActionsApi#v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID");
     e.printStackTrace();
 }
 ```
@@ -147,7 +147,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WithdrawID**](WithdrawID.md)| You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified. |
+ **withdrawID** | **String**|  |
  **authorization** | **String**| Enter a valid Api Key. | [optional]
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional]
 
@@ -262,9 +262,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json, application/xml, application/csv
 
-<a name="v1userexchangebankfiatdepositcancel"></a>
-# **v1userexchangebankfiatdepositcancel**
-> SuccessResult v1userexchangebankfiatdepositcancel(body, authorization, accept)
+<a name="v1userexchangebankfiatdepositcancelDepositID"></a>
+# **v1userexchangebankfiatdepositcancelDepositID**
+> SuccessResult v1userexchangebankfiatdepositcancelDepositID(depositID, authorization, accept)
 
 Cancel Unverified Exchange Fiat Deposit
 
@@ -278,14 +278,14 @@ Cancels an unverified Exchange Fiat Deposit.
 
 
 ExchangeBankActionsApi apiInstance = new ExchangeBankActionsApi();
-DepositID body = new DepositID(); // DepositID | Please send the form with valid inputs.
+String depositID = "depositID_example"; // String | 
 String authorization = "authorization_example"; // String | Enter a valid Api Key.
 String accept = "accept_example"; // String | JSON, XML or CSV can be returned (Optional)
 try {
-    SuccessResult result = apiInstance.v1userexchangebankfiatdepositcancel(body, authorization, accept);
+    SuccessResult result = apiInstance.v1userexchangebankfiatdepositcancelDepositID(depositID, authorization, accept);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling ExchangeBankActionsApi#v1userexchangebankfiatdepositcancel");
+    System.err.println("Exception when calling ExchangeBankActionsApi#v1userexchangebankfiatdepositcancelDepositID");
     e.printStackTrace();
 }
 ```
@@ -294,7 +294,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DepositID**](DepositID.md)| Please send the form with valid inputs. |
+ **depositID** | **String**|  |
  **authorization** | **String**| Enter a valid Api Key. | [optional]
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional]
 
@@ -458,9 +458,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json, application/xml, application/csv
 
-<a name="v1userexchangebankfiatwithdrawunverifiedcancel"></a>
-# **v1userexchangebankfiatwithdrawunverifiedcancel**
-> SuccessResult v1userexchangebankfiatwithdrawunverifiedcancel(body, authorization, accept)
+<a name="v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID"></a>
+# **v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID**
+> SuccessResult v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID(withdrawID, authorization, accept)
 
 Cancel Fiat Withdrawal
 
@@ -474,14 +474,14 @@ Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/excha
 
 
 ExchangeBankActionsApi apiInstance = new ExchangeBankActionsApi();
-WithdrawID body = new WithdrawID(); // WithdrawID | You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified.
+String withdrawID = "withdrawID_example"; // String | 
 String authorization = "authorization_example"; // String | Enter a valid Api Key.
 String accept = "accept_example"; // String | JSON, XML or CSV can be returned (Optional)
 try {
-    SuccessResult result = apiInstance.v1userexchangebankfiatwithdrawunverifiedcancel(body, authorization, accept);
+    SuccessResult result = apiInstance.v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID(withdrawID, authorization, accept);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling ExchangeBankActionsApi#v1userexchangebankfiatwithdrawunverifiedcancel");
+    System.err.println("Exception when calling ExchangeBankActionsApi#v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID");
     e.printStackTrace();
 }
 ```
@@ -490,7 +490,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WithdrawID**](WithdrawID.md)| You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified. |
+ **withdrawID** | **String**|  |
  **authorization** | **String**| Enter a valid Api Key. | [optional]
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional]
 

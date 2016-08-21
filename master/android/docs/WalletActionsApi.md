@@ -1,6 +1,6 @@
 # WalletActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**v1userwalletcoinnew**](WalletActionsApi.md#v1userwalletcoinnew) | **PUT** /v1/user/wallet/coin/new | Create New Wallet
 [**v1userwalletcoinwithdrawinitiate**](WalletActionsApi.md#v1userwalletcoinwithdrawinitiate) | **POST** /v1/user/wallet/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 [**v1userwalletcoinwithdrawsendToExchange**](WalletActionsApi.md#v1userwalletcoinwithdrawsendToExchange) | **PUT** /v1/user/wallet/coin/withdraw/sendToExchange | Send to Exchange
-[**v1userwalletcoinwithdrawunverifiedcancel**](WalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+[**v1userwalletcoinwithdrawunverifiedcancelWithdrawID**](WalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancelWithdrawID) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 [**v1userwalletcoinwithdrawverify**](WalletActionsApi.md#v1userwalletcoinwithdrawverify) | **PUT** /v1/user/wallet/coin/withdraw/verify | Verify Bitcoin Withdrawal
 [**v1walletcoinwithdrawnewVerifycode**](WalletActionsApi.md#v1walletcoinwithdrawnewVerifycode) | **POST** /v1/wallet/coin/withdraw/newVerifycode | Gets a Verification Code
 
@@ -201,9 +201,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json, application/xml, application/csv
 
-<a name="v1userwalletcoinwithdrawunverifiedcancel"></a>
-# **v1userwalletcoinwithdrawunverifiedcancel**
-> SuccessResult v1userwalletcoinwithdrawunverifiedcancel(authorization, body, accept)
+<a name="v1userwalletcoinwithdrawunverifiedcancelWithdrawID"></a>
+# **v1userwalletcoinwithdrawunverifiedcancelWithdrawID**
+> SuccessResult v1userwalletcoinwithdrawunverifiedcancelWithdrawID(withdrawID, authorization, accept)
 
 Cancel Bitcoin Withdrawal
 
@@ -215,14 +215,14 @@ Cancels an unverified withdrawal. You can get the code from /wallet/unverifiedWi
 //import io.swagger.client.api.WalletActionsApi;
 
 WalletActionsApi apiInstance = new WalletActionsApi();
+String withdrawID = "withdrawID_example"; // String | 
 String authorization = "authorization_example"; // String | Enter a valid Api Key.
-WithdrawID body = new WithdrawID(); // WithdrawID | 
 String accept = "accept_example"; // String | JSON, XML or CSV can be returned (Optional)
 try {
-    SuccessResult result = apiInstance.v1userwalletcoinwithdrawunverifiedcancel(authorization, body, accept);
+    SuccessResult result = apiInstance.v1userwalletcoinwithdrawunverifiedcancelWithdrawID(withdrawID, authorization, accept);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling WalletActionsApi#v1userwalletcoinwithdrawunverifiedcancel");
+    System.err.println("Exception when calling WalletActionsApi#v1userwalletcoinwithdrawunverifiedcancelWithdrawID");
     e.printStackTrace();
 }
 ```
@@ -231,8 +231,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **withdrawID** | **String**|  |
  **authorization** | **String**| Enter a valid Api Key. |
- **body** | [**WithdrawID**](WithdrawID.md)|  |
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional]
 
 ### Return type

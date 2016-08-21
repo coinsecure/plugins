@@ -6,6 +6,7 @@
   self = [super init];
   if (self) {
     // initialize property's default value, if any
+    self.success = @0;
     
   }
   return self;
@@ -17,7 +18,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"info": @"info", @"keyType": @"keyType", @"keyNeeded": @"keyNeeded" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"success": @"success", @"email": @"email", @"message": @"message", @"keyType": @"keyType", @"keyNeeded": @"keyNeeded" }];
 }
 
 /**

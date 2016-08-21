@@ -1,6 +1,6 @@
 # CoinsecureApiDocumentation.ExchangeTradeDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,7 +30,7 @@ Returns the Lowest Ask Rate in Json. The Amount is in Paisa.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 
@@ -77,7 +77,7 @@ Returns all Ask Orders in Json. The Rate is displayed in Paisa and Volume in Sat
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 
@@ -124,7 +124,7 @@ Highest Bid.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 
@@ -171,7 +171,7 @@ Returns all Bid Orders in Json. The Rate is displayed in Paisa and Volume in Sat
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 
@@ -218,7 +218,7 @@ Returns a summary of data from the Exchange.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 
@@ -265,7 +265,7 @@ Returns the highest rate over the last 24 hours with the 10 minutely difference.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 
@@ -312,7 +312,7 @@ Returns the lowest rate over the last 24 hours with the 10 minutely difference. 
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 
@@ -359,7 +359,7 @@ Returns a summary of data from the Exchange.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 
@@ -406,7 +406,7 @@ Returns all Cancelled User Sell Orders in Json. The Rate is displayed in Paisa a
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 
@@ -456,7 +456,7 @@ Returns all completed Sell Orders in Json. The Rate is displayed in Paisa and Vo
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 
@@ -514,7 +514,7 @@ Returns all Open User Sell Orders in Json. The Rate is displayed in Paisa and Vo
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 
@@ -564,7 +564,7 @@ Returns all Cancelled User Buy Orders in Json. The Rate is displayed in Paisa an
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 
@@ -614,7 +614,7 @@ Returns all completed Buy Orders in Json. The Rate is displayed in Paisa and Vol
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 
@@ -664,7 +664,7 @@ Returns all Open User Buy Orders in Json. The Rate is displayed in Paisa and Vol
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeDataApi();
 

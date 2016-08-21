@@ -1,6 +1,6 @@
 # IO.Swagger.Api.AccountActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,14 +14,15 @@ Method | HTTP request | Description
 [**V1userkycotpNumber**](AccountActionsApi.md#v1userkycotpnumber) | **GET** /v1/user/kyc/otp/{number} | Send OTP for KYC Link
 [**V1userlogout**](AccountActionsApi.md#v1userlogout) | **DELETE** /v1/user/logout | Logout User
 [**V1usernetkicreate**](AccountActionsApi.md#v1usernetkicreate) | **PUT** /v1/user/netki/create | Create Neki Wallet Name
-[**V1usernetkiupdate**](AccountActionsApi.md#v1usernetkiupdate) | **PATCH** /v1/user/netki/update | Update Netki Address
-[**V1userprofileimagedelete**](AccountActionsApi.md#v1userprofileimagedelete) | **POST** /v1/user/contact | Delete Profile Image
-[**V1userprofileimageupdate**](AccountActionsApi.md#v1userprofileimageupdate) | **PATCH** /v1/user/profile/image/update | Update Profile Image
+[**V1usernetkiupdate**](AccountActionsApi.md#v1usernetkiupdate) | **POST** /v1/user/netki/update | Update Netki Address
+[**V1userprofileimagedeleteNetkiName**](AccountActionsApi.md#v1userprofileimagedeletenetkiname) | **DELETE** /v1/user/profile/image/delete/{netkiName} | Delete Profile Image
+[**V1userprofileimageupdate**](AccountActionsApi.md#v1userprofileimageupdate) | **POST** /v1/user/profile/image/update | Update Profile Image
 [**V1userprofilephone**](AccountActionsApi.md#v1userprofilephone) | **PUT** /v1/user/profile/phone/new | New Profile Phone
 [**V1userprofilephoneNumber**](AccountActionsApi.md#v1userprofilephonenumber) | **DELETE** /v1/user/profile/phone/delete | Delete Profile Phone Number
 [**V1userprofilephoneotpNumber**](AccountActionsApi.md#v1userprofilephoneotpnumber) | **GET** /v1/user/profile/phone/otp/{number} | Send OTP for Profile Phone
 
 
+<a name="v1login"></a>
 # **V1login**
 > StandardLoginResultData V1login (LoginFormNew body, string accept = null)
 
@@ -85,6 +86,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1logininitiate"></a>
 # **V1logininitiate**
 > StandardInitiateLoginResultData V1logininitiate (LoginId body, string accept = null)
 
@@ -148,6 +150,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1loginpasswordforgot"></a>
 # **V1loginpasswordforgot**
 > SuccessResult V1loginpasswordforgot (Email body, string accept = null)
 
@@ -211,6 +214,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1signup"></a>
 # **V1signup**
 > SuccessResult V1signup (SignupForm body, string accept = null)
 
@@ -274,6 +278,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userbankotpnumber"></a>
 # **V1userbankotpNumber**
 > StandardInitiateLoginResultData V1userbankotpNumber (string number, string authorization = null, string accept = null)
 
@@ -339,6 +344,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangekyc"></a>
 # **V1userexchangekyc**
 > SuccessResult V1userexchangekyc (string panNumber, string acctNick, string name, string ban, string ifsc, string acctType, string banType, string phone, string otp, System.IO.Stream file, string authorization = null, string message = null, string accept = null)
 
@@ -424,6 +430,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1usergcmcode"></a>
 # **V1usergcmCode**
 > SuccessResult V1usergcmCode (string code, string authorization = null, string accept = null)
 
@@ -489,6 +496,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userkycotpnumber"></a>
 # **V1userkycotpNumber**
 > SuccessResult V1userkycotpNumber (string number, string authorization = null, string accept = null)
 
@@ -554,6 +562,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userlogout"></a>
 # **V1userlogout**
 > SuccessResult V1userlogout (string authorization = null, string accept = null)
 
@@ -617,6 +626,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1usernetkicreate"></a>
 # **V1usernetkicreate**
 > SuccessResult V1usernetkicreate (NetkiNameAddress body, string authorization = null, string accept = null)
 
@@ -682,6 +692,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1usernetkiupdate"></a>
 # **V1usernetkiupdate**
 > SuccessResult V1usernetkiupdate (Address body, string authorization = null, string accept = null)
 
@@ -747,8 +758,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1userprofileimagedelete**
-> SuccessResult V1userprofileimagedelete (NetkiName body, string authorization = null, string accept = null)
+<a name="v1userprofileimagedeletenetkiname"></a>
+# **V1userprofileimagedeleteNetkiName**
+> SuccessResult V1userprofileimagedeleteNetkiName (string netkiName, string authorization = null, string accept = null)
 
 Delete Profile Image
 
@@ -764,25 +776,25 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class V1userprofileimagedeleteExample
+    public class V1userprofileimagedeleteNetkiNameExample
     {
         public void main()
         {
             
             var apiInstance = new AccountActionsApi();
-            var body = new NetkiName(); // NetkiName | Please enter a valid Netki name associated with your prfile Image.
+            var netkiName = netkiName_example;  // string | 
             var authorization = authorization_example;  // string | Enter a valid Api Key. (optional) 
             var accept = accept_example;  // string | JSON, XML or CSV can be returned (Optional) (optional) 
 
             try
             {
                 // Delete Profile Image
-                SuccessResult result = apiInstance.V1userprofileimagedelete(body, authorization, accept);
+                SuccessResult result = apiInstance.V1userprofileimagedeleteNetkiName(netkiName, authorization, accept);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling AccountActionsApi.V1userprofileimagedelete: " + e.Message );
+                Debug.Print("Exception when calling AccountActionsApi.V1userprofileimagedeleteNetkiName: " + e.Message );
             }
         }
     }
@@ -793,7 +805,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NetkiName**](NetkiName.md)| Please enter a valid Netki name associated with your prfile Image. | 
+ **netkiName** | **string**|  | 
  **authorization** | **string**| Enter a valid Api Key. | [optional] 
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -812,6 +824,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userprofileimageupdate"></a>
 # **V1userprofileimageupdate**
 > SuccessResult V1userprofileimageupdate (string netkiName, bool? isPublic, System.IO.Stream file, string authorization = null, string accept = null)
 
@@ -881,6 +894,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userprofilephone"></a>
 # **V1userprofilephone**
 > SuccessResult V1userprofilephone (NumberOtp body, string authorization = null, string accept = null)
 
@@ -946,6 +960,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userprofilephonenumber"></a>
 # **V1userprofilephoneNumber**
 > SuccessResult V1userprofilephoneNumber (string authorization = null, string accept = null)
 
@@ -1009,6 +1024,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userprofilephoneotpnumber"></a>
 # **V1userprofilephoneotpNumber**
 > SuccessResult V1userprofilephoneotpNumber (string number, string authorization = null, string accept = null)
 

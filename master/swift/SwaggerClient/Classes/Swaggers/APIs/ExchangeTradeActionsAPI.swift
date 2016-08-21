@@ -13,11 +13,11 @@ public class ExchangeTradeActionsAPI: APIBase {
     /**
      Cancel Open Sell Order
      
-     - parameter body: (body) Please send the form with valid inputs. 
+     - parameter orderID: (path)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1userexchangeaskcancel(body body: AskID, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
-        v1userexchangeaskcancelWithRequestBuilder(body: body).execute { (response, error) -> Void in
+    public class func v1userexchangeaskcancelOrderID(orderID orderID: String, completion: ((data: SuccessCancelDataResponse?, error: ErrorType?) -> Void)) {
+        v1userexchangeaskcancelOrderIDWithRequestBuilder(orderID: orderID).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -25,13 +25,16 @@ public class ExchangeTradeActionsAPI: APIBase {
 
     /**
      Cancel Open Sell Order
-     - DELETE /v1/user/exchange/ask/cancel
+     - DELETE /v1/user/exchange/ask/cancel/{orderID}
      - Cancels a BTC Sell Order. Orders can only be cancelled if they are in a pending state.
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
-  "message" : { },
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "vol" : 123456789,
+    "rate" : 123456789
+  },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
   <success>true</success>
@@ -42,8 +45,11 @@ public class ExchangeTradeActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
-  "message" : { },
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "vol" : 123456789,
+    "rate" : 123456789
+  },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
   <success>true</success>
@@ -52,18 +58,22 @@ public class ExchangeTradeActionsAPI: APIBase {
   <time>2000-01-23T04:56:07.000Z</time>
 </null>}]
      
-     - parameter body: (body) Please send the form with valid inputs. 
+     - parameter orderID: (path)  
 
-     - returns: RequestBuilder<SuccessResult> 
+     - returns: RequestBuilder<SuccessCancelDataResponse> 
      */
-    public class func v1userexchangeaskcancelWithRequestBuilder(body body: AskID) -> RequestBuilder<SuccessResult> {
-        let path = "/v1/user/exchange/ask/cancel"
+    public class func v1userexchangeaskcancelOrderIDWithRequestBuilder(orderID orderID: String) -> RequestBuilder<SuccessCancelDataResponse> {
+        var path = "/v1/user/exchange/ask/cancel/{orderID}"
+        path = path.stringByReplacingOccurrencesOfString("{orderID}", withString: "\(orderID)", options: .LiteralSearch, range: nil)
         let URLString = SwaggerClientAPI.basePath + path
-        let parameters = body.encodeToJSON() as? [String:AnyObject]
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
-        let requestBuilder: RequestBuilder<SuccessResult>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<SuccessCancelDataResponse>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "DELETE", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
@@ -74,7 +84,7 @@ public class ExchangeTradeActionsAPI: APIBase {
      - parameter body: (body) Please send the form with valid inputs. 
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1userexchangeasknew(body body: RateVolData, completion: ((data: SuccessResultList?, error: ErrorType?) -> Void)) {
+    public class func v1userexchangeasknew(body body: RateVolData, completion: ((data: SuccessOrderDataResponse?, error: ErrorType?) -> Void)) {
         v1userexchangeasknewWithRequestBuilder(body: body).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -88,12 +98,18 @@ public class ExchangeTradeActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
-  "message" : [ "aeiou" ],
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "human_time" : "aeiou",
+    "vol" : 123456789,
+    "rate" : 123456789,
+    "orderID" : "aeiou",
+    "time" : 123456789,
+    "status" : "aeiou"
+  },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
   <success>true</success>
-  <message>string</message>
   <method>string</method>
   <title>string</title>
   <time>2000-01-23T04:56:07.000Z</time>
@@ -101,12 +117,18 @@ public class ExchangeTradeActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
-  "message" : [ "aeiou" ],
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "human_time" : "aeiou",
+    "vol" : 123456789,
+    "rate" : 123456789,
+    "orderID" : "aeiou",
+    "time" : 123456789,
+    "status" : "aeiou"
+  },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
   <success>true</success>
-  <message>string</message>
   <method>string</method>
   <title>string</title>
   <time>2000-01-23T04:56:07.000Z</time>
@@ -114,16 +136,16 @@ public class ExchangeTradeActionsAPI: APIBase {
      
      - parameter body: (body) Please send the form with valid inputs. 
 
-     - returns: RequestBuilder<SuccessResultList> 
+     - returns: RequestBuilder<SuccessOrderDataResponse> 
      */
-    public class func v1userexchangeasknewWithRequestBuilder(body body: RateVolData) -> RequestBuilder<SuccessResultList> {
+    public class func v1userexchangeasknewWithRequestBuilder(body body: RateVolData) -> RequestBuilder<SuccessOrderDataResponse> {
         let path = "/v1/user/exchange/ask/new"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = body.encodeToJSON() as? [String:AnyObject]
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
-        let requestBuilder: RequestBuilder<SuccessResultList>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<SuccessOrderDataResponse>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "PUT", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
@@ -131,11 +153,11 @@ public class ExchangeTradeActionsAPI: APIBase {
     /**
      Cancel Open Buy Order
      
-     - parameter body: (body) Please send the form with valid inputs. 
+     - parameter orderID: (path)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1userexchangebidcancel(body body: BidID, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
-        v1userexchangebidcancelWithRequestBuilder(body: body).execute { (response, error) -> Void in
+    public class func v1userexchangebidcancelOrderID(orderID orderID: String, completion: ((data: SuccessCancelDataResponse?, error: ErrorType?) -> Void)) {
+        v1userexchangebidcancelOrderIDWithRequestBuilder(orderID: orderID).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -143,13 +165,16 @@ public class ExchangeTradeActionsAPI: APIBase {
 
     /**
      Cancel Open Buy Order
-     - DELETE /v1/user/exchange/bid/cancel
+     - DELETE /v1/user/exchange/bid/cancel/{orderID}
      - Cancels a BTC Buy Order. Orders can only be cancelled if they are in a pending state.
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
-  "message" : { },
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "vol" : 123456789,
+    "rate" : 123456789
+  },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
   <success>true</success>
@@ -160,8 +185,11 @@ public class ExchangeTradeActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
-  "message" : { },
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "vol" : 123456789,
+    "rate" : 123456789
+  },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
   <success>true</success>
@@ -170,18 +198,22 @@ public class ExchangeTradeActionsAPI: APIBase {
   <time>2000-01-23T04:56:07.000Z</time>
 </null>}]
      
-     - parameter body: (body) Please send the form with valid inputs. 
+     - parameter orderID: (path)  
 
-     - returns: RequestBuilder<SuccessResult> 
+     - returns: RequestBuilder<SuccessCancelDataResponse> 
      */
-    public class func v1userexchangebidcancelWithRequestBuilder(body body: BidID) -> RequestBuilder<SuccessResult> {
-        let path = "/v1/user/exchange/bid/cancel"
+    public class func v1userexchangebidcancelOrderIDWithRequestBuilder(orderID orderID: String) -> RequestBuilder<SuccessCancelDataResponse> {
+        var path = "/v1/user/exchange/bid/cancel/{orderID}"
+        path = path.stringByReplacingOccurrencesOfString("{orderID}", withString: "\(orderID)", options: .LiteralSearch, range: nil)
         let URLString = SwaggerClientAPI.basePath + path
-        let parameters = body.encodeToJSON() as? [String:AnyObject]
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
-        let requestBuilder: RequestBuilder<SuccessResult>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<SuccessCancelDataResponse>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "DELETE", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
@@ -192,7 +224,7 @@ public class ExchangeTradeActionsAPI: APIBase {
      - parameter body: (body) Please send the form with valid inputs. 
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1userexchangebidnew(body body: RateVolData, completion: ((data: SuccessResultList?, error: ErrorType?) -> Void)) {
+    public class func v1userexchangebidnew(body body: RateVolData, completion: ((data: SuccessOrderDataResponse?, error: ErrorType?) -> Void)) {
         v1userexchangebidnewWithRequestBuilder(body: body).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -206,12 +238,18 @@ public class ExchangeTradeActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
-  "message" : [ "aeiou" ],
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "human_time" : "aeiou",
+    "vol" : 123456789,
+    "rate" : 123456789,
+    "orderID" : "aeiou",
+    "time" : 123456789,
+    "status" : "aeiou"
+  },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
   <success>true</success>
-  <message>string</message>
   <method>string</method>
   <title>string</title>
   <time>2000-01-23T04:56:07.000Z</time>
@@ -219,12 +257,18 @@ public class ExchangeTradeActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
-  "message" : [ "aeiou" ],
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "human_time" : "aeiou",
+    "vol" : 123456789,
+    "rate" : 123456789,
+    "orderID" : "aeiou",
+    "time" : 123456789,
+    "status" : "aeiou"
+  },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
   <success>true</success>
-  <message>string</message>
   <method>string</method>
   <title>string</title>
   <time>2000-01-23T04:56:07.000Z</time>
@@ -232,16 +276,16 @@ public class ExchangeTradeActionsAPI: APIBase {
      
      - parameter body: (body) Please send the form with valid inputs. 
 
-     - returns: RequestBuilder<SuccessResultList> 
+     - returns: RequestBuilder<SuccessOrderDataResponse> 
      */
-    public class func v1userexchangebidnewWithRequestBuilder(body body: RateVolData) -> RequestBuilder<SuccessResultList> {
+    public class func v1userexchangebidnewWithRequestBuilder(body body: RateVolData) -> RequestBuilder<SuccessOrderDataResponse> {
         let path = "/v1/user/exchange/bid/new"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = body.encodeToJSON() as? [String:AnyObject]
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
-        let requestBuilder: RequestBuilder<SuccessResultList>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<SuccessOrderDataResponse>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "PUT", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
@@ -252,7 +296,7 @@ public class ExchangeTradeActionsAPI: APIBase {
      - parameter body: (body) Please send the form with valid inputs. 
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1userexchangeinstantbuy(body body: MinFiat, completion: ((data: SuccessResultList?, error: ErrorType?) -> Void)) {
+    public class func v1userexchangeinstantbuy(body body: MinFiat, completion: ((data: SuccessOrderDataResponse?, error: ErrorType?) -> Void)) {
         v1userexchangeinstantbuyWithRequestBuilder(body: body).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -266,12 +310,18 @@ public class ExchangeTradeActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
-  "message" : [ "aeiou" ],
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "human_time" : "aeiou",
+    "vol" : 123456789,
+    "rate" : 123456789,
+    "orderID" : "aeiou",
+    "time" : 123456789,
+    "status" : "aeiou"
+  },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
   <success>true</success>
-  <message>string</message>
   <method>string</method>
   <title>string</title>
   <time>2000-01-23T04:56:07.000Z</time>
@@ -279,12 +329,18 @@ public class ExchangeTradeActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
-  "message" : [ "aeiou" ],
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "human_time" : "aeiou",
+    "vol" : 123456789,
+    "rate" : 123456789,
+    "orderID" : "aeiou",
+    "time" : 123456789,
+    "status" : "aeiou"
+  },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
   <success>true</success>
-  <message>string</message>
   <method>string</method>
   <title>string</title>
   <time>2000-01-23T04:56:07.000Z</time>
@@ -292,16 +348,16 @@ public class ExchangeTradeActionsAPI: APIBase {
      
      - parameter body: (body) Please send the form with valid inputs. 
 
-     - returns: RequestBuilder<SuccessResultList> 
+     - returns: RequestBuilder<SuccessOrderDataResponse> 
      */
-    public class func v1userexchangeinstantbuyWithRequestBuilder(body body: MinFiat) -> RequestBuilder<SuccessResultList> {
+    public class func v1userexchangeinstantbuyWithRequestBuilder(body body: MinFiat) -> RequestBuilder<SuccessOrderDataResponse> {
         let path = "/v1/user/exchange/instant/buy"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = body.encodeToJSON() as? [String:AnyObject]
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
-        let requestBuilder: RequestBuilder<SuccessResultList>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<SuccessOrderDataResponse>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "PUT", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
@@ -312,7 +368,7 @@ public class ExchangeTradeActionsAPI: APIBase {
      - parameter body: (body) Please send the form with valid inputs. 
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1userexchangeinstantsell(body body: MaxVol, completion: ((data: SuccessResultList?, error: ErrorType?) -> Void)) {
+    public class func v1userexchangeinstantsell(body body: MaxVol, completion: ((data: SuccessOrderDataResponse?, error: ErrorType?) -> Void)) {
         v1userexchangeinstantsellWithRequestBuilder(body: body).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -326,12 +382,18 @@ public class ExchangeTradeActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
-  "message" : [ "aeiou" ],
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "human_time" : "aeiou",
+    "vol" : 123456789,
+    "rate" : 123456789,
+    "orderID" : "aeiou",
+    "time" : 123456789,
+    "status" : "aeiou"
+  },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
   <success>true</success>
-  <message>string</message>
   <method>string</method>
   <title>string</title>
   <time>2000-01-23T04:56:07.000Z</time>
@@ -339,12 +401,18 @@ public class ExchangeTradeActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
-  "message" : [ "aeiou" ],
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "human_time" : "aeiou",
+    "vol" : 123456789,
+    "rate" : 123456789,
+    "orderID" : "aeiou",
+    "time" : 123456789,
+    "status" : "aeiou"
+  },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
   <success>true</success>
-  <message>string</message>
   <method>string</method>
   <title>string</title>
   <time>2000-01-23T04:56:07.000Z</time>
@@ -352,16 +420,16 @@ public class ExchangeTradeActionsAPI: APIBase {
      
      - parameter body: (body) Please send the form with valid inputs. 
 
-     - returns: RequestBuilder<SuccessResultList> 
+     - returns: RequestBuilder<SuccessOrderDataResponse> 
      */
-    public class func v1userexchangeinstantsellWithRequestBuilder(body body: MaxVol) -> RequestBuilder<SuccessResultList> {
+    public class func v1userexchangeinstantsellWithRequestBuilder(body body: MaxVol) -> RequestBuilder<SuccessOrderDataResponse> {
         let path = "/v1/user/exchange/instant/sell"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = body.encodeToJSON() as? [String:AnyObject]
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
-        let requestBuilder: RequestBuilder<SuccessResultList>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<SuccessOrderDataResponse>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "PUT", URLString: URLString, parameters: convertedParameters, isBody: true)
     }

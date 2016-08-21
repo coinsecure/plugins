@@ -1,7 +1,7 @@
 {
-  "name": "coinsecure-api-documentation",
-  "version": "1.0b",
-  "description": "To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.",
+  "name": "coinsecure_api_documentation",
+  "version": "beta",
+  "description": "To_generate_an_API_key_please_visit_a_hrefhttpscoinsecure_inapi_target_new_classhomeapihttpscoinsecure_inapia_brGuidelines_for_use_can_be_accessed_at_a_hrefhttpsapi_coinsecure_inv1guidelineshttpsapi_coinsecure_inv1guidelinesa_brProgramming_Language_Libraries_for_use_can_be_accessed_at_a_hrefhttpsapi_coinsecure_inv1code_librarieshttpsapi_coinsecure_inv1code_librariesa_",
   "license": "Apache-2.0",
   "main": "src/index.js",
   "scripts": {

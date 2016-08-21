@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **message** | [**List&lt;WalletCoinWithdrawData&gt;**](WalletCoinWithdrawData.md) |  | 
 **method** | **String** |  | 
 **title** | **String** |  | 
-**time** | [**Date**](Date.md) |  | 
+**time** | [**DateTime**](DateTime.md) |  | 
 
 
 

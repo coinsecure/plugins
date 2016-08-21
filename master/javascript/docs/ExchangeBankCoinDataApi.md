@@ -1,6 +1,6 @@
 # CoinsecureApiDocumentation.ExchangeBankCoinDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,7 +27,7 @@ Gets a List of Users Exchange Bitcoin Deposit Addresses.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankCoinDataApi();
 
@@ -77,7 +77,7 @@ Returns balance which is in Available for Trades. The response is in satoshis.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankCoinDataApi();
 
@@ -127,7 +127,7 @@ Returns in-trade or pending coin balance in satoshi.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankCoinDataApi();
 
@@ -177,7 +177,7 @@ Returns users total coin balance in satoshis. Pending + Available
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankCoinDataApi();
 
@@ -227,7 +227,7 @@ Gets a List of Cancelled Exchange Coin Deposits. The value and fees are in paisa
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankCoinDataApi();
 
@@ -285,7 +285,7 @@ Gets a List of Unverified Exchange Coin Deposits. The value and fees are in pais
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankCoinDataApi();
 
@@ -343,7 +343,7 @@ Gets a List of Verified Exchange Coin Deposits. The value and fees are in paisa.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankCoinDataApi();
 
@@ -401,7 +401,7 @@ Gets a List of Cancelled Coin Withdrawals. The value and fees are in satoshis.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankCoinDataApi();
 
@@ -459,7 +459,7 @@ Gets a List of Completed Coin Withdrawals. The value and fees are in satoshis.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankCoinDataApi();
 
@@ -517,7 +517,7 @@ Gets a List of Unverified Exchange Coin Withdrawals. The value and fees are in s
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankCoinDataApi();
 
@@ -575,7 +575,7 @@ Gets a List of Verified Exchange Coin Withdrawals. The value and fees are in sat
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankCoinDataApi();
 

@@ -9,7 +9,9 @@ import Foundation
 
 
 public class SuccessLoginResponse: JSONEncodable {
-    public var info: String?
+    public var success: Bool?
+    public var email: String?
+    public var message: String?
     public var keyType: String?
     public var keyNeeded: String?
 
@@ -18,7 +20,9 @@ public class SuccessLoginResponse: JSONEncodable {
     // MARK: JSONEncodable
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
-        nillableDictionary["info"] = self.info
+        nillableDictionary["success"] = self.success
+        nillableDictionary["email"] = self.email
+        nillableDictionary["message"] = self.message
         nillableDictionary["keyType"] = self.keyType
         nillableDictionary["keyNeeded"] = self.keyNeeded
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]

@@ -30,7 +30,7 @@ public class BlockchainToolsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "unconfirmedBalance" : 123456789,
     "address" : "aeiou",
@@ -50,7 +50,7 @@ public class BlockchainToolsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "unconfirmedBalance" : 123456789,
     "address" : "aeiou",
@@ -108,7 +108,7 @@ public class BlockchainToolsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "confirmations" : 123456789
   },
@@ -122,7 +122,7 @@ public class BlockchainToolsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "confirmations" : 123456789
   },

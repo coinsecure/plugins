@@ -1,4 +1,4 @@
-(defproject coinsecure-api-documentation "1.0b"
+(defproject coinsecure-api-documentation "beta"
   :description "To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>."
   :license {:name "license text"
             :url "https://coinsecure.in/api"}

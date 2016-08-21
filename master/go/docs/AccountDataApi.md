@@ -1,26 +1,26 @@
 # \AccountDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1ExchangeBankSummary**](AccountDataApi.md#V1ExchangeBankSummary) | **Get** /v1/user/exchange/bank/summary | Exchange Bank Summary
-[**V1ExchangeUserCoinFee**](AccountDataApi.md#V1ExchangeUserCoinFee) | **Get** /v1/user/exchange/coin/fee | Users Coin Fee Percentage
-[**V1ExchangeUserFiatFee**](AccountDataApi.md#V1ExchangeUserFiatFee) | **Get** /v1/user/exchange/fiat/fee | Users Fiat Fee Percentage
-[**V1NetkiSearchNetkiName**](AccountDataApi.md#V1NetkiSearchNetkiName) | **Get** /v1/netki/search/{netkiName} | Coinsecure.me Netki Lookup
-[**V1UserExchangeKycs**](AccountDataApi.md#V1UserExchangeKycs) | **Get** /v1/user/exchange/kycs | Gets KYC Status Details
-[**V1UserExchangeReferralCoinPaid**](AccountDataApi.md#V1UserExchangeReferralCoinPaid) | **Get** /v1/user/exchange/referral/coin/paid | Users Paid Fiat Referrals
-[**V1UserExchangeReferralCoinSuccessful**](AccountDataApi.md#V1UserExchangeReferralCoinSuccessful) | **Get** /v1/user/exchange/referral/coin/successful | Gets Users Successful Referral Links
-[**V1UserExchangeReferralFiatPaid**](AccountDataApi.md#V1UserExchangeReferralFiatPaid) | **Get** /v1/user/exchange/referral/fiat/paid | Users Paid Fiat Referrals
-[**V1UserExchangeReferrals**](AccountDataApi.md#V1UserExchangeReferrals) | **Get** /v1/user/exchange/referrals | Gets Users Referral Links
-[**V1UserExchangeTradeSummary**](AccountDataApi.md#V1UserExchangeTradeSummary) | **Get** /v1/user/exchange/trade/summary | Exchange Trade Summary
-[**V1UserLoginTokenToken**](AccountDataApi.md#V1UserLoginTokenToken) | **Get** /v1/user/login/token/{token} | Login Token Email
-[**V1UserSummary**](AccountDataApi.md#V1UserSummary) | **Get** /v1/user/summary | Exchange Bank Summary
-[**V1UserWalletSummary**](AccountDataApi.md#V1UserWalletSummary) | **Get** /v1/user/wallet/summary | Exchange Bank Summary
+[**V1exchangebanksummary**](AccountDataApi.md#V1exchangebanksummary) | **Get** /v1/user/exchange/bank/summary | Exchange Bank Summary
+[**V1exchangeusercoinfee**](AccountDataApi.md#V1exchangeusercoinfee) | **Get** /v1/user/exchange/coin/fee | Users Coin Fee Percentage
+[**V1exchangeuserfiatfee**](AccountDataApi.md#V1exchangeuserfiatfee) | **Get** /v1/user/exchange/fiat/fee | Users Fiat Fee Percentage
+[**V1netkisearchNetkiName**](AccountDataApi.md#V1netkisearchNetkiName) | **Get** /v1/netki/search/{netkiName} | Coinsecure.me Netki Lookup
+[**V1userexchangekycs**](AccountDataApi.md#V1userexchangekycs) | **Get** /v1/user/exchange/kycs | Gets KYC Status Details
+[**V1userexchangereferralcoinpaid**](AccountDataApi.md#V1userexchangereferralcoinpaid) | **Get** /v1/user/exchange/referral/coin/paid | Users Paid Fiat Referrals
+[**V1userexchangereferralcoinsuccessful**](AccountDataApi.md#V1userexchangereferralcoinsuccessful) | **Get** /v1/user/exchange/referral/coin/successful | Gets Users Successful Referral Links
+[**V1userexchangereferralfiatpaid**](AccountDataApi.md#V1userexchangereferralfiatpaid) | **Get** /v1/user/exchange/referral/fiat/paid | Users Paid Fiat Referrals
+[**V1userexchangereferrals**](AccountDataApi.md#V1userexchangereferrals) | **Get** /v1/user/exchange/referrals | Gets Users Referral Links
+[**V1userexchangetradesummary**](AccountDataApi.md#V1userexchangetradesummary) | **Get** /v1/user/exchange/trade/summary | Exchange Trade Summary
+[**V1userlogintokenToken**](AccountDataApi.md#V1userlogintokenToken) | **Get** /v1/user/login/token/{token} | Login Token Email
+[**V1usersummary**](AccountDataApi.md#V1usersummary) | **Get** /v1/user/summary | Exchange Bank Summary
+[**V1userwalletsummary**](AccountDataApi.md#V1userwalletsummary) | **Get** /v1/user/wallet/summary | Exchange Bank Summary
 
 
-# **V1ExchangeBankSummary**
-> BankSummaryDataResponse V1ExchangeBankSummary($authorization, $accept)
+# **V1exchangebanksummary**
+> BankSummaryDataResponse V1exchangebanksummary($authorization, $accept)
 
 Exchange Bank Summary
 
@@ -49,8 +49,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1ExchangeUserCoinFee**
-> DoubleDataResponse V1ExchangeUserCoinFee($authorization, $accept)
+# **V1exchangeusercoinfee**
+> DoubleDataResponse V1exchangeusercoinfee($authorization, $accept)
 
 Users Coin Fee Percentage
 
@@ -79,8 +79,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1ExchangeUserFiatFee**
-> DoubleDataResponse V1ExchangeUserFiatFee($authorization, $accept)
+# **V1exchangeuserfiatfee**
+> DoubleDataResponse V1exchangeuserfiatfee($authorization, $accept)
 
 Users Fiat Fee Percentage
 
@@ -109,8 +109,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1NetkiSearchNetkiName**
-> DoubleDataResponse V1NetkiSearchNetkiName($netkiName, $accept)
+# **V1netkisearchNetkiName**
+> DoubleDataResponse V1netkisearchNetkiName($netkiName, $accept)
 
 Coinsecure.me Netki Lookup
 
@@ -139,8 +139,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeKycs**
-> KycDataResponse V1UserExchangeKycs($authorization, $accept)
+# **V1userexchangekycs**
+> KycDataResponse V1userexchangekycs($authorization, $accept)
 
 Gets KYC Status Details
 
@@ -169,8 +169,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeReferralCoinPaid**
-> SuccCoinRefDataResponse V1UserExchangeReferralCoinPaid($authorization, $accept)
+# **V1userexchangereferralcoinpaid**
+> SuccCoinRefDataResponse V1userexchangereferralcoinpaid($authorization, $accept)
 
 Users Paid Fiat Referrals
 
@@ -199,8 +199,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeReferralCoinSuccessful**
-> SuccRefDataResponse V1UserExchangeReferralCoinSuccessful($authorization, $accept)
+# **V1userexchangereferralcoinsuccessful**
+> SuccRefDataResponse V1userexchangereferralcoinsuccessful($authorization, $accept)
 
 Gets Users Successful Referral Links
 
@@ -229,8 +229,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeReferralFiatPaid**
-> SuccCoinRefDataResponse V1UserExchangeReferralFiatPaid($authorization, $accept)
+# **V1userexchangereferralfiatpaid**
+> SuccCoinRefDataResponse V1userexchangereferralfiatpaid($authorization, $accept)
 
 Users Paid Fiat Referrals
 
@@ -259,8 +259,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeReferrals**
-> AllRefDataResponse V1UserExchangeReferrals($authorization, $accept)
+# **V1userexchangereferrals**
+> AllRefDataResponse V1userexchangereferrals($authorization, $accept)
 
 Gets Users Referral Links
 
@@ -289,8 +289,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeTradeSummary**
-> TradeSummaryDataResponse V1UserExchangeTradeSummary($authorization, $accept)
+# **V1userexchangetradesummary**
+> TradeSummaryDataResponse V1userexchangetradesummary($authorization, $accept)
 
 Exchange Trade Summary
 
@@ -319,8 +319,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserLoginTokenToken**
-> SuccessResult V1UserLoginTokenToken($token, $accept)
+# **V1userlogintokenToken**
+> SuccessResult V1userlogintokenToken($token, $accept)
 
 Login Token Email
 
@@ -349,8 +349,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserSummary**
-> UserSummaryDataResponse V1UserSummary($authorization, $accept)
+# **V1usersummary**
+> UserSummaryDataResponse V1usersummary($authorization, $accept)
 
 Exchange Bank Summary
 
@@ -379,8 +379,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserWalletSummary**
-> WalletSummaryDataResponse V1UserWalletSummary($authorization, $accept)
+# **V1userwalletsummary**
+> WalletSummaryDataResponse V1userwalletsummary($authorization, $accept)
 
 Exchange Bank Summary
 

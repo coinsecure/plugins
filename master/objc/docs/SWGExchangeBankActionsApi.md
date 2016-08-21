@@ -1,19 +1,19 @@
 # SWGExchangeBankActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v1userexchangebankcoinwithdrawinitiate**](SWGExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawinitiate) | **POST** /v1/user/exchange/bank/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 [**v1userexchangebankcoinwithdrawnewVerifycode**](SWGExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawnewverifycode) | **POST** /v1/user/exchange/bank/coin/withdraw/newVerifycode | Gets a Verification Code.
-[**v1userexchangebankcoinwithdrawunverifiedcancel**](SWGExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+[**v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID**](SWGExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancelwithdrawid) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 [**v1userexchangebankcoinwithdrawverify**](SWGExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawverify) | **PUT** /v1/user/exchange/bank/coin/withdraw/verify | Verify Bitcoin Withdrawal
 [**v1userexchangebankfiataccountnew**](SWGExchangeBankActionsApi.md#v1userexchangebankfiataccountnew) | **PUT** /v1/user/exchange/bank/fiat/account/new | New Bank Link
-[**v1userexchangebankfiatdepositcancel**](SWGExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancel) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel | Cancel Unverified Exchange Fiat Deposit
+[**v1userexchangebankfiatdepositcancelDepositID**](SWGExchangeBankActionsApi.md#v1userexchangebankfiatdepositcanceldepositid) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel/{depositID} | Cancel Unverified Exchange Fiat Deposit
 [**v1userexchangebankfiatdepositnew**](SWGExchangeBankActionsApi.md#v1userexchangebankfiatdepositnew) | **PUT** /v1/user/exchange/bank/fiat/deposit/new | New Exchange Fiat Deposit
 [**v1userexchangebankfiatwithdrawinitiate**](SWGExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawinitiate) | **POST** /v1/user/exchange/bank/fiat/withdraw/initiate | Initiate Fiat Withdrawal
 [**v1userexchangebankfiatwithdrawnewVerifycode**](SWGExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawnewverifycode) | **POST** /v1/user/exchange/bank/fiat/withdraw/newVerifycode | Gets a Fiat Verification Code.
-[**v1userexchangebankfiatwithdrawunverifiedcancel**](SWGExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel | Cancel Fiat Withdrawal
+[**v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID**](SWGExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancelwithdrawid) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID} | Cancel Fiat Withdrawal
 [**v1userexchangebankfiatwithdrawverify**](SWGExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawverify) | **PUT** /v1/user/exchange/bank/fiat/withdraw/verify | Verify Fiat Withdrawal
 
 
@@ -133,9 +133,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1userexchangebankcoinwithdrawunverifiedcancel**
+# **v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID**
 ```objc
--(NSNumber*) v1userexchangebankcoinwithdrawunverifiedcancelWithBody: (SWGWithdrawID*) body
+-(NSNumber*) v1userexchangebankcoinwithdrawunverifiedcancelWithdrawIDWithWithdrawID: (NSString*) withdrawID
     authorization: (NSString*) authorization
     accept: (NSString*) accept
         completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler;
@@ -148,14 +148,14 @@ Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/excha
 ### Example 
 ```objc
 
-SWGWithdrawID* body = [[SWGWithdrawID alloc] init]; // You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified.
+NSString* withdrawID = @"withdrawID_example"; // 
 NSString* authorization = @"authorization_example"; // Enter a valid Api Key. (optional)
 NSString* accept = @"accept_example"; // JSON, XML or CSV can be returned (Optional) (optional)
 
 SWGExchangeBankActionsApi*apiInstance = [[SWGExchangeBankActionsApi alloc] init];
 
 // Cancel Bitcoin Withdrawal
-[apiInstance v1userexchangebankcoinwithdrawunverifiedcancelWithBody:body
+[apiInstance v1userexchangebankcoinwithdrawunverifiedcancelWithdrawIDWithWithdrawID:withdrawID
               authorization:authorization
               accept:accept
           completionHandler: ^(SWGSuccessResult* output, NSError* error) {
@@ -163,7 +163,7 @@ SWGExchangeBankActionsApi*apiInstance = [[SWGExchangeBankActionsApi alloc] init]
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGExchangeBankActionsApi->v1userexchangebankcoinwithdrawunverifiedcancel: %@", error);
+                            NSLog(@"Error calling SWGExchangeBankActionsApi->v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID: %@", error);
                         }
                     }];
 ```
@@ -172,7 +172,7 @@ SWGExchangeBankActionsApi*apiInstance = [[SWGExchangeBankActionsApi alloc] init]
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SWGWithdrawID***](SWGWithdrawID*.md)| You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified. | 
+ **withdrawID** | **NSString***|  | 
  **authorization** | **NSString***| Enter a valid Api Key. | [optional] 
  **accept** | **NSString***| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -307,9 +307,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1userexchangebankfiatdepositcancel**
+# **v1userexchangebankfiatdepositcancelDepositID**
 ```objc
--(NSNumber*) v1userexchangebankfiatdepositcancelWithBody: (SWGDepositID*) body
+-(NSNumber*) v1userexchangebankfiatdepositcancelDepositIDWithDepositID: (NSString*) depositID
     authorization: (NSString*) authorization
     accept: (NSString*) accept
         completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler;
@@ -322,14 +322,14 @@ Cancels an unverified Exchange Fiat Deposit.
 ### Example 
 ```objc
 
-SWGDepositID* body = [[SWGDepositID alloc] init]; // Please send the form with valid inputs.
+NSString* depositID = @"depositID_example"; // 
 NSString* authorization = @"authorization_example"; // Enter a valid Api Key. (optional)
 NSString* accept = @"accept_example"; // JSON, XML or CSV can be returned (Optional) (optional)
 
 SWGExchangeBankActionsApi*apiInstance = [[SWGExchangeBankActionsApi alloc] init];
 
 // Cancel Unverified Exchange Fiat Deposit
-[apiInstance v1userexchangebankfiatdepositcancelWithBody:body
+[apiInstance v1userexchangebankfiatdepositcancelDepositIDWithDepositID:depositID
               authorization:authorization
               accept:accept
           completionHandler: ^(SWGSuccessResult* output, NSError* error) {
@@ -337,7 +337,7 @@ SWGExchangeBankActionsApi*apiInstance = [[SWGExchangeBankActionsApi alloc] init]
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGExchangeBankActionsApi->v1userexchangebankfiatdepositcancel: %@", error);
+                            NSLog(@"Error calling SWGExchangeBankActionsApi->v1userexchangebankfiatdepositcancelDepositID: %@", error);
                         }
                     }];
 ```
@@ -346,7 +346,7 @@ SWGExchangeBankActionsApi*apiInstance = [[SWGExchangeBankActionsApi alloc] init]
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SWGDepositID***](SWGDepositID*.md)| Please send the form with valid inputs. | 
+ **depositID** | **NSString***|  | 
  **authorization** | **NSString***| Enter a valid Api Key. | [optional] 
  **accept** | **NSString***| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -539,9 +539,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1userexchangebankfiatwithdrawunverifiedcancel**
+# **v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID**
 ```objc
--(NSNumber*) v1userexchangebankfiatwithdrawunverifiedcancelWithBody: (SWGWithdrawID*) body
+-(NSNumber*) v1userexchangebankfiatwithdrawunverifiedcancelWithdrawIDWithWithdrawID: (NSString*) withdrawID
     authorization: (NSString*) authorization
     accept: (NSString*) accept
         completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler;
@@ -554,14 +554,14 @@ Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/excha
 ### Example 
 ```objc
 
-SWGWithdrawID* body = [[SWGWithdrawID alloc] init]; // You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified.
+NSString* withdrawID = @"withdrawID_example"; // 
 NSString* authorization = @"authorization_example"; // Enter a valid Api Key. (optional)
 NSString* accept = @"accept_example"; // JSON, XML or CSV can be returned (Optional) (optional)
 
 SWGExchangeBankActionsApi*apiInstance = [[SWGExchangeBankActionsApi alloc] init];
 
 // Cancel Fiat Withdrawal
-[apiInstance v1userexchangebankfiatwithdrawunverifiedcancelWithBody:body
+[apiInstance v1userexchangebankfiatwithdrawunverifiedcancelWithdrawIDWithWithdrawID:withdrawID
               authorization:authorization
               accept:accept
           completionHandler: ^(SWGSuccessResult* output, NSError* error) {
@@ -569,7 +569,7 @@ SWGExchangeBankActionsApi*apiInstance = [[SWGExchangeBankActionsApi alloc] init]
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGExchangeBankActionsApi->v1userexchangebankfiatwithdrawunverifiedcancel: %@", error);
+                            NSLog(@"Error calling SWGExchangeBankActionsApi->v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID: %@", error);
                         }
                     }];
 ```
@@ -578,7 +578,7 @@ SWGExchangeBankActionsApi*apiInstance = [[SWGExchangeBankActionsApi alloc] init]
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SWGWithdrawID***](SWGWithdrawID*.md)| You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified. | 
+ **withdrawID** | **NSString***|  | 
  **authorization** | **NSString***| Enter a valid Api Key. | [optional] 
  **accept** | **NSString***| JSON, XML or CSV can be returned (Optional) | [optional] 
 

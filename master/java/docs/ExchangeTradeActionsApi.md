@@ -1,20 +1,20 @@
 # ExchangeTradeActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1userexchangeaskcancel**](ExchangeTradeActionsApi.md#v1userexchangeaskcancel) | **DELETE** /v1/user/exchange/ask/cancel | Cancel Open Sell Order
+[**v1userexchangeaskcancelOrderID**](ExchangeTradeActionsApi.md#v1userexchangeaskcancelOrderID) | **DELETE** /v1/user/exchange/ask/cancel/{orderID} | Cancel Open Sell Order
 [**v1userexchangeasknew**](ExchangeTradeActionsApi.md#v1userexchangeasknew) | **PUT** /v1/user/exchange/ask/new | BTC Sell Order
-[**v1userexchangebidcancel**](ExchangeTradeActionsApi.md#v1userexchangebidcancel) | **DELETE** /v1/user/exchange/bid/cancel | Cancel Open Buy Order
+[**v1userexchangebidcancelOrderID**](ExchangeTradeActionsApi.md#v1userexchangebidcancelOrderID) | **DELETE** /v1/user/exchange/bid/cancel/{orderID} | Cancel Open Buy Order
 [**v1userexchangebidnew**](ExchangeTradeActionsApi.md#v1userexchangebidnew) | **PUT** /v1/user/exchange/bid/new | BTC Buy Order
 [**v1userexchangeinstantbuy**](ExchangeTradeActionsApi.md#v1userexchangeinstantbuy) | **PUT** /v1/user/exchange/instant/buy | Instantly Buy BTC
 [**v1userexchangeinstantsell**](ExchangeTradeActionsApi.md#v1userexchangeinstantsell) | **PUT** /v1/user/exchange/instant/sell | Instantly Sell BTC
 
 
-<a name="v1userexchangeaskcancel"></a>
-# **v1userexchangeaskcancel**
-> SuccessResult v1userexchangeaskcancel(body, authorization, accept)
+<a name="v1userexchangeaskcancelOrderID"></a>
+# **v1userexchangeaskcancelOrderID**
+> SuccessCancelDataResponse v1userexchangeaskcancelOrderID(orderID, authorization)
 
 Cancel Open Sell Order
 
@@ -28,14 +28,13 @@ Cancels a BTC Sell Order. Orders can only be cancelled if they are in a pending 
 
 
 ExchangeTradeActionsApi apiInstance = new ExchangeTradeActionsApi();
-AskID body = new AskID(); // AskID | Please send the form with valid inputs.
+String orderID = "orderID_example"; // String | 
 String authorization = "authorization_example"; // String | Enter a valid Api Key.
-String accept = "accept_example"; // String | JSON, XML or CSV can be returned (Optional)
 try {
-    SuccessResult result = apiInstance.v1userexchangeaskcancel(body, authorization, accept);
+    SuccessCancelDataResponse result = apiInstance.v1userexchangeaskcancelOrderID(orderID, authorization);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling ExchangeTradeActionsApi#v1userexchangeaskcancel");
+    System.err.println("Exception when calling ExchangeTradeActionsApi#v1userexchangeaskcancelOrderID");
     e.printStackTrace();
 }
 ```
@@ -44,13 +43,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AskID**](AskID.md)| Please send the form with valid inputs. |
+ **orderID** | **String**|  |
  **authorization** | **String**| Enter a valid Api Key. | [optional]
- **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional]
 
 ### Return type
 
-[**SuccessResult**](SuccessResult.md)
+[**SuccessCancelDataResponse**](SuccessCancelDataResponse.md)
 
 ### Authorization
 
@@ -63,7 +61,7 @@ No authorization required
 
 <a name="v1userexchangeasknew"></a>
 # **v1userexchangeasknew**
-> SuccessResultList v1userexchangeasknew(body, authorization, accept)
+> SuccessOrderDataResponse v1userexchangeasknew(body, authorization, accept)
 
 BTC Sell Order
 
@@ -81,7 +79,7 @@ RateVolData body = new RateVolData(); // RateVolData | Please send the form with
 String authorization = "authorization_example"; // String | Enter a valid Api Key.
 String accept = "accept_example"; // String | JSON, XML or CSV can be returned (Optional)
 try {
-    SuccessResultList result = apiInstance.v1userexchangeasknew(body, authorization, accept);
+    SuccessOrderDataResponse result = apiInstance.v1userexchangeasknew(body, authorization, accept);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExchangeTradeActionsApi#v1userexchangeasknew");
@@ -99,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -110,9 +108,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json, application/xml, application/csv
 
-<a name="v1userexchangebidcancel"></a>
-# **v1userexchangebidcancel**
-> SuccessResult v1userexchangebidcancel(body, authorization, accept)
+<a name="v1userexchangebidcancelOrderID"></a>
+# **v1userexchangebidcancelOrderID**
+> SuccessCancelDataResponse v1userexchangebidcancelOrderID(orderID, authorization)
 
 Cancel Open Buy Order
 
@@ -126,14 +124,13 @@ Cancels a BTC Buy Order. Orders can only be cancelled if they are in a pending s
 
 
 ExchangeTradeActionsApi apiInstance = new ExchangeTradeActionsApi();
-BidID body = new BidID(); // BidID | Please send the form with valid inputs.
+String orderID = "orderID_example"; // String | 
 String authorization = "authorization_example"; // String | Enter a valid Api Key.
-String accept = "accept_example"; // String | JSON, XML or CSV can be returned (Optional)
 try {
-    SuccessResult result = apiInstance.v1userexchangebidcancel(body, authorization, accept);
+    SuccessCancelDataResponse result = apiInstance.v1userexchangebidcancelOrderID(orderID, authorization);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling ExchangeTradeActionsApi#v1userexchangebidcancel");
+    System.err.println("Exception when calling ExchangeTradeActionsApi#v1userexchangebidcancelOrderID");
     e.printStackTrace();
 }
 ```
@@ -142,13 +139,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BidID**](BidID.md)| Please send the form with valid inputs. |
+ **orderID** | **String**|  |
  **authorization** | **String**| Enter a valid Api Key. | [optional]
- **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional]
 
 ### Return type
 
-[**SuccessResult**](SuccessResult.md)
+[**SuccessCancelDataResponse**](SuccessCancelDataResponse.md)
 
 ### Authorization
 
@@ -161,7 +157,7 @@ No authorization required
 
 <a name="v1userexchangebidnew"></a>
 # **v1userexchangebidnew**
-> SuccessResultList v1userexchangebidnew(body, authorization, accept)
+> SuccessOrderDataResponse v1userexchangebidnew(body, authorization, accept)
 
 BTC Buy Order
 
@@ -179,7 +175,7 @@ RateVolData body = new RateVolData(); // RateVolData | Please send the form with
 String authorization = "authorization_example"; // String | Enter a valid Api Key.
 String accept = "accept_example"; // String | JSON, XML or CSV can be returned (Optional)
 try {
-    SuccessResultList result = apiInstance.v1userexchangebidnew(body, authorization, accept);
+    SuccessOrderDataResponse result = apiInstance.v1userexchangebidnew(body, authorization, accept);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExchangeTradeActionsApi#v1userexchangebidnew");
@@ -197,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -210,7 +206,7 @@ No authorization required
 
 <a name="v1userexchangeinstantbuy"></a>
 # **v1userexchangeinstantbuy**
-> SuccessResultList v1userexchangeinstantbuy(body, authorization, accept)
+> SuccessOrderDataResponse v1userexchangeinstantbuy(body, authorization, accept)
 
 Instantly Buy BTC
 
@@ -228,7 +224,7 @@ MinFiat body = new MinFiat(); // MinFiat | Please send the form with valid input
 String authorization = "authorization_example"; // String | Enter a valid Api Key.
 String accept = "accept_example"; // String | JSON, XML or CSV can be returned (Optional)
 try {
-    SuccessResultList result = apiInstance.v1userexchangeinstantbuy(body, authorization, accept);
+    SuccessOrderDataResponse result = apiInstance.v1userexchangeinstantbuy(body, authorization, accept);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExchangeTradeActionsApi#v1userexchangeinstantbuy");
@@ -246,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -259,7 +255,7 @@ No authorization required
 
 <a name="v1userexchangeinstantsell"></a>
 # **v1userexchangeinstantsell**
-> SuccessResultList v1userexchangeinstantsell(body, authorization, accept)
+> SuccessOrderDataResponse v1userexchangeinstantsell(body, authorization, accept)
 
 Instantly Sell BTC
 
@@ -277,7 +273,7 @@ MaxVol body = new MaxVol(); // MaxVol | Please send the form with valid inputs.
 String authorization = "authorization_example"; // String | Enter a valid Api Key.
 String accept = "accept_example"; // String | JSON, XML or CSV can be returned (Optional)
 try {
-    SuccessResultList result = apiInstance.v1userexchangeinstantsell(body, authorization, accept);
+    SuccessOrderDataResponse result = apiInstance.v1userexchangeinstantsell(body, authorization, accept);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExchangeTradeActionsApi#v1userexchangeinstantsell");
@@ -295,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 

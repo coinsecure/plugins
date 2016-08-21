@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **message** | [**List&lt;KYCData&gt;**](KYCData.md) |  | 
 **method** | **String** |  | 
 **title** | **String** |  | 
-**time** | [**Date**](Date.md) |  | 
+**time** | [**DateTime**](DateTime.md) |  | 
 
 
 

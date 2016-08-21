@@ -29,7 +29,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "bankID" : "aeiou",
     "accountType" : "aeiou",
@@ -51,7 +51,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "bankID" : "aeiou",
     "accountType" : "aeiou",
@@ -107,7 +107,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789
   },
@@ -121,7 +121,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789
   },
@@ -169,7 +169,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789
   },
@@ -183,7 +183,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789
   },
@@ -231,7 +231,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789
   },
@@ -245,7 +245,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789
   },
@@ -297,7 +297,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "depositID" : "aeiou",
@@ -318,7 +318,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "depositID" : "aeiou",
@@ -387,7 +387,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "depositID" : "aeiou",
@@ -408,7 +408,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "depositID" : "aeiou",
@@ -477,7 +477,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "depositID" : "aeiou",
@@ -498,7 +498,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "depositID" : "aeiou",
@@ -567,7 +567,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "withdrawID" : "aeiou",
@@ -588,7 +588,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "withdrawID" : "aeiou",
@@ -657,7 +657,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "withdrawID" : "aeiou",
@@ -678,7 +678,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "withdrawID" : "aeiou",
@@ -747,7 +747,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "withdrawID" : "aeiou",
@@ -768,7 +768,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "withdrawID" : "aeiou",
@@ -837,7 +837,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "withdrawID" : "aeiou",
@@ -858,7 +858,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "withdrawID" : "aeiou",

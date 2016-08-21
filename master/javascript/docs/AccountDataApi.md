@@ -1,6 +1,6 @@
 # CoinsecureApiDocumentation.AccountDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,7 +29,7 @@ Gets a Summary of Exchange Bank Data and Balances.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountDataApi();
 
@@ -79,7 +79,7 @@ Returns the users coin fee percentage. The response is in percentage.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountDataApi();
 
@@ -128,7 +128,7 @@ Returns the users fiat fee percentage. The response is in percentage.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountDataApi();
 
@@ -178,7 +178,7 @@ Searches for a coinsecure.me Netki Wallet Name and responds with an Address mode
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountDataApi();
 
@@ -228,7 +228,7 @@ Gets Users KYC Status Details.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountDataApi();
 
@@ -278,7 +278,7 @@ Returns the Users Paid Coin Referrals.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountDataApi();
 
@@ -328,7 +328,7 @@ Gets Users Successful Referral Links that can be used during signup.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountDataApi();
 
@@ -378,7 +378,7 @@ Returns the Users Paid Fiat Referrals.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountDataApi();
 
@@ -428,7 +428,7 @@ Gets Users Referral Links that can be used during signup.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountDataApi();
 
@@ -478,7 +478,7 @@ Gets a Summary of Exchange Trade Data.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountDataApi();
 
@@ -528,7 +528,7 @@ Retrieves details of a Login Token
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountDataApi();
 
@@ -578,7 +578,7 @@ Gets a Summary of Exchange Bank Data and Balances.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountDataApi();
 
@@ -628,7 +628,7 @@ Gets a Summary of Exchange Bank Data and Balances.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountDataApi();
 

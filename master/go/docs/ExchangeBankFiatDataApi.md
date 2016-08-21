@@ -1,24 +1,24 @@
 # \ExchangeBankFiatDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1UserExchangeBankFiatAccounts**](ExchangeBankFiatDataApi.md#V1UserExchangeBankFiatAccounts) | **Get** /v1/user/exchange/bank/fiat/accounts | Exchange Bitcoin Deposit Addresses
-[**V1UserExchangeBankFiatBalanceAvailable**](ExchangeBankFiatDataApi.md#V1UserExchangeBankFiatBalanceAvailable) | **Get** /v1/user/exchange/bank/fiat/balance/total | Available Exchange Fiat Balance
-[**V1UserExchangeBankFiatBalancePending**](ExchangeBankFiatDataApi.md#V1UserExchangeBankFiatBalancePending) | **Get** /v1/user/exchange/bank/fiat/balance/pending | In Trade Coin Balance
-[**V1UserExchangeBankFiatBalanceTotal**](ExchangeBankFiatDataApi.md#V1UserExchangeBankFiatBalanceTotal) | **Get** /v1/user/exchange/bank/fiat/balance/available | Total Exchange Fiat Balance
-[**V1UserExchangeBankFiatDepositCancelled**](ExchangeBankFiatDataApi.md#V1UserExchangeBankFiatDepositCancelled) | **Get** /v1/user/exchange/bank/fiat/deposit/cancelled | Cancelled Exchange Fiat Deposits
-[**V1UserExchangeBankFiatDepositUnverified**](ExchangeBankFiatDataApi.md#V1UserExchangeBankFiatDepositUnverified) | **Get** /v1/user/exchange/bank/fiat/deposit/unverified | Unverified Exchange Fiat Deposits
-[**V1UserExchangeBankFiatDepositVerified**](ExchangeBankFiatDataApi.md#V1UserExchangeBankFiatDepositVerified) | **Get** /v1/user/exchange/bank/fiat/deposit/verified | Verified Exchange Fiat Deposits
-[**V1UserExchangeBankFiatWithdrawCancelled**](ExchangeBankFiatDataApi.md#V1UserExchangeBankFiatWithdrawCancelled) | **Get** /v1/user/exchange/bank/fiat/withdraw/cancelled | Cancelled Exchange Fiat Withdrawals
-[**V1UserExchangeBankFiatWithdrawCompleted**](ExchangeBankFiatDataApi.md#V1UserExchangeBankFiatWithdrawCompleted) | **Get** /v1/user/exchange/bank/fiat/withdraw/completed | Completed Exchange Fiat Withdrawals
-[**V1UserExchangeBankFiatWithdrawUnverified**](ExchangeBankFiatDataApi.md#V1UserExchangeBankFiatWithdrawUnverified) | **Get** /v1/user/exchange/bank/fiat/withdraw/unverified | Unverified Exchange Fiat Withdrawals
-[**V1UserExchangeBankFiatWithdrawVerified**](ExchangeBankFiatDataApi.md#V1UserExchangeBankFiatWithdrawVerified) | **Get** /v1/user/exchange/bank/fiat/withdraw/verified | Verified Exchange Fiat Withdrawals
+[**V1userexchangebankfiataccounts**](ExchangeBankFiatDataApi.md#V1userexchangebankfiataccounts) | **Get** /v1/user/exchange/bank/fiat/accounts | Exchange Bitcoin Deposit Addresses
+[**V1userexchangebankfiatbalanceavailable**](ExchangeBankFiatDataApi.md#V1userexchangebankfiatbalanceavailable) | **Get** /v1/user/exchange/bank/fiat/balance/total | Available Exchange Fiat Balance
+[**V1userexchangebankfiatbalancepending**](ExchangeBankFiatDataApi.md#V1userexchangebankfiatbalancepending) | **Get** /v1/user/exchange/bank/fiat/balance/pending | In Trade Coin Balance
+[**V1userexchangebankfiatbalancetotal**](ExchangeBankFiatDataApi.md#V1userexchangebankfiatbalancetotal) | **Get** /v1/user/exchange/bank/fiat/balance/available | Total Exchange Fiat Balance
+[**V1userexchangebankfiatdepositcancelled**](ExchangeBankFiatDataApi.md#V1userexchangebankfiatdepositcancelled) | **Get** /v1/user/exchange/bank/fiat/deposit/cancelled | Cancelled Exchange Fiat Deposits
+[**V1userexchangebankfiatdepositunverified**](ExchangeBankFiatDataApi.md#V1userexchangebankfiatdepositunverified) | **Get** /v1/user/exchange/bank/fiat/deposit/unverified | Unverified Exchange Fiat Deposits
+[**V1userexchangebankfiatdepositverified**](ExchangeBankFiatDataApi.md#V1userexchangebankfiatdepositverified) | **Get** /v1/user/exchange/bank/fiat/deposit/verified | Verified Exchange Fiat Deposits
+[**V1userexchangebankfiatwithdrawcancelled**](ExchangeBankFiatDataApi.md#V1userexchangebankfiatwithdrawcancelled) | **Get** /v1/user/exchange/bank/fiat/withdraw/cancelled | Cancelled Exchange Fiat Withdrawals
+[**V1userexchangebankfiatwithdrawcompleted**](ExchangeBankFiatDataApi.md#V1userexchangebankfiatwithdrawcompleted) | **Get** /v1/user/exchange/bank/fiat/withdraw/completed | Completed Exchange Fiat Withdrawals
+[**V1userexchangebankfiatwithdrawunverified**](ExchangeBankFiatDataApi.md#V1userexchangebankfiatwithdrawunverified) | **Get** /v1/user/exchange/bank/fiat/withdraw/unverified | Unverified Exchange Fiat Withdrawals
+[**V1userexchangebankfiatwithdrawverified**](ExchangeBankFiatDataApi.md#V1userexchangebankfiatwithdrawverified) | **Get** /v1/user/exchange/bank/fiat/withdraw/verified | Verified Exchange Fiat Withdrawals
 
 
-# **V1UserExchangeBankFiatAccounts**
-> FiatBankDataResponse V1UserExchangeBankFiatAccounts($authorization, $accept)
+# **V1userexchangebankfiataccounts**
+> FiatBankDataResponse V1userexchangebankfiataccounts($authorization, $accept)
 
 Exchange Bitcoin Deposit Addresses
 
@@ -47,8 +47,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankFiatBalanceAvailable**
-> RateDataResponse V1UserExchangeBankFiatBalanceAvailable($authorization, $accept)
+# **V1userexchangebankfiatbalanceavailable**
+> RateDataResponse V1userexchangebankfiatbalanceavailable($authorization, $accept)
 
 Available Exchange Fiat Balance
 
@@ -77,8 +77,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankFiatBalancePending**
-> RateDataResponse V1UserExchangeBankFiatBalancePending($authorization, $accept)
+# **V1userexchangebankfiatbalancepending**
+> RateDataResponse V1userexchangebankfiatbalancepending($authorization, $accept)
 
 In Trade Coin Balance
 
@@ -107,8 +107,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankFiatBalanceTotal**
-> RateDataResponse V1UserExchangeBankFiatBalanceTotal($authorization, $accept)
+# **V1userexchangebankfiatbalancetotal**
+> RateDataResponse V1userexchangebankfiatbalancetotal($authorization, $accept)
 
 Total Exchange Fiat Balance
 
@@ -137,8 +137,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankFiatDepositCancelled**
-> FiatDepDataResponse V1UserExchangeBankFiatDepositCancelled($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankfiatdepositcancelled**
+> FiatDepDataResponse V1userexchangebankfiatdepositcancelled($authorization, $from, $to, $max, $offset, $accept)
 
 Cancelled Exchange Fiat Deposits
 
@@ -171,8 +171,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankFiatDepositUnverified**
-> FiatDepDataResponse V1UserExchangeBankFiatDepositUnverified($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankfiatdepositunverified**
+> FiatDepDataResponse V1userexchangebankfiatdepositunverified($authorization, $from, $to, $max, $offset, $accept)
 
 Unverified Exchange Fiat Deposits
 
@@ -205,8 +205,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankFiatDepositVerified**
-> FiatDepDataResponse V1UserExchangeBankFiatDepositVerified($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankfiatdepositverified**
+> FiatDepDataResponse V1userexchangebankfiatdepositverified($authorization, $from, $to, $max, $offset, $accept)
 
 Verified Exchange Fiat Deposits
 
@@ -239,8 +239,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankFiatWithdrawCancelled**
-> FiatWithDataResponse V1UserExchangeBankFiatWithdrawCancelled($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankfiatwithdrawcancelled**
+> FiatWithDataResponse V1userexchangebankfiatwithdrawcancelled($authorization, $from, $to, $max, $offset, $accept)
 
 Cancelled Exchange Fiat Withdrawals
 
@@ -273,8 +273,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankFiatWithdrawCompleted**
-> FiatWithDataResponse V1UserExchangeBankFiatWithdrawCompleted($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankfiatwithdrawcompleted**
+> FiatWithDataResponse V1userexchangebankfiatwithdrawcompleted($authorization, $from, $to, $max, $offset, $accept)
 
 Completed Exchange Fiat Withdrawals
 
@@ -307,8 +307,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankFiatWithdrawUnverified**
-> FiatWithDataResponse V1UserExchangeBankFiatWithdrawUnverified($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankfiatwithdrawunverified**
+> FiatWithDataResponse V1userexchangebankfiatwithdrawunverified($authorization, $from, $to, $max, $offset, $accept)
 
 Unverified Exchange Fiat Withdrawals
 
@@ -341,8 +341,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankFiatWithdrawVerified**
-> FiatWithDataResponse V1UserExchangeBankFiatWithdrawVerified($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankfiatwithdrawverified**
+> FiatWithDataResponse V1userexchangebankfiatwithdrawverified($authorization, $from, $to, $max, $offset, $accept)
 
 Verified Exchange Fiat Withdrawals
 

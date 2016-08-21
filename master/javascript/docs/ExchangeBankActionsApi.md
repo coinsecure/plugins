@@ -1,19 +1,19 @@
 # CoinsecureApiDocumentation.ExchangeBankActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v1userexchangebankcoinwithdrawinitiate**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawinitiate) | **POST** /v1/user/exchange/bank/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 [**v1userexchangebankcoinwithdrawnewVerifycode**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawnewVerifycode) | **POST** /v1/user/exchange/bank/coin/withdraw/newVerifycode | Gets a Verification Code.
-[**v1userexchangebankcoinwithdrawunverifiedcancel**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+[**v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 [**v1userexchangebankcoinwithdrawverify**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawverify) | **PUT** /v1/user/exchange/bank/coin/withdraw/verify | Verify Bitcoin Withdrawal
 [**v1userexchangebankfiataccountnew**](ExchangeBankActionsApi.md#v1userexchangebankfiataccountnew) | **PUT** /v1/user/exchange/bank/fiat/account/new | New Bank Link
-[**v1userexchangebankfiatdepositcancel**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancel) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel | Cancel Unverified Exchange Fiat Deposit
+[**v1userexchangebankfiatdepositcancelDepositID**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancelDepositID) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel/{depositID} | Cancel Unverified Exchange Fiat Deposit
 [**v1userexchangebankfiatdepositnew**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositnew) | **PUT** /v1/user/exchange/bank/fiat/deposit/new | New Exchange Fiat Deposit
 [**v1userexchangebankfiatwithdrawinitiate**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawinitiate) | **POST** /v1/user/exchange/bank/fiat/withdraw/initiate | Initiate Fiat Withdrawal
 [**v1userexchangebankfiatwithdrawnewVerifycode**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawnewVerifycode) | **POST** /v1/user/exchange/bank/fiat/withdraw/newVerifycode | Gets a Fiat Verification Code.
-[**v1userexchangebankfiatwithdrawunverifiedcancel**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel | Cancel Fiat Withdrawal
+[**v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID} | Cancel Fiat Withdrawal
 [**v1userexchangebankfiatwithdrawverify**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawverify) | **PUT** /v1/user/exchange/bank/fiat/withdraw/verify | Verify Fiat Withdrawal
 
 
@@ -27,7 +27,7 @@ The code for verifying the withdrawal can be called from /v1/exchange/bank/coin/
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankActionsApi();
 
@@ -79,7 +79,7 @@ Gets Coin Unverified Withdraws Codes to call and apply on /v1/user/exchange/bank
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankActionsApi();
 
@@ -121,9 +121,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json, application/xml, application/csv
 
-<a name="v1userexchangebankcoinwithdrawunverifiedcancel"></a>
-# **v1userexchangebankcoinwithdrawunverifiedcancel**
-> SuccessResult v1userexchangebankcoinwithdrawunverifiedcancel(body, opts)
+<a name="v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID"></a>
+# **v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID**
+> SuccessResult v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID(withdrawID, opts)
 
 Cancel Bitcoin Withdrawal
 
@@ -131,11 +131,11 @@ Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/excha
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankActionsApi();
 
-var body = new CoinsecureApiDocumentation.WithdrawID(); // WithdrawID | You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified.
+var withdrawID = "withdrawID_example"; // String | 
 
 var opts = { 
   'authorization': "authorization_example", // String | Enter a valid Api Key.
@@ -149,14 +149,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.v1userexchangebankcoinwithdrawunverifiedcancel(body, opts, callback);
+apiInstance.v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID(withdrawID, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WithdrawID**](WithdrawID.md)| You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified. | 
+ **withdrawID** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | [optional] 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -183,7 +183,7 @@ Verifies an unverified withdrawal. You can get the code from /v1/user/exchange/b
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankActionsApi();
 
@@ -235,7 +235,7 @@ Submits a New Bank Link on KYC Verified Accounts.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankActionsApi();
 
@@ -277,9 +277,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json, application/xml, application/csv
 
-<a name="v1userexchangebankfiatdepositcancel"></a>
-# **v1userexchangebankfiatdepositcancel**
-> SuccessResult v1userexchangebankfiatdepositcancel(body, opts)
+<a name="v1userexchangebankfiatdepositcancelDepositID"></a>
+# **v1userexchangebankfiatdepositcancelDepositID**
+> SuccessResult v1userexchangebankfiatdepositcancelDepositID(depositID, opts)
 
 Cancel Unverified Exchange Fiat Deposit
 
@@ -287,11 +287,11 @@ Cancels an unverified Exchange Fiat Deposit.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankActionsApi();
 
-var body = new CoinsecureApiDocumentation.DepositID(); // DepositID | Please send the form with valid inputs.
+var depositID = "depositID_example"; // String | 
 
 var opts = { 
   'authorization': "authorization_example", // String | Enter a valid Api Key.
@@ -305,14 +305,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.v1userexchangebankfiatdepositcancel(body, opts, callback);
+apiInstance.v1userexchangebankfiatdepositcancelDepositID(depositID, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DepositID**](DepositID.md)| Please send the form with valid inputs. | 
+ **depositID** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | [optional] 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -339,7 +339,7 @@ Submits an unverified fiat deposit. No action will occur unless user cancels or 
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankActionsApi();
 
@@ -391,7 +391,7 @@ The code for verifying the withdrawal can be called from /v1/user/exchange/bank/
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankActionsApi();
 
@@ -443,7 +443,7 @@ Gets Fiat Unverified Withdraws Codes to call and apply on /v1/user/exchange/bank
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankActionsApi();
 
@@ -485,9 +485,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json, application/xml, application/csv
 
-<a name="v1userexchangebankfiatwithdrawunverifiedcancel"></a>
-# **v1userexchangebankfiatwithdrawunverifiedcancel**
-> SuccessResult v1userexchangebankfiatwithdrawunverifiedcancel(body, opts)
+<a name="v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID"></a>
+# **v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID**
+> SuccessResult v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID(withdrawID, opts)
 
 Cancel Fiat Withdrawal
 
@@ -495,11 +495,11 @@ Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/excha
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankActionsApi();
 
-var body = new CoinsecureApiDocumentation.WithdrawID(); // WithdrawID | You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified.
+var withdrawID = "withdrawID_example"; // String | 
 
 var opts = { 
   'authorization': "authorization_example", // String | Enter a valid Api Key.
@@ -513,14 +513,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.v1userexchangebankfiatwithdrawunverifiedcancel(body, opts, callback);
+apiInstance.v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID(withdrawID, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WithdrawID**](WithdrawID.md)| You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified. | 
+ **withdrawID** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | [optional] 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -547,7 +547,7 @@ Verifies an unverified withdrawal. You can get the code from /v1/user/exchange/b
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankActionsApi();
 

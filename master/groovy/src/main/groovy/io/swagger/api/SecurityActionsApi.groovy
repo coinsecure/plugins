@@ -8,8 +8,8 @@ import io.swagger.api.ApiUtils
 import io.swagger.model.SuccessResult
 import io.swagger.model.FailResult
 import io.swagger.model.MethodCountryMobile
-import io.swagger.model.Code
 import io.swagger.model.CodeCountryMobile
+import io.swagger.model.Code
 import io.swagger.model.ChangePassword
 import io.swagger.model.ResetPassword
 
@@ -17,7 +17,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class SecurityActionsApi {
-    String basePath = "https://api.coinsecure.in/"
+    String basePath = "https://api.coinsecure.in"
     String versionPath = "/api/v1"
 
     def v1mfaauthyinitiate ( MethodCountryMobile body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
@@ -42,7 +42,7 @@ class SecurityActionsApi {
                     SuccessResult.class )
                     
     }
-    def v1mfagainitiate ( MethodCountryMobile body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
+    def v1mfagainitiate ( String authorization, String accept, Closure onSuccess, Closure onFailure)  {
         // create path and map variables
         String resourcePath = "/v1/mfa/ga/initiate"
 
@@ -50,10 +50,6 @@ class SecurityActionsApi {
         def queryParams = [:]
         def headerParams = [:]
     
-        // verify required params are set
-        if (body == null) {
-            throw new RuntimeException("missing required params body")
-        }
 
         
         headerParams.put("authorization", authorization)
@@ -82,17 +78,17 @@ class SecurityActionsApi {
                     SuccessResult.class )
                     
     }
-    def v1usermfaauthydisable ( Code body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
+    def v1usermfaauthydisableCode ( String code, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
         // create path and map variables
-        String resourcePath = "/v1/user/mfa/authy/disable"
+        String resourcePath = "/v1/user/mfa/authy/disable/{code}"
 
         // query params
         def queryParams = [:]
         def headerParams = [:]
     
         // verify required params are set
-        if (body == null) {
-            throw new RuntimeException("missing required params body")
+        if (code == null) {
+            throw new RuntimeException("missing required params code")
         }
 
         
@@ -144,17 +140,17 @@ class SecurityActionsApi {
                     SuccessResult.class )
                     
     }
-    def v1usermfagadisable ( Code body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
+    def v1usermfagadisableCode ( String code, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
         // create path and map variables
-        String resourcePath = "/v1/user/mfa/ga/disable"
+        String resourcePath = "/v1/user/mfa/ga/disable/{code}"
 
         // query params
         def queryParams = [:]
         def headerParams = [:]
     
         // verify required params are set
-        if (body == null) {
-            throw new RuntimeException("missing required params body")
+        if (code == null) {
+            throw new RuntimeException("missing required params code")
         }
 
         
@@ -166,7 +162,7 @@ class SecurityActionsApi {
                     SuccessResult.class )
                     
     }
-    def v1usermfagainitiateenable ( CodeCountryMobile body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
+    def v1usermfagainitiateenable ( Code body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
         // create path and map variables
         String resourcePath = "/v1/user/mfa/ga/initiate/enable"
 
@@ -206,7 +202,7 @@ class SecurityActionsApi {
         headerParams.put("accept", accept)
 
         invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams,
-                    "PATCH", "",
+                    "POST", "",
                     SuccessResult.class )
                     
     }
@@ -227,7 +223,7 @@ class SecurityActionsApi {
         headerParams.put("accept", accept)
 
         invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams,
-                    "PATCH", "",
+                    "POST", "",
                     SuccessResult.class )
                     
     }

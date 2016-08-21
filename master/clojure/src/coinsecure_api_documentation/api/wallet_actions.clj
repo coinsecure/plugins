@@ -90,27 +90,26 @@
   ([body optional-params]
    (:data (v1userwalletcoinwithdrawsend-to-exchange-with-http-info body optional-params))))
 
-(defn v1userwalletcoinwithdrawunverifiedcancel-with-http-info
+(defn v1userwalletcoinwithdrawunverifiedcancel-withdraw-id-with-http-info
   "Cancel Bitcoin Withdrawal
   Cancels an unverified withdrawal. You can get the code from /wallet/unverifiedWithdraws."
-  ([authorization body ] (v1userwalletcoinwithdrawunverifiedcancel-with-http-info authorization body nil))
-  ([authorization body {:keys [accept ]}]
-   (call-api "/v1/user/wallet/coin/withdraw/unverified/cancel" :delete
-             {:path-params   {}
+  ([withdraw-id authorization ] (v1userwalletcoinwithdrawunverifiedcancel-withdraw-id-with-http-info withdraw-id authorization nil))
+  ([withdraw-id authorization {:keys [accept ]}]
+   (call-api "/v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID}" :delete
+             {:path-params   {"withdrawID" withdraw-id }
               :header-params {"Authorization" authorization "accept" accept }
               :query-params  {}
               :form-params   {}
-              :body-param    body
               :content-types ["application/json"]
               :accepts       ["application/json" "application/xml" "application/csv"]
               :auth-names    []})))
 
-(defn v1userwalletcoinwithdrawunverifiedcancel
+(defn v1userwalletcoinwithdrawunverifiedcancel-withdraw-id
   "Cancel Bitcoin Withdrawal
   Cancels an unverified withdrawal. You can get the code from /wallet/unverifiedWithdraws."
-  ([authorization body ] (v1userwalletcoinwithdrawunverifiedcancel authorization body nil))
-  ([authorization body optional-params]
-   (:data (v1userwalletcoinwithdrawunverifiedcancel-with-http-info authorization body optional-params))))
+  ([withdraw-id authorization ] (v1userwalletcoinwithdrawunverifiedcancel-withdraw-id withdraw-id authorization nil))
+  ([withdraw-id authorization optional-params]
+   (:data (v1userwalletcoinwithdrawunverifiedcancel-withdraw-id-with-http-info withdraw-id authorization optional-params))))
 
 (defn v1userwalletcoinwithdrawverify-with-http-info
   "Verify Bitcoin Withdrawal

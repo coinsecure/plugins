@@ -30,7 +30,7 @@ public class WalletActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "address" : "aeiou",
@@ -49,7 +49,7 @@ public class WalletActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "address" : "aeiou",
@@ -102,7 +102,7 @@ public class WalletActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "address" : "aeiou",
@@ -121,7 +121,7 @@ public class WalletActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "address" : "aeiou",
@@ -174,7 +174,7 @@ public class WalletActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -186,7 +186,7 @@ public class WalletActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -232,7 +232,7 @@ public class WalletActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -244,7 +244,7 @@ public class WalletActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -273,11 +273,11 @@ public class WalletActionsAPI: APIBase {
     /**
      Cancel Bitcoin Withdrawal
      
-     - parameter body: (body)  
+     - parameter withdrawID: (path)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1userwalletcoinwithdrawunverifiedcancel(body body: WithdrawID, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
-        v1userwalletcoinwithdrawunverifiedcancelWithRequestBuilder(body: body).execute { (response, error) -> Void in
+    public class func v1userwalletcoinwithdrawunverifiedcancelWithdrawID(withdrawID withdrawID: String, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
+        v1userwalletcoinwithdrawunverifiedcancelWithdrawIDWithRequestBuilder(withdrawID: withdrawID).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -285,12 +285,12 @@ public class WalletActionsAPI: APIBase {
 
     /**
      Cancel Bitcoin Withdrawal
-     - DELETE /v1/user/wallet/coin/withdraw/unverified/cancel
+     - DELETE /v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID}
      - Cancels an unverified withdrawal. You can get the code from /wallet/unverifiedWithdraws.
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -302,7 +302,7 @@ public class WalletActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -312,14 +312,18 @@ public class WalletActionsAPI: APIBase {
   <time>2000-01-23T04:56:07.000Z</time>
 </null>}]
      
-     - parameter body: (body)  
+     - parameter withdrawID: (path)  
 
      - returns: RequestBuilder<SuccessResult> 
      */
-    public class func v1userwalletcoinwithdrawunverifiedcancelWithRequestBuilder(body body: WithdrawID) -> RequestBuilder<SuccessResult> {
-        let path = "/v1/user/wallet/coin/withdraw/unverified/cancel"
+    public class func v1userwalletcoinwithdrawunverifiedcancelWithdrawIDWithRequestBuilder(withdrawID withdrawID: String) -> RequestBuilder<SuccessResult> {
+        var path = "/v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID}"
+        path = path.stringByReplacingOccurrencesOfString("{withdrawID}", withString: "\(withdrawID)", options: .LiteralSearch, range: nil)
         let URLString = SwaggerClientAPI.basePath + path
-        let parameters = body.encodeToJSON() as? [String:AnyObject]
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
@@ -348,7 +352,7 @@ public class WalletActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -360,7 +364,7 @@ public class WalletActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -406,7 +410,7 @@ public class WalletActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -418,7 +422,7 @@ public class WalletActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>

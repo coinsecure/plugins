@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **message** | [**List&lt;CoinDepData&gt;**](CoinDepData.md) |  | 
 **method** | **String** |  | 
 **title** | **String** |  | 
-**time** | [**Date**](Date.md) |  | 
+**time** | [**DateTime**](DateTime.md) |  | 
 
 
 

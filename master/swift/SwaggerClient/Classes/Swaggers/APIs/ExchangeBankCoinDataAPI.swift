@@ -29,7 +29,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "address" : "aeiou",
     "netki" : "aeiou",
@@ -46,7 +46,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "address" : "aeiou",
     "netki" : "aeiou",
@@ -97,7 +97,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "vol" : 123456789
   },
@@ -111,7 +111,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "vol" : 123456789
   },
@@ -159,7 +159,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "vol" : 123456789
   },
@@ -173,7 +173,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "vol" : 123456789
   },
@@ -221,7 +221,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "vol" : 123456789
   },
@@ -235,7 +235,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "vol" : 123456789
   },
@@ -287,7 +287,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "depositID" : "aeiou",
@@ -309,7 +309,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "depositID" : "aeiou",
@@ -379,7 +379,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "depositID" : "aeiou",
@@ -401,7 +401,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "depositID" : "aeiou",
@@ -471,7 +471,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "depositID" : "aeiou",
@@ -493,7 +493,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "reason" : "aeiou",
     "depositID" : "aeiou",
@@ -563,7 +563,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "fees" : 123456789,
     "address" : "aeiou",
@@ -586,7 +586,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "fees" : 123456789,
     "address" : "aeiou",
@@ -657,7 +657,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "fees" : 123456789,
     "address" : "aeiou",
@@ -680,7 +680,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "fees" : 123456789,
     "address" : "aeiou",
@@ -751,7 +751,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "fees" : 123456789,
     "address" : "aeiou",
@@ -774,7 +774,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "fees" : 123456789,
     "address" : "aeiou",
@@ -845,7 +845,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "fees" : 123456789,
     "address" : "aeiou",
@@ -868,7 +868,7 @@ public class ExchangeBankCoinDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "fees" : 123456789,
     "address" : "aeiou",

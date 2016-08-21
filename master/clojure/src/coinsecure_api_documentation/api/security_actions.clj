@@ -27,14 +27,13 @@
 (defn v1mfagainitiate-with-http-info
   "Initiate GA Registration.
   Returns the Google Authenticator Secret and a QR code URL."
-  ([body ] (v1mfagainitiate-with-http-info body nil))
-  ([body {:keys [authorization accept ]}]
+  ([] (v1mfagainitiate-with-http-info nil))
+  ([{:keys [authorization accept ]}]
    (call-api "/v1/mfa/ga/initiate" :post
              {:path-params   {}
               :header-params {"Authorization" authorization "accept" accept }
               :query-params  {}
               :form-params   {}
-              :body-param    body
               :content-types ["application/json"]
               :accepts       ["application/json" "application/xml" "application/csv"]
               :auth-names    []})))
@@ -42,9 +41,9 @@
 (defn v1mfagainitiate
   "Initiate GA Registration.
   Returns the Google Authenticator Secret and a QR code URL."
-  ([body ] (v1mfagainitiate body nil))
-  ([body optional-params]
-   (:data (v1mfagainitiate-with-http-info body optional-params))))
+  ([] (v1mfagainitiate nil))
+  ([optional-params]
+   (:data (v1mfagainitiate-with-http-info optional-params))))
 
 (defn v1usermfaauthycall-with-http-info
   "Authy Call Code
@@ -67,27 +66,26 @@
   ([optional-params]
    (:data (v1usermfaauthycall-with-http-info optional-params))))
 
-(defn v1usermfaauthydisable-with-http-info
+(defn v1usermfaauthydisable-code-with-http-info
   "Disable Authy
   Disables users Authy"
-  ([body ] (v1usermfaauthydisable-with-http-info body nil))
-  ([body {:keys [authorization accept ]}]
-   (call-api "/v1/user/mfa/authy/disable" :delete
-             {:path-params   {}
+  ([code ] (v1usermfaauthydisable-code-with-http-info code nil))
+  ([code {:keys [authorization accept ]}]
+   (call-api "/v1/user/mfa/authy/disable/{code}" :delete
+             {:path-params   {"code" code }
               :header-params {"Authorization" authorization "accept" accept }
               :query-params  {}
               :form-params   {}
-              :body-param    body
               :content-types ["application/json"]
               :accepts       ["application/json" "application/xml" "application/csv"]
               :auth-names    []})))
 
-(defn v1usermfaauthydisable
+(defn v1usermfaauthydisable-code
   "Disable Authy
   Disables users Authy"
-  ([body ] (v1usermfaauthydisable body nil))
-  ([body optional-params]
-   (:data (v1usermfaauthydisable-with-http-info body optional-params))))
+  ([code ] (v1usermfaauthydisable-code code nil))
+  ([code optional-params]
+   (:data (v1usermfaauthydisable-code-with-http-info code optional-params))))
 
 (defn v1usermfaauthyinitiateenable-with-http-info
   "Verify Authy Registration
@@ -132,27 +130,26 @@
   ([optional-params]
    (:data (v1usermfaauthysms-with-http-info optional-params))))
 
-(defn v1usermfagadisable-with-http-info
+(defn v1usermfagadisable-code-with-http-info
   "Disable Google Authenticator
   Disables users Google Authenticator 2FA"
-  ([body ] (v1usermfagadisable-with-http-info body nil))
-  ([body {:keys [authorization accept ]}]
-   (call-api "/v1/user/mfa/ga/disable" :delete
-             {:path-params   {}
+  ([code ] (v1usermfagadisable-code-with-http-info code nil))
+  ([code {:keys [authorization accept ]}]
+   (call-api "/v1/user/mfa/ga/disable/{code}" :delete
+             {:path-params   {"code" code }
               :header-params {"Authorization" authorization "accept" accept }
               :query-params  {}
               :form-params   {}
-              :body-param    body
               :content-types ["application/json"]
               :accepts       ["application/json" "application/xml" "application/csv"]
               :auth-names    []})))
 
-(defn v1usermfagadisable
+(defn v1usermfagadisable-code
   "Disable Google Authenticator
   Disables users Google Authenticator 2FA"
-  ([body ] (v1usermfagadisable body nil))
-  ([body optional-params]
-   (:data (v1usermfagadisable-with-http-info body optional-params))))
+  ([code ] (v1usermfagadisable-code code nil))
+  ([code optional-params]
+   (:data (v1usermfagadisable-code-with-http-info code optional-params))))
 
 (defn v1usermfagainitiateenable-with-http-info
   "Enable Google Authenticator
@@ -181,7 +178,7 @@
   Changes an account Password."
   ([body ] (v1userpasswordchange-with-http-info body nil))
   ([body {:keys [authorization accept ]}]
-   (call-api "/v1/user/password/change" :patch
+   (call-api "/v1/user/password/change" :post
              {:path-params   {}
               :header-params {"Authorization" authorization "accept" accept }
               :query-params  {}
@@ -203,7 +200,7 @@
   Resets an account Password. Use forgotPassword to generate a token."
   ([body ] (v1userpasswordreset-with-http-info body nil))
   ([body {:keys [accept ]}]
-   (call-api "/v1/user/password/reset" :patch
+   (call-api "/v1/user/password/reset" :post
              {:path-params   {}
               :header-params {"accept" accept }
               :query-params  {}

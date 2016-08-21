@@ -10,7 +10,7 @@
 
 @implementation SWGConfiguration
 
-#pragma mark - Singletion Methods
+#pragma mark - Singleton Methods
 
 + (instancetype) sharedConfig {
     static SWGConfiguration *shardConfig = nil;
@@ -27,7 +27,7 @@
     self = [super init];
     if (self) {
         self.apiClient = nil;
-        self.host = @"https://api.coinsecure.in/";
+        self.host = @"https://api.coinsecure.in";
         self.username = @"";
         self.password = @"";
         self.accessToken= @"";
@@ -35,6 +35,7 @@
         self.mutableApiKey = [NSMutableDictionary dictionary];
         self.mutableApiKeyPrefix = [NSMutableDictionary dictionary];
         self.mutableDefaultHeaders = [NSMutableDictionary dictionary];
+        self.mutableDefaultHeaders[@"User-Agent"] = [NSString stringWithFormat:@"Swagger-Codegen/beta/objc (%@; iOS %@; Scale/%0.2f)",[[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], [[UIScreen mainScreen] scale]];
         self.logger = [SWGLogger sharedLogger];
     }
     return self;

@@ -1,6 +1,6 @@
 # IO.Swagger.Api.BlockchainToolsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**V1bitcoinsearchTxid**](BlockchainToolsApi.md#v1bitcoinsearchtxid) | **GET** /v1/bitcoin/search/confirmation/{txid} | Get Confirmations
 
 
+<a name="v1bitcoinsearchaddress"></a>
 # **V1bitcoinsearchAddress**
 > ValidAddressSearchDataResponse V1bitcoinsearchAddress (string any, string accept = null)
 
@@ -71,6 +72,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1bitcoinsearchtxid"></a>
 # **V1bitcoinsearchTxid**
 > ConfirmDataResponse V1bitcoinsearchTxid (string txid, string accept = null)
 

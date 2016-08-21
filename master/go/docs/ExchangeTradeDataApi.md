@@ -1,27 +1,27 @@
 # \ExchangeTradeDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1ExchangeAskLow**](ExchangeTradeDataApi.md#V1ExchangeAskLow) | **Get** /v1/exchange/ask/low | Lowest Ask
-[**V1ExchangeAskOrders**](ExchangeTradeDataApi.md#V1ExchangeAskOrders) | **Get** /v1/exchange/ask/orders | All Sell Orders
-[**V1ExchangeBidHigh**](ExchangeTradeDataApi.md#V1ExchangeBidHigh) | **Get** /v1/exchange/bid/high | Returns the Highest Bid in the Order Book
-[**V1ExchangeBidOrders**](ExchangeTradeDataApi.md#V1ExchangeBidOrders) | **Get** /v1/exchange/bid/orders | All Buy Orders
-[**V1ExchangeLastTrade**](ExchangeTradeDataApi.md#V1ExchangeLastTrade) | **Get** /v1/exchange/lastTrade | Last Trade
-[**V1ExchangeMax24Hr**](ExchangeTradeDataApi.md#V1ExchangeMax24Hr) | **Get** /v1/exchange/max24Hr | Max 24 Hour Rate
-[**V1ExchangeMin24Hr**](ExchangeTradeDataApi.md#V1ExchangeMin24Hr) | **Get** /v1/exchange/min24Hr | Min 24 Hour Rate
-[**V1ExchangeTicker**](ExchangeTradeDataApi.md#V1ExchangeTicker) | **Get** /v1/exchange/ticker | Exchange Ticker
-[**V1UserExchangeAskCancelled**](ExchangeTradeDataApi.md#V1UserExchangeAskCancelled) | **Get** /v1/user/exchange/ask/cancelled | Cancelled User Sell Orders
-[**V1UserExchangeAskCompleted**](ExchangeTradeDataApi.md#V1UserExchangeAskCompleted) | **Get** /v1/user/exchange/ask/completed | Completed User Sell Orders
-[**V1UserExchangeAskPending**](ExchangeTradeDataApi.md#V1UserExchangeAskPending) | **Get** /v1/user/exchange/ask/pending | Pending User Sell Orders
-[**V1UserExchangeBidCancelled**](ExchangeTradeDataApi.md#V1UserExchangeBidCancelled) | **Get** /v1/user/exchange/bid/cancelled | Cancelled User Buy Orders
-[**V1UserExchangeBidCompleted**](ExchangeTradeDataApi.md#V1UserExchangeBidCompleted) | **Get** /v1/user/exchange/bid/completed | Completed User Buy Orders
-[**V1UserExchangeBidPending**](ExchangeTradeDataApi.md#V1UserExchangeBidPending) | **Get** /v1/user/exchange/bid/pending | Pending User Buy Orders
+[**V1exchangeasklow**](ExchangeTradeDataApi.md#V1exchangeasklow) | **Get** /v1/exchange/ask/low | Lowest Ask
+[**V1exchangeaskorders**](ExchangeTradeDataApi.md#V1exchangeaskorders) | **Get** /v1/exchange/ask/orders | All Sell Orders
+[**V1exchangebidhigh**](ExchangeTradeDataApi.md#V1exchangebidhigh) | **Get** /v1/exchange/bid/high | Returns the Highest Bid in the Order Book
+[**V1exchangebidorders**](ExchangeTradeDataApi.md#V1exchangebidorders) | **Get** /v1/exchange/bid/orders | All Buy Orders
+[**V1exchangelastTrade**](ExchangeTradeDataApi.md#V1exchangelastTrade) | **Get** /v1/exchange/lastTrade | Last Trade
+[**V1exchangemax24Hr**](ExchangeTradeDataApi.md#V1exchangemax24Hr) | **Get** /v1/exchange/max24Hr | Max 24 Hour Rate
+[**V1exchangemin24Hr**](ExchangeTradeDataApi.md#V1exchangemin24Hr) | **Get** /v1/exchange/min24Hr | Min 24 Hour Rate
+[**V1exchangeticker**](ExchangeTradeDataApi.md#V1exchangeticker) | **Get** /v1/exchange/ticker | Exchange Ticker
+[**V1userexchangeaskcancelled**](ExchangeTradeDataApi.md#V1userexchangeaskcancelled) | **Get** /v1/user/exchange/ask/cancelled | Cancelled User Sell Orders
+[**V1userexchangeaskcompleted**](ExchangeTradeDataApi.md#V1userexchangeaskcompleted) | **Get** /v1/user/exchange/ask/completed | Completed User Sell Orders
+[**V1userexchangeaskpending**](ExchangeTradeDataApi.md#V1userexchangeaskpending) | **Get** /v1/user/exchange/ask/pending | Pending User Sell Orders
+[**V1userexchangebidcancelled**](ExchangeTradeDataApi.md#V1userexchangebidcancelled) | **Get** /v1/user/exchange/bid/cancelled | Cancelled User Buy Orders
+[**V1userexchangebidcompleted**](ExchangeTradeDataApi.md#V1userexchangebidcompleted) | **Get** /v1/user/exchange/bid/completed | Completed User Buy Orders
+[**V1userexchangebidpending**](ExchangeTradeDataApi.md#V1userexchangebidpending) | **Get** /v1/user/exchange/bid/pending | Pending User Buy Orders
 
 
-# **V1ExchangeAskLow**
-> RateDataResponse V1ExchangeAskLow($accept)
+# **V1exchangeasklow**
+> RateDataResponse V1exchangeasklow($accept)
 
 Lowest Ask
 
@@ -49,8 +49,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1ExchangeAskOrders**
-> RateVolDataResponse V1ExchangeAskOrders($accept)
+# **V1exchangeaskorders**
+> RateVolDataResponse V1exchangeaskorders($accept)
 
 All Sell Orders
 
@@ -78,8 +78,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1ExchangeBidHigh**
-> RateDataResponse V1ExchangeBidHigh($accept)
+# **V1exchangebidhigh**
+> RateDataResponse V1exchangebidhigh($accept)
 
 Returns the Highest Bid in the Order Book
 
@@ -107,8 +107,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1ExchangeBidOrders**
-> RateVolDataResponse V1ExchangeBidOrders($accept)
+# **V1exchangebidorders**
+> RateVolDataResponse V1exchangebidorders($accept)
 
 All Buy Orders
 
@@ -136,8 +136,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1ExchangeLastTrade**
-> LastTradeDataResponse V1ExchangeLastTrade($accept)
+# **V1exchangelastTrade**
+> LastTradeDataResponse V1exchangelastTrade($accept)
 
 Last Trade
 
@@ -165,8 +165,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1ExchangeMax24Hr**
-> RateDiffDataResponse V1ExchangeMax24Hr($accept)
+# **V1exchangemax24Hr**
+> RateDiffDataResponse V1exchangemax24Hr($accept)
 
 Max 24 Hour Rate
 
@@ -194,8 +194,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1ExchangeMin24Hr**
-> RateDiffDataResponse V1ExchangeMin24Hr($accept)
+# **V1exchangemin24Hr**
+> RateDiffDataResponse V1exchangemin24Hr($accept)
 
 Min 24 Hour Rate
 
@@ -223,8 +223,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1ExchangeTicker**
-> StandardTickerResultData V1ExchangeTicker($accept)
+# **V1exchangeticker**
+> StandardTickerResultData V1exchangeticker($accept)
 
 Exchange Ticker
 
@@ -252,8 +252,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeAskCancelled**
-> OrderDataResponse V1UserExchangeAskCancelled($authorization, $accept)
+# **V1userexchangeaskcancelled**
+> OrderDataResponse V1userexchangeaskcancelled($authorization, $accept)
 
 Cancelled User Sell Orders
 
@@ -282,8 +282,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeAskCompleted**
-> OrderDataResponse V1UserExchangeAskCompleted($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangeaskcompleted**
+> OrderDataResponse V1userexchangeaskcompleted($authorization, $from, $to, $max, $offset, $accept)
 
 Completed User Sell Orders
 
@@ -316,8 +316,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeAskPending**
-> OrderDataResponse V1UserExchangeAskPending($authorization, $accept)
+# **V1userexchangeaskpending**
+> OrderDataResponse V1userexchangeaskpending($authorization, $accept)
 
 Pending User Sell Orders
 
@@ -346,8 +346,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBidCancelled**
-> OrderDataResponse V1UserExchangeBidCancelled($authorization, $accept)
+# **V1userexchangebidcancelled**
+> OrderDataResponse V1userexchangebidcancelled($authorization, $accept)
 
 Cancelled User Buy Orders
 
@@ -376,8 +376,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBidCompleted**
-> OrderDataResponse V1UserExchangeBidCompleted($authorization, $accept)
+# **V1userexchangebidcompleted**
+> OrderDataResponse V1userexchangebidcompleted($authorization, $accept)
 
 Completed User Buy Orders
 
@@ -406,8 +406,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBidPending**
-> OrderDataResponse V1UserExchangeBidPending($authorization, $accept)
+# **V1userexchangebidpending**
+> OrderDataResponse V1userexchangebidpending($authorization, $accept)
 
 Pending User Buy Orders
 

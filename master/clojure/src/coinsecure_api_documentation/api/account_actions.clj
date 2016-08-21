@@ -222,7 +222,7 @@
   Updates the address on an existing wallet name."
   ([body ] (v1usernetkiupdate-with-http-info body nil))
   ([body {:keys [authorization accept ]}]
-   (call-api "/v1/user/netki/update" :patch
+   (call-api "/v1/user/netki/update" :post
              {:path-params   {}
               :header-params {"Authorization" authorization "accept" accept }
               :query-params  {}
@@ -239,34 +239,33 @@
   ([body optional-params]
    (:data (v1usernetkiupdate-with-http-info body optional-params))))
 
-(defn v1userprofileimagedelete-with-http-info
+(defn v1userprofileimagedelete-netki-name-with-http-info
   "Delete Profile Image
   Deletes a profile Image."
-  ([body ] (v1userprofileimagedelete-with-http-info body nil))
-  ([body {:keys [authorization accept ]}]
-   (call-api "/v1/user/contact" :post
-             {:path-params   {}
+  ([netki-name ] (v1userprofileimagedelete-netki-name-with-http-info netki-name nil))
+  ([netki-name {:keys [authorization accept ]}]
+   (call-api "/v1/user/profile/image/delete/{netkiName}" :delete
+             {:path-params   {"netkiName" netki-name }
               :header-params {"Authorization" authorization "accept" accept }
               :query-params  {}
               :form-params   {}
-              :body-param    body
               :content-types ["application/json"]
               :accepts       ["application/json" "application/xml" "application/csv"]
               :auth-names    []})))
 
-(defn v1userprofileimagedelete
+(defn v1userprofileimagedelete-netki-name
   "Delete Profile Image
   Deletes a profile Image."
-  ([body ] (v1userprofileimagedelete body nil))
-  ([body optional-params]
-   (:data (v1userprofileimagedelete-with-http-info body optional-params))))
+  ([netki-name ] (v1userprofileimagedelete-netki-name netki-name nil))
+  ([netki-name optional-params]
+   (:data (v1userprofileimagedelete-netki-name-with-http-info netki-name optional-params))))
 
 (defn v1userprofileimageupdate-with-http-info
   "Update Profile Image
   Updates Profile Image and allows public or private options for netki profile page."
   ([netki-name is-public ^File file ] (v1userprofileimageupdate-with-http-info netki-name is-public file nil))
   ([netki-name is-public ^File file {:keys [authorization accept ]}]
-   (call-api "/v1/user/profile/image/update" :patch
+   (call-api "/v1/user/profile/image/update" :post
              {:path-params   {}
               :header-params {"Authorization" authorization "accept" accept }
               :query-params  {}

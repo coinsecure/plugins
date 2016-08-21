@@ -3,7 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**info** | **NSString*** |  | 
+**success** | **NSNumber*** |  | [default to @0]
+**email** | **NSString*** |  | 
+**message** | **NSString*** |  | 
 **keyType** | **NSString*** |  | 
 **keyNeeded** | **NSString*** |  | 
 

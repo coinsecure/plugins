@@ -1,6 +1,6 @@
 # SWGWalletActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**v1userwalletcoinnew**](SWGWalletActionsApi.md#v1userwalletcoinnew) | **PUT** /v1/user/wallet/coin/new | Create New Wallet
 [**v1userwalletcoinwithdrawinitiate**](SWGWalletActionsApi.md#v1userwalletcoinwithdrawinitiate) | **POST** /v1/user/wallet/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 [**v1userwalletcoinwithdrawsendToExchange**](SWGWalletActionsApi.md#v1userwalletcoinwithdrawsendtoexchange) | **PUT** /v1/user/wallet/coin/withdraw/sendToExchange | Send to Exchange
-[**v1userwalletcoinwithdrawunverifiedcancel**](SWGWalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+[**v1userwalletcoinwithdrawunverifiedcancelWithdrawID**](SWGWalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancelwithdrawid) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 [**v1userwalletcoinwithdrawverify**](SWGWalletActionsApi.md#v1userwalletcoinwithdrawverify) | **PUT** /v1/user/wallet/coin/withdraw/verify | Verify Bitcoin Withdrawal
 [**v1walletcoinwithdrawnewVerifycode**](SWGWalletActionsApi.md#v1walletcoinwithdrawnewverifycode) | **POST** /v1/wallet/coin/withdraw/newVerifycode | Gets a Verification Code
 
@@ -245,10 +245,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1userwalletcoinwithdrawunverifiedcancel**
+# **v1userwalletcoinwithdrawunverifiedcancelWithdrawID**
 ```objc
--(NSNumber*) v1userwalletcoinwithdrawunverifiedcancelWithAuthorization: (NSString*) authorization
-    body: (SWGWithdrawID*) body
+-(NSNumber*) v1userwalletcoinwithdrawunverifiedcancelWithdrawIDWithWithdrawID: (NSString*) withdrawID
+    authorization: (NSString*) authorization
     accept: (NSString*) accept
         completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler;
 ```
@@ -260,22 +260,22 @@ Cancels an unverified withdrawal. You can get the code from /wallet/unverifiedWi
 ### Example 
 ```objc
 
+NSString* withdrawID = @"withdrawID_example"; // 
 NSString* authorization = @"authorization_example"; // Enter a valid Api Key.
-SWGWithdrawID* body = [[SWGWithdrawID alloc] init]; // 
 NSString* accept = @"accept_example"; // JSON, XML or CSV can be returned (Optional) (optional)
 
 SWGWalletActionsApi*apiInstance = [[SWGWalletActionsApi alloc] init];
 
 // Cancel Bitcoin Withdrawal
-[apiInstance v1userwalletcoinwithdrawunverifiedcancelWithAuthorization:authorization
-              body:body
+[apiInstance v1userwalletcoinwithdrawunverifiedcancelWithdrawIDWithWithdrawID:withdrawID
+              authorization:authorization
               accept:accept
           completionHandler: ^(SWGSuccessResult* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGWalletActionsApi->v1userwalletcoinwithdrawunverifiedcancel: %@", error);
+                            NSLog(@"Error calling SWGWalletActionsApi->v1userwalletcoinwithdrawunverifiedcancelWithdrawID: %@", error);
                         }
                     }];
 ```
@@ -284,8 +284,8 @@ SWGWalletActionsApi*apiInstance = [[SWGWalletActionsApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **withdrawID** | **NSString***|  | 
  **authorization** | **NSString***| Enter a valid Api Key. | 
- **body** | [**SWGWithdrawID***](SWGWithdrawID*.md)|  | 
  **accept** | **NSString***| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type

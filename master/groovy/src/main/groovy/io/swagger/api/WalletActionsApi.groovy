@@ -12,14 +12,14 @@ import io.swagger.model.NewWallet
 import io.swagger.model.SendCoinWallet
 import io.swagger.model.SuccessResult
 import io.swagger.model.SendExchange
-import io.swagger.model.WithdrawID
 import io.swagger.model.Code
+import io.swagger.model.WithdrawID
 
 import java.util.*;
 
 @Mixin(ApiUtils)
 class WalletActionsApi {
-    String basePath = "https://api.coinsecure.in/"
+    String basePath = "https://api.coinsecure.in"
     String versionPath = "/api/v1"
 
     def v1userwalletcoinaddressnew ( NewAddress body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
@@ -110,21 +110,21 @@ class WalletActionsApi {
                     SuccessResult.class )
                     
     }
-    def v1userwalletcoinwithdrawunverifiedcancel ( String authorization, WithdrawID body, String accept, Closure onSuccess, Closure onFailure)  {
+    def v1userwalletcoinwithdrawunverifiedcancelWithdrawID ( String withdrawID, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
         // create path and map variables
-        String resourcePath = "/v1/user/wallet/coin/withdraw/unverified/cancel"
+        String resourcePath = "/v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID}"
 
         // query params
         def queryParams = [:]
         def headerParams = [:]
     
         // verify required params are set
-        if (authorization == null) {
-            throw new RuntimeException("missing required params authorization")
+        if (withdrawID == null) {
+            throw new RuntimeException("missing required params withdrawID")
         }
         // verify required params are set
-        if (body == null) {
-            throw new RuntimeException("missing required params body")
+        if (authorization == null) {
+            throw new RuntimeException("missing required params authorization")
         }
 
         

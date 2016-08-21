@@ -29,7 +29,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "coinFeePercentage" : 1.3579000000000001069366817318950779736042022705078125,
     "tradeNetkiAddress" : "aeiou",
@@ -54,7 +54,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "coinFeePercentage" : 1.3579000000000001069366817318950779736042022705078125,
     "tradeNetkiAddress" : "aeiou",
@@ -113,7 +113,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "percent" : 1.3579000000000001069366817318950779736042022705078125
   },
@@ -127,7 +127,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "percent" : 1.3579000000000001069366817318950779736042022705078125
   },
@@ -175,7 +175,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "percent" : 1.3579000000000001069366817318950779736042022705078125
   },
@@ -189,7 +189,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "percent" : 1.3579000000000001069366817318950779736042022705078125
   },
@@ -238,7 +238,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "percent" : 1.3579000000000001069366817318950779736042022705078125
   },
@@ -252,7 +252,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "percent" : 1.3579000000000001069366817318950779736042022705078125
   },
@@ -303,7 +303,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "firstName" : "aeiou",
     "lastName" : "aeiou",
@@ -326,7 +326,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "firstName" : "aeiou",
     "lastName" : "aeiou",
@@ -383,7 +383,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "amtPaid" : 123456789,
     "depositID" : "aeiou",
@@ -404,7 +404,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "amtPaid" : 123456789,
     "depositID" : "aeiou",
@@ -459,7 +459,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "emailVerified" : true,
     "btcEarned" : 123456789,
@@ -479,7 +479,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "emailVerified" : true,
     "btcEarned" : 123456789,
@@ -533,7 +533,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "amtPaid" : 123456789,
     "depositID" : "aeiou",
@@ -554,7 +554,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "amtPaid" : 123456789,
     "depositID" : "aeiou",
@@ -609,7 +609,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "time" : 123456789,
     "refID" : "aeiou",
@@ -625,7 +625,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "time" : 123456789,
     "refID" : "aeiou",
@@ -675,7 +675,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "completedAsksCount" : 123456789,
     "pendingAsksCount" : 123456789,
@@ -694,7 +694,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "completedAsksCount" : 123456789,
     "pendingAsksCount" : 123456789,
@@ -748,7 +748,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -760,7 +760,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -809,7 +809,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "isDisabledAccount" : true,
     "tradeReady" : "aeiou",
@@ -828,7 +828,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "isDisabledAccount" : true,
     "tradeReady" : "aeiou",
@@ -881,7 +881,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "hasWalletNetki" : true,
     "walletNetki" : "aeiou",
@@ -900,7 +900,7 @@ public class AccountDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "hasWalletNetki" : true,
     "walletNetki" : "aeiou",

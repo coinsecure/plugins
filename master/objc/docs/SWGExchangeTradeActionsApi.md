@@ -1,23 +1,22 @@
 # SWGExchangeTradeActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1userexchangeaskcancel**](SWGExchangeTradeActionsApi.md#v1userexchangeaskcancel) | **DELETE** /v1/user/exchange/ask/cancel | Cancel Open Sell Order
+[**v1userexchangeaskcancelOrderID**](SWGExchangeTradeActionsApi.md#v1userexchangeaskcancelorderid) | **DELETE** /v1/user/exchange/ask/cancel/{orderID} | Cancel Open Sell Order
 [**v1userexchangeasknew**](SWGExchangeTradeActionsApi.md#v1userexchangeasknew) | **PUT** /v1/user/exchange/ask/new | BTC Sell Order
-[**v1userexchangebidcancel**](SWGExchangeTradeActionsApi.md#v1userexchangebidcancel) | **DELETE** /v1/user/exchange/bid/cancel | Cancel Open Buy Order
+[**v1userexchangebidcancelOrderID**](SWGExchangeTradeActionsApi.md#v1userexchangebidcancelorderid) | **DELETE** /v1/user/exchange/bid/cancel/{orderID} | Cancel Open Buy Order
 [**v1userexchangebidnew**](SWGExchangeTradeActionsApi.md#v1userexchangebidnew) | **PUT** /v1/user/exchange/bid/new | BTC Buy Order
 [**v1userexchangeinstantbuy**](SWGExchangeTradeActionsApi.md#v1userexchangeinstantbuy) | **PUT** /v1/user/exchange/instant/buy | Instantly Buy BTC
 [**v1userexchangeinstantsell**](SWGExchangeTradeActionsApi.md#v1userexchangeinstantsell) | **PUT** /v1/user/exchange/instant/sell | Instantly Sell BTC
 
 
-# **v1userexchangeaskcancel**
+# **v1userexchangeaskcancelOrderID**
 ```objc
--(NSNumber*) v1userexchangeaskcancelWithBody: (SWGAskID*) body
+-(NSNumber*) v1userexchangeaskcancelOrderIDWithOrderID: (NSString*) orderID
     authorization: (NSString*) authorization
-    accept: (NSString*) accept
-        completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler;
+        completionHandler: (void (^)(SWGSuccessCancelDataResponse* output, NSError* error)) handler;
 ```
 
 Cancel Open Sell Order
@@ -27,22 +26,20 @@ Cancels a BTC Sell Order. Orders can only be cancelled if they are in a pending 
 ### Example 
 ```objc
 
-SWGAskID* body = [[SWGAskID alloc] init]; // Please send the form with valid inputs.
+NSString* orderID = @"orderID_example"; // 
 NSString* authorization = @"authorization_example"; // Enter a valid Api Key. (optional)
-NSString* accept = @"accept_example"; // JSON, XML or CSV can be returned (Optional) (optional)
 
 SWGExchangeTradeActionsApi*apiInstance = [[SWGExchangeTradeActionsApi alloc] init];
 
 // Cancel Open Sell Order
-[apiInstance v1userexchangeaskcancelWithBody:body
+[apiInstance v1userexchangeaskcancelOrderIDWithOrderID:orderID
               authorization:authorization
-              accept:accept
-          completionHandler: ^(SWGSuccessResult* output, NSError* error) {
+          completionHandler: ^(SWGSuccessCancelDataResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGExchangeTradeActionsApi->v1userexchangeaskcancel: %@", error);
+                            NSLog(@"Error calling SWGExchangeTradeActionsApi->v1userexchangeaskcancelOrderID: %@", error);
                         }
                     }];
 ```
@@ -51,13 +48,12 @@ SWGExchangeTradeActionsApi*apiInstance = [[SWGExchangeTradeActionsApi alloc] ini
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SWGAskID***](SWGAskID*.md)| Please send the form with valid inputs. | 
+ **orderID** | **NSString***|  | 
  **authorization** | **NSString***| Enter a valid Api Key. | [optional] 
- **accept** | **NSString***| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
 
-[**SWGSuccessResult***](SWGSuccessResult.md)
+[**SWGSuccessCancelDataResponse***](SWGSuccessCancelDataResponse.md)
 
 ### Authorization
 
@@ -75,7 +71,7 @@ No authorization required
 -(NSNumber*) v1userexchangeasknewWithBody: (SWGRateVolData*) body
     authorization: (NSString*) authorization
     accept: (NSString*) accept
-        completionHandler: (void (^)(SWGSuccessResultList* output, NSError* error)) handler;
+        completionHandler: (void (^)(SWGSuccessOrderDataResponse* output, NSError* error)) handler;
 ```
 
 BTC Sell Order
@@ -95,7 +91,7 @@ SWGExchangeTradeActionsApi*apiInstance = [[SWGExchangeTradeActionsApi alloc] ini
 [apiInstance v1userexchangeasknewWithBody:body
               authorization:authorization
               accept:accept
-          completionHandler: ^(SWGSuccessResultList* output, NSError* error) {
+          completionHandler: ^(SWGSuccessOrderDataResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -115,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGSuccessResultList***](SWGSuccessResultList.md)
+[**SWGSuccessOrderDataResponse***](SWGSuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -128,12 +124,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1userexchangebidcancel**
+# **v1userexchangebidcancelOrderID**
 ```objc
--(NSNumber*) v1userexchangebidcancelWithBody: (SWGBidID*) body
+-(NSNumber*) v1userexchangebidcancelOrderIDWithOrderID: (NSString*) orderID
     authorization: (NSString*) authorization
-    accept: (NSString*) accept
-        completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler;
+        completionHandler: (void (^)(SWGSuccessCancelDataResponse* output, NSError* error)) handler;
 ```
 
 Cancel Open Buy Order
@@ -143,22 +138,20 @@ Cancels a BTC Buy Order. Orders can only be cancelled if they are in a pending s
 ### Example 
 ```objc
 
-SWGBidID* body = [[SWGBidID alloc] init]; // Please send the form with valid inputs.
+NSString* orderID = @"orderID_example"; // 
 NSString* authorization = @"authorization_example"; // Enter a valid Api Key. (optional)
-NSString* accept = @"accept_example"; // JSON, XML or CSV can be returned (Optional) (optional)
 
 SWGExchangeTradeActionsApi*apiInstance = [[SWGExchangeTradeActionsApi alloc] init];
 
 // Cancel Open Buy Order
-[apiInstance v1userexchangebidcancelWithBody:body
+[apiInstance v1userexchangebidcancelOrderIDWithOrderID:orderID
               authorization:authorization
-              accept:accept
-          completionHandler: ^(SWGSuccessResult* output, NSError* error) {
+          completionHandler: ^(SWGSuccessCancelDataResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGExchangeTradeActionsApi->v1userexchangebidcancel: %@", error);
+                            NSLog(@"Error calling SWGExchangeTradeActionsApi->v1userexchangebidcancelOrderID: %@", error);
                         }
                     }];
 ```
@@ -167,13 +160,12 @@ SWGExchangeTradeActionsApi*apiInstance = [[SWGExchangeTradeActionsApi alloc] ini
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SWGBidID***](SWGBidID*.md)| Please send the form with valid inputs. | 
+ **orderID** | **NSString***|  | 
  **authorization** | **NSString***| Enter a valid Api Key. | [optional] 
- **accept** | **NSString***| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
 
-[**SWGSuccessResult***](SWGSuccessResult.md)
+[**SWGSuccessCancelDataResponse***](SWGSuccessCancelDataResponse.md)
 
 ### Authorization
 
@@ -191,7 +183,7 @@ No authorization required
 -(NSNumber*) v1userexchangebidnewWithBody: (SWGRateVolData*) body
     authorization: (NSString*) authorization
     accept: (NSString*) accept
-        completionHandler: (void (^)(SWGSuccessResultList* output, NSError* error)) handler;
+        completionHandler: (void (^)(SWGSuccessOrderDataResponse* output, NSError* error)) handler;
 ```
 
 BTC Buy Order
@@ -211,7 +203,7 @@ SWGExchangeTradeActionsApi*apiInstance = [[SWGExchangeTradeActionsApi alloc] ini
 [apiInstance v1userexchangebidnewWithBody:body
               authorization:authorization
               accept:accept
-          completionHandler: ^(SWGSuccessResultList* output, NSError* error) {
+          completionHandler: ^(SWGSuccessOrderDataResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -231,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGSuccessResultList***](SWGSuccessResultList.md)
+[**SWGSuccessOrderDataResponse***](SWGSuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -249,7 +241,7 @@ No authorization required
 -(NSNumber*) v1userexchangeinstantbuyWithBody: (SWGMinFiat*) body
     authorization: (NSString*) authorization
     accept: (NSString*) accept
-        completionHandler: (void (^)(SWGSuccessResultList* output, NSError* error)) handler;
+        completionHandler: (void (^)(SWGSuccessOrderDataResponse* output, NSError* error)) handler;
 ```
 
 Instantly Buy BTC
@@ -269,7 +261,7 @@ SWGExchangeTradeActionsApi*apiInstance = [[SWGExchangeTradeActionsApi alloc] ini
 [apiInstance v1userexchangeinstantbuyWithBody:body
               authorization:authorization
               accept:accept
-          completionHandler: ^(SWGSuccessResultList* output, NSError* error) {
+          completionHandler: ^(SWGSuccessOrderDataResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -289,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGSuccessResultList***](SWGSuccessResultList.md)
+[**SWGSuccessOrderDataResponse***](SWGSuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -307,7 +299,7 @@ No authorization required
 -(NSNumber*) v1userexchangeinstantsellWithBody: (SWGMaxVol*) body
     authorization: (NSString*) authorization
     accept: (NSString*) accept
-        completionHandler: (void (^)(SWGSuccessResultList* output, NSError* error)) handler;
+        completionHandler: (void (^)(SWGSuccessOrderDataResponse* output, NSError* error)) handler;
 ```
 
 Instantly Sell BTC
@@ -327,7 +319,7 @@ SWGExchangeTradeActionsApi*apiInstance = [[SWGExchangeTradeActionsApi alloc] ini
 [apiInstance v1userexchangeinstantsellWithBody:body
               authorization:authorization
               accept:accept
-          completionHandler: ^(SWGSuccessResultList* output, NSError* error) {
+          completionHandler: ^(SWGSuccessOrderDataResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -347,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGSuccessResultList***](SWGSuccessResultList.md)
+[**SWGSuccessOrderDataResponse***](SWGSuccessOrderDataResponse.md)
 
 ### Authorization
 

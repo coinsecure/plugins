@@ -1,15 +1,15 @@
 # \BlockchainToolsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1BitcoinSearchAddress**](BlockchainToolsApi.md#V1BitcoinSearchAddress) | **Get** /v1/bitcoin/search/{any} | Search Bitcoin Blockchain
-[**V1BitcoinSearchTxid**](BlockchainToolsApi.md#V1BitcoinSearchTxid) | **Get** /v1/bitcoin/search/confirmation/{txid} | Get Confirmations
+[**V1bitcoinsearchAddress**](BlockchainToolsApi.md#V1bitcoinsearchAddress) | **Get** /v1/bitcoin/search/{any} | Search Bitcoin Blockchain
+[**V1bitcoinsearchTxid**](BlockchainToolsApi.md#V1bitcoinsearchTxid) | **Get** /v1/bitcoin/search/confirmation/{txid} | Get Confirmations
 
 
-# **V1BitcoinSearchAddress**
-> ValidAddressSearchDataResponse V1BitcoinSearchAddress($any, $accept)
+# **V1bitcoinsearchAddress**
+> ValidAddressSearchDataResponse V1bitcoinsearchAddress($any, $accept)
 
 Search Bitcoin Blockchain
 
@@ -38,8 +38,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1BitcoinSearchTxid**
-> ConfirmDataResponse V1BitcoinSearchTxid($txid, $accept)
+# **V1bitcoinsearchTxid**
+> ConfirmDataResponse V1bitcoinsearchTxid($txid, $accept)
 
 Get Confirmations
 

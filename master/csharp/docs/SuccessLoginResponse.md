@@ -3,7 +3,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Info** | **string** |  | 
+**Success** | **bool?** |  | [default to false]
+**Email** | **string** |  | 
+**Message** | **string** |  | 
 **KeyType** | **string** |  | 
 **KeyNeeded** | **string** |  | 
 

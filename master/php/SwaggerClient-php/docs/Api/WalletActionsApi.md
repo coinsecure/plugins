@@ -1,6 +1,6 @@
 # Swagger\Client\WalletActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**v1userwalletcoinnew**](WalletActionsApi.md#v1userwalletcoinnew) | **PUT** /v1/user/wallet/coin/new | Create New Wallet
 [**v1userwalletcoinwithdrawinitiate**](WalletActionsApi.md#v1userwalletcoinwithdrawinitiate) | **POST** /v1/user/wallet/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 [**v1userwalletcoinwithdrawsendToExchange**](WalletActionsApi.md#v1userwalletcoinwithdrawsendToExchange) | **PUT** /v1/user/wallet/coin/withdraw/sendToExchange | Send to Exchange
-[**v1userwalletcoinwithdrawunverifiedcancel**](WalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+[**v1userwalletcoinwithdrawunverifiedcancelWithdrawID**](WalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancelWithdrawID) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 [**v1userwalletcoinwithdrawverify**](WalletActionsApi.md#v1userwalletcoinwithdrawverify) | **PUT** /v1/user/wallet/coin/withdraw/verify | Verify Bitcoin Withdrawal
 [**v1walletcoinwithdrawnewVerifycode**](WalletActionsApi.md#v1walletcoinwithdrawnewVerifycode) | **POST** /v1/wallet/coin/withdraw/newVerifycode | Gets a Verification Code
 
@@ -209,8 +209,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **v1userwalletcoinwithdrawunverifiedcancel**
-> \Swagger\Client\Model\SuccessResult v1userwalletcoinwithdrawunverifiedcancel($authorization, $body, $accept)
+# **v1userwalletcoinwithdrawunverifiedcancelWithdrawID**
+> \Swagger\Client\Model\SuccessResult v1userwalletcoinwithdrawunverifiedcancelWithdrawID($withdraw_id, $authorization, $accept)
 
 Cancel Bitcoin Withdrawal
 
@@ -222,15 +222,15 @@ Cancels an unverified withdrawal. You can get the code from /wallet/unverifiedWi
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\WalletActionsApi();
+$withdraw_id = "withdraw_id_example"; // string | 
 $authorization = "authorization_example"; // string | Enter a valid Api Key.
-$body = new \Swagger\Client\Model\WithdrawID(); // \Swagger\Client\Model\WithdrawID | 
 $accept = "accept_example"; // string | JSON, XML or CSV can be returned (Optional)
 
 try {
-    $result = $api_instance->v1userwalletcoinwithdrawunverifiedcancel($authorization, $body, $accept);
+    $result = $api_instance->v1userwalletcoinwithdrawunverifiedcancelWithdrawID($withdraw_id, $authorization, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WalletActionsApi->v1userwalletcoinwithdrawunverifiedcancel: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WalletActionsApi->v1userwalletcoinwithdrawunverifiedcancelWithdrawID: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -239,8 +239,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **withdraw_id** | **string**|  |
  **authorization** | **string**| Enter a valid Api Key. |
- **body** | [**\Swagger\Client\Model\WithdrawID**](../Model/\Swagger\Client\Model\WithdrawID.md)|  |
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional]
 
 ### Return type

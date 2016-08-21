@@ -2,27 +2,26 @@
   (:require [coinsecure-api-documentation.core :refer [call-api check-required-params with-collection-format]])
   (:import (java.io File)))
 
-(defn v1userexchangeaskcancel-with-http-info
+(defn v1userexchangeaskcancel-order-id-with-http-info
   "Cancel Open Sell Order
   Cancels a BTC Sell Order. Orders can only be cancelled if they are in a pending state."
-  ([body ] (v1userexchangeaskcancel-with-http-info body nil))
-  ([body {:keys [authorization accept ]}]
-   (call-api "/v1/user/exchange/ask/cancel" :delete
-             {:path-params   {}
-              :header-params {"Authorization" authorization "accept" accept }
+  ([order-id ] (v1userexchangeaskcancel-order-id-with-http-info order-id nil))
+  ([order-id {:keys [authorization ]}]
+   (call-api "/v1/user/exchange/ask/cancel/{orderID}" :delete
+             {:path-params   {"orderID" order-id }
+              :header-params {"Authorization" authorization }
               :query-params  {}
               :form-params   {}
-              :body-param    body
               :content-types ["application/json"]
               :accepts       ["application/json" "application/xml" "application/csv"]
               :auth-names    []})))
 
-(defn v1userexchangeaskcancel
+(defn v1userexchangeaskcancel-order-id
   "Cancel Open Sell Order
   Cancels a BTC Sell Order. Orders can only be cancelled if they are in a pending state."
-  ([body ] (v1userexchangeaskcancel body nil))
-  ([body optional-params]
-   (:data (v1userexchangeaskcancel-with-http-info body optional-params))))
+  ([order-id ] (v1userexchangeaskcancel-order-id order-id nil))
+  ([order-id optional-params]
+   (:data (v1userexchangeaskcancel-order-id-with-http-info order-id optional-params))))
 
 (defn v1userexchangeasknew-with-http-info
   "BTC Sell Order
@@ -46,27 +45,26 @@
   ([body optional-params]
    (:data (v1userexchangeasknew-with-http-info body optional-params))))
 
-(defn v1userexchangebidcancel-with-http-info
+(defn v1userexchangebidcancel-order-id-with-http-info
   "Cancel Open Buy Order
   Cancels a BTC Buy Order. Orders can only be cancelled if they are in a pending state."
-  ([body ] (v1userexchangebidcancel-with-http-info body nil))
-  ([body {:keys [authorization accept ]}]
-   (call-api "/v1/user/exchange/bid/cancel" :delete
-             {:path-params   {}
-              :header-params {"Authorization" authorization "accept" accept }
+  ([order-id ] (v1userexchangebidcancel-order-id-with-http-info order-id nil))
+  ([order-id {:keys [authorization ]}]
+   (call-api "/v1/user/exchange/bid/cancel/{orderID}" :delete
+             {:path-params   {"orderID" order-id }
+              :header-params {"Authorization" authorization }
               :query-params  {}
               :form-params   {}
-              :body-param    body
               :content-types ["application/json"]
               :accepts       ["application/json" "application/xml" "application/csv"]
               :auth-names    []})))
 
-(defn v1userexchangebidcancel
+(defn v1userexchangebidcancel-order-id
   "Cancel Open Buy Order
   Cancels a BTC Buy Order. Orders can only be cancelled if they are in a pending state."
-  ([body ] (v1userexchangebidcancel body nil))
-  ([body optional-params]
-   (:data (v1userexchangebidcancel-with-http-info body optional-params))))
+  ([order-id ] (v1userexchangebidcancel-order-id order-id nil))
+  ([order-id optional-params]
+   (:data (v1userexchangebidcancel-order-id-with-http-info order-id optional-params))))
 
 (defn v1userexchangebidnew-with-http-info
   "BTC Buy Order

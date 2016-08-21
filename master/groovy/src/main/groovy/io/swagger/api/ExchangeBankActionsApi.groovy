@@ -11,7 +11,6 @@ import io.swagger.model.FailResult
 import io.swagger.model.WithdrawID
 import io.swagger.model.Code
 import io.swagger.model.NewBankForm
-import io.swagger.model.DepositID
 import io.swagger.model.NewFiatBankDeposit
 import io.swagger.model.WithdrawFiat
 
@@ -19,7 +18,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class ExchangeBankActionsApi {
-    String basePath = "https://api.coinsecure.in/"
+    String basePath = "https://api.coinsecure.in"
     String versionPath = "/api/v1"
 
     def v1userexchangebankcoinwithdrawinitiate ( SendCoin body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
@@ -66,17 +65,17 @@ class ExchangeBankActionsApi {
                     SuccessResult.class )
                     
     }
-    def v1userexchangebankcoinwithdrawunverifiedcancel ( WithdrawID body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
+    def v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID ( String withdrawID, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
         // create path and map variables
-        String resourcePath = "/v1/user/exchange/bank/coin/withdraw/unverified/cancel"
+        String resourcePath = "/v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID}"
 
         // query params
         def queryParams = [:]
         def headerParams = [:]
     
         // verify required params are set
-        if (body == null) {
-            throw new RuntimeException("missing required params body")
+        if (withdrawID == null) {
+            throw new RuntimeException("missing required params withdrawID")
         }
 
         
@@ -132,17 +131,17 @@ class ExchangeBankActionsApi {
                     SuccessResult.class )
                     
     }
-    def v1userexchangebankfiatdepositcancel ( DepositID body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
+    def v1userexchangebankfiatdepositcancelDepositID ( String depositID, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
         // create path and map variables
-        String resourcePath = "/v1/user/exchange/bank/fiat/deposit/cancel"
+        String resourcePath = "/v1/user/exchange/bank/fiat/deposit/cancel/{depositID}"
 
         // query params
         def queryParams = [:]
         def headerParams = [:]
     
         // verify required params are set
-        if (body == null) {
-            throw new RuntimeException("missing required params body")
+        if (depositID == null) {
+            throw new RuntimeException("missing required params depositID")
         }
 
         
@@ -220,17 +219,17 @@ class ExchangeBankActionsApi {
                     SuccessResult.class )
                     
     }
-    def v1userexchangebankfiatwithdrawunverifiedcancel ( WithdrawID body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
+    def v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID ( String withdrawID, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
         // create path and map variables
-        String resourcePath = "/v1/user/exchange/bank/fiat/withdraw/unverified/cancel"
+        String resourcePath = "/v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID}"
 
         // query params
         def queryParams = [:]
         def headerParams = [:]
     
         // verify required params are set
-        if (body == null) {
-            throw new RuntimeException("missing required params body")
+        if (withdrawID == null) {
+            throw new RuntimeException("missing required params withdrawID")
         }
 
         

@@ -1,19 +1,19 @@
 # SwaggerClient::ExchangeTradeActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1userexchangeaskcancel**](ExchangeTradeActionsApi.md#v1userexchangeaskcancel) | **DELETE** /v1/user/exchange/ask/cancel | Cancel Open Sell Order
+[**v1userexchangeaskcancel_order_id**](ExchangeTradeActionsApi.md#v1userexchangeaskcancel_order_id) | **DELETE** /v1/user/exchange/ask/cancel/{orderID} | Cancel Open Sell Order
 [**v1userexchangeasknew**](ExchangeTradeActionsApi.md#v1userexchangeasknew) | **PUT** /v1/user/exchange/ask/new | BTC Sell Order
-[**v1userexchangebidcancel**](ExchangeTradeActionsApi.md#v1userexchangebidcancel) | **DELETE** /v1/user/exchange/bid/cancel | Cancel Open Buy Order
+[**v1userexchangebidcancel_order_id**](ExchangeTradeActionsApi.md#v1userexchangebidcancel_order_id) | **DELETE** /v1/user/exchange/bid/cancel/{orderID} | Cancel Open Buy Order
 [**v1userexchangebidnew**](ExchangeTradeActionsApi.md#v1userexchangebidnew) | **PUT** /v1/user/exchange/bid/new | BTC Buy Order
 [**v1userexchangeinstantbuy**](ExchangeTradeActionsApi.md#v1userexchangeinstantbuy) | **PUT** /v1/user/exchange/instant/buy | Instantly Buy BTC
 [**v1userexchangeinstantsell**](ExchangeTradeActionsApi.md#v1userexchangeinstantsell) | **PUT** /v1/user/exchange/instant/sell | Instantly Sell BTC
 
 
-# **v1userexchangeaskcancel**
-> SuccessResult v1userexchangeaskcancel(body, opts)
+# **v1userexchangeaskcancel_order_id**
+> SuccessCancelDataResponse v1userexchangeaskcancel_order_id(order_id, opts)
 
 Cancel Open Sell Order
 
@@ -26,19 +26,18 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::ExchangeTradeActionsApi.new
 
-body = SwaggerClient::AskID.new # AskID | Please send the form with valid inputs.
+order_id = "order_id_example" # String | 
 
 opts = { 
-  authorization: "authorization_example", # String | Enter a valid Api Key.
-  accept: "accept_example" # String | JSON, XML or CSV can be returned (Optional)
+  authorization: "authorization_example" # String | Enter a valid Api Key.
 }
 
 begin
   #Cancel Open Sell Order
-  result = api_instance.v1userexchangeaskcancel(body, opts)
+  result = api_instance.v1userexchangeaskcancel_order_id(order_id, opts)
   p result
 rescue SwaggerClient::ApiError => e
-  puts "Exception when calling ExchangeTradeActionsApi->v1userexchangeaskcancel: #{e}"
+  puts "Exception when calling ExchangeTradeActionsApi->v1userexchangeaskcancel_order_id: #{e}"
 end
 ```
 
@@ -46,13 +45,12 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AskID**](AskID.md)| Please send the form with valid inputs. | 
+ **order_id** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | [optional] 
- **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
 
-[**SuccessResult**](SuccessResult.md)
+[**SuccessCancelDataResponse**](SuccessCancelDataResponse.md)
 
 ### Authorization
 
@@ -66,7 +64,7 @@ No authorization required
 
 
 # **v1userexchangeasknew**
-> SuccessResultList v1userexchangeasknew(body, opts)
+> SuccessOrderDataResponse v1userexchangeasknew(body, opts)
 
 BTC Sell Order
 
@@ -105,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -118,8 +116,8 @@ No authorization required
 
 
 
-# **v1userexchangebidcancel**
-> SuccessResult v1userexchangebidcancel(body, opts)
+# **v1userexchangebidcancel_order_id**
+> SuccessCancelDataResponse v1userexchangebidcancel_order_id(order_id, opts)
 
 Cancel Open Buy Order
 
@@ -132,19 +130,18 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::ExchangeTradeActionsApi.new
 
-body = SwaggerClient::BidID.new # BidID | Please send the form with valid inputs.
+order_id = "order_id_example" # String | 
 
 opts = { 
-  authorization: "authorization_example", # String | Enter a valid Api Key.
-  accept: "accept_example" # String | JSON, XML or CSV can be returned (Optional)
+  authorization: "authorization_example" # String | Enter a valid Api Key.
 }
 
 begin
   #Cancel Open Buy Order
-  result = api_instance.v1userexchangebidcancel(body, opts)
+  result = api_instance.v1userexchangebidcancel_order_id(order_id, opts)
   p result
 rescue SwaggerClient::ApiError => e
-  puts "Exception when calling ExchangeTradeActionsApi->v1userexchangebidcancel: #{e}"
+  puts "Exception when calling ExchangeTradeActionsApi->v1userexchangebidcancel_order_id: #{e}"
 end
 ```
 
@@ -152,13 +149,12 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BidID**](BidID.md)| Please send the form with valid inputs. | 
+ **order_id** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | [optional] 
- **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
 
-[**SuccessResult**](SuccessResult.md)
+[**SuccessCancelDataResponse**](SuccessCancelDataResponse.md)
 
 ### Authorization
 
@@ -172,7 +168,7 @@ No authorization required
 
 
 # **v1userexchangebidnew**
-> SuccessResultList v1userexchangebidnew(body, opts)
+> SuccessOrderDataResponse v1userexchangebidnew(body, opts)
 
 BTC Buy Order
 
@@ -211,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -225,7 +221,7 @@ No authorization required
 
 
 # **v1userexchangeinstantbuy**
-> SuccessResultList v1userexchangeinstantbuy(body, opts)
+> SuccessOrderDataResponse v1userexchangeinstantbuy(body, opts)
 
 Instantly Buy BTC
 
@@ -264,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -278,7 +274,7 @@ No authorization required
 
 
 # **v1userexchangeinstantsell**
-> SuccessResultList v1userexchangeinstantsell(body, opts)
+> SuccessOrderDataResponse v1userexchangeinstantsell(body, opts)
 
 Instantly Sell BTC
 
@@ -317,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 

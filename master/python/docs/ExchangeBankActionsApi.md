@@ -1,19 +1,19 @@
 # swagger_client.ExchangeBankActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v1userexchangebankcoinwithdrawinitiate**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawinitiate) | **POST** /v1/user/exchange/bank/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 [**v1userexchangebankcoinwithdrawnew_verifycode**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawnew_verifycode) | **POST** /v1/user/exchange/bank/coin/withdraw/newVerifycode | Gets a Verification Code.
-[**v1userexchangebankcoinwithdrawunverifiedcancel**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+[**v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 [**v1userexchangebankcoinwithdrawverify**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawverify) | **PUT** /v1/user/exchange/bank/coin/withdraw/verify | Verify Bitcoin Withdrawal
 [**v1userexchangebankfiataccountnew**](ExchangeBankActionsApi.md#v1userexchangebankfiataccountnew) | **PUT** /v1/user/exchange/bank/fiat/account/new | New Bank Link
-[**v1userexchangebankfiatdepositcancel**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancel) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel | Cancel Unverified Exchange Fiat Deposit
+[**v1userexchangebankfiatdepositcancel_deposit_id**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancel_deposit_id) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel/{depositID} | Cancel Unverified Exchange Fiat Deposit
 [**v1userexchangebankfiatdepositnew**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositnew) | **PUT** /v1/user/exchange/bank/fiat/deposit/new | New Exchange Fiat Deposit
 [**v1userexchangebankfiatwithdrawinitiate**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawinitiate) | **POST** /v1/user/exchange/bank/fiat/withdraw/initiate | Initiate Fiat Withdrawal
 [**v1userexchangebankfiatwithdrawnew_verifycode**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawnew_verifycode) | **POST** /v1/user/exchange/bank/fiat/withdraw/newVerifycode | Gets a Fiat Verification Code.
-[**v1userexchangebankfiatwithdrawunverifiedcancel**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel | Cancel Fiat Withdrawal
+[**v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID} | Cancel Fiat Withdrawal
 [**v1userexchangebankfiatwithdrawverify**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawverify) | **PUT** /v1/user/exchange/bank/fiat/withdraw/verify | Verify Fiat Withdrawal
 
 
@@ -119,8 +119,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1userexchangebankcoinwithdrawunverifiedcancel**
-> SuccessResult v1userexchangebankcoinwithdrawunverifiedcancel(body, authorization=authorization, accept=accept)
+# **v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id**
+> SuccessResult v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id(withdraw_id, authorization=authorization, accept=accept)
 
 Cancel Bitcoin Withdrawal
 
@@ -135,23 +135,23 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ExchangeBankActionsApi()
-body = swagger_client.WithdrawID() # WithdrawID | You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified.
+withdraw_id = 'withdraw_id_example' # str | 
 authorization = 'authorization_example' # str | Enter a valid Api Key. (optional)
 accept = 'accept_example' # str | JSON, XML or CSV can be returned (Optional) (optional)
 
 try: 
     # Cancel Bitcoin Withdrawal
-    api_response = api_instance.v1userexchangebankcoinwithdrawunverifiedcancel(body, authorization=authorization, accept=accept)
+    api_response = api_instance.v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id(withdraw_id, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawunverifiedcancel: %s\n" % e
+    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WithdrawID**](WithdrawID.md)| You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified. | 
+ **withdraw_id** | **str**|  | 
  **authorization** | **str**| Enter a valid Api Key. | [optional] 
  **accept** | **str**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -272,8 +272,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1userexchangebankfiatdepositcancel**
-> SuccessResult v1userexchangebankfiatdepositcancel(body, authorization=authorization, accept=accept)
+# **v1userexchangebankfiatdepositcancel_deposit_id**
+> SuccessResult v1userexchangebankfiatdepositcancel_deposit_id(deposit_id, authorization=authorization, accept=accept)
 
 Cancel Unverified Exchange Fiat Deposit
 
@@ -288,23 +288,23 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ExchangeBankActionsApi()
-body = swagger_client.DepositID() # DepositID | Please send the form with valid inputs.
+deposit_id = 'deposit_id_example' # str | 
 authorization = 'authorization_example' # str | Enter a valid Api Key. (optional)
 accept = 'accept_example' # str | JSON, XML or CSV can be returned (Optional) (optional)
 
 try: 
     # Cancel Unverified Exchange Fiat Deposit
-    api_response = api_instance.v1userexchangebankfiatdepositcancel(body, authorization=authorization, accept=accept)
+    api_response = api_instance.v1userexchangebankfiatdepositcancel_deposit_id(deposit_id, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatdepositcancel: %s\n" % e
+    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatdepositcancel_deposit_id: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DepositID**](DepositID.md)| Please send the form with valid inputs. | 
+ **deposit_id** | **str**|  | 
  **authorization** | **str**| Enter a valid Api Key. | [optional] 
  **accept** | **str**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -476,8 +476,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1userexchangebankfiatwithdrawunverifiedcancel**
-> SuccessResult v1userexchangebankfiatwithdrawunverifiedcancel(body, authorization=authorization, accept=accept)
+# **v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id**
+> SuccessResult v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id(withdraw_id, authorization=authorization, accept=accept)
 
 Cancel Fiat Withdrawal
 
@@ -492,23 +492,23 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ExchangeBankActionsApi()
-body = swagger_client.WithdrawID() # WithdrawID | You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified.
+withdraw_id = 'withdraw_id_example' # str | 
 authorization = 'authorization_example' # str | Enter a valid Api Key. (optional)
 accept = 'accept_example' # str | JSON, XML or CSV can be returned (Optional) (optional)
 
 try: 
     # Cancel Fiat Withdrawal
-    api_response = api_instance.v1userexchangebankfiatwithdrawunverifiedcancel(body, authorization=authorization, accept=accept)
+    api_response = api_instance.v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id(withdraw_id, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawunverifiedcancel: %s\n" % e
+    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WithdrawID**](WithdrawID.md)| You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified. | 
+ **withdraw_id** | **str**|  | 
  **authorization** | **str**| Enter a valid Api Key. | [optional] 
  **accept** | **str**| JSON, XML or CSV can be returned (Optional) | [optional] 
 

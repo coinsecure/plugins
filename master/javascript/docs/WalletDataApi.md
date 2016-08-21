@@ -1,6 +1,6 @@
 # CoinsecureApiDocumentation.WalletDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,7 +26,7 @@ Gets a List of Users Bitcoin Deposit Addresses.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletDataApi();
 
@@ -78,7 +78,7 @@ Gets your Confirmed Wallet Bitcoin Transactions.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletDataApi();
 
@@ -130,7 +130,7 @@ Gets the total confirmed transactions across all accounts and addresses
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletDataApi();
 
@@ -179,7 +179,7 @@ Gets the unconfirmed transactions on an account/ wallet.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletDataApi();
 
@@ -232,7 +232,7 @@ Gets the total unconfirmed transactions across all accounts and addresses
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletDataApi();
 
@@ -281,7 +281,7 @@ Gets a List of Users Wallets.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletDataApi();
 
@@ -330,7 +330,7 @@ Gets a List of Unverified Coin Withdrawals. The value and fees are in satoshis.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletDataApi();
 
@@ -380,7 +380,7 @@ Gets a List of Unverified Coin Withdrawals. The value and fees are in satoshis.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletDataApi();
 
@@ -430,7 +430,7 @@ Gets a List of Unverified Coin Withdrawals. The value and fees are in satoshis.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletDataApi();
 
@@ -480,7 +480,7 @@ Gets a List of Unverified Coin Withdrawals. The value and fees are in satoshis.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletDataApi();
 

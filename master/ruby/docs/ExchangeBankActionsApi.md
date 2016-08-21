@@ -1,19 +1,19 @@
 # SwaggerClient::ExchangeBankActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v1userexchangebankcoinwithdrawinitiate**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawinitiate) | **POST** /v1/user/exchange/bank/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 [**v1userexchangebankcoinwithdrawnew_verifycode**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawnew_verifycode) | **POST** /v1/user/exchange/bank/coin/withdraw/newVerifycode | Gets a Verification Code.
-[**v1userexchangebankcoinwithdrawunverifiedcancel**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+[**v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 [**v1userexchangebankcoinwithdrawverify**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawverify) | **PUT** /v1/user/exchange/bank/coin/withdraw/verify | Verify Bitcoin Withdrawal
 [**v1userexchangebankfiataccountnew**](ExchangeBankActionsApi.md#v1userexchangebankfiataccountnew) | **PUT** /v1/user/exchange/bank/fiat/account/new | New Bank Link
-[**v1userexchangebankfiatdepositcancel**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancel) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel | Cancel Unverified Exchange Fiat Deposit
+[**v1userexchangebankfiatdepositcancel_deposit_id**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancel_deposit_id) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel/{depositID} | Cancel Unverified Exchange Fiat Deposit
 [**v1userexchangebankfiatdepositnew**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositnew) | **PUT** /v1/user/exchange/bank/fiat/deposit/new | New Exchange Fiat Deposit
 [**v1userexchangebankfiatwithdrawinitiate**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawinitiate) | **POST** /v1/user/exchange/bank/fiat/withdraw/initiate | Initiate Fiat Withdrawal
 [**v1userexchangebankfiatwithdrawnew_verifycode**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawnew_verifycode) | **POST** /v1/user/exchange/bank/fiat/withdraw/newVerifycode | Gets a Fiat Verification Code.
-[**v1userexchangebankfiatwithdrawunverifiedcancel**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel | Cancel Fiat Withdrawal
+[**v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID} | Cancel Fiat Withdrawal
 [**v1userexchangebankfiatwithdrawverify**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawverify) | **PUT** /v1/user/exchange/bank/fiat/withdraw/verify | Verify Fiat Withdrawal
 
 
@@ -123,8 +123,8 @@ No authorization required
 
 
 
-# **v1userexchangebankcoinwithdrawunverifiedcancel**
-> SuccessResult v1userexchangebankcoinwithdrawunverifiedcancel(body, opts)
+# **v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id**
+> SuccessResult v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id(withdraw_id, opts)
 
 Cancel Bitcoin Withdrawal
 
@@ -137,7 +137,7 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::ExchangeBankActionsApi.new
 
-body = SwaggerClient::WithdrawID.new # WithdrawID | You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified.
+withdraw_id = "withdraw_id_example" # String | 
 
 opts = { 
   authorization: "authorization_example", # String | Enter a valid Api Key.
@@ -146,10 +146,10 @@ opts = {
 
 begin
   #Cancel Bitcoin Withdrawal
-  result = api_instance.v1userexchangebankcoinwithdrawunverifiedcancel(body, opts)
+  result = api_instance.v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id(withdraw_id, opts)
   p result
 rescue SwaggerClient::ApiError => e
-  puts "Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawunverifiedcancel: #{e}"
+  puts "Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id: #{e}"
 end
 ```
 
@@ -157,7 +157,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WithdrawID**](WithdrawID.md)| You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified. | 
+ **withdraw_id** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | [optional] 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -282,8 +282,8 @@ No authorization required
 
 
 
-# **v1userexchangebankfiatdepositcancel**
-> SuccessResult v1userexchangebankfiatdepositcancel(body, opts)
+# **v1userexchangebankfiatdepositcancel_deposit_id**
+> SuccessResult v1userexchangebankfiatdepositcancel_deposit_id(deposit_id, opts)
 
 Cancel Unverified Exchange Fiat Deposit
 
@@ -296,7 +296,7 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::ExchangeBankActionsApi.new
 
-body = SwaggerClient::DepositID.new # DepositID | Please send the form with valid inputs.
+deposit_id = "deposit_id_example" # String | 
 
 opts = { 
   authorization: "authorization_example", # String | Enter a valid Api Key.
@@ -305,10 +305,10 @@ opts = {
 
 begin
   #Cancel Unverified Exchange Fiat Deposit
-  result = api_instance.v1userexchangebankfiatdepositcancel(body, opts)
+  result = api_instance.v1userexchangebankfiatdepositcancel_deposit_id(deposit_id, opts)
   p result
 rescue SwaggerClient::ApiError => e
-  puts "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatdepositcancel: #{e}"
+  puts "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatdepositcancel_deposit_id: #{e}"
 end
 ```
 
@@ -316,7 +316,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DepositID**](DepositID.md)| Please send the form with valid inputs. | 
+ **deposit_id** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | [optional] 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -494,8 +494,8 @@ No authorization required
 
 
 
-# **v1userexchangebankfiatwithdrawunverifiedcancel**
-> SuccessResult v1userexchangebankfiatwithdrawunverifiedcancel(body, opts)
+# **v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id**
+> SuccessResult v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id(withdraw_id, opts)
 
 Cancel Fiat Withdrawal
 
@@ -508,7 +508,7 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::ExchangeBankActionsApi.new
 
-body = SwaggerClient::WithdrawID.new # WithdrawID | You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified.
+withdraw_id = "withdraw_id_example" # String | 
 
 opts = { 
   authorization: "authorization_example", # String | Enter a valid Api Key.
@@ -517,10 +517,10 @@ opts = {
 
 begin
   #Cancel Fiat Withdrawal
-  result = api_instance.v1userexchangebankfiatwithdrawunverifiedcancel(body, opts)
+  result = api_instance.v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id(withdraw_id, opts)
   p result
 rescue SwaggerClient::ApiError => e
-  puts "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawunverifiedcancel: #{e}"
+  puts "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id: #{e}"
 end
 ```
 
@@ -528,7 +528,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WithdrawID**](WithdrawID.md)| You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified. | 
+ **withdraw_id** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | [optional] 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 

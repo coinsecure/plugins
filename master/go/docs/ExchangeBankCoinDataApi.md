@@ -1,24 +1,24 @@
 # \ExchangeBankCoinDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1UserExchangeBankCoinAddresses**](ExchangeBankCoinDataApi.md#V1UserExchangeBankCoinAddresses) | **Get** /v1/user/exchange/bank/coin/addresses | Exchange Coin Addresses
-[**V1UserExchangeBankCoinBalanceAvailable**](ExchangeBankCoinDataApi.md#V1UserExchangeBankCoinBalanceAvailable) | **Get** /v1/user/exchange/bank/coin/balance/total | Available Exchange Coin Balance
-[**V1UserExchangeBankCoinBalancePending**](ExchangeBankCoinDataApi.md#V1UserExchangeBankCoinBalancePending) | **Get** /v1/user/exchange/bank/coin/balance/pending | In Trade Coin Balance
-[**V1UserExchangeBankCoinBalanceTotal**](ExchangeBankCoinDataApi.md#V1UserExchangeBankCoinBalanceTotal) | **Get** /v1/user/exchange/bank/coin/balance/available | Total Exchange Coin Balance
-[**V1UserExchangeBankCoinDepositCancelled**](ExchangeBankCoinDataApi.md#V1UserExchangeBankCoinDepositCancelled) | **Get** /v1/user/exchange/bank/coin/deposit/cancelled | Cancelled Exchange Coin Deposits
-[**V1UserExchangeBankCoinDepositUnverified**](ExchangeBankCoinDataApi.md#V1UserExchangeBankCoinDepositUnverified) | **Get** /v1/user/exchange/bank/coin/deposit/unverified | Unverified Exchange Coin Deposits
-[**V1UserExchangeBankCoinDepositVerified**](ExchangeBankCoinDataApi.md#V1UserExchangeBankCoinDepositVerified) | **Get** /v1/user/exchange/bank/coin/deposit/verified | Verified Exchange Coin Deposits
-[**V1UserExchangeBankCoinWithdrawCancelled**](ExchangeBankCoinDataApi.md#V1UserExchangeBankCoinWithdrawCancelled) | **Get** /v1/user/exchange/bank/coin/withdraw/cancelled | Cancelled Exchange Coin Withdrawals
-[**V1UserExchangeBankCoinWithdrawCompleted**](ExchangeBankCoinDataApi.md#V1UserExchangeBankCoinWithdrawCompleted) | **Get** /v1/user/exchange/bank/coin/withdraw/completed | Completed Exchange Coin Withdrawals
-[**V1UserExchangeBankCoinWithdrawUnverified**](ExchangeBankCoinDataApi.md#V1UserExchangeBankCoinWithdrawUnverified) | **Get** /v1/user/exchange/bank/coin/withdraw/unverified | Unverified Exchange Coin Withdrawals
-[**V1UserExchangeBankCoinWithdrawVerified**](ExchangeBankCoinDataApi.md#V1UserExchangeBankCoinWithdrawVerified) | **Get** /v1/user/exchange/bank/coin/withdraw/verified | Verified Exchange Coin Withdrawals
+[**V1userexchangebankcoinaddresses**](ExchangeBankCoinDataApi.md#V1userexchangebankcoinaddresses) | **Get** /v1/user/exchange/bank/coin/addresses | Exchange Coin Addresses
+[**V1userexchangebankcoinbalanceavailable**](ExchangeBankCoinDataApi.md#V1userexchangebankcoinbalanceavailable) | **Get** /v1/user/exchange/bank/coin/balance/total | Available Exchange Coin Balance
+[**V1userexchangebankcoinbalancepending**](ExchangeBankCoinDataApi.md#V1userexchangebankcoinbalancepending) | **Get** /v1/user/exchange/bank/coin/balance/pending | In Trade Coin Balance
+[**V1userexchangebankcoinbalancetotal**](ExchangeBankCoinDataApi.md#V1userexchangebankcoinbalancetotal) | **Get** /v1/user/exchange/bank/coin/balance/available | Total Exchange Coin Balance
+[**V1userexchangebankcoindepositcancelled**](ExchangeBankCoinDataApi.md#V1userexchangebankcoindepositcancelled) | **Get** /v1/user/exchange/bank/coin/deposit/cancelled | Cancelled Exchange Coin Deposits
+[**V1userexchangebankcoindepositunverified**](ExchangeBankCoinDataApi.md#V1userexchangebankcoindepositunverified) | **Get** /v1/user/exchange/bank/coin/deposit/unverified | Unverified Exchange Coin Deposits
+[**V1userexchangebankcoindepositverified**](ExchangeBankCoinDataApi.md#V1userexchangebankcoindepositverified) | **Get** /v1/user/exchange/bank/coin/deposit/verified | Verified Exchange Coin Deposits
+[**V1userexchangebankcoinwithdrawcancelled**](ExchangeBankCoinDataApi.md#V1userexchangebankcoinwithdrawcancelled) | **Get** /v1/user/exchange/bank/coin/withdraw/cancelled | Cancelled Exchange Coin Withdrawals
+[**V1userexchangebankcoinwithdrawcompleted**](ExchangeBankCoinDataApi.md#V1userexchangebankcoinwithdrawcompleted) | **Get** /v1/user/exchange/bank/coin/withdraw/completed | Completed Exchange Coin Withdrawals
+[**V1userexchangebankcoinwithdrawunverified**](ExchangeBankCoinDataApi.md#V1userexchangebankcoinwithdrawunverified) | **Get** /v1/user/exchange/bank/coin/withdraw/unverified | Unverified Exchange Coin Withdrawals
+[**V1userexchangebankcoinwithdrawverified**](ExchangeBankCoinDataApi.md#V1userexchangebankcoinwithdrawverified) | **Get** /v1/user/exchange/bank/coin/withdraw/verified | Verified Exchange Coin Withdrawals
 
 
-# **V1UserExchangeBankCoinAddresses**
-> TradeAddressDataResponse V1UserExchangeBankCoinAddresses($authorization, $accept)
+# **V1userexchangebankcoinaddresses**
+> TradeAddressDataResponse V1userexchangebankcoinaddresses($authorization, $accept)
 
 Exchange Coin Addresses
 
@@ -47,8 +47,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankCoinBalanceAvailable**
-> VolDataResponse V1UserExchangeBankCoinBalanceAvailable($authorization, $accept)
+# **V1userexchangebankcoinbalanceavailable**
+> VolDataResponse V1userexchangebankcoinbalanceavailable($authorization, $accept)
 
 Available Exchange Coin Balance
 
@@ -77,8 +77,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankCoinBalancePending**
-> VolDataResponse V1UserExchangeBankCoinBalancePending($authorization, $accept)
+# **V1userexchangebankcoinbalancepending**
+> VolDataResponse V1userexchangebankcoinbalancepending($authorization, $accept)
 
 In Trade Coin Balance
 
@@ -107,8 +107,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankCoinBalanceTotal**
-> VolDataResponse V1UserExchangeBankCoinBalanceTotal($authorization, $accept)
+# **V1userexchangebankcoinbalancetotal**
+> VolDataResponse V1userexchangebankcoinbalancetotal($authorization, $accept)
 
 Total Exchange Coin Balance
 
@@ -137,8 +137,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankCoinDepositCancelled**
-> CoinDepDataResponse V1UserExchangeBankCoinDepositCancelled($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankcoindepositcancelled**
+> CoinDepDataResponse V1userexchangebankcoindepositcancelled($authorization, $from, $to, $max, $offset, $accept)
 
 Cancelled Exchange Coin Deposits
 
@@ -171,8 +171,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankCoinDepositUnverified**
-> CoinDepDataResponse V1UserExchangeBankCoinDepositUnverified($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankcoindepositunverified**
+> CoinDepDataResponse V1userexchangebankcoindepositunverified($authorization, $from, $to, $max, $offset, $accept)
 
 Unverified Exchange Coin Deposits
 
@@ -205,8 +205,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankCoinDepositVerified**
-> CoinDepDataResponse V1UserExchangeBankCoinDepositVerified($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankcoindepositverified**
+> CoinDepDataResponse V1userexchangebankcoindepositverified($authorization, $from, $to, $max, $offset, $accept)
 
 Verified Exchange Coin Deposits
 
@@ -239,8 +239,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankCoinWithdrawCancelled**
-> TradeCoinWithdrawDataResponse V1UserExchangeBankCoinWithdrawCancelled($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankcoinwithdrawcancelled**
+> TradeCoinWithdrawDataResponse V1userexchangebankcoinwithdrawcancelled($authorization, $from, $to, $max, $offset, $accept)
 
 Cancelled Exchange Coin Withdrawals
 
@@ -273,8 +273,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankCoinWithdrawCompleted**
-> TradeCoinWithdrawDataResponse V1UserExchangeBankCoinWithdrawCompleted($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankcoinwithdrawcompleted**
+> TradeCoinWithdrawDataResponse V1userexchangebankcoinwithdrawcompleted($authorization, $from, $to, $max, $offset, $accept)
 
 Completed Exchange Coin Withdrawals
 
@@ -307,8 +307,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankCoinWithdrawUnverified**
-> TradeCoinWithdrawDataResponse V1UserExchangeBankCoinWithdrawUnverified($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankcoinwithdrawunverified**
+> TradeCoinWithdrawDataResponse V1userexchangebankcoinwithdrawunverified($authorization, $from, $to, $max, $offset, $accept)
 
 Unverified Exchange Coin Withdrawals
 
@@ -341,8 +341,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBankCoinWithdrawVerified**
-> TradeCoinWithdrawDataResponse V1UserExchangeBankCoinWithdrawVerified($authorization, $from, $to, $max, $offset, $accept)
+# **V1userexchangebankcoinwithdrawverified**
+> TradeCoinWithdrawDataResponse V1userexchangebankcoinwithdrawverified($authorization, $from, $to, $max, $offset, $accept)
 
 Verified Exchange Coin Withdrawals
 

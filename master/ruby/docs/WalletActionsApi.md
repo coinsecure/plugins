@@ -1,6 +1,6 @@
 # SwaggerClient::WalletActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**v1userwalletcoinnew**](WalletActionsApi.md#v1userwalletcoinnew) | **PUT** /v1/user/wallet/coin/new | Create New Wallet
 [**v1userwalletcoinwithdrawinitiate**](WalletActionsApi.md#v1userwalletcoinwithdrawinitiate) | **POST** /v1/user/wallet/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 [**v1userwalletcoinwithdrawsend_to_exchange**](WalletActionsApi.md#v1userwalletcoinwithdrawsend_to_exchange) | **PUT** /v1/user/wallet/coin/withdraw/sendToExchange | Send to Exchange
-[**v1userwalletcoinwithdrawunverifiedcancel**](WalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+[**v1userwalletcoinwithdrawunverifiedcancel_withdraw_id**](WalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancel_withdraw_id) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 [**v1userwalletcoinwithdrawverify**](WalletActionsApi.md#v1userwalletcoinwithdrawverify) | **PUT** /v1/user/wallet/coin/withdraw/verify | Verify Bitcoin Withdrawal
 [**v1walletcoinwithdrawnew_verifycode**](WalletActionsApi.md#v1walletcoinwithdrawnew_verifycode) | **POST** /v1/wallet/coin/withdraw/newVerifycode | Gets a Verification Code
 
@@ -225,8 +225,8 @@ No authorization required
 
 
 
-# **v1userwalletcoinwithdrawunverifiedcancel**
-> SuccessResult v1userwalletcoinwithdrawunverifiedcancel(authorization, body, opts)
+# **v1userwalletcoinwithdrawunverifiedcancel_withdraw_id**
+> SuccessResult v1userwalletcoinwithdrawunverifiedcancel_withdraw_id(withdraw_id, authorization, opts)
 
 Cancel Bitcoin Withdrawal
 
@@ -239,9 +239,9 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::WalletActionsApi.new
 
-authorization = "authorization_example" # String | Enter a valid Api Key.
+withdraw_id = "withdraw_id_example" # String | 
 
-body = SwaggerClient::WithdrawID.new # WithdrawID | 
+authorization = "authorization_example" # String | Enter a valid Api Key.
 
 opts = { 
   accept: "accept_example" # String | JSON, XML or CSV can be returned (Optional)
@@ -249,10 +249,10 @@ opts = {
 
 begin
   #Cancel Bitcoin Withdrawal
-  result = api_instance.v1userwalletcoinwithdrawunverifiedcancel(authorization, body, opts)
+  result = api_instance.v1userwalletcoinwithdrawunverifiedcancel_withdraw_id(withdraw_id, authorization, opts)
   p result
 rescue SwaggerClient::ApiError => e
-  puts "Exception when calling WalletActionsApi->v1userwalletcoinwithdrawunverifiedcancel: #{e}"
+  puts "Exception when calling WalletActionsApi->v1userwalletcoinwithdrawunverifiedcancel_withdraw_id: #{e}"
 end
 ```
 
@@ -260,8 +260,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **withdraw_id** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | 
- **body** | [**WithdrawID**](WithdrawID.md)|  | 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type

@@ -1,19 +1,19 @@
 # SWGSecurityActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v1mfaauthyinitiate**](SWGSecurityActionsApi.md#v1mfaauthyinitiate) | **POST** /v1/mfa/authy/initiate | Initiate Authy Registration.
 [**v1mfagainitiate**](SWGSecurityActionsApi.md#v1mfagainitiate) | **POST** /v1/mfa/ga/initiate | Initiate GA Registration.
 [**v1usermfaauthycall**](SWGSecurityActionsApi.md#v1usermfaauthycall) | **GET** /v1/mfa/authy/call | Authy Call Code
-[**v1usermfaauthydisable**](SWGSecurityActionsApi.md#v1usermfaauthydisable) | **DELETE** /v1/user/mfa/authy/disable | Disable Authy
+[**v1usermfaauthydisableCode**](SWGSecurityActionsApi.md#v1usermfaauthydisablecode) | **DELETE** /v1/user/mfa/authy/disable/{code} | Disable Authy
 [**v1usermfaauthyinitiateenable**](SWGSecurityActionsApi.md#v1usermfaauthyinitiateenable) | **PUT** /v1/user/mfa/authy/initiate/enable | Verify Authy Registration
 [**v1usermfaauthysms**](SWGSecurityActionsApi.md#v1usermfaauthysms) | **GET** /v1/mfa/authy/sms | Authy Sms Code
-[**v1usermfagadisable**](SWGSecurityActionsApi.md#v1usermfagadisable) | **DELETE** /v1/user/mfa/ga/disable | Disable Google Authenticator
+[**v1usermfagadisableCode**](SWGSecurityActionsApi.md#v1usermfagadisablecode) | **DELETE** /v1/user/mfa/ga/disable/{code} | Disable Google Authenticator
 [**v1usermfagainitiateenable**](SWGSecurityActionsApi.md#v1usermfagainitiateenable) | **PUT** /v1/user/mfa/ga/initiate/enable | Enable Google Authenticator
-[**v1userpasswordchange**](SWGSecurityActionsApi.md#v1userpasswordchange) | **PATCH** /v1/user/password/change | Change Password.
-[**v1userpasswordreset**](SWGSecurityActionsApi.md#v1userpasswordreset) | **PATCH** /v1/user/password/reset | Reset Password.
+[**v1userpasswordchange**](SWGSecurityActionsApi.md#v1userpasswordchange) | **POST** /v1/user/password/change | Change Password.
+[**v1userpasswordreset**](SWGSecurityActionsApi.md#v1userpasswordreset) | **POST** /v1/user/password/reset | Reset Password.
 
 
 # **v1mfaauthyinitiate**
@@ -76,8 +76,7 @@ No authorization required
 
 # **v1mfagainitiate**
 ```objc
--(NSNumber*) v1mfagainitiateWithBody: (SWGMethodCountryMobile*) body
-    authorization: (NSString*) authorization
+-(NSNumber*) v1mfagainitiateWithAuthorization: (NSString*) authorization
     accept: (NSString*) accept
         completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler;
 ```
@@ -89,15 +88,13 @@ Returns the Google Authenticator Secret and a QR code URL.
 ### Example 
 ```objc
 
-SWGMethodCountryMobile* body = [[SWGMethodCountryMobile alloc] init]; // Please Send Valid Json as below.
 NSString* authorization = @"authorization_example"; // API object to be added (optional)
 NSString* accept = @"accept_example"; // JSON, XML or CSV can be returned (Optional) (optional)
 
 SWGSecurityActionsApi*apiInstance = [[SWGSecurityActionsApi alloc] init];
 
 // Initiate GA Registration.
-[apiInstance v1mfagainitiateWithBody:body
-              authorization:authorization
+[apiInstance v1mfagainitiateWithAuthorization:authorization
               accept:accept
           completionHandler: ^(SWGSuccessResult* output, NSError* error) {
                         if (output) {
@@ -113,7 +110,6 @@ SWGSecurityActionsApi*apiInstance = [[SWGSecurityActionsApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SWGMethodCountryMobile***](SWGMethodCountryMobile*.md)| Please Send Valid Json as below. | 
  **authorization** | **NSString***| API object to be added | [optional] 
  **accept** | **NSString***| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -186,9 +182,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1usermfaauthydisable**
+# **v1usermfaauthydisableCode**
 ```objc
--(NSNumber*) v1usermfaauthydisableWithBody: (SWGCode*) body
+-(NSNumber*) v1usermfaauthydisableCodeWithCode: (NSString*) code
     authorization: (NSString*) authorization
     accept: (NSString*) accept
         completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler;
@@ -201,14 +197,14 @@ Disables users Authy
 ### Example 
 ```objc
 
-SWGCode* body = [[SWGCode alloc] init]; // Please Send Valid Json as below.
+NSString* code = @"code_example"; // 
 NSString* authorization = @"authorization_example"; // API object to be added (optional)
 NSString* accept = @"accept_example"; // JSON, XML or CSV can be returned (Optional) (optional)
 
 SWGSecurityActionsApi*apiInstance = [[SWGSecurityActionsApi alloc] init];
 
 // Disable Authy
-[apiInstance v1usermfaauthydisableWithBody:body
+[apiInstance v1usermfaauthydisableCodeWithCode:code
               authorization:authorization
               accept:accept
           completionHandler: ^(SWGSuccessResult* output, NSError* error) {
@@ -216,7 +212,7 @@ SWGSecurityActionsApi*apiInstance = [[SWGSecurityActionsApi alloc] init];
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGSecurityActionsApi->v1usermfaauthydisable: %@", error);
+                            NSLog(@"Error calling SWGSecurityActionsApi->v1usermfaauthydisableCode: %@", error);
                         }
                     }];
 ```
@@ -225,7 +221,7 @@ SWGSecurityActionsApi*apiInstance = [[SWGSecurityActionsApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SWGCode***](SWGCode*.md)| Please Send Valid Json as below. | 
+ **code** | **NSString***|  | 
  **authorization** | **NSString***| API object to be added | [optional] 
  **accept** | **NSString***| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -356,9 +352,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1usermfagadisable**
+# **v1usermfagadisableCode**
 ```objc
--(NSNumber*) v1usermfagadisableWithBody: (SWGCode*) body
+-(NSNumber*) v1usermfagadisableCodeWithCode: (NSString*) code
     authorization: (NSString*) authorization
     accept: (NSString*) accept
         completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler;
@@ -371,14 +367,14 @@ Disables users Google Authenticator 2FA
 ### Example 
 ```objc
 
-SWGCode* body = [[SWGCode alloc] init]; // Please Send Valid Json as below.
+NSString* code = @"code_example"; // 
 NSString* authorization = @"authorization_example"; // API object to be added (optional)
 NSString* accept = @"accept_example"; // JSON, XML or CSV can be returned (Optional) (optional)
 
 SWGSecurityActionsApi*apiInstance = [[SWGSecurityActionsApi alloc] init];
 
 // Disable Google Authenticator
-[apiInstance v1usermfagadisableWithBody:body
+[apiInstance v1usermfagadisableCodeWithCode:code
               authorization:authorization
               accept:accept
           completionHandler: ^(SWGSuccessResult* output, NSError* error) {
@@ -386,7 +382,7 @@ SWGSecurityActionsApi*apiInstance = [[SWGSecurityActionsApi alloc] init];
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGSecurityActionsApi->v1usermfagadisable: %@", error);
+                            NSLog(@"Error calling SWGSecurityActionsApi->v1usermfagadisableCode: %@", error);
                         }
                     }];
 ```
@@ -395,7 +391,7 @@ SWGSecurityActionsApi*apiInstance = [[SWGSecurityActionsApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SWGCode***](SWGCode*.md)| Please Send Valid Json as below. | 
+ **code** | **NSString***|  | 
  **authorization** | **NSString***| API object to be added | [optional] 
  **accept** | **NSString***| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -416,7 +412,7 @@ No authorization required
 
 # **v1usermfagainitiateenable**
 ```objc
--(NSNumber*) v1usermfagainitiateenableWithBody: (SWGCodeCountryMobile*) body
+-(NSNumber*) v1usermfagainitiateenableWithBody: (SWGCode*) body
     authorization: (NSString*) authorization
     accept: (NSString*) accept
         completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler;
@@ -429,7 +425,7 @@ Enables Google Authenticator 2FA with the code from /v1/mfa/ga/initiate.
 ### Example 
 ```objc
 
-SWGCodeCountryMobile* body = [[SWGCodeCountryMobile alloc] init]; // Please Send Valid Json as below.
+SWGCode* body = [[SWGCode alloc] init]; // Please Send Valid Json as below.
 NSString* authorization = @"authorization_example"; // API object to be added (optional)
 NSString* accept = @"accept_example"; // JSON, XML or CSV can be returned (Optional) (optional)
 
@@ -453,7 +449,7 @@ SWGSecurityActionsApi*apiInstance = [[SWGSecurityActionsApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SWGCodeCountryMobile***](SWGCodeCountryMobile*.md)| Please Send Valid Json as below. | 
+ **body** | [**SWGCode***](SWGCode*.md)| Please Send Valid Json as below. | 
  **authorization** | **NSString***| API object to be added | [optional] 
  **accept** | **NSString***| JSON, XML or CSV can be returned (Optional) | [optional] 
 

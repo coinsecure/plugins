@@ -4,7 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**info** | **String** |  | 
+**success** | **Boolean** |  | 
+**email** | **String** |  | 
+**message** | **String** |  | 
 **keyType** | **String** |  | 
 **keyNeeded** | **String** |  | 
 

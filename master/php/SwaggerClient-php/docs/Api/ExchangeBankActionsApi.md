@@ -1,19 +1,19 @@
 # Swagger\Client\ExchangeBankActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v1userexchangebankcoinwithdrawinitiate**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawinitiate) | **POST** /v1/user/exchange/bank/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 [**v1userexchangebankcoinwithdrawnewVerifycode**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawnewVerifycode) | **POST** /v1/user/exchange/bank/coin/withdraw/newVerifycode | Gets a Verification Code.
-[**v1userexchangebankcoinwithdrawunverifiedcancel**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+[**v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 [**v1userexchangebankcoinwithdrawverify**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawverify) | **PUT** /v1/user/exchange/bank/coin/withdraw/verify | Verify Bitcoin Withdrawal
 [**v1userexchangebankfiataccountnew**](ExchangeBankActionsApi.md#v1userexchangebankfiataccountnew) | **PUT** /v1/user/exchange/bank/fiat/account/new | New Bank Link
-[**v1userexchangebankfiatdepositcancel**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancel) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel | Cancel Unverified Exchange Fiat Deposit
+[**v1userexchangebankfiatdepositcancelDepositID**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancelDepositID) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel/{depositID} | Cancel Unverified Exchange Fiat Deposit
 [**v1userexchangebankfiatdepositnew**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositnew) | **PUT** /v1/user/exchange/bank/fiat/deposit/new | New Exchange Fiat Deposit
 [**v1userexchangebankfiatwithdrawinitiate**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawinitiate) | **POST** /v1/user/exchange/bank/fiat/withdraw/initiate | Initiate Fiat Withdrawal
 [**v1userexchangebankfiatwithdrawnewVerifycode**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawnewVerifycode) | **POST** /v1/user/exchange/bank/fiat/withdraw/newVerifycode | Gets a Fiat Verification Code.
-[**v1userexchangebankfiatwithdrawunverifiedcancel**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel | Cancel Fiat Withdrawal
+[**v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID} | Cancel Fiat Withdrawal
 [**v1userexchangebankfiatwithdrawverify**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawverify) | **PUT** /v1/user/exchange/bank/fiat/withdraw/verify | Verify Fiat Withdrawal
 
 
@@ -115,8 +115,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **v1userexchangebankcoinwithdrawunverifiedcancel**
-> \Swagger\Client\Model\SuccessResult v1userexchangebankcoinwithdrawunverifiedcancel($body, $authorization, $accept)
+# **v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID**
+> \Swagger\Client\Model\SuccessResult v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID($withdraw_id, $authorization, $accept)
 
 Cancel Bitcoin Withdrawal
 
@@ -128,15 +128,15 @@ Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/excha
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\ExchangeBankActionsApi();
-$body = new \Swagger\Client\Model\WithdrawID(); // \Swagger\Client\Model\WithdrawID | You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified.
+$withdraw_id = "withdraw_id_example"; // string | 
 $authorization = "authorization_example"; // string | Enter a valid Api Key.
 $accept = "accept_example"; // string | JSON, XML or CSV can be returned (Optional)
 
 try {
-    $result = $api_instance->v1userexchangebankcoinwithdrawunverifiedcancel($body, $authorization, $accept);
+    $result = $api_instance->v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID($withdraw_id, $authorization, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawunverifiedcancel: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -145,7 +145,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\WithdrawID**](../Model/\Swagger\Client\Model\WithdrawID.md)| You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified. |
+ **withdraw_id** | **string**|  |
  **authorization** | **string**| Enter a valid Api Key. | [optional]
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional]
 
@@ -262,8 +262,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **v1userexchangebankfiatdepositcancel**
-> \Swagger\Client\Model\SuccessResult v1userexchangebankfiatdepositcancel($body, $authorization, $accept)
+# **v1userexchangebankfiatdepositcancelDepositID**
+> \Swagger\Client\Model\SuccessResult v1userexchangebankfiatdepositcancelDepositID($deposit_id, $authorization, $accept)
 
 Cancel Unverified Exchange Fiat Deposit
 
@@ -275,15 +275,15 @@ Cancels an unverified Exchange Fiat Deposit.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\ExchangeBankActionsApi();
-$body = new \Swagger\Client\Model\DepositID(); // \Swagger\Client\Model\DepositID | Please send the form with valid inputs.
+$deposit_id = "deposit_id_example"; // string | 
 $authorization = "authorization_example"; // string | Enter a valid Api Key.
 $accept = "accept_example"; // string | JSON, XML or CSV can be returned (Optional)
 
 try {
-    $result = $api_instance->v1userexchangebankfiatdepositcancel($body, $authorization, $accept);
+    $result = $api_instance->v1userexchangebankfiatdepositcancelDepositID($deposit_id, $authorization, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatdepositcancel: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatdepositcancelDepositID: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -292,7 +292,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\DepositID**](../Model/\Swagger\Client\Model\DepositID.md)| Please send the form with valid inputs. |
+ **deposit_id** | **string**|  |
  **authorization** | **string**| Enter a valid Api Key. | [optional]
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional]
 
@@ -458,8 +458,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **v1userexchangebankfiatwithdrawunverifiedcancel**
-> \Swagger\Client\Model\SuccessResult v1userexchangebankfiatwithdrawunverifiedcancel($body, $authorization, $accept)
+# **v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID**
+> \Swagger\Client\Model\SuccessResult v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID($withdraw_id, $authorization, $accept)
 
 Cancel Fiat Withdrawal
 
@@ -471,15 +471,15 @@ Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/excha
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\ExchangeBankActionsApi();
-$body = new \Swagger\Client\Model\WithdrawID(); // \Swagger\Client\Model\WithdrawID | You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified.
+$withdraw_id = "withdraw_id_example"; // string | 
 $authorization = "authorization_example"; // string | Enter a valid Api Key.
 $accept = "accept_example"; // string | JSON, XML or CSV can be returned (Optional)
 
 try {
-    $result = $api_instance->v1userexchangebankfiatwithdrawunverifiedcancel($body, $authorization, $accept);
+    $result = $api_instance->v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID($withdraw_id, $authorization, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawunverifiedcancel: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -488,7 +488,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\WithdrawID**](../Model/\Swagger\Client\Model\WithdrawID.md)| You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified. |
+ **withdraw_id** | **string**|  |
  **authorization** | **string**| Enter a valid Api Key. | [optional]
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional]
 

@@ -1,6 +1,6 @@
 # IO.Swagger.Api.WalletDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**V1walletwithdrawverified**](WalletDataApi.md#v1walletwithdrawverified) | **GET** /v1/wallet/coin/withdraw/verified | Verified Coin Withdrawals
 
 
+<a name="v1userwalletcoinaddresswalletid"></a>
 # **V1userwalletcoinaddressWalletID**
 > WalletAddressDataResponse V1userwalletcoinaddressWalletID (string walletID, string authorization = null, string accept = null)
 
@@ -81,6 +82,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userwalletcoindepositconfirmedwalletid"></a>
 # **V1userwalletcoindepositconfirmedWalletID**
 > WalletAddressDataResponse V1userwalletcoindepositconfirmedWalletID (string walletID, string authorization = null, string accept = null)
 
@@ -146,6 +148,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userwalletcoindepositconfirmedall"></a>
 # **V1userwalletcoindepositconfirmedall**
 > WalletAddressDataResponse V1userwalletcoindepositconfirmedall (string authorization = null, string accept = null)
 
@@ -209,6 +212,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userwalletcoindepositunconfirmedwalletid"></a>
 # **V1userwalletcoindepositunconfirmedWalletID**
 > void V1userwalletcoindepositunconfirmedWalletID (string walletID, string authorization, string accept = null)
 
@@ -273,6 +277,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userwalletcoindepositunconfirmedall"></a>
 # **V1userwalletcoindepositunconfirmedall**
 > void V1userwalletcoindepositunconfirmedall (string authorization = null, string accept = null)
 
@@ -335,6 +340,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userwalletcoinwallets"></a>
 # **V1userwalletcoinwallets**
 > WalletsDataResponse V1userwalletcoinwallets (string authorization = null, string accept = null)
 
@@ -398,6 +404,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1walletwithdrawcancelled"></a>
 # **V1walletwithdrawcancelled**
 > WalletCoinWithdrawDataResponse V1walletwithdrawcancelled (string authorization, string accept = null)
 
@@ -461,6 +468,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1walletwithdrawcompleted"></a>
 # **V1walletwithdrawcompleted**
 > WalletCoinWithdrawDataResponse V1walletwithdrawcompleted (string authorization, string accept = null)
 
@@ -524,6 +532,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1walletwithdrawunverified"></a>
 # **V1walletwithdrawunverified**
 > WalletCoinWithdrawDataResponse V1walletwithdrawunverified (string authorization, string accept = null)
 
@@ -587,6 +596,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1walletwithdrawverified"></a>
 # **V1walletwithdrawverified**
 > WalletCoinWithdrawDataResponse V1walletwithdrawverified (string authorization, string accept = null)
 

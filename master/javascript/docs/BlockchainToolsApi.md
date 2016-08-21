@@ -1,6 +1,6 @@
 # CoinsecureApiDocumentation.BlockchainToolsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,7 +18,7 @@ Searches for a Bitcoin Address, Netki Wallet Name or Transaction ID.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.BlockchainToolsApi();
 
@@ -68,7 +68,7 @@ Searches for a Number of Confirmations on a transaction ID.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.BlockchainToolsApi();
 

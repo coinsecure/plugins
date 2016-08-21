@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **String** |  |  [optional]
-**countryCode** | **Integer** |  |  [optional]
-**phoneNumber** | **Long** |  |  [optional]
+**countryCode** | **String** |  |  [optional]
+**phoneNumber** | **String** |  |  [optional]
 
 
 

@@ -1,6 +1,6 @@
 # IO.Swagger.Api.ExchangeBankFiatDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**V1userexchangebankfiatwithdrawverified**](ExchangeBankFiatDataApi.md#v1userexchangebankfiatwithdrawverified) | **GET** /v1/user/exchange/bank/fiat/withdraw/verified | Verified Exchange Fiat Withdrawals
 
 
+<a name="v1userexchangebankfiataccounts"></a>
 # **V1userexchangebankfiataccounts**
 > FiatBankDataResponse V1userexchangebankfiataccounts (string authorization, string accept = null)
 
@@ -80,6 +81,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatbalanceavailable"></a>
 # **V1userexchangebankfiatbalanceavailable**
 > RateDataResponse V1userexchangebankfiatbalanceavailable (string authorization, string accept = null)
 
@@ -143,6 +145,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatbalancepending"></a>
 # **V1userexchangebankfiatbalancepending**
 > RateDataResponse V1userexchangebankfiatbalancepending (string authorization, string accept = null)
 
@@ -206,6 +209,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatbalancetotal"></a>
 # **V1userexchangebankfiatbalancetotal**
 > RateDataResponse V1userexchangebankfiatbalancetotal (string authorization, string accept = null)
 
@@ -269,6 +273,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatdepositcancelled"></a>
 # **V1userexchangebankfiatdepositcancelled**
 > FiatDepDataResponse V1userexchangebankfiatdepositcancelled (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 
@@ -340,6 +345,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatdepositunverified"></a>
 # **V1userexchangebankfiatdepositunverified**
 > FiatDepDataResponse V1userexchangebankfiatdepositunverified (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 
@@ -411,6 +417,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatdepositverified"></a>
 # **V1userexchangebankfiatdepositverified**
 > FiatDepDataResponse V1userexchangebankfiatdepositverified (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 
@@ -482,6 +489,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatwithdrawcancelled"></a>
 # **V1userexchangebankfiatwithdrawcancelled**
 > FiatWithDataResponse V1userexchangebankfiatwithdrawcancelled (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 
@@ -553,6 +561,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatwithdrawcompleted"></a>
 # **V1userexchangebankfiatwithdrawcompleted**
 > FiatWithDataResponse V1userexchangebankfiatwithdrawcompleted (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 
@@ -624,6 +633,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatwithdrawunverified"></a>
 # **V1userexchangebankfiatwithdrawunverified**
 > FiatWithDataResponse V1userexchangebankfiatwithdrawunverified (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 
@@ -695,6 +705,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatwithdrawverified"></a>
 # **V1userexchangebankfiatwithdrawverified**
 > FiatWithDataResponse V1userexchangebankfiatwithdrawverified (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 

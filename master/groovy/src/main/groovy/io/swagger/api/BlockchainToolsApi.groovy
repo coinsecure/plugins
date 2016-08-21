@@ -13,7 +13,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class BlockchainToolsApi {
-    String basePath = "https://api.coinsecure.in/"
+    String basePath = "https://api.coinsecure.in"
     String versionPath = "/api/v1"
 
     def v1bitcoinsearchAddress ( String any, String accept, Closure onSuccess, Closure onFailure)  {

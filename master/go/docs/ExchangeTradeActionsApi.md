@@ -1,19 +1,19 @@
 # \ExchangeTradeActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1UserExchangeAskCancel**](ExchangeTradeActionsApi.md#V1UserExchangeAskCancel) | **Delete** /v1/user/exchange/ask/cancel | Cancel Open Sell Order
-[**V1UserExchangeAskNew**](ExchangeTradeActionsApi.md#V1UserExchangeAskNew) | **Put** /v1/user/exchange/ask/new | BTC Sell Order
-[**V1UserExchangeBidCancel**](ExchangeTradeActionsApi.md#V1UserExchangeBidCancel) | **Delete** /v1/user/exchange/bid/cancel | Cancel Open Buy Order
-[**V1UserExchangeBidNew**](ExchangeTradeActionsApi.md#V1UserExchangeBidNew) | **Put** /v1/user/exchange/bid/new | BTC Buy Order
-[**V1UserExchangeInstantBuy**](ExchangeTradeActionsApi.md#V1UserExchangeInstantBuy) | **Put** /v1/user/exchange/instant/buy | Instantly Buy BTC
-[**V1UserExchangeInstantSell**](ExchangeTradeActionsApi.md#V1UserExchangeInstantSell) | **Put** /v1/user/exchange/instant/sell | Instantly Sell BTC
+[**V1userexchangeaskcancelOrderID**](ExchangeTradeActionsApi.md#V1userexchangeaskcancelOrderID) | **Delete** /v1/user/exchange/ask/cancel/{orderID} | Cancel Open Sell Order
+[**V1userexchangeasknew**](ExchangeTradeActionsApi.md#V1userexchangeasknew) | **Put** /v1/user/exchange/ask/new | BTC Sell Order
+[**V1userexchangebidcancelOrderID**](ExchangeTradeActionsApi.md#V1userexchangebidcancelOrderID) | **Delete** /v1/user/exchange/bid/cancel/{orderID} | Cancel Open Buy Order
+[**V1userexchangebidnew**](ExchangeTradeActionsApi.md#V1userexchangebidnew) | **Put** /v1/user/exchange/bid/new | BTC Buy Order
+[**V1userexchangeinstantbuy**](ExchangeTradeActionsApi.md#V1userexchangeinstantbuy) | **Put** /v1/user/exchange/instant/buy | Instantly Buy BTC
+[**V1userexchangeinstantsell**](ExchangeTradeActionsApi.md#V1userexchangeinstantsell) | **Put** /v1/user/exchange/instant/sell | Instantly Sell BTC
 
 
-# **V1UserExchangeAskCancel**
-> SuccessResult V1UserExchangeAskCancel($body, $authorization, $accept)
+# **V1userexchangeaskcancelOrderID**
+> SuccessCancelDataResponse V1userexchangeaskcancelOrderID($orderID, $authorization)
 
 Cancel Open Sell Order
 
@@ -24,13 +24,12 @@ Cancels a BTC Sell Order. Orders can only be cancelled if they are in a pending 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AskId**](AskId.md)| Please send the form with valid inputs. | 
+ **orderID** | **string**|  | 
  **authorization** | **string**| Enter a valid Api Key. | [optional] 
- **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
 
-[**SuccessResult**](SuccessResult.md)
+[**SuccessCancelDataResponse**](SuccessCancelDataResponse.md)
 
 ### Authorization
 
@@ -43,8 +42,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeAskNew**
-> SuccessResultList V1UserExchangeAskNew($body, $authorization, $accept)
+# **V1userexchangeasknew**
+> SuccessOrderDataResponse V1userexchangeasknew($body, $authorization, $accept)
 
 BTC Sell Order
 
@@ -61,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -74,8 +73,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBidCancel**
-> SuccessResult V1UserExchangeBidCancel($body, $authorization, $accept)
+# **V1userexchangebidcancelOrderID**
+> SuccessCancelDataResponse V1userexchangebidcancelOrderID($orderID, $authorization)
 
 Cancel Open Buy Order
 
@@ -86,13 +85,12 @@ Cancels a BTC Buy Order. Orders can only be cancelled if they are in a pending s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BidId**](BidId.md)| Please send the form with valid inputs. | 
+ **orderID** | **string**|  | 
  **authorization** | **string**| Enter a valid Api Key. | [optional] 
- **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
 
-[**SuccessResult**](SuccessResult.md)
+[**SuccessCancelDataResponse**](SuccessCancelDataResponse.md)
 
 ### Authorization
 
@@ -105,8 +103,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeBidNew**
-> SuccessResultList V1UserExchangeBidNew($body, $authorization, $accept)
+# **V1userexchangebidnew**
+> SuccessOrderDataResponse V1userexchangebidnew($body, $authorization, $accept)
 
 BTC Buy Order
 
@@ -123,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -136,8 +134,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeInstantBuy**
-> SuccessResultList V1UserExchangeInstantBuy($body, $authorization, $accept)
+# **V1userexchangeinstantbuy**
+> SuccessOrderDataResponse V1userexchangeinstantbuy($body, $authorization, $accept)
 
 Instantly Buy BTC
 
@@ -154,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -167,8 +165,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeInstantSell**
-> SuccessResultList V1UserExchangeInstantSell($body, $authorization, $accept)
+# **V1userexchangeinstantsell**
+> SuccessOrderDataResponse V1userexchangeinstantsell($body, $authorization, $accept)
 
 Instantly Sell BTC
 
@@ -185,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 

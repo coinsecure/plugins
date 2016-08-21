@@ -6,7 +6,6 @@
 #import "SWGWithdrawID.h"
 #import "SWGCode.h"
 #import "SWGNewBankForm.h"
-#import "SWGDepositID.h"
 #import "SWGNewFiatBankDeposit.h"
 #import "SWGWithdrawFiat.h"
 
@@ -244,7 +243,7 @@ NSInteger kSWGExchangeBankActionsApiMissingParamErrorCode = 234513;
 ///
 /// Cancel Bitcoin Withdrawal
 /// Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified.
-///  @param body You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified. 
+///  @param withdrawID  
 ///
 ///  @param authorization Enter a valid Api Key. (optional)
 ///
@@ -252,27 +251,30 @@ NSInteger kSWGExchangeBankActionsApiMissingParamErrorCode = 234513;
 ///
 ///  @returns SWGSuccessResult*
 ///
--(NSNumber*) v1userexchangebankcoinwithdrawunverifiedcancelWithBody: (SWGWithdrawID*) body
+-(NSNumber*) v1userexchangebankcoinwithdrawunverifiedcancelWithdrawIDWithWithdrawID: (NSString*) withdrawID
     authorization: (NSString*) authorization
     accept: (NSString*) accept
     completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler {
-    // verify the required parameter 'body' is set
-    if (body == nil) {
-        NSParameterAssert(body);
+    // verify the required parameter 'withdrawID' is set
+    if (withdrawID == nil) {
+        NSParameterAssert(withdrawID);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"withdrawID"] };
             NSError* error = [NSError errorWithDomain:kSWGExchangeBankActionsApiErrorDomain code:kSWGExchangeBankActionsApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
     }
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/exchange/bank/coin/withdraw/unverified/cancel"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID}"];
 
     // remove format in URL if needed
     [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (withdrawID != nil) {
+        pathParams[@"withdrawID"] = withdrawID;
+    }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
@@ -301,7 +303,6 @@ NSInteger kSWGExchangeBankActionsApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"DELETE"
@@ -490,7 +491,7 @@ NSInteger kSWGExchangeBankActionsApiMissingParamErrorCode = 234513;
 ///
 /// Cancel Unverified Exchange Fiat Deposit
 /// Cancels an unverified Exchange Fiat Deposit.
-///  @param body Please send the form with valid inputs. 
+///  @param depositID  
 ///
 ///  @param authorization Enter a valid Api Key. (optional)
 ///
@@ -498,27 +499,30 @@ NSInteger kSWGExchangeBankActionsApiMissingParamErrorCode = 234513;
 ///
 ///  @returns SWGSuccessResult*
 ///
--(NSNumber*) v1userexchangebankfiatdepositcancelWithBody: (SWGDepositID*) body
+-(NSNumber*) v1userexchangebankfiatdepositcancelDepositIDWithDepositID: (NSString*) depositID
     authorization: (NSString*) authorization
     accept: (NSString*) accept
     completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler {
-    // verify the required parameter 'body' is set
-    if (body == nil) {
-        NSParameterAssert(body);
+    // verify the required parameter 'depositID' is set
+    if (depositID == nil) {
+        NSParameterAssert(depositID);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"depositID"] };
             NSError* error = [NSError errorWithDomain:kSWGExchangeBankActionsApiErrorDomain code:kSWGExchangeBankActionsApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
     }
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/exchange/bank/fiat/deposit/cancel"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/exchange/bank/fiat/deposit/cancel/{depositID}"];
 
     // remove format in URL if needed
     [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (depositID != nil) {
+        pathParams[@"depositID"] = depositID;
+    }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
@@ -547,7 +551,6 @@ NSInteger kSWGExchangeBankActionsApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"DELETE"
@@ -818,7 +821,7 @@ NSInteger kSWGExchangeBankActionsApiMissingParamErrorCode = 234513;
 ///
 /// Cancel Fiat Withdrawal
 /// Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/exchange/bank/fiat/withdraw/unverified.
-///  @param body You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified. 
+///  @param withdrawID  
 ///
 ///  @param authorization Enter a valid Api Key. (optional)
 ///
@@ -826,27 +829,30 @@ NSInteger kSWGExchangeBankActionsApiMissingParamErrorCode = 234513;
 ///
 ///  @returns SWGSuccessResult*
 ///
--(NSNumber*) v1userexchangebankfiatwithdrawunverifiedcancelWithBody: (SWGWithdrawID*) body
+-(NSNumber*) v1userexchangebankfiatwithdrawunverifiedcancelWithdrawIDWithWithdrawID: (NSString*) withdrawID
     authorization: (NSString*) authorization
     accept: (NSString*) accept
     completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler {
-    // verify the required parameter 'body' is set
-    if (body == nil) {
-        NSParameterAssert(body);
+    // verify the required parameter 'withdrawID' is set
+    if (withdrawID == nil) {
+        NSParameterAssert(withdrawID);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"withdrawID"] };
             NSError* error = [NSError errorWithDomain:kSWGExchangeBankActionsApiErrorDomain code:kSWGExchangeBankActionsApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
     }
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/exchange/bank/fiat/withdraw/unverified/cancel"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID}"];
 
     // remove format in URL if needed
     [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (withdrawID != nil) {
+        pathParams[@"withdrawID"] = withdrawID;
+    }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
@@ -875,7 +881,6 @@ NSInteger kSWGExchangeBankActionsApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"DELETE"

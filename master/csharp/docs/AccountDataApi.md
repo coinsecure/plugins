@@ -1,6 +1,6 @@
 # IO.Swagger.Api.AccountDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**V1userwalletsummary**](AccountDataApi.md#v1userwalletsummary) | **GET** /v1/user/wallet/summary | Exchange Bank Summary
 
 
+<a name="v1exchangebanksummary"></a>
 # **V1exchangebanksummary**
 > BankSummaryDataResponse V1exchangebanksummary (string authorization, string accept = null)
 
@@ -82,6 +83,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1exchangeusercoinfee"></a>
 # **V1exchangeusercoinfee**
 > DoubleDataResponse V1exchangeusercoinfee (string authorization = null, string accept = null)
 
@@ -145,6 +147,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1exchangeuserfiatfee"></a>
 # **V1exchangeuserfiatfee**
 > DoubleDataResponse V1exchangeuserfiatfee (string authorization, string accept = null)
 
@@ -208,6 +211,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1netkisearchnetkiname"></a>
 # **V1netkisearchNetkiName**
 > DoubleDataResponse V1netkisearchNetkiName (string netkiName, string accept = null)
 
@@ -271,6 +275,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangekycs"></a>
 # **V1userexchangekycs**
 > KYCDataResponse V1userexchangekycs (string authorization, string accept = null)
 
@@ -334,6 +339,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangereferralcoinpaid"></a>
 # **V1userexchangereferralcoinpaid**
 > SuccCoinRefDataResponse V1userexchangereferralcoinpaid (string authorization, string accept = null)
 
@@ -397,6 +403,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangereferralcoinsuccessful"></a>
 # **V1userexchangereferralcoinsuccessful**
 > SuccRefDataResponse V1userexchangereferralcoinsuccessful (string authorization, string accept = null)
 
@@ -460,6 +467,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangereferralfiatpaid"></a>
 # **V1userexchangereferralfiatpaid**
 > SuccCoinRefDataResponse V1userexchangereferralfiatpaid (string authorization, string accept = null)
 
@@ -523,6 +531,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangereferrals"></a>
 # **V1userexchangereferrals**
 > AllRefDataResponse V1userexchangereferrals (string authorization, string accept = null)
 
@@ -586,6 +595,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangetradesummary"></a>
 # **V1userexchangetradesummary**
 > TradeSummaryDataResponse V1userexchangetradesummary (string authorization, string accept = null)
 
@@ -649,6 +659,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userlogintokentoken"></a>
 # **V1userlogintokenToken**
 > SuccessResult V1userlogintokenToken (string token, string accept = null)
 
@@ -712,6 +723,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1usersummary"></a>
 # **V1usersummary**
 > UserSummaryDataResponse V1usersummary (string authorization, string accept = null)
 
@@ -775,6 +787,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userwalletsummary"></a>
 # **V1userwalletsummary**
 > WalletSummaryDataResponse V1userwalletsummary (string authorization, string accept = null)
 

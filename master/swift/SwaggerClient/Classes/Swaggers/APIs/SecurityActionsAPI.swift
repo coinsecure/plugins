@@ -30,7 +30,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -42,7 +42,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -71,11 +71,10 @@ public class SecurityActionsAPI: APIBase {
     /**
      Initiate GA Registration.
      
-     - parameter body: (body) Please Send Valid Json as below. 
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1mfagainitiate(body body: MethodCountryMobile, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
-        v1mfagainitiateWithRequestBuilder(body: body).execute { (response, error) -> Void in
+    public class func v1mfagainitiate(completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
+        v1mfagainitiateWithRequestBuilder().execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -88,7 +87,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -100,7 +99,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -109,15 +108,16 @@ public class SecurityActionsAPI: APIBase {
   <title>string</title>
   <time>2000-01-23T04:56:07.000Z</time>
 </null>}]
-     
-     - parameter body: (body) Please Send Valid Json as below. 
 
      - returns: RequestBuilder<SuccessResult> 
      */
-    public class func v1mfagainitiateWithRequestBuilder(body body: MethodCountryMobile) -> RequestBuilder<SuccessResult> {
+    public class func v1mfagainitiateWithRequestBuilder() -> RequestBuilder<SuccessResult> {
         let path = "/v1/mfa/ga/initiate"
         let URLString = SwaggerClientAPI.basePath + path
-        let parameters = body.encodeToJSON() as? [String:AnyObject]
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
@@ -145,7 +145,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -157,7 +157,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -187,11 +187,11 @@ public class SecurityActionsAPI: APIBase {
     /**
      Disable Authy
      
-     - parameter body: (body) Please Send Valid Json as below. 
+     - parameter code: (path)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1usermfaauthydisable(body body: Code, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
-        v1usermfaauthydisableWithRequestBuilder(body: body).execute { (response, error) -> Void in
+    public class func v1usermfaauthydisableCode(code code: String, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
+        v1usermfaauthydisableCodeWithRequestBuilder(code: code).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -199,12 +199,12 @@ public class SecurityActionsAPI: APIBase {
 
     /**
      Disable Authy
-     - DELETE /v1/user/mfa/authy/disable
+     - DELETE /v1/user/mfa/authy/disable/{code}
      - Disables users Authy
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -216,7 +216,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -226,14 +226,18 @@ public class SecurityActionsAPI: APIBase {
   <time>2000-01-23T04:56:07.000Z</time>
 </null>}]
      
-     - parameter body: (body) Please Send Valid Json as below. 
+     - parameter code: (path)  
 
      - returns: RequestBuilder<SuccessResult> 
      */
-    public class func v1usermfaauthydisableWithRequestBuilder(body body: Code) -> RequestBuilder<SuccessResult> {
-        let path = "/v1/user/mfa/authy/disable"
+    public class func v1usermfaauthydisableCodeWithRequestBuilder(code code: String) -> RequestBuilder<SuccessResult> {
+        var path = "/v1/user/mfa/authy/disable/{code}"
+        path = path.stringByReplacingOccurrencesOfString("{code}", withString: "\(code)", options: .LiteralSearch, range: nil)
         let URLString = SwaggerClientAPI.basePath + path
-        let parameters = body.encodeToJSON() as? [String:AnyObject]
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
@@ -262,7 +266,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -274,7 +278,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -319,7 +323,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -331,7 +335,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -361,11 +365,11 @@ public class SecurityActionsAPI: APIBase {
     /**
      Disable Google Authenticator
      
-     - parameter body: (body) Please Send Valid Json as below. 
+     - parameter code: (path)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1usermfagadisable(body body: Code, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
-        v1usermfagadisableWithRequestBuilder(body: body).execute { (response, error) -> Void in
+    public class func v1usermfagadisableCode(code code: String, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
+        v1usermfagadisableCodeWithRequestBuilder(code: code).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -373,12 +377,12 @@ public class SecurityActionsAPI: APIBase {
 
     /**
      Disable Google Authenticator
-     - DELETE /v1/user/mfa/ga/disable
+     - DELETE /v1/user/mfa/ga/disable/{code}
      - Disables users Google Authenticator 2FA
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -390,7 +394,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -400,14 +404,18 @@ public class SecurityActionsAPI: APIBase {
   <time>2000-01-23T04:56:07.000Z</time>
 </null>}]
      
-     - parameter body: (body) Please Send Valid Json as below. 
+     - parameter code: (path)  
 
      - returns: RequestBuilder<SuccessResult> 
      */
-    public class func v1usermfagadisableWithRequestBuilder(body body: Code) -> RequestBuilder<SuccessResult> {
-        let path = "/v1/user/mfa/ga/disable"
+    public class func v1usermfagadisableCodeWithRequestBuilder(code code: String) -> RequestBuilder<SuccessResult> {
+        var path = "/v1/user/mfa/ga/disable/{code}"
+        path = path.stringByReplacingOccurrencesOfString("{code}", withString: "\(code)", options: .LiteralSearch, range: nil)
         let URLString = SwaggerClientAPI.basePath + path
-        let parameters = body.encodeToJSON() as? [String:AnyObject]
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
@@ -422,7 +430,7 @@ public class SecurityActionsAPI: APIBase {
      - parameter body: (body) Please Send Valid Json as below. 
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1usermfagainitiateenable(body body: CodeCountryMobile, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
+    public class func v1usermfagainitiateenable(body body: Code, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
         v1usermfagainitiateenableWithRequestBuilder(body: body).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
@@ -436,7 +444,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -448,7 +456,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -462,7 +470,7 @@ public class SecurityActionsAPI: APIBase {
 
      - returns: RequestBuilder<SuccessResult> 
      */
-    public class func v1usermfagainitiateenableWithRequestBuilder(body body: CodeCountryMobile) -> RequestBuilder<SuccessResult> {
+    public class func v1usermfagainitiateenableWithRequestBuilder(body body: Code) -> RequestBuilder<SuccessResult> {
         let path = "/v1/user/mfa/ga/initiate/enable"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = body.encodeToJSON() as? [String:AnyObject]
@@ -489,12 +497,12 @@ public class SecurityActionsAPI: APIBase {
 
     /**
      Change Password.
-     - PATCH /v1/user/password/change
+     - POST /v1/user/password/change
      - Changes an account Password.
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -506,7 +514,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -529,7 +537,7 @@ public class SecurityActionsAPI: APIBase {
  
         let requestBuilder: RequestBuilder<SuccessResult>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
-        return requestBuilder.init(method: "PATCH", URLString: URLString, parameters: convertedParameters, isBody: true)
+        return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
 
     /**
@@ -547,12 +555,12 @@ public class SecurityActionsAPI: APIBase {
 
     /**
      Reset Password.
-     - PATCH /v1/user/password/reset
+     - POST /v1/user/password/reset
      - Resets an account Password. Use forgotPassword to generate a token.
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -564,7 +572,7 @@ public class SecurityActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -587,7 +595,7 @@ public class SecurityActionsAPI: APIBase {
  
         let requestBuilder: RequestBuilder<SuccessResult>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
-        return requestBuilder.init(method: "PATCH", URLString: URLString, parameters: convertedParameters, isBody: true)
+        return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
 
 }

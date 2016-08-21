@@ -30,10 +30,12 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
+    "success" : true,
+    "message" : "aeiou",
     "keyType" : "aeiou",
-    "info" : "aeiou",
+    "email" : "aeiou",
     "keyNeeded" : "aeiou"
   },
   "title" : "aeiou"
@@ -46,10 +48,12 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
+    "success" : true,
+    "message" : "aeiou",
     "keyType" : "aeiou",
-    "info" : "aeiou",
+    "email" : "aeiou",
     "keyNeeded" : "aeiou"
   },
   "title" : "aeiou"
@@ -96,7 +100,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "validTill" : 123456789,
     "mfa" : "aeiou",
@@ -113,7 +117,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "validTill" : 123456789,
     "mfa" : "aeiou",
@@ -164,7 +168,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -176,7 +180,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -222,7 +226,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -234,7 +238,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -280,7 +284,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "validTill" : 123456789,
     "mfa" : "aeiou",
@@ -297,7 +301,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "validTill" : 123456789,
     "mfa" : "aeiou",
@@ -362,7 +366,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -374,7 +378,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -445,7 +449,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -457,7 +461,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -507,7 +511,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -519,7 +523,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -568,7 +572,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -580,7 +584,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -627,7 +631,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -639,7 +643,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -680,12 +684,12 @@ public class AccountActionsAPI: APIBase {
 
     /**
      Update Netki Address
-     - PATCH /v1/user/netki/update
+     - POST /v1/user/netki/update
      - Updates the address on an existing wallet name.
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -697,7 +701,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -720,17 +724,17 @@ public class AccountActionsAPI: APIBase {
  
         let requestBuilder: RequestBuilder<SuccessResult>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
-        return requestBuilder.init(method: "PATCH", URLString: URLString, parameters: convertedParameters, isBody: true)
+        return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
 
     /**
      Delete Profile Image
      
-     - parameter body: (body) Please enter a valid Netki name associated with your prfile Image. 
+     - parameter netkiName: (path)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1userprofileimagedelete(body body: NetkiName, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
-        v1userprofileimagedeleteWithRequestBuilder(body: body).execute { (response, error) -> Void in
+    public class func v1userprofileimagedeleteNetkiName(netkiName netkiName: String, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
+        v1userprofileimagedeleteNetkiNameWithRequestBuilder(netkiName: netkiName).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -738,12 +742,12 @@ public class AccountActionsAPI: APIBase {
 
     /**
      Delete Profile Image
-     - POST /v1/user/contact
+     - DELETE /v1/user/profile/image/delete/{netkiName}
      - Deletes a profile Image.
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -755,7 +759,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -765,20 +769,24 @@ public class AccountActionsAPI: APIBase {
   <time>2000-01-23T04:56:07.000Z</time>
 </null>}]
      
-     - parameter body: (body) Please enter a valid Netki name associated with your prfile Image. 
+     - parameter netkiName: (path)  
 
      - returns: RequestBuilder<SuccessResult> 
      */
-    public class func v1userprofileimagedeleteWithRequestBuilder(body body: NetkiName) -> RequestBuilder<SuccessResult> {
-        let path = "/v1/user/contact"
+    public class func v1userprofileimagedeleteNetkiNameWithRequestBuilder(netkiName netkiName: String) -> RequestBuilder<SuccessResult> {
+        var path = "/v1/user/profile/image/delete/{netkiName}"
+        path = path.stringByReplacingOccurrencesOfString("{netkiName}", withString: "\(netkiName)", options: .LiteralSearch, range: nil)
         let URLString = SwaggerClientAPI.basePath + path
-        let parameters = body.encodeToJSON() as? [String:AnyObject]
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
         let requestBuilder: RequestBuilder<SuccessResult>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
-        return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, isBody: true)
+        return requestBuilder.init(method: "DELETE", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
 
     /**
@@ -798,12 +806,12 @@ public class AccountActionsAPI: APIBase {
 
     /**
      Update Profile Image
-     - PATCH /v1/user/profile/image/update
+     - POST /v1/user/profile/image/update
      - Updates Profile Image and allows public or private options for netki profile page.
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -815,7 +823,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -847,7 +855,7 @@ public class AccountActionsAPI: APIBase {
  
         let requestBuilder: RequestBuilder<SuccessResult>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
-        return requestBuilder.init(method: "PATCH", URLString: URLString, parameters: convertedParameters, isBody: false)
+        return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, isBody: false)
     }
 
     /**
@@ -870,7 +878,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -882,7 +890,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -927,7 +935,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -939,7 +947,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -986,7 +994,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -998,7 +1006,7 @@ public class AccountActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>

@@ -29,7 +29,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789
   },
@@ -43,7 +43,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789
   },
@@ -91,7 +91,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789
@@ -106,7 +106,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789
@@ -155,7 +155,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789
   },
@@ -169,7 +169,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789
   },
@@ -217,7 +217,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789
@@ -232,7 +232,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789
@@ -281,7 +281,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "vol" : 123456789,
     "avgRate" : 123456789,
@@ -298,7 +298,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "vol" : 123456789,
     "avgRate" : 123456789,
@@ -349,7 +349,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789,
     "difference" : 123456789
@@ -364,7 +364,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789,
     "difference" : 123456789
@@ -413,7 +413,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789,
     "difference" : 123456789
@@ -428,7 +428,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "rate" : 123456789,
     "difference" : 123456789
@@ -477,7 +477,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "coinVolume" : 123456789,
     "high" : 123456789,
@@ -499,7 +499,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : {
     "coinVolume" : 123456789,
     "high" : 123456789,
@@ -555,7 +555,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789,
@@ -573,7 +573,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789,
@@ -629,7 +629,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789,
@@ -647,7 +647,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789,
@@ -709,7 +709,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789,
@@ -727,7 +727,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789,
@@ -779,7 +779,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789,
@@ -797,7 +797,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789,
@@ -849,7 +849,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789,
@@ -867,7 +867,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789,
@@ -919,7 +919,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789,
@@ -937,7 +937,7 @@ public class ExchangeTradeDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "vol" : 123456789,
     "rate" : 123456789,

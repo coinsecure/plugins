@@ -1,6 +1,6 @@
 # CoinsecureApiDocumentation.AccountActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,9 +14,9 @@ Method | HTTP request | Description
 [**v1userkycotpNumber**](AccountActionsApi.md#v1userkycotpNumber) | **GET** /v1/user/kyc/otp/{number} | Send OTP for KYC Link
 [**v1userlogout**](AccountActionsApi.md#v1userlogout) | **DELETE** /v1/user/logout | Logout User
 [**v1usernetkicreate**](AccountActionsApi.md#v1usernetkicreate) | **PUT** /v1/user/netki/create | Create Neki Wallet Name
-[**v1usernetkiupdate**](AccountActionsApi.md#v1usernetkiupdate) | **PATCH** /v1/user/netki/update | Update Netki Address
-[**v1userprofileimagedelete**](AccountActionsApi.md#v1userprofileimagedelete) | **POST** /v1/user/contact | Delete Profile Image
-[**v1userprofileimageupdate**](AccountActionsApi.md#v1userprofileimageupdate) | **PATCH** /v1/user/profile/image/update | Update Profile Image
+[**v1usernetkiupdate**](AccountActionsApi.md#v1usernetkiupdate) | **POST** /v1/user/netki/update | Update Netki Address
+[**v1userprofileimagedeleteNetkiName**](AccountActionsApi.md#v1userprofileimagedeleteNetkiName) | **DELETE** /v1/user/profile/image/delete/{netkiName} | Delete Profile Image
+[**v1userprofileimageupdate**](AccountActionsApi.md#v1userprofileimageupdate) | **POST** /v1/user/profile/image/update | Update Profile Image
 [**v1userprofilephone**](AccountActionsApi.md#v1userprofilephone) | **PUT** /v1/user/profile/phone/new | New Profile Phone
 [**v1userprofilephoneNumber**](AccountActionsApi.md#v1userprofilephoneNumber) | **DELETE** /v1/user/profile/phone/delete | Delete Profile Phone Number
 [**v1userprofilephoneotpNumber**](AccountActionsApi.md#v1userprofilephoneotpNumber) | **GET** /v1/user/profile/phone/otp/{number} | Send OTP for Profile Phone
@@ -32,7 +32,7 @@ Creates a Login Instance and returns an API Key
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -82,7 +82,7 @@ Sends an Email with a Verification Link.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -132,7 +132,7 @@ Sends an email with a password reset token
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -182,7 +182,7 @@ Creates a new Unverified Account.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -232,7 +232,7 @@ Send OTP for an additional Bank Link.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -284,7 +284,7 @@ Submits a New Bank Link and initial KYC Documents.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -365,7 +365,7 @@ Delete GCM Code and associated API Key.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -417,7 +417,7 @@ Send OTP for KYC Link.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -469,7 +469,7 @@ Logs out user and Deletes the api key and associated session data.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -518,7 +518,7 @@ Creates a new Netki Wallet Name.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -570,7 +570,7 @@ Updates the address on an existing wallet name.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -612,9 +612,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json, application/xml, application/csv
 
-<a name="v1userprofileimagedelete"></a>
-# **v1userprofileimagedelete**
-> SuccessResult v1userprofileimagedelete(body, opts)
+<a name="v1userprofileimagedeleteNetkiName"></a>
+# **v1userprofileimagedeleteNetkiName**
+> SuccessResult v1userprofileimagedeleteNetkiName(netkiName, opts)
 
 Delete Profile Image
 
@@ -622,11 +622,11 @@ Deletes a profile Image.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
-var body = new CoinsecureApiDocumentation.NetkiName(); // NetkiName | Please enter a valid Netki name associated with your prfile Image.
+var netkiName = "netkiName_example"; // String | 
 
 var opts = { 
   'authorization': "authorization_example", // String | Enter a valid Api Key.
@@ -640,14 +640,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.v1userprofileimagedelete(body, opts, callback);
+apiInstance.v1userprofileimagedeleteNetkiName(netkiName, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NetkiName**](NetkiName.md)| Please enter a valid Netki name associated with your prfile Image. | 
+ **netkiName** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | [optional] 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -674,7 +674,7 @@ Updates Profile Image and allows public or private options for netki profile pag
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -732,7 +732,7 @@ Set a New Profile Phone Number.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -784,7 +784,7 @@ Delete Profile Phone Number.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 
@@ -833,7 +833,7 @@ Send OTP for Profile Phone addition or updation.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.AccountActionsApi();
 

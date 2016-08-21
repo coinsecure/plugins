@@ -3,8 +3,8 @@
 #import "SWGMethodCountryMobile.h"
 #import "SWGSuccessResult.h"
 #import "SWGFailResult.h"
-#import "SWGCode.h"
 #import "SWGCodeCountryMobile.h"
+#import "SWGCode.h"
 #import "SWGChangePassword.h"
 #import "SWGResetPassword.h"
 
@@ -160,29 +160,15 @@ NSInteger kSWGSecurityActionsApiMissingParamErrorCode = 234513;
 ///
 /// Initiate GA Registration.
 /// Returns the Google Authenticator Secret and a QR code URL.
-///  @param body Please Send Valid Json as below. 
-///
 ///  @param authorization API object to be added (optional)
 ///
 ///  @param accept JSON, XML or CSV can be returned (Optional) (optional)
 ///
 ///  @returns SWGSuccessResult*
 ///
--(NSNumber*) v1mfagainitiateWithBody: (SWGMethodCountryMobile*) body
-    authorization: (NSString*) authorization
+-(NSNumber*) v1mfagainitiateWithAuthorization: (NSString*) authorization
     accept: (NSString*) accept
     completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler {
-    // verify the required parameter 'body' is set
-    if (body == nil) {
-        NSParameterAssert(body);
-        if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
-            NSError* error = [NSError errorWithDomain:kSWGSecurityActionsApiErrorDomain code:kSWGSecurityActionsApiMissingParamErrorCode userInfo:userInfo];
-            handler(nil, error);
-        }
-        return nil;
-    }
-
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/mfa/ga/initiate"];
 
     // remove format in URL if needed
@@ -217,7 +203,6 @@ NSInteger kSWGSecurityActionsApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"POST"
@@ -309,7 +294,7 @@ NSInteger kSWGSecurityActionsApiMissingParamErrorCode = 234513;
 ///
 /// Disable Authy
 /// Disables users Authy
-///  @param body Please Send Valid Json as below. 
+///  @param code  
 ///
 ///  @param authorization API object to be added (optional)
 ///
@@ -317,27 +302,30 @@ NSInteger kSWGSecurityActionsApiMissingParamErrorCode = 234513;
 ///
 ///  @returns SWGSuccessResult*
 ///
--(NSNumber*) v1usermfaauthydisableWithBody: (SWGCode*) body
+-(NSNumber*) v1usermfaauthydisableCodeWithCode: (NSString*) code
     authorization: (NSString*) authorization
     accept: (NSString*) accept
     completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler {
-    // verify the required parameter 'body' is set
-    if (body == nil) {
-        NSParameterAssert(body);
+    // verify the required parameter 'code' is set
+    if (code == nil) {
+        NSParameterAssert(code);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"code"] };
             NSError* error = [NSError errorWithDomain:kSWGSecurityActionsApiErrorDomain code:kSWGSecurityActionsApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
     }
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/mfa/authy/disable"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/mfa/authy/disable/{code}"];
 
     // remove format in URL if needed
     [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (code != nil) {
+        pathParams[@"code"] = code;
+    }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
@@ -366,7 +354,6 @@ NSInteger kSWGSecurityActionsApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"DELETE"
@@ -540,7 +527,7 @@ NSInteger kSWGSecurityActionsApiMissingParamErrorCode = 234513;
 ///
 /// Disable Google Authenticator
 /// Disables users Google Authenticator 2FA
-///  @param body Please Send Valid Json as below. 
+///  @param code  
 ///
 ///  @param authorization API object to be added (optional)
 ///
@@ -548,27 +535,30 @@ NSInteger kSWGSecurityActionsApiMissingParamErrorCode = 234513;
 ///
 ///  @returns SWGSuccessResult*
 ///
--(NSNumber*) v1usermfagadisableWithBody: (SWGCode*) body
+-(NSNumber*) v1usermfagadisableCodeWithCode: (NSString*) code
     authorization: (NSString*) authorization
     accept: (NSString*) accept
     completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler {
-    // verify the required parameter 'body' is set
-    if (body == nil) {
-        NSParameterAssert(body);
+    // verify the required parameter 'code' is set
+    if (code == nil) {
+        NSParameterAssert(code);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"code"] };
             NSError* error = [NSError errorWithDomain:kSWGSecurityActionsApiErrorDomain code:kSWGSecurityActionsApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
     }
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/mfa/ga/disable"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/mfa/ga/disable/{code}"];
 
     // remove format in URL if needed
     [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (code != nil) {
+        pathParams[@"code"] = code;
+    }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
@@ -597,7 +587,6 @@ NSInteger kSWGSecurityActionsApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"DELETE"
@@ -630,7 +619,7 @@ NSInteger kSWGSecurityActionsApiMissingParamErrorCode = 234513;
 ///
 ///  @returns SWGSuccessResult*
 ///
--(NSNumber*) v1usermfagainitiateenableWithBody: (SWGCodeCountryMobile*) body
+-(NSNumber*) v1usermfagainitiateenableWithBody: (SWGCode*) body
     authorization: (NSString*) authorization
     accept: (NSString*) accept
     completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler {
@@ -764,7 +753,7 @@ NSInteger kSWGSecurityActionsApiMissingParamErrorCode = 234513;
     bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PATCH"
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
@@ -840,7 +829,7 @@ NSInteger kSWGSecurityActionsApiMissingParamErrorCode = 234513;
     bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PATCH"
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams

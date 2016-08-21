@@ -10,7 +10,6 @@
 #import "SWGSignupForm.h"
 #import "SWGNetkiNameAddress.h"
 #import "SWGAddress.h"
-#import "SWGNetkiName.h"
 #import "SWGNumberOtp.h"
 
 
@@ -1089,7 +1088,7 @@ NSInteger kSWGAccountActionsApiMissingParamErrorCode = 234513;
     bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PATCH"
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
@@ -1111,7 +1110,7 @@ NSInteger kSWGAccountActionsApiMissingParamErrorCode = 234513;
 ///
 /// Delete Profile Image
 /// Deletes a profile Image.
-///  @param body Please enter a valid Netki name associated with your prfile Image. 
+///  @param netkiName  
 ///
 ///  @param authorization Enter a valid Api Key. (optional)
 ///
@@ -1119,27 +1118,30 @@ NSInteger kSWGAccountActionsApiMissingParamErrorCode = 234513;
 ///
 ///  @returns SWGSuccessResult*
 ///
--(NSNumber*) v1userprofileimagedeleteWithBody: (SWGNetkiName*) body
+-(NSNumber*) v1userprofileimagedeleteNetkiNameWithNetkiName: (NSString*) netkiName
     authorization: (NSString*) authorization
     accept: (NSString*) accept
     completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler {
-    // verify the required parameter 'body' is set
-    if (body == nil) {
-        NSParameterAssert(body);
+    // verify the required parameter 'netkiName' is set
+    if (netkiName == nil) {
+        NSParameterAssert(netkiName);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"netkiName"] };
             NSError* error = [NSError errorWithDomain:kSWGAccountActionsApiErrorDomain code:kSWGAccountActionsApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
     }
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/contact"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/profile/image/delete/{netkiName}"];
 
     // remove format in URL if needed
     [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (netkiName != nil) {
+        pathParams[@"netkiName"] = netkiName;
+    }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
@@ -1168,10 +1170,9 @@ NSInteger kSWGAccountActionsApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
+                                    method: @"DELETE"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
@@ -1287,7 +1288,7 @@ NSInteger kSWGAccountActionsApiMissingParamErrorCode = 234513;
     localVarFiles[@"file"] = file;
 
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PATCH"
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams

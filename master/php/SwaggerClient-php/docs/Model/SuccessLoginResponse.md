@@ -3,7 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**info** | **string** |  | 
+**success** | **bool** |  | [default to false]
+**email** | **string** |  | 
+**message** | **string** |  | 
 **key_type** | **string** |  | 
 **key_needed** | **string** |  | 
 

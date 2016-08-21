@@ -30,7 +30,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "address" : "aeiou",
@@ -49,7 +49,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "address" : "aeiou",
@@ -106,7 +106,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "address" : "aeiou",
@@ -125,7 +125,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "address" : "aeiou",
@@ -181,7 +181,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "address" : "aeiou",
@@ -200,7 +200,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "address" : "aeiou",
@@ -325,7 +325,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "coinBalance" : 123456789,
@@ -344,7 +344,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "coinBalance" : 123456789,
@@ -397,7 +397,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "sentTo" : "aeiou",
@@ -421,7 +421,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "sentTo" : "aeiou",
@@ -479,7 +479,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "sentTo" : "aeiou",
@@ -503,7 +503,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "sentTo" : "aeiou",
@@ -561,7 +561,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "sentTo" : "aeiou",
@@ -585,7 +585,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "sentTo" : "aeiou",
@@ -643,7 +643,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "sentTo" : "aeiou",
@@ -667,7 +667,7 @@ public class WalletDataAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
     "walletID" : "aeiou",
     "sentTo" : "aeiou",

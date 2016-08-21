@@ -1,6 +1,6 @@
 # SWGAccountActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,9 +14,9 @@ Method | HTTP request | Description
 [**v1userkycotpNumber**](SWGAccountActionsApi.md#v1userkycotpnumber) | **GET** /v1/user/kyc/otp/{number} | Send OTP for KYC Link
 [**v1userlogout**](SWGAccountActionsApi.md#v1userlogout) | **DELETE** /v1/user/logout | Logout User
 [**v1usernetkicreate**](SWGAccountActionsApi.md#v1usernetkicreate) | **PUT** /v1/user/netki/create | Create Neki Wallet Name
-[**v1usernetkiupdate**](SWGAccountActionsApi.md#v1usernetkiupdate) | **PATCH** /v1/user/netki/update | Update Netki Address
-[**v1userprofileimagedelete**](SWGAccountActionsApi.md#v1userprofileimagedelete) | **POST** /v1/user/contact | Delete Profile Image
-[**v1userprofileimageupdate**](SWGAccountActionsApi.md#v1userprofileimageupdate) | **PATCH** /v1/user/profile/image/update | Update Profile Image
+[**v1usernetkiupdate**](SWGAccountActionsApi.md#v1usernetkiupdate) | **POST** /v1/user/netki/update | Update Netki Address
+[**v1userprofileimagedeleteNetkiName**](SWGAccountActionsApi.md#v1userprofileimagedeletenetkiname) | **DELETE** /v1/user/profile/image/delete/{netkiName} | Delete Profile Image
+[**v1userprofileimageupdate**](SWGAccountActionsApi.md#v1userprofileimageupdate) | **POST** /v1/user/profile/image/update | Update Profile Image
 [**v1userprofilephone**](SWGAccountActionsApi.md#v1userprofilephone) | **PUT** /v1/user/profile/phone/new | New Profile Phone
 [**v1userprofilephoneNumber**](SWGAccountActionsApi.md#v1userprofilephonenumber) | **DELETE** /v1/user/profile/phone/delete | Delete Profile Phone Number
 [**v1userprofilephoneotpNumber**](SWGAccountActionsApi.md#v1userprofilephoneotpnumber) | **GET** /v1/user/profile/phone/otp/{number} | Send OTP for Profile Phone
@@ -680,9 +680,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1userprofileimagedelete**
+# **v1userprofileimagedeleteNetkiName**
 ```objc
--(NSNumber*) v1userprofileimagedeleteWithBody: (SWGNetkiName*) body
+-(NSNumber*) v1userprofileimagedeleteNetkiNameWithNetkiName: (NSString*) netkiName
     authorization: (NSString*) authorization
     accept: (NSString*) accept
         completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler;
@@ -695,14 +695,14 @@ Deletes a profile Image.
 ### Example 
 ```objc
 
-SWGNetkiName* body = [[SWGNetkiName alloc] init]; // Please enter a valid Netki name associated with your prfile Image.
+NSString* netkiName = @"netkiName_example"; // 
 NSString* authorization = @"authorization_example"; // Enter a valid Api Key. (optional)
 NSString* accept = @"accept_example"; // JSON, XML or CSV can be returned (Optional) (optional)
 
 SWGAccountActionsApi*apiInstance = [[SWGAccountActionsApi alloc] init];
 
 // Delete Profile Image
-[apiInstance v1userprofileimagedeleteWithBody:body
+[apiInstance v1userprofileimagedeleteNetkiNameWithNetkiName:netkiName
               authorization:authorization
               accept:accept
           completionHandler: ^(SWGSuccessResult* output, NSError* error) {
@@ -710,7 +710,7 @@ SWGAccountActionsApi*apiInstance = [[SWGAccountActionsApi alloc] init];
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGAccountActionsApi->v1userprofileimagedelete: %@", error);
+                            NSLog(@"Error calling SWGAccountActionsApi->v1userprofileimagedeleteNetkiName: %@", error);
                         }
                     }];
 ```
@@ -719,7 +719,7 @@ SWGAccountActionsApi*apiInstance = [[SWGAccountActionsApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SWGNetkiName***](SWGNetkiName*.md)| Please enter a valid Netki name associated with your prfile Image. | 
+ **netkiName** | **NSString***|  | 
  **authorization** | **NSString***| Enter a valid Api Key. | [optional] 
  **accept** | **NSString***| JSON, XML or CSV can be returned (Optional) | [optional] 
 

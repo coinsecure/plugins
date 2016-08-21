@@ -46,27 +46,26 @@
   ([body optional-params]
    (:data (v1userexchangebankcoinwithdrawnew-verifycode-with-http-info body optional-params))))
 
-(defn v1userexchangebankcoinwithdrawunverifiedcancel-with-http-info
+(defn v1userexchangebankcoinwithdrawunverifiedcancel-withdraw-id-with-http-info
   "Cancel Bitcoin Withdrawal
   Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified."
-  ([body ] (v1userexchangebankcoinwithdrawunverifiedcancel-with-http-info body nil))
-  ([body {:keys [authorization accept ]}]
-   (call-api "/v1/user/exchange/bank/coin/withdraw/unverified/cancel" :delete
-             {:path-params   {}
+  ([withdraw-id ] (v1userexchangebankcoinwithdrawunverifiedcancel-withdraw-id-with-http-info withdraw-id nil))
+  ([withdraw-id {:keys [authorization accept ]}]
+   (call-api "/v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID}" :delete
+             {:path-params   {"withdrawID" withdraw-id }
               :header-params {"Authorization" authorization "accept" accept }
               :query-params  {}
               :form-params   {}
-              :body-param    body
               :content-types ["application/json"]
               :accepts       ["application/json" "application/xml" "application/csv"]
               :auth-names    []})))
 
-(defn v1userexchangebankcoinwithdrawunverifiedcancel
+(defn v1userexchangebankcoinwithdrawunverifiedcancel-withdraw-id
   "Cancel Bitcoin Withdrawal
   Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified."
-  ([body ] (v1userexchangebankcoinwithdrawunverifiedcancel body nil))
-  ([body optional-params]
-   (:data (v1userexchangebankcoinwithdrawunverifiedcancel-with-http-info body optional-params))))
+  ([withdraw-id ] (v1userexchangebankcoinwithdrawunverifiedcancel-withdraw-id withdraw-id nil))
+  ([withdraw-id optional-params]
+   (:data (v1userexchangebankcoinwithdrawunverifiedcancel-withdraw-id-with-http-info withdraw-id optional-params))))
 
 (defn v1userexchangebankcoinwithdrawverify-with-http-info
   "Verify Bitcoin Withdrawal
@@ -112,27 +111,26 @@
   ([body optional-params]
    (:data (v1userexchangebankfiataccountnew-with-http-info body optional-params))))
 
-(defn v1userexchangebankfiatdepositcancel-with-http-info
+(defn v1userexchangebankfiatdepositcancel-deposit-id-with-http-info
   "Cancel Unverified Exchange Fiat Deposit
   Cancels an unverified Exchange Fiat Deposit."
-  ([body ] (v1userexchangebankfiatdepositcancel-with-http-info body nil))
-  ([body {:keys [authorization accept ]}]
-   (call-api "/v1/user/exchange/bank/fiat/deposit/cancel" :delete
-             {:path-params   {}
+  ([deposit-id ] (v1userexchangebankfiatdepositcancel-deposit-id-with-http-info deposit-id nil))
+  ([deposit-id {:keys [authorization accept ]}]
+   (call-api "/v1/user/exchange/bank/fiat/deposit/cancel/{depositID}" :delete
+             {:path-params   {"depositID" deposit-id }
               :header-params {"Authorization" authorization "accept" accept }
               :query-params  {}
               :form-params   {}
-              :body-param    body
               :content-types ["application/json"]
               :accepts       ["application/json" "application/xml" "application/csv"]
               :auth-names    []})))
 
-(defn v1userexchangebankfiatdepositcancel
+(defn v1userexchangebankfiatdepositcancel-deposit-id
   "Cancel Unverified Exchange Fiat Deposit
   Cancels an unverified Exchange Fiat Deposit."
-  ([body ] (v1userexchangebankfiatdepositcancel body nil))
-  ([body optional-params]
-   (:data (v1userexchangebankfiatdepositcancel-with-http-info body optional-params))))
+  ([deposit-id ] (v1userexchangebankfiatdepositcancel-deposit-id deposit-id nil))
+  ([deposit-id optional-params]
+   (:data (v1userexchangebankfiatdepositcancel-deposit-id-with-http-info deposit-id optional-params))))
 
 (defn v1userexchangebankfiatdepositnew-with-http-info
   "New Exchange Fiat Deposit
@@ -200,27 +198,26 @@
   ([body optional-params]
    (:data (v1userexchangebankfiatwithdrawnew-verifycode-with-http-info body optional-params))))
 
-(defn v1userexchangebankfiatwithdrawunverifiedcancel-with-http-info
+(defn v1userexchangebankfiatwithdrawunverifiedcancel-withdraw-id-with-http-info
   "Cancel Fiat Withdrawal
   Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/exchange/bank/fiat/withdraw/unverified."
-  ([body ] (v1userexchangebankfiatwithdrawunverifiedcancel-with-http-info body nil))
-  ([body {:keys [authorization accept ]}]
-   (call-api "/v1/user/exchange/bank/fiat/withdraw/unverified/cancel" :delete
-             {:path-params   {}
+  ([withdraw-id ] (v1userexchangebankfiatwithdrawunverifiedcancel-withdraw-id-with-http-info withdraw-id nil))
+  ([withdraw-id {:keys [authorization accept ]}]
+   (call-api "/v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID}" :delete
+             {:path-params   {"withdrawID" withdraw-id }
               :header-params {"Authorization" authorization "accept" accept }
               :query-params  {}
               :form-params   {}
-              :body-param    body
               :content-types ["application/json"]
               :accepts       ["application/json" "application/xml" "application/csv"]
               :auth-names    []})))
 
-(defn v1userexchangebankfiatwithdrawunverifiedcancel
+(defn v1userexchangebankfiatwithdrawunverifiedcancel-withdraw-id
   "Cancel Fiat Withdrawal
   Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/exchange/bank/fiat/withdraw/unverified."
-  ([body ] (v1userexchangebankfiatwithdrawunverifiedcancel body nil))
-  ([body optional-params]
-   (:data (v1userexchangebankfiatwithdrawunverifiedcancel-with-http-info body optional-params))))
+  ([withdraw-id ] (v1userexchangebankfiatwithdrawunverifiedcancel-withdraw-id withdraw-id nil))
+  ([withdraw-id optional-params]
+   (:data (v1userexchangebankfiatwithdrawunverifiedcancel-withdraw-id-with-http-info withdraw-id optional-params))))
 
 (defn v1userexchangebankfiatwithdrawverify-with-http-info
   "Verify Fiat Withdrawal

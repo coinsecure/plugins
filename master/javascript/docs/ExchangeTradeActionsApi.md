@@ -1,20 +1,20 @@
 # CoinsecureApiDocumentation.ExchangeTradeActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1userexchangeaskcancel**](ExchangeTradeActionsApi.md#v1userexchangeaskcancel) | **DELETE** /v1/user/exchange/ask/cancel | Cancel Open Sell Order
+[**v1userexchangeaskcancelOrderID**](ExchangeTradeActionsApi.md#v1userexchangeaskcancelOrderID) | **DELETE** /v1/user/exchange/ask/cancel/{orderID} | Cancel Open Sell Order
 [**v1userexchangeasknew**](ExchangeTradeActionsApi.md#v1userexchangeasknew) | **PUT** /v1/user/exchange/ask/new | BTC Sell Order
-[**v1userexchangebidcancel**](ExchangeTradeActionsApi.md#v1userexchangebidcancel) | **DELETE** /v1/user/exchange/bid/cancel | Cancel Open Buy Order
+[**v1userexchangebidcancelOrderID**](ExchangeTradeActionsApi.md#v1userexchangebidcancelOrderID) | **DELETE** /v1/user/exchange/bid/cancel/{orderID} | Cancel Open Buy Order
 [**v1userexchangebidnew**](ExchangeTradeActionsApi.md#v1userexchangebidnew) | **PUT** /v1/user/exchange/bid/new | BTC Buy Order
 [**v1userexchangeinstantbuy**](ExchangeTradeActionsApi.md#v1userexchangeinstantbuy) | **PUT** /v1/user/exchange/instant/buy | Instantly Buy BTC
 [**v1userexchangeinstantsell**](ExchangeTradeActionsApi.md#v1userexchangeinstantsell) | **PUT** /v1/user/exchange/instant/sell | Instantly Sell BTC
 
 
-<a name="v1userexchangeaskcancel"></a>
-# **v1userexchangeaskcancel**
-> SuccessResult v1userexchangeaskcancel(body, opts)
+<a name="v1userexchangeaskcancelOrderID"></a>
+# **v1userexchangeaskcancelOrderID**
+> SuccessCancelDataResponse v1userexchangeaskcancelOrderID(orderID, opts)
 
 Cancel Open Sell Order
 
@@ -22,15 +22,14 @@ Cancels a BTC Sell Order. Orders can only be cancelled if they are in a pending 
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeActionsApi();
 
-var body = new CoinsecureApiDocumentation.AskID(); // AskID | Please send the form with valid inputs.
+var orderID = "orderID_example"; // String | 
 
 var opts = { 
-  'authorization': "authorization_example", // String | Enter a valid Api Key.
-  'accept': "accept_example" // String | JSON, XML or CSV can be returned (Optional)
+  'authorization': "authorization_example" // String | Enter a valid Api Key.
 };
 
 var callback = function(error, data, response) {
@@ -40,20 +39,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.v1userexchangeaskcancel(body, opts, callback);
+apiInstance.v1userexchangeaskcancelOrderID(orderID, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AskID**](AskID.md)| Please send the form with valid inputs. | 
+ **orderID** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | [optional] 
- **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
 
-[**SuccessResult**](SuccessResult.md)
+[**SuccessCancelDataResponse**](SuccessCancelDataResponse.md)
 
 ### Authorization
 
@@ -66,7 +64,7 @@ No authorization required
 
 <a name="v1userexchangeasknew"></a>
 # **v1userexchangeasknew**
-> SuccessResultList v1userexchangeasknew(body, opts)
+> SuccessOrderDataResponse v1userexchangeasknew(body, opts)
 
 BTC Sell Order
 
@@ -74,7 +72,7 @@ Creates a BTC Sell Order. If the order cannot be fulfilled completely, data can 
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeActionsApi();
 
@@ -105,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -116,9 +114,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json, application/xml, application/csv
 
-<a name="v1userexchangebidcancel"></a>
-# **v1userexchangebidcancel**
-> SuccessResult v1userexchangebidcancel(body, opts)
+<a name="v1userexchangebidcancelOrderID"></a>
+# **v1userexchangebidcancelOrderID**
+> SuccessCancelDataResponse v1userexchangebidcancelOrderID(orderID, opts)
 
 Cancel Open Buy Order
 
@@ -126,15 +124,14 @@ Cancels a BTC Buy Order. Orders can only be cancelled if they are in a pending s
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeActionsApi();
 
-var body = new CoinsecureApiDocumentation.BidID(); // BidID | Please send the form with valid inputs.
+var orderID = "orderID_example"; // String | 
 
 var opts = { 
-  'authorization': "authorization_example", // String | Enter a valid Api Key.
-  'accept': "accept_example" // String | JSON, XML or CSV can be returned (Optional)
+  'authorization': "authorization_example" // String | Enter a valid Api Key.
 };
 
 var callback = function(error, data, response) {
@@ -144,20 +141,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.v1userexchangebidcancel(body, opts, callback);
+apiInstance.v1userexchangebidcancelOrderID(orderID, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BidID**](BidID.md)| Please send the form with valid inputs. | 
+ **orderID** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | [optional] 
- **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
 
-[**SuccessResult**](SuccessResult.md)
+[**SuccessCancelDataResponse**](SuccessCancelDataResponse.md)
 
 ### Authorization
 
@@ -170,7 +166,7 @@ No authorization required
 
 <a name="v1userexchangebidnew"></a>
 # **v1userexchangebidnew**
-> SuccessResultList v1userexchangebidnew(body, opts)
+> SuccessOrderDataResponse v1userexchangebidnew(body, opts)
 
 BTC Buy Order
 
@@ -178,7 +174,7 @@ Creates a BTC Buy Order. If the order cannot be fulfilled completely, data can b
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeActionsApi();
 
@@ -209,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -222,7 +218,7 @@ No authorization required
 
 <a name="v1userexchangeinstantbuy"></a>
 # **v1userexchangeinstantbuy**
-> SuccessResultList v1userexchangeinstantbuy(body, opts)
+> SuccessOrderDataResponse v1userexchangeinstantbuy(body, opts)
 
 Instantly Buy BTC
 
@@ -230,7 +226,7 @@ Instantly buys BTC at the closest rate found. This tool will sell at any rate ne
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeActionsApi();
 
@@ -261,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -274,7 +270,7 @@ No authorization required
 
 <a name="v1userexchangeinstantsell"></a>
 # **v1userexchangeinstantsell**
-> SuccessResultList v1userexchangeinstantsell(body, opts)
+> SuccessOrderDataResponse v1userexchangeinstantsell(body, opts)
 
 Instantly Sell BTC
 
@@ -282,7 +278,7 @@ Instantly sells BTC at the closest rate found. This tool will sell at any rate n
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeTradeActionsApi();
 
@@ -313,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessResultList**](SuccessResultList.md)
+[**SuccessOrderDataResponse**](SuccessOrderDataResponse.md)
 
 ### Authorization
 

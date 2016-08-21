@@ -1,19 +1,19 @@
 # Swagger\Client\SecurityActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v1mfaauthyinitiate**](SecurityActionsApi.md#v1mfaauthyinitiate) | **POST** /v1/mfa/authy/initiate | Initiate Authy Registration.
 [**v1mfagainitiate**](SecurityActionsApi.md#v1mfagainitiate) | **POST** /v1/mfa/ga/initiate | Initiate GA Registration.
 [**v1usermfaauthycall**](SecurityActionsApi.md#v1usermfaauthycall) | **GET** /v1/mfa/authy/call | Authy Call Code
-[**v1usermfaauthydisable**](SecurityActionsApi.md#v1usermfaauthydisable) | **DELETE** /v1/user/mfa/authy/disable | Disable Authy
+[**v1usermfaauthydisableCode**](SecurityActionsApi.md#v1usermfaauthydisableCode) | **DELETE** /v1/user/mfa/authy/disable/{code} | Disable Authy
 [**v1usermfaauthyinitiateenable**](SecurityActionsApi.md#v1usermfaauthyinitiateenable) | **PUT** /v1/user/mfa/authy/initiate/enable | Verify Authy Registration
 [**v1usermfaauthysms**](SecurityActionsApi.md#v1usermfaauthysms) | **GET** /v1/mfa/authy/sms | Authy Sms Code
-[**v1usermfagadisable**](SecurityActionsApi.md#v1usermfagadisable) | **DELETE** /v1/user/mfa/ga/disable | Disable Google Authenticator
+[**v1usermfagadisableCode**](SecurityActionsApi.md#v1usermfagadisableCode) | **DELETE** /v1/user/mfa/ga/disable/{code} | Disable Google Authenticator
 [**v1usermfagainitiateenable**](SecurityActionsApi.md#v1usermfagainitiateenable) | **PUT** /v1/user/mfa/ga/initiate/enable | Enable Google Authenticator
-[**v1userpasswordchange**](SecurityActionsApi.md#v1userpasswordchange) | **PATCH** /v1/user/password/change | Change Password.
-[**v1userpasswordreset**](SecurityActionsApi.md#v1userpasswordreset) | **PATCH** /v1/user/password/reset | Reset Password.
+[**v1userpasswordchange**](SecurityActionsApi.md#v1userpasswordchange) | **POST** /v1/user/password/change | Change Password.
+[**v1userpasswordreset**](SecurityActionsApi.md#v1userpasswordreset) | **POST** /v1/user/password/reset | Reset Password.
 
 
 # **v1mfaauthyinitiate**
@@ -66,7 +66,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1mfagainitiate**
-> \Swagger\Client\Model\SuccessResult v1mfagainitiate($body, $authorization, $accept)
+> \Swagger\Client\Model\SuccessResult v1mfagainitiate($authorization, $accept)
 
 Initiate GA Registration.
 
@@ -78,12 +78,11 @@ Returns the Google Authenticator Secret and a QR code URL.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\SecurityActionsApi();
-$body = new \Swagger\Client\Model\MethodCountryMobile(); // \Swagger\Client\Model\MethodCountryMobile | Please Send Valid Json as below.
 $authorization = "authorization_example"; // string | API object to be added
 $accept = "accept_example"; // string | JSON, XML or CSV can be returned (Optional)
 
 try {
-    $result = $api_instance->v1mfagainitiate($body, $authorization, $accept);
+    $result = $api_instance->v1mfagainitiate($authorization, $accept);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SecurityActionsApi->v1mfagainitiate: ', $e->getMessage(), PHP_EOL;
@@ -95,7 +94,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\MethodCountryMobile**](../Model/\Swagger\Client\Model\MethodCountryMobile.md)| Please Send Valid Json as below. |
  **authorization** | **string**| API object to be added | [optional]
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional]
 
@@ -161,8 +159,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **v1usermfaauthydisable**
-> \Swagger\Client\Model\SuccessResult v1usermfaauthydisable($body, $authorization, $accept)
+# **v1usermfaauthydisableCode**
+> \Swagger\Client\Model\SuccessResult v1usermfaauthydisableCode($code, $authorization, $accept)
 
 Disable Authy
 
@@ -174,15 +172,15 @@ Disables users Authy
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\SecurityActionsApi();
-$body = new \Swagger\Client\Model\Code(); // \Swagger\Client\Model\Code | Please Send Valid Json as below.
+$code = "code_example"; // string | 
 $authorization = "authorization_example"; // string | API object to be added
 $accept = "accept_example"; // string | JSON, XML or CSV can be returned (Optional)
 
 try {
-    $result = $api_instance->v1usermfaauthydisable($body, $authorization, $accept);
+    $result = $api_instance->v1usermfaauthydisableCode($code, $authorization, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SecurityActionsApi->v1usermfaauthydisable: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SecurityActionsApi->v1usermfaauthydisableCode: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -191,7 +189,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Code**](../Model/\Swagger\Client\Model\Code.md)| Please Send Valid Json as below. |
+ **code** | **string**|  |
  **authorization** | **string**| API object to be added | [optional]
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional]
 
@@ -306,8 +304,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **v1usermfagadisable**
-> \Swagger\Client\Model\SuccessResult v1usermfagadisable($body, $authorization, $accept)
+# **v1usermfagadisableCode**
+> \Swagger\Client\Model\SuccessResult v1usermfagadisableCode($code, $authorization, $accept)
 
 Disable Google Authenticator
 
@@ -319,15 +317,15 @@ Disables users Google Authenticator 2FA
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\SecurityActionsApi();
-$body = new \Swagger\Client\Model\Code(); // \Swagger\Client\Model\Code | Please Send Valid Json as below.
+$code = "code_example"; // string | 
 $authorization = "authorization_example"; // string | API object to be added
 $accept = "accept_example"; // string | JSON, XML or CSV can be returned (Optional)
 
 try {
-    $result = $api_instance->v1usermfagadisable($body, $authorization, $accept);
+    $result = $api_instance->v1usermfagadisableCode($code, $authorization, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SecurityActionsApi->v1usermfagadisable: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SecurityActionsApi->v1usermfagadisableCode: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -336,7 +334,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Code**](../Model/\Swagger\Client\Model\Code.md)| Please Send Valid Json as below. |
+ **code** | **string**|  |
  **authorization** | **string**| API object to be added | [optional]
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional]
 
@@ -368,7 +366,7 @@ Enables Google Authenticator 2FA with the code from /v1/mfa/ga/initiate.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\SecurityActionsApi();
-$body = new \Swagger\Client\Model\CodeCountryMobile(); // \Swagger\Client\Model\CodeCountryMobile | Please Send Valid Json as below.
+$body = new \Swagger\Client\Model\Code(); // \Swagger\Client\Model\Code | Please Send Valid Json as below.
 $authorization = "authorization_example"; // string | API object to be added
 $accept = "accept_example"; // string | JSON, XML or CSV can be returned (Optional)
 
@@ -385,7 +383,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\CodeCountryMobile**](../Model/\Swagger\Client\Model\CodeCountryMobile.md)| Please Send Valid Json as below. |
+ **body** | [**\Swagger\Client\Model\Code**](../Model/\Swagger\Client\Model\Code.md)| Please Send Valid Json as below. |
  **authorization** | **string**| API object to be added | [optional]
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional]
 

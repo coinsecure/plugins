@@ -1,6 +1,6 @@
 # IO.Swagger.Api.WalletActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**V1userwalletcoinnew**](WalletActionsApi.md#v1userwalletcoinnew) | **PUT** /v1/user/wallet/coin/new | Create New Wallet
 [**V1userwalletcoinwithdrawinitiate**](WalletActionsApi.md#v1userwalletcoinwithdrawinitiate) | **POST** /v1/user/wallet/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 [**V1userwalletcoinwithdrawsendToExchange**](WalletActionsApi.md#v1userwalletcoinwithdrawsendtoexchange) | **PUT** /v1/user/wallet/coin/withdraw/sendToExchange | Send to Exchange
-[**V1userwalletcoinwithdrawunverifiedcancel**](WalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+[**V1userwalletcoinwithdrawunverifiedcancelWithdrawID**](WalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancelwithdrawid) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 [**V1userwalletcoinwithdrawverify**](WalletActionsApi.md#v1userwalletcoinwithdrawverify) | **PUT** /v1/user/wallet/coin/withdraw/verify | Verify Bitcoin Withdrawal
 [**V1walletcoinwithdrawnewVerifycode**](WalletActionsApi.md#v1walletcoinwithdrawnewverifycode) | **POST** /v1/wallet/coin/withdraw/newVerifycode | Gets a Verification Code
 
 
+<a name="v1userwalletcoinaddressnew"></a>
 # **V1userwalletcoinaddressnew**
 > WalletAddressDataResponse V1userwalletcoinaddressnew (NewAddress body, string authorization = null, string accept = null)
 
@@ -78,6 +79,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userwalletcoinnew"></a>
 # **V1userwalletcoinnew**
 > WalletAddressDataResponse V1userwalletcoinnew (NewWallet body, string authorization = null, string accept = null)
 
@@ -143,6 +145,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userwalletcoinwithdrawinitiate"></a>
 # **V1userwalletcoinwithdrawinitiate**
 > SuccessResult V1userwalletcoinwithdrawinitiate (SendCoinWallet body, string authorization = null, string accept = null)
 
@@ -208,6 +211,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userwalletcoinwithdrawsendtoexchange"></a>
 # **V1userwalletcoinwithdrawsendToExchange**
 > SuccessResult V1userwalletcoinwithdrawsendToExchange (SendExchange body, string authorization = null, string accept = null)
 
@@ -273,8 +277,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1userwalletcoinwithdrawunverifiedcancel**
-> SuccessResult V1userwalletcoinwithdrawunverifiedcancel (string authorization, WithdrawID body, string accept = null)
+<a name="v1userwalletcoinwithdrawunverifiedcancelwithdrawid"></a>
+# **V1userwalletcoinwithdrawunverifiedcancelWithdrawID**
+> SuccessResult V1userwalletcoinwithdrawunverifiedcancelWithdrawID (string withdrawID, string authorization, string accept = null)
 
 Cancel Bitcoin Withdrawal
 
@@ -290,25 +295,25 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class V1userwalletcoinwithdrawunverifiedcancelExample
+    public class V1userwalletcoinwithdrawunverifiedcancelWithdrawIDExample
     {
         public void main()
         {
             
             var apiInstance = new WalletActionsApi();
+            var withdrawID = withdrawID_example;  // string | 
             var authorization = authorization_example;  // string | Enter a valid Api Key.
-            var body = new WithdrawID(); // WithdrawID | 
             var accept = accept_example;  // string | JSON, XML or CSV can be returned (Optional) (optional) 
 
             try
             {
                 // Cancel Bitcoin Withdrawal
-                SuccessResult result = apiInstance.V1userwalletcoinwithdrawunverifiedcancel(authorization, body, accept);
+                SuccessResult result = apiInstance.V1userwalletcoinwithdrawunverifiedcancelWithdrawID(withdrawID, authorization, accept);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling WalletActionsApi.V1userwalletcoinwithdrawunverifiedcancel: " + e.Message );
+                Debug.Print("Exception when calling WalletActionsApi.V1userwalletcoinwithdrawunverifiedcancelWithdrawID: " + e.Message );
             }
         }
     }
@@ -319,8 +324,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **withdrawID** | **string**|  | 
  **authorization** | **string**| Enter a valid Api Key. | 
- **body** | [**WithdrawID**](WithdrawID.md)|  | 
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
@@ -338,6 +343,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userwalletcoinwithdrawverify"></a>
 # **V1userwalletcoinwithdrawverify**
 > SuccessResult V1userwalletcoinwithdrawverify (string authorization, Code body, string accept = null)
 
@@ -403,6 +409,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1walletcoinwithdrawnewverifycode"></a>
 # **V1walletcoinwithdrawnewVerifycode**
 > SuccessResult V1walletcoinwithdrawnewVerifycode (WithdrawID body, string authorization = null, string accept = null)
 

@@ -12,7 +12,7 @@
 
 (def default-api-context
   "Default API context."
-  {:base-url        "https://api.coinsecure.in/"
+  {:base-url        "https://api.coinsecure.in"
    :date-format     "yyyy-MM-dd"
    :datetime-format "yyyy-MM-dd'T'HH:mm:ss.SSSXXX"
    :debug           false

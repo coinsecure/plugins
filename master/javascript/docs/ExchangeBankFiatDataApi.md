@@ -1,6 +1,6 @@
 # CoinsecureApiDocumentation.ExchangeBankFiatDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,7 +27,7 @@ Gets a List of Users Exchange Bitcoin Addresses.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 
@@ -77,7 +77,7 @@ Returns balance which is in Available for Trades. The response is in paisa.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 
@@ -127,7 +127,7 @@ Returns in-trade or pending fiat balance in paisa.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 
@@ -177,7 +177,7 @@ Returns users total fiat balance in paisa. Pending + Available
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 
@@ -227,7 +227,7 @@ Gets a List of Cancelled Exchange Fiat Deposits. The value and fees are in paisa
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 
@@ -285,7 +285,7 @@ Gets a List of Unverified Exchange Fiat Deposits. The value and fees are in pais
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 
@@ -343,7 +343,7 @@ Gets a List of Verified Exchange Fiat Deposits. The value and fees are in paisa.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 
@@ -401,7 +401,7 @@ Gets a List of Cancelled Exchange Fiat Withdrawals. The fiat value is in paisa.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 
@@ -459,7 +459,7 @@ Gets a List of Completed Exchange Fiat Withdrawals. The fiat value is in paisa.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 
@@ -517,7 +517,7 @@ Gets a List of Unverified Exchange Fiat Withdrawals. The fiat value is in paisa.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 
@@ -575,7 +575,7 @@ Gets a List of Verified Exchange Fiat Withdrawals. The fiat value is in paisa.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 

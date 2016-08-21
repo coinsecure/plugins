@@ -1,0 +1,12 @@
+# CoinsecureApiDocumentation.SuccessOrderDataResponse
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**success** | **Boolean** | true | [default to false]
+**message** | [**SuccessOrderData**](SuccessOrderData.md) |  | 
+**method** | **String** |  | 
+**title** | **String** |  | 
+**time** | **Date** |  | 
+
+

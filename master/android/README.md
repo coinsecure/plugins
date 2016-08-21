@@ -80,7 +80,7 @@ public class AccountActionsApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -94,9 +94,9 @@ Class | Method | HTTP request | Description
 *AccountActionsApi* | [**v1userkycotpNumber**](docs/AccountActionsApi.md#v1userkycotpNumber) | **GET** /v1/user/kyc/otp/{number} | Send OTP for KYC Link
 *AccountActionsApi* | [**v1userlogout**](docs/AccountActionsApi.md#v1userlogout) | **DELETE** /v1/user/logout | Logout User
 *AccountActionsApi* | [**v1usernetkicreate**](docs/AccountActionsApi.md#v1usernetkicreate) | **PUT** /v1/user/netki/create | Create Neki Wallet Name
-*AccountActionsApi* | [**v1usernetkiupdate**](docs/AccountActionsApi.md#v1usernetkiupdate) | **PATCH** /v1/user/netki/update | Update Netki Address
-*AccountActionsApi* | [**v1userprofileimagedelete**](docs/AccountActionsApi.md#v1userprofileimagedelete) | **POST** /v1/user/contact | Delete Profile Image
-*AccountActionsApi* | [**v1userprofileimageupdate**](docs/AccountActionsApi.md#v1userprofileimageupdate) | **PATCH** /v1/user/profile/image/update | Update Profile Image
+*AccountActionsApi* | [**v1usernetkiupdate**](docs/AccountActionsApi.md#v1usernetkiupdate) | **POST** /v1/user/netki/update | Update Netki Address
+*AccountActionsApi* | [**v1userprofileimagedeleteNetkiName**](docs/AccountActionsApi.md#v1userprofileimagedeleteNetkiName) | **DELETE** /v1/user/profile/image/delete/{netkiName} | Delete Profile Image
+*AccountActionsApi* | [**v1userprofileimageupdate**](docs/AccountActionsApi.md#v1userprofileimageupdate) | **POST** /v1/user/profile/image/update | Update Profile Image
 *AccountActionsApi* | [**v1userprofilephone**](docs/AccountActionsApi.md#v1userprofilephone) | **PUT** /v1/user/profile/phone/new | New Profile Phone
 *AccountActionsApi* | [**v1userprofilephoneNumber**](docs/AccountActionsApi.md#v1userprofilephoneNumber) | **DELETE** /v1/user/profile/phone/delete | Delete Profile Phone Number
 *AccountActionsApi* | [**v1userprofilephoneotpNumber**](docs/AccountActionsApi.md#v1userprofilephoneotpNumber) | **GET** /v1/user/profile/phone/otp/{number} | Send OTP for Profile Phone
@@ -117,14 +117,14 @@ Class | Method | HTTP request | Description
 *BlockchainToolsApi* | [**v1bitcoinsearchTxid**](docs/BlockchainToolsApi.md#v1bitcoinsearchTxid) | **GET** /v1/bitcoin/search/confirmation/{txid} | Get Confirmations
 *ExchangeBankActionsApi* | [**v1userexchangebankcoinwithdrawinitiate**](docs/ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawinitiate) | **POST** /v1/user/exchange/bank/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 *ExchangeBankActionsApi* | [**v1userexchangebankcoinwithdrawnewVerifycode**](docs/ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawnewVerifycode) | **POST** /v1/user/exchange/bank/coin/withdraw/newVerifycode | Gets a Verification Code.
-*ExchangeBankActionsApi* | [**v1userexchangebankcoinwithdrawunverifiedcancel**](docs/ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+*ExchangeBankActionsApi* | [**v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID**](docs/ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 *ExchangeBankActionsApi* | [**v1userexchangebankcoinwithdrawverify**](docs/ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawverify) | **PUT** /v1/user/exchange/bank/coin/withdraw/verify | Verify Bitcoin Withdrawal
 *ExchangeBankActionsApi* | [**v1userexchangebankfiataccountnew**](docs/ExchangeBankActionsApi.md#v1userexchangebankfiataccountnew) | **PUT** /v1/user/exchange/bank/fiat/account/new | New Bank Link
-*ExchangeBankActionsApi* | [**v1userexchangebankfiatdepositcancel**](docs/ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancel) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel | Cancel Unverified Exchange Fiat Deposit
+*ExchangeBankActionsApi* | [**v1userexchangebankfiatdepositcancelDepositID**](docs/ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancelDepositID) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel/{depositID} | Cancel Unverified Exchange Fiat Deposit
 *ExchangeBankActionsApi* | [**v1userexchangebankfiatdepositnew**](docs/ExchangeBankActionsApi.md#v1userexchangebankfiatdepositnew) | **PUT** /v1/user/exchange/bank/fiat/deposit/new | New Exchange Fiat Deposit
 *ExchangeBankActionsApi* | [**v1userexchangebankfiatwithdrawinitiate**](docs/ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawinitiate) | **POST** /v1/user/exchange/bank/fiat/withdraw/initiate | Initiate Fiat Withdrawal
 *ExchangeBankActionsApi* | [**v1userexchangebankfiatwithdrawnewVerifycode**](docs/ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawnewVerifycode) | **POST** /v1/user/exchange/bank/fiat/withdraw/newVerifycode | Gets a Fiat Verification Code.
-*ExchangeBankActionsApi* | [**v1userexchangebankfiatwithdrawunverifiedcancel**](docs/ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel | Cancel Fiat Withdrawal
+*ExchangeBankActionsApi* | [**v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID**](docs/ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID} | Cancel Fiat Withdrawal
 *ExchangeBankActionsApi* | [**v1userexchangebankfiatwithdrawverify**](docs/ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawverify) | **PUT** /v1/user/exchange/bank/fiat/withdraw/verify | Verify Fiat Withdrawal
 *ExchangeBankCoinDataApi* | [**v1userexchangebankcoinaddresses**](docs/ExchangeBankCoinDataApi.md#v1userexchangebankcoinaddresses) | **GET** /v1/user/exchange/bank/coin/addresses | Exchange Coin Addresses
 *ExchangeBankCoinDataApi* | [**v1userexchangebankcoinbalanceavailable**](docs/ExchangeBankCoinDataApi.md#v1userexchangebankcoinbalanceavailable) | **GET** /v1/user/exchange/bank/coin/balance/total | Available Exchange Coin Balance
@@ -148,9 +148,9 @@ Class | Method | HTTP request | Description
 *ExchangeBankFiatDataApi* | [**v1userexchangebankfiatwithdrawcompleted**](docs/ExchangeBankFiatDataApi.md#v1userexchangebankfiatwithdrawcompleted) | **GET** /v1/user/exchange/bank/fiat/withdraw/completed | Completed Exchange Fiat Withdrawals
 *ExchangeBankFiatDataApi* | [**v1userexchangebankfiatwithdrawunverified**](docs/ExchangeBankFiatDataApi.md#v1userexchangebankfiatwithdrawunverified) | **GET** /v1/user/exchange/bank/fiat/withdraw/unverified | Unverified Exchange Fiat Withdrawals
 *ExchangeBankFiatDataApi* | [**v1userexchangebankfiatwithdrawverified**](docs/ExchangeBankFiatDataApi.md#v1userexchangebankfiatwithdrawverified) | **GET** /v1/user/exchange/bank/fiat/withdraw/verified | Verified Exchange Fiat Withdrawals
-*ExchangeTradeActionsApi* | [**v1userexchangeaskcancel**](docs/ExchangeTradeActionsApi.md#v1userexchangeaskcancel) | **DELETE** /v1/user/exchange/ask/cancel | Cancel Open Sell Order
+*ExchangeTradeActionsApi* | [**v1userexchangeaskcancelOrderID**](docs/ExchangeTradeActionsApi.md#v1userexchangeaskcancelOrderID) | **DELETE** /v1/user/exchange/ask/cancel/{orderID} | Cancel Open Sell Order
 *ExchangeTradeActionsApi* | [**v1userexchangeasknew**](docs/ExchangeTradeActionsApi.md#v1userexchangeasknew) | **PUT** /v1/user/exchange/ask/new | BTC Sell Order
-*ExchangeTradeActionsApi* | [**v1userexchangebidcancel**](docs/ExchangeTradeActionsApi.md#v1userexchangebidcancel) | **DELETE** /v1/user/exchange/bid/cancel | Cancel Open Buy Order
+*ExchangeTradeActionsApi* | [**v1userexchangebidcancelOrderID**](docs/ExchangeTradeActionsApi.md#v1userexchangebidcancelOrderID) | **DELETE** /v1/user/exchange/bid/cancel/{orderID} | Cancel Open Buy Order
 *ExchangeTradeActionsApi* | [**v1userexchangebidnew**](docs/ExchangeTradeActionsApi.md#v1userexchangebidnew) | **PUT** /v1/user/exchange/bid/new | BTC Buy Order
 *ExchangeTradeActionsApi* | [**v1userexchangeinstantbuy**](docs/ExchangeTradeActionsApi.md#v1userexchangeinstantbuy) | **PUT** /v1/user/exchange/instant/buy | Instantly Buy BTC
 *ExchangeTradeActionsApi* | [**v1userexchangeinstantsell**](docs/ExchangeTradeActionsApi.md#v1userexchangeinstantsell) | **PUT** /v1/user/exchange/instant/sell | Instantly Sell BTC
@@ -171,18 +171,18 @@ Class | Method | HTTP request | Description
 *SecurityActionsApi* | [**v1mfaauthyinitiate**](docs/SecurityActionsApi.md#v1mfaauthyinitiate) | **POST** /v1/mfa/authy/initiate | Initiate Authy Registration.
 *SecurityActionsApi* | [**v1mfagainitiate**](docs/SecurityActionsApi.md#v1mfagainitiate) | **POST** /v1/mfa/ga/initiate | Initiate GA Registration.
 *SecurityActionsApi* | [**v1usermfaauthycall**](docs/SecurityActionsApi.md#v1usermfaauthycall) | **GET** /v1/mfa/authy/call | Authy Call Code
-*SecurityActionsApi* | [**v1usermfaauthydisable**](docs/SecurityActionsApi.md#v1usermfaauthydisable) | **DELETE** /v1/user/mfa/authy/disable | Disable Authy
+*SecurityActionsApi* | [**v1usermfaauthydisableCode**](docs/SecurityActionsApi.md#v1usermfaauthydisableCode) | **DELETE** /v1/user/mfa/authy/disable/{code} | Disable Authy
 *SecurityActionsApi* | [**v1usermfaauthyinitiateenable**](docs/SecurityActionsApi.md#v1usermfaauthyinitiateenable) | **PUT** /v1/user/mfa/authy/initiate/enable | Verify Authy Registration
 *SecurityActionsApi* | [**v1usermfaauthysms**](docs/SecurityActionsApi.md#v1usermfaauthysms) | **GET** /v1/mfa/authy/sms | Authy Sms Code
-*SecurityActionsApi* | [**v1usermfagadisable**](docs/SecurityActionsApi.md#v1usermfagadisable) | **DELETE** /v1/user/mfa/ga/disable | Disable Google Authenticator
+*SecurityActionsApi* | [**v1usermfagadisableCode**](docs/SecurityActionsApi.md#v1usermfagadisableCode) | **DELETE** /v1/user/mfa/ga/disable/{code} | Disable Google Authenticator
 *SecurityActionsApi* | [**v1usermfagainitiateenable**](docs/SecurityActionsApi.md#v1usermfagainitiateenable) | **PUT** /v1/user/mfa/ga/initiate/enable | Enable Google Authenticator
-*SecurityActionsApi* | [**v1userpasswordchange**](docs/SecurityActionsApi.md#v1userpasswordchange) | **PATCH** /v1/user/password/change | Change Password.
-*SecurityActionsApi* | [**v1userpasswordreset**](docs/SecurityActionsApi.md#v1userpasswordreset) | **PATCH** /v1/user/password/reset | Reset Password.
+*SecurityActionsApi* | [**v1userpasswordchange**](docs/SecurityActionsApi.md#v1userpasswordchange) | **POST** /v1/user/password/change | Change Password.
+*SecurityActionsApi* | [**v1userpasswordreset**](docs/SecurityActionsApi.md#v1userpasswordreset) | **POST** /v1/user/password/reset | Reset Password.
 *WalletActionsApi* | [**v1userwalletcoinaddressnew**](docs/WalletActionsApi.md#v1userwalletcoinaddressnew) | **PUT** /v1/user/wallet/coin/address/new | New Bitcoin Address
 *WalletActionsApi* | [**v1userwalletcoinnew**](docs/WalletActionsApi.md#v1userwalletcoinnew) | **PUT** /v1/user/wallet/coin/new | Create New Wallet
 *WalletActionsApi* | [**v1userwalletcoinwithdrawinitiate**](docs/WalletActionsApi.md#v1userwalletcoinwithdrawinitiate) | **POST** /v1/user/wallet/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 *WalletActionsApi* | [**v1userwalletcoinwithdrawsendToExchange**](docs/WalletActionsApi.md#v1userwalletcoinwithdrawsendToExchange) | **PUT** /v1/user/wallet/coin/withdraw/sendToExchange | Send to Exchange
-*WalletActionsApi* | [**v1userwalletcoinwithdrawunverifiedcancel**](docs/WalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+*WalletActionsApi* | [**v1userwalletcoinwithdrawunverifiedcancelWithdrawID**](docs/WalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancelWithdrawID) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 *WalletActionsApi* | [**v1userwalletcoinwithdrawverify**](docs/WalletActionsApi.md#v1userwalletcoinwithdrawverify) | **PUT** /v1/user/wallet/coin/withdraw/verify | Verify Bitcoin Withdrawal
 *WalletActionsApi* | [**v1walletcoinwithdrawnewVerifycode**](docs/WalletActionsApi.md#v1walletcoinwithdrawnewVerifycode) | **POST** /v1/wallet/coin/withdraw/newVerifycode | Gets a Verification Code
 *WalletDataApi* | [**v1userwalletcoinaddressWalletID**](docs/WalletDataApi.md#v1userwalletcoinaddressWalletID) | **GET** /v1/user/wallet/coin/address/{walletID} | Wallet Bitcoin Addresses
@@ -202,10 +202,8 @@ Class | Method | HTTP request | Description
  - [Address](docs/Address.md)
  - [AllRefData](docs/AllRefData.md)
  - [AllRefDataResponse](docs/AllRefDataResponse.md)
- - [AskID](docs/AskID.md)
  - [BankSummaryData](docs/BankSummaryData.md)
  - [BankSummaryDataResponse](docs/BankSummaryDataResponse.md)
- - [BidID](docs/BidID.md)
  - [ChangePassword](docs/ChangePassword.md)
  - [Code](docs/Code.md)
  - [CodeCountryMobile](docs/CodeCountryMobile.md)
@@ -213,7 +211,6 @@ Class | Method | HTTP request | Description
  - [CoinDepDataResponse](docs/CoinDepDataResponse.md)
  - [ConfirmData](docs/ConfirmData.md)
  - [ConfirmDataResponse](docs/ConfirmDataResponse.md)
- - [DepositID](docs/DepositID.md)
  - [DoubleData](docs/DoubleData.md)
  - [DoubleDataResponse](docs/DoubleDataResponse.md)
  - [Email](docs/Email.md)
@@ -234,7 +231,6 @@ Class | Method | HTTP request | Description
  - [MaxVol](docs/MaxVol.md)
  - [MethodCountryMobile](docs/MethodCountryMobile.md)
  - [MinFiat](docs/MinFiat.md)
- - [NetkiName](docs/NetkiName.md)
  - [NetkiNameAddress](docs/NetkiNameAddress.md)
  - [NewAddress](docs/NewAddress.md)
  - [NewBankForm](docs/NewBankForm.md)
@@ -261,10 +257,13 @@ Class | Method | HTTP request | Description
  - [SuccCoinRefDataResponse](docs/SuccCoinRefDataResponse.md)
  - [SuccRefData](docs/SuccRefData.md)
  - [SuccRefDataResponse](docs/SuccRefDataResponse.md)
+ - [SuccessCancelData](docs/SuccessCancelData.md)
+ - [SuccessCancelDataResponse](docs/SuccessCancelDataResponse.md)
  - [SuccessInitiateLoginResponse](docs/SuccessInitiateLoginResponse.md)
  - [SuccessLoginResponse](docs/SuccessLoginResponse.md)
+ - [SuccessOrderData](docs/SuccessOrderData.md)
+ - [SuccessOrderDataResponse](docs/SuccessOrderDataResponse.md)
  - [SuccessResult](docs/SuccessResult.md)
- - [SuccessResultList](docs/SuccessResultList.md)
  - [SuccessTickerResponse](docs/SuccessTickerResponse.md)
  - [TimeData](docs/TimeData.md)
  - [TimeDataCoin](docs/TimeDataCoin.md)

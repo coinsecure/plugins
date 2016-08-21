@@ -13,17 +13,16 @@ import io.swagger.model.StandardInitiateLoginResultData
 import io.swagger.model.Email
 import io.swagger.model.SuccessResult
 import io.swagger.model.SignupForm
-import java.io.File
+import io.swagger.model.File
 import io.swagger.model.NetkiNameAddress
 import io.swagger.model.Address
-import io.swagger.model.NetkiName
 import io.swagger.model.NumberOtp
 
 import java.util.*;
 
 @Mixin(ApiUtils)
 class AccountActionsApi {
-    String basePath = "https://api.coinsecure.in/"
+    String basePath = "https://api.coinsecure.in"
     String versionPath = "/api/v1"
 
     def v1login ( LoginFormNew body, String accept, Closure onSuccess, Closure onFailure)  {
@@ -292,21 +291,21 @@ class AccountActionsApi {
         headerParams.put("accept", accept)
 
         invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams,
-                    "PATCH", "",
+                    "POST", "",
                     SuccessResult.class )
                     
     }
-    def v1userprofileimagedelete ( NetkiName body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
+    def v1userprofileimagedeleteNetkiName ( String netkiName, String authorization, String accept, Closure onSuccess, Closure onFailure)  {
         // create path and map variables
-        String resourcePath = "/v1/user/contact"
+        String resourcePath = "/v1/user/profile/image/delete/{netkiName}"
 
         // query params
         def queryParams = [:]
         def headerParams = [:]
     
         // verify required params are set
-        if (body == null) {
-            throw new RuntimeException("missing required params body")
+        if (netkiName == null) {
+            throw new RuntimeException("missing required params netkiName")
         }
 
         
@@ -314,7 +313,7 @@ class AccountActionsApi {
         headerParams.put("accept", accept)
 
         invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams,
-                    "POST", "",
+                    "DELETE", "",
                     SuccessResult.class )
                     
     }
@@ -344,7 +343,7 @@ class AccountActionsApi {
         headerParams.put("accept", accept)
 
         invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams,
-                    "PATCH", "",
+                    "POST", "",
                     SuccessResult.class )
                     
     }

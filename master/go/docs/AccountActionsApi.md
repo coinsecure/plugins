@@ -1,29 +1,29 @@
 # \AccountActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1Login**](AccountActionsApi.md#V1Login) | **Post** /v1/login | Creates a Login Instance and returns an API Key.
-[**V1LoginInitiate**](AccountActionsApi.md#V1LoginInitiate) | **Post** /v1/login/initiate | Initiate Login
-[**V1LoginPasswordForgot**](AccountActionsApi.md#V1LoginPasswordForgot) | **Post** /v1/login/password/forgot | Sends an email with a password reset token
-[**V1Signup**](AccountActionsApi.md#V1Signup) | **Post** /v1/signup | Creates a new Unverified Account.
-[**V1UserBankOtpNumber**](AccountActionsApi.md#V1UserBankOtpNumber) | **Get** /v1/user/bank/otp/{number} | Send OTP for Bank Link
-[**V1UserExchangeKyc**](AccountActionsApi.md#V1UserExchangeKyc) | **Put** /v1/user/exchange/kyc | Submits a New Bank Link and initial KYC Documents.
-[**V1UserGcmCode**](AccountActionsApi.md#V1UserGcmCode) | **Delete** /v1/user/gcm/{code} | Delete GCM Code
-[**V1UserKycOtpNumber**](AccountActionsApi.md#V1UserKycOtpNumber) | **Get** /v1/user/kyc/otp/{number} | Send OTP for KYC Link
-[**V1UserLogout**](AccountActionsApi.md#V1UserLogout) | **Delete** /v1/user/logout | Logout User
-[**V1UserNetkiCreate**](AccountActionsApi.md#V1UserNetkiCreate) | **Put** /v1/user/netki/create | Create Neki Wallet Name
-[**V1UserNetkiUpdate**](AccountActionsApi.md#V1UserNetkiUpdate) | **Patch** /v1/user/netki/update | Update Netki Address
-[**V1UserProfileImageDelete**](AccountActionsApi.md#V1UserProfileImageDelete) | **Post** /v1/user/contact | Delete Profile Image
-[**V1UserProfileImageUpdate**](AccountActionsApi.md#V1UserProfileImageUpdate) | **Patch** /v1/user/profile/image/update | Update Profile Image
-[**V1UserProfilePhone**](AccountActionsApi.md#V1UserProfilePhone) | **Put** /v1/user/profile/phone/new | New Profile Phone
-[**V1UserProfilePhoneNumber**](AccountActionsApi.md#V1UserProfilePhoneNumber) | **Delete** /v1/user/profile/phone/delete | Delete Profile Phone Number
-[**V1UserProfilePhoneOtpNumber**](AccountActionsApi.md#V1UserProfilePhoneOtpNumber) | **Get** /v1/user/profile/phone/otp/{number} | Send OTP for Profile Phone
+[**V1login**](AccountActionsApi.md#V1login) | **Post** /v1/login | Creates a Login Instance and returns an API Key.
+[**V1logininitiate**](AccountActionsApi.md#V1logininitiate) | **Post** /v1/login/initiate | Initiate Login
+[**V1loginpasswordforgot**](AccountActionsApi.md#V1loginpasswordforgot) | **Post** /v1/login/password/forgot | Sends an email with a password reset token
+[**V1signup**](AccountActionsApi.md#V1signup) | **Post** /v1/signup | Creates a new Unverified Account.
+[**V1userbankotpNumber**](AccountActionsApi.md#V1userbankotpNumber) | **Get** /v1/user/bank/otp/{number} | Send OTP for Bank Link
+[**V1userexchangekyc**](AccountActionsApi.md#V1userexchangekyc) | **Put** /v1/user/exchange/kyc | Submits a New Bank Link and initial KYC Documents.
+[**V1usergcmCode**](AccountActionsApi.md#V1usergcmCode) | **Delete** /v1/user/gcm/{code} | Delete GCM Code
+[**V1userkycotpNumber**](AccountActionsApi.md#V1userkycotpNumber) | **Get** /v1/user/kyc/otp/{number} | Send OTP for KYC Link
+[**V1userlogout**](AccountActionsApi.md#V1userlogout) | **Delete** /v1/user/logout | Logout User
+[**V1usernetkicreate**](AccountActionsApi.md#V1usernetkicreate) | **Put** /v1/user/netki/create | Create Neki Wallet Name
+[**V1usernetkiupdate**](AccountActionsApi.md#V1usernetkiupdate) | **Post** /v1/user/netki/update | Update Netki Address
+[**V1userprofileimagedeleteNetkiName**](AccountActionsApi.md#V1userprofileimagedeleteNetkiName) | **Delete** /v1/user/profile/image/delete/{netkiName} | Delete Profile Image
+[**V1userprofileimageupdate**](AccountActionsApi.md#V1userprofileimageupdate) | **Post** /v1/user/profile/image/update | Update Profile Image
+[**V1userprofilephone**](AccountActionsApi.md#V1userprofilephone) | **Put** /v1/user/profile/phone/new | New Profile Phone
+[**V1userprofilephoneNumber**](AccountActionsApi.md#V1userprofilephoneNumber) | **Delete** /v1/user/profile/phone/delete | Delete Profile Phone Number
+[**V1userprofilephoneotpNumber**](AccountActionsApi.md#V1userprofilephoneotpNumber) | **Get** /v1/user/profile/phone/otp/{number} | Send OTP for Profile Phone
 
 
-# **V1Login**
-> StandardLoginResultData V1Login($body, $accept)
+# **V1login**
+> StandardLoginResultData V1login($body, $accept)
 
 Creates a Login Instance and returns an API Key.
 
@@ -52,8 +52,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1LoginInitiate**
-> StandardInitiateLoginResultData V1LoginInitiate($body, $accept)
+# **V1logininitiate**
+> StandardInitiateLoginResultData V1logininitiate($body, $accept)
 
 Initiate Login
 
@@ -82,8 +82,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1LoginPasswordForgot**
-> SuccessResult V1LoginPasswordForgot($body, $accept)
+# **V1loginpasswordforgot**
+> SuccessResult V1loginpasswordforgot($body, $accept)
 
 Sends an email with a password reset token
 
@@ -112,8 +112,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1Signup**
-> SuccessResult V1Signup($body, $accept)
+# **V1signup**
+> SuccessResult V1signup($body, $accept)
 
 Creates a new Unverified Account.
 
@@ -142,8 +142,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserBankOtpNumber**
-> StandardInitiateLoginResultData V1UserBankOtpNumber($number, $authorization, $accept)
+# **V1userbankotpNumber**
+> StandardInitiateLoginResultData V1userbankotpNumber($number, $authorization, $accept)
 
 Send OTP for Bank Link
 
@@ -173,8 +173,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserExchangeKyc**
-> SuccessResult V1UserExchangeKyc($panNumber, $acctNick, $name, $ban, $ifsc, $acctType, $banType, $phone, $otp, $file, $authorization, $message, $accept)
+# **V1userexchangekyc**
+> SuccessResult V1userexchangekyc($panNumber, $acctNick, $name, $ban, $ifsc, $acctType, $banType, $phone, $otp, $file, $authorization, $message, $accept)
 
 Submits a New Bank Link and initial KYC Documents.
 
@@ -214,8 +214,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserGcmCode**
-> SuccessResult V1UserGcmCode($code, $authorization, $accept)
+# **V1usergcmCode**
+> SuccessResult V1usergcmCode($code, $authorization, $accept)
 
 Delete GCM Code
 
@@ -245,8 +245,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserKycOtpNumber**
-> SuccessResult V1UserKycOtpNumber($number, $authorization, $accept)
+# **V1userkycotpNumber**
+> SuccessResult V1userkycotpNumber($number, $authorization, $accept)
 
 Send OTP for KYC Link
 
@@ -276,8 +276,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserLogout**
-> SuccessResult V1UserLogout($authorization, $accept)
+# **V1userlogout**
+> SuccessResult V1userlogout($authorization, $accept)
 
 Logout User
 
@@ -306,8 +306,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserNetkiCreate**
-> SuccessResult V1UserNetkiCreate($body, $authorization, $accept)
+# **V1usernetkicreate**
+> SuccessResult V1usernetkicreate($body, $authorization, $accept)
 
 Create Neki Wallet Name
 
@@ -337,8 +337,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserNetkiUpdate**
-> SuccessResult V1UserNetkiUpdate($body, $authorization, $accept)
+# **V1usernetkiupdate**
+> SuccessResult V1usernetkiupdate($body, $authorization, $accept)
 
 Update Netki Address
 
@@ -368,8 +368,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserProfileImageDelete**
-> SuccessResult V1UserProfileImageDelete($body, $authorization, $accept)
+# **V1userprofileimagedeleteNetkiName**
+> SuccessResult V1userprofileimagedeleteNetkiName($netkiName, $authorization, $accept)
 
 Delete Profile Image
 
@@ -380,7 +380,7 @@ Deletes a profile Image.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NetkiName**](NetkiName.md)| Please enter a valid Netki name associated with your prfile Image. | 
+ **netkiName** | **string**|  | 
  **authorization** | **string**| Enter a valid Api Key. | [optional] 
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -399,8 +399,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserProfileImageUpdate**
-> SuccessResult V1UserProfileImageUpdate($netkiName, $isPublic, $file, $authorization, $accept)
+# **V1userprofileimageupdate**
+> SuccessResult V1userprofileimageupdate($netkiName, $isPublic, $file, $authorization, $accept)
 
 Update Profile Image
 
@@ -432,8 +432,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserProfilePhone**
-> SuccessResult V1UserProfilePhone($body, $authorization, $accept)
+# **V1userprofilephone**
+> SuccessResult V1userprofilephone($body, $authorization, $accept)
 
 New Profile Phone
 
@@ -463,8 +463,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserProfilePhoneNumber**
-> SuccessResult V1UserProfilePhoneNumber($authorization, $accept)
+# **V1userprofilephoneNumber**
+> SuccessResult V1userprofilephoneNumber($authorization, $accept)
 
 Delete Profile Phone Number
 
@@ -493,8 +493,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserProfilePhoneOtpNumber**
-> SuccessResult V1UserProfilePhoneOtpNumber($number, $authorization, $accept)
+# **V1userprofilephoneotpNumber**
+> SuccessResult V1userprofilephoneotpNumber($number, $authorization, $accept)
 
 Send OTP for Profile Phone
 

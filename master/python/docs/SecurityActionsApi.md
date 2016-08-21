@@ -1,19 +1,19 @@
 # swagger_client.SecurityActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v1mfaauthyinitiate**](SecurityActionsApi.md#v1mfaauthyinitiate) | **POST** /v1/mfa/authy/initiate | Initiate Authy Registration.
 [**v1mfagainitiate**](SecurityActionsApi.md#v1mfagainitiate) | **POST** /v1/mfa/ga/initiate | Initiate GA Registration.
 [**v1usermfaauthycall**](SecurityActionsApi.md#v1usermfaauthycall) | **GET** /v1/mfa/authy/call | Authy Call Code
-[**v1usermfaauthydisable**](SecurityActionsApi.md#v1usermfaauthydisable) | **DELETE** /v1/user/mfa/authy/disable | Disable Authy
+[**v1usermfaauthydisable_code**](SecurityActionsApi.md#v1usermfaauthydisable_code) | **DELETE** /v1/user/mfa/authy/disable/{code} | Disable Authy
 [**v1usermfaauthyinitiateenable**](SecurityActionsApi.md#v1usermfaauthyinitiateenable) | **PUT** /v1/user/mfa/authy/initiate/enable | Verify Authy Registration
 [**v1usermfaauthysms**](SecurityActionsApi.md#v1usermfaauthysms) | **GET** /v1/mfa/authy/sms | Authy Sms Code
-[**v1usermfagadisable**](SecurityActionsApi.md#v1usermfagadisable) | **DELETE** /v1/user/mfa/ga/disable | Disable Google Authenticator
+[**v1usermfagadisable_code**](SecurityActionsApi.md#v1usermfagadisable_code) | **DELETE** /v1/user/mfa/ga/disable/{code} | Disable Google Authenticator
 [**v1usermfagainitiateenable**](SecurityActionsApi.md#v1usermfagainitiateenable) | **PUT** /v1/user/mfa/ga/initiate/enable | Enable Google Authenticator
-[**v1userpasswordchange**](SecurityActionsApi.md#v1userpasswordchange) | **PATCH** /v1/user/password/change | Change Password.
-[**v1userpasswordreset**](SecurityActionsApi.md#v1userpasswordreset) | **PATCH** /v1/user/password/reset | Reset Password.
+[**v1userpasswordchange**](SecurityActionsApi.md#v1userpasswordchange) | **POST** /v1/user/password/change | Change Password.
+[**v1userpasswordreset**](SecurityActionsApi.md#v1userpasswordreset) | **POST** /v1/user/password/reset | Reset Password.
 
 
 # **v1mfaauthyinitiate**
@@ -68,7 +68,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1mfagainitiate**
-> SuccessResult v1mfagainitiate(body, authorization=authorization, accept=accept)
+> SuccessResult v1mfagainitiate(authorization=authorization, accept=accept)
 
 Initiate GA Registration.
 
@@ -83,13 +83,12 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.SecurityActionsApi()
-body = swagger_client.MethodCountryMobile() # MethodCountryMobile | Please Send Valid Json as below.
 authorization = 'authorization_example' # str | API object to be added (optional)
 accept = 'accept_example' # str | JSON, XML or CSV can be returned (Optional) (optional)
 
 try: 
     # Initiate GA Registration.
-    api_response = api_instance.v1mfagainitiate(body, authorization=authorization, accept=accept)
+    api_response = api_instance.v1mfagainitiate(authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SecurityActionsApi->v1mfagainitiate: %s\n" % e
@@ -99,7 +98,6 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MethodCountryMobile**](MethodCountryMobile.md)| Please Send Valid Json as below. | 
  **authorization** | **str**| API object to be added | [optional] 
  **accept** | **str**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -167,8 +165,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1usermfaauthydisable**
-> SuccessResult v1usermfaauthydisable(body, authorization=authorization, accept=accept)
+# **v1usermfaauthydisable_code**
+> SuccessResult v1usermfaauthydisable_code(code, authorization=authorization, accept=accept)
 
 Disable Authy
 
@@ -183,23 +181,23 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.SecurityActionsApi()
-body = swagger_client.Code() # Code | Please Send Valid Json as below.
+code = 'code_example' # str | 
 authorization = 'authorization_example' # str | API object to be added (optional)
 accept = 'accept_example' # str | JSON, XML or CSV can be returned (Optional) (optional)
 
 try: 
     # Disable Authy
-    api_response = api_instance.v1usermfaauthydisable(body, authorization=authorization, accept=accept)
+    api_response = api_instance.v1usermfaauthydisable_code(code, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SecurityActionsApi->v1usermfaauthydisable: %s\n" % e
+    print "Exception when calling SecurityActionsApi->v1usermfaauthydisable_code: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Code**](Code.md)| Please Send Valid Json as below. | 
+ **code** | **str**|  | 
  **authorization** | **str**| API object to be added | [optional] 
  **accept** | **str**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -318,8 +316,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1usermfagadisable**
-> SuccessResult v1usermfagadisable(body, authorization=authorization, accept=accept)
+# **v1usermfagadisable_code**
+> SuccessResult v1usermfagadisable_code(code, authorization=authorization, accept=accept)
 
 Disable Google Authenticator
 
@@ -334,23 +332,23 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.SecurityActionsApi()
-body = swagger_client.Code() # Code | Please Send Valid Json as below.
+code = 'code_example' # str | 
 authorization = 'authorization_example' # str | API object to be added (optional)
 accept = 'accept_example' # str | JSON, XML or CSV can be returned (Optional) (optional)
 
 try: 
     # Disable Google Authenticator
-    api_response = api_instance.v1usermfagadisable(body, authorization=authorization, accept=accept)
+    api_response = api_instance.v1usermfagadisable_code(code, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SecurityActionsApi->v1usermfagadisable: %s\n" % e
+    print "Exception when calling SecurityActionsApi->v1usermfagadisable_code: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Code**](Code.md)| Please Send Valid Json as below. | 
+ **code** | **str**|  | 
  **authorization** | **str**| API object to be added | [optional] 
  **accept** | **str**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -385,7 +383,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.SecurityActionsApi()
-body = swagger_client.CodeCountryMobile() # CodeCountryMobile | Please Send Valid Json as below.
+body = swagger_client.Code() # Code | Please Send Valid Json as below.
 authorization = 'authorization_example' # str | API object to be added (optional)
 accept = 'accept_example' # str | JSON, XML or CSV can be returned (Optional) (optional)
 
@@ -401,7 +399,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CodeCountryMobile**](CodeCountryMobile.md)| Please Send Valid Json as below. | 
+ **body** | [**Code**](Code.md)| Please Send Valid Json as below. | 
  **authorization** | **str**| API object to be added | [optional] 
  **accept** | **str**| JSON, XML or CSV can be returned (Optional) | [optional] 
 

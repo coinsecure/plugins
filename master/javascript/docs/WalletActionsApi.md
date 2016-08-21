@@ -1,6 +1,6 @@
 # CoinsecureApiDocumentation.WalletActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**v1userwalletcoinnew**](WalletActionsApi.md#v1userwalletcoinnew) | **PUT** /v1/user/wallet/coin/new | Create New Wallet
 [**v1userwalletcoinwithdrawinitiate**](WalletActionsApi.md#v1userwalletcoinwithdrawinitiate) | **POST** /v1/user/wallet/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 [**v1userwalletcoinwithdrawsendToExchange**](WalletActionsApi.md#v1userwalletcoinwithdrawsendToExchange) | **PUT** /v1/user/wallet/coin/withdraw/sendToExchange | Send to Exchange
-[**v1userwalletcoinwithdrawunverifiedcancel**](WalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+[**v1userwalletcoinwithdrawunverifiedcancelWithdrawID**](WalletActionsApi.md#v1userwalletcoinwithdrawunverifiedcancelWithdrawID) | **DELETE** /v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 [**v1userwalletcoinwithdrawverify**](WalletActionsApi.md#v1userwalletcoinwithdrawverify) | **PUT** /v1/user/wallet/coin/withdraw/verify | Verify Bitcoin Withdrawal
 [**v1walletcoinwithdrawnewVerifycode**](WalletActionsApi.md#v1walletcoinwithdrawnewVerifycode) | **POST** /v1/wallet/coin/withdraw/newVerifycode | Gets a Verification Code
 
@@ -23,7 +23,7 @@ Generates a New Bitcoin Address to store coins.
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletActionsApi();
 
@@ -75,7 +75,7 @@ Creates a New wallet to store addresses. This method also creates a single defau
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletActionsApi();
 
@@ -127,7 +127,7 @@ The code for verifying the withdrawal can be called from /v1/wallet/withdrawVeri
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletActionsApi();
 
@@ -179,7 +179,7 @@ This function transfers funds to yout Exchange Balance without the need for any 
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletActionsApi();
 
@@ -221,9 +221,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json, application/xml, application/csv
 
-<a name="v1userwalletcoinwithdrawunverifiedcancel"></a>
-# **v1userwalletcoinwithdrawunverifiedcancel**
-> SuccessResult v1userwalletcoinwithdrawunverifiedcancel(authorization, body, opts)
+<a name="v1userwalletcoinwithdrawunverifiedcancelWithdrawID"></a>
+# **v1userwalletcoinwithdrawunverifiedcancelWithdrawID**
+> SuccessResult v1userwalletcoinwithdrawunverifiedcancelWithdrawID(withdrawID, authorization, opts)
 
 Cancel Bitcoin Withdrawal
 
@@ -231,13 +231,13 @@ Cancels an unverified withdrawal. You can get the code from /wallet/unverifiedWi
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletActionsApi();
 
-var authorization = "authorization_example"; // String | Enter a valid Api Key.
+var withdrawID = "withdrawID_example"; // String | 
 
-var body = new CoinsecureApiDocumentation.WithdrawID(); // WithdrawID | 
+var authorization = "authorization_example"; // String | Enter a valid Api Key.
 
 var opts = { 
   'accept': "accept_example" // String | JSON, XML or CSV can be returned (Optional)
@@ -250,15 +250,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.v1userwalletcoinwithdrawunverifiedcancel(authorization, body, opts, callback);
+apiInstance.v1userwalletcoinwithdrawunverifiedcancelWithdrawID(withdrawID, authorization, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **withdrawID** | **String**|  | 
  **authorization** | **String**| Enter a valid Api Key. | 
- **body** | [**WithdrawID**](WithdrawID.md)|  | 
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
@@ -284,7 +284,7 @@ Verifies an unverified withdrawal. You can get the code from /v1/wallet/coin/wit
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletActionsApi();
 
@@ -337,7 +337,7 @@ Gets Coin Unverified Withdraws Codes to call and apply on /v1/wallet/coin/withdr
 
 ### Example
 ```javascript
-var CoinsecureApiDocumentation = require('coinsecure-api-documentation');
+var CoinsecureApiDocumentation = require('coinsecure_api_documentation');
 
 var apiInstance = new CoinsecureApiDocumentation.WalletActionsApi();
 

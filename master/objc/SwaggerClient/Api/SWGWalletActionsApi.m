@@ -7,8 +7,8 @@
 #import "SWGSendCoinWallet.h"
 #import "SWGSuccessResult.h"
 #import "SWGSendExchange.h"
-#import "SWGWithdrawID.h"
 #import "SWGCode.h"
+#import "SWGWithdrawID.h"
 
 
 @interface SWGWalletActionsApi ()
@@ -408,18 +408,29 @@ NSInteger kSWGWalletActionsApiMissingParamErrorCode = 234513;
 ///
 /// Cancel Bitcoin Withdrawal
 /// Cancels an unverified withdrawal. You can get the code from /wallet/unverifiedWithdraws.
-///  @param authorization Enter a valid Api Key. 
+///  @param withdrawID  
 ///
-///  @param body  
+///  @param authorization Enter a valid Api Key. 
 ///
 ///  @param accept JSON, XML or CSV can be returned (Optional) (optional)
 ///
 ///  @returns SWGSuccessResult*
 ///
--(NSNumber*) v1userwalletcoinwithdrawunverifiedcancelWithAuthorization: (NSString*) authorization
-    body: (SWGWithdrawID*) body
+-(NSNumber*) v1userwalletcoinwithdrawunverifiedcancelWithdrawIDWithWithdrawID: (NSString*) withdrawID
+    authorization: (NSString*) authorization
     accept: (NSString*) accept
     completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler {
+    // verify the required parameter 'withdrawID' is set
+    if (withdrawID == nil) {
+        NSParameterAssert(withdrawID);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"withdrawID"] };
+            NSError* error = [NSError errorWithDomain:kSWGWalletActionsApiErrorDomain code:kSWGWalletActionsApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
     // verify the required parameter 'authorization' is set
     if (authorization == nil) {
         NSParameterAssert(authorization);
@@ -431,23 +442,15 @@ NSInteger kSWGWalletActionsApiMissingParamErrorCode = 234513;
         return nil;
     }
 
-    // verify the required parameter 'body' is set
-    if (body == nil) {
-        NSParameterAssert(body);
-        if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
-            NSError* error = [NSError errorWithDomain:kSWGWalletActionsApiErrorDomain code:kSWGWalletActionsApiMissingParamErrorCode userInfo:userInfo];
-            handler(nil, error);
-        }
-        return nil;
-    }
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/wallet/coin/withdraw/unverified/cancel"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID}"];
 
     // remove format in URL if needed
     [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (withdrawID != nil) {
+        pathParams[@"withdrawID"] = withdrawID;
+    }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
@@ -476,7 +479,6 @@ NSInteger kSWGWalletActionsApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"DELETE"

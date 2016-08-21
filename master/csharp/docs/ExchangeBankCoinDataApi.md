@@ -1,6 +1,6 @@
 # IO.Swagger.Api.ExchangeBankCoinDataApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**V1userexchangebankcoinwithdrawverified**](ExchangeBankCoinDataApi.md#v1userexchangebankcoinwithdrawverified) | **GET** /v1/user/exchange/bank/coin/withdraw/verified | Verified Exchange Coin Withdrawals
 
 
+<a name="v1userexchangebankcoinaddresses"></a>
 # **V1userexchangebankcoinaddresses**
 > TradeAddressDataResponse V1userexchangebankcoinaddresses (string authorization, string accept = null)
 
@@ -80,6 +81,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankcoinbalanceavailable"></a>
 # **V1userexchangebankcoinbalanceavailable**
 > VolDataResponse V1userexchangebankcoinbalanceavailable (string authorization, string accept = null)
 
@@ -143,6 +145,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankcoinbalancepending"></a>
 # **V1userexchangebankcoinbalancepending**
 > VolDataResponse V1userexchangebankcoinbalancepending (string authorization, string accept = null)
 
@@ -206,6 +209,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankcoinbalancetotal"></a>
 # **V1userexchangebankcoinbalancetotal**
 > VolDataResponse V1userexchangebankcoinbalancetotal (string authorization, string accept = null)
 
@@ -269,6 +273,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankcoindepositcancelled"></a>
 # **V1userexchangebankcoindepositcancelled**
 > CoinDepDataResponse V1userexchangebankcoindepositcancelled (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 
@@ -340,6 +345,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankcoindepositunverified"></a>
 # **V1userexchangebankcoindepositunverified**
 > CoinDepDataResponse V1userexchangebankcoindepositunverified (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 
@@ -411,6 +417,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankcoindepositverified"></a>
 # **V1userexchangebankcoindepositverified**
 > CoinDepDataResponse V1userexchangebankcoindepositverified (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 
@@ -482,6 +489,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankcoinwithdrawcancelled"></a>
 # **V1userexchangebankcoinwithdrawcancelled**
 > TradeCoinWithdrawDataResponse V1userexchangebankcoinwithdrawcancelled (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 
@@ -553,6 +561,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankcoinwithdrawcompleted"></a>
 # **V1userexchangebankcoinwithdrawcompleted**
 > TradeCoinWithdrawDataResponse V1userexchangebankcoinwithdrawcompleted (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 
@@ -624,6 +633,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankcoinwithdrawunverified"></a>
 # **V1userexchangebankcoinwithdrawunverified**
 > TradeCoinWithdrawDataResponse V1userexchangebankcoinwithdrawunverified (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 
@@ -695,6 +705,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankcoinwithdrawverified"></a>
 # **V1userexchangebankcoinwithdrawverified**
 > TradeCoinWithdrawDataResponse V1userexchangebankcoinwithdrawverified (string authorization, long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
 

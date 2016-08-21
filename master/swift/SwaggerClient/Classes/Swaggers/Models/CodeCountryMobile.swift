@@ -10,8 +10,8 @@ import Foundation
 
 public class CodeCountryMobile: JSONEncodable {
     public var code: String?
-    public var countryCode: Int32?
-    public var phoneNumber: Int64?
+    public var countryCode: String?
+    public var phoneNumber: String?
 
     public init() {}
 
@@ -19,8 +19,8 @@ public class CodeCountryMobile: JSONEncodable {
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
         nillableDictionary["code"] = self.code
-        nillableDictionary["countryCode"] = self.countryCode?.encodeToJSON()
-        nillableDictionary["phoneNumber"] = self.phoneNumber?.encodeToJSON()
+        nillableDictionary["countryCode"] = self.countryCode
+        nillableDictionary["phoneNumber"] = self.phoneNumber
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary
     }

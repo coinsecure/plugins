@@ -1,23 +1,23 @@
 # \SecurityActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1MfaAuthyInitiate**](SecurityActionsApi.md#V1MfaAuthyInitiate) | **Post** /v1/mfa/authy/initiate | Initiate Authy Registration.
-[**V1MfaGaInitiate**](SecurityActionsApi.md#V1MfaGaInitiate) | **Post** /v1/mfa/ga/initiate | Initiate GA Registration.
-[**V1UserMfaAuthyCall**](SecurityActionsApi.md#V1UserMfaAuthyCall) | **Get** /v1/mfa/authy/call | Authy Call Code
-[**V1UserMfaAuthyDisable**](SecurityActionsApi.md#V1UserMfaAuthyDisable) | **Delete** /v1/user/mfa/authy/disable | Disable Authy
-[**V1UserMfaAuthyInitiateEnable**](SecurityActionsApi.md#V1UserMfaAuthyInitiateEnable) | **Put** /v1/user/mfa/authy/initiate/enable | Verify Authy Registration
-[**V1UserMfaAuthySms**](SecurityActionsApi.md#V1UserMfaAuthySms) | **Get** /v1/mfa/authy/sms | Authy Sms Code
-[**V1UserMfaGaDisable**](SecurityActionsApi.md#V1UserMfaGaDisable) | **Delete** /v1/user/mfa/ga/disable | Disable Google Authenticator
-[**V1UserMfaGaInitiateEnable**](SecurityActionsApi.md#V1UserMfaGaInitiateEnable) | **Put** /v1/user/mfa/ga/initiate/enable | Enable Google Authenticator
-[**V1UserPasswordChange**](SecurityActionsApi.md#V1UserPasswordChange) | **Patch** /v1/user/password/change | Change Password.
-[**V1UserPasswordReset**](SecurityActionsApi.md#V1UserPasswordReset) | **Patch** /v1/user/password/reset | Reset Password.
+[**V1mfaauthyinitiate**](SecurityActionsApi.md#V1mfaauthyinitiate) | **Post** /v1/mfa/authy/initiate | Initiate Authy Registration.
+[**V1mfagainitiate**](SecurityActionsApi.md#V1mfagainitiate) | **Post** /v1/mfa/ga/initiate | Initiate GA Registration.
+[**V1usermfaauthycall**](SecurityActionsApi.md#V1usermfaauthycall) | **Get** /v1/mfa/authy/call | Authy Call Code
+[**V1usermfaauthydisableCode**](SecurityActionsApi.md#V1usermfaauthydisableCode) | **Delete** /v1/user/mfa/authy/disable/{code} | Disable Authy
+[**V1usermfaauthyinitiateenable**](SecurityActionsApi.md#V1usermfaauthyinitiateenable) | **Put** /v1/user/mfa/authy/initiate/enable | Verify Authy Registration
+[**V1usermfaauthysms**](SecurityActionsApi.md#V1usermfaauthysms) | **Get** /v1/mfa/authy/sms | Authy Sms Code
+[**V1usermfagadisableCode**](SecurityActionsApi.md#V1usermfagadisableCode) | **Delete** /v1/user/mfa/ga/disable/{code} | Disable Google Authenticator
+[**V1usermfagainitiateenable**](SecurityActionsApi.md#V1usermfagainitiateenable) | **Put** /v1/user/mfa/ga/initiate/enable | Enable Google Authenticator
+[**V1userpasswordchange**](SecurityActionsApi.md#V1userpasswordchange) | **Post** /v1/user/password/change | Change Password.
+[**V1userpasswordreset**](SecurityActionsApi.md#V1userpasswordreset) | **Post** /v1/user/password/reset | Reset Password.
 
 
-# **V1MfaAuthyInitiate**
-> SuccessResult V1MfaAuthyInitiate($body, $authorization, $accept)
+# **V1mfaauthyinitiate**
+> SuccessResult V1mfaauthyinitiate($body, $authorization, $accept)
 
 Initiate Authy Registration.
 
@@ -47,8 +47,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1MfaGaInitiate**
-> SuccessResult V1MfaGaInitiate($body, $authorization, $accept)
+# **V1mfagainitiate**
+> SuccessResult V1mfagainitiate($authorization, $accept)
 
 Initiate GA Registration.
 
@@ -59,7 +59,6 @@ Returns the Google Authenticator Secret and a QR code URL.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MethodCountryMobile**](MethodCountryMobile.md)| Please Send Valid Json as below. | 
  **authorization** | **string**| API object to be added | [optional] 
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -78,8 +77,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserMfaAuthyCall**
-> SuccessResult V1UserMfaAuthyCall($authorization, $accept)
+# **V1usermfaauthycall**
+> SuccessResult V1usermfaauthycall($authorization, $accept)
 
 Authy Call Code
 
@@ -108,8 +107,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserMfaAuthyDisable**
-> SuccessResult V1UserMfaAuthyDisable($body, $authorization, $accept)
+# **V1usermfaauthydisableCode**
+> SuccessResult V1usermfaauthydisableCode($code, $authorization, $accept)
 
 Disable Authy
 
@@ -120,7 +119,7 @@ Disables users Authy
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Code**](Code.md)| Please Send Valid Json as below. | 
+ **code** | **string**|  | 
  **authorization** | **string**| API object to be added | [optional] 
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -139,8 +138,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserMfaAuthyInitiateEnable**
-> SuccessResult V1UserMfaAuthyInitiateEnable($body, $authorization, $accept)
+# **V1usermfaauthyinitiateenable**
+> SuccessResult V1usermfaauthyinitiateenable($body, $authorization, $accept)
 
 Verify Authy Registration
 
@@ -170,8 +169,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserMfaAuthySms**
-> SuccessResult V1UserMfaAuthySms($authorization, $accept)
+# **V1usermfaauthysms**
+> SuccessResult V1usermfaauthysms($authorization, $accept)
 
 Authy Sms Code
 
@@ -200,12 +199,43 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserMfaGaDisable**
-> SuccessResult V1UserMfaGaDisable($body, $authorization, $accept)
+# **V1usermfagadisableCode**
+> SuccessResult V1usermfagadisableCode($code, $authorization, $accept)
 
 Disable Google Authenticator
 
 Disables users Google Authenticator 2FA
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **code** | **string**|  | 
+ **authorization** | **string**| API object to be added | [optional] 
+ **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
+
+### Return type
+
+[**SuccessResult**](SuccessResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **V1usermfagainitiateenable**
+> SuccessResult V1usermfagainitiateenable($body, $authorization, $accept)
+
+Enable Google Authenticator
+
+Enables Google Authenticator 2FA with the code from /v1/mfa/ga/initiate.
 
 
 ### Parameters
@@ -231,39 +261,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserMfaGaInitiateEnable**
-> SuccessResult V1UserMfaGaInitiateEnable($body, $authorization, $accept)
-
-Enable Google Authenticator
-
-Enables Google Authenticator 2FA with the code from /v1/mfa/ga/initiate.
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CodeCountryMobile**](CodeCountryMobile.md)| Please Send Valid Json as below. | 
- **authorization** | **string**| API object to be added | [optional] 
- **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
-
-### Return type
-
-[**SuccessResult**](SuccessResult.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json, application/xml, application/csv
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **V1UserPasswordChange**
-> SuccessResult V1UserPasswordChange($body, $authorization, $accept)
+# **V1userpasswordchange**
+> SuccessResult V1userpasswordchange($body, $authorization, $accept)
 
 Change Password.
 
@@ -293,8 +292,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1UserPasswordReset**
-> SuccessResult V1UserPasswordReset($body, $accept)
+# **V1userpasswordreset**
+> SuccessResult V1userpasswordreset($body, $accept)
 
 Reset Password.
 

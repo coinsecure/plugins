@@ -30,7 +30,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -42,7 +42,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -88,7 +88,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -100,7 +100,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -129,11 +129,11 @@ public class ExchangeBankActionsAPI: APIBase {
     /**
      Cancel Bitcoin Withdrawal
      
-     - parameter body: (body) You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified. 
+     - parameter withdrawID: (path)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1userexchangebankcoinwithdrawunverifiedcancel(body body: WithdrawID, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
-        v1userexchangebankcoinwithdrawunverifiedcancelWithRequestBuilder(body: body).execute { (response, error) -> Void in
+    public class func v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID(withdrawID withdrawID: String, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
+        v1userexchangebankcoinwithdrawunverifiedcancelWithdrawIDWithRequestBuilder(withdrawID: withdrawID).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -141,12 +141,12 @@ public class ExchangeBankActionsAPI: APIBase {
 
     /**
      Cancel Bitcoin Withdrawal
-     - DELETE /v1/user/exchange/bank/coin/withdraw/unverified/cancel
+     - DELETE /v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID}
      - Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified.
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -158,7 +158,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -168,14 +168,18 @@ public class ExchangeBankActionsAPI: APIBase {
   <time>2000-01-23T04:56:07.000Z</time>
 </null>}]
      
-     - parameter body: (body) You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified. 
+     - parameter withdrawID: (path)  
 
      - returns: RequestBuilder<SuccessResult> 
      */
-    public class func v1userexchangebankcoinwithdrawunverifiedcancelWithRequestBuilder(body body: WithdrawID) -> RequestBuilder<SuccessResult> {
-        let path = "/v1/user/exchange/bank/coin/withdraw/unverified/cancel"
+    public class func v1userexchangebankcoinwithdrawunverifiedcancelWithdrawIDWithRequestBuilder(withdrawID withdrawID: String) -> RequestBuilder<SuccessResult> {
+        var path = "/v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID}"
+        path = path.stringByReplacingOccurrencesOfString("{withdrawID}", withString: "\(withdrawID)", options: .LiteralSearch, range: nil)
         let URLString = SwaggerClientAPI.basePath + path
-        let parameters = body.encodeToJSON() as? [String:AnyObject]
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
@@ -204,7 +208,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -216,7 +220,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -262,7 +266,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -274,7 +278,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -303,11 +307,11 @@ public class ExchangeBankActionsAPI: APIBase {
     /**
      Cancel Unverified Exchange Fiat Deposit
      
-     - parameter body: (body) Please send the form with valid inputs. 
+     - parameter depositID: (path)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1userexchangebankfiatdepositcancel(body body: DepositID, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
-        v1userexchangebankfiatdepositcancelWithRequestBuilder(body: body).execute { (response, error) -> Void in
+    public class func v1userexchangebankfiatdepositcancelDepositID(depositID depositID: String, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
+        v1userexchangebankfiatdepositcancelDepositIDWithRequestBuilder(depositID: depositID).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -315,12 +319,12 @@ public class ExchangeBankActionsAPI: APIBase {
 
     /**
      Cancel Unverified Exchange Fiat Deposit
-     - DELETE /v1/user/exchange/bank/fiat/deposit/cancel
+     - DELETE /v1/user/exchange/bank/fiat/deposit/cancel/{depositID}
      - Cancels an unverified Exchange Fiat Deposit.
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -332,7 +336,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -342,14 +346,18 @@ public class ExchangeBankActionsAPI: APIBase {
   <time>2000-01-23T04:56:07.000Z</time>
 </null>}]
      
-     - parameter body: (body) Please send the form with valid inputs. 
+     - parameter depositID: (path)  
 
      - returns: RequestBuilder<SuccessResult> 
      */
-    public class func v1userexchangebankfiatdepositcancelWithRequestBuilder(body body: DepositID) -> RequestBuilder<SuccessResult> {
-        let path = "/v1/user/exchange/bank/fiat/deposit/cancel"
+    public class func v1userexchangebankfiatdepositcancelDepositIDWithRequestBuilder(depositID depositID: String) -> RequestBuilder<SuccessResult> {
+        var path = "/v1/user/exchange/bank/fiat/deposit/cancel/{depositID}"
+        path = path.stringByReplacingOccurrencesOfString("{depositID}", withString: "\(depositID)", options: .LiteralSearch, range: nil)
         let URLString = SwaggerClientAPI.basePath + path
-        let parameters = body.encodeToJSON() as? [String:AnyObject]
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
@@ -378,7 +386,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -390,7 +398,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -436,7 +444,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -448,7 +456,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -494,7 +502,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -506,7 +514,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -535,11 +543,11 @@ public class ExchangeBankActionsAPI: APIBase {
     /**
      Cancel Fiat Withdrawal
      
-     - parameter body: (body) You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified. 
+     - parameter withdrawID: (path)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func v1userexchangebankfiatwithdrawunverifiedcancel(body body: WithdrawID, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
-        v1userexchangebankfiatwithdrawunverifiedcancelWithRequestBuilder(body: body).execute { (response, error) -> Void in
+    public class func v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID(withdrawID withdrawID: String, completion: ((data: SuccessResult?, error: ErrorType?) -> Void)) {
+        v1userexchangebankfiatwithdrawunverifiedcancelWithdrawIDWithRequestBuilder(withdrawID: withdrawID).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -547,12 +555,12 @@ public class ExchangeBankActionsAPI: APIBase {
 
     /**
      Cancel Fiat Withdrawal
-     - DELETE /v1/user/exchange/bank/fiat/withdraw/unverified/cancel
+     - DELETE /v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID}
      - Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/exchange/bank/fiat/withdraw/unverified.
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -564,7 +572,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -574,14 +582,18 @@ public class ExchangeBankActionsAPI: APIBase {
   <time>2000-01-23T04:56:07.000Z</time>
 </null>}]
      
-     - parameter body: (body) You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified. 
+     - parameter withdrawID: (path)  
 
      - returns: RequestBuilder<SuccessResult> 
      */
-    public class func v1userexchangebankfiatwithdrawunverifiedcancelWithRequestBuilder(body body: WithdrawID) -> RequestBuilder<SuccessResult> {
-        let path = "/v1/user/exchange/bank/fiat/withdraw/unverified/cancel"
+    public class func v1userexchangebankfiatwithdrawunverifiedcancelWithdrawIDWithRequestBuilder(withdrawID withdrawID: String) -> RequestBuilder<SuccessResult> {
+        var path = "/v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID}"
+        path = path.stringByReplacingOccurrencesOfString("{withdrawID}", withString: "\(withdrawID)", options: .LiteralSearch, range: nil)
         let URLString = SwaggerClientAPI.basePath + path
-        let parameters = body.encodeToJSON() as? [String:AnyObject]
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
@@ -610,7 +622,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>
@@ -622,7 +634,7 @@ public class ExchangeBankActionsAPI: APIBase {
      - examples: [{contentType=application/json, example={
   "method" : "aeiou",
   "success" : true,
-  "time" : "2000-01-23T04:56:07.000+0000",
+  "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : { },
   "title" : "aeiou"
 }}, {contentType=application/xml, example=<null>

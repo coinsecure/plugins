@@ -1,21 +1,22 @@
 # IO.Swagger.Api.SecurityActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**V1mfaauthyinitiate**](SecurityActionsApi.md#v1mfaauthyinitiate) | **POST** /v1/mfa/authy/initiate | Initiate Authy Registration.
 [**V1mfagainitiate**](SecurityActionsApi.md#v1mfagainitiate) | **POST** /v1/mfa/ga/initiate | Initiate GA Registration.
 [**V1usermfaauthycall**](SecurityActionsApi.md#v1usermfaauthycall) | **GET** /v1/mfa/authy/call | Authy Call Code
-[**V1usermfaauthydisable**](SecurityActionsApi.md#v1usermfaauthydisable) | **DELETE** /v1/user/mfa/authy/disable | Disable Authy
+[**V1usermfaauthydisableCode**](SecurityActionsApi.md#v1usermfaauthydisablecode) | **DELETE** /v1/user/mfa/authy/disable/{code} | Disable Authy
 [**V1usermfaauthyinitiateenable**](SecurityActionsApi.md#v1usermfaauthyinitiateenable) | **PUT** /v1/user/mfa/authy/initiate/enable | Verify Authy Registration
 [**V1usermfaauthysms**](SecurityActionsApi.md#v1usermfaauthysms) | **GET** /v1/mfa/authy/sms | Authy Sms Code
-[**V1usermfagadisable**](SecurityActionsApi.md#v1usermfagadisable) | **DELETE** /v1/user/mfa/ga/disable | Disable Google Authenticator
+[**V1usermfagadisableCode**](SecurityActionsApi.md#v1usermfagadisablecode) | **DELETE** /v1/user/mfa/ga/disable/{code} | Disable Google Authenticator
 [**V1usermfagainitiateenable**](SecurityActionsApi.md#v1usermfagainitiateenable) | **PUT** /v1/user/mfa/ga/initiate/enable | Enable Google Authenticator
-[**V1userpasswordchange**](SecurityActionsApi.md#v1userpasswordchange) | **PATCH** /v1/user/password/change | Change Password.
-[**V1userpasswordreset**](SecurityActionsApi.md#v1userpasswordreset) | **PATCH** /v1/user/password/reset | Reset Password.
+[**V1userpasswordchange**](SecurityActionsApi.md#v1userpasswordchange) | **POST** /v1/user/password/change | Change Password.
+[**V1userpasswordreset**](SecurityActionsApi.md#v1userpasswordreset) | **POST** /v1/user/password/reset | Reset Password.
 
 
+<a name="v1mfaauthyinitiate"></a>
 # **V1mfaauthyinitiate**
 > SuccessResult V1mfaauthyinitiate (MethodCountryMobile body, string authorization = null, string accept = null)
 
@@ -81,8 +82,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1mfagainitiate"></a>
 # **V1mfagainitiate**
-> SuccessResult V1mfagainitiate (MethodCountryMobile body, string authorization = null, string accept = null)
+> SuccessResult V1mfagainitiate (string authorization = null, string accept = null)
 
 Initiate GA Registration.
 
@@ -104,14 +106,13 @@ namespace Example
         {
             
             var apiInstance = new SecurityActionsApi();
-            var body = new MethodCountryMobile(); // MethodCountryMobile | Please Send Valid Json as below.
             var authorization = authorization_example;  // string | API object to be added (optional) 
             var accept = accept_example;  // string | JSON, XML or CSV can be returned (Optional) (optional) 
 
             try
             {
                 // Initiate GA Registration.
-                SuccessResult result = apiInstance.V1mfagainitiate(body, authorization, accept);
+                SuccessResult result = apiInstance.V1mfagainitiate(authorization, accept);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -127,7 +128,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MethodCountryMobile**](MethodCountryMobile.md)| Please Send Valid Json as below. | 
  **authorization** | **string**| API object to be added | [optional] 
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -146,6 +146,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1usermfaauthycall"></a>
 # **V1usermfaauthycall**
 > SuccessResult V1usermfaauthycall (string authorization = null, string accept = null)
 
@@ -209,8 +210,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1usermfaauthydisable**
-> SuccessResult V1usermfaauthydisable (Code body, string authorization = null, string accept = null)
+<a name="v1usermfaauthydisablecode"></a>
+# **V1usermfaauthydisableCode**
+> SuccessResult V1usermfaauthydisableCode (string code, string authorization = null, string accept = null)
 
 Disable Authy
 
@@ -226,25 +228,25 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class V1usermfaauthydisableExample
+    public class V1usermfaauthydisableCodeExample
     {
         public void main()
         {
             
             var apiInstance = new SecurityActionsApi();
-            var body = new Code(); // Code | Please Send Valid Json as below.
+            var code = code_example;  // string | 
             var authorization = authorization_example;  // string | API object to be added (optional) 
             var accept = accept_example;  // string | JSON, XML or CSV can be returned (Optional) (optional) 
 
             try
             {
                 // Disable Authy
-                SuccessResult result = apiInstance.V1usermfaauthydisable(body, authorization, accept);
+                SuccessResult result = apiInstance.V1usermfaauthydisableCode(code, authorization, accept);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling SecurityActionsApi.V1usermfaauthydisable: " + e.Message );
+                Debug.Print("Exception when calling SecurityActionsApi.V1usermfaauthydisableCode: " + e.Message );
             }
         }
     }
@@ -255,7 +257,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Code**](Code.md)| Please Send Valid Json as below. | 
+ **code** | **string**|  | 
  **authorization** | **string**| API object to be added | [optional] 
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -274,6 +276,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1usermfaauthyinitiateenable"></a>
 # **V1usermfaauthyinitiateenable**
 > SuccessResult V1usermfaauthyinitiateenable (CodeCountryMobile body, string authorization = null, string accept = null)
 
@@ -339,6 +342,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1usermfaauthysms"></a>
 # **V1usermfaauthysms**
 > SuccessResult V1usermfaauthysms (string authorization = null, string accept = null)
 
@@ -402,8 +406,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1usermfagadisable**
-> SuccessResult V1usermfagadisable (Code body, string authorization = null, string accept = null)
+<a name="v1usermfagadisablecode"></a>
+# **V1usermfagadisableCode**
+> SuccessResult V1usermfagadisableCode (string code, string authorization = null, string accept = null)
 
 Disable Google Authenticator
 
@@ -419,7 +424,73 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class V1usermfagadisableExample
+    public class V1usermfagadisableCodeExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new SecurityActionsApi();
+            var code = code_example;  // string | 
+            var authorization = authorization_example;  // string | API object to be added (optional) 
+            var accept = accept_example;  // string | JSON, XML or CSV can be returned (Optional) (optional) 
+
+            try
+            {
+                // Disable Google Authenticator
+                SuccessResult result = apiInstance.V1usermfagadisableCode(code, authorization, accept);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling SecurityActionsApi.V1usermfagadisableCode: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **code** | **string**|  | 
+ **authorization** | **string**| API object to be added | [optional] 
+ **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
+
+### Return type
+
+[**SuccessResult**](SuccessResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="v1usermfagainitiateenable"></a>
+# **V1usermfagainitiateenable**
+> SuccessResult V1usermfagainitiateenable (Code body, string authorization = null, string accept = null)
+
+Enable Google Authenticator
+
+Enables Google Authenticator 2FA with the code from /v1/mfa/ga/initiate.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class V1usermfagainitiateenableExample
     {
         public void main()
         {
@@ -431,13 +502,13 @@ namespace Example
 
             try
             {
-                // Disable Google Authenticator
-                SuccessResult result = apiInstance.V1usermfagadisable(body, authorization, accept);
+                // Enable Google Authenticator
+                SuccessResult result = apiInstance.V1usermfagainitiateenable(body, authorization, accept);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling SecurityActionsApi.V1usermfagadisable: " + e.Message );
+                Debug.Print("Exception when calling SecurityActionsApi.V1usermfagainitiateenable: " + e.Message );
             }
         }
     }
@@ -467,71 +538,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1usermfagainitiateenable**
-> SuccessResult V1usermfagainitiateenable (CodeCountryMobile body, string authorization = null, string accept = null)
-
-Enable Google Authenticator
-
-Enables Google Authenticator 2FA with the code from /v1/mfa/ga/initiate.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class V1usermfagainitiateenableExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new SecurityActionsApi();
-            var body = new CodeCountryMobile(); // CodeCountryMobile | Please Send Valid Json as below.
-            var authorization = authorization_example;  // string | API object to be added (optional) 
-            var accept = accept_example;  // string | JSON, XML or CSV can be returned (Optional) (optional) 
-
-            try
-            {
-                // Enable Google Authenticator
-                SuccessResult result = apiInstance.V1usermfagainitiateenable(body, authorization, accept);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling SecurityActionsApi.V1usermfagainitiateenable: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CodeCountryMobile**](CodeCountryMobile.md)| Please Send Valid Json as below. | 
- **authorization** | **string**| API object to be added | [optional] 
- **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
-
-### Return type
-
-[**SuccessResult**](SuccessResult.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json, application/xml, application/csv
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="v1userpasswordchange"></a>
 # **V1userpasswordchange**
 > SuccessResult V1userpasswordchange (ChangePassword body, string authorization = null, string accept = null)
 
@@ -597,6 +604,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userpasswordreset"></a>
 # **V1userpasswordreset**
 > SuccessResult V1userpasswordreset (ResetPassword body, string accept = null)
 

@@ -1,19 +1,19 @@
 # Swagger\Client\ExchangeTradeActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1userexchangeaskcancel**](ExchangeTradeActionsApi.md#v1userexchangeaskcancel) | **DELETE** /v1/user/exchange/ask/cancel | Cancel Open Sell Order
+[**v1userexchangeaskcancelOrderID**](ExchangeTradeActionsApi.md#v1userexchangeaskcancelOrderID) | **DELETE** /v1/user/exchange/ask/cancel/{orderID} | Cancel Open Sell Order
 [**v1userexchangeasknew**](ExchangeTradeActionsApi.md#v1userexchangeasknew) | **PUT** /v1/user/exchange/ask/new | BTC Sell Order
-[**v1userexchangebidcancel**](ExchangeTradeActionsApi.md#v1userexchangebidcancel) | **DELETE** /v1/user/exchange/bid/cancel | Cancel Open Buy Order
+[**v1userexchangebidcancelOrderID**](ExchangeTradeActionsApi.md#v1userexchangebidcancelOrderID) | **DELETE** /v1/user/exchange/bid/cancel/{orderID} | Cancel Open Buy Order
 [**v1userexchangebidnew**](ExchangeTradeActionsApi.md#v1userexchangebidnew) | **PUT** /v1/user/exchange/bid/new | BTC Buy Order
 [**v1userexchangeinstantbuy**](ExchangeTradeActionsApi.md#v1userexchangeinstantbuy) | **PUT** /v1/user/exchange/instant/buy | Instantly Buy BTC
 [**v1userexchangeinstantsell**](ExchangeTradeActionsApi.md#v1userexchangeinstantsell) | **PUT** /v1/user/exchange/instant/sell | Instantly Sell BTC
 
 
-# **v1userexchangeaskcancel**
-> \Swagger\Client\Model\SuccessResult v1userexchangeaskcancel($body, $authorization, $accept)
+# **v1userexchangeaskcancelOrderID**
+> \Swagger\Client\Model\SuccessCancelDataResponse v1userexchangeaskcancelOrderID($order_id, $authorization)
 
 Cancel Open Sell Order
 
@@ -25,15 +25,14 @@ Cancels a BTC Sell Order. Orders can only be cancelled if they are in a pending 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\ExchangeTradeActionsApi();
-$body = new \Swagger\Client\Model\AskID(); // \Swagger\Client\Model\AskID | Please send the form with valid inputs.
+$order_id = "order_id_example"; // string | 
 $authorization = "authorization_example"; // string | Enter a valid Api Key.
-$accept = "accept_example"; // string | JSON, XML or CSV can be returned (Optional)
 
 try {
-    $result = $api_instance->v1userexchangeaskcancel($body, $authorization, $accept);
+    $result = $api_instance->v1userexchangeaskcancelOrderID($order_id, $authorization);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ExchangeTradeActionsApi->v1userexchangeaskcancel: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ExchangeTradeActionsApi->v1userexchangeaskcancelOrderID: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -42,13 +41,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\AskID**](../Model/\Swagger\Client\Model\AskID.md)| Please send the form with valid inputs. |
+ **order_id** | **string**|  |
  **authorization** | **string**| Enter a valid Api Key. | [optional]
- **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\SuccessResult**](../Model/SuccessResult.md)
+[**\Swagger\Client\Model\SuccessCancelDataResponse**](../Model/SuccessCancelDataResponse.md)
 
 ### Authorization
 
@@ -62,7 +60,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1userexchangeasknew**
-> \Swagger\Client\Model\SuccessResultList v1userexchangeasknew($body, $authorization, $accept)
+> \Swagger\Client\Model\SuccessOrderDataResponse v1userexchangeasknew($body, $authorization, $accept)
 
 BTC Sell Order
 
@@ -97,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\SuccessResultList**](../Model/SuccessResultList.md)
+[**\Swagger\Client\Model\SuccessOrderDataResponse**](../Model/SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -110,8 +108,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **v1userexchangebidcancel**
-> \Swagger\Client\Model\SuccessResult v1userexchangebidcancel($body, $authorization, $accept)
+# **v1userexchangebidcancelOrderID**
+> \Swagger\Client\Model\SuccessCancelDataResponse v1userexchangebidcancelOrderID($order_id, $authorization)
 
 Cancel Open Buy Order
 
@@ -123,15 +121,14 @@ Cancels a BTC Buy Order. Orders can only be cancelled if they are in a pending s
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\ExchangeTradeActionsApi();
-$body = new \Swagger\Client\Model\BidID(); // \Swagger\Client\Model\BidID | Please send the form with valid inputs.
+$order_id = "order_id_example"; // string | 
 $authorization = "authorization_example"; // string | Enter a valid Api Key.
-$accept = "accept_example"; // string | JSON, XML or CSV can be returned (Optional)
 
 try {
-    $result = $api_instance->v1userexchangebidcancel($body, $authorization, $accept);
+    $result = $api_instance->v1userexchangebidcancelOrderID($order_id, $authorization);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ExchangeTradeActionsApi->v1userexchangebidcancel: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ExchangeTradeActionsApi->v1userexchangebidcancelOrderID: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -140,13 +137,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\BidID**](../Model/\Swagger\Client\Model\BidID.md)| Please send the form with valid inputs. |
+ **order_id** | **string**|  |
  **authorization** | **string**| Enter a valid Api Key. | [optional]
- **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\SuccessResult**](../Model/SuccessResult.md)
+[**\Swagger\Client\Model\SuccessCancelDataResponse**](../Model/SuccessCancelDataResponse.md)
 
 ### Authorization
 
@@ -160,7 +156,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1userexchangebidnew**
-> \Swagger\Client\Model\SuccessResultList v1userexchangebidnew($body, $authorization, $accept)
+> \Swagger\Client\Model\SuccessOrderDataResponse v1userexchangebidnew($body, $authorization, $accept)
 
 BTC Buy Order
 
@@ -195,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\SuccessResultList**](../Model/SuccessResultList.md)
+[**\Swagger\Client\Model\SuccessOrderDataResponse**](../Model/SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -209,7 +205,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1userexchangeinstantbuy**
-> \Swagger\Client\Model\SuccessResultList v1userexchangeinstantbuy($body, $authorization, $accept)
+> \Swagger\Client\Model\SuccessOrderDataResponse v1userexchangeinstantbuy($body, $authorization, $accept)
 
 Instantly Buy BTC
 
@@ -244,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\SuccessResultList**](../Model/SuccessResultList.md)
+[**\Swagger\Client\Model\SuccessOrderDataResponse**](../Model/SuccessOrderDataResponse.md)
 
 ### Authorization
 
@@ -258,7 +254,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1userexchangeinstantsell**
-> \Swagger\Client\Model\SuccessResultList v1userexchangeinstantsell($body, $authorization, $accept)
+> \Swagger\Client\Model\SuccessOrderDataResponse v1userexchangeinstantsell($body, $authorization, $accept)
 
 Instantly Sell BTC
 
@@ -293,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\SuccessResultList**](../Model/SuccessResultList.md)
+[**\Swagger\Client\Model\SuccessOrderDataResponse**](../Model/SuccessOrderDataResponse.md)
 
 ### Authorization
 

@@ -1,22 +1,23 @@
 # IO.Swagger.Api.ExchangeBankActionsApi
 
-All URIs are relative to *https://api.coinsecure.in/*
+All URIs are relative to *https://api.coinsecure.in*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**V1userexchangebankcoinwithdrawinitiate**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawinitiate) | **POST** /v1/user/exchange/bank/coin/withdraw/initiate | Initiate Bitcoin Withdrawal
 [**V1userexchangebankcoinwithdrawnewVerifycode**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawnewverifycode) | **POST** /v1/user/exchange/bank/coin/withdraw/newVerifycode | Gets a Verification Code.
-[**V1userexchangebankcoinwithdrawunverifiedcancel**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel | Cancel Bitcoin Withdrawal
+[**V1userexchangebankcoinwithdrawunverifiedcancelWithdrawID**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawunverifiedcancelwithdrawid) | **DELETE** /v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID} | Cancel Bitcoin Withdrawal
 [**V1userexchangebankcoinwithdrawverify**](ExchangeBankActionsApi.md#v1userexchangebankcoinwithdrawverify) | **PUT** /v1/user/exchange/bank/coin/withdraw/verify | Verify Bitcoin Withdrawal
 [**V1userexchangebankfiataccountnew**](ExchangeBankActionsApi.md#v1userexchangebankfiataccountnew) | **PUT** /v1/user/exchange/bank/fiat/account/new | New Bank Link
-[**V1userexchangebankfiatdepositcancel**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcancel) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel | Cancel Unverified Exchange Fiat Deposit
+[**V1userexchangebankfiatdepositcancelDepositID**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositcanceldepositid) | **DELETE** /v1/user/exchange/bank/fiat/deposit/cancel/{depositID} | Cancel Unverified Exchange Fiat Deposit
 [**V1userexchangebankfiatdepositnew**](ExchangeBankActionsApi.md#v1userexchangebankfiatdepositnew) | **PUT** /v1/user/exchange/bank/fiat/deposit/new | New Exchange Fiat Deposit
 [**V1userexchangebankfiatwithdrawinitiate**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawinitiate) | **POST** /v1/user/exchange/bank/fiat/withdraw/initiate | Initiate Fiat Withdrawal
 [**V1userexchangebankfiatwithdrawnewVerifycode**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawnewverifycode) | **POST** /v1/user/exchange/bank/fiat/withdraw/newVerifycode | Gets a Fiat Verification Code.
-[**V1userexchangebankfiatwithdrawunverifiedcancel**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancel) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel | Cancel Fiat Withdrawal
+[**V1userexchangebankfiatwithdrawunverifiedcancelWithdrawID**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawunverifiedcancelwithdrawid) | **DELETE** /v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID} | Cancel Fiat Withdrawal
 [**V1userexchangebankfiatwithdrawverify**](ExchangeBankActionsApi.md#v1userexchangebankfiatwithdrawverify) | **PUT** /v1/user/exchange/bank/fiat/withdraw/verify | Verify Fiat Withdrawal
 
 
+<a name="v1userexchangebankcoinwithdrawinitiate"></a>
 # **V1userexchangebankcoinwithdrawinitiate**
 > SuccessResult V1userexchangebankcoinwithdrawinitiate (SendCoin body, string authorization = null, string accept = null)
 
@@ -82,6 +83,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankcoinwithdrawnewverifycode"></a>
 # **V1userexchangebankcoinwithdrawnewVerifycode**
 > SuccessResult V1userexchangebankcoinwithdrawnewVerifycode (WithdrawID body, string authorization = null, string accept = null)
 
@@ -147,8 +149,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1userexchangebankcoinwithdrawunverifiedcancel**
-> SuccessResult V1userexchangebankcoinwithdrawunverifiedcancel (WithdrawID body, string authorization = null, string accept = null)
+<a name="v1userexchangebankcoinwithdrawunverifiedcancelwithdrawid"></a>
+# **V1userexchangebankcoinwithdrawunverifiedcancelWithdrawID**
+> SuccessResult V1userexchangebankcoinwithdrawunverifiedcancelWithdrawID (string withdrawID, string authorization = null, string accept = null)
 
 Cancel Bitcoin Withdrawal
 
@@ -164,25 +167,25 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class V1userexchangebankcoinwithdrawunverifiedcancelExample
+    public class V1userexchangebankcoinwithdrawunverifiedcancelWithdrawIDExample
     {
         public void main()
         {
             
             var apiInstance = new ExchangeBankActionsApi();
-            var body = new WithdrawID(); // WithdrawID | You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified.
+            var withdrawID = withdrawID_example;  // string | 
             var authorization = authorization_example;  // string | Enter a valid Api Key. (optional) 
             var accept = accept_example;  // string | JSON, XML or CSV can be returned (Optional) (optional) 
 
             try
             {
                 // Cancel Bitcoin Withdrawal
-                SuccessResult result = apiInstance.V1userexchangebankcoinwithdrawunverifiedcancel(body, authorization, accept);
+                SuccessResult result = apiInstance.V1userexchangebankcoinwithdrawunverifiedcancelWithdrawID(withdrawID, authorization, accept);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ExchangeBankActionsApi.V1userexchangebankcoinwithdrawunverifiedcancel: " + e.Message );
+                Debug.Print("Exception when calling ExchangeBankActionsApi.V1userexchangebankcoinwithdrawunverifiedcancelWithdrawID: " + e.Message );
             }
         }
     }
@@ -193,7 +196,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WithdrawID**](WithdrawID.md)| You can get the WithdrawID from /v1/user/exchange/bank/coin/withdraw/unverified. | 
+ **withdrawID** | **string**|  | 
  **authorization** | **string**| Enter a valid Api Key. | [optional] 
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -212,6 +215,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankcoinwithdrawverify"></a>
 # **V1userexchangebankcoinwithdrawverify**
 > SuccessResult V1userexchangebankcoinwithdrawverify (Code body, string authorization = null, string accept = null)
 
@@ -277,6 +281,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiataccountnew"></a>
 # **V1userexchangebankfiataccountnew**
 > SuccessResult V1userexchangebankfiataccountnew (NewBankForm body, string authorization = null, string accept = null)
 
@@ -342,8 +347,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1userexchangebankfiatdepositcancel**
-> SuccessResult V1userexchangebankfiatdepositcancel (DepositID body, string authorization = null, string accept = null)
+<a name="v1userexchangebankfiatdepositcanceldepositid"></a>
+# **V1userexchangebankfiatdepositcancelDepositID**
+> SuccessResult V1userexchangebankfiatdepositcancelDepositID (string depositID, string authorization = null, string accept = null)
 
 Cancel Unverified Exchange Fiat Deposit
 
@@ -359,25 +365,25 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class V1userexchangebankfiatdepositcancelExample
+    public class V1userexchangebankfiatdepositcancelDepositIDExample
     {
         public void main()
         {
             
             var apiInstance = new ExchangeBankActionsApi();
-            var body = new DepositID(); // DepositID | Please send the form with valid inputs.
+            var depositID = depositID_example;  // string | 
             var authorization = authorization_example;  // string | Enter a valid Api Key. (optional) 
             var accept = accept_example;  // string | JSON, XML or CSV can be returned (Optional) (optional) 
 
             try
             {
                 // Cancel Unverified Exchange Fiat Deposit
-                SuccessResult result = apiInstance.V1userexchangebankfiatdepositcancel(body, authorization, accept);
+                SuccessResult result = apiInstance.V1userexchangebankfiatdepositcancelDepositID(depositID, authorization, accept);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ExchangeBankActionsApi.V1userexchangebankfiatdepositcancel: " + e.Message );
+                Debug.Print("Exception when calling ExchangeBankActionsApi.V1userexchangebankfiatdepositcancelDepositID: " + e.Message );
             }
         }
     }
@@ -388,7 +394,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DepositID**](DepositID.md)| Please send the form with valid inputs. | 
+ **depositID** | **string**|  | 
  **authorization** | **string**| Enter a valid Api Key. | [optional] 
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -407,6 +413,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatdepositnew"></a>
 # **V1userexchangebankfiatdepositnew**
 > SuccessResult V1userexchangebankfiatdepositnew (NewFiatBankDeposit body, string authorization = null, string accept = null)
 
@@ -472,6 +479,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatwithdrawinitiate"></a>
 # **V1userexchangebankfiatwithdrawinitiate**
 > SuccessResult V1userexchangebankfiatwithdrawinitiate (WithdrawFiat body, string authorization = null, string accept = null)
 
@@ -537,6 +545,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatwithdrawnewverifycode"></a>
 # **V1userexchangebankfiatwithdrawnewVerifycode**
 > SuccessResult V1userexchangebankfiatwithdrawnewVerifycode (WithdrawID body, string authorization = null, string accept = null)
 
@@ -602,8 +611,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **V1userexchangebankfiatwithdrawunverifiedcancel**
-> SuccessResult V1userexchangebankfiatwithdrawunverifiedcancel (WithdrawID body, string authorization = null, string accept = null)
+<a name="v1userexchangebankfiatwithdrawunverifiedcancelwithdrawid"></a>
+# **V1userexchangebankfiatwithdrawunverifiedcancelWithdrawID**
+> SuccessResult V1userexchangebankfiatwithdrawunverifiedcancelWithdrawID (string withdrawID, string authorization = null, string accept = null)
 
 Cancel Fiat Withdrawal
 
@@ -619,25 +629,25 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class V1userexchangebankfiatwithdrawunverifiedcancelExample
+    public class V1userexchangebankfiatwithdrawunverifiedcancelWithdrawIDExample
     {
         public void main()
         {
             
             var apiInstance = new ExchangeBankActionsApi();
-            var body = new WithdrawID(); // WithdrawID | You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified.
+            var withdrawID = withdrawID_example;  // string | 
             var authorization = authorization_example;  // string | Enter a valid Api Key. (optional) 
             var accept = accept_example;  // string | JSON, XML or CSV can be returned (Optional) (optional) 
 
             try
             {
                 // Cancel Fiat Withdrawal
-                SuccessResult result = apiInstance.V1userexchangebankfiatwithdrawunverifiedcancel(body, authorization, accept);
+                SuccessResult result = apiInstance.V1userexchangebankfiatwithdrawunverifiedcancelWithdrawID(withdrawID, authorization, accept);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ExchangeBankActionsApi.V1userexchangebankfiatwithdrawunverifiedcancel: " + e.Message );
+                Debug.Print("Exception when calling ExchangeBankActionsApi.V1userexchangebankfiatwithdrawunverifiedcancelWithdrawID: " + e.Message );
             }
         }
     }
@@ -648,7 +658,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WithdrawID**](WithdrawID.md)| You can get the code from /v1/user/exchange/bank/fiat/withdraw/unverified. | 
+ **withdrawID** | **string**|  | 
  **authorization** | **string**| Enter a valid Api Key. | [optional] 
  **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
@@ -667,6 +677,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1userexchangebankfiatwithdrawverify"></a>
 # **V1userexchangebankfiatwithdrawverify**
 > SuccessResult V1userexchangebankfiatwithdrawverify (Code body, string authorization = null, string accept = null)
 
