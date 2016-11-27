@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class SendCoinWallet  {
+public class SendCoinWallet {
   
   @SerializedName("walletID")
   private String walletID = null;
@@ -42,6 +40,8 @@ public class SendCoinWallet  {
   private String msg = null;
   @SerializedName("pin")
   private String pin = null;
+  @SerializedName("fees")
+  private Object fees = null;
 
   /**
    **/
@@ -93,6 +93,16 @@ public class SendCoinWallet  {
     this.pin = pin;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Object getFees() {
+    return fees;
+  }
+  public void setFees(Object fees) {
+    this.fees = fees;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -103,21 +113,23 @@ public class SendCoinWallet  {
       return false;
     }
     SendCoinWallet sendCoinWallet = (SendCoinWallet) o;
-    return (walletID == null ? sendCoinWallet.walletID == null : walletID.equals(sendCoinWallet.walletID)) &&
-        (amt == null ? sendCoinWallet.amt == null : amt.equals(sendCoinWallet.amt)) &&
-        (toAddr == null ? sendCoinWallet.toAddr == null : toAddr.equals(sendCoinWallet.toAddr)) &&
-        (msg == null ? sendCoinWallet.msg == null : msg.equals(sendCoinWallet.msg)) &&
-        (pin == null ? sendCoinWallet.pin == null : pin.equals(sendCoinWallet.pin));
+    return (this.walletID == null ? sendCoinWallet.walletID == null : this.walletID.equals(sendCoinWallet.walletID)) &&
+        (this.amt == null ? sendCoinWallet.amt == null : this.amt.equals(sendCoinWallet.amt)) &&
+        (this.toAddr == null ? sendCoinWallet.toAddr == null : this.toAddr.equals(sendCoinWallet.toAddr)) &&
+        (this.msg == null ? sendCoinWallet.msg == null : this.msg.equals(sendCoinWallet.msg)) &&
+        (this.pin == null ? sendCoinWallet.pin == null : this.pin.equals(sendCoinWallet.pin)) &&
+        (this.fees == null ? sendCoinWallet.fees == null : this.fees.equals(sendCoinWallet.fees));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (walletID == null ? 0: walletID.hashCode());
-    result = 31 * result + (amt == null ? 0: amt.hashCode());
-    result = 31 * result + (toAddr == null ? 0: toAddr.hashCode());
-    result = 31 * result + (msg == null ? 0: msg.hashCode());
-    result = 31 * result + (pin == null ? 0: pin.hashCode());
+    result = 31 * result + (this.walletID == null ? 0: this.walletID.hashCode());
+    result = 31 * result + (this.amt == null ? 0: this.amt.hashCode());
+    result = 31 * result + (this.toAddr == null ? 0: this.toAddr.hashCode());
+    result = 31 * result + (this.msg == null ? 0: this.msg.hashCode());
+    result = 31 * result + (this.pin == null ? 0: this.pin.hashCode());
+    result = 31 * result + (this.fees == null ? 0: this.fees.hashCode());
     return result;
   }
 
@@ -131,6 +143,7 @@ public class SendCoinWallet  {
     sb.append("  toAddr: ").append(toAddr).append("\n");
     sb.append("  msg: ").append(msg).append("\n");
     sb.append("  pin: ").append(pin).append("\n");
+    sb.append("  fees: ").append(fees).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

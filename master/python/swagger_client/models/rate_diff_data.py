@@ -54,6 +54,7 @@ class RateDiffData(object):
         self._rate = rate
         self._difference = difference
 
+
     @property
     def rate(self):
         """
@@ -74,6 +75,8 @@ class RateDiffData(object):
         :param rate: The rate of this RateDiffData.
         :type: int
         """
+        if rate is None:
+            raise ValueError("Invalid value for `rate`, must not be `None`")
 
         self._rate = rate
 
@@ -97,6 +100,8 @@ class RateDiffData(object):
         :param difference: The difference of this RateDiffData.
         :type: int
         """
+        if difference is None:
+            raise ValueError("Invalid value for `difference`, must not be `None`")
 
         self._difference = difference
 

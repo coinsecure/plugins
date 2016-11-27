@@ -80,7 +80,7 @@
 
       // verify the required parameter 'walletID' is set
       if (walletID == undefined || walletID == null) {
-        throw "Missing the required parameter 'walletID' when calling v1userwalletcoinaddressWalletID";
+        throw new Error("Missing the required parameter 'walletID' when calling v1userwalletcoinaddressWalletID");
       }
 
 
@@ -132,7 +132,7 @@
 
       // verify the required parameter 'walletID' is set
       if (walletID == undefined || walletID == null) {
-        throw "Missing the required parameter 'walletID' when calling v1userwalletcoindepositconfirmedWalletID";
+        throw new Error("Missing the required parameter 'walletID' when calling v1userwalletcoindepositconfirmedWalletID");
       }
 
 
@@ -228,12 +228,12 @@
 
       // verify the required parameter 'walletID' is set
       if (walletID == undefined || walletID == null) {
-        throw "Missing the required parameter 'walletID' when calling v1userwalletcoindepositunconfirmedWalletID";
+        throw new Error("Missing the required parameter 'walletID' when calling v1userwalletcoindepositunconfirmedWalletID");
       }
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userwalletcoindepositunconfirmedWalletID";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userwalletcoindepositunconfirmedWalletID");
       }
 
 
@@ -373,7 +373,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1walletwithdrawcancelled";
+        throw new Error("Missing the required parameter 'authorization' when calling v1walletwithdrawcancelled");
       }
 
 
@@ -423,7 +423,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1walletwithdrawcompleted";
+        throw new Error("Missing the required parameter 'authorization' when calling v1walletwithdrawcompleted");
       }
 
 
@@ -473,7 +473,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1walletwithdrawunverified";
+        throw new Error("Missing the required parameter 'authorization' when calling v1walletwithdrawunverified");
       }
 
 
@@ -523,7 +523,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1walletwithdrawverified";
+        throw new Error("Missing the required parameter 'authorization' when calling v1walletwithdrawverified");
       }
 
 

@@ -58,21 +58,26 @@ public:
 
     bool getSuccess();
     void setSuccess(bool success);
-SWGSuccessInitiateLoginResponse* getMessage();
+
+    SWGSuccessInitiateLoginResponse* getMessage();
     void setMessage(SWGSuccessInitiateLoginResponse* message);
-QString* getMethod();
+
+    QString* getMethod();
     void setMethod(QString* method);
-QString* getTitle();
+
+    QString* getTitle();
     void setTitle(QString* title);
-QDateTime* getTime();
+
+    QDateTime* getTime();
     void setTime(QDateTime* time);
+
 
 private:
     bool success;
-SWGSuccessInitiateLoginResponse* message;
-QString* method;
-QString* title;
-QDateTime* time;
+    SWGSuccessInitiateLoginResponse* message;
+    QString* method;
+    QString* title;
+    QDateTime* time;
 };
 
 } /* namespace Swagger */

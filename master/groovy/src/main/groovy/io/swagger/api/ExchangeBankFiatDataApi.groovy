@@ -15,7 +15,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class ExchangeBankFiatDataApi {
-    String basePath = "https://api.coinsecure.in"
+    String basePath = "https://api.coinsecure.in/"
     String versionPath = "/api/v1"
 
     def v1userexchangebankfiataccounts ( String authorization, String accept, Closure onSuccess, Closure onFailure)  {

@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"percent": @"percent" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"percent": @"percent" }];
 }
 
 /**

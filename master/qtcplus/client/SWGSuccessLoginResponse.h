@@ -56,21 +56,26 @@ public:
 
     bool getSuccess();
     void setSuccess(bool success);
-QString* getEmail();
+
+    QString* getEmail();
     void setEmail(QString* email);
-QString* getMessage();
+
+    QString* getMessage();
     void setMessage(QString* message);
-QString* getKeyType();
-    void setKeyType(QString* keyType);
-QString* getKeyNeeded();
-    void setKeyNeeded(QString* keyNeeded);
+
+    QString* getKeyType();
+    void setKeyType(QString* key_type);
+
+    QString* getKeyNeeded();
+    void setKeyNeeded(QString* key_needed);
+
 
 private:
     bool success;
-QString* email;
-QString* message;
-QString* keyType;
-QString* keyNeeded;
+    QString* email;
+    QString* message;
+    QString* key_type;
+    QString* key_needed;
 };
 
 } /* namespace Swagger */

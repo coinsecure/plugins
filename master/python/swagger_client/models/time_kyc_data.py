@@ -54,6 +54,7 @@ class TimeKYCData(object):
         self._time = time
         self._update_time = update_time
 
+
     @property
     def time(self):
         """
@@ -74,6 +75,8 @@ class TimeKYCData(object):
         :param time: The time of this TimeKYCData.
         :type: int
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 
@@ -97,6 +100,8 @@ class TimeKYCData(object):
         :param update_time: The update_time of this TimeKYCData.
         :type: int
         """
+        if update_time is None:
+            raise ValueError("Invalid value for `update_time`, must not be `None`")
 
         self._update_time = update_time
 

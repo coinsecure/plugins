@@ -1,6 +1,6 @@
 # swagger_client.ExchangeTradeDataApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**v1userexchangebidcancelled**](ExchangeTradeDataApi.md#v1userexchangebidcancelled) | **GET** /v1/user/exchange/bid/cancelled | Cancelled User Buy Orders
 [**v1userexchangebidcompleted**](ExchangeTradeDataApi.md#v1userexchangebidcompleted) | **GET** /v1/user/exchange/bid/completed | Completed User Buy Orders
 [**v1userexchangebidpending**](ExchangeTradeDataApi.md#v1userexchangebidpending) | **GET** /v1/user/exchange/bid/pending | Pending User Buy Orders
+[**v1userexchangetrades**](ExchangeTradeDataApi.md#v1userexchangetrades) | **GET** /v1/exchange/trades | Completed Exchange Trades
 
 
 # **v1exchangeasklow**
@@ -29,6 +30,7 @@ Returns the Lowest Ask Rate in Json. The Amount is in Paisa.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -43,7 +45,7 @@ try:
     api_response = api_instance.v1exchangeasklow(accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1exchangeasklow: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1exchangeasklow: %s\n" % e)
 ```
 
 ### Parameters
@@ -76,6 +78,7 @@ Returns all Ask Orders in Json. The Rate is displayed in Paisa and Volume in Sat
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -90,7 +93,7 @@ try:
     api_response = api_instance.v1exchangeaskorders(accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1exchangeaskorders: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1exchangeaskorders: %s\n" % e)
 ```
 
 ### Parameters
@@ -123,6 +126,7 @@ Highest Bid.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -137,7 +141,7 @@ try:
     api_response = api_instance.v1exchangebidhigh(accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1exchangebidhigh: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1exchangebidhigh: %s\n" % e)
 ```
 
 ### Parameters
@@ -170,6 +174,7 @@ Returns all Bid Orders in Json. The Rate is displayed in Paisa and Volume in Sat
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -184,7 +189,7 @@ try:
     api_response = api_instance.v1exchangebidorders(accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1exchangebidorders: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1exchangebidorders: %s\n" % e)
 ```
 
 ### Parameters
@@ -217,6 +222,7 @@ Returns a summary of data from the Exchange.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -231,7 +237,7 @@ try:
     api_response = api_instance.v1exchangelast_trade(accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1exchangelast_trade: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1exchangelast_trade: %s\n" % e)
 ```
 
 ### Parameters
@@ -264,6 +270,7 @@ Returns the highest rate over the last 24 hours with the 10 minutely difference.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -278,7 +285,7 @@ try:
     api_response = api_instance.v1exchangemax24_hr(accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1exchangemax24_hr: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1exchangemax24_hr: %s\n" % e)
 ```
 
 ### Parameters
@@ -311,6 +318,7 @@ Returns the lowest rate over the last 24 hours with the 10 minutely difference. 
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -325,7 +333,7 @@ try:
     api_response = api_instance.v1exchangemin24_hr(accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1exchangemin24_hr: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1exchangemin24_hr: %s\n" % e)
 ```
 
 ### Parameters
@@ -358,6 +366,7 @@ Returns a summary of data from the Exchange.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -372,7 +381,7 @@ try:
     api_response = api_instance.v1exchangeticker(accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1exchangeticker: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1exchangeticker: %s\n" % e)
 ```
 
 ### Parameters
@@ -405,6 +414,7 @@ Returns all Cancelled User Sell Orders in Json. The Rate is displayed in Paisa a
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -420,7 +430,7 @@ try:
     api_response = api_instance.v1userexchangeaskcancelled(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1userexchangeaskcancelled: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1userexchangeaskcancelled: %s\n" % e)
 ```
 
 ### Parameters
@@ -454,6 +464,7 @@ Returns all completed Sell Orders in Json. The Rate is displayed in Paisa and Vo
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -473,7 +484,7 @@ try:
     api_response = api_instance.v1userexchangeaskcompleted(authorization, _from=_from, to=to, max=max, offset=offset, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1userexchangeaskcompleted: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1userexchangeaskcompleted: %s\n" % e)
 ```
 
 ### Parameters
@@ -511,6 +522,7 @@ Returns all Open User Sell Orders in Json. The Rate is displayed in Paisa and Vo
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -526,7 +538,7 @@ try:
     api_response = api_instance.v1userexchangeaskpending(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1userexchangeaskpending: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1userexchangeaskpending: %s\n" % e)
 ```
 
 ### Parameters
@@ -560,6 +572,7 @@ Returns all Cancelled User Buy Orders in Json. The Rate is displayed in Paisa an
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -575,7 +588,7 @@ try:
     api_response = api_instance.v1userexchangebidcancelled(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1userexchangebidcancelled: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1userexchangebidcancelled: %s\n" % e)
 ```
 
 ### Parameters
@@ -609,6 +622,7 @@ Returns all completed Buy Orders in Json. The Rate is displayed in Paisa and Vol
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -624,7 +638,7 @@ try:
     api_response = api_instance.v1userexchangebidcompleted(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1userexchangebidcompleted: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1userexchangebidcompleted: %s\n" % e)
 ```
 
 ### Parameters
@@ -658,6 +672,7 @@ Returns all Open User Buy Orders in Json. The Rate is displayed in Paisa and Vol
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -673,7 +688,7 @@ try:
     api_response = api_instance.v1userexchangebidpending(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeDataApi->v1userexchangebidpending: %s\n" % e
+    print("Exception when calling ExchangeTradeDataApi->v1userexchangebidpending: %s\n" % e)
 ```
 
 ### Parameters
@@ -686,6 +701,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrderDataResponse**](OrderDataResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1userexchangetrades**
+> RateVolTimeTypeDataResponse v1userexchangetrades(_from=_from, to=to, max=max, offset=offset, accept=accept)
+
+Completed Exchange Trades
+
+Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.ExchangeTradeDataApi()
+_from = 0 # int | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional) (default to 0)
+to = 9223372036854776000 # int | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional) (default to 9223372036854776000)
+max = 10 # int | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional) (default to 10)
+offset = 0 # int | Offset defaults to 0 if input is invalid. (Optional) (optional) (default to 0)
+accept = 'accept_example' # str | JSON, XML or CSV can be returned (Optional) (optional)
+
+try: 
+    # Completed Exchange Trades
+    api_response = api_instance.v1userexchangetrades(_from=_from, to=to, max=max, offset=offset, accept=accept)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExchangeTradeDataApi->v1userexchangetrades: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **_from** | **int**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **int**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **int**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **int**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **accept** | **str**| JSON, XML or CSV can be returned (Optional) | [optional] 
+
+### Return type
+
+[**RateVolTimeTypeDataResponse**](RateVolTimeTypeDataResponse.md)
 
 ### Authorization
 

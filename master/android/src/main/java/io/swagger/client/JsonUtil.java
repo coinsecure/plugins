@@ -26,9 +26,14 @@ package io.swagger.client;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.List;
+import java.util.Date;
 import io.swagger.client.model.*;
 
 public class JsonUtil {
@@ -38,6 +43,11 @@ public class JsonUtil {
     gsonBuilder = new GsonBuilder();
     gsonBuilder.serializeNulls();
     gsonBuilder.setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+    gsonBuilder.registerTypeAdapter(Date.class, new JsonDeserializer<Date>() {
+      public Date deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+        return new Date(json.getAsJsonPrimitive().getAsLong());
+      }
+    });
   }
 
   public static Gson getGson() {
@@ -243,6 +253,14 @@ public class JsonUtil {
       return new TypeToken<List<RateVolDataResponse>>(){}.getType();
     }
     
+    if ("RateVolTimeTypeData".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RateVolTimeTypeData>>(){}.getType();
+    }
+    
+    if ("RateVolTimeTypeDataResponse".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RateVolTimeTypeDataResponse>>(){}.getType();
+    }
+    
     if ("ResetPassword".equalsIgnoreCase(className)) {
       return new TypeToken<List<ResetPassword>>(){}.getType();
     }
@@ -273,6 +291,10 @@ public class JsonUtil {
     
     if ("StandardTickerResultData".equalsIgnoreCase(className)) {
       return new TypeToken<List<StandardTickerResultData>>(){}.getType();
+    }
+    
+    if ("StandardVerifySignupResultData".equalsIgnoreCase(className)) {
+      return new TypeToken<List<StandardVerifySignupResultData>>(){}.getType();
     }
     
     if ("SuccCoinRefData".equalsIgnoreCase(className)) {
@@ -321,6 +343,10 @@ public class JsonUtil {
     
     if ("SuccessTickerResponse".equalsIgnoreCase(className)) {
       return new TypeToken<List<SuccessTickerResponse>>(){}.getType();
+    }
+    
+    if ("SuccessVerifySignupResponse".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SuccessVerifySignupResponse>>(){}.getType();
     }
     
     if ("TimeData".equalsIgnoreCase(className)) {
@@ -613,6 +639,14 @@ public class JsonUtil {
       return new TypeToken<RateVolDataResponse>(){}.getType();
     }
     
+    if ("RateVolTimeTypeData".equalsIgnoreCase(className)) {
+      return new TypeToken<RateVolTimeTypeData>(){}.getType();
+    }
+    
+    if ("RateVolTimeTypeDataResponse".equalsIgnoreCase(className)) {
+      return new TypeToken<RateVolTimeTypeDataResponse>(){}.getType();
+    }
+    
     if ("ResetPassword".equalsIgnoreCase(className)) {
       return new TypeToken<ResetPassword>(){}.getType();
     }
@@ -643,6 +677,10 @@ public class JsonUtil {
     
     if ("StandardTickerResultData".equalsIgnoreCase(className)) {
       return new TypeToken<StandardTickerResultData>(){}.getType();
+    }
+    
+    if ("StandardVerifySignupResultData".equalsIgnoreCase(className)) {
+      return new TypeToken<StandardVerifySignupResultData>(){}.getType();
     }
     
     if ("SuccCoinRefData".equalsIgnoreCase(className)) {
@@ -691,6 +729,10 @@ public class JsonUtil {
     
     if ("SuccessTickerResponse".equalsIgnoreCase(className)) {
       return new TypeToken<SuccessTickerResponse>(){}.getType();
+    }
+    
+    if ("SuccessVerifySignupResponse".equalsIgnoreCase(className)) {
+      return new TypeToken<SuccessVerifySignupResponse>(){}.getType();
     }
     
     if ("TimeData".equalsIgnoreCase(className)) {

@@ -40,12 +40,12 @@ SWGWalletDataApi::SWGWalletDataApi(QString host, QString basePath) {
 }
 
 void
-SWGWalletDataApi::/v1/user/wallet/coin/address/WalletID(QString* walletID, QString* authorization, QString* accept) {
+SWGWalletDataApi::/v1/user/wallet/coin/address/WalletID(QString* wallet_id, QString* authorization, QString* accept) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/user/wallet/coin/address/{walletID}");
 
-    QString walletIDPathParam("{"); walletIDPathParam.append("walletID").append("}");
-    fullPath.replace(walletIDPathParam, stringValue(walletID));
+    QString wallet_idPathParam("{"); wallet_idPathParam.append("walletID").append("}");
+    fullPath.replace(wallet_idPathParam, stringValue(wallet_id));
 
 
     HttpRequestWorker *worker = new HttpRequestWorker();
@@ -86,12 +86,12 @@ SWGWalletDataApi::/v1/user/wallet/coin/address/WalletIDCallback(HttpRequestWorke
     
 }
 void
-SWGWalletDataApi::/v1/user/wallet/coin/deposit/confirmed/WalletID(QString* walletID, QString* authorization, QString* accept) {
+SWGWalletDataApi::/v1/user/wallet/coin/deposit/confirmed/WalletID(QString* wallet_id, QString* authorization, QString* accept) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/user/wallet/coin/deposit/confirmed/{walletID}");
 
-    QString walletIDPathParam("{"); walletIDPathParam.append("walletID").append("}");
-    fullPath.replace(walletIDPathParam, stringValue(walletID));
+    QString wallet_idPathParam("{"); wallet_idPathParam.append("walletID").append("}");
+    fullPath.replace(wallet_idPathParam, stringValue(wallet_id));
 
 
     HttpRequestWorker *worker = new HttpRequestWorker();
@@ -176,12 +176,12 @@ SWGWalletDataApi::/v1/user/wallet/coin/deposit/confirmed/allCallback(HttpRequest
     
 }
 void
-SWGWalletDataApi::/v1/user/wallet/coin/deposit/unconfirmed/WalletID(QString* walletID, QString* authorization, QString* accept) {
+SWGWalletDataApi::/v1/user/wallet/coin/deposit/unconfirmed/WalletID(QString* wallet_id, QString* authorization, QString* accept) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/user/wallet/coin/deposit/unconfirmed/{walletID}");
 
-    QString walletIDPathParam("{"); walletIDPathParam.append("walletID").append("}");
-    fullPath.replace(walletIDPathParam, stringValue(walletID));
+    QString wallet_idPathParam("{"); wallet_idPathParam.append("walletID").append("}");
+    fullPath.replace(wallet_idPathParam, stringValue(wallet_id));
 
 
     HttpRequestWorker *worker = new HttpRequestWorker();

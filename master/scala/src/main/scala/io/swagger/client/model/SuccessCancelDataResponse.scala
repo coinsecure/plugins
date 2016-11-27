@@ -26,12 +26,11 @@ package io.swagger.client.model
 
 import org.joda.time.DateTime
 
-
-
 case class SuccessCancelDataResponse (
   /* true */
   success: Boolean,
-message: SuccessCancelData,
-method: String,
-title: String,
-time: DateTime)
+  message: SuccessCancelData,
+  method: String,
+  title: String,
+  time: DateTime
+)

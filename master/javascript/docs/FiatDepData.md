@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **timeDetails** | [**TimeDataCoin**](TimeDataCoin.md) |  | 
 **depositID** | **String** |  | 
-**value** | **Integer** |  | 
+**value** | **Number** |  | 
 **account** | **String** |  | 
 **reason** | **String** |  | 
 

@@ -50,13 +50,14 @@ SWGWithdrawID::~SWGWithdrawID() {
 
 void
 SWGWithdrawID::init() {
-    withdrawID = new QString("");
+    withdraw_id = new QString("");
 }
 
 void
 SWGWithdrawID::cleanup() {
-    if(withdrawID != NULL) {
-        delete withdrawID;
+    
+    if(withdraw_id != nullptr) {
+        delete withdraw_id;
     }
 }
 
@@ -71,7 +72,7 @@ SWGWithdrawID::fromJson(QString &json) {
 
 void
 SWGWithdrawID::fromJsonObject(QJsonObject &pJson) {
-    setValue(&withdrawID, pJson["withdrawID"], "QString", "QString");
+    ::Swagger::setValue(&withdraw_id, pJson["withdraw_id"], "QString", "QString");
 }
 
 QString
@@ -88,21 +89,18 @@ QJsonObject*
 SWGWithdrawID::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
-    toJsonValue(QString("withdrawID"), withdrawID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("withdraw_id"), withdraw_id, obj, QString("QString"));
 
     return obj;
 }
 
 QString*
-SWGWithdrawID::getWithdrawID() {
-    return withdrawID;
+SWGWithdrawID::getWithdrawId() {
+    return withdraw_id;
 }
 void
-SWGWithdrawID::setWithdrawID(QString* withdrawID) {
-    this->withdrawID = withdrawID;
+SWGWithdrawID::setWithdrawId(QString* withdraw_id) {
+    this->withdraw_id = withdraw_id;
 }
 
 

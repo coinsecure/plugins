@@ -55,12 +55,14 @@ public:
 
     qint64 getRate();
     void setRate(qint64 rate);
-qint64 getVol();
+
+    qint64 getVol();
     void setVol(qint64 vol);
+
 
 private:
     qint64 rate;
-qint64 vol;
+    qint64 vol;
 };
 
 } /* namespace Swagger */

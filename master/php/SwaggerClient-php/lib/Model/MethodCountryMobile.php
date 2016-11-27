@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -47,10 +47,10 @@ use \ArrayAccess;
  * MethodCountryMobile Class Doc Comment
  *
  * @category    Class */
-/** 
+/**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class MethodCountryMobile implements ArrayAccess
@@ -65,11 +65,11 @@ class MethodCountryMobile implements ArrayAccess
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
-    protected static $swaggerTypes = array(
+    protected static $swaggerTypes = [
         'method' => 'string',
         'country_code' => 'int',
         'phone_number' => 'int'
-    );
+    ];
 
     public static function swaggerTypes()
     {
@@ -80,41 +80,43 @@ class MethodCountryMobile implements ArrayAccess
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
-    protected static $attributeMap = array(
+    protected static $attributeMap = [
         'method' => 'method',
         'country_code' => 'countryCode',
         'phone_number' => 'phoneNumber'
-    );
+    ];
+
+
+    /**
+     * Array of attributes to setter functions (for deserialization of responses)
+     * @var string[]
+     */
+    protected static $setters = [
+        'method' => 'setMethod',
+        'country_code' => 'setCountryCode',
+        'phone_number' => 'setPhoneNumber'
+    ];
+
+
+    /**
+     * Array of attributes to getter functions (for serialization of requests)
+     * @var string[]
+     */
+    protected static $getters = [
+        'method' => 'getMethod',
+        'country_code' => 'getCountryCode',
+        'phone_number' => 'getPhoneNumber'
+    ];
 
     public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     * @var string[]
-     */
-    protected static $setters = array(
-        'method' => 'setMethod',
-        'country_code' => 'setCountryCode',
-        'phone_number' => 'setPhoneNumber'
-    );
-
     public static function setters()
     {
         return self::$setters;
     }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     * @var string[]
-     */
-    protected static $getters = array(
-        'method' => 'getMethod',
-        'country_code' => 'getCountryCode',
-        'phone_number' => 'getPhoneNumber'
-    );
 
     public static function getters()
     {
@@ -129,11 +131,11 @@ class MethodCountryMobile implements ArrayAccess
      * Associative array for storing property values
      * @var mixed[]
      */
-    protected $container = array();
+    protected $container = [];
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property values initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -149,7 +151,7 @@ class MethodCountryMobile implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = array();
+        $invalid_properties = [];
         return $invalid_properties;
     }
 
@@ -285,5 +287,3 @@ class MethodCountryMobile implements ArrayAccess
         return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

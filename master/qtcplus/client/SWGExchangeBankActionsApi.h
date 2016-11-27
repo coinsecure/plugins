@@ -54,14 +54,14 @@ public:
 
     void /v1/user/exchange/bank/coin/withdraw/initiate(SWGSendCoin body, QString* authorization, QString* accept);
     void /v1/user/exchange/bank/coin/withdraw/newVerifycode(SWGWithdrawID body, QString* authorization, QString* accept);
-    void /v1/user/exchange/bank/coin/withdraw/unverified/cancel/WithdrawID(QString* withdrawID, QString* authorization, QString* accept);
+    void /v1/user/exchange/bank/coin/withdraw/unverified/cancel/WithdrawID(QString* withdraw_id, QString* authorization, QString* accept);
     void /v1/user/exchange/bank/coin/withdraw/verify(SWGCode body, QString* authorization, QString* accept);
     void /v1/user/exchange/bank/fiat/account/new(SWGNewBankForm body, QString* authorization, QString* accept);
-    void /v1/user/exchange/bank/fiat/deposit/cancel/DepositID(QString* depositID, QString* authorization, QString* accept);
+    void /v1/user/exchange/bank/fiat/deposit/cancel/DepositID(QString* deposit_id, QString* authorization, QString* accept);
     void /v1/user/exchange/bank/fiat/deposit/new(SWGNewFiatBankDeposit body, QString* authorization, QString* accept);
     void /v1/user/exchange/bank/fiat/withdraw/initiate(SWGWithdrawFiat body, QString* authorization, QString* accept);
     void /v1/user/exchange/bank/fiat/withdraw/newVerifycode(SWGWithdrawID body, QString* authorization, QString* accept);
-    void /v1/user/exchange/bank/fiat/withdraw/unverified/cancel/WithdrawID(QString* withdrawID, QString* authorization, QString* accept);
+    void /v1/user/exchange/bank/fiat/withdraw/unverified/cancel/WithdrawID(QString* withdraw_id, QString* authorization, QString* accept);
     void /v1/user/exchange/bank/fiat/withdraw/verify(SWGCode body, QString* authorization, QString* accept);
     
 private:

@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -47,10 +47,10 @@ use \ArrayAccess;
  * SendCoin Class Doc Comment
  *
  * @category    Class */
-/** 
+/**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class SendCoin implements ArrayAccess
@@ -65,12 +65,13 @@ class SendCoin implements ArrayAccess
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
-    protected static $swaggerTypes = array(
+    protected static $swaggerTypes = [
         'satoshis' => 'int',
         'to_addr' => 'string',
         'msg' => 'string',
-        'pin' => 'string'
-    );
+        'pin' => 'string',
+        'fees' => 'object'
+    ];
 
     public static function swaggerTypes()
     {
@@ -81,44 +82,49 @@ class SendCoin implements ArrayAccess
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
-    protected static $attributeMap = array(
+    protected static $attributeMap = [
         'satoshis' => 'satoshis',
         'to_addr' => 'toAddr',
         'msg' => 'msg',
-        'pin' => 'pin'
-    );
+        'pin' => 'pin',
+        'fees' => 'fees'
+    ];
+
+
+    /**
+     * Array of attributes to setter functions (for deserialization of responses)
+     * @var string[]
+     */
+    protected static $setters = [
+        'satoshis' => 'setSatoshis',
+        'to_addr' => 'setToAddr',
+        'msg' => 'setMsg',
+        'pin' => 'setPin',
+        'fees' => 'setFees'
+    ];
+
+
+    /**
+     * Array of attributes to getter functions (for serialization of requests)
+     * @var string[]
+     */
+    protected static $getters = [
+        'satoshis' => 'getSatoshis',
+        'to_addr' => 'getToAddr',
+        'msg' => 'getMsg',
+        'pin' => 'getPin',
+        'fees' => 'getFees'
+    ];
 
     public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     * @var string[]
-     */
-    protected static $setters = array(
-        'satoshis' => 'setSatoshis',
-        'to_addr' => 'setToAddr',
-        'msg' => 'setMsg',
-        'pin' => 'setPin'
-    );
-
     public static function setters()
     {
         return self::$setters;
     }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     * @var string[]
-     */
-    protected static $getters = array(
-        'satoshis' => 'getSatoshis',
-        'to_addr' => 'getToAddr',
-        'msg' => 'getMsg',
-        'pin' => 'getPin'
-    );
 
     public static function getters()
     {
@@ -133,11 +139,11 @@ class SendCoin implements ArrayAccess
      * Associative array for storing property values
      * @var mixed[]
      */
-    protected $container = array();
+    protected $container = [];
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property values initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -145,6 +151,7 @@ class SendCoin implements ArrayAccess
         $this->container['to_addr'] = isset($data['to_addr']) ? $data['to_addr'] : null;
         $this->container['msg'] = isset($data['msg']) ? $data['msg'] : null;
         $this->container['pin'] = isset($data['pin']) ? $data['pin'] : null;
+        $this->container['fees'] = isset($data['fees']) ? $data['fees'] : null;
     }
 
     /**
@@ -154,7 +161,7 @@ class SendCoin implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = array();
+        $invalid_properties = [];
         if ($this->container['satoshis'] === null) {
             $invalid_properties[] = "'satoshis' can't be null";
         }
@@ -265,6 +272,27 @@ class SendCoin implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets fees
+     * @return object
+     */
+    public function getFees()
+    {
+        return $this->container['fees'];
+    }
+
+    /**
+     * Sets fees
+     * @param object $fees
+     * @return $this
+     */
+    public function setFees($fees)
+    {
+        $this->container['fees'] = $fees;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -323,5 +351,3 @@ class SendCoin implements ArrayAccess
         return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

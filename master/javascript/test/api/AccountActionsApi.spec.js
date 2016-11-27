@@ -99,6 +99,16 @@
         done();
       });
     });
+    describe('v1signupverifyToken', function() {
+      it('should call v1signupverifyToken successfully', function(done) {
+        //uncomment below and update the code to test v1signupverifyToken
+        //instance.v1signupverifyToken(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('v1userbankotpNumber', function() {
       it('should call v1userbankotpNumber successfully', function(done) {
         //uncomment below and update the code to test v1userbankotpNumber

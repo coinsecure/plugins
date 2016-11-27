@@ -25,13 +25,11 @@
 package io.swagger.client.model;
 
 import io.swagger.client.model.TimeData;
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class WalletCoinWithdrawData  {
+public class WalletCoinWithdrawData {
   
   @SerializedName("timeDetails")
   private TimeData timeDetails = null;
@@ -128,25 +126,25 @@ public class WalletCoinWithdrawData  {
       return false;
     }
     WalletCoinWithdrawData walletCoinWithdrawData = (WalletCoinWithdrawData) o;
-    return (timeDetails == null ? walletCoinWithdrawData.timeDetails == null : timeDetails.equals(walletCoinWithdrawData.timeDetails)) &&
-        (txID == null ? walletCoinWithdrawData.txID == null : txID.equals(walletCoinWithdrawData.txID)) &&
-        (message == null ? walletCoinWithdrawData.message == null : message.equals(walletCoinWithdrawData.message)) &&
-        (satoshis == null ? walletCoinWithdrawData.satoshis == null : satoshis.equals(walletCoinWithdrawData.satoshis)) &&
-        (walletID == null ? walletCoinWithdrawData.walletID == null : walletID.equals(walletCoinWithdrawData.walletID)) &&
-        (withdrawID == null ? walletCoinWithdrawData.withdrawID == null : withdrawID.equals(walletCoinWithdrawData.withdrawID)) &&
-        (sentTo == null ? walletCoinWithdrawData.sentTo == null : sentTo.equals(walletCoinWithdrawData.sentTo));
+    return (this.timeDetails == null ? walletCoinWithdrawData.timeDetails == null : this.timeDetails.equals(walletCoinWithdrawData.timeDetails)) &&
+        (this.txID == null ? walletCoinWithdrawData.txID == null : this.txID.equals(walletCoinWithdrawData.txID)) &&
+        (this.message == null ? walletCoinWithdrawData.message == null : this.message.equals(walletCoinWithdrawData.message)) &&
+        (this.satoshis == null ? walletCoinWithdrawData.satoshis == null : this.satoshis.equals(walletCoinWithdrawData.satoshis)) &&
+        (this.walletID == null ? walletCoinWithdrawData.walletID == null : this.walletID.equals(walletCoinWithdrawData.walletID)) &&
+        (this.withdrawID == null ? walletCoinWithdrawData.withdrawID == null : this.withdrawID.equals(walletCoinWithdrawData.withdrawID)) &&
+        (this.sentTo == null ? walletCoinWithdrawData.sentTo == null : this.sentTo.equals(walletCoinWithdrawData.sentTo));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (timeDetails == null ? 0: timeDetails.hashCode());
-    result = 31 * result + (txID == null ? 0: txID.hashCode());
-    result = 31 * result + (message == null ? 0: message.hashCode());
-    result = 31 * result + (satoshis == null ? 0: satoshis.hashCode());
-    result = 31 * result + (walletID == null ? 0: walletID.hashCode());
-    result = 31 * result + (withdrawID == null ? 0: withdrawID.hashCode());
-    result = 31 * result + (sentTo == null ? 0: sentTo.hashCode());
+    result = 31 * result + (this.timeDetails == null ? 0: this.timeDetails.hashCode());
+    result = 31 * result + (this.txID == null ? 0: this.txID.hashCode());
+    result = 31 * result + (this.message == null ? 0: this.message.hashCode());
+    result = 31 * result + (this.satoshis == null ? 0: this.satoshis.hashCode());
+    result = 31 * result + (this.walletID == null ? 0: this.walletID.hashCode());
+    result = 31 * result + (this.withdrawID == null ? 0: this.withdrawID.hashCode());
+    result = 31 * result + (this.sentTo == null ? 0: this.sentTo.hashCode());
     return result;
   }
 

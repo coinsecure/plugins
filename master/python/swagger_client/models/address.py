@@ -51,6 +51,7 @@ class Address(object):
 
         self._address = address
 
+
     @property
     def address(self):
         """
@@ -71,6 +72,8 @@ class Address(object):
         :param address: The address of this Address.
         :type: str
         """
+        if address is None:
+            raise ValueError("Invalid value for `address`, must not be `None`")
 
         self._address = address
 

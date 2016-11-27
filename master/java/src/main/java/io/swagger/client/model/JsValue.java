@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -27,12 +27,11 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 
-
 /**
  * JsValue
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-21T18:38:01.890Z")
-public class JsValue   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-27T22:11:57.435Z")
+public class JsValue {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -49,6 +48,7 @@ public class JsValue   {
   public int hashCode() {
     return Objects.hash();
   }
+
 
   @Override
   public String toString() {
@@ -69,5 +69,6 @@ public class JsValue   {
     }
     return o.toString().replace("\n", "\n    ");
   }
+  
 }
 

@@ -79,7 +79,7 @@
 
       // verify the required parameter 'any' is set
       if (any == undefined || any == null) {
-        throw "Missing the required parameter 'any' when calling v1bitcoinsearchAddress";
+        throw new Error("Missing the required parameter 'any' when calling v1bitcoinsearchAddress");
       }
 
 
@@ -129,7 +129,7 @@
 
       // verify the required parameter 'txid' is set
       if (txid == undefined || txid == null) {
-        throw "Missing the required parameter 'txid' when calling v1bitcoinsearchTxid";
+        throw new Error("Missing the required parameter 'txid' when calling v1bitcoinsearchTxid");
       }
 
 

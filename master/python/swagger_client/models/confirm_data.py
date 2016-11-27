@@ -51,6 +51,7 @@ class ConfirmData(object):
 
         self._confirmations = confirmations
 
+
     @property
     def confirmations(self):
         """
@@ -71,6 +72,8 @@ class ConfirmData(object):
         :param confirmations: The confirmations of this ConfirmData.
         :type: int
         """
+        if confirmations is None:
+            raise ValueError("Invalid value for `confirmations`, must not be `None`")
 
         self._confirmations = confirmations
 

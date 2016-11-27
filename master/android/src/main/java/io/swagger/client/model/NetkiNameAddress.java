@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class NetkiNameAddress  {
+public class NetkiNameAddress {
   
   @SerializedName("netkiName")
   private String netkiName = null;
@@ -67,15 +65,15 @@ public class NetkiNameAddress  {
       return false;
     }
     NetkiNameAddress netkiNameAddress = (NetkiNameAddress) o;
-    return (netkiName == null ? netkiNameAddress.netkiName == null : netkiName.equals(netkiNameAddress.netkiName)) &&
-        (address == null ? netkiNameAddress.address == null : address.equals(netkiNameAddress.address));
+    return (this.netkiName == null ? netkiNameAddress.netkiName == null : this.netkiName.equals(netkiNameAddress.netkiName)) &&
+        (this.address == null ? netkiNameAddress.address == null : this.address.equals(netkiNameAddress.address));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (netkiName == null ? 0: netkiName.hashCode());
-    result = 31 * result + (address == null ? 0: address.hashCode());
+    result = 31 * result + (this.netkiName == null ? 0: this.netkiName.hashCode());
+    result = 31 * result + (this.address == null ? 0: this.address.hashCode());
     return result;
   }
 

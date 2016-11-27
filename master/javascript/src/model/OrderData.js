@@ -52,9 +52,9 @@
    * Constructs a new <code>OrderData</code>.
    * @alias module:model/OrderData
    * @class
-   * @param time {Integer} 
-   * @param rate {Integer} 
-   * @param vol {Integer} 
+   * @param time {Number} 
+   * @param rate {Number} 
+   * @param vol {Number} 
    * @param orderID {String} 
    * @param status {String} 
    */
@@ -80,13 +80,13 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('time')) {
-        obj['time'] = ApiClient.convertToType(data['time'], 'Integer');
+        obj['time'] = ApiClient.convertToType(data['time'], 'Number');
       }
       if (data.hasOwnProperty('rate')) {
-        obj['rate'] = ApiClient.convertToType(data['rate'], 'Integer');
+        obj['rate'] = ApiClient.convertToType(data['rate'], 'Number');
       }
       if (data.hasOwnProperty('vol')) {
-        obj['vol'] = ApiClient.convertToType(data['vol'], 'Integer');
+        obj['vol'] = ApiClient.convertToType(data['vol'], 'Number');
       }
       if (data.hasOwnProperty('orderID')) {
         obj['orderID'] = ApiClient.convertToType(data['orderID'], 'String');
@@ -99,15 +99,15 @@
   }
 
   /**
-   * @member {Integer} time
+   * @member {Number} time
    */
   exports.prototype['time'] = undefined;
   /**
-   * @member {Integer} rate
+   * @member {Number} rate
    */
   exports.prototype['rate'] = undefined;
   /**
-   * @member {Integer} vol
+   * @member {Number} vol
    */
   exports.prototype['vol'] = undefined;
   /**

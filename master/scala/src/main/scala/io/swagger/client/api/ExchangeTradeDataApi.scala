@@ -31,6 +31,7 @@ import io.swagger.client.model.LastTradeDataResponse
 import io.swagger.client.model.RateDiffDataResponse
 import io.swagger.client.model.StandardTickerResultData
 import io.swagger.client.model.OrderDataResponse
+import io.swagger.client.model.RateVolTimeTypeDataResponse
 import io.swagger.client.ApiInvoker
 import io.swagger.client.ApiException
 
@@ -44,7 +45,7 @@ import java.util.Date
 
 import scala.collection.mutable.HashMap
 
-class ExchangeTradeDataApi(val defBasePath: String = "https://api.coinsecure.in",
+class ExchangeTradeDataApi(val defBasePath: String = "https://api.coinsecure.in/",
                         defApiInvoker: ApiInvoker = ApiInvoker) {
   var basePath = defBasePath
   var apiInvoker = defApiInvoker
@@ -57,28 +58,26 @@ class ExchangeTradeDataApi(val defBasePath: String = "https://api.coinsecure.in"
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return RateDataResponse
    */
-  def v1ExchangeAskLow (accept: String) : Option[RateDataResponse] = {
+  def v1ExchangeAskLow(accept: Option[String] = None): Option[RateDataResponse] = {
     // create path and map variables
-    val path = "/v1/exchange/ask/low".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/exchange/ask/low".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "accept" -> accept
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -99,28 +98,26 @@ class ExchangeTradeDataApi(val defBasePath: String = "https://api.coinsecure.in"
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return RateVolDataResponse
    */
-  def v1ExchangeAskOrders (accept: String) : Option[RateVolDataResponse] = {
+  def v1ExchangeAskOrders(accept: Option[String] = None): Option[RateVolDataResponse] = {
     // create path and map variables
-    val path = "/v1/exchange/ask/orders".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/exchange/ask/orders".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "accept" -> accept
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -141,28 +138,26 @@ class ExchangeTradeDataApi(val defBasePath: String = "https://api.coinsecure.in"
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return RateDataResponse
    */
-  def v1ExchangeBidHigh (accept: String) : Option[RateDataResponse] = {
+  def v1ExchangeBidHigh(accept: Option[String] = None): Option[RateDataResponse] = {
     // create path and map variables
-    val path = "/v1/exchange/bid/high".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/exchange/bid/high".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "accept" -> accept
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -183,28 +178,26 @@ class ExchangeTradeDataApi(val defBasePath: String = "https://api.coinsecure.in"
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return RateVolDataResponse
    */
-  def v1ExchangeBidOrders (accept: String) : Option[RateVolDataResponse] = {
+  def v1ExchangeBidOrders(accept: Option[String] = None): Option[RateVolDataResponse] = {
     // create path and map variables
-    val path = "/v1/exchange/bid/orders".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/exchange/bid/orders".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "accept" -> accept
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -225,28 +218,26 @@ class ExchangeTradeDataApi(val defBasePath: String = "https://api.coinsecure.in"
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return LastTradeDataResponse
    */
-  def v1ExchangeLastTrade (accept: String) : Option[LastTradeDataResponse] = {
+  def v1ExchangeLastTrade(accept: Option[String] = None): Option[LastTradeDataResponse] = {
     // create path and map variables
-    val path = "/v1/exchange/lastTrade".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/exchange/lastTrade".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "accept" -> accept
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -267,28 +258,26 @@ class ExchangeTradeDataApi(val defBasePath: String = "https://api.coinsecure.in"
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return RateDiffDataResponse
    */
-  def v1ExchangeMax24Hr (accept: String) : Option[RateDiffDataResponse] = {
+  def v1ExchangeMax24Hr(accept: Option[String] = None): Option[RateDiffDataResponse] = {
     // create path and map variables
-    val path = "/v1/exchange/max24Hr".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/exchange/max24Hr".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "accept" -> accept
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -309,28 +298,26 @@ class ExchangeTradeDataApi(val defBasePath: String = "https://api.coinsecure.in"
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return RateDiffDataResponse
    */
-  def v1ExchangeMin24Hr (accept: String) : Option[RateDiffDataResponse] = {
+  def v1ExchangeMin24Hr(accept: Option[String] = None): Option[RateDiffDataResponse] = {
     // create path and map variables
-    val path = "/v1/exchange/min24Hr".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/exchange/min24Hr".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "accept" -> accept
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -351,28 +338,26 @@ class ExchangeTradeDataApi(val defBasePath: String = "https://api.coinsecure.in"
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return StandardTickerResultData
    */
-  def v1ExchangeTicker (accept: String) : Option[StandardTickerResultData] = {
+  def v1ExchangeTicker(accept: Option[String] = None): Option[StandardTickerResultData] = {
     // create path and map variables
-    val path = "/v1/exchange/ticker".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/exchange/ticker".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "accept" -> accept
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -394,29 +379,29 @@ class ExchangeTradeDataApi(val defBasePath: String = "https://api.coinsecure.in"
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return OrderDataResponse
    */
-  def v1UserExchangeAskCancelled (authorization: String, accept: String) : Option[OrderDataResponse] = {
+  def v1UserExchangeAskCancelled(authorization: String, accept: Option[String] = None): Option[OrderDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/ask/cancelled".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/ask/cancelled".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling ExchangeTradeDataApi->v1UserExchangeAskCancelled")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -442,33 +427,33 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return OrderDataResponse
    */
-  def v1UserExchangeAskCompleted (authorization: String, from: Long /* = 0 */, to: Long /* = 9223372036854776000 */, max: Integer /* = 10 */, offset: Long /* = 0 */, accept: String) : Option[OrderDataResponse] = {
+  def v1UserExchangeAskCompleted(authorization: String, from: Option[Long] /* = 0*/, to: Option[Long] /* = 9223372036854776000*/, max: Option[Integer] /* = 10*/, offset: Option[Long] /* = 0*/, accept: Option[String] = None): Option[OrderDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/ask/completed".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/ask/completed".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-    if(String.valueOf(from) != "null") queryParams += "from" -> from.toString
-if(String.valueOf(to) != "null") queryParams += "to" -> to.toString
-if(String.valueOf(max) != "null") queryParams += "max" -> max.toString
-if(String.valueOf(offset) != "null") queryParams += "offset" -> offset.toString
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling ExchangeTradeDataApi->v1UserExchangeAskCompleted")
+
+    from.map(paramVal => queryParams += "from" -> paramVal.toString)
+    to.map(paramVal => queryParams += "to" -> paramVal.toString)
+    max.map(paramVal => queryParams += "max" -> paramVal.toString)
+    offset.map(paramVal => queryParams += "offset" -> paramVal.toString)
     
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -490,29 +475,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return OrderDataResponse
    */
-  def v1UserExchangeAskPending (authorization: String, accept: String) : Option[OrderDataResponse] = {
+  def v1UserExchangeAskPending(authorization: String, accept: Option[String] = None): Option[OrderDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/ask/pending".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/ask/pending".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling ExchangeTradeDataApi->v1UserExchangeAskPending")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -534,29 +519,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return OrderDataResponse
    */
-  def v1UserExchangeBidCancelled (authorization: String, accept: String) : Option[OrderDataResponse] = {
+  def v1UserExchangeBidCancelled(authorization: String, accept: Option[String] = None): Option[OrderDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/bid/cancelled".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/bid/cancelled".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling ExchangeTradeDataApi->v1UserExchangeBidCancelled")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -578,29 +563,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return OrderDataResponse
    */
-  def v1UserExchangeBidCompleted (authorization: String, accept: String) : Option[OrderDataResponse] = {
+  def v1UserExchangeBidCompleted(authorization: String, accept: Option[String] = None): Option[OrderDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/bid/completed".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/bid/completed".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling ExchangeTradeDataApi->v1UserExchangeBidCompleted")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -622,35 +607,83 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return OrderDataResponse
    */
-  def v1UserExchangeBidPending (authorization: String, accept: String) : Option[OrderDataResponse] = {
+  def v1UserExchangeBidPending(authorization: String, accept: Option[String] = None): Option[OrderDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/bid/pending".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/bid/pending".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling ExchangeTradeDataApi->v1UserExchangeBidPending")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
       apiInvoker.invokeApi(basePath, path, "GET", queryParams.toMap, formParams.toMap, postBody, headerParams.toMap, contentType) match {
         case s: String =>
            Some(ApiInvoker.deserialize(s, "", classOf[OrderDataResponse]).asInstanceOf[OrderDataResponse])
+        case _ => None
+      }
+    } catch {
+      case ex: ApiException if ex.code == 404 => None
+      case ex: ApiException => throw ex
+    }
+  }
+
+  /**
+   * Completed Exchange Trades
+   * Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+   * @param from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)
+   * @param to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)
+   * @param max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
+   * @param offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
+   * @param accept JSON, XML or CSV can be returned (Optional) (optional)
+   * @return RateVolTimeTypeDataResponse
+   */
+  def v1UserExchangeTrades(from: Option[Long] /* = 0*/, to: Option[Long] /* = 9223372036854776000*/, max: Option[Integer] /* = 10*/, offset: Option[Long] /* = 0*/, accept: Option[String] = None): Option[RateVolTimeTypeDataResponse] = {
+    // create path and map variables
+    val path = "/v1/exchange/trades".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
+    val contentType = contentTypes(0)
+
+    val queryParams = new HashMap[String, String]
+    val headerParams = new HashMap[String, String]
+    val formParams = new HashMap[String, String]
+
+    from.map(paramVal => queryParams += "from" -> paramVal.toString)
+    to.map(paramVal => queryParams += "to" -> paramVal.toString)
+    max.map(paramVal => queryParams += "max" -> paramVal.toString)
+    offset.map(paramVal => queryParams += "offset" -> paramVal.toString)
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
+
+    var postBody: AnyRef = null
+
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
+      postBody = mp
+    } else {
+    }
+
+    try {
+      apiInvoker.invokeApi(basePath, path, "GET", queryParams.toMap, formParams.toMap, postBody, headerParams.toMap, contentType) match {
+        case s: String =>
+           Some(ApiInvoker.deserialize(s, "", classOf[RateVolTimeTypeDataResponse]).asInstanceOf[RateVolTimeTypeDataResponse])
         case _ => None
       }
     } catch {

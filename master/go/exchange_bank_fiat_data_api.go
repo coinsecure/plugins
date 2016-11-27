@@ -24,17 +24,18 @@ package swagger
 
 import (
 	"net/url"
+	"strings"
 	"encoding/json"
 )
 
 type ExchangeBankFiatDataApi struct {
-	Configuration Configuration
+	Configuration *Configuration
 }
 
 func NewExchangeBankFiatDataApi() *ExchangeBankFiatDataApi {
 	configuration := NewConfiguration()
 	return &ExchangeBankFiatDataApi{
-		Configuration: *configuration,
+		Configuration: configuration,
 	}
 }
 
@@ -43,7 +44,7 @@ func NewExchangeBankFiatDataApiWithBasePath(basePath string) *ExchangeBankFiatDa
 	configuration.BasePath = basePath
 
 	return &ExchangeBankFiatDataApi{
-		Configuration: *configuration,
+		Configuration: configuration,
 	}
 }
 
@@ -57,22 +58,20 @@ func NewExchangeBankFiatDataApiWithBasePath(basePath string) *ExchangeBankFiatDa
  */
 func (a ExchangeBankFiatDataApi) V1userexchangebankfiataccounts(authorization string, accept string) (*FiatBankDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/accounts"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/accounts"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -80,33 +79,40 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiataccounts(authorization st
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(FiatBankDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankfiataccounts", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -119,22 +125,20 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiataccounts(authorization st
  */
 func (a ExchangeBankFiatDataApi) V1userexchangebankfiatbalanceavailable(authorization string, accept string) (*RateDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/balance/total"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/balance/total"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -142,33 +146,40 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatbalanceavailable(authoriz
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(RateDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankfiatbalanceavailable", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -181,22 +192,20 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatbalanceavailable(authoriz
  */
 func (a ExchangeBankFiatDataApi) V1userexchangebankfiatbalancepending(authorization string, accept string) (*RateDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/balance/pending"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/balance/pending"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -204,33 +213,40 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatbalancepending(authorizat
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(RateDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankfiatbalancepending", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -243,22 +259,20 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatbalancepending(authorizat
  */
 func (a ExchangeBankFiatDataApi) V1userexchangebankfiatbalancetotal(authorization string, accept string) (*RateDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/balance/available"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/balance/available"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -266,33 +280,40 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatbalancetotal(authorizatio
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(RateDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankfiatbalancetotal", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -309,26 +330,24 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatbalancetotal(authorizatio
  */
 func (a ExchangeBankFiatDataApi) V1userexchangebankfiatdepositcancelled(authorization string, from int64, to int64, max int32, offset int64, accept string) (*FiatDepDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/deposit/cancelled"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/deposit/cancelled"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -336,33 +355,40 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatdepositcancelled(authoriz
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(FiatDepDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankfiatdepositcancelled", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -379,26 +405,24 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatdepositcancelled(authoriz
  */
 func (a ExchangeBankFiatDataApi) V1userexchangebankfiatdepositunverified(authorization string, from int64, to int64, max int32, offset int64, accept string) (*FiatDepDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/deposit/unverified"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/deposit/unverified"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -406,33 +430,40 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatdepositunverified(authori
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(FiatDepDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankfiatdepositunverified", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -449,26 +480,24 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatdepositunverified(authori
  */
 func (a ExchangeBankFiatDataApi) V1userexchangebankfiatdepositverified(authorization string, from int64, to int64, max int32, offset int64, accept string) (*FiatDepDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/deposit/verified"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/deposit/verified"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -476,33 +505,40 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatdepositverified(authoriza
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(FiatDepDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankfiatdepositverified", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -519,26 +555,24 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatdepositverified(authoriza
  */
 func (a ExchangeBankFiatDataApi) V1userexchangebankfiatwithdrawcancelled(authorization string, from int64, to int64, max int32, offset int64, accept string) (*FiatWithDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/withdraw/cancelled"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/withdraw/cancelled"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -546,33 +580,40 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatwithdrawcancelled(authori
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(FiatWithDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankfiatwithdrawcancelled", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -589,26 +630,24 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatwithdrawcancelled(authori
  */
 func (a ExchangeBankFiatDataApi) V1userexchangebankfiatwithdrawcompleted(authorization string, from int64, to int64, max int32, offset int64, accept string) (*FiatWithDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/withdraw/completed"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/withdraw/completed"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -616,33 +655,40 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatwithdrawcompleted(authori
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(FiatWithDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankfiatwithdrawcompleted", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -659,26 +705,24 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatwithdrawcompleted(authori
  */
 func (a ExchangeBankFiatDataApi) V1userexchangebankfiatwithdrawunverified(authorization string, from int64, to int64, max int32, offset int64, accept string) (*FiatWithDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/withdraw/unverified"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/withdraw/unverified"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -686,33 +730,40 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatwithdrawunverified(author
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(FiatWithDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankfiatwithdrawunverified", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -729,26 +780,24 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatwithdrawunverified(author
  */
 func (a ExchangeBankFiatDataApi) V1userexchangebankfiatwithdrawverified(authorization string, from int64, to int64, max int32, offset int64, accept string) (*FiatWithDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/withdraw/verified"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/fiat/withdraw/verified"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -756,32 +805,39 @@ func (a ExchangeBankFiatDataApi) V1userexchangebankfiatwithdrawverified(authoriz
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(FiatWithDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankfiatwithdrawverified", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 

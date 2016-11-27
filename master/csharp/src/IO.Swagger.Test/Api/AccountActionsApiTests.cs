@@ -129,6 +129,19 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test V1signupverifyToken
+        /// </summary>
+        [Test]
+        public void V1signupverifyTokenTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string token = null;
+            //string accept = null;
+            //var response = instance.V1signupverifyToken(token, accept);
+            //Assert.IsInstanceOf<StandardVerifySignupResultData> (response, "response is StandardVerifySignupResultData");
+        }
+        
+        /// <summary>
         /// Test V1userbankotpNumber
         /// </summary>
         [Test]

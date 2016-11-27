@@ -57,6 +57,7 @@ class MethodCountryMobile(object):
         self._country_code = country_code
         self._phone_number = phone_number
 
+
     @property
     def method(self):
         """

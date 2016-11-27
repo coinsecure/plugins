@@ -54,6 +54,7 @@ class NewAddress(object):
         self._wallet_id = wallet_id
         self._info = info
 
+
     @property
     def wallet_id(self):
         """
@@ -74,6 +75,8 @@ class NewAddress(object):
         :param wallet_id: The wallet_id of this NewAddress.
         :type: str
         """
+        if wallet_id is None:
+            raise ValueError("Invalid value for `wallet_id`, must not be `None`")
 
         self._wallet_id = wallet_id
 
@@ -97,6 +100,8 @@ class NewAddress(object):
         :param info: The info of this NewAddress.
         :type: str
         """
+        if info is None:
+            raise ValueError("Invalid value for `info`, must not be `None`")
 
         self._info = info
 

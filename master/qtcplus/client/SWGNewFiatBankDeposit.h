@@ -56,18 +56,22 @@ public:
 
     qint64 getAmount();
     void setAmount(qint64 amount);
-QString* getMessage();
+
+    QString* getMessage();
     void setMessage(QString* message);
-QString* getBank();
+
+    QString* getBank();
     void setBank(QString* bank);
-QString* getDepType();
-    void setDepType(QString* depType);
+
+    QString* getDepType();
+    void setDepType(QString* dep_type);
+
 
 private:
     qint64 amount;
-QString* message;
-QString* bank;
-QString* depType;
+    QString* message;
+    QString* bank;
+    QString* dep_type;
 };
 
 } /* namespace Swagger */

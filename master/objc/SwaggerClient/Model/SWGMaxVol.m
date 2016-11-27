@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"maxVol": @"maxVol" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"maxVol": @"maxVol" }];
 }
 
 /**

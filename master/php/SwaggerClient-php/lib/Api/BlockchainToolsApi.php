@@ -6,7 +6,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,9 +40,9 @@
 
 namespace Swagger\Client\Api;
 
-use \Swagger\Client\Configuration;
 use \Swagger\Client\ApiClient;
 use \Swagger\Client\ApiException;
+use \Swagger\Client\Configuration;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -51,12 +51,11 @@ use \Swagger\Client\ObjectSerializer;
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class BlockchainToolsApi
 {
-
     /**
      * API Client
      *
@@ -71,9 +70,9 @@ class BlockchainToolsApi
      */
     public function __construct(\Swagger\Client\ApiClient $apiClient = null)
     {
-        if ($apiClient == null) {
+        if ($apiClient === null) {
             $apiClient = new ApiClient();
-            $apiClient->getConfig()->setHost('https://api.coinsecure.in');
+            $apiClient->getConfig()->setHost('https://api.coinsecure.in/');
         }
 
         $this->apiClient = $apiClient;
@@ -109,8 +108,8 @@ class BlockchainToolsApi
      *
      * @param string $any  (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\ValidAddressSearchDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\ValidAddressSearchDataResponse
      */
     public function v1bitcoinsearchAddress($any, $accept = null)
     {
@@ -125,8 +124,8 @@ class BlockchainToolsApi
      *
      * @param string $any  (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\ValidAddressSearchDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\ValidAddressSearchDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1bitcoinsearchAddressWithHttpInfo($any, $accept = null)
     {
@@ -137,14 +136,14 @@ class BlockchainToolsApi
         // parse inputs
         $resourcePath = "/v1/bitcoin/search/{any}";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -180,7 +179,7 @@ class BlockchainToolsApi
                 '/v1/bitcoin/search/{any}'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ValidAddressSearchDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ValidAddressSearchDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -204,8 +203,8 @@ class BlockchainToolsApi
      *
      * @param string $txid  (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\ConfirmDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\ConfirmDataResponse
      */
     public function v1bitcoinsearchTxid($txid, $accept = null)
     {
@@ -220,8 +219,8 @@ class BlockchainToolsApi
      *
      * @param string $txid  (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\ConfirmDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\ConfirmDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1bitcoinsearchTxidWithHttpInfo($txid, $accept = null)
     {
@@ -232,14 +231,14 @@ class BlockchainToolsApi
         // parse inputs
         $resourcePath = "/v1/bitcoin/search/confirmation/{txid}";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -275,7 +274,7 @@ class BlockchainToolsApi
                 '/v1/bitcoin/search/confirmation/{txid}'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ConfirmDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ConfirmDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -291,5 +290,4 @@ class BlockchainToolsApi
             throw $e;
         }
     }
-
 }

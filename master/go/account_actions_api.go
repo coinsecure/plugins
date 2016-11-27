@@ -24,21 +24,21 @@ package swagger
 
 import (
 	"net/url"
+	"strings"
 	"os"
 	"io/ioutil"
 	"encoding/json"
 	"fmt"
-	"strings"
 )
 
 type AccountActionsApi struct {
-	Configuration Configuration
+	Configuration *Configuration
 }
 
 func NewAccountActionsApi() *AccountActionsApi {
 	configuration := NewConfiguration()
 	return &AccountActionsApi{
-		Configuration: *configuration,
+		Configuration: configuration,
 	}
 }
 
@@ -47,7 +47,7 @@ func NewAccountActionsApiWithBasePath(basePath string) *AccountActionsApi {
 	configuration.BasePath = basePath
 
 	return &AccountActionsApi{
-		Configuration: *configuration,
+		Configuration: configuration,
 	}
 }
 
@@ -61,22 +61,20 @@ func NewAccountActionsApiWithBasePath(basePath string) *AccountActionsApi {
  */
 func (a AccountActionsApi) V1login(body LoginFormNew, accept string) (*StandardLoginResultData, *APIResponse, error) {
 
-	var httpMethod = "Post"
+	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/login"
+	localVarPath := a.Configuration.BasePath + "/v1/login"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -84,34 +82,40 @@ func (a AccountActionsApi) V1login(body LoginFormNew, accept string) (*StandardL
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	// body params
-	postBody = &body
-
+	localVarPostBody = &body
 	var successPayload = new(StandardLoginResultData)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1login", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -124,22 +128,20 @@ func (a AccountActionsApi) V1login(body LoginFormNew, accept string) (*StandardL
  */
 func (a AccountActionsApi) V1logininitiate(body LoginId, accept string) (*StandardInitiateLoginResultData, *APIResponse, error) {
 
-	var httpMethod = "Post"
+	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/login/initiate"
+	localVarPath := a.Configuration.BasePath + "/v1/login/initiate"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -147,34 +149,40 @@ func (a AccountActionsApi) V1logininitiate(body LoginId, accept string) (*Standa
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	// body params
-	postBody = &body
-
+	localVarPostBody = &body
 	var successPayload = new(StandardInitiateLoginResultData)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1logininitiate", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -187,22 +195,20 @@ func (a AccountActionsApi) V1logininitiate(body LoginId, accept string) (*Standa
  */
 func (a AccountActionsApi) V1loginpasswordforgot(body Email, accept string) (*SuccessResult, *APIResponse, error) {
 
-	var httpMethod = "Post"
+	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/login/password/forgot"
+	localVarPath := a.Configuration.BasePath + "/v1/login/password/forgot"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -210,34 +216,40 @@ func (a AccountActionsApi) V1loginpasswordforgot(body Email, accept string) (*Su
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	// body params
-	postBody = &body
-
+	localVarPostBody = &body
 	var successPayload = new(SuccessResult)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1loginpasswordforgot", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -250,22 +262,20 @@ func (a AccountActionsApi) V1loginpasswordforgot(body Email, accept string) (*Su
  */
 func (a AccountActionsApi) V1signup(body SignupForm, accept string) (*SuccessResult, *APIResponse, error) {
 
-	var httpMethod = "Post"
+	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/signup"
+	localVarPath := a.Configuration.BasePath + "/v1/signup"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -273,34 +283,106 @@ func (a AccountActionsApi) V1signup(body SignupForm, accept string) (*SuccessRes
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	// body params
-	postBody = &body
-
+	localVarPostBody = &body
 	var successPayload = new(SuccessResult)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1signup", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
+}
+
+/**
+ * Verifies an Email token for Signup .
+ * Creates a new Coinsecure Account.
+ *
+ * @param token 
+ * @param accept JSON, XML or CSV can be returned (Optional)
+ * @return *StandardVerifySignupResultData
+ */
+func (a AccountActionsApi) V1signupverifyToken(token string, accept string) (*StandardVerifySignupResultData, *APIResponse, error) {
+
+	var localVarHttpMethod = strings.ToUpper("Put")
+	// create path and map variables
+	localVarPath := a.Configuration.BasePath + "/v1/signup/verify/{token}"
+	localVarPath = strings.Replace(localVarPath, "{"+"token"+"}", fmt.Sprintf("%v", token), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
+	// add default headers if any
+	for key := range a.Configuration.DefaultHeader {
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
+	}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/json",  }
+
+	// set Content-Type header
+	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+		"application/xml",
+		"application/csv",
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// header params "accept"
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
+	var successPayload = new(StandardVerifySignupResultData)
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1signupverifyToken", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
+	}
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -314,23 +396,21 @@ func (a AccountActionsApi) V1signup(body SignupForm, accept string) (*SuccessRes
  */
 func (a AccountActionsApi) V1userbankotpNumber(number string, authorization string, accept string) (*StandardInitiateLoginResultData, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/bank/otp/{number}"
-	path = strings.Replace(path, "{"+"number"+"}", fmt.Sprintf("%v", number), -1)
+	localVarPath := a.Configuration.BasePath + "/v1/user/bank/otp/{number}"
+	localVarPath = strings.Replace(localVarPath, "{"+"number"+"}", fmt.Sprintf("%v", number), -1)
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -338,33 +418,40 @@ func (a AccountActionsApi) V1userbankotpNumber(number string, authorization stri
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(StandardInitiateLoginResultData)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userbankotpNumber", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -379,7 +466,7 @@ func (a AccountActionsApi) V1userbankotpNumber(number string, authorization stri
  * @param acctType Please enter your Coinsecure account type. Allowable Values are Personal or Company.
  * @param banType Please enter your Bank account type. Allowable Values are Savings or Current.
  * @param phone Please enter your Valid Phone Number.
- * @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.
+ * @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.
  * @param file Enter a valid image, pdf or zip file under 5 MB in size.
  * @param authorization Enter a valid Api Key.
  * @param message Please enter an optional message if needed.
@@ -388,22 +475,20 @@ func (a AccountActionsApi) V1userbankotpNumber(number string, authorization stri
  */
 func (a AccountActionsApi) V1userexchangekyc(panNumber string, acctNick string, name string, ban string, ifsc string, acctType string, banType string, phone string, otp string, file *os.File, authorization string, message string, accept string) (*SuccessResult, *APIResponse, error) {
 
-	var httpMethod = "Put"
+	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/kyc"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/kyc"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "multipart/form-data",  }
@@ -411,48 +496,53 @@ func (a AccountActionsApi) V1userexchangekyc(panNumber string, acctNick string, 
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
-
-	formParams["panNumber"] = panNumber
-	formParams["acctNick"] = acctNick
-	formParams["name"] = name
-	formParams["ban"] = ban
-	formParams["ifsc"] = ifsc
-	formParams["acctType"] = acctType
-	formParams["message"] = message
-	formParams["banType"] = banType
-	formParams["phone"] = phone
-	formParams["otp"] = otp
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
+	localVarFormParams["panNumber"] = a.Configuration.APIClient.ParameterToString(panNumber, "")
+	localVarFormParams["acctNick"] = a.Configuration.APIClient.ParameterToString(acctNick, "")
+	localVarFormParams["name"] = a.Configuration.APIClient.ParameterToString(name, "")
+	localVarFormParams["ban"] = a.Configuration.APIClient.ParameterToString(ban, "")
+	localVarFormParams["ifsc"] = a.Configuration.APIClient.ParameterToString(ifsc, "")
+	localVarFormParams["acctType"] = a.Configuration.APIClient.ParameterToString(acctType, "")
+	localVarFormParams["message"] = a.Configuration.APIClient.ParameterToString(message, "")
+	localVarFormParams["banType"] = a.Configuration.APIClient.ParameterToString(banType, "")
+	localVarFormParams["phone"] = a.Configuration.APIClient.ParameterToString(phone, "")
+	localVarFormParams["otp"] = a.Configuration.APIClient.ParameterToString(otp, "")
 	fbs, _ := ioutil.ReadAll(file)
-	fileBytes = fbs
-	fileName = file.Name()
-
+	localVarFileBytes = fbs
+	localVarFileName = file.Name()
 	var successPayload = new(SuccessResult)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangekyc", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -466,23 +556,21 @@ func (a AccountActionsApi) V1userexchangekyc(panNumber string, acctNick string, 
  */
 func (a AccountActionsApi) V1usergcmCode(code string, authorization string, accept string) (*SuccessResult, *APIResponse, error) {
 
-	var httpMethod = "Delete"
+	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/gcm/{code}"
-	path = strings.Replace(path, "{"+"code"+"}", fmt.Sprintf("%v", code), -1)
+	localVarPath := a.Configuration.BasePath + "/v1/user/gcm/{code}"
+	localVarPath = strings.Replace(localVarPath, "{"+"code"+"}", fmt.Sprintf("%v", code), -1)
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -490,33 +578,40 @@ func (a AccountActionsApi) V1usergcmCode(code string, authorization string, acce
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(SuccessResult)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1usergcmCode", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -530,23 +625,21 @@ func (a AccountActionsApi) V1usergcmCode(code string, authorization string, acce
  */
 func (a AccountActionsApi) V1userkycotpNumber(number string, authorization string, accept string) (*SuccessResult, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/kyc/otp/{number}"
-	path = strings.Replace(path, "{"+"number"+"}", fmt.Sprintf("%v", number), -1)
+	localVarPath := a.Configuration.BasePath + "/v1/user/kyc/otp/{number}"
+	localVarPath = strings.Replace(localVarPath, "{"+"number"+"}", fmt.Sprintf("%v", number), -1)
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -554,33 +647,40 @@ func (a AccountActionsApi) V1userkycotpNumber(number string, authorization strin
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(SuccessResult)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userkycotpNumber", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -593,22 +693,20 @@ func (a AccountActionsApi) V1userkycotpNumber(number string, authorization strin
  */
 func (a AccountActionsApi) V1userlogout(authorization string, accept string) (*SuccessResult, *APIResponse, error) {
 
-	var httpMethod = "Delete"
+	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/logout"
+	localVarPath := a.Configuration.BasePath + "/v1/user/logout"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -616,33 +714,40 @@ func (a AccountActionsApi) V1userlogout(authorization string, accept string) (*S
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(SuccessResult)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userlogout", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -656,22 +761,20 @@ func (a AccountActionsApi) V1userlogout(authorization string, accept string) (*S
  */
 func (a AccountActionsApi) V1usernetkicreate(body NetkiNameAddress, authorization string, accept string) (*SuccessResult, *APIResponse, error) {
 
-	var httpMethod = "Put"
+	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/netki/create"
+	localVarPath := a.Configuration.BasePath + "/v1/user/netki/create"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -679,36 +782,42 @@ func (a AccountActionsApi) V1usernetkicreate(body NetkiNameAddress, authorizatio
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	// body params
-	postBody = &body
-
+	localVarPostBody = &body
 	var successPayload = new(SuccessResult)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1usernetkicreate", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -722,22 +831,20 @@ func (a AccountActionsApi) V1usernetkicreate(body NetkiNameAddress, authorizatio
  */
 func (a AccountActionsApi) V1usernetkiupdate(body Address, authorization string, accept string) (*SuccessResult, *APIResponse, error) {
 
-	var httpMethod = "Post"
+	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/netki/update"
+	localVarPath := a.Configuration.BasePath + "/v1/user/netki/update"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -745,36 +852,42 @@ func (a AccountActionsApi) V1usernetkiupdate(body Address, authorization string,
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	// body params
-	postBody = &body
-
+	localVarPostBody = &body
 	var successPayload = new(SuccessResult)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1usernetkiupdate", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -788,23 +901,21 @@ func (a AccountActionsApi) V1usernetkiupdate(body Address, authorization string,
  */
 func (a AccountActionsApi) V1userprofileimagedeleteNetkiName(netkiName string, authorization string, accept string) (*SuccessResult, *APIResponse, error) {
 
-	var httpMethod = "Delete"
+	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/profile/image/delete/{netkiName}"
-	path = strings.Replace(path, "{"+"netkiName"+"}", fmt.Sprintf("%v", netkiName), -1)
+	localVarPath := a.Configuration.BasePath + "/v1/user/profile/image/delete/{netkiName}"
+	localVarPath = strings.Replace(localVarPath, "{"+"netkiName"+"}", fmt.Sprintf("%v", netkiName), -1)
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -812,33 +923,40 @@ func (a AccountActionsApi) V1userprofileimagedeleteNetkiName(netkiName string, a
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(SuccessResult)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userprofileimagedeleteNetkiName", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -854,22 +972,20 @@ func (a AccountActionsApi) V1userprofileimagedeleteNetkiName(netkiName string, a
  */
 func (a AccountActionsApi) V1userprofileimageupdate(netkiName string, isPublic bool, file *os.File, authorization string, accept string) (*SuccessResult, *APIResponse, error) {
 
-	var httpMethod = "Post"
+	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/profile/image/update"
+	localVarPath := a.Configuration.BasePath + "/v1/user/profile/image/update"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "multipart/form-data",  }
@@ -877,40 +993,45 @@ func (a AccountActionsApi) V1userprofileimageupdate(netkiName string, isPublic b
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
-
-	formParams["netkiName"] = netkiName
-	formParams["isPublic"] = isPublic
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
+	localVarFormParams["netkiName"] = a.Configuration.APIClient.ParameterToString(netkiName, "")
+	localVarFormParams["isPublic"] = a.Configuration.APIClient.ParameterToString(isPublic, "")
 	fbs, _ := ioutil.ReadAll(file)
-	fileBytes = fbs
-	fileName = file.Name()
-
+	localVarFileBytes = fbs
+	localVarFileName = file.Name()
 	var successPayload = new(SuccessResult)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userprofileimageupdate", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -924,22 +1045,20 @@ func (a AccountActionsApi) V1userprofileimageupdate(netkiName string, isPublic b
  */
 func (a AccountActionsApi) V1userprofilephone(body NumberOtp, authorization string, accept string) (*SuccessResult, *APIResponse, error) {
 
-	var httpMethod = "Put"
+	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/profile/phone/new"
+	localVarPath := a.Configuration.BasePath + "/v1/user/profile/phone/new"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -947,36 +1066,42 @@ func (a AccountActionsApi) V1userprofilephone(body NumberOtp, authorization stri
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	// body params
-	postBody = &body
-
+	localVarPostBody = &body
 	var successPayload = new(SuccessResult)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userprofilephone", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -989,22 +1114,20 @@ func (a AccountActionsApi) V1userprofilephone(body NumberOtp, authorization stri
  */
 func (a AccountActionsApi) V1userprofilephoneNumber(authorization string, accept string) (*SuccessResult, *APIResponse, error) {
 
-	var httpMethod = "Delete"
+	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/profile/phone/delete"
+	localVarPath := a.Configuration.BasePath + "/v1/user/profile/phone/delete"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -1012,33 +1135,40 @@ func (a AccountActionsApi) V1userprofilephoneNumber(authorization string, accept
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(SuccessResult)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userprofilephoneNumber", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -1052,23 +1182,21 @@ func (a AccountActionsApi) V1userprofilephoneNumber(authorization string, accept
  */
 func (a AccountActionsApi) V1userprofilephoneotpNumber(number string, authorization string, accept string) (*SuccessResult, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/profile/phone/otp/{number}"
-	path = strings.Replace(path, "{"+"number"+"}", fmt.Sprintf("%v", number), -1)
+	localVarPath := a.Configuration.BasePath + "/v1/user/profile/phone/otp/{number}"
+	localVarPath = strings.Replace(localVarPath, "{"+"number"+"}", fmt.Sprintf("%v", number), -1)
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -1076,32 +1204,39 @@ func (a AccountActionsApi) V1userprofilephoneotpNumber(number string, authorizat
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(SuccessResult)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userprofilephoneotpNumber", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 

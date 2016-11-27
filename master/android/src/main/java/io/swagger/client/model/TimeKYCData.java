@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class TimeKYCData  {
+public class TimeKYCData {
   
   @SerializedName("time")
   private Long time = null;
@@ -67,15 +65,15 @@ public class TimeKYCData  {
       return false;
     }
     TimeKYCData timeKYCData = (TimeKYCData) o;
-    return (time == null ? timeKYCData.time == null : time.equals(timeKYCData.time)) &&
-        (updateTime == null ? timeKYCData.updateTime == null : updateTime.equals(timeKYCData.updateTime));
+    return (this.time == null ? timeKYCData.time == null : this.time.equals(timeKYCData.time)) &&
+        (this.updateTime == null ? timeKYCData.updateTime == null : this.updateTime.equals(timeKYCData.updateTime));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (time == null ? 0: time.hashCode());
-    result = 31 * result + (updateTime == null ? 0: updateTime.hashCode());
+    result = 31 * result + (this.time == null ? 0: this.time.hashCode());
+    result = 31 * result + (this.updateTime == null ? 0: this.updateTime.hashCode());
     return result;
   }
 

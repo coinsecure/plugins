@@ -56,6 +56,7 @@ public:
     qint64 getConfirmations();
     void setConfirmations(qint64 confirmations);
 
+
 private:
     qint64 confirmations;
 };

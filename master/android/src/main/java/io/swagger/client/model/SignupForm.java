@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class SignupForm  {
+public class SignupForm {
   
   @SerializedName("name")
   private String name = null;
@@ -103,21 +101,21 @@ public class SignupForm  {
       return false;
     }
     SignupForm signupForm = (SignupForm) o;
-    return (name == null ? signupForm.name == null : name.equals(signupForm.name)) &&
-        (email == null ? signupForm.email == null : email.equals(signupForm.email)) &&
-        (password == null ? signupForm.password == null : password.equals(signupForm.password)) &&
-        (repeatPassword == null ? signupForm.repeatPassword == null : repeatPassword.equals(signupForm.repeatPassword)) &&
-        (refID == null ? signupForm.refID == null : refID.equals(signupForm.refID));
+    return (this.name == null ? signupForm.name == null : this.name.equals(signupForm.name)) &&
+        (this.email == null ? signupForm.email == null : this.email.equals(signupForm.email)) &&
+        (this.password == null ? signupForm.password == null : this.password.equals(signupForm.password)) &&
+        (this.repeatPassword == null ? signupForm.repeatPassword == null : this.repeatPassword.equals(signupForm.repeatPassword)) &&
+        (this.refID == null ? signupForm.refID == null : this.refID.equals(signupForm.refID));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (name == null ? 0: name.hashCode());
-    result = 31 * result + (email == null ? 0: email.hashCode());
-    result = 31 * result + (password == null ? 0: password.hashCode());
-    result = 31 * result + (repeatPassword == null ? 0: repeatPassword.hashCode());
-    result = 31 * result + (refID == null ? 0: refID.hashCode());
+    result = 31 * result + (this.name == null ? 0: this.name.hashCode());
+    result = 31 * result + (this.email == null ? 0: this.email.hashCode());
+    result = 31 * result + (this.password == null ? 0: this.password.hashCode());
+    result = 31 * result + (this.repeatPassword == null ? 0: this.repeatPassword.hashCode());
+    result = 31 * result + (this.refID == null ? 0: this.refID.hashCode());
     return result;
   }
 

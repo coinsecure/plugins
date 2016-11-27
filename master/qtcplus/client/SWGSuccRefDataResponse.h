@@ -59,21 +59,26 @@ public:
 
     bool getSuccess();
     void setSuccess(bool success);
-QList<SWGSuccRefData*>* getMessage();
+
+    QList<SWGSuccRefData*>* getMessage();
     void setMessage(QList<SWGSuccRefData*>* message);
-QString* getMethod();
+
+    QString* getMethod();
     void setMethod(QString* method);
-QString* getTitle();
+
+    QString* getTitle();
     void setTitle(QString* title);
-QDateTime* getTime();
+
+    QDateTime* getTime();
     void setTime(QDateTime* time);
+
 
 private:
     bool success;
-QList<SWGSuccRefData*>* message;
-QString* method;
-QString* title;
-QDateTime* time;
+    QList<SWGSuccRefData*>* message;
+    QString* method;
+    QString* title;
+    QDateTime* time;
 };
 
 } /* namespace Swagger */

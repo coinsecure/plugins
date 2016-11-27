@@ -51,21 +51,24 @@ SWGTradeAddressData::~SWGTradeAddressData() {
 void
 SWGTradeAddressData::init() {
     address = new QString("");
-time = 0L;
-info = new QString("");
-netki = new QString("");
+    time = 0L;
+    info = new QString("");
+    netki = new QString("");
 }
 
 void
 SWGTradeAddressData::cleanup() {
-    if(address != NULL) {
+    
+    if(address != nullptr) {
         delete address;
     }
 
-if(info != NULL) {
+
+    if(info != nullptr) {
         delete info;
     }
-if(netki != NULL) {
+
+    if(netki != nullptr) {
         delete netki;
     }
 }
@@ -81,10 +84,10 @@ SWGTradeAddressData::fromJson(QString &json) {
 
 void
 SWGTradeAddressData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&address, pJson["address"], "QString", "QString");
-setValue(&time, pJson["time"], "qint64", "");
-setValue(&info, pJson["info"], "QString", "QString");
-setValue(&netki, pJson["netki"], "QString", "QString");
+    ::Swagger::setValue(&address, pJson["address"], "QString", "QString");
+    ::Swagger::setValue(&time, pJson["time"], "qint64", "");
+    ::Swagger::setValue(&info, pJson["info"], "QString", "QString");
+    ::Swagger::setValue(&netki, pJson["netki"], "QString", "QString");
 }
 
 QString
@@ -101,21 +104,13 @@ QJsonObject*
 SWGTradeAddressData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("address"), address, obj, QString("QString"));
-    
-        
-obj->insert("time", QJsonValue(time));
 
-    
+    obj->insert("time", QJsonValue(time));
+
     toJsonValue(QString("info"), info, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("netki"), netki, obj, QString("QString"));
-    
-        
 
     return obj;
 }

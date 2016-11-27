@@ -172,12 +172,12 @@ SWGAccountDataApi::/v1/exchange/user/fiat/feeCallback(HttpRequestWorker * worker
     
 }
 void
-SWGAccountDataApi::/v1/netki/search/NetkiName(QString* netkiName, QString* accept) {
+SWGAccountDataApi::/v1/netki/search/NetkiName(QString* netki_name, QString* accept) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/netki/search/{netkiName}");
 
-    QString netkiNamePathParam("{"); netkiNamePathParam.append("netkiName").append("}");
-    fullPath.replace(netkiNamePathParam, stringValue(netkiName));
+    QString netki_namePathParam("{"); netki_namePathParam.append("netkiName").append("}");
+    fullPath.replace(netki_namePathParam, stringValue(netki_name));
 
 
     HttpRequestWorker *worker = new HttpRequestWorker();

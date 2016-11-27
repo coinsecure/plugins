@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class NewBankForm  {
+public class NewBankForm {
   
   @SerializedName("acct_nick")
   private String acctNick = null;
@@ -139,27 +137,27 @@ public class NewBankForm  {
       return false;
     }
     NewBankForm newBankForm = (NewBankForm) o;
-    return (acctNick == null ? newBankForm.acctNick == null : acctNick.equals(newBankForm.acctNick)) &&
-        (name == null ? newBankForm.name == null : name.equals(newBankForm.name)) &&
-        (ban == null ? newBankForm.ban == null : ban.equals(newBankForm.ban)) &&
-        (ifsc == null ? newBankForm.ifsc == null : ifsc.equals(newBankForm.ifsc)) &&
-        (message == null ? newBankForm.message == null : message.equals(newBankForm.message)) &&
-        (banType == null ? newBankForm.banType == null : banType.equals(newBankForm.banType)) &&
-        (phone == null ? newBankForm.phone == null : phone.equals(newBankForm.phone)) &&
-        (otp == null ? newBankForm.otp == null : otp.equals(newBankForm.otp));
+    return (this.acctNick == null ? newBankForm.acctNick == null : this.acctNick.equals(newBankForm.acctNick)) &&
+        (this.name == null ? newBankForm.name == null : this.name.equals(newBankForm.name)) &&
+        (this.ban == null ? newBankForm.ban == null : this.ban.equals(newBankForm.ban)) &&
+        (this.ifsc == null ? newBankForm.ifsc == null : this.ifsc.equals(newBankForm.ifsc)) &&
+        (this.message == null ? newBankForm.message == null : this.message.equals(newBankForm.message)) &&
+        (this.banType == null ? newBankForm.banType == null : this.banType.equals(newBankForm.banType)) &&
+        (this.phone == null ? newBankForm.phone == null : this.phone.equals(newBankForm.phone)) &&
+        (this.otp == null ? newBankForm.otp == null : this.otp.equals(newBankForm.otp));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (acctNick == null ? 0: acctNick.hashCode());
-    result = 31 * result + (name == null ? 0: name.hashCode());
-    result = 31 * result + (ban == null ? 0: ban.hashCode());
-    result = 31 * result + (ifsc == null ? 0: ifsc.hashCode());
-    result = 31 * result + (message == null ? 0: message.hashCode());
-    result = 31 * result + (banType == null ? 0: banType.hashCode());
-    result = 31 * result + (phone == null ? 0: phone.hashCode());
-    result = 31 * result + (otp == null ? 0: otp.hashCode());
+    result = 31 * result + (this.acctNick == null ? 0: this.acctNick.hashCode());
+    result = 31 * result + (this.name == null ? 0: this.name.hashCode());
+    result = 31 * result + (this.ban == null ? 0: this.ban.hashCode());
+    result = 31 * result + (this.ifsc == null ? 0: this.ifsc.hashCode());
+    result = 31 * result + (this.message == null ? 0: this.message.hashCode());
+    result = 31 * result + (this.banType == null ? 0: this.banType.hashCode());
+    result = 31 * result + (this.phone == null ? 0: this.phone.hashCode());
+    result = 31 * result + (this.otp == null ? 0: this.otp.hashCode());
     return result;
   }
 

@@ -71,6 +71,8 @@ from .rate_diff_data import RateDiffData
 from .rate_diff_data_response import RateDiffDataResponse
 from .rate_vol_data import RateVolData
 from .rate_vol_data_response import RateVolDataResponse
+from .rate_vol_time_type_data import RateVolTimeTypeData
+from .rate_vol_time_type_data_response import RateVolTimeTypeDataResponse
 from .reset_password import ResetPassword
 from .send_coin import SendCoin
 from .send_coin_wallet import SendCoinWallet
@@ -79,6 +81,7 @@ from .signup_form import SignupForm
 from .standard_initiate_login_result_data import StandardInitiateLoginResultData
 from .standard_login_result_data import StandardLoginResultData
 from .standard_ticker_result_data import StandardTickerResultData
+from .standard_verify_signup_result_data import StandardVerifySignupResultData
 from .succ_coin_ref_data import SuccCoinRefData
 from .succ_coin_ref_data_response import SuccCoinRefDataResponse
 from .succ_ref_data import SuccRefData
@@ -91,6 +94,7 @@ from .success_order_data import SuccessOrderData
 from .success_order_data_response import SuccessOrderDataResponse
 from .success_result import SuccessResult
 from .success_ticker_response import SuccessTickerResponse
+from .success_verify_signup_response import SuccessVerifySignupResponse
 from .time_data import TimeData
 from .time_data_coin import TimeDataCoin
 from .time_kyc_data import TimeKYCData

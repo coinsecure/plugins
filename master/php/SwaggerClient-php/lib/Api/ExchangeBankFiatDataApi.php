@@ -6,7 +6,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,9 +40,9 @@
 
 namespace Swagger\Client\Api;
 
-use \Swagger\Client\Configuration;
 use \Swagger\Client\ApiClient;
 use \Swagger\Client\ApiException;
+use \Swagger\Client\Configuration;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -51,12 +51,11 @@ use \Swagger\Client\ObjectSerializer;
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class ExchangeBankFiatDataApi
 {
-
     /**
      * API Client
      *
@@ -71,9 +70,9 @@ class ExchangeBankFiatDataApi
      */
     public function __construct(\Swagger\Client\ApiClient $apiClient = null)
     {
-        if ($apiClient == null) {
+        if ($apiClient === null) {
             $apiClient = new ApiClient();
-            $apiClient->getConfig()->setHost('https://api.coinsecure.in');
+            $apiClient->getConfig()->setHost('https://api.coinsecure.in/');
         }
 
         $this->apiClient = $apiClient;
@@ -109,8 +108,8 @@ class ExchangeBankFiatDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\FiatBankDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\FiatBankDataResponse
      */
     public function v1userexchangebankfiataccounts($authorization, $accept = null)
     {
@@ -125,8 +124,8 @@ class ExchangeBankFiatDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\FiatBankDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\FiatBankDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiataccountsWithHttpInfo($authorization, $accept = null)
     {
@@ -137,14 +136,14 @@ class ExchangeBankFiatDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/accounts";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -176,7 +175,7 @@ class ExchangeBankFiatDataApi
                 '/v1/user/exchange/bank/fiat/accounts'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatBankDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatBankDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -200,8 +199,8 @@ class ExchangeBankFiatDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\RateDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\RateDataResponse
      */
     public function v1userexchangebankfiatbalanceavailable($authorization, $accept = null)
     {
@@ -216,8 +215,8 @@ class ExchangeBankFiatDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\RateDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\RateDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatbalanceavailableWithHttpInfo($authorization, $accept = null)
     {
@@ -228,14 +227,14 @@ class ExchangeBankFiatDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/balance/total";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -267,7 +266,7 @@ class ExchangeBankFiatDataApi
                 '/v1/user/exchange/bank/fiat/balance/total'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -291,8 +290,8 @@ class ExchangeBankFiatDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\RateDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\RateDataResponse
      */
     public function v1userexchangebankfiatbalancepending($authorization, $accept = null)
     {
@@ -307,8 +306,8 @@ class ExchangeBankFiatDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\RateDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\RateDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatbalancependingWithHttpInfo($authorization, $accept = null)
     {
@@ -319,14 +318,14 @@ class ExchangeBankFiatDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/balance/pending";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -358,7 +357,7 @@ class ExchangeBankFiatDataApi
                 '/v1/user/exchange/bank/fiat/balance/pending'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -382,8 +381,8 @@ class ExchangeBankFiatDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\RateDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\RateDataResponse
      */
     public function v1userexchangebankfiatbalancetotal($authorization, $accept = null)
     {
@@ -398,8 +397,8 @@ class ExchangeBankFiatDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\RateDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\RateDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatbalancetotalWithHttpInfo($authorization, $accept = null)
     {
@@ -410,14 +409,14 @@ class ExchangeBankFiatDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/balance/available";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -449,7 +448,7 @@ class ExchangeBankFiatDataApi
                 '/v1/user/exchange/bank/fiat/balance/available'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -477,8 +476,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\FiatDepDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\FiatDepDataResponse
      */
     public function v1userexchangebankfiatdepositcancelled($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -497,8 +496,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\FiatDepDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\FiatDepDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatdepositcancelledWithHttpInfo($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -509,14 +508,14 @@ class ExchangeBankFiatDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/deposit/cancelled";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
         if ($from !== null) {
@@ -564,7 +563,7 @@ class ExchangeBankFiatDataApi
                 '/v1/user/exchange/bank/fiat/deposit/cancelled'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatDepDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatDepDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -592,8 +591,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\FiatDepDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\FiatDepDataResponse
      */
     public function v1userexchangebankfiatdepositunverified($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -612,8 +611,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\FiatDepDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\FiatDepDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatdepositunverifiedWithHttpInfo($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -624,14 +623,14 @@ class ExchangeBankFiatDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/deposit/unverified";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
         if ($from !== null) {
@@ -679,7 +678,7 @@ class ExchangeBankFiatDataApi
                 '/v1/user/exchange/bank/fiat/deposit/unverified'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatDepDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatDepDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -707,8 +706,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\FiatDepDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\FiatDepDataResponse
      */
     public function v1userexchangebankfiatdepositverified($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -727,8 +726,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\FiatDepDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\FiatDepDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatdepositverifiedWithHttpInfo($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -739,14 +738,14 @@ class ExchangeBankFiatDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/deposit/verified";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
         if ($from !== null) {
@@ -794,7 +793,7 @@ class ExchangeBankFiatDataApi
                 '/v1/user/exchange/bank/fiat/deposit/verified'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatDepDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatDepDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -822,8 +821,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\FiatWithDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\FiatWithDataResponse
      */
     public function v1userexchangebankfiatwithdrawcancelled($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -842,8 +841,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\FiatWithDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\FiatWithDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatwithdrawcancelledWithHttpInfo($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -854,14 +853,14 @@ class ExchangeBankFiatDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/withdraw/cancelled";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
         if ($from !== null) {
@@ -909,7 +908,7 @@ class ExchangeBankFiatDataApi
                 '/v1/user/exchange/bank/fiat/withdraw/cancelled'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatWithDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatWithDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -937,8 +936,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\FiatWithDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\FiatWithDataResponse
      */
     public function v1userexchangebankfiatwithdrawcompleted($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -957,8 +956,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\FiatWithDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\FiatWithDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatwithdrawcompletedWithHttpInfo($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -969,14 +968,14 @@ class ExchangeBankFiatDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/withdraw/completed";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
         if ($from !== null) {
@@ -1024,7 +1023,7 @@ class ExchangeBankFiatDataApi
                 '/v1/user/exchange/bank/fiat/withdraw/completed'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatWithDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatWithDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1052,8 +1051,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\FiatWithDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\FiatWithDataResponse
      */
     public function v1userexchangebankfiatwithdrawunverified($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -1072,8 +1071,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\FiatWithDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\FiatWithDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatwithdrawunverifiedWithHttpInfo($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -1084,14 +1083,14 @@ class ExchangeBankFiatDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/withdraw/unverified";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
         if ($from !== null) {
@@ -1139,7 +1138,7 @@ class ExchangeBankFiatDataApi
                 '/v1/user/exchange/bank/fiat/withdraw/unverified'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatWithDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatWithDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1167,8 +1166,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\FiatWithDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\FiatWithDataResponse
      */
     public function v1userexchangebankfiatwithdrawverified($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -1187,8 +1186,8 @@ class ExchangeBankFiatDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\FiatWithDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\FiatWithDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatwithdrawverifiedWithHttpInfo($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -1199,14 +1198,14 @@ class ExchangeBankFiatDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/withdraw/verified";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
         if ($from !== null) {
@@ -1254,7 +1253,7 @@ class ExchangeBankFiatDataApi
                 '/v1/user/exchange/bank/fiat/withdraw/verified'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatWithDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\FiatWithDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1270,5 +1269,4 @@ class ExchangeBankFiatDataApi
             throw $e;
         }
     }
-
 }

@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -47,10 +47,10 @@ use \ArrayAccess;
  * SuccessOrderData Class Doc Comment
  *
  * @category    Class */
-/** 
+/**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class SuccessOrderData implements ArrayAccess
@@ -65,14 +65,14 @@ class SuccessOrderData implements ArrayAccess
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
-    protected static $swaggerTypes = array(
+    protected static $swaggerTypes = [
         'time' => 'int',
         'vol' => 'int',
         'rate' => 'int',
         'order_id' => 'string',
         'status' => 'string',
         'human_time' => 'string'
-    );
+    ];
 
     public static function swaggerTypes()
     {
@@ -83,50 +83,52 @@ class SuccessOrderData implements ArrayAccess
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
-    protected static $attributeMap = array(
+    protected static $attributeMap = [
         'time' => 'time',
         'vol' => 'vol',
         'rate' => 'rate',
         'order_id' => 'orderID',
         'status' => 'status',
         'human_time' => 'human_time'
-    );
+    ];
 
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      * @var string[]
      */
-    protected static $setters = array(
+    protected static $setters = [
         'time' => 'setTime',
         'vol' => 'setVol',
         'rate' => 'setRate',
         'order_id' => 'setOrderId',
         'status' => 'setStatus',
         'human_time' => 'setHumanTime'
-    );
+    ];
 
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
      * @var string[]
      */
-    protected static $getters = array(
+    protected static $getters = [
         'time' => 'getTime',
         'vol' => 'getVol',
         'rate' => 'getRate',
         'order_id' => 'getOrderId',
         'status' => 'getStatus',
         'human_time' => 'getHumanTime'
-    );
+    ];
+
+    public static function attributeMap()
+    {
+        return self::$attributeMap;
+    }
+
+    public static function setters()
+    {
+        return self::$setters;
+    }
 
     public static function getters()
     {
@@ -141,11 +143,11 @@ class SuccessOrderData implements ArrayAccess
      * Associative array for storing property values
      * @var mixed[]
      */
-    protected $container = array();
+    protected $container = [];
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property values initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -164,7 +166,7 @@ class SuccessOrderData implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = array();
+        $invalid_properties = [];
         if ($this->container['time'] === null) {
             $invalid_properties[] = "'time' can't be null";
         }
@@ -399,5 +401,3 @@ class SuccessOrderData implements ArrayAccess
         return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -47,10 +47,10 @@ use \ArrayAccess;
  * SuccessLoginResponse Class Doc Comment
  *
  * @category    Class */
-/** 
+/**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class SuccessLoginResponse implements ArrayAccess
@@ -65,13 +65,13 @@ class SuccessLoginResponse implements ArrayAccess
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
-    protected static $swaggerTypes = array(
+    protected static $swaggerTypes = [
         'success' => 'bool',
         'email' => 'string',
         'message' => 'string',
         'key_type' => 'string',
         'key_needed' => 'string'
-    );
+    ];
 
     public static function swaggerTypes()
     {
@@ -82,47 +82,49 @@ class SuccessLoginResponse implements ArrayAccess
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
-    protected static $attributeMap = array(
+    protected static $attributeMap = [
         'success' => 'success',
         'email' => 'email',
         'message' => 'message',
         'key_type' => 'keyType',
         'key_needed' => 'keyNeeded'
-    );
+    ];
+
+
+    /**
+     * Array of attributes to setter functions (for deserialization of responses)
+     * @var string[]
+     */
+    protected static $setters = [
+        'success' => 'setSuccess',
+        'email' => 'setEmail',
+        'message' => 'setMessage',
+        'key_type' => 'setKeyType',
+        'key_needed' => 'setKeyNeeded'
+    ];
+
+
+    /**
+     * Array of attributes to getter functions (for serialization of requests)
+     * @var string[]
+     */
+    protected static $getters = [
+        'success' => 'getSuccess',
+        'email' => 'getEmail',
+        'message' => 'getMessage',
+        'key_type' => 'getKeyType',
+        'key_needed' => 'getKeyNeeded'
+    ];
 
     public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     * @var string[]
-     */
-    protected static $setters = array(
-        'success' => 'setSuccess',
-        'email' => 'setEmail',
-        'message' => 'setMessage',
-        'key_type' => 'setKeyType',
-        'key_needed' => 'setKeyNeeded'
-    );
-
     public static function setters()
     {
         return self::$setters;
     }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     * @var string[]
-     */
-    protected static $getters = array(
-        'success' => 'getSuccess',
-        'email' => 'getEmail',
-        'message' => 'getMessage',
-        'key_type' => 'getKeyType',
-        'key_needed' => 'getKeyNeeded'
-    );
 
     public static function getters()
     {
@@ -137,11 +139,11 @@ class SuccessLoginResponse implements ArrayAccess
      * Associative array for storing property values
      * @var mixed[]
      */
-    protected $container = array();
+    protected $container = [];
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property values initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -159,7 +161,7 @@ class SuccessLoginResponse implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = array();
+        $invalid_properties = [];
         if ($this->container['success'] === null) {
             $invalid_properties[] = "'success' can't be null";
         }
@@ -367,5 +369,3 @@ class SuccessLoginResponse implements ArrayAccess
         return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -52,7 +52,7 @@
    * Constructs a new <code>WithdrawFiat</code>.
    * @alias module:model/WithdrawFiat
    * @class
-   * @param fiat {Integer} 
+   * @param fiat {Number} 
    * @param account {String} 
    */
   var exports = function(fiat, account) {
@@ -76,7 +76,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('fiat')) {
-        obj['fiat'] = ApiClient.convertToType(data['fiat'], 'Integer');
+        obj['fiat'] = ApiClient.convertToType(data['fiat'], 'Number');
       }
       if (data.hasOwnProperty('account')) {
         obj['account'] = ApiClient.convertToType(data['account'], 'String');
@@ -92,7 +92,7 @@
   }
 
   /**
-   * @member {Integer} fiat
+   * @member {Number} fiat
    */
   exports.prototype['fiat'] = undefined;
   /**

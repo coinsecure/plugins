@@ -1,6 +1,6 @@
 # \AccountActionsApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**V1logininitiate**](AccountActionsApi.md#V1logininitiate) | **Post** /v1/login/initiate | Initiate Login
 [**V1loginpasswordforgot**](AccountActionsApi.md#V1loginpasswordforgot) | **Post** /v1/login/password/forgot | Sends an email with a password reset token
 [**V1signup**](AccountActionsApi.md#V1signup) | **Post** /v1/signup | Creates a new Unverified Account.
+[**V1signupverifyToken**](AccountActionsApi.md#V1signupverifyToken) | **Put** /v1/signup/verify/{token} | Verifies an Email token for Signup .
 [**V1userbankotpNumber**](AccountActionsApi.md#V1userbankotpNumber) | **Get** /v1/user/bank/otp/{number} | Send OTP for Bank Link
 [**V1userexchangekyc**](AccountActionsApi.md#V1userexchangekyc) | **Put** /v1/user/exchange/kyc | Submits a New Bank Link and initial KYC Documents.
 [**V1usergcmCode**](AccountActionsApi.md#V1usergcmCode) | **Delete** /v1/user/gcm/{code} | Delete GCM Code
@@ -142,6 +143,36 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **V1signupverifyToken**
+> StandardVerifySignupResultData V1signupverifyToken($token, $accept)
+
+Verifies an Email token for Signup .
+
+Creates a new Coinsecure Account.
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**|  | 
+ **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
+
+### Return type
+
+[**StandardVerifySignupResultData**](StandardVerifySignupResultData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **V1userbankotpNumber**
 > StandardInitiateLoginResultData V1userbankotpNumber($number, $authorization, $accept)
 
@@ -193,7 +224,7 @@ Name | Type | Description  | Notes
  **acctType** | **string**| Please enter your Coinsecure account type. Allowable Values are Personal or Company. | 
  **banType** | **string**| Please enter your Bank account type. Allowable Values are Savings or Current. | 
  **phone** | **string**| Please enter your Valid Phone Number. | 
- **otp** | **string**| Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. | 
+ **otp** | **string**| Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. | 
  **file** | ***os.File**| Enter a valid image, pdf or zip file under 5 MB in size. | 
  **authorization** | **string**| Enter a valid Api Key. | [optional] 
  **message** | **string**| Please enter an optional message if needed. | [optional] 

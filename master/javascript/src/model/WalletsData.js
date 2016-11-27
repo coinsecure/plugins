@@ -54,8 +54,8 @@
    * @class
    * @param walletID {String} 
    * @param name {String} 
-   * @param coinBalance {Integer} 
-   * @param time {Integer} 
+   * @param coinBalance {Number} 
+   * @param time {Number} 
    * @param info {String} 
    * @param netki {String} 
    */
@@ -88,10 +88,10 @@
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
       if (data.hasOwnProperty('coinBalance')) {
-        obj['coinBalance'] = ApiClient.convertToType(data['coinBalance'], 'Integer');
+        obj['coinBalance'] = ApiClient.convertToType(data['coinBalance'], 'Number');
       }
       if (data.hasOwnProperty('time')) {
-        obj['time'] = ApiClient.convertToType(data['time'], 'Integer');
+        obj['time'] = ApiClient.convertToType(data['time'], 'Number');
       }
       if (data.hasOwnProperty('info')) {
         obj['info'] = ApiClient.convertToType(data['info'], 'String');
@@ -112,11 +112,11 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * @member {Integer} coinBalance
+   * @member {Number} coinBalance
    */
   exports.prototype['coinBalance'] = undefined;
   /**
-   * @member {Integer} time
+   * @member {Number} time
    */
   exports.prototype['time'] = undefined;
   /**

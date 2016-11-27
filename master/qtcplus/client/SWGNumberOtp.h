@@ -56,12 +56,14 @@ public:
 
     QString* getNumber();
     void setNumber(QString* number);
-QString* getOtp();
+
+    QString* getOtp();
     void setOtp(QString* otp);
+
 
 private:
     QString* number;
-QString* otp;
+    QString* otp;
 };
 
 } /* namespace Swagger */

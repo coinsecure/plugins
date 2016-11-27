@@ -55,13 +55,15 @@ public:
     SWGNetkiNameAddress* fromJson(QString &jsonString);
 
     QString* getNetkiName();
-    void setNetkiName(QString* netkiName);
-QString* getAddress();
+    void setNetkiName(QString* netki_name);
+
+    QString* getAddress();
     void setAddress(QString* address);
 
+
 private:
-    QString* netkiName;
-QString* address;
+    QString* netki_name;
+    QString* address;
 };
 
 } /* namespace Swagger */

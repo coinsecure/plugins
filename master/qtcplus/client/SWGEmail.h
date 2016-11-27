@@ -57,6 +57,7 @@ public:
     QString* getEmail();
     void setEmail(QString* email);
 
+
 private:
     QString* email;
 };

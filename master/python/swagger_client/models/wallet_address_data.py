@@ -66,6 +66,7 @@ class WalletAddressData(object):
         self._min_conf = min_conf
         self._netki = netki
 
+
     @property
     def wallet_id(self):
         """
@@ -86,6 +87,8 @@ class WalletAddressData(object):
         :param wallet_id: The wallet_id of this WalletAddressData.
         :type: str
         """
+        if wallet_id is None:
+            raise ValueError("Invalid value for `wallet_id`, must not be `None`")
 
         self._wallet_id = wallet_id
 
@@ -109,6 +112,8 @@ class WalletAddressData(object):
         :param address: The address of this WalletAddressData.
         :type: str
         """
+        if address is None:
+            raise ValueError("Invalid value for `address`, must not be `None`")
 
         self._address = address
 
@@ -132,6 +137,8 @@ class WalletAddressData(object):
         :param time: The time of this WalletAddressData.
         :type: int
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 
@@ -155,6 +162,8 @@ class WalletAddressData(object):
         :param info: The info of this WalletAddressData.
         :type: str
         """
+        if info is None:
+            raise ValueError("Invalid value for `info`, must not be `None`")
 
         self._info = info
 
@@ -178,6 +187,8 @@ class WalletAddressData(object):
         :param min_conf: The min_conf of this WalletAddressData.
         :type: int
         """
+        if min_conf is None:
+            raise ValueError("Invalid value for `min_conf`, must not be `None`")
 
         self._min_conf = min_conf
 
@@ -201,6 +212,8 @@ class WalletAddressData(object):
         :param netki: The netki of this WalletAddressData.
         :type: str
         """
+        if netki is None:
+            raise ValueError("Invalid value for `netki`, must not be `None`")
 
         self._netki = netki
 

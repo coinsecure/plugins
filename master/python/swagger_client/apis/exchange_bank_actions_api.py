@@ -106,6 +106,8 @@ class ExchangeBankActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -119,6 +121,9 @@ class ExchangeBankActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userexchangebankcoinwithdrawinitiate`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/withdraw/initiate'.replace('{format}', 'json')
         path_params = {}
@@ -161,7 +166,10 @@ class ExchangeBankActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankcoinwithdrawnew_verifycode(self, body, **kwargs):
         """
@@ -218,6 +226,8 @@ class ExchangeBankActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -231,6 +241,9 @@ class ExchangeBankActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userexchangebankcoinwithdrawnew_verifycode`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/withdraw/newVerifycode'.replace('{format}', 'json')
         path_params = {}
@@ -273,7 +286,10 @@ class ExchangeBankActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id(self, withdraw_id, **kwargs):
         """
@@ -330,6 +346,8 @@ class ExchangeBankActionsApi(object):
         all_params = ['withdraw_id', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -343,6 +361,9 @@ class ExchangeBankActionsApi(object):
         # verify the required parameter 'withdraw_id' is set
         if ('withdraw_id' not in params) or (params['withdraw_id'] is None):
             raise ValueError("Missing the required parameter `withdraw_id` when calling `v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID}'.replace('{format}', 'json')
         path_params = {}
@@ -385,7 +406,10 @@ class ExchangeBankActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankcoinwithdrawverify(self, body, **kwargs):
         """
@@ -442,6 +466,8 @@ class ExchangeBankActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -455,6 +481,9 @@ class ExchangeBankActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userexchangebankcoinwithdrawverify`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/withdraw/verify'.replace('{format}', 'json')
         path_params = {}
@@ -497,7 +526,10 @@ class ExchangeBankActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiataccountnew(self, body, **kwargs):
         """
@@ -554,6 +586,8 @@ class ExchangeBankActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -567,6 +601,9 @@ class ExchangeBankActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userexchangebankfiataccountnew`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/account/new'.replace('{format}', 'json')
         path_params = {}
@@ -609,7 +646,10 @@ class ExchangeBankActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatdepositcancel_deposit_id(self, deposit_id, **kwargs):
         """
@@ -666,6 +706,8 @@ class ExchangeBankActionsApi(object):
         all_params = ['deposit_id', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -679,6 +721,9 @@ class ExchangeBankActionsApi(object):
         # verify the required parameter 'deposit_id' is set
         if ('deposit_id' not in params) or (params['deposit_id'] is None):
             raise ValueError("Missing the required parameter `deposit_id` when calling `v1userexchangebankfiatdepositcancel_deposit_id`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/deposit/cancel/{depositID}'.replace('{format}', 'json')
         path_params = {}
@@ -721,7 +766,10 @@ class ExchangeBankActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatdepositnew(self, body, **kwargs):
         """
@@ -778,6 +826,8 @@ class ExchangeBankActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -791,6 +841,9 @@ class ExchangeBankActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userexchangebankfiatdepositnew`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/deposit/new'.replace('{format}', 'json')
         path_params = {}
@@ -833,7 +886,10 @@ class ExchangeBankActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatwithdrawinitiate(self, body, **kwargs):
         """
@@ -890,6 +946,8 @@ class ExchangeBankActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -903,6 +961,9 @@ class ExchangeBankActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userexchangebankfiatwithdrawinitiate`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/withdraw/initiate'.replace('{format}', 'json')
         path_params = {}
@@ -945,7 +1006,10 @@ class ExchangeBankActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatwithdrawnew_verifycode(self, body, **kwargs):
         """
@@ -1002,6 +1066,8 @@ class ExchangeBankActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1015,6 +1081,9 @@ class ExchangeBankActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userexchangebankfiatwithdrawnew_verifycode`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/withdraw/newVerifycode'.replace('{format}', 'json')
         path_params = {}
@@ -1057,7 +1126,10 @@ class ExchangeBankActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id(self, withdraw_id, **kwargs):
         """
@@ -1114,6 +1186,8 @@ class ExchangeBankActionsApi(object):
         all_params = ['withdraw_id', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1127,6 +1201,9 @@ class ExchangeBankActionsApi(object):
         # verify the required parameter 'withdraw_id' is set
         if ('withdraw_id' not in params) or (params['withdraw_id'] is None):
             raise ValueError("Missing the required parameter `withdraw_id` when calling `v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID}'.replace('{format}', 'json')
         path_params = {}
@@ -1169,7 +1246,10 @@ class ExchangeBankActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatwithdrawverify(self, body, **kwargs):
         """
@@ -1226,6 +1306,8 @@ class ExchangeBankActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1239,6 +1321,9 @@ class ExchangeBankActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userexchangebankfiatwithdrawverify`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/withdraw/verify'.replace('{format}', 'json')
         path_params = {}
@@ -1281,4 +1366,7 @@ class ExchangeBankActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)

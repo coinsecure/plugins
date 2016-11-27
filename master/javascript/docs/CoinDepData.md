@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **timeDetails** | [**TimeDataCoin**](TimeDataCoin.md) |  | 
 **address** | **String** |  | 
-**value** | **Integer** |  | 
+**value** | **Number** |  | 
 **txHash** | **String** |  | 
 **depositID** | **String** |  | 
 **reason** | **String** |  | 

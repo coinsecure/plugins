@@ -66,6 +66,7 @@ class SuccessOrderData(object):
         self._status = status
         self._human_time = human_time
 
+
     @property
     def time(self):
         """
@@ -86,6 +87,8 @@ class SuccessOrderData(object):
         :param time: The time of this SuccessOrderData.
         :type: int
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 
@@ -109,6 +112,8 @@ class SuccessOrderData(object):
         :param vol: The vol of this SuccessOrderData.
         :type: int
         """
+        if vol is None:
+            raise ValueError("Invalid value for `vol`, must not be `None`")
 
         self._vol = vol
 
@@ -132,6 +137,8 @@ class SuccessOrderData(object):
         :param rate: The rate of this SuccessOrderData.
         :type: int
         """
+        if rate is None:
+            raise ValueError("Invalid value for `rate`, must not be `None`")
 
         self._rate = rate
 
@@ -155,6 +162,8 @@ class SuccessOrderData(object):
         :param order_id: The order_id of this SuccessOrderData.
         :type: str
         """
+        if order_id is None:
+            raise ValueError("Invalid value for `order_id`, must not be `None`")
 
         self._order_id = order_id
 
@@ -178,6 +187,8 @@ class SuccessOrderData(object):
         :param status: The status of this SuccessOrderData.
         :type: str
         """
+        if status is None:
+            raise ValueError("Invalid value for `status`, must not be `None`")
 
         self._status = status
 
@@ -201,6 +212,8 @@ class SuccessOrderData(object):
         :param human_time: The human_time of this SuccessOrderData.
         :type: str
         """
+        if human_time is None:
+            raise ValueError("Invalid value for `human_time`, must not be `None`")
 
         self._human_time = human_time
 

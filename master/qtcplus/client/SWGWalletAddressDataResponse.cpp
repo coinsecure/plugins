@@ -51,29 +51,33 @@ SWGWalletAddressDataResponse::~SWGWalletAddressDataResponse() {
 void
 SWGWalletAddressDataResponse::init() {
     success = false;
-message = new QList<SWGWalletAddressData*>();
-method = new QString("");
-title = new QString("");
-time = NULL;
+    message = new QList<SWGWalletAddressData*>();
+    method = new QString("");
+    title = new QString("");
+    time = NULL;
 }
 
 void
 SWGWalletAddressDataResponse::cleanup() {
     
-if(message != NULL) {
+
+    if(message != nullptr) {
         QList<SWGWalletAddressData*>* arr = message;
         foreach(SWGWalletAddressData* o, *arr) {
             delete o;
         }
         delete message;
     }
-if(method != NULL) {
+
+    if(method != nullptr) {
         delete method;
     }
-if(title != NULL) {
+
+    if(title != nullptr) {
         delete title;
     }
-if(time != NULL) {
+
+    if(time != nullptr) {
         delete time;
     }
 }
@@ -89,11 +93,13 @@ SWGWalletAddressDataResponse::fromJson(QString &json) {
 
 void
 SWGWalletAddressDataResponse::fromJsonObject(QJsonObject &pJson) {
-    setValue(&success, pJson["success"], "bool", "");
-setValue(&message, pJson["message"], "QList", "SWGWalletAddressData");
-setValue(&method, pJson["method"], "QString", "QString");
-setValue(&title, pJson["title"], "QString", "QString");
-setValue(&time, pJson["time"], "QDateTime", "QDateTime");
+    ::Swagger::setValue(&success, pJson["success"], "bool", "");
+    
+    ::Swagger::setValue(&message, pJson["message"], "QList", "SWGWalletAddressData");
+    
+    ::Swagger::setValue(&method, pJson["method"], "QString", "QString");
+    ::Swagger::setValue(&title, pJson["title"], "QString", "QString");
+    ::Swagger::setValue(&time, pJson["time"], "QDateTime", "QDateTime");
 }
 
 QString
@@ -109,30 +115,18 @@ SWGWalletAddressDataResponse::asJson ()
 QJsonObject*
 SWGWalletAddressDataResponse::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("success", QJsonValue(success));
 
-    
-    QList<SWGWalletAddressData*>* messageList = message;
     QJsonArray messageJsonArray;
     toJsonArray((QList<void*>*)message, &messageJsonArray, "message", "SWGWalletAddressData");
-
     obj->insert("message", messageJsonArray);
-    
 
-    
     toJsonValue(QString("method"), method, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("title"), title, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("time"), time, obj, QString("QDateTime"));
-    
-        
 
     return obj;
 }

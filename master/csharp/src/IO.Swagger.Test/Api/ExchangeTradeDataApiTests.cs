@@ -254,6 +254,22 @@ namespace IO.Swagger.Test
             //Assert.IsInstanceOf<OrderDataResponse> (response, "response is OrderDataResponse");
         }
         
+        /// <summary>
+        /// Test V1userexchangetrades
+        /// </summary>
+        [Test]
+        public void V1userexchangetradesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //long? from = null;
+            //long? to = null;
+            //int? max = null;
+            //long? offset = null;
+            //string accept = null;
+            //var response = instance.V1userexchangetrades(from, to, max, offset, accept);
+            //Assert.IsInstanceOf<RateVolTimeTypeDataResponse> (response, "response is RateVolTimeTypeDataResponse");
+        }
+        
     }
 
 }

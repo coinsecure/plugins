@@ -50,35 +50,41 @@ SWGWalletCoinWithdrawData::~SWGWalletCoinWithdrawData() {
 
 void
 SWGWalletCoinWithdrawData::init() {
-    timeDetails = new SWGTimeData();
-txID = new QString("");
-message = new QString("");
-satoshis = 0L;
-walletID = new QString("");
-withdrawID = new QString("");
-sentTo = new QString("");
+    time_details = new SWGTimeData();
+    tx_id = new QString("");
+    message = new QString("");
+    satoshis = 0L;
+    wallet_id = new QString("");
+    withdraw_id = new QString("");
+    sent_to = new QString("");
 }
 
 void
 SWGWalletCoinWithdrawData::cleanup() {
-    if(timeDetails != NULL) {
-        delete timeDetails;
+    
+    if(time_details != nullptr) {
+        delete time_details;
     }
-if(txID != NULL) {
-        delete txID;
+
+    if(tx_id != nullptr) {
+        delete tx_id;
     }
-if(message != NULL) {
+
+    if(message != nullptr) {
         delete message;
     }
 
-if(walletID != NULL) {
-        delete walletID;
+
+    if(wallet_id != nullptr) {
+        delete wallet_id;
     }
-if(withdrawID != NULL) {
-        delete withdrawID;
+
+    if(withdraw_id != nullptr) {
+        delete withdraw_id;
     }
-if(sentTo != NULL) {
-        delete sentTo;
+
+    if(sent_to != nullptr) {
+        delete sent_to;
     }
 }
 
@@ -93,13 +99,13 @@ SWGWalletCoinWithdrawData::fromJson(QString &json) {
 
 void
 SWGWalletCoinWithdrawData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&timeDetails, pJson["timeDetails"], "SWGTimeData", "SWGTimeData");
-setValue(&txID, pJson["txID"], "QString", "QString");
-setValue(&message, pJson["message"], "QString", "QString");
-setValue(&satoshis, pJson["satoshis"], "qint64", "");
-setValue(&walletID, pJson["walletID"], "QString", "QString");
-setValue(&withdrawID, pJson["withdrawID"], "QString", "QString");
-setValue(&sentTo, pJson["sentTo"], "QString", "QString");
+    ::Swagger::setValue(&time_details, pJson["time_details"], "SWGTimeData", "SWGTimeData");
+    ::Swagger::setValue(&tx_id, pJson["tx_id"], "QString", "QString");
+    ::Swagger::setValue(&message, pJson["message"], "QString", "QString");
+    ::Swagger::setValue(&satoshis, pJson["satoshis"], "qint64", "");
+    ::Swagger::setValue(&wallet_id, pJson["wallet_id"], "QString", "QString");
+    ::Swagger::setValue(&withdraw_id, pJson["withdraw_id"], "QString", "QString");
+    ::Swagger::setValue(&sent_to, pJson["sent_to"], "QString", "QString");
 }
 
 QString
@@ -116,56 +122,39 @@ QJsonObject*
 SWGWalletCoinWithdrawData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
-    toJsonValue(QString("timeDetails"), timeDetails, obj, QString("SWGTimeData"));
-    
-        
+    toJsonValue(QString("time_details"), time_details, obj, QString("SWGTimeData"));
 
-    
-    toJsonValue(QString("txID"), txID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("tx_id"), tx_id, obj, QString("QString"));
 
-    
     toJsonValue(QString("message"), message, obj, QString("QString"));
-    
-        
-obj->insert("satoshis", QJsonValue(satoshis));
 
-    
-    toJsonValue(QString("walletID"), walletID, obj, QString("QString"));
-    
-        
+    obj->insert("satoshis", QJsonValue(satoshis));
 
-    
-    toJsonValue(QString("withdrawID"), withdrawID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("wallet_id"), wallet_id, obj, QString("QString"));
 
-    
-    toJsonValue(QString("sentTo"), sentTo, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("withdraw_id"), withdraw_id, obj, QString("QString"));
+
+    toJsonValue(QString("sent_to"), sent_to, obj, QString("QString"));
 
     return obj;
 }
 
 SWGTimeData*
 SWGWalletCoinWithdrawData::getTimeDetails() {
-    return timeDetails;
+    return time_details;
 }
 void
-SWGWalletCoinWithdrawData::setTimeDetails(SWGTimeData* timeDetails) {
-    this->timeDetails = timeDetails;
+SWGWalletCoinWithdrawData::setTimeDetails(SWGTimeData* time_details) {
+    this->time_details = time_details;
 }
 
 QString*
-SWGWalletCoinWithdrawData::getTxID() {
-    return txID;
+SWGWalletCoinWithdrawData::getTxId() {
+    return tx_id;
 }
 void
-SWGWalletCoinWithdrawData::setTxID(QString* txID) {
-    this->txID = txID;
+SWGWalletCoinWithdrawData::setTxId(QString* tx_id) {
+    this->tx_id = tx_id;
 }
 
 QString*
@@ -187,30 +176,30 @@ SWGWalletCoinWithdrawData::setSatoshis(qint64 satoshis) {
 }
 
 QString*
-SWGWalletCoinWithdrawData::getWalletID() {
-    return walletID;
+SWGWalletCoinWithdrawData::getWalletId() {
+    return wallet_id;
 }
 void
-SWGWalletCoinWithdrawData::setWalletID(QString* walletID) {
-    this->walletID = walletID;
+SWGWalletCoinWithdrawData::setWalletId(QString* wallet_id) {
+    this->wallet_id = wallet_id;
 }
 
 QString*
-SWGWalletCoinWithdrawData::getWithdrawID() {
-    return withdrawID;
+SWGWalletCoinWithdrawData::getWithdrawId() {
+    return withdraw_id;
 }
 void
-SWGWalletCoinWithdrawData::setWithdrawID(QString* withdrawID) {
-    this->withdrawID = withdrawID;
+SWGWalletCoinWithdrawData::setWithdrawId(QString* withdraw_id) {
+    this->withdraw_id = withdraw_id;
 }
 
 QString*
 SWGWalletCoinWithdrawData::getSentTo() {
-    return sentTo;
+    return sent_to;
 }
 void
-SWGWalletCoinWithdrawData::setSentTo(QString* sentTo) {
-    this->sentTo = sentTo;
+SWGWalletCoinWithdrawData::setSentTo(QString* sent_to) {
+    this->sent_to = sent_to;
 }
 
 

@@ -56,6 +56,7 @@ public:
     qint64 getRate();
     void setRate(qint64 rate);
 
+
 private:
     qint64 rate;
 };

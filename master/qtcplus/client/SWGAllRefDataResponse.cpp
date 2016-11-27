@@ -51,29 +51,33 @@ SWGAllRefDataResponse::~SWGAllRefDataResponse() {
 void
 SWGAllRefDataResponse::init() {
     success = false;
-message = new QList<SWGAllRefData*>();
-method = new QString("");
-title = new QString("");
-time = NULL;
+    message = new QList<SWGAllRefData*>();
+    method = new QString("");
+    title = new QString("");
+    time = NULL;
 }
 
 void
 SWGAllRefDataResponse::cleanup() {
     
-if(message != NULL) {
+
+    if(message != nullptr) {
         QList<SWGAllRefData*>* arr = message;
         foreach(SWGAllRefData* o, *arr) {
             delete o;
         }
         delete message;
     }
-if(method != NULL) {
+
+    if(method != nullptr) {
         delete method;
     }
-if(title != NULL) {
+
+    if(title != nullptr) {
         delete title;
     }
-if(time != NULL) {
+
+    if(time != nullptr) {
         delete time;
     }
 }
@@ -89,11 +93,13 @@ SWGAllRefDataResponse::fromJson(QString &json) {
 
 void
 SWGAllRefDataResponse::fromJsonObject(QJsonObject &pJson) {
-    setValue(&success, pJson["success"], "bool", "");
-setValue(&message, pJson["message"], "QList", "SWGAllRefData");
-setValue(&method, pJson["method"], "QString", "QString");
-setValue(&title, pJson["title"], "QString", "QString");
-setValue(&time, pJson["time"], "QDateTime", "QDateTime");
+    ::Swagger::setValue(&success, pJson["success"], "bool", "");
+    
+    ::Swagger::setValue(&message, pJson["message"], "QList", "SWGAllRefData");
+    
+    ::Swagger::setValue(&method, pJson["method"], "QString", "QString");
+    ::Swagger::setValue(&title, pJson["title"], "QString", "QString");
+    ::Swagger::setValue(&time, pJson["time"], "QDateTime", "QDateTime");
 }
 
 QString
@@ -109,30 +115,18 @@ SWGAllRefDataResponse::asJson ()
 QJsonObject*
 SWGAllRefDataResponse::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("success", QJsonValue(success));
 
-    
-    QList<SWGAllRefData*>* messageList = message;
     QJsonArray messageJsonArray;
     toJsonArray((QList<void*>*)message, &messageJsonArray, "message", "SWGAllRefData");
-
     obj->insert("message", messageJsonArray);
-    
 
-    
     toJsonValue(QString("method"), method, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("title"), title, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("time"), time, obj, QString("QDateTime"));
-    
-        
 
     return obj;
 }

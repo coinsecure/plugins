@@ -53,9 +53,9 @@ public:
     void fromJsonObject(QJsonObject &json);
     SWGJsValue* fromJson(QString &jsonString);
 
-    
+
 private:
-    };
+};
 
 } /* namespace Swagger */
 

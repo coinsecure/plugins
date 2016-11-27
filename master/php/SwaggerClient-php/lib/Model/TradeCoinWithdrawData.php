@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -47,10 +47,10 @@ use \ArrayAccess;
  * TradeCoinWithdrawData Class Doc Comment
  *
  * @category    Class */
-/** 
+/**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class TradeCoinWithdrawData implements ArrayAccess
@@ -65,14 +65,14 @@ class TradeCoinWithdrawData implements ArrayAccess
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
-    protected static $swaggerTypes = array(
+    protected static $swaggerTypes = [
         'time_details' => '\Swagger\Client\Model\TimeData',
         'address' => 'string',
         'value' => 'int',
         'fees' => 'int',
         'withdraw_id' => 'string',
         'tx_hash' => 'string'
-    );
+    ];
 
     public static function swaggerTypes()
     {
@@ -83,50 +83,52 @@ class TradeCoinWithdrawData implements ArrayAccess
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
-    protected static $attributeMap = array(
+    protected static $attributeMap = [
         'time_details' => 'timeDetails',
         'address' => 'address',
         'value' => 'value',
         'fees' => 'fees',
         'withdraw_id' => 'withdrawID',
         'tx_hash' => 'txHash'
-    );
+    ];
 
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      * @var string[]
      */
-    protected static $setters = array(
+    protected static $setters = [
         'time_details' => 'setTimeDetails',
         'address' => 'setAddress',
         'value' => 'setValue',
         'fees' => 'setFees',
         'withdraw_id' => 'setWithdrawId',
         'tx_hash' => 'setTxHash'
-    );
+    ];
 
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
      * @var string[]
      */
-    protected static $getters = array(
+    protected static $getters = [
         'time_details' => 'getTimeDetails',
         'address' => 'getAddress',
         'value' => 'getValue',
         'fees' => 'getFees',
         'withdraw_id' => 'getWithdrawId',
         'tx_hash' => 'getTxHash'
-    );
+    ];
+
+    public static function attributeMap()
+    {
+        return self::$attributeMap;
+    }
+
+    public static function setters()
+    {
+        return self::$setters;
+    }
 
     public static function getters()
     {
@@ -141,11 +143,11 @@ class TradeCoinWithdrawData implements ArrayAccess
      * Associative array for storing property values
      * @var mixed[]
      */
-    protected $container = array();
+    protected $container = [];
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property values initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -164,7 +166,7 @@ class TradeCoinWithdrawData implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = array();
+        $invalid_properties = [];
         if ($this->container['time_details'] === null) {
             $invalid_properties[] = "'time_details' can't be null";
         }
@@ -399,5 +401,3 @@ class TradeCoinWithdrawData implements ArrayAccess
         return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

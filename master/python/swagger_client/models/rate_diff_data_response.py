@@ -63,6 +63,7 @@ class RateDiffDataResponse(object):
         self._title = title
         self._time = time
 
+
     @property
     def success(self):
         """
@@ -83,6 +84,8 @@ class RateDiffDataResponse(object):
         :param success: The success of this RateDiffDataResponse.
         :type: bool
         """
+        if success is None:
+            raise ValueError("Invalid value for `success`, must not be `None`")
 
         self._success = success
 
@@ -106,6 +109,8 @@ class RateDiffDataResponse(object):
         :param message: The message of this RateDiffDataResponse.
         :type: RateDiffData
         """
+        if message is None:
+            raise ValueError("Invalid value for `message`, must not be `None`")
 
         self._message = message
 
@@ -129,6 +134,8 @@ class RateDiffDataResponse(object):
         :param method: The method of this RateDiffDataResponse.
         :type: str
         """
+        if method is None:
+            raise ValueError("Invalid value for `method`, must not be `None`")
 
         self._method = method
 
@@ -152,6 +159,8 @@ class RateDiffDataResponse(object):
         :param title: The title of this RateDiffDataResponse.
         :type: str
         """
+        if title is None:
+            raise ValueError("Invalid value for `title`, must not be `None`")
 
         self._title = title
 
@@ -175,6 +184,8 @@ class RateDiffDataResponse(object):
         :param time: The time of this RateDiffDataResponse.
         :type: datetime
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 

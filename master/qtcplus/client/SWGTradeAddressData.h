@@ -56,18 +56,22 @@ public:
 
     QString* getAddress();
     void setAddress(QString* address);
-qint64 getTime();
+
+    qint64 getTime();
     void setTime(qint64 time);
-QString* getInfo();
+
+    QString* getInfo();
     void setInfo(QString* info);
-QString* getNetki();
+
+    QString* getNetki();
     void setNetki(QString* netki);
+
 
 private:
     QString* address;
-qint64 time;
-QString* info;
-QString* netki;
+    qint64 time;
+    QString* info;
+    QString* netki;
 };
 
 } /* namespace Swagger */

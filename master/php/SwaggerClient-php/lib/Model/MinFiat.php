@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -47,10 +47,10 @@ use \ArrayAccess;
  * MinFiat Class Doc Comment
  *
  * @category    Class */
-/** 
+/**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class MinFiat implements ArrayAccess
@@ -65,9 +65,9 @@ class MinFiat implements ArrayAccess
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
-    protected static $swaggerTypes = array(
-        'min_fiat' => 'int'
-    );
+    protected static $swaggerTypes = [
+        'max_fiat' => 'int'
+    ];
 
     public static function swaggerTypes()
     {
@@ -78,35 +78,37 @@ class MinFiat implements ArrayAccess
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
-    protected static $attributeMap = array(
-        'min_fiat' => 'minFiat'
-    );
+    protected static $attributeMap = [
+        'max_fiat' => 'maxFiat'
+    ];
+
+
+    /**
+     * Array of attributes to setter functions (for deserialization of responses)
+     * @var string[]
+     */
+    protected static $setters = [
+        'max_fiat' => 'setMaxFiat'
+    ];
+
+
+    /**
+     * Array of attributes to getter functions (for serialization of requests)
+     * @var string[]
+     */
+    protected static $getters = [
+        'max_fiat' => 'getMaxFiat'
+    ];
 
     public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     * @var string[]
-     */
-    protected static $setters = array(
-        'min_fiat' => 'setMinFiat'
-    );
-
     public static function setters()
     {
         return self::$setters;
     }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     * @var string[]
-     */
-    protected static $getters = array(
-        'min_fiat' => 'getMinFiat'
-    );
 
     public static function getters()
     {
@@ -121,15 +123,15 @@ class MinFiat implements ArrayAccess
      * Associative array for storing property values
      * @var mixed[]
      */
-    protected $container = array();
+    protected $container = [];
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property values initializing the model
      */
     public function __construct(array $data = null)
     {
-        $this->container['min_fiat'] = isset($data['min_fiat']) ? $data['min_fiat'] : null;
+        $this->container['max_fiat'] = isset($data['max_fiat']) ? $data['max_fiat'] : null;
     }
 
     /**
@@ -139,9 +141,9 @@ class MinFiat implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = array();
-        if ($this->container['min_fiat'] === null) {
-            $invalid_properties[] = "'min_fiat' can't be null";
+        $invalid_properties = [];
+        if ($this->container['max_fiat'] === null) {
+            $invalid_properties[] = "'max_fiat' can't be null";
         }
         return $invalid_properties;
     }
@@ -154,7 +156,7 @@ class MinFiat implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['min_fiat'] === null) {
+        if ($this->container['max_fiat'] === null) {
             return false;
         }
         return true;
@@ -162,22 +164,22 @@ class MinFiat implements ArrayAccess
 
 
     /**
-     * Gets min_fiat
+     * Gets max_fiat
      * @return int
      */
-    public function getMinFiat()
+    public function getMaxFiat()
     {
-        return $this->container['min_fiat'];
+        return $this->container['max_fiat'];
     }
 
     /**
-     * Sets min_fiat
-     * @param int $min_fiat
+     * Sets max_fiat
+     * @param int $max_fiat
      * @return $this
      */
-    public function setMinFiat($min_fiat)
+    public function setMaxFiat($max_fiat)
     {
-        $this->container['min_fiat'] = $min_fiat;
+        $this->container['max_fiat'] = $max_fiat;
 
         return $this;
     }
@@ -239,5 +241,3 @@ class MinFiat implements ArrayAccess
         return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

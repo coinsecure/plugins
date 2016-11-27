@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **to_addr** | **String** |  | 
 **msg** | **String** |  | [optional] 
 **pin** | **String** |  | [optional] 
+**fees** | **Object** |  | [optional] 
 
 

@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lastPrice** | **Integer** |  | 
-**timestamp** | **Integer** |  | 
-**bid** | **Integer** |  | 
-**ask** | **Integer** |  | 
-**fiatVolume** | **Integer** |  | 
-**coinVolume** | **Integer** |  | 
-**open** | **Integer** |  | 
-**high** | **Integer** |  | 
-**low** | **Integer** |  | 
+**lastPrice** | **Number** |  | 
+**timestamp** | **Number** |  | 
+**bid** | **Number** |  | 
+**ask** | **Number** |  | 
+**fiatVolume** | **Number** |  | 
+**coinVolume** | **Number** |  | 
+**open** | **Number** |  | 
+**high** | **Number** |  | 
+**low** | **Number** |  | 
 
 

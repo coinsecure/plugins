@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class SendCoin  {
+public class SendCoin {
   
   @SerializedName("satoshis")
   private Long satoshis = null;
@@ -40,6 +38,8 @@ public class SendCoin  {
   private String msg = null;
   @SerializedName("pin")
   private String pin = null;
+  @SerializedName("fees")
+  private Object fees = null;
 
   /**
    **/
@@ -81,6 +81,16 @@ public class SendCoin  {
     this.pin = pin;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Object getFees() {
+    return fees;
+  }
+  public void setFees(Object fees) {
+    this.fees = fees;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -91,19 +101,21 @@ public class SendCoin  {
       return false;
     }
     SendCoin sendCoin = (SendCoin) o;
-    return (satoshis == null ? sendCoin.satoshis == null : satoshis.equals(sendCoin.satoshis)) &&
-        (toAddr == null ? sendCoin.toAddr == null : toAddr.equals(sendCoin.toAddr)) &&
-        (msg == null ? sendCoin.msg == null : msg.equals(sendCoin.msg)) &&
-        (pin == null ? sendCoin.pin == null : pin.equals(sendCoin.pin));
+    return (this.satoshis == null ? sendCoin.satoshis == null : this.satoshis.equals(sendCoin.satoshis)) &&
+        (this.toAddr == null ? sendCoin.toAddr == null : this.toAddr.equals(sendCoin.toAddr)) &&
+        (this.msg == null ? sendCoin.msg == null : this.msg.equals(sendCoin.msg)) &&
+        (this.pin == null ? sendCoin.pin == null : this.pin.equals(sendCoin.pin)) &&
+        (this.fees == null ? sendCoin.fees == null : this.fees.equals(sendCoin.fees));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (satoshis == null ? 0: satoshis.hashCode());
-    result = 31 * result + (toAddr == null ? 0: toAddr.hashCode());
-    result = 31 * result + (msg == null ? 0: msg.hashCode());
-    result = 31 * result + (pin == null ? 0: pin.hashCode());
+    result = 31 * result + (this.satoshis == null ? 0: this.satoshis.hashCode());
+    result = 31 * result + (this.toAddr == null ? 0: this.toAddr.hashCode());
+    result = 31 * result + (this.msg == null ? 0: this.msg.hashCode());
+    result = 31 * result + (this.pin == null ? 0: this.pin.hashCode());
+    result = 31 * result + (this.fees == null ? 0: this.fees.hashCode());
     return result;
   }
 
@@ -116,6 +128,7 @@ public class SendCoin  {
     sb.append("  toAddr: ").append(toAddr).append("\n");
     sb.append("  msg: ").append(msg).append("\n");
     sb.append("  pin: ").append(pin).append("\n");
+    sb.append("  fees: ").append(fees).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

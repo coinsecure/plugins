@@ -53,7 +53,7 @@
    * @alias module:model/SuccessInitiateLoginResponse
    * @class
    * @param info {String} 
-   * @param validTill {Integer} 
+   * @param validTill {Number} 
    * @param mfa {String} 
    * @param token {String} 
    */
@@ -81,7 +81,7 @@
         obj['info'] = ApiClient.convertToType(data['info'], 'String');
       }
       if (data.hasOwnProperty('validTill')) {
-        obj['validTill'] = ApiClient.convertToType(data['validTill'], 'Integer');
+        obj['validTill'] = ApiClient.convertToType(data['validTill'], 'Number');
       }
       if (data.hasOwnProperty('mfa')) {
         obj['mfa'] = ApiClient.convertToType(data['mfa'], 'String');
@@ -98,7 +98,7 @@
    */
   exports.prototype['info'] = undefined;
   /**
-   * @member {Integer} validTill
+   * @member {Number} validTill
    */
   exports.prototype['validTill'] = undefined;
   /**

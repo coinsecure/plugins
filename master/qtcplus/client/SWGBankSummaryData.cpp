@@ -50,18 +50,18 @@ SWGBankSummaryData::~SWGBankSummaryData() {
 
 void
 SWGBankSummaryData::init() {
-    pendingCoinBalance = 0L;
-pendingFiatBalance = 0L;
-availableCoinBalance = 0L;
-availableFiatBalance = 0L;
-totalCoinBalance = 0L;
-totalFiatBalance = 0L;
-coinFeePercentage = 0.0;
-fiatFeePercentage = 0.0;
-bankLinkStatus = new QString("");
-hasTradeNetki = false;
-tradeNetkiName = new QString("");
-tradeNetkiAddress = new QString("");
+    pending_coin_balance = 0L;
+    pending_fiat_balance = 0L;
+    available_coin_balance = 0L;
+    available_fiat_balance = 0L;
+    total_coin_balance = 0L;
+    total_fiat_balance = 0L;
+    coin_fee_percentage = 0.0;
+    fiat_fee_percentage = 0.0;
+    bank_link_status = new QString("");
+    has_trade_netki = false;
+    trade_netki_name = new QString("");
+    trade_netki_address = new QString("");
 }
 
 void
@@ -74,15 +74,18 @@ SWGBankSummaryData::cleanup() {
 
 
 
-if(bankLinkStatus != NULL) {
-        delete bankLinkStatus;
+
+    if(bank_link_status != nullptr) {
+        delete bank_link_status;
     }
 
-if(tradeNetkiName != NULL) {
-        delete tradeNetkiName;
+
+    if(trade_netki_name != nullptr) {
+        delete trade_netki_name;
     }
-if(tradeNetkiAddress != NULL) {
-        delete tradeNetkiAddress;
+
+    if(trade_netki_address != nullptr) {
+        delete trade_netki_address;
     }
 }
 
@@ -97,18 +100,18 @@ SWGBankSummaryData::fromJson(QString &json) {
 
 void
 SWGBankSummaryData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&pendingCoinBalance, pJson["pendingCoinBalance"], "qint64", "");
-setValue(&pendingFiatBalance, pJson["pendingFiatBalance"], "qint64", "");
-setValue(&availableCoinBalance, pJson["availableCoinBalance"], "qint64", "");
-setValue(&availableFiatBalance, pJson["availableFiatBalance"], "qint64", "");
-setValue(&totalCoinBalance, pJson["totalCoinBalance"], "qint64", "");
-setValue(&totalFiatBalance, pJson["totalFiatBalance"], "qint64", "");
-setValue(&coinFeePercentage, pJson["coinFeePercentage"], "double", "");
-setValue(&fiatFeePercentage, pJson["fiatFeePercentage"], "double", "");
-setValue(&bankLinkStatus, pJson["bankLinkStatus"], "QString", "QString");
-setValue(&hasTradeNetki, pJson["hasTradeNetki"], "bool", "");
-setValue(&tradeNetkiName, pJson["tradeNetkiName"], "QString", "QString");
-setValue(&tradeNetkiAddress, pJson["tradeNetkiAddress"], "QString", "QString");
+    ::Swagger::setValue(&pending_coin_balance, pJson["pending_coin_balance"], "qint64", "");
+    ::Swagger::setValue(&pending_fiat_balance, pJson["pending_fiat_balance"], "qint64", "");
+    ::Swagger::setValue(&available_coin_balance, pJson["available_coin_balance"], "qint64", "");
+    ::Swagger::setValue(&available_fiat_balance, pJson["available_fiat_balance"], "qint64", "");
+    ::Swagger::setValue(&total_coin_balance, pJson["total_coin_balance"], "qint64", "");
+    ::Swagger::setValue(&total_fiat_balance, pJson["total_fiat_balance"], "qint64", "");
+    ::Swagger::setValue(&coin_fee_percentage, pJson["coin_fee_percentage"], "double", "");
+    ::Swagger::setValue(&fiat_fee_percentage, pJson["fiat_fee_percentage"], "double", "");
+    ::Swagger::setValue(&bank_link_status, pJson["bank_link_status"], "QString", "QString");
+    ::Swagger::setValue(&has_trade_netki, pJson["has_trade_netki"], "bool", "");
+    ::Swagger::setValue(&trade_netki_name, pJson["trade_netki_name"], "QString", "QString");
+    ::Swagger::setValue(&trade_netki_address, pJson["trade_netki_address"], "QString", "QString");
 }
 
 QString
@@ -124,140 +127,140 @@ SWGBankSummaryData::asJson ()
 QJsonObject*
 SWGBankSummaryData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
-    obj->insert("pendingCoinBalance", QJsonValue(pendingCoinBalance));
-obj->insert("pendingFiatBalance", QJsonValue(pendingFiatBalance));
-obj->insert("availableCoinBalance", QJsonValue(availableCoinBalance));
-obj->insert("availableFiatBalance", QJsonValue(availableFiatBalance));
-obj->insert("totalCoinBalance", QJsonValue(totalCoinBalance));
-obj->insert("totalFiatBalance", QJsonValue(totalFiatBalance));
-obj->insert("coinFeePercentage", QJsonValue(coinFeePercentage));
-obj->insert("fiatFeePercentage", QJsonValue(fiatFeePercentage));
+    
+    obj->insert("pending_coin_balance", QJsonValue(pending_coin_balance));
 
-    
-    toJsonValue(QString("bankLinkStatus"), bankLinkStatus, obj, QString("QString"));
-    
-        
-obj->insert("hasTradeNetki", QJsonValue(hasTradeNetki));
+    obj->insert("pending_fiat_balance", QJsonValue(pending_fiat_balance));
 
-    
-    toJsonValue(QString("tradeNetkiName"), tradeNetkiName, obj, QString("QString"));
-    
-        
+    obj->insert("available_coin_balance", QJsonValue(available_coin_balance));
 
-    
-    toJsonValue(QString("tradeNetkiAddress"), tradeNetkiAddress, obj, QString("QString"));
-    
-        
+    obj->insert("available_fiat_balance", QJsonValue(available_fiat_balance));
+
+    obj->insert("total_coin_balance", QJsonValue(total_coin_balance));
+
+    obj->insert("total_fiat_balance", QJsonValue(total_fiat_balance));
+
+    obj->insert("coin_fee_percentage", QJsonValue(coin_fee_percentage));
+
+    obj->insert("fiat_fee_percentage", QJsonValue(fiat_fee_percentage));
+
+    toJsonValue(QString("bank_link_status"), bank_link_status, obj, QString("QString"));
+
+    obj->insert("has_trade_netki", QJsonValue(has_trade_netki));
+
+    toJsonValue(QString("trade_netki_name"), trade_netki_name, obj, QString("QString"));
+
+    toJsonValue(QString("trade_netki_address"), trade_netki_address, obj, QString("QString"));
 
     return obj;
 }
 
 qint64
 SWGBankSummaryData::getPendingCoinBalance() {
-    return pendingCoinBalance;
+    return pending_coin_balance;
 }
 void
-SWGBankSummaryData::setPendingCoinBalance(qint64 pendingCoinBalance) {
-    this->pendingCoinBalance = pendingCoinBalance;
+SWGBankSummaryData::setPendingCoinBalance(qint64 pending_coin_balance) {
+    this->pending_coin_balance = pending_coin_balance;
 }
 
 qint64
 SWGBankSummaryData::getPendingFiatBalance() {
-    return pendingFiatBalance;
+    return pending_fiat_balance;
 }
 void
-SWGBankSummaryData::setPendingFiatBalance(qint64 pendingFiatBalance) {
-    this->pendingFiatBalance = pendingFiatBalance;
+SWGBankSummaryData::setPendingFiatBalance(qint64 pending_fiat_balance) {
+    this->pending_fiat_balance = pending_fiat_balance;
 }
 
 qint64
 SWGBankSummaryData::getAvailableCoinBalance() {
-    return availableCoinBalance;
+    return available_coin_balance;
 }
 void
-SWGBankSummaryData::setAvailableCoinBalance(qint64 availableCoinBalance) {
-    this->availableCoinBalance = availableCoinBalance;
+SWGBankSummaryData::setAvailableCoinBalance(qint64 available_coin_balance) {
+    this->available_coin_balance = available_coin_balance;
 }
 
 qint64
 SWGBankSummaryData::getAvailableFiatBalance() {
-    return availableFiatBalance;
+    return available_fiat_balance;
 }
 void
-SWGBankSummaryData::setAvailableFiatBalance(qint64 availableFiatBalance) {
-    this->availableFiatBalance = availableFiatBalance;
+SWGBankSummaryData::setAvailableFiatBalance(qint64 available_fiat_balance) {
+    this->available_fiat_balance = available_fiat_balance;
 }
 
 qint64
 SWGBankSummaryData::getTotalCoinBalance() {
-    return totalCoinBalance;
+    return total_coin_balance;
 }
 void
-SWGBankSummaryData::setTotalCoinBalance(qint64 totalCoinBalance) {
-    this->totalCoinBalance = totalCoinBalance;
+SWGBankSummaryData::setTotalCoinBalance(qint64 total_coin_balance) {
+    this->total_coin_balance = total_coin_balance;
 }
 
 qint64
 SWGBankSummaryData::getTotalFiatBalance() {
-    return totalFiatBalance;
+    return total_fiat_balance;
 }
 void
-SWGBankSummaryData::setTotalFiatBalance(qint64 totalFiatBalance) {
-    this->totalFiatBalance = totalFiatBalance;
+SWGBankSummaryData::setTotalFiatBalance(qint64 total_fiat_balance) {
+    this->total_fiat_balance = total_fiat_balance;
 }
 
 double
 SWGBankSummaryData::getCoinFeePercentage() {
-    return coinFeePercentage;
+    return coin_fee_percentage;
 }
 void
-SWGBankSummaryData::setCoinFeePercentage(double coinFeePercentage) {
-    this->coinFeePercentage = coinFeePercentage;
+SWGBankSummaryData::setCoinFeePercentage(double coin_fee_percentage) {
+    this->coin_fee_percentage = coin_fee_percentage;
 }
 
 double
 SWGBankSummaryData::getFiatFeePercentage() {
-    return fiatFeePercentage;
+    return fiat_fee_percentage;
 }
 void
-SWGBankSummaryData::setFiatFeePercentage(double fiatFeePercentage) {
-    this->fiatFeePercentage = fiatFeePercentage;
+SWGBankSummaryData::setFiatFeePercentage(double fiat_fee_percentage) {
+    this->fiat_fee_percentage = fiat_fee_percentage;
 }
 
 QString*
 SWGBankSummaryData::getBankLinkStatus() {
-    return bankLinkStatus;
+    return bank_link_status;
 }
 void
-SWGBankSummaryData::setBankLinkStatus(QString* bankLinkStatus) {
-    this->bankLinkStatus = bankLinkStatus;
+SWGBankSummaryData::setBankLinkStatus(QString* bank_link_status) {
+    this->bank_link_status = bank_link_status;
 }
 
 bool
 SWGBankSummaryData::getHasTradeNetki() {
-    return hasTradeNetki;
+    return has_trade_netki;
 }
 void
-SWGBankSummaryData::setHasTradeNetki(bool hasTradeNetki) {
-    this->hasTradeNetki = hasTradeNetki;
+SWGBankSummaryData::setHasTradeNetki(bool has_trade_netki) {
+    this->has_trade_netki = has_trade_netki;
 }
 
 QString*
 SWGBankSummaryData::getTradeNetkiName() {
-    return tradeNetkiName;
+    return trade_netki_name;
 }
 void
-SWGBankSummaryData::setTradeNetkiName(QString* tradeNetkiName) {
-    this->tradeNetkiName = tradeNetkiName;
+SWGBankSummaryData::setTradeNetkiName(QString* trade_netki_name) {
+    this->trade_netki_name = trade_netki_name;
 }
 
 QString*
 SWGBankSummaryData::getTradeNetkiAddress() {
-    return tradeNetkiAddress;
+    return trade_netki_address;
 }
 void
-SWGBankSummaryData::setTradeNetkiAddress(QString* tradeNetkiAddress) {
-    this->tradeNetkiAddress = tradeNetkiAddress;
+SWGBankSummaryData::setTradeNetkiAddress(QString* trade_netki_address) {
+    this->trade_netki_address = trade_netki_address;
 }
 
 

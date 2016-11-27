@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class LoginId  {
+public class LoginId {
   
   @SerializedName("loginID")
   private String loginID = null;
@@ -55,13 +53,13 @@ public class LoginId  {
       return false;
     }
     LoginId loginId = (LoginId) o;
-    return (loginID == null ? loginId.loginID == null : loginID.equals(loginId.loginID));
+    return (this.loginID == null ? loginId.loginID == null : this.loginID.equals(loginId.loginID));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (loginID == null ? 0: loginID.hashCode());
+    result = 31 * result + (this.loginID == null ? 0: this.loginID.hashCode());
     return result;
   }
 

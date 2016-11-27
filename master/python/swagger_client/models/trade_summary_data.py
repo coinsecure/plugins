@@ -66,6 +66,7 @@ class TradeSummaryData(object):
         self._pending_asks_count = pending_asks_count
         self._pending_bids_count = pending_bids_count
 
+
     @property
     def completed_asks_sum(self):
         """
@@ -86,6 +87,8 @@ class TradeSummaryData(object):
         :param completed_asks_sum: The completed_asks_sum of this TradeSummaryData.
         :type: int
         """
+        if completed_asks_sum is None:
+            raise ValueError("Invalid value for `completed_asks_sum`, must not be `None`")
 
         self._completed_asks_sum = completed_asks_sum
 
@@ -109,6 +112,8 @@ class TradeSummaryData(object):
         :param completed_bids_sum: The completed_bids_sum of this TradeSummaryData.
         :type: int
         """
+        if completed_bids_sum is None:
+            raise ValueError("Invalid value for `completed_bids_sum`, must not be `None`")
 
         self._completed_bids_sum = completed_bids_sum
 
@@ -132,6 +137,8 @@ class TradeSummaryData(object):
         :param completed_asks_count: The completed_asks_count of this TradeSummaryData.
         :type: int
         """
+        if completed_asks_count is None:
+            raise ValueError("Invalid value for `completed_asks_count`, must not be `None`")
 
         self._completed_asks_count = completed_asks_count
 
@@ -155,6 +162,8 @@ class TradeSummaryData(object):
         :param completed_bids_count: The completed_bids_count of this TradeSummaryData.
         :type: int
         """
+        if completed_bids_count is None:
+            raise ValueError("Invalid value for `completed_bids_count`, must not be `None`")
 
         self._completed_bids_count = completed_bids_count
 
@@ -178,6 +187,8 @@ class TradeSummaryData(object):
         :param pending_asks_count: The pending_asks_count of this TradeSummaryData.
         :type: int
         """
+        if pending_asks_count is None:
+            raise ValueError("Invalid value for `pending_asks_count`, must not be `None`")
 
         self._pending_asks_count = pending_asks_count
 
@@ -201,6 +212,8 @@ class TradeSummaryData(object):
         :param pending_bids_count: The pending_bids_count of this TradeSummaryData.
         :type: int
         """
+        if pending_bids_count is None:
+            raise ValueError("Invalid value for `pending_bids_count`, must not be `None`")
 
         self._pending_bids_count = pending_bids_count
 

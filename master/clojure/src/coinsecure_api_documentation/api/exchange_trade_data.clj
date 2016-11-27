@@ -296,3 +296,24 @@
   ([authorization optional-params]
    (:data (v1userexchangebidpending-with-http-info authorization optional-params))))
 
+(defn v1userexchangetrades-with-http-info
+  "Completed Exchange Trades
+  Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis."
+  ([] (v1userexchangetrades-with-http-info nil))
+  ([{:keys [from to max offset accept ]}]
+   (call-api "/v1/exchange/trades" :get
+             {:path-params   {}
+              :header-params {"accept" accept }
+              :query-params  {"from" from "to" to "max" max "offset" offset }
+              :form-params   {}
+              :content-types ["application/json"]
+              :accepts       ["application/json" "application/xml" "application/csv"]
+              :auth-names    []})))
+
+(defn v1userexchangetrades
+  "Completed Exchange Trades
+  Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis."
+  ([] (v1userexchangetrades nil))
+  ([optional-params]
+   (:data (v1userexchangetrades-with-http-info optional-params))))
+

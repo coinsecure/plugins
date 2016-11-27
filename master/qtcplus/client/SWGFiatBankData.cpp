@@ -51,40 +51,52 @@ SWGFiatBankData::~SWGFiatBankData() {
 void
 SWGFiatBankData::init() {
     time = 0L;
-status = new QString("");
-updateTime = 0L;
-updateMessage = new QString("");
-bankID = new QString("");
-info = new QString("");
-accountNumber = new QString("");
-accountNick = new QString("");
-accountType = new QString("");
+    status = new QString("");
+    update_time = 0L;
+    update_message = new QString("");
+    bank_id = new QString("");
+    info = new QString("");
+    account_number = new QString("");
+    account_nick = new QString("");
+    account_type = new QString("");
+    account_id = new QString("");
 }
 
 void
 SWGFiatBankData::cleanup() {
     
-if(status != NULL) {
+
+    if(status != nullptr) {
         delete status;
     }
 
-if(updateMessage != NULL) {
-        delete updateMessage;
+
+    if(update_message != nullptr) {
+        delete update_message;
     }
-if(bankID != NULL) {
-        delete bankID;
+
+    if(bank_id != nullptr) {
+        delete bank_id;
     }
-if(info != NULL) {
+
+    if(info != nullptr) {
         delete info;
     }
-if(accountNumber != NULL) {
-        delete accountNumber;
+
+    if(account_number != nullptr) {
+        delete account_number;
     }
-if(accountNick != NULL) {
-        delete accountNick;
+
+    if(account_nick != nullptr) {
+        delete account_nick;
     }
-if(accountType != NULL) {
-        delete accountType;
+
+    if(account_type != nullptr) {
+        delete account_type;
+    }
+
+    if(account_id != nullptr) {
+        delete account_id;
     }
 }
 
@@ -99,15 +111,16 @@ SWGFiatBankData::fromJson(QString &json) {
 
 void
 SWGFiatBankData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&time, pJson["time"], "qint64", "");
-setValue(&status, pJson["status"], "QString", "QString");
-setValue(&updateTime, pJson["updateTime"], "qint64", "");
-setValue(&updateMessage, pJson["updateMessage"], "QString", "QString");
-setValue(&bankID, pJson["bankID"], "QString", "QString");
-setValue(&info, pJson["info"], "QString", "QString");
-setValue(&accountNumber, pJson["accountNumber"], "QString", "QString");
-setValue(&accountNick, pJson["accountNick"], "QString", "QString");
-setValue(&accountType, pJson["accountType"], "QString", "QString");
+    ::Swagger::setValue(&time, pJson["time"], "qint64", "");
+    ::Swagger::setValue(&status, pJson["status"], "QString", "QString");
+    ::Swagger::setValue(&update_time, pJson["update_time"], "qint64", "");
+    ::Swagger::setValue(&update_message, pJson["update_message"], "QString", "QString");
+    ::Swagger::setValue(&bank_id, pJson["bank_id"], "QString", "QString");
+    ::Swagger::setValue(&info, pJson["info"], "QString", "QString");
+    ::Swagger::setValue(&account_number, pJson["account_number"], "QString", "QString");
+    ::Swagger::setValue(&account_nick, pJson["account_nick"], "QString", "QString");
+    ::Swagger::setValue(&account_type, pJson["account_type"], "QString", "QString");
+    ::Swagger::setValue(&account_id, pJson["account_id"], "QString", "QString");
 }
 
 QString
@@ -123,43 +136,26 @@ SWGFiatBankData::asJson ()
 QJsonObject*
 SWGFiatBankData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("time", QJsonValue(time));
 
-    
     toJsonValue(QString("status"), status, obj, QString("QString"));
-    
-        
-obj->insert("updateTime", QJsonValue(updateTime));
 
-    
-    toJsonValue(QString("updateMessage"), updateMessage, obj, QString("QString"));
-    
-        
+    obj->insert("update_time", QJsonValue(update_time));
 
-    
-    toJsonValue(QString("bankID"), bankID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("update_message"), update_message, obj, QString("QString"));
 
-    
+    toJsonValue(QString("bank_id"), bank_id, obj, QString("QString"));
+
     toJsonValue(QString("info"), info, obj, QString("QString"));
-    
-        
 
-    
-    toJsonValue(QString("accountNumber"), accountNumber, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("account_number"), account_number, obj, QString("QString"));
 
-    
-    toJsonValue(QString("accountNick"), accountNick, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("account_nick"), account_nick, obj, QString("QString"));
 
-    
-    toJsonValue(QString("accountType"), accountType, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("account_type"), account_type, obj, QString("QString"));
+
+    toJsonValue(QString("account_id"), account_id, obj, QString("QString"));
 
     return obj;
 }
@@ -184,29 +180,29 @@ SWGFiatBankData::setStatus(QString* status) {
 
 qint64
 SWGFiatBankData::getUpdateTime() {
-    return updateTime;
+    return update_time;
 }
 void
-SWGFiatBankData::setUpdateTime(qint64 updateTime) {
-    this->updateTime = updateTime;
+SWGFiatBankData::setUpdateTime(qint64 update_time) {
+    this->update_time = update_time;
 }
 
 QString*
 SWGFiatBankData::getUpdateMessage() {
-    return updateMessage;
+    return update_message;
 }
 void
-SWGFiatBankData::setUpdateMessage(QString* updateMessage) {
-    this->updateMessage = updateMessage;
+SWGFiatBankData::setUpdateMessage(QString* update_message) {
+    this->update_message = update_message;
 }
 
 QString*
-SWGFiatBankData::getBankID() {
-    return bankID;
+SWGFiatBankData::getBankId() {
+    return bank_id;
 }
 void
-SWGFiatBankData::setBankID(QString* bankID) {
-    this->bankID = bankID;
+SWGFiatBankData::setBankId(QString* bank_id) {
+    this->bank_id = bank_id;
 }
 
 QString*
@@ -220,29 +216,38 @@ SWGFiatBankData::setInfo(QString* info) {
 
 QString*
 SWGFiatBankData::getAccountNumber() {
-    return accountNumber;
+    return account_number;
 }
 void
-SWGFiatBankData::setAccountNumber(QString* accountNumber) {
-    this->accountNumber = accountNumber;
+SWGFiatBankData::setAccountNumber(QString* account_number) {
+    this->account_number = account_number;
 }
 
 QString*
 SWGFiatBankData::getAccountNick() {
-    return accountNick;
+    return account_nick;
 }
 void
-SWGFiatBankData::setAccountNick(QString* accountNick) {
-    this->accountNick = accountNick;
+SWGFiatBankData::setAccountNick(QString* account_nick) {
+    this->account_nick = account_nick;
 }
 
 QString*
 SWGFiatBankData::getAccountType() {
-    return accountType;
+    return account_type;
 }
 void
-SWGFiatBankData::setAccountType(QString* accountType) {
-    this->accountType = accountType;
+SWGFiatBankData::setAccountType(QString* account_type) {
+    this->account_type = account_type;
+}
+
+QString*
+SWGFiatBankData::getAccountId() {
+    return account_id;
+}
+void
+SWGFiatBankData::setAccountId(QString* account_id) {
+    this->account_id = account_id;
 }
 
 

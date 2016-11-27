@@ -24,17 +24,18 @@ package swagger
 
 import (
 	"net/url"
+	"strings"
 	"encoding/json"
 )
 
 type ExchangeBankCoinDataApi struct {
-	Configuration Configuration
+	Configuration *Configuration
 }
 
 func NewExchangeBankCoinDataApi() *ExchangeBankCoinDataApi {
 	configuration := NewConfiguration()
 	return &ExchangeBankCoinDataApi{
-		Configuration: *configuration,
+		Configuration: configuration,
 	}
 }
 
@@ -43,7 +44,7 @@ func NewExchangeBankCoinDataApiWithBasePath(basePath string) *ExchangeBankCoinDa
 	configuration.BasePath = basePath
 
 	return &ExchangeBankCoinDataApi{
-		Configuration: *configuration,
+		Configuration: configuration,
 	}
 }
 
@@ -57,22 +58,20 @@ func NewExchangeBankCoinDataApiWithBasePath(basePath string) *ExchangeBankCoinDa
  */
 func (a ExchangeBankCoinDataApi) V1userexchangebankcoinaddresses(authorization string, accept string) (*TradeAddressDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/addresses"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/addresses"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -80,33 +79,40 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinaddresses(authorization s
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(TradeAddressDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankcoinaddresses", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -119,22 +125,20 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinaddresses(authorization s
  */
 func (a ExchangeBankCoinDataApi) V1userexchangebankcoinbalanceavailable(authorization string, accept string) (*VolDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/balance/total"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/balance/total"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -142,33 +146,40 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinbalanceavailable(authoriz
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(VolDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankcoinbalanceavailable", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -181,22 +192,20 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinbalanceavailable(authoriz
  */
 func (a ExchangeBankCoinDataApi) V1userexchangebankcoinbalancepending(authorization string, accept string) (*VolDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/balance/pending"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/balance/pending"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -204,33 +213,40 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinbalancepending(authorizat
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(VolDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankcoinbalancepending", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -243,22 +259,20 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinbalancepending(authorizat
  */
 func (a ExchangeBankCoinDataApi) V1userexchangebankcoinbalancetotal(authorization string, accept string) (*VolDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/balance/available"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/balance/available"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -266,33 +280,40 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinbalancetotal(authorizatio
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(VolDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankcoinbalancetotal", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -309,26 +330,24 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinbalancetotal(authorizatio
  */
 func (a ExchangeBankCoinDataApi) V1userexchangebankcoindepositcancelled(authorization string, from int64, to int64, max int32, offset int64, accept string) (*CoinDepDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/deposit/cancelled"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/deposit/cancelled"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -336,33 +355,40 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoindepositcancelled(authoriz
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(CoinDepDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankcoindepositcancelled", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -379,26 +405,24 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoindepositcancelled(authoriz
  */
 func (a ExchangeBankCoinDataApi) V1userexchangebankcoindepositunverified(authorization string, from int64, to int64, max int32, offset int64, accept string) (*CoinDepDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/deposit/unverified"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/deposit/unverified"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -406,33 +430,40 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoindepositunverified(authori
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(CoinDepDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankcoindepositunverified", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -449,26 +480,24 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoindepositunverified(authori
  */
 func (a ExchangeBankCoinDataApi) V1userexchangebankcoindepositverified(authorization string, from int64, to int64, max int32, offset int64, accept string) (*CoinDepDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/deposit/verified"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/deposit/verified"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -476,33 +505,40 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoindepositverified(authoriza
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(CoinDepDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankcoindepositverified", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -519,26 +555,24 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoindepositverified(authoriza
  */
 func (a ExchangeBankCoinDataApi) V1userexchangebankcoinwithdrawcancelled(authorization string, from int64, to int64, max int32, offset int64, accept string) (*TradeCoinWithdrawDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/withdraw/cancelled"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/withdraw/cancelled"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -546,33 +580,40 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinwithdrawcancelled(authori
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(TradeCoinWithdrawDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankcoinwithdrawcancelled", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -589,26 +630,24 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinwithdrawcancelled(authori
  */
 func (a ExchangeBankCoinDataApi) V1userexchangebankcoinwithdrawcompleted(authorization string, from int64, to int64, max int32, offset int64, accept string) (*TradeCoinWithdrawDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/withdraw/completed"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/withdraw/completed"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -616,33 +655,40 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinwithdrawcompleted(authori
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(TradeCoinWithdrawDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankcoinwithdrawcompleted", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -659,26 +705,24 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinwithdrawcompleted(authori
  */
 func (a ExchangeBankCoinDataApi) V1userexchangebankcoinwithdrawunverified(authorization string, from int64, to int64, max int32, offset int64, accept string) (*TradeCoinWithdrawDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/withdraw/unverified"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/withdraw/unverified"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -686,33 +730,40 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinwithdrawunverified(author
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(TradeCoinWithdrawDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankcoinwithdrawunverified", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 
 /**
@@ -729,26 +780,24 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinwithdrawunverified(author
  */
 func (a ExchangeBankCoinDataApi) V1userexchangebankcoinwithdrawverified(authorization string, from int64, to int64, max int32, offset int64, accept string) (*TradeCoinWithdrawDataResponse, *APIResponse, error) {
 
-	var httpMethod = "Get"
+	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	path := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/withdraw/verified"
+	localVarPath := a.Configuration.BasePath + "/v1/user/exchange/bank/coin/withdraw/verified"
 
-
-	headerParams := make(map[string]string)
-	queryParams := url.Values{}
-	formParams := make(map[string]string)
-	var postBody interface{}
-	var fileName string
-	var fileBytes []byte
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := make(map[string]string)
+	var localVarPostBody interface{}
+	var localVarFileName string
+	var localVarFileBytes []byte
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
-		headerParams[key] = a.Configuration.DefaultHeader[key]
+		localVarHeaderParams[key] = a.Configuration.DefaultHeader[key]
 	}
-		queryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
-			queryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
-			queryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
-			queryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
-	
+		localVarQueryParams.Add("from", a.Configuration.APIClient.ParameterToString(from, ""))
+		localVarQueryParams.Add("to", a.Configuration.APIClient.ParameterToString(to, ""))
+		localVarQueryParams.Add("max", a.Configuration.APIClient.ParameterToString(max, ""))
+		localVarQueryParams.Add("offset", a.Configuration.APIClient.ParameterToString(offset, ""))
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "application/json",  }
@@ -756,32 +805,39 @@ func (a ExchangeBankCoinDataApi) V1userexchangebankcoinwithdrawverified(authoriz
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
-		headerParams["Content-Type"] = localVarHttpContentType
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
 	}
 	// to determine the Accept header
 	localVarHttpHeaderAccepts := []string{
 		"application/json",
-"application/xml",
-"application/csv",
-	}
+		"application/xml",
+		"application/csv",
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := a.Configuration.APIClient.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
-		headerParams["Accept"] = localVarHttpHeaderAccept
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	// header params "Authorization"
-	headerParams["Authorization"] = authorization
+	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
 	// header params "accept"
-	headerParams["accept"] = accept
-
+	localVarHeaderParams["accept"] = a.Configuration.APIClient.ParameterToString(accept, "")
 	var successPayload = new(TradeCoinWithdrawDataResponse)
-	httpResponse, err := a.Configuration.APIClient.CallAPI(path, httpMethod, postBody, headerParams, queryParams, formParams, fileName, fileBytes)
-	if err != nil {
-		return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+
+	var localVarURL, _ = url.Parse(localVarPath)
+	localVarURL.RawQuery = localVarQueryParams.Encode()
+	var localVarAPIResponse = &APIResponse{Operation: "V1userexchangebankcoinwithdrawverified", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	if localVarHttpResponse != nil {
+		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
+		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
-	err = json.Unmarshal(httpResponse.Body(), &successPayload)
-	return successPayload, NewAPIResponse(httpResponse.RawResponse), err
+
+	if err != nil {
+		return successPayload, localVarAPIResponse, err
+	}
+	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
+	return successPayload, localVarAPIResponse, err
 }
 

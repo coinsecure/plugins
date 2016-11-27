@@ -18,6 +18,7 @@ public class FiatBankData: JSONEncodable {
     public var accountNumber: String?
     public var accountNick: String?
     public var accountType: String?
+    public var accountID: String?
 
     public init() {}
 
@@ -33,6 +34,7 @@ public class FiatBankData: JSONEncodable {
         nillableDictionary["accountNumber"] = self.accountNumber
         nillableDictionary["accountNick"] = self.accountNick
         nillableDictionary["accountType"] = self.accountType
+        nillableDictionary["accountID"] = self.accountID
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary
     }

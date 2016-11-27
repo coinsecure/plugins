@@ -51,20 +51,23 @@ SWGCodeCountryMobile::~SWGCodeCountryMobile() {
 void
 SWGCodeCountryMobile::init() {
     code = new QString("");
-countryCode = new QString("");
-phoneNumber = new QString("");
+    country_code = new QString("");
+    phone_number = new QString("");
 }
 
 void
 SWGCodeCountryMobile::cleanup() {
-    if(code != NULL) {
+    
+    if(code != nullptr) {
         delete code;
     }
-if(countryCode != NULL) {
-        delete countryCode;
+
+    if(country_code != nullptr) {
+        delete country_code;
     }
-if(phoneNumber != NULL) {
-        delete phoneNumber;
+
+    if(phone_number != nullptr) {
+        delete phone_number;
     }
 }
 
@@ -79,9 +82,9 @@ SWGCodeCountryMobile::fromJson(QString &json) {
 
 void
 SWGCodeCountryMobile::fromJsonObject(QJsonObject &pJson) {
-    setValue(&code, pJson["code"], "QString", "QString");
-setValue(&countryCode, pJson["countryCode"], "QString", "QString");
-setValue(&phoneNumber, pJson["phoneNumber"], "QString", "QString");
+    ::Swagger::setValue(&code, pJson["code"], "QString", "QString");
+    ::Swagger::setValue(&country_code, pJson["country_code"], "QString", "QString");
+    ::Swagger::setValue(&phone_number, pJson["phone_number"], "QString", "QString");
 }
 
 QString
@@ -98,20 +101,11 @@ QJsonObject*
 SWGCodeCountryMobile::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("code"), code, obj, QString("QString"));
-    
-        
 
-    
-    toJsonValue(QString("countryCode"), countryCode, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("country_code"), country_code, obj, QString("QString"));
 
-    
-    toJsonValue(QString("phoneNumber"), phoneNumber, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("phone_number"), phone_number, obj, QString("QString"));
 
     return obj;
 }
@@ -127,20 +121,20 @@ SWGCodeCountryMobile::setCode(QString* code) {
 
 QString*
 SWGCodeCountryMobile::getCountryCode() {
-    return countryCode;
+    return country_code;
 }
 void
-SWGCodeCountryMobile::setCountryCode(QString* countryCode) {
-    this->countryCode = countryCode;
+SWGCodeCountryMobile::setCountryCode(QString* country_code) {
+    this->country_code = country_code;
 }
 
 QString*
 SWGCodeCountryMobile::getPhoneNumber() {
-    return phoneNumber;
+    return phone_number;
 }
 void
-SWGCodeCountryMobile::setPhoneNumber(QString* phoneNumber) {
-    this->phoneNumber = phoneNumber;
+SWGCodeCountryMobile::setPhoneNumber(QString* phone_number) {
+    this->phone_number = phone_number;
 }
 
 

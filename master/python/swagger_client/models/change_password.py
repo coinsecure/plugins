@@ -54,6 +54,7 @@ class ChangePassword(object):
         self._password = password
         self._repeat_password = repeat_password
 
+
     @property
     def password(self):
         """
@@ -74,6 +75,8 @@ class ChangePassword(object):
         :param password: The password of this ChangePassword.
         :type: str
         """
+        if password is None:
+            raise ValueError("Invalid value for `password`, must not be `None`")
 
         self._password = password
 
@@ -97,6 +100,8 @@ class ChangePassword(object):
         :param repeat_password: The repeat_password of this ChangePassword.
         :type: str
         """
+        if repeat_password is None:
+            raise ValueError("Invalid value for `repeat_password`, must not be `None`")
 
         self._repeat_password = repeat_password
 

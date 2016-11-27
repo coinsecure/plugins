@@ -6,7 +6,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,9 +40,9 @@
 
 namespace Swagger\Client\Api;
 
-use \Swagger\Client\Configuration;
 use \Swagger\Client\ApiClient;
 use \Swagger\Client\ApiException;
+use \Swagger\Client\Configuration;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -51,12 +51,11 @@ use \Swagger\Client\ObjectSerializer;
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class ExchangeTradeDataApi
 {
-
     /**
      * API Client
      *
@@ -71,9 +70,9 @@ class ExchangeTradeDataApi
      */
     public function __construct(\Swagger\Client\ApiClient $apiClient = null)
     {
-        if ($apiClient == null) {
+        if ($apiClient === null) {
             $apiClient = new ApiClient();
-            $apiClient->getConfig()->setHost('https://api.coinsecure.in');
+            $apiClient->getConfig()->setHost('https://api.coinsecure.in/');
         }
 
         $this->apiClient = $apiClient;
@@ -108,8 +107,8 @@ class ExchangeTradeDataApi
      * Lowest Ask
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\RateDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\RateDataResponse
      */
     public function v1exchangeasklow($accept = null)
     {
@@ -123,22 +122,22 @@ class ExchangeTradeDataApi
      * Lowest Ask
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\RateDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\RateDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1exchangeasklowWithHttpInfo($accept = null)
     {
         // parse inputs
         $resourcePath = "/v1/exchange/ask/low";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -166,7 +165,7 @@ class ExchangeTradeDataApi
                 '/v1/exchange/ask/low'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -189,8 +188,8 @@ class ExchangeTradeDataApi
      * All Sell Orders
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\RateVolDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\RateVolDataResponse
      */
     public function v1exchangeaskorders($accept = null)
     {
@@ -204,22 +203,22 @@ class ExchangeTradeDataApi
      * All Sell Orders
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\RateVolDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\RateVolDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1exchangeaskordersWithHttpInfo($accept = null)
     {
         // parse inputs
         $resourcePath = "/v1/exchange/ask/orders";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -247,7 +246,7 @@ class ExchangeTradeDataApi
                 '/v1/exchange/ask/orders'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateVolDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateVolDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -270,8 +269,8 @@ class ExchangeTradeDataApi
      * Returns the Highest Bid in the Order Book
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\RateDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\RateDataResponse
      */
     public function v1exchangebidhigh($accept = null)
     {
@@ -285,22 +284,22 @@ class ExchangeTradeDataApi
      * Returns the Highest Bid in the Order Book
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\RateDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\RateDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1exchangebidhighWithHttpInfo($accept = null)
     {
         // parse inputs
         $resourcePath = "/v1/exchange/bid/high";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -328,7 +327,7 @@ class ExchangeTradeDataApi
                 '/v1/exchange/bid/high'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -351,8 +350,8 @@ class ExchangeTradeDataApi
      * All Buy Orders
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\RateVolDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\RateVolDataResponse
      */
     public function v1exchangebidorders($accept = null)
     {
@@ -366,22 +365,22 @@ class ExchangeTradeDataApi
      * All Buy Orders
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\RateVolDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\RateVolDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1exchangebidordersWithHttpInfo($accept = null)
     {
         // parse inputs
         $resourcePath = "/v1/exchange/bid/orders";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -409,7 +408,7 @@ class ExchangeTradeDataApi
                 '/v1/exchange/bid/orders'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateVolDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateVolDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -432,8 +431,8 @@ class ExchangeTradeDataApi
      * Last Trade
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\LastTradeDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\LastTradeDataResponse
      */
     public function v1exchangelastTrade($accept = null)
     {
@@ -447,22 +446,22 @@ class ExchangeTradeDataApi
      * Last Trade
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\LastTradeDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\LastTradeDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1exchangelastTradeWithHttpInfo($accept = null)
     {
         // parse inputs
         $resourcePath = "/v1/exchange/lastTrade";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -490,7 +489,7 @@ class ExchangeTradeDataApi
                 '/v1/exchange/lastTrade'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\LastTradeDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\LastTradeDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -513,8 +512,8 @@ class ExchangeTradeDataApi
      * Max 24 Hour Rate
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\RateDiffDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\RateDiffDataResponse
      */
     public function v1exchangemax24Hr($accept = null)
     {
@@ -528,22 +527,22 @@ class ExchangeTradeDataApi
      * Max 24 Hour Rate
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\RateDiffDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\RateDiffDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1exchangemax24HrWithHttpInfo($accept = null)
     {
         // parse inputs
         $resourcePath = "/v1/exchange/max24Hr";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -571,7 +570,7 @@ class ExchangeTradeDataApi
                 '/v1/exchange/max24Hr'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDiffDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDiffDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -594,8 +593,8 @@ class ExchangeTradeDataApi
      * Min 24 Hour Rate
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\RateDiffDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\RateDiffDataResponse
      */
     public function v1exchangemin24Hr($accept = null)
     {
@@ -609,22 +608,22 @@ class ExchangeTradeDataApi
      * Min 24 Hour Rate
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\RateDiffDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\RateDiffDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1exchangemin24HrWithHttpInfo($accept = null)
     {
         // parse inputs
         $resourcePath = "/v1/exchange/min24Hr";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -652,7 +651,7 @@ class ExchangeTradeDataApi
                 '/v1/exchange/min24Hr'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDiffDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateDiffDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -675,8 +674,8 @@ class ExchangeTradeDataApi
      * Exchange Ticker
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\StandardTickerResultData
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\StandardTickerResultData
      */
     public function v1exchangeticker($accept = null)
     {
@@ -690,22 +689,22 @@ class ExchangeTradeDataApi
      * Exchange Ticker
      *
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\StandardTickerResultData, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\StandardTickerResultData, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1exchangetickerWithHttpInfo($accept = null)
     {
         // parse inputs
         $resourcePath = "/v1/exchange/ticker";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -733,7 +732,7 @@ class ExchangeTradeDataApi
                 '/v1/exchange/ticker'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\StandardTickerResultData', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\StandardTickerResultData', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -757,8 +756,8 @@ class ExchangeTradeDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\OrderDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\OrderDataResponse
      */
     public function v1userexchangeaskcancelled($authorization, $accept = null)
     {
@@ -773,8 +772,8 @@ class ExchangeTradeDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\OrderDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\OrderDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangeaskcancelledWithHttpInfo($authorization, $accept = null)
     {
@@ -785,14 +784,14 @@ class ExchangeTradeDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/ask/cancelled";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -824,7 +823,7 @@ class ExchangeTradeDataApi
                 '/v1/user/exchange/ask/cancelled'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrderDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrderDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -852,8 +851,8 @@ class ExchangeTradeDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\OrderDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\OrderDataResponse
      */
     public function v1userexchangeaskcompleted($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -872,8 +871,8 @@ class ExchangeTradeDataApi
      * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
      * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\OrderDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\OrderDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangeaskcompletedWithHttpInfo($authorization, $from = null, $to = null, $max = null, $offset = null, $accept = null)
     {
@@ -884,14 +883,14 @@ class ExchangeTradeDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/ask/completed";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
         if ($from !== null) {
@@ -939,7 +938,7 @@ class ExchangeTradeDataApi
                 '/v1/user/exchange/ask/completed'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrderDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrderDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -963,8 +962,8 @@ class ExchangeTradeDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\OrderDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\OrderDataResponse
      */
     public function v1userexchangeaskpending($authorization, $accept = null)
     {
@@ -979,8 +978,8 @@ class ExchangeTradeDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\OrderDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\OrderDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangeaskpendingWithHttpInfo($authorization, $accept = null)
     {
@@ -991,14 +990,14 @@ class ExchangeTradeDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/ask/pending";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -1030,7 +1029,7 @@ class ExchangeTradeDataApi
                 '/v1/user/exchange/ask/pending'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrderDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrderDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1054,8 +1053,8 @@ class ExchangeTradeDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\OrderDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\OrderDataResponse
      */
     public function v1userexchangebidcancelled($authorization, $accept = null)
     {
@@ -1070,8 +1069,8 @@ class ExchangeTradeDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\OrderDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\OrderDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebidcancelledWithHttpInfo($authorization, $accept = null)
     {
@@ -1082,14 +1081,14 @@ class ExchangeTradeDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bid/cancelled";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -1121,7 +1120,7 @@ class ExchangeTradeDataApi
                 '/v1/user/exchange/bid/cancelled'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrderDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrderDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1145,8 +1144,8 @@ class ExchangeTradeDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\OrderDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\OrderDataResponse
      */
     public function v1userexchangebidcompleted($authorization, $accept = null)
     {
@@ -1161,8 +1160,8 @@ class ExchangeTradeDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\OrderDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\OrderDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebidcompletedWithHttpInfo($authorization, $accept = null)
     {
@@ -1173,14 +1172,14 @@ class ExchangeTradeDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bid/completed";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -1212,7 +1211,7 @@ class ExchangeTradeDataApi
                 '/v1/user/exchange/bid/completed'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrderDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrderDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1236,8 +1235,8 @@ class ExchangeTradeDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\OrderDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\OrderDataResponse
      */
     public function v1userexchangebidpending($authorization, $accept = null)
     {
@@ -1252,8 +1251,8 @@ class ExchangeTradeDataApi
      *
      * @param string $authorization API object to be added (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\OrderDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\OrderDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebidpendingWithHttpInfo($authorization, $accept = null)
     {
@@ -1264,14 +1263,14 @@ class ExchangeTradeDataApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bid/pending";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -1303,7 +1302,7 @@ class ExchangeTradeDataApi
                 '/v1/user/exchange/bid/pending'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrderDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\OrderDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1320,4 +1319,108 @@ class ExchangeTradeDataApi
         }
     }
 
+    /**
+     * Operation v1userexchangetrades
+     *
+     * Completed Exchange Trades
+     *
+     * @param int $from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)
+     * @param int $to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)
+     * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
+     * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
+     * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\RateVolTimeTypeDataResponse
+     */
+    public function v1userexchangetrades($from = null, $to = null, $max = null, $offset = null, $accept = null)
+    {
+        list($response) = $this->v1userexchangetradesWithHttpInfo($from, $to, $max, $offset, $accept);
+        return $response;
+    }
+
+    /**
+     * Operation v1userexchangetradesWithHttpInfo
+     *
+     * Completed Exchange Trades
+     *
+     * @param int $from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)
+     * @param int $to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)
+     * @param int $max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
+     * @param int $offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
+     * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\RateVolTimeTypeDataResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function v1userexchangetradesWithHttpInfo($from = null, $to = null, $max = null, $offset = null, $accept = null)
+    {
+        // parse inputs
+        $resourcePath = "/v1/exchange/trades";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // query params
+        if ($from !== null) {
+            $queryParams['from'] = $this->apiClient->getSerializer()->toQueryValue($from);
+        }
+        // query params
+        if ($to !== null) {
+            $queryParams['to'] = $this->apiClient->getSerializer()->toQueryValue($to);
+        }
+        // query params
+        if ($max !== null) {
+            $queryParams['max'] = $this->apiClient->getSerializer()->toQueryValue($max);
+        }
+        // query params
+        if ($offset !== null) {
+            $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['accept'] = $this->apiClient->getSerializer()->toHeaderValue($accept);
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\RateVolTimeTypeDataResponse',
+                '/v1/exchange/trades'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RateVolTimeTypeDataResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\RateVolTimeTypeDataResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\FailResult', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
 }

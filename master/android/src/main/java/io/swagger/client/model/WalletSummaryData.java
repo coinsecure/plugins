@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class WalletSummaryData  {
+public class WalletSummaryData {
   
   @SerializedName("walletConfirmedBalance")
   private Long walletConfirmedBalance = null;
@@ -115,23 +113,23 @@ public class WalletSummaryData  {
       return false;
     }
     WalletSummaryData walletSummaryData = (WalletSummaryData) o;
-    return (walletConfirmedBalance == null ? walletSummaryData.walletConfirmedBalance == null : walletConfirmedBalance.equals(walletSummaryData.walletConfirmedBalance)) &&
-        (walletUncofirmedBalance == null ? walletSummaryData.walletUncofirmedBalance == null : walletUncofirmedBalance.equals(walletSummaryData.walletUncofirmedBalance)) &&
-        (hasWalletNetki == null ? walletSummaryData.hasWalletNetki == null : hasWalletNetki.equals(walletSummaryData.hasWalletNetki)) &&
-        (walletNetki == null ? walletSummaryData.walletNetki == null : walletNetki.equals(walletSummaryData.walletNetki)) &&
-        (walletNetkiAddress == null ? walletSummaryData.walletNetkiAddress == null : walletNetkiAddress.equals(walletSummaryData.walletNetkiAddress)) &&
-        (walletNetkiWalletId == null ? walletSummaryData.walletNetkiWalletId == null : walletNetkiWalletId.equals(walletSummaryData.walletNetkiWalletId));
+    return (this.walletConfirmedBalance == null ? walletSummaryData.walletConfirmedBalance == null : this.walletConfirmedBalance.equals(walletSummaryData.walletConfirmedBalance)) &&
+        (this.walletUncofirmedBalance == null ? walletSummaryData.walletUncofirmedBalance == null : this.walletUncofirmedBalance.equals(walletSummaryData.walletUncofirmedBalance)) &&
+        (this.hasWalletNetki == null ? walletSummaryData.hasWalletNetki == null : this.hasWalletNetki.equals(walletSummaryData.hasWalletNetki)) &&
+        (this.walletNetki == null ? walletSummaryData.walletNetki == null : this.walletNetki.equals(walletSummaryData.walletNetki)) &&
+        (this.walletNetkiAddress == null ? walletSummaryData.walletNetkiAddress == null : this.walletNetkiAddress.equals(walletSummaryData.walletNetkiAddress)) &&
+        (this.walletNetkiWalletId == null ? walletSummaryData.walletNetkiWalletId == null : this.walletNetkiWalletId.equals(walletSummaryData.walletNetkiWalletId));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (walletConfirmedBalance == null ? 0: walletConfirmedBalance.hashCode());
-    result = 31 * result + (walletUncofirmedBalance == null ? 0: walletUncofirmedBalance.hashCode());
-    result = 31 * result + (hasWalletNetki == null ? 0: hasWalletNetki.hashCode());
-    result = 31 * result + (walletNetki == null ? 0: walletNetki.hashCode());
-    result = 31 * result + (walletNetkiAddress == null ? 0: walletNetkiAddress.hashCode());
-    result = 31 * result + (walletNetkiWalletId == null ? 0: walletNetkiWalletId.hashCode());
+    result = 31 * result + (this.walletConfirmedBalance == null ? 0: this.walletConfirmedBalance.hashCode());
+    result = 31 * result + (this.walletUncofirmedBalance == null ? 0: this.walletUncofirmedBalance.hashCode());
+    result = 31 * result + (this.hasWalletNetki == null ? 0: this.hasWalletNetki.hashCode());
+    result = 31 * result + (this.walletNetki == null ? 0: this.walletNetki.hashCode());
+    result = 31 * result + (this.walletNetkiAddress == null ? 0: this.walletNetkiAddress.hashCode());
+    result = 31 * result + (this.walletNetkiWalletId == null ? 0: this.walletNetkiWalletId.hashCode());
     return result;
   }
 

@@ -55,9 +55,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://api.coinsecure.in
+     * @default https://api.coinsecure.in/
      */
-    this.basePath = 'https://api.coinsecure.in'.replace(/\/+$/, '');
+    this.basePath = 'https://api.coinsecure.in/'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.
@@ -374,7 +374,10 @@
 
     var contentType = this.jsonPreferredMime(contentTypes);
     if (contentType) {
-      request.type(contentType);
+      // Issue with superagent and multipart/form-data (https://github.com/visionmedia/superagent/issues/746)
+      if(contentType != 'multipart/form-data') {
+        request.type(contentType);
+      }
     } else if (!request.header['Content-Type']) {
       request.type('application/json');
     }

@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class DoubleData  {
+public class DoubleData {
   
   @SerializedName("percent")
   private Double percent = null;
@@ -55,13 +53,13 @@ public class DoubleData  {
       return false;
     }
     DoubleData doubleData = (DoubleData) o;
-    return (percent == null ? doubleData.percent == null : percent.equals(doubleData.percent));
+    return (this.percent == null ? doubleData.percent == null : this.percent.equals(doubleData.percent));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (percent == null ? 0: percent.hashCode());
+    result = 31 * result + (this.percent == null ? 0: this.percent.hashCode());
     return result;
   }
 

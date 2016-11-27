@@ -221,4 +221,20 @@ describe 'ExchangeTradeDataApi' do
     end
   end
 
+  # unit tests for v1userexchangetrades
+  # Completed Exchange Trades
+  # Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
+  # @option opts [Integer] :to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
+  # @option opts [Integer] :max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
+  # @option opts [Integer] :offset Offset defaults to 0 if input is invalid. (Optional)
+  # @option opts [String] :accept JSON, XML or CSV can be returned (Optional)
+  # @return [RateVolTimeTypeDataResponse]
+  describe 'v1userexchangetrades test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end

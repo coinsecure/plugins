@@ -69,6 +69,7 @@ class WalletCoinWithdrawData(object):
         self._withdraw_id = withdraw_id
         self._sent_to = sent_to
 
+
     @property
     def time_details(self):
         """
@@ -89,6 +90,8 @@ class WalletCoinWithdrawData(object):
         :param time_details: The time_details of this WalletCoinWithdrawData.
         :type: TimeData
         """
+        if time_details is None:
+            raise ValueError("Invalid value for `time_details`, must not be `None`")
 
         self._time_details = time_details
 
@@ -112,6 +115,8 @@ class WalletCoinWithdrawData(object):
         :param tx_id: The tx_id of this WalletCoinWithdrawData.
         :type: str
         """
+        if tx_id is None:
+            raise ValueError("Invalid value for `tx_id`, must not be `None`")
 
         self._tx_id = tx_id
 
@@ -135,6 +140,8 @@ class WalletCoinWithdrawData(object):
         :param message: The message of this WalletCoinWithdrawData.
         :type: str
         """
+        if message is None:
+            raise ValueError("Invalid value for `message`, must not be `None`")
 
         self._message = message
 
@@ -158,6 +165,8 @@ class WalletCoinWithdrawData(object):
         :param satoshis: The satoshis of this WalletCoinWithdrawData.
         :type: int
         """
+        if satoshis is None:
+            raise ValueError("Invalid value for `satoshis`, must not be `None`")
 
         self._satoshis = satoshis
 
@@ -181,6 +190,8 @@ class WalletCoinWithdrawData(object):
         :param wallet_id: The wallet_id of this WalletCoinWithdrawData.
         :type: str
         """
+        if wallet_id is None:
+            raise ValueError("Invalid value for `wallet_id`, must not be `None`")
 
         self._wallet_id = wallet_id
 
@@ -204,6 +215,8 @@ class WalletCoinWithdrawData(object):
         :param withdraw_id: The withdraw_id of this WalletCoinWithdrawData.
         :type: str
         """
+        if withdraw_id is None:
+            raise ValueError("Invalid value for `withdraw_id`, must not be `None`")
 
         self._withdraw_id = withdraw_id
 
@@ -227,6 +240,8 @@ class WalletCoinWithdrawData(object):
         :param sent_to: The sent_to of this WalletCoinWithdrawData.
         :type: str
         """
+        if sent_to is None:
+            raise ValueError("Invalid value for `sent_to`, must not be `None`")
 
         self._sent_to = sent_to
 

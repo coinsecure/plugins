@@ -101,6 +101,30 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @wallet_id.nil?
+        invalid_properties.push("invalid value for 'wallet_id', wallet_id cannot be nil.")
+      end
+
+      if @address.nil?
+        invalid_properties.push("invalid value for 'address', address cannot be nil.")
+      end
+
+      if @time.nil?
+        invalid_properties.push("invalid value for 'time', time cannot be nil.")
+      end
+
+      if @info.nil?
+        invalid_properties.push("invalid value for 'info', info cannot be nil.")
+      end
+
+      if @min_conf.nil?
+        invalid_properties.push("invalid value for 'min_conf', min_conf cannot be nil.")
+      end
+
+      if @netki.nil?
+        invalid_properties.push("invalid value for 'netki', netki cannot be nil.")
+      end
+
       return invalid_properties
     end
 
@@ -147,7 +171,7 @@ module SwaggerClient
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
       self.class.swagger_types.each_pair do |key, type|
-        if type =~ /^Array<(.*)>/i
+        if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
@@ -178,7 +202,7 @@ module SwaggerClient
       when :Float
         value.to_f
       when :BOOLEAN
-        if value.to_s =~ /^(true|t|yes|y|1)$/i
+        if value.to_s =~ /\A(true|t|yes|y|1)\z/i
           true
         else
           false
@@ -189,7 +213,7 @@ module SwaggerClient
       when /\AArray<(?<inner_type>.+)>\z/
         inner_type = Regexp.last_match[:inner_type]
         value.map { |v| _deserialize(inner_type, v) }
-      when /\AHash<(?<k_type>.+), (?<v_type>.+)>\z/
+      when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
         {}.tap do |hash|

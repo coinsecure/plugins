@@ -54,11 +54,12 @@ public:
     void fromJsonObject(QJsonObject &json);
     SWGLoginId* fromJson(QString &jsonString);
 
-    QString* getLoginID();
-    void setLoginID(QString* loginID);
+    QString* getLoginId();
+    void setLoginId(QString* login_id);
+
 
 private:
-    QString* loginID;
+    QString* login_id;
 };
 
 } /* namespace Swagger */

@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -30,12 +30,11 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-
 /**
  * FiatBankData
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-21T18:38:01.890Z")
-public class FiatBankData   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-27T22:11:57.435Z")
+public class FiatBankData {
   @SerializedName("time")
   private Long time = null;
 
@@ -62,6 +61,9 @@ public class FiatBankData   {
 
   @SerializedName("accountType")
   private String accountType = null;
+
+  @SerializedName("accountID")
+  private String accountID = null;
 
   public FiatBankData time(Long time) {
     this.time = time;
@@ -225,6 +227,24 @@ public class FiatBankData   {
     this.accountType = accountType;
   }
 
+  public FiatBankData accountID(String accountID) {
+    this.accountID = accountID;
+    return this;
+  }
+
+   /**
+   * Get accountID
+   * @return accountID
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public String getAccountID() {
+    return accountID;
+  }
+
+  public void setAccountID(String accountID) {
+    this.accountID = accountID;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -243,13 +263,15 @@ public class FiatBankData   {
         Objects.equals(this.info, fiatBankData.info) &&
         Objects.equals(this.accountNumber, fiatBankData.accountNumber) &&
         Objects.equals(this.accountNick, fiatBankData.accountNick) &&
-        Objects.equals(this.accountType, fiatBankData.accountType);
+        Objects.equals(this.accountType, fiatBankData.accountType) &&
+        Objects.equals(this.accountID, fiatBankData.accountID);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(time, status, updateTime, updateMessage, bankID, info, accountNumber, accountNick, accountType);
+    return Objects.hash(time, status, updateTime, updateMessage, bankID, info, accountNumber, accountNick, accountType, accountID);
   }
+
 
   @Override
   public String toString() {
@@ -265,6 +287,7 @@ public class FiatBankData   {
     sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
     sb.append("    accountNick: ").append(toIndentedString(accountNick)).append("\n");
     sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+    sb.append("    accountID: ").append(toIndentedString(accountID)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -279,5 +302,6 @@ public class FiatBankData   {
     }
     return o.toString().replace("\n", "\n    ");
   }
+  
 }
 

@@ -111,6 +111,34 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @address.nil?
+        invalid_properties.push("invalid value for 'address', address cannot be nil.")
+      end
+
+      if @balance.nil?
+        invalid_properties.push("invalid value for 'balance', balance cannot be nil.")
+      end
+
+      if @total_received.nil?
+        invalid_properties.push("invalid value for 'total_received', total_received cannot be nil.")
+      end
+
+      if @unconfirmed_balance.nil?
+        invalid_properties.push("invalid value for 'unconfirmed_balance', unconfirmed_balance cannot be nil.")
+      end
+
+      if @unconfirmed_tx_apperances.nil?
+        invalid_properties.push("invalid value for 'unconfirmed_tx_apperances', unconfirmed_tx_apperances cannot be nil.")
+      end
+
+      if @tx_apperances.nil?
+        invalid_properties.push("invalid value for 'tx_apperances', tx_apperances cannot be nil.")
+      end
+
+      if @transactions.nil?
+        invalid_properties.push("invalid value for 'transactions', transactions cannot be nil.")
+      end
+
       return invalid_properties
     end
 
@@ -159,7 +187,7 @@ module SwaggerClient
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
       self.class.swagger_types.each_pair do |key, type|
-        if type =~ /^Array<(.*)>/i
+        if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
@@ -190,7 +218,7 @@ module SwaggerClient
       when :Float
         value.to_f
       when :BOOLEAN
-        if value.to_s =~ /^(true|t|yes|y|1)$/i
+        if value.to_s =~ /\A(true|t|yes|y|1)\z/i
           true
         else
           false
@@ -201,7 +229,7 @@ module SwaggerClient
       when /\AArray<(?<inner_type>.+)>\z/
         inner_type = Regexp.last_match[:inner_type]
         value.map { |v| _deserialize(inner_type, v) }
-      when /\AHash<(?<k_type>.+), (?<v_type>.+)>\z/
+      when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
         {}.tap do |hash|

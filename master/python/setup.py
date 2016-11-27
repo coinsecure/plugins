@@ -51,3 +51,4 @@ setup(
     To generate an API key, please visit &lt;a href&#x3D;&#39;https://coinsecure.in/api&#39; target&#x3D;&#39;_new&#39; class&#x3D;&#39;homeapi&#39;&gt;https://coinsecure.in/api&lt;/a&gt;.&lt;br&gt;Guidelines for use can be accessed at &lt;a href&#x3D;&#39;https://api.coinsecure.in/v1/guidelines&#39;&gt;https://api.coinsecure.in/v1/guidelines&lt;/a&gt;.&lt;br&gt;Programming Language Libraries for use can be accessed at &lt;a href&#x3D;&#39;https://api.coinsecure.in/v1/code-libraries&#39;&gt;https://api.coinsecure.in/v1/code-libraries&lt;/a&gt;.
     """
 )
+

@@ -54,6 +54,7 @@ class NumberOtp(object):
         self._number = number
         self._otp = otp
 
+
     @property
     def number(self):
         """

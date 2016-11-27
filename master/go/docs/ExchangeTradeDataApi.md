@@ -1,6 +1,6 @@
 # \ExchangeTradeDataApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**V1userexchangebidcancelled**](ExchangeTradeDataApi.md#V1userexchangebidcancelled) | **Get** /v1/user/exchange/bid/cancelled | Cancelled User Buy Orders
 [**V1userexchangebidcompleted**](ExchangeTradeDataApi.md#V1userexchangebidcompleted) | **Get** /v1/user/exchange/bid/completed | Completed User Buy Orders
 [**V1userexchangebidpending**](ExchangeTradeDataApi.md#V1userexchangebidpending) | **Get** /v1/user/exchange/bid/pending | Pending User Buy Orders
+[**V1userexchangetrades**](ExchangeTradeDataApi.md#V1userexchangetrades) | **Get** /v1/exchange/trades | Completed Exchange Trades
 
 
 # **V1exchangeasklow**
@@ -424,6 +425,39 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrderDataResponse**](OrderDataResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **V1userexchangetrades**
+> RateVolTimeTypeDataResponse V1userexchangetrades($from, $to, $max, $offset, $accept)
+
+Completed Exchange Trades
+
+Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **int64**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **int64**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **int32**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **int64**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
+
+### Return type
+
+[**RateVolTimeTypeDataResponse**](RateVolTimeTypeDataResponse.md)
 
 ### Authorization
 

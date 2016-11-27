@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **accountNumber** | **String** |  | 
 **accountNick** | **String** |  | 
 **accountType** | **String** |  | 
+**accountID** | **String** |  | 
 
 
 

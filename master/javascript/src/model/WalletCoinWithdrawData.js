@@ -55,7 +55,7 @@
    * @param timeDetails {module:model/TimeData} 
    * @param txID {String} 
    * @param message {String} 
-   * @param satoshis {Integer} 
+   * @param satoshis {Number} 
    * @param walletID {String} 
    * @param withdrawID {String} 
    * @param sentTo {String} 
@@ -93,7 +93,7 @@
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
       if (data.hasOwnProperty('satoshis')) {
-        obj['satoshis'] = ApiClient.convertToType(data['satoshis'], 'Integer');
+        obj['satoshis'] = ApiClient.convertToType(data['satoshis'], 'Number');
       }
       if (data.hasOwnProperty('walletID')) {
         obj['walletID'] = ApiClient.convertToType(data['walletID'], 'String');
@@ -121,7 +121,7 @@
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {Integer} satoshis
+   * @member {Number} satoshis
    */
   exports.prototype['satoshis'] = undefined;
   /**

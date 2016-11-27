@@ -33,4 +33,6 @@ type SendCoinWallet struct {
 	Msg string `json:"msg,omitempty"`
 
 	Pin string `json:"pin,omitempty"`
+
+	Fees interface{} `json:"fees,omitempty"`
 }

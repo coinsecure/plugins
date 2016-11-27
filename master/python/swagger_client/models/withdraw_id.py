@@ -51,6 +51,7 @@ class WithdrawID(object):
 
         self._withdraw_id = withdraw_id
 
+
     @property
     def withdraw_id(self):
         """
@@ -71,6 +72,8 @@ class WithdrawID(object):
         :param withdraw_id: The withdraw_id of this WithdrawID.
         :type: str
         """
+        if withdraw_id is None:
+            raise ValueError("Invalid value for `withdraw_id`, must not be `None`")
 
         self._withdraw_id = withdraw_id
 

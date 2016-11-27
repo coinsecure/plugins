@@ -43,4 +43,6 @@
 
 @property(nonatomic) NSString* pin;
 
+@property(nonatomic) NSObject* fees;
+
 @end

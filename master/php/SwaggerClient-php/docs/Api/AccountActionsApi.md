@@ -1,6 +1,6 @@
 # Swagger\Client\AccountActionsApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**v1logininitiate**](AccountActionsApi.md#v1logininitiate) | **POST** /v1/login/initiate | Initiate Login
 [**v1loginpasswordforgot**](AccountActionsApi.md#v1loginpasswordforgot) | **POST** /v1/login/password/forgot | Sends an email with a password reset token
 [**v1signup**](AccountActionsApi.md#v1signup) | **POST** /v1/signup | Creates a new Unverified Account.
+[**v1signupverifyToken**](AccountActionsApi.md#v1signupverifyToken) | **PUT** /v1/signup/verify/{token} | Verifies an Email token for Signup .
 [**v1userbankotpNumber**](AccountActionsApi.md#v1userbankotpNumber) | **GET** /v1/user/bank/otp/{number} | Send OTP for Bank Link
 [**v1userexchangekyc**](AccountActionsApi.md#v1userexchangekyc) | **PUT** /v1/user/exchange/kyc | Submits a New Bank Link and initial KYC Documents.
 [**v1usergcmCode**](AccountActionsApi.md#v1usergcmCode) | **DELETE** /v1/user/gcm/{code} | Delete GCM Code
@@ -210,6 +211,53 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **v1signupverifyToken**
+> \Swagger\Client\Model\StandardVerifySignupResultData v1signupverifyToken($token, $accept)
+
+Verifies an Email token for Signup .
+
+Creates a new Coinsecure Account.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\AccountActionsApi();
+$token = "token_example"; // string | 
+$accept = "accept_example"; // string | JSON, XML or CSV can be returned (Optional)
+
+try {
+    $result = $api_instance->v1signupverifyToken($token, $accept);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountActionsApi->v1signupverifyToken: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**|  |
+ **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\StandardVerifySignupResultData**](../Model/StandardVerifySignupResultData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **v1userbankotpNumber**
 > \Swagger\Client\Model\StandardInitiateLoginResultData v1userbankotpNumber($number, $authorization, $accept)
 
@@ -280,7 +328,7 @@ $ifsc = "ifsc_example"; // string | Please enter your IFSC Code.
 $acct_type = "acct_type_example"; // string | Please enter your Coinsecure account type. Allowable Values are Personal or Company.
 $ban_type = "ban_type_example"; // string | Please enter your Bank account type. Allowable Values are Savings or Current.
 $phone = "phone_example"; // string | Please enter your Valid Phone Number.
-$otp = "otp_example"; // string | Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.
+$otp = "otp_example"; // string | Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.
 $file = "/path/to/file.txt"; // \SplFileObject | Enter a valid image, pdf or zip file under 5 MB in size.
 $authorization = "authorization_example"; // string | Enter a valid Api Key.
 $message = "message_example"; // string | Please enter an optional message if needed.
@@ -307,7 +355,7 @@ Name | Type | Description  | Notes
  **acct_type** | **string**| Please enter your Coinsecure account type. Allowable Values are Personal or Company. |
  **ban_type** | **string**| Please enter your Bank account type. Allowable Values are Savings or Current. |
  **phone** | **string**| Please enter your Valid Phone Number. |
- **otp** | **string**| Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. |
+ **otp** | **string**| Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. |
  **file** | **\SplFileObject**| Enter a valid image, pdf or zip file under 5 MB in size. |
  **authorization** | **string**| Enter a valid Api Key. | [optional]
  **message** | **string**| Please enter an optional message if needed. | [optional]

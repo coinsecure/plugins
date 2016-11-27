@@ -17,7 +17,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class SecurityActionsApi {
-    String basePath = "https://api.coinsecure.in"
+    String basePath = "https://api.coinsecure.in/"
     String versionPath = "/api/v1"
 
     def v1mfaauthyinitiate ( MethodCountryMobile body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {

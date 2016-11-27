@@ -224,12 +224,12 @@ SWGWalletActionsApi::/v1/user/wallet/coin/withdraw/sendToExchangeCallback(HttpRe
     
 }
 void
-SWGWalletActionsApi::/v1/user/wallet/coin/withdraw/unverified/cancel/WithdrawID(QString* withdrawID, QString* authorization, QString* accept) {
+SWGWalletActionsApi::/v1/user/wallet/coin/withdraw/unverified/cancel/WithdrawID(QString* withdraw_id, QString* authorization, QString* accept) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID}");
 
-    QString withdrawIDPathParam("{"); withdrawIDPathParam.append("withdrawID").append("}");
-    fullPath.replace(withdrawIDPathParam, stringValue(withdrawID));
+    QString withdraw_idPathParam("{"); withdraw_idPathParam.append("withdrawID").append("}");
+    fullPath.replace(withdraw_idPathParam, stringValue(withdraw_id));
 
 
     HttpRequestWorker *worker = new HttpRequestWorker();

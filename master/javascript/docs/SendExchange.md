@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amt** | **Integer** |  | 
+**amt** | **Number** |  | 
 **walletID** | **String** |  | 
 **msg** | **String** |  | [optional] 
 

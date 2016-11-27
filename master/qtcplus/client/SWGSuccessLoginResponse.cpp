@@ -51,26 +51,30 @@ SWGSuccessLoginResponse::~SWGSuccessLoginResponse() {
 void
 SWGSuccessLoginResponse::init() {
     success = false;
-email = new QString("");
-message = new QString("");
-keyType = new QString("");
-keyNeeded = new QString("");
+    email = new QString("");
+    message = new QString("");
+    key_type = new QString("");
+    key_needed = new QString("");
 }
 
 void
 SWGSuccessLoginResponse::cleanup() {
     
-if(email != NULL) {
+
+    if(email != nullptr) {
         delete email;
     }
-if(message != NULL) {
+
+    if(message != nullptr) {
         delete message;
     }
-if(keyType != NULL) {
-        delete keyType;
+
+    if(key_type != nullptr) {
+        delete key_type;
     }
-if(keyNeeded != NULL) {
-        delete keyNeeded;
+
+    if(key_needed != nullptr) {
+        delete key_needed;
     }
 }
 
@@ -85,11 +89,11 @@ SWGSuccessLoginResponse::fromJson(QString &json) {
 
 void
 SWGSuccessLoginResponse::fromJsonObject(QJsonObject &pJson) {
-    setValue(&success, pJson["success"], "bool", "");
-setValue(&email, pJson["email"], "QString", "QString");
-setValue(&message, pJson["message"], "QString", "QString");
-setValue(&keyType, pJson["keyType"], "QString", "QString");
-setValue(&keyNeeded, pJson["keyNeeded"], "QString", "QString");
+    ::Swagger::setValue(&success, pJson["success"], "bool", "");
+    ::Swagger::setValue(&email, pJson["email"], "QString", "QString");
+    ::Swagger::setValue(&message, pJson["message"], "QString", "QString");
+    ::Swagger::setValue(&key_type, pJson["key_type"], "QString", "QString");
+    ::Swagger::setValue(&key_needed, pJson["key_needed"], "QString", "QString");
 }
 
 QString
@@ -105,27 +109,16 @@ SWGSuccessLoginResponse::asJson ()
 QJsonObject*
 SWGSuccessLoginResponse::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("success", QJsonValue(success));
 
-    
     toJsonValue(QString("email"), email, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("message"), message, obj, QString("QString"));
-    
-        
 
-    
-    toJsonValue(QString("keyType"), keyType, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("key_type"), key_type, obj, QString("QString"));
 
-    
-    toJsonValue(QString("keyNeeded"), keyNeeded, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("key_needed"), key_needed, obj, QString("QString"));
 
     return obj;
 }
@@ -159,20 +152,20 @@ SWGSuccessLoginResponse::setMessage(QString* message) {
 
 QString*
 SWGSuccessLoginResponse::getKeyType() {
-    return keyType;
+    return key_type;
 }
 void
-SWGSuccessLoginResponse::setKeyType(QString* keyType) {
-    this->keyType = keyType;
+SWGSuccessLoginResponse::setKeyType(QString* key_type) {
+    this->key_type = key_type;
 }
 
 QString*
 SWGSuccessLoginResponse::getKeyNeeded() {
-    return keyNeeded;
+    return key_needed;
 }
 void
-SWGSuccessLoginResponse::setKeyNeeded(QString* keyNeeded) {
-    this->keyNeeded = keyNeeded;
+SWGSuccessLoginResponse::setKeyNeeded(QString* key_needed) {
+    this->key_needed = key_needed;
 }
 
 

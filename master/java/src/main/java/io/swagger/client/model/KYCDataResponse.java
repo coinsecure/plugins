@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -34,12 +34,11 @@ import java.util.ArrayList;
 import java.util.List;
 import org.joda.time.DateTime;
 
-
 /**
  * KYCDataResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-21T18:38:01.890Z")
-public class KYCDataResponse   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-27T22:11:57.435Z")
+public class KYCDataResponse {
   @SerializedName("success")
   private Boolean success = false;
 
@@ -159,18 +158,19 @@ public class KYCDataResponse   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    KYCDataResponse kYCDataResponse = (KYCDataResponse) o;
-    return Objects.equals(this.success, kYCDataResponse.success) &&
-        Objects.equals(this.message, kYCDataResponse.message) &&
-        Objects.equals(this.method, kYCDataResponse.method) &&
-        Objects.equals(this.title, kYCDataResponse.title) &&
-        Objects.equals(this.time, kYCDataResponse.time);
+    KYCDataResponse kyCDataResponse = (KYCDataResponse) o;
+    return Objects.equals(this.success, kyCDataResponse.success) &&
+        Objects.equals(this.message, kyCDataResponse.message) &&
+        Objects.equals(this.method, kyCDataResponse.method) &&
+        Objects.equals(this.title, kyCDataResponse.title) &&
+        Objects.equals(this.time, kyCDataResponse.time);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(success, message, method, title, time);
   }
+
 
   @Override
   public String toString() {
@@ -196,5 +196,6 @@ public class KYCDataResponse   {
     }
     return o.toString().replace("\n", "\n    ");
   }
+  
 }
 

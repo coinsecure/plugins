@@ -6,6 +6,8 @@ Pod::Spec.new do |s|
   s.source = { :git => 'git@github.com:swagger-api/swagger-mustache.git', :tag => 'v1.0.0' }
   s.authors = 'Swagger Codegen'
   s.license = 'Apache License, Version 2.0'
+  s.homepage = 'https://github.com/swagger-api/swagger-codegen'
+  s.summary = 'SwaggerClient Swift SDK'
   s.source_files = 'SwaggerClient/Classes/Swaggers/**/*.swift'
-  s.dependency 'Alamofire', '~> 3.1.5'
+  s.dependency 'Alamofire', '~> 3.4.1'
 end

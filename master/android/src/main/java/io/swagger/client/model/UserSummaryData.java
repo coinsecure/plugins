@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class UserSummaryData  {
+public class UserSummaryData {
   
   @SerializedName("kycStatus")
   private String kycStatus = null;
@@ -115,23 +113,23 @@ public class UserSummaryData  {
       return false;
     }
     UserSummaryData userSummaryData = (UserSummaryData) o;
-    return (kycStatus == null ? userSummaryData.kycStatus == null : kycStatus.equals(userSummaryData.kycStatus)) &&
-        (bankLinkStatus == null ? userSummaryData.bankLinkStatus == null : bankLinkStatus.equals(userSummaryData.bankLinkStatus)) &&
-        (tradeReady == null ? userSummaryData.tradeReady == null : tradeReady.equals(userSummaryData.tradeReady)) &&
-        (isDisabledAccount == null ? userSummaryData.isDisabledAccount == null : isDisabledAccount.equals(userSummaryData.isDisabledAccount)) &&
-        (faSecure == null ? userSummaryData.faSecure == null : faSecure.equals(userSummaryData.faSecure)) &&
-        (hasPhone == null ? userSummaryData.hasPhone == null : hasPhone.equals(userSummaryData.hasPhone));
+    return (this.kycStatus == null ? userSummaryData.kycStatus == null : this.kycStatus.equals(userSummaryData.kycStatus)) &&
+        (this.bankLinkStatus == null ? userSummaryData.bankLinkStatus == null : this.bankLinkStatus.equals(userSummaryData.bankLinkStatus)) &&
+        (this.tradeReady == null ? userSummaryData.tradeReady == null : this.tradeReady.equals(userSummaryData.tradeReady)) &&
+        (this.isDisabledAccount == null ? userSummaryData.isDisabledAccount == null : this.isDisabledAccount.equals(userSummaryData.isDisabledAccount)) &&
+        (this.faSecure == null ? userSummaryData.faSecure == null : this.faSecure.equals(userSummaryData.faSecure)) &&
+        (this.hasPhone == null ? userSummaryData.hasPhone == null : this.hasPhone.equals(userSummaryData.hasPhone));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (kycStatus == null ? 0: kycStatus.hashCode());
-    result = 31 * result + (bankLinkStatus == null ? 0: bankLinkStatus.hashCode());
-    result = 31 * result + (tradeReady == null ? 0: tradeReady.hashCode());
-    result = 31 * result + (isDisabledAccount == null ? 0: isDisabledAccount.hashCode());
-    result = 31 * result + (faSecure == null ? 0: faSecure.hashCode());
-    result = 31 * result + (hasPhone == null ? 0: hasPhone.hashCode());
+    result = 31 * result + (this.kycStatus == null ? 0: this.kycStatus.hashCode());
+    result = 31 * result + (this.bankLinkStatus == null ? 0: this.bankLinkStatus.hashCode());
+    result = 31 * result + (this.tradeReady == null ? 0: this.tradeReady.hashCode());
+    result = 31 * result + (this.isDisabledAccount == null ? 0: this.isDisabledAccount.hashCode());
+    result = 31 * result + (this.faSecure == null ? 0: this.faSecure.hashCode());
+    result = 31 * result + (this.hasPhone == null ? 0: this.hasPhone.hashCode());
     return result;
   }
 

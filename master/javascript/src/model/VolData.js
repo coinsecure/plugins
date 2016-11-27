@@ -52,7 +52,7 @@
    * Constructs a new <code>VolData</code>.
    * @alias module:model/VolData
    * @class
-   * @param vol {Integer} 
+   * @param vol {Number} 
    */
   var exports = function(vol) {
     var _this = this;
@@ -72,14 +72,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('vol')) {
-        obj['vol'] = ApiClient.convertToType(data['vol'], 'Integer');
+        obj['vol'] = ApiClient.convertToType(data['vol'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} vol
+   * @member {Number} vol
    */
   exports.prototype['vol'] = undefined;
 

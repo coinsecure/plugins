@@ -56,15 +56,18 @@ public:
 
     qint64 getAmt();
     void setAmt(qint64 amt);
-QString* getWalletID();
-    void setWalletID(QString* walletID);
-QString* getMsg();
+
+    QString* getWalletId();
+    void setWalletId(QString* wallet_id);
+
+    QString* getMsg();
     void setMsg(QString* msg);
+
 
 private:
     qint64 amt;
-QString* walletID;
-QString* msg;
+    QString* wallet_id;
+    QString* msg;
 };
 
 } /* namespace Swagger */

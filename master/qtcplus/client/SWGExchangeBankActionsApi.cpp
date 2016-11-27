@@ -132,12 +132,12 @@ SWGExchangeBankActionsApi::/v1/user/exchange/bank/coin/withdraw/newVerifycodeCal
     
 }
 void
-SWGExchangeBankActionsApi::/v1/user/exchange/bank/coin/withdraw/unverified/cancel/WithdrawID(QString* withdrawID, QString* authorization, QString* accept) {
+SWGExchangeBankActionsApi::/v1/user/exchange/bank/coin/withdraw/unverified/cancel/WithdrawID(QString* withdraw_id, QString* authorization, QString* accept) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID}");
 
-    QString withdrawIDPathParam("{"); withdrawIDPathParam.append("withdrawID").append("}");
-    fullPath.replace(withdrawIDPathParam, stringValue(withdrawID));
+    QString withdraw_idPathParam("{"); withdraw_idPathParam.append("withdrawID").append("}");
+    fullPath.replace(withdraw_idPathParam, stringValue(withdraw_id));
 
 
     HttpRequestWorker *worker = new HttpRequestWorker();
@@ -270,12 +270,12 @@ SWGExchangeBankActionsApi::/v1/user/exchange/bank/fiat/account/newCallback(HttpR
     
 }
 void
-SWGExchangeBankActionsApi::/v1/user/exchange/bank/fiat/deposit/cancel/DepositID(QString* depositID, QString* authorization, QString* accept) {
+SWGExchangeBankActionsApi::/v1/user/exchange/bank/fiat/deposit/cancel/DepositID(QString* deposit_id, QString* authorization, QString* accept) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/user/exchange/bank/fiat/deposit/cancel/{depositID}");
 
-    QString depositIDPathParam("{"); depositIDPathParam.append("depositID").append("}");
-    fullPath.replace(depositIDPathParam, stringValue(depositID));
+    QString deposit_idPathParam("{"); deposit_idPathParam.append("depositID").append("}");
+    fullPath.replace(deposit_idPathParam, stringValue(deposit_id));
 
 
     HttpRequestWorker *worker = new HttpRequestWorker();
@@ -454,12 +454,12 @@ SWGExchangeBankActionsApi::/v1/user/exchange/bank/fiat/withdraw/newVerifycodeCal
     
 }
 void
-SWGExchangeBankActionsApi::/v1/user/exchange/bank/fiat/withdraw/unverified/cancel/WithdrawID(QString* withdrawID, QString* authorization, QString* accept) {
+SWGExchangeBankActionsApi::/v1/user/exchange/bank/fiat/withdraw/unverified/cancel/WithdrawID(QString* withdraw_id, QString* authorization, QString* accept) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID}");
 
-    QString withdrawIDPathParam("{"); withdrawIDPathParam.append("withdrawID").append("}");
-    fullPath.replace(withdrawIDPathParam, stringValue(withdrawID));
+    QString withdraw_idPathParam("{"); withdraw_idPathParam.append("withdrawID").append("}");
+    fullPath.replace(withdraw_idPathParam, stringValue(withdraw_id));
 
 
     HttpRequestWorker *worker = new HttpRequestWorker();

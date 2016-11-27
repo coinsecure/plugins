@@ -50,16 +50,18 @@ SWGNetkiNameAddress::~SWGNetkiNameAddress() {
 
 void
 SWGNetkiNameAddress::init() {
-    netkiName = new QString("");
-address = new QString("");
+    netki_name = new QString("");
+    address = new QString("");
 }
 
 void
 SWGNetkiNameAddress::cleanup() {
-    if(netkiName != NULL) {
-        delete netkiName;
+    
+    if(netki_name != nullptr) {
+        delete netki_name;
     }
-if(address != NULL) {
+
+    if(address != nullptr) {
         delete address;
     }
 }
@@ -75,8 +77,8 @@ SWGNetkiNameAddress::fromJson(QString &json) {
 
 void
 SWGNetkiNameAddress::fromJsonObject(QJsonObject &pJson) {
-    setValue(&netkiName, pJson["netkiName"], "QString", "QString");
-setValue(&address, pJson["address"], "QString", "QString");
+    ::Swagger::setValue(&netki_name, pJson["netki_name"], "QString", "QString");
+    ::Swagger::setValue(&address, pJson["address"], "QString", "QString");
 }
 
 QString
@@ -93,26 +95,20 @@ QJsonObject*
 SWGNetkiNameAddress::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
-    toJsonValue(QString("netkiName"), netkiName, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("netki_name"), netki_name, obj, QString("QString"));
 
-    
     toJsonValue(QString("address"), address, obj, QString("QString"));
-    
-        
 
     return obj;
 }
 
 QString*
 SWGNetkiNameAddress::getNetkiName() {
-    return netkiName;
+    return netki_name;
 }
 void
-SWGNetkiNameAddress::setNetkiName(QString* netkiName) {
-    this->netkiName = netkiName;
+SWGNetkiNameAddress::setNetkiName(QString* netki_name) {
+    this->netki_name = netki_name;
 }
 
 QString*

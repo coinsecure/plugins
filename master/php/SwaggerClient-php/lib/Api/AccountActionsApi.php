@@ -6,7 +6,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,9 +40,9 @@
 
 namespace Swagger\Client\Api;
 
-use \Swagger\Client\Configuration;
 use \Swagger\Client\ApiClient;
 use \Swagger\Client\ApiException;
+use \Swagger\Client\Configuration;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -51,12 +51,11 @@ use \Swagger\Client\ObjectSerializer;
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class AccountActionsApi
 {
-
     /**
      * API Client
      *
@@ -71,9 +70,9 @@ class AccountActionsApi
      */
     public function __construct(\Swagger\Client\ApiClient $apiClient = null)
     {
-        if ($apiClient == null) {
+        if ($apiClient === null) {
             $apiClient = new ApiClient();
-            $apiClient->getConfig()->setHost('https://api.coinsecure.in');
+            $apiClient->getConfig()->setHost('https://api.coinsecure.in/');
         }
 
         $this->apiClient = $apiClient;
@@ -109,8 +108,8 @@ class AccountActionsApi
      *
      * @param \Swagger\Client\Model\LoginFormNew $body Please send the form with valid inputs. (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\StandardLoginResultData
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\StandardLoginResultData
      */
     public function v1login($body, $accept = null)
     {
@@ -125,8 +124,8 @@ class AccountActionsApi
      *
      * @param \Swagger\Client\Model\LoginFormNew $body Please send the form with valid inputs. (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\StandardLoginResultData, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\StandardLoginResultData, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1loginWithHttpInfo($body, $accept = null)
     {
@@ -137,14 +136,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/login";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -177,7 +176,7 @@ class AccountActionsApi
                 '/v1/login'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\StandardLoginResultData', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\StandardLoginResultData', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -201,8 +200,8 @@ class AccountActionsApi
      *
      * @param \Swagger\Client\Model\LoginId $body Enter a valid Login ID. This method will send an email with a token to be used for login. (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\StandardInitiateLoginResultData
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\StandardInitiateLoginResultData
      */
     public function v1logininitiate($body, $accept = null)
     {
@@ -217,8 +216,8 @@ class AccountActionsApi
      *
      * @param \Swagger\Client\Model\LoginId $body Enter a valid Login ID. This method will send an email with a token to be used for login. (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\StandardInitiateLoginResultData, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\StandardInitiateLoginResultData, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1logininitiateWithHttpInfo($body, $accept = null)
     {
@@ -229,14 +228,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/login/initiate";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -269,7 +268,7 @@ class AccountActionsApi
                 '/v1/login/initiate'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\StandardInitiateLoginResultData', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\StandardInitiateLoginResultData', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -297,8 +296,8 @@ class AccountActionsApi
      *
      * @param \Swagger\Client\Model\Email $body Enter a valid and registered Email ID. (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1loginpasswordforgot($body, $accept = null)
     {
@@ -313,8 +312,8 @@ class AccountActionsApi
      *
      * @param \Swagger\Client\Model\Email $body Enter a valid and registered Email ID. (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1loginpasswordforgotWithHttpInfo($body, $accept = null)
     {
@@ -325,14 +324,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/login/password/forgot";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -365,7 +364,7 @@ class AccountActionsApi
                 '/v1/login/password/forgot'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -389,8 +388,8 @@ class AccountActionsApi
      *
      * @param \Swagger\Client\Model\SignupForm $body Please send the form with valid inputs. (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1signup($body, $accept = null)
     {
@@ -405,8 +404,8 @@ class AccountActionsApi
      *
      * @param \Swagger\Client\Model\SignupForm $body Please send the form with valid inputs. (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1signupWithHttpInfo($body, $accept = null)
     {
@@ -417,14 +416,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/signup";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -457,11 +456,106 @@ class AccountActionsApi
                 '/v1/signup'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\SuccessResult', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\FailResult', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation v1signupverifyToken
+     *
+     * Verifies an Email token for Signup .
+     *
+     * @param string $token  (required)
+     * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\StandardVerifySignupResultData
+     */
+    public function v1signupverifyToken($token, $accept = null)
+    {
+        list($response) = $this->v1signupverifyTokenWithHttpInfo($token, $accept);
+        return $response;
+    }
+
+    /**
+     * Operation v1signupverifyTokenWithHttpInfo
+     *
+     * Verifies an Email token for Signup .
+     *
+     * @param string $token  (required)
+     * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\StandardVerifySignupResultData, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function v1signupverifyTokenWithHttpInfo($token, $accept = null)
+    {
+        // verify the required parameter 'token' is set
+        if ($token === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $token when calling v1signupverifyToken');
+        }
+        // parse inputs
+        $resourcePath = "/v1/signup/verify/{token}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // header params
+        if ($accept !== null) {
+            $headerParams['accept'] = $this->apiClient->getSerializer()->toHeaderValue($accept);
+        }
+        // path params
+        if ($token !== null) {
+            $resourcePath = str_replace(
+                "{" . "token" . "}",
+                $this->apiClient->getSerializer()->toPathValue($token),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\StandardVerifySignupResultData',
+                '/v1/signup/verify/{token}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\StandardVerifySignupResultData', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\StandardVerifySignupResultData', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -482,8 +576,8 @@ class AccountActionsApi
      * @param string $number  (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\StandardInitiateLoginResultData
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\StandardInitiateLoginResultData
      */
     public function v1userbankotpNumber($number, $authorization = null, $accept = null)
     {
@@ -499,8 +593,8 @@ class AccountActionsApi
      * @param string $number  (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\StandardInitiateLoginResultData, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\StandardInitiateLoginResultData, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userbankotpNumberWithHttpInfo($number, $authorization = null, $accept = null)
     {
@@ -511,14 +605,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/user/bank/otp/{number}";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -558,7 +652,7 @@ class AccountActionsApi
                 '/v1/user/bank/otp/{number}'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\StandardInitiateLoginResultData', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\StandardInitiateLoginResultData', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -600,13 +694,13 @@ class AccountActionsApi
      * @param string $acct_type Please enter your Coinsecure account type. Allowable Values are Personal or Company. (required)
      * @param string $ban_type Please enter your Bank account type. Allowable Values are Savings or Current. (required)
      * @param string $phone Please enter your Valid Phone Number. (required)
-     * @param string $otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. (required)
+     * @param string $otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. (required)
      * @param \SplFileObject $file Enter a valid image, pdf or zip file under 5 MB in size. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $message Please enter an optional message if needed. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userexchangekyc($pan_number, $acct_nick, $name, $ban, $ifsc, $acct_type, $ban_type, $phone, $otp, $file, $authorization = null, $message = null, $accept = null)
     {
@@ -627,13 +721,13 @@ class AccountActionsApi
      * @param string $acct_type Please enter your Coinsecure account type. Allowable Values are Personal or Company. (required)
      * @param string $ban_type Please enter your Bank account type. Allowable Values are Savings or Current. (required)
      * @param string $phone Please enter your Valid Phone Number. (required)
-     * @param string $otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. (required)
+     * @param string $otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. (required)
      * @param \SplFileObject $file Enter a valid image, pdf or zip file under 5 MB in size. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $message Please enter an optional message if needed. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangekycWithHttpInfo($pan_number, $acct_nick, $name, $ban, $ifsc, $acct_type, $ban_type, $phone, $otp, $file, $authorization = null, $message = null, $accept = null)
     {
@@ -680,14 +774,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/kyc";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('multipart/form-data'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['multipart/form-data']);
 
         // header params
         if ($authorization !== null) {
@@ -769,7 +863,7 @@ class AccountActionsApi
                 '/v1/user/exchange/kyc'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -806,8 +900,8 @@ class AccountActionsApi
      * @param string $code  (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1usergcmCode($code, $authorization = null, $accept = null)
     {
@@ -823,8 +917,8 @@ class AccountActionsApi
      * @param string $code  (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1usergcmCodeWithHttpInfo($code, $authorization = null, $accept = null)
     {
@@ -835,14 +929,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/user/gcm/{code}";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -882,7 +976,7 @@ class AccountActionsApi
                 '/v1/user/gcm/{code}'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -919,8 +1013,8 @@ class AccountActionsApi
      * @param string $number  (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userkycotpNumber($number, $authorization = null, $accept = null)
     {
@@ -936,8 +1030,8 @@ class AccountActionsApi
      * @param string $number  (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userkycotpNumberWithHttpInfo($number, $authorization = null, $accept = null)
     {
@@ -948,14 +1042,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/user/kyc/otp/{number}";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -995,7 +1089,7 @@ class AccountActionsApi
                 '/v1/user/kyc/otp/{number}'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1031,8 +1125,8 @@ class AccountActionsApi
      *
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userlogout($authorization = null, $accept = null)
     {
@@ -1047,22 +1141,22 @@ class AccountActionsApi
      *
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userlogoutWithHttpInfo($authorization = null, $accept = null)
     {
         // parse inputs
         $resourcePath = "/v1/user/logout";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -1094,7 +1188,7 @@ class AccountActionsApi
                 '/v1/user/logout'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1131,8 +1225,8 @@ class AccountActionsApi
      * @param \Swagger\Client\Model\NetkiNameAddress $body Enter a valid Netki name and Bitcoin address from Wallet or Exchange. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1usernetkicreate($body, $authorization = null, $accept = null)
     {
@@ -1148,8 +1242,8 @@ class AccountActionsApi
      * @param \Swagger\Client\Model\NetkiNameAddress $body Enter a valid Netki name and Bitcoin address from Wallet or Exchange. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1usernetkicreateWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -1160,14 +1254,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/user/netki/create";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -1204,7 +1298,7 @@ class AccountActionsApi
                 '/v1/user/netki/create'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1241,8 +1335,8 @@ class AccountActionsApi
      * @param \Swagger\Client\Model\Address $body Enter a valid Bitcoin address from Wallet or Exchange to update the wallet name. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1usernetkiupdate($body, $authorization = null, $accept = null)
     {
@@ -1258,8 +1352,8 @@ class AccountActionsApi
      * @param \Swagger\Client\Model\Address $body Enter a valid Bitcoin address from Wallet or Exchange to update the wallet name. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1usernetkiupdateWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -1270,14 +1364,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/user/netki/update";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -1314,7 +1408,7 @@ class AccountActionsApi
                 '/v1/user/netki/update'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1351,8 +1445,8 @@ class AccountActionsApi
      * @param string $netki_name  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userprofileimagedeleteNetkiName($netki_name, $authorization = null, $accept = null)
     {
@@ -1368,8 +1462,8 @@ class AccountActionsApi
      * @param string $netki_name  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userprofileimagedeleteNetkiNameWithHttpInfo($netki_name, $authorization = null, $accept = null)
     {
@@ -1380,14 +1474,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/user/profile/image/delete/{netkiName}";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -1427,7 +1521,7 @@ class AccountActionsApi
                 '/v1/user/profile/image/delete/{netkiName}'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1466,8 +1560,8 @@ class AccountActionsApi
      * @param \SplFileObject $file Enter a valid image, pdf or zip file under 5 MB in size. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userprofileimageupdate($netki_name, $is_public, $file, $authorization = null, $accept = null)
     {
@@ -1485,8 +1579,8 @@ class AccountActionsApi
      * @param \SplFileObject $file Enter a valid image, pdf or zip file under 5 MB in size. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userprofileimageupdateWithHttpInfo($netki_name, $is_public, $file, $authorization = null, $accept = null)
     {
@@ -1505,14 +1599,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/user/profile/image/update";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('multipart/form-data'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['multipart/form-data']);
 
         // header params
         if ($authorization !== null) {
@@ -1562,7 +1656,7 @@ class AccountActionsApi
                 '/v1/user/profile/image/update'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1599,8 +1693,8 @@ class AccountActionsApi
      * @param \Swagger\Client\Model\NumberOtp $body You can get an otp to update your profile phone number from /v1/user/profile/phone/otp/:number (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userprofilephone($body, $authorization = null, $accept = null)
     {
@@ -1616,8 +1710,8 @@ class AccountActionsApi
      * @param \Swagger\Client\Model\NumberOtp $body You can get an otp to update your profile phone number from /v1/user/profile/phone/otp/:number (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userprofilephoneWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -1628,14 +1722,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/user/profile/phone/new";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -1672,7 +1766,7 @@ class AccountActionsApi
                 '/v1/user/profile/phone/new'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1708,8 +1802,8 @@ class AccountActionsApi
      *
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userprofilephoneNumber($authorization = null, $accept = null)
     {
@@ -1724,22 +1818,22 @@ class AccountActionsApi
      *
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userprofilephoneNumberWithHttpInfo($authorization = null, $accept = null)
     {
         // parse inputs
         $resourcePath = "/v1/user/profile/phone/delete";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -1771,7 +1865,7 @@ class AccountActionsApi
                 '/v1/user/profile/phone/delete'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1808,8 +1902,8 @@ class AccountActionsApi
      * @param string $number  (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userprofilephoneotpNumber($number, $authorization = null, $accept = null)
     {
@@ -1825,8 +1919,8 @@ class AccountActionsApi
      * @param string $number  (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userprofilephoneotpNumberWithHttpInfo($number, $authorization = null, $accept = null)
     {
@@ -1837,14 +1931,14 @@ class AccountActionsApi
         // parse inputs
         $resourcePath = "/v1/user/profile/phone/otp/{number}";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -1884,7 +1978,7 @@ class AccountActionsApi
                 '/v1/user/profile/phone/otp/{number}'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1912,5 +2006,4 @@ class AccountActionsApi
             throw $e;
         }
     }
-
 }

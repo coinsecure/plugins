@@ -25,8 +25,7 @@
 package io.swagger.client.model
 
 
-
-
 case class SuccessCancelData (
   vol: Long,
-rate: Long)
+  rate: Long
+)

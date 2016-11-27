@@ -1,6 +1,6 @@
 # SwaggerClient::AccountActionsApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**v1logininitiate**](AccountActionsApi.md#v1logininitiate) | **POST** /v1/login/initiate | Initiate Login
 [**v1loginpasswordforgot**](AccountActionsApi.md#v1loginpasswordforgot) | **POST** /v1/login/password/forgot | Sends an email with a password reset token
 [**v1signup**](AccountActionsApi.md#v1signup) | **POST** /v1/signup | Creates a new Unverified Account.
+[**v1signupverify_token**](AccountActionsApi.md#v1signupverify_token) | **PUT** /v1/signup/verify/{token} | Verifies an Email token for Signup .
 [**v1userbankotp_number**](AccountActionsApi.md#v1userbankotp_number) | **GET** /v1/user/bank/otp/{number} | Send OTP for Bank Link
 [**v1userexchangekyc**](AccountActionsApi.md#v1userexchangekyc) | **PUT** /v1/user/exchange/kyc | Submits a New Bank Link and initial KYC Documents.
 [**v1usergcm_code**](AccountActionsApi.md#v1usergcm_code) | **DELETE** /v1/user/gcm/{code} | Delete GCM Code
@@ -226,6 +227,57 @@ No authorization required
 
 
 
+# **v1signupverify_token**
+> StandardVerifySignupResultData v1signupverify_token(token, opts)
+
+Verifies an Email token for Signup .
+
+Creates a new Coinsecure Account.
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+
+api_instance = SwaggerClient::AccountActionsApi.new
+
+token = "token_example" # String | 
+
+opts = { 
+  accept: "accept_example" # String | JSON, XML or CSV can be returned (Optional)
+}
+
+begin
+  #Verifies an Email token for Signup .
+  result = api_instance.v1signupverify_token(token, opts)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling AccountActionsApi->v1signupverify_token: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **String**|  | 
+ **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
+
+### Return type
+
+[**StandardVerifySignupResultData**](StandardVerifySignupResultData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+
+
 # **v1userbankotp_number**
 > StandardInitiateLoginResultData v1userbankotp_number(number, opts)
 
@@ -309,7 +361,7 @@ ban_type = "ban_type_example" # String | Please enter your Bank account type. Al
 
 phone = "phone_example" # String | Please enter your Valid Phone Number.
 
-otp = "otp_example" # String | Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.
+otp = "otp_example" # String | Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.
 
 file = File.new("/path/to/file.txt") # File | Enter a valid image, pdf or zip file under 5 MB in size.
 
@@ -340,7 +392,7 @@ Name | Type | Description  | Notes
  **acct_type** | **String**| Please enter your Coinsecure account type. Allowable Values are Personal or Company. | 
  **ban_type** | **String**| Please enter your Bank account type. Allowable Values are Savings or Current. | 
  **phone** | **String**| Please enter your Valid Phone Number. | 
- **otp** | **String**| Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. | 
+ **otp** | **String**| Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. | 
  **file** | **File**| Enter a valid image, pdf or zip file under 5 MB in size. | 
  **authorization** | **String**| Enter a valid Api Key. | [optional] 
  **message** | **String**| Please enter an optional message if needed. | [optional] 

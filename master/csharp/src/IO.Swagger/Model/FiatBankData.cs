@@ -24,12 +24,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 
 namespace IO.Swagger.Model
 {
@@ -37,7 +39,7 @@ namespace IO.Swagger.Model
     /// FiatBankData
     /// </summary>
     [DataContract]
-    public partial class FiatBankData :  IEquatable<FiatBankData>
+    public partial class FiatBankData :  IEquatable<FiatBankData>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FiatBankData" /> class.
@@ -56,7 +58,8 @@ namespace IO.Swagger.Model
         /// <param name="AccountNumber">AccountNumber (required).</param>
         /// <param name="AccountNick">AccountNick (required).</param>
         /// <param name="AccountType">AccountType (required).</param>
-        public FiatBankData(long? Time = null, string Status = null, long? UpdateTime = null, string UpdateMessage = null, string BankID = null, string Info = null, string AccountNumber = null, string AccountNick = null, string AccountType = null)
+        /// <param name="AccountID">AccountID (required).</param>
+        public FiatBankData(long? Time = null, string Status = null, long? UpdateTime = null, string UpdateMessage = null, string BankID = null, string Info = null, string AccountNumber = null, string AccountNick = null, string AccountType = null, string AccountID = null)
         {
             // to ensure "Time" is required (not null)
             if (Time == null)
@@ -139,6 +142,15 @@ namespace IO.Swagger.Model
             {
                 this.AccountType = AccountType;
             }
+            // to ensure "AccountID" is required (not null)
+            if (AccountID == null)
+            {
+                throw new InvalidDataException("AccountID is a required property for FiatBankData and cannot be null");
+            }
+            else
+            {
+                this.AccountID = AccountID;
+            }
         }
         
         /// <summary>
@@ -187,6 +199,11 @@ namespace IO.Swagger.Model
         [DataMember(Name="accountType", EmitDefaultValue=false)]
         public string AccountType { get; set; }
         /// <summary>
+        /// Gets or Sets AccountID
+        /// </summary>
+        [DataMember(Name="accountID", EmitDefaultValue=false)]
+        public string AccountID { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -203,6 +220,7 @@ namespace IO.Swagger.Model
             sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
             sb.Append("  AccountNick: ").Append(AccountNick).Append("\n");
             sb.Append("  AccountType: ").Append(AccountType).Append("\n");
+            sb.Append("  AccountID: ").Append(AccountID).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -283,6 +301,11 @@ namespace IO.Swagger.Model
                     this.AccountType == other.AccountType ||
                     this.AccountType != null &&
                     this.AccountType.Equals(other.AccountType)
+                ) && 
+                (
+                    this.AccountID == other.AccountID ||
+                    this.AccountID != null &&
+                    this.AccountID.Equals(other.AccountID)
                 );
         }
 
@@ -315,8 +338,15 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.AccountNick.GetHashCode();
                 if (this.AccountType != null)
                     hash = hash * 59 + this.AccountType.GetHashCode();
+                if (this.AccountID != null)
+                    hash = hash * 59 + this.AccountID.GetHashCode();
                 return hash;
             }
+        }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        { 
+            yield break;
         }
     }
 

@@ -1,6 +1,6 @@
 # Swagger\Client\ExchangeTradeDataApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**v1userexchangebidcancelled**](ExchangeTradeDataApi.md#v1userexchangebidcancelled) | **GET** /v1/user/exchange/bid/cancelled | Cancelled User Buy Orders
 [**v1userexchangebidcompleted**](ExchangeTradeDataApi.md#v1userexchangebidcompleted) | **GET** /v1/user/exchange/bid/completed | Completed User Buy Orders
 [**v1userexchangebidpending**](ExchangeTradeDataApi.md#v1userexchangebidpending) | **GET** /v1/user/exchange/bid/pending | Pending User Buy Orders
+[**v1userexchangetrades**](ExchangeTradeDataApi.md#v1userexchangetrades) | **GET** /v1/exchange/trades | Completed Exchange Trades
 
 
 # **v1exchangeasklow**
@@ -658,6 +659,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\OrderDataResponse**](../Model/OrderDataResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **v1userexchangetrades**
+> \Swagger\Client\Model\RateVolTimeTypeDataResponse v1userexchangetrades($from, $to, $max, $offset, $accept)
+
+Completed Exchange Trades
+
+Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\ExchangeTradeDataApi();
+$from = 0; // int | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
+$to = 9223372036854776000; // int | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
+$max = 10; // int | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
+$offset = 0; // int | Offset defaults to 0 if input is invalid. (Optional)
+$accept = "accept_example"; // string | JSON, XML or CSV can be returned (Optional)
+
+try {
+    $result = $api_instance->v1userexchangetrades($from, $to, $max, $offset, $accept);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ExchangeTradeDataApi->v1userexchangetrades: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **int**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **int**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **int**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **int**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\RateVolTimeTypeDataResponse**](../Model/RateVolTimeTypeDataResponse.md)
 
 ### Authorization
 

@@ -50,28 +50,32 @@ SWGWalletAddressData::~SWGWalletAddressData() {
 
 void
 SWGWalletAddressData::init() {
-    walletID = new QString("");
-address = new QString("");
-time = 0L;
-info = new QString("");
-minConf = 0;
-netki = new QString("");
+    wallet_id = new QString("");
+    address = new QString("");
+    time = 0L;
+    info = new QString("");
+    min_conf = 0;
+    netki = new QString("");
 }
 
 void
 SWGWalletAddressData::cleanup() {
-    if(walletID != NULL) {
-        delete walletID;
+    
+    if(wallet_id != nullptr) {
+        delete wallet_id;
     }
-if(address != NULL) {
+
+    if(address != nullptr) {
         delete address;
     }
 
-if(info != NULL) {
+
+    if(info != nullptr) {
         delete info;
     }
 
-if(netki != NULL) {
+
+    if(netki != nullptr) {
         delete netki;
     }
 }
@@ -87,12 +91,12 @@ SWGWalletAddressData::fromJson(QString &json) {
 
 void
 SWGWalletAddressData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&walletID, pJson["walletID"], "QString", "QString");
-setValue(&address, pJson["address"], "QString", "QString");
-setValue(&time, pJson["time"], "qint64", "");
-setValue(&info, pJson["info"], "QString", "QString");
-setValue(&minConf, pJson["minConf"], "qint32", "");
-setValue(&netki, pJson["netki"], "QString", "QString");
+    ::Swagger::setValue(&wallet_id, pJson["wallet_id"], "QString", "QString");
+    ::Swagger::setValue(&address, pJson["address"], "QString", "QString");
+    ::Swagger::setValue(&time, pJson["time"], "qint64", "");
+    ::Swagger::setValue(&info, pJson["info"], "QString", "QString");
+    ::Swagger::setValue(&min_conf, pJson["min_conf"], "qint32", "");
+    ::Swagger::setValue(&netki, pJson["netki"], "QString", "QString");
 }
 
 QString
@@ -109,38 +113,28 @@ QJsonObject*
 SWGWalletAddressData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
-    toJsonValue(QString("walletID"), walletID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("wallet_id"), wallet_id, obj, QString("QString"));
 
-    
     toJsonValue(QString("address"), address, obj, QString("QString"));
-    
-        
-obj->insert("time", QJsonValue(time));
 
-    
+    obj->insert("time", QJsonValue(time));
+
     toJsonValue(QString("info"), info, obj, QString("QString"));
-    
-        
-obj->insert("minConf", QJsonValue(minConf));
 
-    
+    obj->insert("min_conf", QJsonValue(min_conf));
+
     toJsonValue(QString("netki"), netki, obj, QString("QString"));
-    
-        
 
     return obj;
 }
 
 QString*
-SWGWalletAddressData::getWalletID() {
-    return walletID;
+SWGWalletAddressData::getWalletId() {
+    return wallet_id;
 }
 void
-SWGWalletAddressData::setWalletID(QString* walletID) {
-    this->walletID = walletID;
+SWGWalletAddressData::setWalletId(QString* wallet_id) {
+    this->wallet_id = wallet_id;
 }
 
 QString*
@@ -172,11 +166,11 @@ SWGWalletAddressData::setInfo(QString* info) {
 
 qint32
 SWGWalletAddressData::getMinConf() {
-    return minConf;
+    return min_conf;
 }
 void
-SWGWalletAddressData::setMinConf(qint32 minConf) {
-    this->minConf = minConf;
+SWGWalletAddressData::setMinConf(qint32 min_conf) {
+    this->min_conf = min_conf;
 }
 
 QString*

@@ -5,9 +5,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **walletID** | **String** |  | 
 **address** | **String** |  | 
-**time** | **Integer** |  | 
+**time** | **Number** |  | 
 **info** | **String** |  | 
-**minConf** | **Integer** |  | 
+**minConf** | **Number** |  | 
 **netki** | **String** |  | 
 
 

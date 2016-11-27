@@ -59,21 +59,26 @@ public:
 
     bool getSuccess();
     void setSuccess(bool success);
-QList<SWGTradeCoinWithdrawData*>* getMessage();
+
+    QList<SWGTradeCoinWithdrawData*>* getMessage();
     void setMessage(QList<SWGTradeCoinWithdrawData*>* message);
-QString* getMethod();
+
+    QString* getMethod();
     void setMethod(QString* method);
-QString* getTitle();
+
+    QString* getTitle();
     void setTitle(QString* title);
-QDateTime* getTime();
+
+    QDateTime* getTime();
     void setTime(QDateTime* time);
+
 
 private:
     bool success;
-QList<SWGTradeCoinWithdrawData*>* message;
-QString* method;
-QString* title;
-QDateTime* time;
+    QList<SWGTradeCoinWithdrawData*>* message;
+    QString* method;
+    QString* title;
+    QDateTime* time;
 };
 
 } /* namespace Swagger */

@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -47,10 +47,10 @@ use \ArrayAccess;
  * SuccessTickerResponse Class Doc Comment
  *
  * @category    Class */
-/** 
+/**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class SuccessTickerResponse implements ArrayAccess
@@ -65,7 +65,7 @@ class SuccessTickerResponse implements ArrayAccess
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
-    protected static $swaggerTypes = array(
+    protected static $swaggerTypes = [
         'last_price' => 'int',
         'timestamp' => 'int',
         'bid' => 'int',
@@ -75,7 +75,7 @@ class SuccessTickerResponse implements ArrayAccess
         'open' => 'int',
         'high' => 'int',
         'low' => 'int'
-    );
+    ];
 
     public static function swaggerTypes()
     {
@@ -86,7 +86,7 @@ class SuccessTickerResponse implements ArrayAccess
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
-    protected static $attributeMap = array(
+    protected static $attributeMap = [
         'last_price' => 'lastPrice',
         'timestamp' => 'timestamp',
         'bid' => 'bid',
@@ -96,18 +96,14 @@ class SuccessTickerResponse implements ArrayAccess
         'open' => 'open',
         'high' => 'high',
         'low' => 'low'
-    );
+    ];
 
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      * @var string[]
      */
-    protected static $setters = array(
+    protected static $setters = [
         'last_price' => 'setLastPrice',
         'timestamp' => 'setTimestamp',
         'bid' => 'setBid',
@@ -117,18 +113,14 @@ class SuccessTickerResponse implements ArrayAccess
         'open' => 'setOpen',
         'high' => 'setHigh',
         'low' => 'setLow'
-    );
+    ];
 
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
      * @var string[]
      */
-    protected static $getters = array(
+    protected static $getters = [
         'last_price' => 'getLastPrice',
         'timestamp' => 'getTimestamp',
         'bid' => 'getBid',
@@ -138,7 +130,17 @@ class SuccessTickerResponse implements ArrayAccess
         'open' => 'getOpen',
         'high' => 'getHigh',
         'low' => 'getLow'
-    );
+    ];
+
+    public static function attributeMap()
+    {
+        return self::$attributeMap;
+    }
+
+    public static function setters()
+    {
+        return self::$setters;
+    }
 
     public static function getters()
     {
@@ -153,11 +155,11 @@ class SuccessTickerResponse implements ArrayAccess
      * Associative array for storing property values
      * @var mixed[]
      */
-    protected $container = array();
+    protected $container = [];
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property values initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -179,7 +181,7 @@ class SuccessTickerResponse implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = array();
+        $invalid_properties = [];
         if ($this->container['last_price'] === null) {
             $invalid_properties[] = "'last_price' can't be null";
         }
@@ -495,5 +497,3 @@ class SuccessTickerResponse implements ArrayAccess
         return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

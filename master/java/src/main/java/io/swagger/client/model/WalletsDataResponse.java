@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -34,12 +34,11 @@ import java.util.ArrayList;
 import java.util.List;
 import org.joda.time.DateTime;
 
-
 /**
  * WalletsDataResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-21T18:38:01.890Z")
-public class WalletsDataResponse   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-27T22:11:57.435Z")
+public class WalletsDataResponse {
   @SerializedName("success")
   private Boolean success = false;
 
@@ -172,6 +171,7 @@ public class WalletsDataResponse   {
     return Objects.hash(success, message, method, title, time);
   }
 
+
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -196,5 +196,6 @@ public class WalletsDataResponse   {
     }
     return o.toString().replace("\n", "\n    ");
   }
+  
 }
 

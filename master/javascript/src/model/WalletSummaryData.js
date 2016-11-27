@@ -52,8 +52,8 @@
    * Constructs a new <code>WalletSummaryData</code>.
    * @alias module:model/WalletSummaryData
    * @class
-   * @param walletConfirmedBalance {Integer} 
-   * @param walletUncofirmedBalance {Integer} 
+   * @param walletConfirmedBalance {Number} 
+   * @param walletUncofirmedBalance {Number} 
    * @param hasWalletNetki {Boolean} 
    * @param walletNetki {String} 
    * @param walletNetkiAddress {String} 
@@ -82,10 +82,10 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('walletConfirmedBalance')) {
-        obj['walletConfirmedBalance'] = ApiClient.convertToType(data['walletConfirmedBalance'], 'Integer');
+        obj['walletConfirmedBalance'] = ApiClient.convertToType(data['walletConfirmedBalance'], 'Number');
       }
       if (data.hasOwnProperty('walletUncofirmedBalance')) {
-        obj['walletUncofirmedBalance'] = ApiClient.convertToType(data['walletUncofirmedBalance'], 'Integer');
+        obj['walletUncofirmedBalance'] = ApiClient.convertToType(data['walletUncofirmedBalance'], 'Number');
       }
       if (data.hasOwnProperty('hasWalletNetki')) {
         obj['hasWalletNetki'] = ApiClient.convertToType(data['hasWalletNetki'], 'Boolean');
@@ -104,11 +104,11 @@
   }
 
   /**
-   * @member {Integer} walletConfirmedBalance
+   * @member {Number} walletConfirmedBalance
    */
   exports.prototype['walletConfirmedBalance'] = undefined;
   /**
-   * @member {Integer} walletUncofirmedBalance
+   * @member {Number} walletUncofirmedBalance
    */
   exports.prototype['walletUncofirmedBalance'] = undefined;
   /**

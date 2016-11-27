@@ -51,7 +51,7 @@ SWGTimeKYCData::~SWGTimeKYCData() {
 void
 SWGTimeKYCData::init() {
     time = 0L;
-updateTime = 0L;
+    update_time = 0L;
 }
 
 void
@@ -71,8 +71,8 @@ SWGTimeKYCData::fromJson(QString &json) {
 
 void
 SWGTimeKYCData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&time, pJson["time"], "qint64", "");
-setValue(&updateTime, pJson["updateTime"], "qint64", "");
+    ::Swagger::setValue(&time, pJson["time"], "qint64", "");
+    ::Swagger::setValue(&update_time, pJson["update_time"], "qint64", "");
 }
 
 QString
@@ -88,8 +88,10 @@ SWGTimeKYCData::asJson ()
 QJsonObject*
 SWGTimeKYCData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("time", QJsonValue(time));
-obj->insert("updateTime", QJsonValue(updateTime));
+
+    obj->insert("update_time", QJsonValue(update_time));
 
     return obj;
 }
@@ -105,11 +107,11 @@ SWGTimeKYCData::setTime(qint64 time) {
 
 qint64
 SWGTimeKYCData::getUpdateTime() {
-    return updateTime;
+    return update_time;
 }
 void
-SWGTimeKYCData::setUpdateTime(qint64 updateTime) {
-    this->updateTime = updateTime;
+SWGTimeKYCData::setUpdateTime(qint64 update_time) {
+    this->update_time = update_time;
 }
 
 

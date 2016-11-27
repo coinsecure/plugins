@@ -4,11 +4,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **refPercent** | **Number** |  | 
-**time** | **Integer** |  | 
+**time** | **Number** |  | 
 **refID** | **String** |  | 
 **emailVerified** | **Boolean** |  | [default to false]
 **kycComplete** | **Boolean** |  | [default to false]
-**btcEarned** | **Integer** |  | 
-**fiatEarned** | **Integer** |  | 
+**btcEarned** | **Number** |  | 
+**fiatEarned** | **Number** |  | 
 
 

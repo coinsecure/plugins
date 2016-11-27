@@ -63,6 +63,7 @@ class SuccessLoginResponse(object):
         self._key_type = key_type
         self._key_needed = key_needed
 
+
     @property
     def success(self):
         """
@@ -83,6 +84,8 @@ class SuccessLoginResponse(object):
         :param success: The success of this SuccessLoginResponse.
         :type: bool
         """
+        if success is None:
+            raise ValueError("Invalid value for `success`, must not be `None`")
 
         self._success = success
 
@@ -106,6 +109,8 @@ class SuccessLoginResponse(object):
         :param email: The email of this SuccessLoginResponse.
         :type: str
         """
+        if email is None:
+            raise ValueError("Invalid value for `email`, must not be `None`")
 
         self._email = email
 
@@ -129,6 +134,8 @@ class SuccessLoginResponse(object):
         :param message: The message of this SuccessLoginResponse.
         :type: str
         """
+        if message is None:
+            raise ValueError("Invalid value for `message`, must not be `None`")
 
         self._message = message
 
@@ -152,6 +159,8 @@ class SuccessLoginResponse(object):
         :param key_type: The key_type of this SuccessLoginResponse.
         :type: str
         """
+        if key_type is None:
+            raise ValueError("Invalid value for `key_type`, must not be `None`")
 
         self._key_type = key_type
 
@@ -175,6 +184,8 @@ class SuccessLoginResponse(object):
         :param key_needed: The key_needed of this SuccessLoginResponse.
         :type: str
         """
+        if key_needed is None:
+            raise ValueError("Invalid value for `key_needed`, must not be `None`")
 
         self._key_needed = key_needed
 

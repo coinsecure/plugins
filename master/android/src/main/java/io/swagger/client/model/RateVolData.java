@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class RateVolData  {
+public class RateVolData {
   
   @SerializedName("rate")
   private Long rate = null;
@@ -67,15 +65,15 @@ public class RateVolData  {
       return false;
     }
     RateVolData rateVolData = (RateVolData) o;
-    return (rate == null ? rateVolData.rate == null : rate.equals(rateVolData.rate)) &&
-        (vol == null ? rateVolData.vol == null : vol.equals(rateVolData.vol));
+    return (this.rate == null ? rateVolData.rate == null : this.rate.equals(rateVolData.rate)) &&
+        (this.vol == null ? rateVolData.vol == null : this.vol.equals(rateVolData.vol));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (rate == null ? 0: rate.hashCode());
-    result = 31 * result + (vol == null ? 0: vol.hashCode());
+    result = 31 * result + (this.rate == null ? 0: this.rate.hashCode());
+    result = 31 * result + (this.vol == null ? 0: this.vol.hashCode());
     return result;
   }
 

@@ -66,6 +66,7 @@ class UserSummaryData(object):
         self._fa_secure = fa_secure
         self._has_phone = has_phone
 
+
     @property
     def kyc_status(self):
         """
@@ -86,6 +87,8 @@ class UserSummaryData(object):
         :param kyc_status: The kyc_status of this UserSummaryData.
         :type: str
         """
+        if kyc_status is None:
+            raise ValueError("Invalid value for `kyc_status`, must not be `None`")
 
         self._kyc_status = kyc_status
 
@@ -109,6 +112,8 @@ class UserSummaryData(object):
         :param bank_link_status: The bank_link_status of this UserSummaryData.
         :type: str
         """
+        if bank_link_status is None:
+            raise ValueError("Invalid value for `bank_link_status`, must not be `None`")
 
         self._bank_link_status = bank_link_status
 
@@ -132,6 +137,8 @@ class UserSummaryData(object):
         :param trade_ready: The trade_ready of this UserSummaryData.
         :type: str
         """
+        if trade_ready is None:
+            raise ValueError("Invalid value for `trade_ready`, must not be `None`")
 
         self._trade_ready = trade_ready
 
@@ -155,6 +162,8 @@ class UserSummaryData(object):
         :param is_disabled_account: The is_disabled_account of this UserSummaryData.
         :type: bool
         """
+        if is_disabled_account is None:
+            raise ValueError("Invalid value for `is_disabled_account`, must not be `None`")
 
         self._is_disabled_account = is_disabled_account
 
@@ -178,6 +187,8 @@ class UserSummaryData(object):
         :param fa_secure: The fa_secure of this UserSummaryData.
         :type: str
         """
+        if fa_secure is None:
+            raise ValueError("Invalid value for `fa_secure`, must not be `None`")
 
         self._fa_secure = fa_secure
 
@@ -201,6 +212,8 @@ class UserSummaryData(object):
         :param has_phone: The has_phone of this UserSummaryData.
         :type: str
         """
+        if has_phone is None:
+            raise ValueError("Invalid value for `has_phone`, must not be `None`")
 
         self._has_phone = has_phone
 

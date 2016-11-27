@@ -65,8 +65,8 @@
       //expect(instance).to.be.a(CoinsecureApiDocumentation.MinFiat);
     });
 
-    it('should have the property minFiat (base name: "minFiat")', function() {
-      // uncomment below and update the code to test the property minFiat
+    it('should have the property maxFiat (base name: "maxFiat")', function() {
+      // uncomment below and update the code to test the property maxFiat
       //var instane = new CoinsecureApiDocumentation.MinFiat();
       //expect(instance).to.be();
     });

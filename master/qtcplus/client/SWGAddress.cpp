@@ -55,7 +55,8 @@ SWGAddress::init() {
 
 void
 SWGAddress::cleanup() {
-    if(address != NULL) {
+    
+    if(address != nullptr) {
         delete address;
     }
 }
@@ -71,7 +72,7 @@ SWGAddress::fromJson(QString &json) {
 
 void
 SWGAddress::fromJsonObject(QJsonObject &pJson) {
-    setValue(&address, pJson["address"], "QString", "QString");
+    ::Swagger::setValue(&address, pJson["address"], "QString", "QString");
 }
 
 QString
@@ -88,10 +89,7 @@ QJsonObject*
 SWGAddress::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("address"), address, obj, QString("QString"));
-    
-        
 
     return obj;
 }

@@ -54,9 +54,9 @@
    * @class
    * @param walletID {String} 
    * @param address {String} 
-   * @param time {Integer} 
+   * @param time {Number} 
    * @param info {String} 
-   * @param minConf {Integer} 
+   * @param minConf {Number} 
    * @param netki {String} 
    */
   var exports = function(walletID, address, time, info, minConf, netki) {
@@ -88,13 +88,13 @@
         obj['address'] = ApiClient.convertToType(data['address'], 'String');
       }
       if (data.hasOwnProperty('time')) {
-        obj['time'] = ApiClient.convertToType(data['time'], 'Integer');
+        obj['time'] = ApiClient.convertToType(data['time'], 'Number');
       }
       if (data.hasOwnProperty('info')) {
         obj['info'] = ApiClient.convertToType(data['info'], 'String');
       }
       if (data.hasOwnProperty('minConf')) {
-        obj['minConf'] = ApiClient.convertToType(data['minConf'], 'Integer');
+        obj['minConf'] = ApiClient.convertToType(data['minConf'], 'Number');
       }
       if (data.hasOwnProperty('netki')) {
         obj['netki'] = ApiClient.convertToType(data['netki'], 'String');
@@ -112,7 +112,7 @@
    */
   exports.prototype['address'] = undefined;
   /**
-   * @member {Integer} time
+   * @member {Number} time
    */
   exports.prototype['time'] = undefined;
   /**
@@ -120,7 +120,7 @@
    */
   exports.prototype['info'] = undefined;
   /**
-   * @member {Integer} minConf
+   * @member {Number} minConf
    */
   exports.prototype['minConf'] = undefined;
   /**

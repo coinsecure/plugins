@@ -106,6 +106,8 @@ class SecurityActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -119,6 +121,9 @@ class SecurityActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1mfaauthyinitiate`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/mfa/authy/initiate'.replace('{format}', 'json')
         path_params = {}
@@ -161,7 +166,10 @@ class SecurityActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1mfagainitiate(self, **kwargs):
         """
@@ -216,6 +224,8 @@ class SecurityActionsApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -226,6 +236,9 @@ class SecurityActionsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
+
+        collection_formats = {}
 
         resource_path = '/v1/mfa/ga/initiate'.replace('{format}', 'json')
         path_params = {}
@@ -266,7 +279,10 @@ class SecurityActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1usermfaauthycall(self, **kwargs):
         """
@@ -321,6 +337,8 @@ class SecurityActionsApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -331,6 +349,9 @@ class SecurityActionsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
+
+        collection_formats = {}
 
         resource_path = '/v1/mfa/authy/call'.replace('{format}', 'json')
         path_params = {}
@@ -371,7 +392,10 @@ class SecurityActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1usermfaauthydisable_code(self, code, **kwargs):
         """
@@ -428,6 +452,8 @@ class SecurityActionsApi(object):
         all_params = ['code', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -441,6 +467,9 @@ class SecurityActionsApi(object):
         # verify the required parameter 'code' is set
         if ('code' not in params) or (params['code'] is None):
             raise ValueError("Missing the required parameter `code` when calling `v1usermfaauthydisable_code`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/mfa/authy/disable/{code}'.replace('{format}', 'json')
         path_params = {}
@@ -483,7 +512,10 @@ class SecurityActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1usermfaauthyinitiateenable(self, body, **kwargs):
         """
@@ -540,6 +572,8 @@ class SecurityActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -553,6 +587,9 @@ class SecurityActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1usermfaauthyinitiateenable`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/mfa/authy/initiate/enable'.replace('{format}', 'json')
         path_params = {}
@@ -595,7 +632,10 @@ class SecurityActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1usermfaauthysms(self, **kwargs):
         """
@@ -650,6 +690,8 @@ class SecurityActionsApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -660,6 +702,9 @@ class SecurityActionsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
+
+        collection_formats = {}
 
         resource_path = '/v1/mfa/authy/sms'.replace('{format}', 'json')
         path_params = {}
@@ -700,7 +745,10 @@ class SecurityActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1usermfagadisable_code(self, code, **kwargs):
         """
@@ -757,6 +805,8 @@ class SecurityActionsApi(object):
         all_params = ['code', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -770,6 +820,9 @@ class SecurityActionsApi(object):
         # verify the required parameter 'code' is set
         if ('code' not in params) or (params['code'] is None):
             raise ValueError("Missing the required parameter `code` when calling `v1usermfagadisable_code`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/mfa/ga/disable/{code}'.replace('{format}', 'json')
         path_params = {}
@@ -812,7 +865,10 @@ class SecurityActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1usermfagainitiateenable(self, body, **kwargs):
         """
@@ -869,6 +925,8 @@ class SecurityActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -882,6 +940,9 @@ class SecurityActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1usermfagainitiateenable`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/mfa/ga/initiate/enable'.replace('{format}', 'json')
         path_params = {}
@@ -924,7 +985,10 @@ class SecurityActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userpasswordchange(self, body, **kwargs):
         """
@@ -981,6 +1045,8 @@ class SecurityActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -994,6 +1060,9 @@ class SecurityActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userpasswordchange`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/password/change'.replace('{format}', 'json')
         path_params = {}
@@ -1036,7 +1105,10 @@ class SecurityActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userpasswordreset(self, body, **kwargs):
         """
@@ -1091,6 +1163,8 @@ class SecurityActionsApi(object):
         all_params = ['body', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1104,6 +1178,9 @@ class SecurityActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userpasswordreset`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/password/reset'.replace('{format}', 'json')
         path_params = {}
@@ -1144,4 +1221,7 @@ class SecurityActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)

@@ -8,6 +8,7 @@
 #import "SWGSuccessResult.h"
 #import "SWGEmail.h"
 #import "SWGSignupForm.h"
+#import "SWGStandardVerifySignupResultData.h"
 #import "SWGNetkiNameAddress.h"
 #import "SWGAddress.h"
 #import "SWGNumberOtp.h"
@@ -384,6 +385,84 @@ NSInteger kSWGAccountActionsApiMissingParamErrorCode = 234513;
 }
 
 ///
+/// Verifies an Email token for Signup .
+/// Creates a new Coinsecure Account.
+///  @param token  
+///
+///  @param accept JSON, XML or CSV can be returned (Optional) (optional)
+///
+///  @returns SWGStandardVerifySignupResultData*
+///
+-(NSNumber*) v1signupverifyTokenWithToken: (NSString*) token
+    accept: (NSString*) accept
+    completionHandler: (void (^)(SWGStandardVerifySignupResultData* output, NSError* error)) handler {
+    // verify the required parameter 'token' is set
+    if (token == nil) {
+        NSParameterAssert(token);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"token"] };
+            NSError* error = [NSError errorWithDomain:kSWGAccountActionsApiErrorDomain code:kSWGAccountActionsApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/signup/verify/{token}"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (token != nil) {
+        pathParams[@"token"] = token;
+    }
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (accept != nil) {
+        headerParams[@"accept"] = accept;
+    }
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json", @"application/xml", @"application/csv"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"PUT"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"SWGStandardVerifySignupResultData*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((SWGStandardVerifySignupResultData*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
 /// Send OTP for Bank Link
 /// Send OTP for an additional Bank Link.
 ///  @param number  
@@ -486,7 +565,7 @@ NSInteger kSWGAccountActionsApiMissingParamErrorCode = 234513;
 ///
 ///  @param phone Please enter your Valid Phone Number. 
 ///
-///  @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. 
+///  @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. 
 ///
 ///  @param file Enter a valid image, pdf or zip file under 5 MB in size. 
 ///

@@ -60,6 +60,7 @@ class NewFiatBankDeposit(object):
         self._bank = bank
         self._dep_type = dep_type
 
+
     @property
     def amount(self):
         """
@@ -80,6 +81,8 @@ class NewFiatBankDeposit(object):
         :param amount: The amount of this NewFiatBankDeposit.
         :type: int
         """
+        if amount is None:
+            raise ValueError("Invalid value for `amount`, must not be `None`")
 
         self._amount = amount
 
@@ -103,6 +106,8 @@ class NewFiatBankDeposit(object):
         :param message: The message of this NewFiatBankDeposit.
         :type: str
         """
+        if message is None:
+            raise ValueError("Invalid value for `message`, must not be `None`")
 
         self._message = message
 
@@ -126,6 +131,8 @@ class NewFiatBankDeposit(object):
         :param bank: The bank of this NewFiatBankDeposit.
         :type: str
         """
+        if bank is None:
+            raise ValueError("Invalid value for `bank`, must not be `None`")
 
         self._bank = bank
 
@@ -149,6 +156,8 @@ class NewFiatBankDeposit(object):
         :param dep_type: The dep_type of this NewFiatBankDeposit.
         :type: str
         """
+        if dep_type is None:
+            raise ValueError("Invalid value for `dep_type`, must not be `None`")
 
         self._dep_type = dep_type
 

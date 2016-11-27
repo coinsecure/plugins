@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class NewFiatBankDeposit  {
+public class NewFiatBankDeposit {
   
   @SerializedName("amount")
   private Long amount = null;
@@ -91,19 +89,19 @@ public class NewFiatBankDeposit  {
       return false;
     }
     NewFiatBankDeposit newFiatBankDeposit = (NewFiatBankDeposit) o;
-    return (amount == null ? newFiatBankDeposit.amount == null : amount.equals(newFiatBankDeposit.amount)) &&
-        (message == null ? newFiatBankDeposit.message == null : message.equals(newFiatBankDeposit.message)) &&
-        (bank == null ? newFiatBankDeposit.bank == null : bank.equals(newFiatBankDeposit.bank)) &&
-        (depType == null ? newFiatBankDeposit.depType == null : depType.equals(newFiatBankDeposit.depType));
+    return (this.amount == null ? newFiatBankDeposit.amount == null : this.amount.equals(newFiatBankDeposit.amount)) &&
+        (this.message == null ? newFiatBankDeposit.message == null : this.message.equals(newFiatBankDeposit.message)) &&
+        (this.bank == null ? newFiatBankDeposit.bank == null : this.bank.equals(newFiatBankDeposit.bank)) &&
+        (this.depType == null ? newFiatBankDeposit.depType == null : this.depType.equals(newFiatBankDeposit.depType));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (amount == null ? 0: amount.hashCode());
-    result = 31 * result + (message == null ? 0: message.hashCode());
-    result = 31 * result + (bank == null ? 0: bank.hashCode());
-    result = 31 * result + (depType == null ? 0: depType.hashCode());
+    result = 31 * result + (this.amount == null ? 0: this.amount.hashCode());
+    result = 31 * result + (this.message == null ? 0: this.message.hashCode());
+    result = 31 * result + (this.bank == null ? 0: this.bank.hashCode());
+    result = 31 * result + (this.depType == null ? 0: this.depType.hashCode());
     return result;
   }
 

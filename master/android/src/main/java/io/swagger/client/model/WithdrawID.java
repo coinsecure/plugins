@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class WithdrawID  {
+public class WithdrawID {
   
   @SerializedName("withdrawID")
   private String withdrawID = null;
@@ -55,13 +53,13 @@ public class WithdrawID  {
       return false;
     }
     WithdrawID withdrawID = (WithdrawID) o;
-    return (withdrawID == null ? withdrawID.withdrawID == null : withdrawID.equals(withdrawID.withdrawID));
+    return (this.withdrawID == null ? withdrawID.withdrawID == null : this.withdrawID.equals(withdrawID.withdrawID));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (withdrawID == null ? 0: withdrawID.hashCode());
+    result = 31 * result + (this.withdrawID == null ? 0: this.withdrawID.hashCode());
     return result;
   }
 

@@ -50,29 +50,33 @@ SWGTradeCoinWithdrawData::~SWGTradeCoinWithdrawData() {
 
 void
 SWGTradeCoinWithdrawData::init() {
-    timeDetails = new SWGTimeData();
-address = new QString("");
-value = 0L;
-fees = 0L;
-withdrawID = new QString("");
-txHash = new QString("");
+    time_details = new SWGTimeData();
+    address = new QString("");
+    value = 0L;
+    fees = 0L;
+    withdraw_id = new QString("");
+    tx_hash = new QString("");
 }
 
 void
 SWGTradeCoinWithdrawData::cleanup() {
-    if(timeDetails != NULL) {
-        delete timeDetails;
+    
+    if(time_details != nullptr) {
+        delete time_details;
     }
-if(address != NULL) {
+
+    if(address != nullptr) {
         delete address;
     }
 
 
-if(withdrawID != NULL) {
-        delete withdrawID;
+
+    if(withdraw_id != nullptr) {
+        delete withdraw_id;
     }
-if(txHash != NULL) {
-        delete txHash;
+
+    if(tx_hash != nullptr) {
+        delete tx_hash;
     }
 }
 
@@ -87,12 +91,12 @@ SWGTradeCoinWithdrawData::fromJson(QString &json) {
 
 void
 SWGTradeCoinWithdrawData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&timeDetails, pJson["timeDetails"], "SWGTimeData", "SWGTimeData");
-setValue(&address, pJson["address"], "QString", "QString");
-setValue(&value, pJson["value"], "qint64", "");
-setValue(&fees, pJson["fees"], "qint64", "");
-setValue(&withdrawID, pJson["withdrawID"], "QString", "QString");
-setValue(&txHash, pJson["txHash"], "QString", "QString");
+    ::Swagger::setValue(&time_details, pJson["time_details"], "SWGTimeData", "SWGTimeData");
+    ::Swagger::setValue(&address, pJson["address"], "QString", "QString");
+    ::Swagger::setValue(&value, pJson["value"], "qint64", "");
+    ::Swagger::setValue(&fees, pJson["fees"], "qint64", "");
+    ::Swagger::setValue(&withdraw_id, pJson["withdraw_id"], "QString", "QString");
+    ::Swagger::setValue(&tx_hash, pJson["tx_hash"], "QString", "QString");
 }
 
 QString
@@ -109,38 +113,28 @@ QJsonObject*
 SWGTradeCoinWithdrawData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
-    toJsonValue(QString("timeDetails"), timeDetails, obj, QString("SWGTimeData"));
-    
-        
+    toJsonValue(QString("time_details"), time_details, obj, QString("SWGTimeData"));
 
-    
     toJsonValue(QString("address"), address, obj, QString("QString"));
-    
-        
-obj->insert("value", QJsonValue(value));
-obj->insert("fees", QJsonValue(fees));
 
-    
-    toJsonValue(QString("withdrawID"), withdrawID, obj, QString("QString"));
-    
-        
+    obj->insert("value", QJsonValue(value));
 
-    
-    toJsonValue(QString("txHash"), txHash, obj, QString("QString"));
-    
-        
+    obj->insert("fees", QJsonValue(fees));
+
+    toJsonValue(QString("withdraw_id"), withdraw_id, obj, QString("QString"));
+
+    toJsonValue(QString("tx_hash"), tx_hash, obj, QString("QString"));
 
     return obj;
 }
 
 SWGTimeData*
 SWGTradeCoinWithdrawData::getTimeDetails() {
-    return timeDetails;
+    return time_details;
 }
 void
-SWGTradeCoinWithdrawData::setTimeDetails(SWGTimeData* timeDetails) {
-    this->timeDetails = timeDetails;
+SWGTradeCoinWithdrawData::setTimeDetails(SWGTimeData* time_details) {
+    this->time_details = time_details;
 }
 
 QString*
@@ -171,21 +165,21 @@ SWGTradeCoinWithdrawData::setFees(qint64 fees) {
 }
 
 QString*
-SWGTradeCoinWithdrawData::getWithdrawID() {
-    return withdrawID;
+SWGTradeCoinWithdrawData::getWithdrawId() {
+    return withdraw_id;
 }
 void
-SWGTradeCoinWithdrawData::setWithdrawID(QString* withdrawID) {
-    this->withdrawID = withdrawID;
+SWGTradeCoinWithdrawData::setWithdrawId(QString* withdraw_id) {
+    this->withdraw_id = withdraw_id;
 }
 
 QString*
 SWGTradeCoinWithdrawData::getTxHash() {
-    return txHash;
+    return tx_hash;
 }
 void
-SWGTradeCoinWithdrawData::setTxHash(QString* txHash) {
-    this->txHash = txHash;
+SWGTradeCoinWithdrawData::setTxHash(QString* tx_hash) {
+    this->tx_hash = tx_hash;
 }
 
 

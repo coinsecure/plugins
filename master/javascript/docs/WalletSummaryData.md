@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**walletConfirmedBalance** | **Integer** |  | 
-**walletUncofirmedBalance** | **Integer** |  | 
+**walletConfirmedBalance** | **Number** |  | 
+**walletUncofirmedBalance** | **Number** |  | 
 **hasWalletNetki** | **Boolean** |  | [default to false]
 **walletNetki** | **String** |  | 
 **walletNetkiAddress** | **String** |  | 

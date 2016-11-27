@@ -51,16 +51,18 @@ SWGChangePassword::~SWGChangePassword() {
 void
 SWGChangePassword::init() {
     password = new QString("");
-repeatPassword = new QString("");
+    repeat_password = new QString("");
 }
 
 void
 SWGChangePassword::cleanup() {
-    if(password != NULL) {
+    
+    if(password != nullptr) {
         delete password;
     }
-if(repeatPassword != NULL) {
-        delete repeatPassword;
+
+    if(repeat_password != nullptr) {
+        delete repeat_password;
     }
 }
 
@@ -75,8 +77,8 @@ SWGChangePassword::fromJson(QString &json) {
 
 void
 SWGChangePassword::fromJsonObject(QJsonObject &pJson) {
-    setValue(&password, pJson["password"], "QString", "QString");
-setValue(&repeatPassword, pJson["repeatPassword"], "QString", "QString");
+    ::Swagger::setValue(&password, pJson["password"], "QString", "QString");
+    ::Swagger::setValue(&repeat_password, pJson["repeat_password"], "QString", "QString");
 }
 
 QString
@@ -93,15 +95,9 @@ QJsonObject*
 SWGChangePassword::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("password"), password, obj, QString("QString"));
-    
-        
 
-    
-    toJsonValue(QString("repeatPassword"), repeatPassword, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("repeat_password"), repeat_password, obj, QString("QString"));
 
     return obj;
 }
@@ -117,11 +113,11 @@ SWGChangePassword::setPassword(QString* password) {
 
 QString*
 SWGChangePassword::getRepeatPassword() {
-    return repeatPassword;
+    return repeat_password;
 }
 void
-SWGChangePassword::setRepeatPassword(QString* repeatPassword) {
-    this->repeatPassword = repeatPassword;
+SWGChangePassword::setRepeatPassword(QString* repeat_password) {
+    this->repeat_password = repeat_password;
 }
 
 

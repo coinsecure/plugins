@@ -27,7 +27,7 @@
     self = [super init];
     if (self) {
         self.apiClient = nil;
-        self.host = @"https://api.coinsecure.in";
+        self.host = @"https://api.coinsecure.in/";
         self.username = @"";
         self.password = @"";
         self.accessToken= @"";

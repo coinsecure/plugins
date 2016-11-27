@@ -51,6 +51,7 @@ class LoginId(object):
 
         self._login_id = login_id
 
+
     @property
     def login_id(self):
         """
@@ -71,6 +72,8 @@ class LoginId(object):
         :param login_id: The login_id of this LoginId.
         :type: str
         """
+        if login_id is None:
+            raise ValueError("Invalid value for `login_id`, must not be `None`")
 
         self._login_id = login_id
 

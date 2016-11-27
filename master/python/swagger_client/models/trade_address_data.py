@@ -60,6 +60,7 @@ class TradeAddressData(object):
         self._info = info
         self._netki = netki
 
+
     @property
     def address(self):
         """
@@ -80,6 +81,8 @@ class TradeAddressData(object):
         :param address: The address of this TradeAddressData.
         :type: str
         """
+        if address is None:
+            raise ValueError("Invalid value for `address`, must not be `None`")
 
         self._address = address
 
@@ -103,6 +106,8 @@ class TradeAddressData(object):
         :param time: The time of this TradeAddressData.
         :type: int
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 
@@ -126,6 +131,8 @@ class TradeAddressData(object):
         :param info: The info of this TradeAddressData.
         :type: str
         """
+        if info is None:
+            raise ValueError("Invalid value for `info`, must not be `None`")
 
         self._info = info
 
@@ -149,6 +156,8 @@ class TradeAddressData(object):
         :param netki: The netki of this TradeAddressData.
         :type: str
         """
+        if netki is None:
+            raise ValueError("Invalid value for `netki`, must not be `None`")
 
         self._netki = netki
 

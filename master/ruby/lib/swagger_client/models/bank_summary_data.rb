@@ -151,6 +151,54 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @pending_coin_balance.nil?
+        invalid_properties.push("invalid value for 'pending_coin_balance', pending_coin_balance cannot be nil.")
+      end
+
+      if @pending_fiat_balance.nil?
+        invalid_properties.push("invalid value for 'pending_fiat_balance', pending_fiat_balance cannot be nil.")
+      end
+
+      if @available_coin_balance.nil?
+        invalid_properties.push("invalid value for 'available_coin_balance', available_coin_balance cannot be nil.")
+      end
+
+      if @available_fiat_balance.nil?
+        invalid_properties.push("invalid value for 'available_fiat_balance', available_fiat_balance cannot be nil.")
+      end
+
+      if @total_coin_balance.nil?
+        invalid_properties.push("invalid value for 'total_coin_balance', total_coin_balance cannot be nil.")
+      end
+
+      if @total_fiat_balance.nil?
+        invalid_properties.push("invalid value for 'total_fiat_balance', total_fiat_balance cannot be nil.")
+      end
+
+      if @coin_fee_percentage.nil?
+        invalid_properties.push("invalid value for 'coin_fee_percentage', coin_fee_percentage cannot be nil.")
+      end
+
+      if @fiat_fee_percentage.nil?
+        invalid_properties.push("invalid value for 'fiat_fee_percentage', fiat_fee_percentage cannot be nil.")
+      end
+
+      if @bank_link_status.nil?
+        invalid_properties.push("invalid value for 'bank_link_status', bank_link_status cannot be nil.")
+      end
+
+      if @has_trade_netki.nil?
+        invalid_properties.push("invalid value for 'has_trade_netki', has_trade_netki cannot be nil.")
+      end
+
+      if @trade_netki_name.nil?
+        invalid_properties.push("invalid value for 'trade_netki_name', trade_netki_name cannot be nil.")
+      end
+
+      if @trade_netki_address.nil?
+        invalid_properties.push("invalid value for 'trade_netki_address', trade_netki_address cannot be nil.")
+      end
+
       return invalid_properties
     end
 
@@ -209,7 +257,7 @@ module SwaggerClient
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
       self.class.swagger_types.each_pair do |key, type|
-        if type =~ /^Array<(.*)>/i
+        if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
@@ -240,7 +288,7 @@ module SwaggerClient
       when :Float
         value.to_f
       when :BOOLEAN
-        if value.to_s =~ /^(true|t|yes|y|1)$/i
+        if value.to_s =~ /\A(true|t|yes|y|1)\z/i
           true
         else
           false
@@ -251,7 +299,7 @@ module SwaggerClient
       when /\AArray<(?<inner_type>.+)>\z/
         inner_type = Regexp.last_match[:inner_type]
         value.map { |v| _deserialize(inner_type, v) }
-      when /\AHash<(?<k_type>.+), (?<v_type>.+)>\z/
+      when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
         {}.tap do |hash|

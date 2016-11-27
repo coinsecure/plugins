@@ -34,6 +34,7 @@
 #include <QJsonObject>
 
 
+#include "SWGObject.h"
 #include <QString>
 
 #include "SWGObject.h"
@@ -56,18 +57,26 @@ public:
 
     qint64 getSatoshis();
     void setSatoshis(qint64 satoshis);
-QString* getToAddr();
-    void setToAddr(QString* toAddr);
-QString* getMsg();
+
+    QString* getToAddr();
+    void setToAddr(QString* to_addr);
+
+    QString* getMsg();
     void setMsg(QString* msg);
-QString* getPin();
+
+    QString* getPin();
     void setPin(QString* pin);
+
+    SWGObject* getFees();
+    void setFees(SWGObject* fees);
+
 
 private:
     qint64 satoshis;
-QString* toAddr;
-QString* msg;
-QString* pin;
+    QString* to_addr;
+    QString* msg;
+    QString* pin;
+    SWGObject* fees;
 };
 
 } /* namespace Swagger */

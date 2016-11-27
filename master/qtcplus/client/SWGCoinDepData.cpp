@@ -50,30 +50,35 @@ SWGCoinDepData::~SWGCoinDepData() {
 
 void
 SWGCoinDepData::init() {
-    timeDetails = new SWGTimeDataCoin();
-address = new QString("");
-value = 0L;
-txHash = new QString("");
-depositID = new QString("");
-reason = new QString("");
+    time_details = new SWGTimeDataCoin();
+    address = new QString("");
+    value = 0L;
+    tx_hash = new QString("");
+    deposit_id = new QString("");
+    reason = new QString("");
 }
 
 void
 SWGCoinDepData::cleanup() {
-    if(timeDetails != NULL) {
-        delete timeDetails;
+    
+    if(time_details != nullptr) {
+        delete time_details;
     }
-if(address != NULL) {
+
+    if(address != nullptr) {
         delete address;
     }
 
-if(txHash != NULL) {
-        delete txHash;
+
+    if(tx_hash != nullptr) {
+        delete tx_hash;
     }
-if(depositID != NULL) {
-        delete depositID;
+
+    if(deposit_id != nullptr) {
+        delete deposit_id;
     }
-if(reason != NULL) {
+
+    if(reason != nullptr) {
         delete reason;
     }
 }
@@ -89,12 +94,12 @@ SWGCoinDepData::fromJson(QString &json) {
 
 void
 SWGCoinDepData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&timeDetails, pJson["timeDetails"], "SWGTimeDataCoin", "SWGTimeDataCoin");
-setValue(&address, pJson["address"], "QString", "QString");
-setValue(&value, pJson["value"], "qint64", "");
-setValue(&txHash, pJson["txHash"], "QString", "QString");
-setValue(&depositID, pJson["depositID"], "QString", "QString");
-setValue(&reason, pJson["reason"], "QString", "QString");
+    ::Swagger::setValue(&time_details, pJson["time_details"], "SWGTimeDataCoin", "SWGTimeDataCoin");
+    ::Swagger::setValue(&address, pJson["address"], "QString", "QString");
+    ::Swagger::setValue(&value, pJson["value"], "qint64", "");
+    ::Swagger::setValue(&tx_hash, pJson["tx_hash"], "QString", "QString");
+    ::Swagger::setValue(&deposit_id, pJson["deposit_id"], "QString", "QString");
+    ::Swagger::setValue(&reason, pJson["reason"], "QString", "QString");
 }
 
 QString
@@ -111,42 +116,28 @@ QJsonObject*
 SWGCoinDepData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
-    toJsonValue(QString("timeDetails"), timeDetails, obj, QString("SWGTimeDataCoin"));
-    
-        
+    toJsonValue(QString("time_details"), time_details, obj, QString("SWGTimeDataCoin"));
 
-    
     toJsonValue(QString("address"), address, obj, QString("QString"));
-    
-        
-obj->insert("value", QJsonValue(value));
 
-    
-    toJsonValue(QString("txHash"), txHash, obj, QString("QString"));
-    
-        
+    obj->insert("value", QJsonValue(value));
 
-    
-    toJsonValue(QString("depositID"), depositID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("tx_hash"), tx_hash, obj, QString("QString"));
 
-    
+    toJsonValue(QString("deposit_id"), deposit_id, obj, QString("QString"));
+
     toJsonValue(QString("reason"), reason, obj, QString("QString"));
-    
-        
 
     return obj;
 }
 
 SWGTimeDataCoin*
 SWGCoinDepData::getTimeDetails() {
-    return timeDetails;
+    return time_details;
 }
 void
-SWGCoinDepData::setTimeDetails(SWGTimeDataCoin* timeDetails) {
-    this->timeDetails = timeDetails;
+SWGCoinDepData::setTimeDetails(SWGTimeDataCoin* time_details) {
+    this->time_details = time_details;
 }
 
 QString*
@@ -169,20 +160,20 @@ SWGCoinDepData::setValue(qint64 value) {
 
 QString*
 SWGCoinDepData::getTxHash() {
-    return txHash;
+    return tx_hash;
 }
 void
-SWGCoinDepData::setTxHash(QString* txHash) {
-    this->txHash = txHash;
+SWGCoinDepData::setTxHash(QString* tx_hash) {
+    this->tx_hash = tx_hash;
 }
 
 QString*
-SWGCoinDepData::getDepositID() {
-    return depositID;
+SWGCoinDepData::getDepositId() {
+    return deposit_id;
 }
 void
-SWGCoinDepData::setDepositID(QString* depositID) {
-    this->depositID = depositID;
+SWGCoinDepData::setDepositId(QString* deposit_id) {
+    this->deposit_id = deposit_id;
 }
 
 QString*

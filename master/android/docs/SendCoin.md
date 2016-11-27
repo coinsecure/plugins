@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **toAddr** | **String** |  | 
 **msg** | **String** |  |  [optional]
 **pin** | **String** |  |  [optional]
+**fees** | **Object** |  |  [optional]
 
 
 

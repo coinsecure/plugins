@@ -69,6 +69,7 @@ class KYCData(object):
         self._user_type = user_type
         self._info = info
 
+
     @property
     def time_details(self):
         """
@@ -89,6 +90,8 @@ class KYCData(object):
         :param time_details: The time_details of this KYCData.
         :type: TimeKYCData
         """
+        if time_details is None:
+            raise ValueError("Invalid value for `time_details`, must not be `None`")
 
         self._time_details = time_details
 
@@ -112,6 +115,8 @@ class KYCData(object):
         :param kyc_id: The kyc_id of this KYCData.
         :type: str
         """
+        if kyc_id is None:
+            raise ValueError("Invalid value for `kyc_id`, must not be `None`")
 
         self._kyc_id = kyc_id
 
@@ -135,6 +140,8 @@ class KYCData(object):
         :param first_name: The first_name of this KYCData.
         :type: str
         """
+        if first_name is None:
+            raise ValueError("Invalid value for `first_name`, must not be `None`")
 
         self._first_name = first_name
 
@@ -158,6 +165,8 @@ class KYCData(object):
         :param last_name: The last_name of this KYCData.
         :type: str
         """
+        if last_name is None:
+            raise ValueError("Invalid value for `last_name`, must not be `None`")
 
         self._last_name = last_name
 
@@ -181,6 +190,8 @@ class KYCData(object):
         :param status: The status of this KYCData.
         :type: str
         """
+        if status is None:
+            raise ValueError("Invalid value for `status`, must not be `None`")
 
         self._status = status
 
@@ -204,6 +215,8 @@ class KYCData(object):
         :param user_type: The user_type of this KYCData.
         :type: str
         """
+        if user_type is None:
+            raise ValueError("Invalid value for `user_type`, must not be `None`")
 
         self._user_type = user_type
 
@@ -227,6 +240,8 @@ class KYCData(object):
         :param info: The info of this KYCData.
         :type: str
         """
+        if info is None:
+            raise ValueError("Invalid value for `info`, must not be `None`")
 
         self._info = info
 

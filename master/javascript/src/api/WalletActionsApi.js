@@ -80,7 +80,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userwalletcoinaddressnew";
+        throw new Error("Missing the required parameter 'body' when calling v1userwalletcoinaddressnew");
       }
 
 
@@ -131,7 +131,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userwalletcoinnew";
+        throw new Error("Missing the required parameter 'body' when calling v1userwalletcoinnew");
       }
 
 
@@ -182,7 +182,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userwalletcoinwithdrawinitiate";
+        throw new Error("Missing the required parameter 'body' when calling v1userwalletcoinwithdrawinitiate");
       }
 
 
@@ -233,7 +233,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userwalletcoinwithdrawsendToExchange";
+        throw new Error("Missing the required parameter 'body' when calling v1userwalletcoinwithdrawsendToExchange");
       }
 
 
@@ -284,12 +284,12 @@
 
       // verify the required parameter 'withdrawID' is set
       if (withdrawID == undefined || withdrawID == null) {
-        throw "Missing the required parameter 'withdrawID' when calling v1userwalletcoinwithdrawunverifiedcancelWithdrawID";
+        throw new Error("Missing the required parameter 'withdrawID' when calling v1userwalletcoinwithdrawunverifiedcancelWithdrawID");
       }
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userwalletcoinwithdrawunverifiedcancelWithdrawID";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userwalletcoinwithdrawunverifiedcancelWithdrawID");
       }
 
 
@@ -341,12 +341,12 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userwalletcoinwithdrawverify";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userwalletcoinwithdrawverify");
       }
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userwalletcoinwithdrawverify";
+        throw new Error("Missing the required parameter 'body' when calling v1userwalletcoinwithdrawverify");
       }
 
 
@@ -397,7 +397,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1walletcoinwithdrawnewVerifycode";
+        throw new Error("Missing the required parameter 'body' when calling v1walletcoinwithdrawnewVerifycode");
       }
 
 

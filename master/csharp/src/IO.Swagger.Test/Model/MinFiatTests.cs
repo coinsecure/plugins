@@ -77,12 +77,12 @@ namespace IO.Swagger.Test
         }
 
         /// <summary>
-        /// Test the property '_MinFiat'
+        /// Test the property 'MaxFiat'
         /// </summary>
         [Test]
-        public void _MinFiatTest()
+        public void MaxFiatTest()
         {
-            // TODO unit test for the property '_MinFiat'
+            // TODO unit test for the property 'MaxFiat'
         }
 
     }

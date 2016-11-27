@@ -25,13 +25,11 @@
 package io.swagger.client.model;
 
 import io.swagger.client.model.TimeDataCoin;
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class CoinDepData  {
+public class CoinDepData {
   
   @SerializedName("timeDetails")
   private TimeDataCoin timeDetails = null;
@@ -116,23 +114,23 @@ public class CoinDepData  {
       return false;
     }
     CoinDepData coinDepData = (CoinDepData) o;
-    return (timeDetails == null ? coinDepData.timeDetails == null : timeDetails.equals(coinDepData.timeDetails)) &&
-        (address == null ? coinDepData.address == null : address.equals(coinDepData.address)) &&
-        (value == null ? coinDepData.value == null : value.equals(coinDepData.value)) &&
-        (txHash == null ? coinDepData.txHash == null : txHash.equals(coinDepData.txHash)) &&
-        (depositID == null ? coinDepData.depositID == null : depositID.equals(coinDepData.depositID)) &&
-        (reason == null ? coinDepData.reason == null : reason.equals(coinDepData.reason));
+    return (this.timeDetails == null ? coinDepData.timeDetails == null : this.timeDetails.equals(coinDepData.timeDetails)) &&
+        (this.address == null ? coinDepData.address == null : this.address.equals(coinDepData.address)) &&
+        (this.value == null ? coinDepData.value == null : this.value.equals(coinDepData.value)) &&
+        (this.txHash == null ? coinDepData.txHash == null : this.txHash.equals(coinDepData.txHash)) &&
+        (this.depositID == null ? coinDepData.depositID == null : this.depositID.equals(coinDepData.depositID)) &&
+        (this.reason == null ? coinDepData.reason == null : this.reason.equals(coinDepData.reason));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (timeDetails == null ? 0: timeDetails.hashCode());
-    result = 31 * result + (address == null ? 0: address.hashCode());
-    result = 31 * result + (value == null ? 0: value.hashCode());
-    result = 31 * result + (txHash == null ? 0: txHash.hashCode());
-    result = 31 * result + (depositID == null ? 0: depositID.hashCode());
-    result = 31 * result + (reason == null ? 0: reason.hashCode());
+    result = 31 * result + (this.timeDetails == null ? 0: this.timeDetails.hashCode());
+    result = 31 * result + (this.address == null ? 0: this.address.hashCode());
+    result = 31 * result + (this.value == null ? 0: this.value.hashCode());
+    result = 31 * result + (this.txHash == null ? 0: this.txHash.hashCode());
+    result = 31 * result + (this.depositID == null ? 0: this.depositID.hashCode());
+    result = 31 * result + (this.reason == null ? 0: this.reason.hashCode());
     return result;
   }
 

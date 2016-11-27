@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class SuccRefData  {
+public class SuccRefData {
   
   @SerializedName("refPercent")
   private Double refPercent = null;
@@ -127,25 +125,25 @@ public class SuccRefData  {
       return false;
     }
     SuccRefData succRefData = (SuccRefData) o;
-    return (refPercent == null ? succRefData.refPercent == null : refPercent.equals(succRefData.refPercent)) &&
-        (time == null ? succRefData.time == null : time.equals(succRefData.time)) &&
-        (refID == null ? succRefData.refID == null : refID.equals(succRefData.refID)) &&
-        (emailVerified == null ? succRefData.emailVerified == null : emailVerified.equals(succRefData.emailVerified)) &&
-        (kycComplete == null ? succRefData.kycComplete == null : kycComplete.equals(succRefData.kycComplete)) &&
-        (btcEarned == null ? succRefData.btcEarned == null : btcEarned.equals(succRefData.btcEarned)) &&
-        (fiatEarned == null ? succRefData.fiatEarned == null : fiatEarned.equals(succRefData.fiatEarned));
+    return (this.refPercent == null ? succRefData.refPercent == null : this.refPercent.equals(succRefData.refPercent)) &&
+        (this.time == null ? succRefData.time == null : this.time.equals(succRefData.time)) &&
+        (this.refID == null ? succRefData.refID == null : this.refID.equals(succRefData.refID)) &&
+        (this.emailVerified == null ? succRefData.emailVerified == null : this.emailVerified.equals(succRefData.emailVerified)) &&
+        (this.kycComplete == null ? succRefData.kycComplete == null : this.kycComplete.equals(succRefData.kycComplete)) &&
+        (this.btcEarned == null ? succRefData.btcEarned == null : this.btcEarned.equals(succRefData.btcEarned)) &&
+        (this.fiatEarned == null ? succRefData.fiatEarned == null : this.fiatEarned.equals(succRefData.fiatEarned));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (refPercent == null ? 0: refPercent.hashCode());
-    result = 31 * result + (time == null ? 0: time.hashCode());
-    result = 31 * result + (refID == null ? 0: refID.hashCode());
-    result = 31 * result + (emailVerified == null ? 0: emailVerified.hashCode());
-    result = 31 * result + (kycComplete == null ? 0: kycComplete.hashCode());
-    result = 31 * result + (btcEarned == null ? 0: btcEarned.hashCode());
-    result = 31 * result + (fiatEarned == null ? 0: fiatEarned.hashCode());
+    result = 31 * result + (this.refPercent == null ? 0: this.refPercent.hashCode());
+    result = 31 * result + (this.time == null ? 0: this.time.hashCode());
+    result = 31 * result + (this.refID == null ? 0: this.refID.hashCode());
+    result = 31 * result + (this.emailVerified == null ? 0: this.emailVerified.hashCode());
+    result = 31 * result + (this.kycComplete == null ? 0: this.kycComplete.hashCode());
+    result = 31 * result + (this.btcEarned == null ? 0: this.btcEarned.hashCode());
+    result = 31 * result + (this.fiatEarned == null ? 0: this.fiatEarned.hashCode());
     return result;
   }
 

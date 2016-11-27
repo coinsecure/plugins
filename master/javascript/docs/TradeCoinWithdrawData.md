@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **timeDetails** | [**TimeData**](TimeData.md) |  | 
 **address** | **String** |  | 
-**value** | **Integer** |  | 
-**fees** | **Integer** |  | 
+**value** | **Number** |  | 
+**fees** | **Number** |  | 
 **withdrawID** | **String** |  | 
 **txHash** | **String** |  | 
 

@@ -52,12 +52,12 @@
    * Constructs a new <code>TradeSummaryData</code>.
    * @alias module:model/TradeSummaryData
    * @class
-   * @param completedAsksSum {Integer} 
-   * @param completedBidsSum {Integer} 
-   * @param completedAsksCount {Integer} 
-   * @param completedBidsCount {Integer} 
-   * @param pendingAsksCount {Integer} 
-   * @param pendingBidsCount {Integer} 
+   * @param completedAsksSum {Number} 
+   * @param completedBidsSum {Number} 
+   * @param completedAsksCount {Number} 
+   * @param completedBidsCount {Number} 
+   * @param pendingAsksCount {Number} 
+   * @param pendingBidsCount {Number} 
    */
   var exports = function(completedAsksSum, completedBidsSum, completedAsksCount, completedBidsCount, pendingAsksCount, pendingBidsCount) {
     var _this = this;
@@ -82,49 +82,49 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('completedAsksSum')) {
-        obj['completedAsksSum'] = ApiClient.convertToType(data['completedAsksSum'], 'Integer');
+        obj['completedAsksSum'] = ApiClient.convertToType(data['completedAsksSum'], 'Number');
       }
       if (data.hasOwnProperty('completedBidsSum')) {
-        obj['completedBidsSum'] = ApiClient.convertToType(data['completedBidsSum'], 'Integer');
+        obj['completedBidsSum'] = ApiClient.convertToType(data['completedBidsSum'], 'Number');
       }
       if (data.hasOwnProperty('completedAsksCount')) {
-        obj['completedAsksCount'] = ApiClient.convertToType(data['completedAsksCount'], 'Integer');
+        obj['completedAsksCount'] = ApiClient.convertToType(data['completedAsksCount'], 'Number');
       }
       if (data.hasOwnProperty('completedBidsCount')) {
-        obj['completedBidsCount'] = ApiClient.convertToType(data['completedBidsCount'], 'Integer');
+        obj['completedBidsCount'] = ApiClient.convertToType(data['completedBidsCount'], 'Number');
       }
       if (data.hasOwnProperty('pendingAsksCount')) {
-        obj['pendingAsksCount'] = ApiClient.convertToType(data['pendingAsksCount'], 'Integer');
+        obj['pendingAsksCount'] = ApiClient.convertToType(data['pendingAsksCount'], 'Number');
       }
       if (data.hasOwnProperty('pendingBidsCount')) {
-        obj['pendingBidsCount'] = ApiClient.convertToType(data['pendingBidsCount'], 'Integer');
+        obj['pendingBidsCount'] = ApiClient.convertToType(data['pendingBidsCount'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} completedAsksSum
+   * @member {Number} completedAsksSum
    */
   exports.prototype['completedAsksSum'] = undefined;
   /**
-   * @member {Integer} completedBidsSum
+   * @member {Number} completedBidsSum
    */
   exports.prototype['completedBidsSum'] = undefined;
   /**
-   * @member {Integer} completedAsksCount
+   * @member {Number} completedAsksCount
    */
   exports.prototype['completedAsksCount'] = undefined;
   /**
-   * @member {Integer} completedBidsCount
+   * @member {Number} completedBidsCount
    */
   exports.prototype['completedBidsCount'] = undefined;
   /**
-   * @member {Integer} pendingAsksCount
+   * @member {Number} pendingAsksCount
    */
   exports.prototype['pendingAsksCount'] = undefined;
   /**
-   * @member {Integer} pendingBidsCount
+   * @member {Number} pendingBidsCount
    */
   exports.prototype['pendingBidsCount'] = undefined;
 

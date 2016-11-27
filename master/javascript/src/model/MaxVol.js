@@ -52,7 +52,7 @@
    * Constructs a new <code>MaxVol</code>.
    * @alias module:model/MaxVol
    * @class
-   * @param maxVol {Integer} 
+   * @param maxVol {Number} 
    */
   var exports = function(maxVol) {
     var _this = this;
@@ -72,14 +72,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('maxVol')) {
-        obj['maxVol'] = ApiClient.convertToType(data['maxVol'], 'Integer');
+        obj['maxVol'] = ApiClient.convertToType(data['maxVol'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} maxVol
+   * @member {Number} maxVol
    */
   exports.prototype['maxVol'] = undefined;
 

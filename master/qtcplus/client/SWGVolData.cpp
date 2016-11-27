@@ -69,7 +69,7 @@ SWGVolData::fromJson(QString &json) {
 
 void
 SWGVolData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&vol, pJson["vol"], "qint64", "");
+    ::Swagger::setValue(&vol, pJson["vol"], "qint64", "");
 }
 
 QString
@@ -85,6 +85,7 @@ SWGVolData::asJson ()
 QJsonObject*
 SWGVolData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("vol", QJsonValue(vol));
 
     return obj;

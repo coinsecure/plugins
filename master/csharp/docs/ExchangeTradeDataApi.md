@@ -1,6 +1,6 @@
 # IO.Swagger.Api.ExchangeTradeDataApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**V1userexchangebidcancelled**](ExchangeTradeDataApi.md#v1userexchangebidcancelled) | **GET** /v1/user/exchange/bid/cancelled | Cancelled User Buy Orders
 [**V1userexchangebidcompleted**](ExchangeTradeDataApi.md#v1userexchangebidcompleted) | **GET** /v1/user/exchange/bid/completed | Completed User Buy Orders
 [**V1userexchangebidpending**](ExchangeTradeDataApi.md#v1userexchangebidpending) | **GET** /v1/user/exchange/bid/pending | Pending User Buy Orders
+[**V1userexchangetrades**](ExchangeTradeDataApi.md#v1userexchangetrades) | **GET** /v1/exchange/trades | Completed Exchange Trades
 
 
 <a name="v1exchangeasklow"></a>
@@ -896,6 +897,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrderDataResponse**](OrderDataResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="v1userexchangetrades"></a>
+# **V1userexchangetrades**
+> RateVolTimeTypeDataResponse V1userexchangetrades (long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
+
+Completed Exchange Trades
+
+Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class V1userexchangetradesExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new ExchangeTradeDataApi();
+            var from = 789;  // long? | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional)  (default to 0)
+            var to = 789;  // long? | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional)  (default to 9223372036854776000)
+            var max = 56;  // int? | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional)  (default to 10)
+            var offset = 789;  // long? | Offset defaults to 0 if input is invalid. (Optional) (optional)  (default to 0)
+            var accept = accept_example;  // string | JSON, XML or CSV can be returned (Optional) (optional) 
+
+            try
+            {
+                // Completed Exchange Trades
+                RateVolTimeTypeDataResponse result = apiInstance.V1userexchangetrades(from, to, max, offset, accept);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExchangeTradeDataApi.V1userexchangetrades: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **long?**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **long?**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **int?**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **long?**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
+
+### Return type
+
+[**RateVolTimeTypeDataResponse**](RateVolTimeTypeDataResponse.md)
 
 ### Authorization
 

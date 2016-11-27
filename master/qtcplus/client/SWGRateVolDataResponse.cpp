@@ -51,29 +51,33 @@ SWGRateVolDataResponse::~SWGRateVolDataResponse() {
 void
 SWGRateVolDataResponse::init() {
     success = false;
-message = new QList<SWGRateVolData*>();
-method = new QString("");
-title = new QString("");
-time = NULL;
+    message = new QList<SWGRateVolData*>();
+    method = new QString("");
+    title = new QString("");
+    time = NULL;
 }
 
 void
 SWGRateVolDataResponse::cleanup() {
     
-if(message != NULL) {
+
+    if(message != nullptr) {
         QList<SWGRateVolData*>* arr = message;
         foreach(SWGRateVolData* o, *arr) {
             delete o;
         }
         delete message;
     }
-if(method != NULL) {
+
+    if(method != nullptr) {
         delete method;
     }
-if(title != NULL) {
+
+    if(title != nullptr) {
         delete title;
     }
-if(time != NULL) {
+
+    if(time != nullptr) {
         delete time;
     }
 }
@@ -89,11 +93,13 @@ SWGRateVolDataResponse::fromJson(QString &json) {
 
 void
 SWGRateVolDataResponse::fromJsonObject(QJsonObject &pJson) {
-    setValue(&success, pJson["success"], "bool", "");
-setValue(&message, pJson["message"], "QList", "SWGRateVolData");
-setValue(&method, pJson["method"], "QString", "QString");
-setValue(&title, pJson["title"], "QString", "QString");
-setValue(&time, pJson["time"], "QDateTime", "QDateTime");
+    ::Swagger::setValue(&success, pJson["success"], "bool", "");
+    
+    ::Swagger::setValue(&message, pJson["message"], "QList", "SWGRateVolData");
+    
+    ::Swagger::setValue(&method, pJson["method"], "QString", "QString");
+    ::Swagger::setValue(&title, pJson["title"], "QString", "QString");
+    ::Swagger::setValue(&time, pJson["time"], "QDateTime", "QDateTime");
 }
 
 QString
@@ -109,30 +115,18 @@ SWGRateVolDataResponse::asJson ()
 QJsonObject*
 SWGRateVolDataResponse::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("success", QJsonValue(success));
 
-    
-    QList<SWGRateVolData*>* messageList = message;
     QJsonArray messageJsonArray;
     toJsonArray((QList<void*>*)message, &messageJsonArray, "message", "SWGRateVolData");
-
     obj->insert("message", messageJsonArray);
-    
 
-    
     toJsonValue(QString("method"), method, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("title"), title, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("time"), time, obj, QString("QDateTime"));
-    
-        
 
     return obj;
 }

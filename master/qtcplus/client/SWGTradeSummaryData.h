@@ -54,25 +54,31 @@ public:
     SWGTradeSummaryData* fromJson(QString &jsonString);
 
     qint64 getCompletedAsksSum();
-    void setCompletedAsksSum(qint64 completedAsksSum);
-qint64 getCompletedBidsSum();
-    void setCompletedBidsSum(qint64 completedBidsSum);
-qint64 getCompletedAsksCount();
-    void setCompletedAsksCount(qint64 completedAsksCount);
-qint64 getCompletedBidsCount();
-    void setCompletedBidsCount(qint64 completedBidsCount);
-qint64 getPendingAsksCount();
-    void setPendingAsksCount(qint64 pendingAsksCount);
-qint64 getPendingBidsCount();
-    void setPendingBidsCount(qint64 pendingBidsCount);
+    void setCompletedAsksSum(qint64 completed_asks_sum);
+
+    qint64 getCompletedBidsSum();
+    void setCompletedBidsSum(qint64 completed_bids_sum);
+
+    qint64 getCompletedAsksCount();
+    void setCompletedAsksCount(qint64 completed_asks_count);
+
+    qint64 getCompletedBidsCount();
+    void setCompletedBidsCount(qint64 completed_bids_count);
+
+    qint64 getPendingAsksCount();
+    void setPendingAsksCount(qint64 pending_asks_count);
+
+    qint64 getPendingBidsCount();
+    void setPendingBidsCount(qint64 pending_bids_count);
+
 
 private:
-    qint64 completedAsksSum;
-qint64 completedBidsSum;
-qint64 completedAsksCount;
-qint64 completedBidsCount;
-qint64 pendingAsksCount;
-qint64 pendingBidsCount;
+    qint64 completed_asks_sum;
+    qint64 completed_bids_sum;
+    qint64 completed_asks_count;
+    qint64 completed_bids_count;
+    qint64 pending_asks_count;
+    qint64 pending_bids_count;
 };
 
 } /* namespace Swagger */

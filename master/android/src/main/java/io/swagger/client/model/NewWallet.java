@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class NewWallet  {
+public class NewWallet {
   
   @SerializedName("walletName")
   private String walletName = null;
@@ -67,15 +65,15 @@ public class NewWallet  {
       return false;
     }
     NewWallet newWallet = (NewWallet) o;
-    return (walletName == null ? newWallet.walletName == null : walletName.equals(newWallet.walletName)) &&
-        (info == null ? newWallet.info == null : info.equals(newWallet.info));
+    return (this.walletName == null ? newWallet.walletName == null : this.walletName.equals(newWallet.walletName)) &&
+        (this.info == null ? newWallet.info == null : this.info.equals(newWallet.info));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (walletName == null ? 0: walletName.hashCode());
-    result = 31 * result + (info == null ? 0: info.hashCode());
+    result = 31 * result + (this.walletName == null ? 0: this.walletName.hashCode());
+    result = 31 * result + (this.info == null ? 0: this.info.hashCode());
     return result;
   }
 

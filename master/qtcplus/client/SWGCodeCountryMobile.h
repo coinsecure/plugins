@@ -56,15 +56,18 @@ public:
 
     QString* getCode();
     void setCode(QString* code);
-QString* getCountryCode();
-    void setCountryCode(QString* countryCode);
-QString* getPhoneNumber();
-    void setPhoneNumber(QString* phoneNumber);
+
+    QString* getCountryCode();
+    void setCountryCode(QString* country_code);
+
+    QString* getPhoneNumber();
+    void setPhoneNumber(QString* phone_number);
+
 
 private:
     QString* code;
-QString* countryCode;
-QString* phoneNumber;
+    QString* country_code;
+    QString* phone_number;
 };
 
 } /* namespace Swagger */

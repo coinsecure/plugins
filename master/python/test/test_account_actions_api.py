@@ -74,6 +74,14 @@ class TestAccountActionsApi(unittest.TestCase):
         """
         pass
 
+    def test_v1signupverify_token(self):
+        """
+        Test case for v1signupverify_token
+
+        Verifies an Email token for Signup .
+        """
+        pass
+
     def test_v1userbankotp_number(self):
         """
         Test case for v1userbankotp_number

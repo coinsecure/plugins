@@ -54,6 +54,7 @@ class SuccessCancelData(object):
         self._vol = vol
         self._rate = rate
 
+
     @property
     def vol(self):
         """
@@ -74,6 +75,8 @@ class SuccessCancelData(object):
         :param vol: The vol of this SuccessCancelData.
         :type: int
         """
+        if vol is None:
+            raise ValueError("Invalid value for `vol`, must not be `None`")
 
         self._vol = vol
 
@@ -97,6 +100,8 @@ class SuccessCancelData(object):
         :param rate: The rate of this SuccessCancelData.
         :type: int
         """
+        if rate is None:
+            raise ValueError("Invalid value for `rate`, must not be `None`")
 
         self._rate = rate
 

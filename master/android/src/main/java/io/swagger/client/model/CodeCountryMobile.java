@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class CodeCountryMobile  {
+public class CodeCountryMobile {
   
   @SerializedName("code")
   private String code = null;
@@ -79,17 +77,17 @@ public class CodeCountryMobile  {
       return false;
     }
     CodeCountryMobile codeCountryMobile = (CodeCountryMobile) o;
-    return (code == null ? codeCountryMobile.code == null : code.equals(codeCountryMobile.code)) &&
-        (countryCode == null ? codeCountryMobile.countryCode == null : countryCode.equals(codeCountryMobile.countryCode)) &&
-        (phoneNumber == null ? codeCountryMobile.phoneNumber == null : phoneNumber.equals(codeCountryMobile.phoneNumber));
+    return (this.code == null ? codeCountryMobile.code == null : this.code.equals(codeCountryMobile.code)) &&
+        (this.countryCode == null ? codeCountryMobile.countryCode == null : this.countryCode.equals(codeCountryMobile.countryCode)) &&
+        (this.phoneNumber == null ? codeCountryMobile.phoneNumber == null : this.phoneNumber.equals(codeCountryMobile.phoneNumber));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (code == null ? 0: code.hashCode());
-    result = 31 * result + (countryCode == null ? 0: countryCode.hashCode());
-    result = 31 * result + (phoneNumber == null ? 0: phoneNumber.hashCode());
+    result = 31 * result + (this.code == null ? 0: this.code.hashCode());
+    result = 31 * result + (this.countryCode == null ? 0: this.countryCode.hashCode());
+    result = 31 * result + (this.phoneNumber == null ? 0: this.phoneNumber.hashCode());
     return result;
   }
 

@@ -57,7 +57,7 @@ public:
     void /v1/user/wallet/coin/new(SWGNewWallet body, QString* authorization, QString* accept);
     void /v1/user/wallet/coin/withdraw/initiate(SWGSendCoinWallet body, QString* authorization, QString* accept);
     void /v1/user/wallet/coin/withdraw/sendToExchange(SWGSendExchange body, QString* authorization, QString* accept);
-    void /v1/user/wallet/coin/withdraw/unverified/cancel/WithdrawID(QString* withdrawID, QString* authorization, QString* accept);
+    void /v1/user/wallet/coin/withdraw/unverified/cancel/WithdrawID(QString* withdraw_id, QString* authorization, QString* accept);
     void /v1/user/wallet/coin/withdraw/verify(QString* authorization, SWGCode body, QString* accept);
     void /v1/wallet/coin/withdraw/newVerifycode(SWGWithdrawID body, QString* authorization, QString* accept);
     

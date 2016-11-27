@@ -52,7 +52,7 @@
    * Constructs a new <code>RateData</code>.
    * @alias module:model/RateData
    * @class
-   * @param rate {Integer} 
+   * @param rate {Number} 
    */
   var exports = function(rate) {
     var _this = this;
@@ -72,14 +72,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('rate')) {
-        obj['rate'] = ApiClient.convertToType(data['rate'], 'Integer');
+        obj['rate'] = ApiClient.convertToType(data['rate'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} rate
+   * @member {Number} rate
    */
   exports.prototype['rate'] = undefined;
 

@@ -50,7 +50,7 @@ SWGJsValue::~SWGJsValue() {
 
 void
 SWGJsValue::init() {
-    }
+}
 
 void
 SWGJsValue::cleanup() {
@@ -67,7 +67,7 @@ SWGJsValue::fromJson(QString &json) {
 
 void
 SWGJsValue::fromJsonObject(QJsonObject &pJson) {
-    }
+}
 
 QString
 SWGJsValue::asJson ()

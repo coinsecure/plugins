@@ -66,6 +66,7 @@ class TradeCoinWithdrawData(object):
         self._withdraw_id = withdraw_id
         self._tx_hash = tx_hash
 
+
     @property
     def time_details(self):
         """
@@ -86,6 +87,8 @@ class TradeCoinWithdrawData(object):
         :param time_details: The time_details of this TradeCoinWithdrawData.
         :type: TimeData
         """
+        if time_details is None:
+            raise ValueError("Invalid value for `time_details`, must not be `None`")
 
         self._time_details = time_details
 
@@ -109,6 +112,8 @@ class TradeCoinWithdrawData(object):
         :param address: The address of this TradeCoinWithdrawData.
         :type: str
         """
+        if address is None:
+            raise ValueError("Invalid value for `address`, must not be `None`")
 
         self._address = address
 
@@ -132,6 +137,8 @@ class TradeCoinWithdrawData(object):
         :param value: The value of this TradeCoinWithdrawData.
         :type: int
         """
+        if value is None:
+            raise ValueError("Invalid value for `value`, must not be `None`")
 
         self._value = value
 
@@ -155,6 +162,8 @@ class TradeCoinWithdrawData(object):
         :param fees: The fees of this TradeCoinWithdrawData.
         :type: int
         """
+        if fees is None:
+            raise ValueError("Invalid value for `fees`, must not be `None`")
 
         self._fees = fees
 
@@ -178,6 +187,8 @@ class TradeCoinWithdrawData(object):
         :param withdraw_id: The withdraw_id of this TradeCoinWithdrawData.
         :type: str
         """
+        if withdraw_id is None:
+            raise ValueError("Invalid value for `withdraw_id`, must not be `None`")
 
         self._withdraw_id = withdraw_id
 
@@ -201,6 +212,8 @@ class TradeCoinWithdrawData(object):
         :param tx_hash: The tx_hash of this TradeCoinWithdrawData.
         :type: str
         """
+        if tx_hash is None:
+            raise ValueError("Invalid value for `tx_hash`, must not be `None`")
 
         self._tx_hash = tx_hash
 

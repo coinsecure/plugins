@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -30,12 +30,11 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-
 /**
  * SendCoinWallet
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-21T18:38:01.890Z")
-public class SendCoinWallet   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-27T22:11:57.435Z")
+public class SendCoinWallet {
   @SerializedName("walletID")
   private String walletID = null;
 
@@ -50,6 +49,9 @@ public class SendCoinWallet   {
 
   @SerializedName("pin")
   private String pin = null;
+
+  @SerializedName("fees")
+  private Object fees = null;
 
   public SendCoinWallet walletID(String walletID) {
     this.walletID = walletID;
@@ -141,6 +143,24 @@ public class SendCoinWallet   {
     this.pin = pin;
   }
 
+  public SendCoinWallet fees(Object fees) {
+    this.fees = fees;
+    return this;
+  }
+
+   /**
+   * Get fees
+   * @return fees
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public Object getFees() {
+    return fees;
+  }
+
+  public void setFees(Object fees) {
+    this.fees = fees;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -155,13 +175,15 @@ public class SendCoinWallet   {
         Objects.equals(this.amt, sendCoinWallet.amt) &&
         Objects.equals(this.toAddr, sendCoinWallet.toAddr) &&
         Objects.equals(this.msg, sendCoinWallet.msg) &&
-        Objects.equals(this.pin, sendCoinWallet.pin);
+        Objects.equals(this.pin, sendCoinWallet.pin) &&
+        Objects.equals(this.fees, sendCoinWallet.fees);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(walletID, amt, toAddr, msg, pin);
+    return Objects.hash(walletID, amt, toAddr, msg, pin, fees);
   }
+
 
   @Override
   public String toString() {
@@ -173,6 +195,7 @@ public class SendCoinWallet   {
     sb.append("    toAddr: ").append(toIndentedString(toAddr)).append("\n");
     sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
     sb.append("    pin: ").append(toIndentedString(pin)).append("\n");
+    sb.append("    fees: ").append(toIndentedString(fees)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -187,5 +210,6 @@ public class SendCoinWallet   {
     }
     return o.toString().replace("\n", "\n    ");
   }
+  
 }
 

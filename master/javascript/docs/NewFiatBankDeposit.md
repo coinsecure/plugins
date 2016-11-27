@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Integer** |  | 
+**amount** | **Number** |  | 
 **message** | **String** |  | 
 **bank** | **String** |  | 
 **depType** | **String** |  | 

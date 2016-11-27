@@ -1,6 +1,6 @@
 # swagger_client.AccountDataApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,6 +28,7 @@ Gets a Summary of Exchange Bank Data and Balances.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -43,7 +44,7 @@ try:
     api_response = api_instance.v1exchangebanksummary(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountDataApi->v1exchangebanksummary: %s\n" % e
+    print("Exception when calling AccountDataApi->v1exchangebanksummary: %s\n" % e)
 ```
 
 ### Parameters
@@ -77,6 +78,7 @@ Returns the users coin fee percentage. The response is in percentage.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -92,7 +94,7 @@ try:
     api_response = api_instance.v1exchangeusercoinfee(authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountDataApi->v1exchangeusercoinfee: %s\n" % e
+    print("Exception when calling AccountDataApi->v1exchangeusercoinfee: %s\n" % e)
 ```
 
 ### Parameters
@@ -126,6 +128,7 @@ Returns the users fiat fee percentage. The response is in percentage.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -141,7 +144,7 @@ try:
     api_response = api_instance.v1exchangeuserfiatfee(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountDataApi->v1exchangeuserfiatfee: %s\n" % e
+    print("Exception when calling AccountDataApi->v1exchangeuserfiatfee: %s\n" % e)
 ```
 
 ### Parameters
@@ -175,6 +178,7 @@ Searches for a coinsecure.me Netki Wallet Name and responds with an Address mode
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -190,7 +194,7 @@ try:
     api_response = api_instance.v1netkisearch_netki_name(netki_name, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountDataApi->v1netkisearch_netki_name: %s\n" % e
+    print("Exception when calling AccountDataApi->v1netkisearch_netki_name: %s\n" % e)
 ```
 
 ### Parameters
@@ -224,6 +228,7 @@ Gets Users KYC Status Details.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -239,7 +244,7 @@ try:
     api_response = api_instance.v1userexchangekycs(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountDataApi->v1userexchangekycs: %s\n" % e
+    print("Exception when calling AccountDataApi->v1userexchangekycs: %s\n" % e)
 ```
 
 ### Parameters
@@ -273,6 +278,7 @@ Returns the Users Paid Coin Referrals.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -288,7 +294,7 @@ try:
     api_response = api_instance.v1userexchangereferralcoinpaid(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountDataApi->v1userexchangereferralcoinpaid: %s\n" % e
+    print("Exception when calling AccountDataApi->v1userexchangereferralcoinpaid: %s\n" % e)
 ```
 
 ### Parameters
@@ -322,6 +328,7 @@ Gets Users Successful Referral Links that can be used during signup.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -337,7 +344,7 @@ try:
     api_response = api_instance.v1userexchangereferralcoinsuccessful(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountDataApi->v1userexchangereferralcoinsuccessful: %s\n" % e
+    print("Exception when calling AccountDataApi->v1userexchangereferralcoinsuccessful: %s\n" % e)
 ```
 
 ### Parameters
@@ -371,6 +378,7 @@ Returns the Users Paid Fiat Referrals.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -386,7 +394,7 @@ try:
     api_response = api_instance.v1userexchangereferralfiatpaid(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountDataApi->v1userexchangereferralfiatpaid: %s\n" % e
+    print("Exception when calling AccountDataApi->v1userexchangereferralfiatpaid: %s\n" % e)
 ```
 
 ### Parameters
@@ -420,6 +428,7 @@ Gets Users Referral Links that can be used during signup.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -435,7 +444,7 @@ try:
     api_response = api_instance.v1userexchangereferrals(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountDataApi->v1userexchangereferrals: %s\n" % e
+    print("Exception when calling AccountDataApi->v1userexchangereferrals: %s\n" % e)
 ```
 
 ### Parameters
@@ -469,6 +478,7 @@ Gets a Summary of Exchange Trade Data.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -484,7 +494,7 @@ try:
     api_response = api_instance.v1userexchangetradesummary(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountDataApi->v1userexchangetradesummary: %s\n" % e
+    print("Exception when calling AccountDataApi->v1userexchangetradesummary: %s\n" % e)
 ```
 
 ### Parameters
@@ -518,6 +528,7 @@ Retrieves details of a Login Token
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -533,7 +544,7 @@ try:
     api_response = api_instance.v1userlogintoken_token(token, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountDataApi->v1userlogintoken_token: %s\n" % e
+    print("Exception when calling AccountDataApi->v1userlogintoken_token: %s\n" % e)
 ```
 
 ### Parameters
@@ -567,6 +578,7 @@ Gets a Summary of Exchange Bank Data and Balances.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -582,7 +594,7 @@ try:
     api_response = api_instance.v1usersummary(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountDataApi->v1usersummary: %s\n" % e
+    print("Exception when calling AccountDataApi->v1usersummary: %s\n" % e)
 ```
 
 ### Parameters
@@ -616,6 +628,7 @@ Gets a Summary of Exchange Bank Data and Balances.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -631,7 +644,7 @@ try:
     api_response = api_instance.v1userwalletsummary(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountDataApi->v1userwalletsummary: %s\n" % e
+    print("Exception when calling AccountDataApi->v1userwalletsummary: %s\n" % e)
 ```
 
 ### Parameters

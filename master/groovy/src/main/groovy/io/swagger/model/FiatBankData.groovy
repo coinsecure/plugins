@@ -23,6 +23,8 @@ class FiatBankData {
     String accountNick = null
 
     String accountType = null
+
+    String accountID = null
   
 
 }

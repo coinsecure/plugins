@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **AccountNumber** | **string** |  | [default to null]
 **AccountNick** | **string** |  | [default to null]
 **AccountType** | **string** |  | [default to null]
+**AccountID** | **string** |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

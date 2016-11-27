@@ -51,8 +51,8 @@ SWGTimeData::~SWGTimeData() {
 void
 SWGTimeData::init() {
     time = 0L;
-verifiedTime = 0L;
-completedTime = 0L;
+    verified_time = 0L;
+    completed_time = 0L;
 }
 
 void
@@ -73,9 +73,9 @@ SWGTimeData::fromJson(QString &json) {
 
 void
 SWGTimeData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&time, pJson["time"], "qint64", "");
-setValue(&verifiedTime, pJson["verifiedTime"], "qint64", "");
-setValue(&completedTime, pJson["completedTime"], "qint64", "");
+    ::Swagger::setValue(&time, pJson["time"], "qint64", "");
+    ::Swagger::setValue(&verified_time, pJson["verified_time"], "qint64", "");
+    ::Swagger::setValue(&completed_time, pJson["completed_time"], "qint64", "");
 }
 
 QString
@@ -91,9 +91,12 @@ SWGTimeData::asJson ()
 QJsonObject*
 SWGTimeData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("time", QJsonValue(time));
-obj->insert("verifiedTime", QJsonValue(verifiedTime));
-obj->insert("completedTime", QJsonValue(completedTime));
+
+    obj->insert("verified_time", QJsonValue(verified_time));
+
+    obj->insert("completed_time", QJsonValue(completed_time));
 
     return obj;
 }
@@ -109,20 +112,20 @@ SWGTimeData::setTime(qint64 time) {
 
 qint64
 SWGTimeData::getVerifiedTime() {
-    return verifiedTime;
+    return verified_time;
 }
 void
-SWGTimeData::setVerifiedTime(qint64 verifiedTime) {
-    this->verifiedTime = verifiedTime;
+SWGTimeData::setVerifiedTime(qint64 verified_time) {
+    this->verified_time = verified_time;
 }
 
 qint64
 SWGTimeData::getCompletedTime() {
-    return completedTime;
+    return completed_time;
 }
 void
-SWGTimeData::setCompletedTime(qint64 completedTime) {
-    this->completedTime = completedTime;
+SWGTimeData::setCompletedTime(qint64 completed_time) {
+    this->completed_time = completed_time;
 }
 
 

@@ -72,6 +72,8 @@
 #include "SWGRateDiffDataResponse.h"
 #include "SWGRateVolData.h"
 #include "SWGRateVolDataResponse.h"
+#include "SWGRateVolTimeTypeData.h"
+#include "SWGRateVolTimeTypeDataResponse.h"
 #include "SWGResetPassword.h"
 #include "SWGSendCoin.h"
 #include "SWGSendCoinWallet.h"
@@ -80,6 +82,7 @@
 #include "SWGStandardInitiateLoginResultData.h"
 #include "SWGStandardLoginResultData.h"
 #include "SWGStandardTickerResultData.h"
+#include "SWGStandardVerifySignupResultData.h"
 #include "SWGSuccCoinRefData.h"
 #include "SWGSuccCoinRefDataResponse.h"
 #include "SWGSuccRefData.h"
@@ -92,6 +95,7 @@
 #include "SWGSuccessOrderDataResponse.h"
 #include "SWGSuccessResult.h"
 #include "SWGSuccessTickerResponse.h"
+#include "SWGSuccessVerifySignupResponse.h"
 #include "SWGTimeData.h"
 #include "SWGTimeDataCoin.h"
 #include "SWGTimeKYCData.h"
@@ -258,6 +262,12 @@ namespace Swagger {
     if(QString("SWGRateVolDataResponse").compare(type) == 0) {
       return new SWGRateVolDataResponse();
     }
+    if(QString("SWGRateVolTimeTypeData").compare(type) == 0) {
+      return new SWGRateVolTimeTypeData();
+    }
+    if(QString("SWGRateVolTimeTypeDataResponse").compare(type) == 0) {
+      return new SWGRateVolTimeTypeDataResponse();
+    }
     if(QString("SWGResetPassword").compare(type) == 0) {
       return new SWGResetPassword();
     }
@@ -281,6 +291,9 @@ namespace Swagger {
     }
     if(QString("SWGStandardTickerResultData").compare(type) == 0) {
       return new SWGStandardTickerResultData();
+    }
+    if(QString("SWGStandardVerifySignupResultData").compare(type) == 0) {
+      return new SWGStandardVerifySignupResultData();
     }
     if(QString("SWGSuccCoinRefData").compare(type) == 0) {
       return new SWGSuccCoinRefData();
@@ -317,6 +330,9 @@ namespace Swagger {
     }
     if(QString("SWGSuccessTickerResponse").compare(type) == 0) {
       return new SWGSuccessTickerResponse();
+    }
+    if(QString("SWGSuccessVerifySignupResponse").compare(type) == 0) {
+      return new SWGSuccessVerifySignupResponse();
     }
     if(QString("SWGTimeData").compare(type) == 0) {
       return new SWGTimeData();
@@ -394,19 +410,19 @@ namespace Swagger {
       return new SWGWithdrawID();
     }
     
-    return NULL;
+    return nullptr;
   }
 
   inline void* create(QString json, QString type) {
     void* val = create(type);
-    if(val != NULL) {
+    if(val != nullptr) {
       SWGObject* obj = static_cast<SWGObject*>(val);
       return obj->fromJson(json);
     }
     if(type.startsWith("QString")) {
       return new QString();
     }
-    return NULL;
+    return nullptr;
   }
 } /* namespace Swagger */
 

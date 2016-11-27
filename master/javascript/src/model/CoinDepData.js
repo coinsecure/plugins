@@ -54,7 +54,7 @@
    * @class
    * @param timeDetails {module:model/TimeDataCoin} 
    * @param address {String} 
-   * @param value {Integer} 
+   * @param value {Number} 
    * @param txHash {String} 
    * @param depositID {String} 
    * @param reason {String} 
@@ -88,7 +88,7 @@
         obj['address'] = ApiClient.convertToType(data['address'], 'String');
       }
       if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'Integer');
+        obj['value'] = ApiClient.convertToType(data['value'], 'Number');
       }
       if (data.hasOwnProperty('txHash')) {
         obj['txHash'] = ApiClient.convertToType(data['txHash'], 'String');
@@ -112,7 +112,7 @@
    */
   exports.prototype['address'] = undefined;
   /**
-   * @member {Integer} value
+   * @member {Number} value
    */
   exports.prototype['value'] = undefined;
   /**

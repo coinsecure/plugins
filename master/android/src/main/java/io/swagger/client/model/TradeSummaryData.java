@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class TradeSummaryData  {
+public class TradeSummaryData {
   
   @SerializedName("completedAsksSum")
   private Long completedAsksSum = null;
@@ -115,23 +113,23 @@ public class TradeSummaryData  {
       return false;
     }
     TradeSummaryData tradeSummaryData = (TradeSummaryData) o;
-    return (completedAsksSum == null ? tradeSummaryData.completedAsksSum == null : completedAsksSum.equals(tradeSummaryData.completedAsksSum)) &&
-        (completedBidsSum == null ? tradeSummaryData.completedBidsSum == null : completedBidsSum.equals(tradeSummaryData.completedBidsSum)) &&
-        (completedAsksCount == null ? tradeSummaryData.completedAsksCount == null : completedAsksCount.equals(tradeSummaryData.completedAsksCount)) &&
-        (completedBidsCount == null ? tradeSummaryData.completedBidsCount == null : completedBidsCount.equals(tradeSummaryData.completedBidsCount)) &&
-        (pendingAsksCount == null ? tradeSummaryData.pendingAsksCount == null : pendingAsksCount.equals(tradeSummaryData.pendingAsksCount)) &&
-        (pendingBidsCount == null ? tradeSummaryData.pendingBidsCount == null : pendingBidsCount.equals(tradeSummaryData.pendingBidsCount));
+    return (this.completedAsksSum == null ? tradeSummaryData.completedAsksSum == null : this.completedAsksSum.equals(tradeSummaryData.completedAsksSum)) &&
+        (this.completedBidsSum == null ? tradeSummaryData.completedBidsSum == null : this.completedBidsSum.equals(tradeSummaryData.completedBidsSum)) &&
+        (this.completedAsksCount == null ? tradeSummaryData.completedAsksCount == null : this.completedAsksCount.equals(tradeSummaryData.completedAsksCount)) &&
+        (this.completedBidsCount == null ? tradeSummaryData.completedBidsCount == null : this.completedBidsCount.equals(tradeSummaryData.completedBidsCount)) &&
+        (this.pendingAsksCount == null ? tradeSummaryData.pendingAsksCount == null : this.pendingAsksCount.equals(tradeSummaryData.pendingAsksCount)) &&
+        (this.pendingBidsCount == null ? tradeSummaryData.pendingBidsCount == null : this.pendingBidsCount.equals(tradeSummaryData.pendingBidsCount));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (completedAsksSum == null ? 0: completedAsksSum.hashCode());
-    result = 31 * result + (completedBidsSum == null ? 0: completedBidsSum.hashCode());
-    result = 31 * result + (completedAsksCount == null ? 0: completedAsksCount.hashCode());
-    result = 31 * result + (completedBidsCount == null ? 0: completedBidsCount.hashCode());
-    result = 31 * result + (pendingAsksCount == null ? 0: pendingAsksCount.hashCode());
-    result = 31 * result + (pendingBidsCount == null ? 0: pendingBidsCount.hashCode());
+    result = 31 * result + (this.completedAsksSum == null ? 0: this.completedAsksSum.hashCode());
+    result = 31 * result + (this.completedBidsSum == null ? 0: this.completedBidsSum.hashCode());
+    result = 31 * result + (this.completedAsksCount == null ? 0: this.completedAsksCount.hashCode());
+    result = 31 * result + (this.completedBidsCount == null ? 0: this.completedBidsCount.hashCode());
+    result = 31 * result + (this.pendingAsksCount == null ? 0: this.pendingAsksCount.hashCode());
+    result = 31 * result + (this.pendingBidsCount == null ? 0: this.pendingBidsCount.hashCode());
     return result;
   }
 

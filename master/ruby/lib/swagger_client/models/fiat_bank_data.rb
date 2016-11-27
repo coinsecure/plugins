@@ -44,6 +44,8 @@ module SwaggerClient
 
     attr_accessor :account_type
 
+    attr_accessor :account_id
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -56,7 +58,8 @@ module SwaggerClient
         :'info' => :'info',
         :'account_number' => :'accountNumber',
         :'account_nick' => :'accountNick',
-        :'account_type' => :'accountType'
+        :'account_type' => :'accountType',
+        :'account_id' => :'accountID'
       }
     end
 
@@ -71,7 +74,8 @@ module SwaggerClient
         :'info' => :'String',
         :'account_number' => :'String',
         :'account_nick' => :'String',
-        :'account_type' => :'String'
+        :'account_type' => :'String',
+        :'account_id' => :'String'
       }
     end
 
@@ -119,12 +123,56 @@ module SwaggerClient
         self.account_type = attributes[:'accountType']
       end
 
+      if attributes.has_key?(:'accountID')
+        self.account_id = attributes[:'accountID']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @time.nil?
+        invalid_properties.push("invalid value for 'time', time cannot be nil.")
+      end
+
+      if @status.nil?
+        invalid_properties.push("invalid value for 'status', status cannot be nil.")
+      end
+
+      if @update_time.nil?
+        invalid_properties.push("invalid value for 'update_time', update_time cannot be nil.")
+      end
+
+      if @update_message.nil?
+        invalid_properties.push("invalid value for 'update_message', update_message cannot be nil.")
+      end
+
+      if @bank_id.nil?
+        invalid_properties.push("invalid value for 'bank_id', bank_id cannot be nil.")
+      end
+
+      if @info.nil?
+        invalid_properties.push("invalid value for 'info', info cannot be nil.")
+      end
+
+      if @account_number.nil?
+        invalid_properties.push("invalid value for 'account_number', account_number cannot be nil.")
+      end
+
+      if @account_nick.nil?
+        invalid_properties.push("invalid value for 'account_nick', account_nick cannot be nil.")
+      end
+
+      if @account_type.nil?
+        invalid_properties.push("invalid value for 'account_type', account_type cannot be nil.")
+      end
+
+      if @account_id.nil?
+        invalid_properties.push("invalid value for 'account_id', account_id cannot be nil.")
+      end
+
       return invalid_properties
     end
 
@@ -140,6 +188,7 @@ module SwaggerClient
       return false if @account_number.nil?
       return false if @account_nick.nil?
       return false if @account_type.nil?
+      return false if @account_id.nil?
       return true
     end
 
@@ -156,7 +205,8 @@ module SwaggerClient
           info == o.info &&
           account_number == o.account_number &&
           account_nick == o.account_nick &&
-          account_type == o.account_type
+          account_type == o.account_type &&
+          account_id == o.account_id
     end
 
     # @see the `==` method
@@ -168,7 +218,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [time, status, update_time, update_message, bank_id, info, account_number, account_nick, account_type].hash
+      [time, status, update_time, update_message, bank_id, info, account_number, account_nick, account_type, account_id].hash
     end
 
     # Builds the object from hash
@@ -177,7 +227,7 @@ module SwaggerClient
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
       self.class.swagger_types.each_pair do |key, type|
-        if type =~ /^Array<(.*)>/i
+        if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
@@ -208,7 +258,7 @@ module SwaggerClient
       when :Float
         value.to_f
       when :BOOLEAN
-        if value.to_s =~ /^(true|t|yes|y|1)$/i
+        if value.to_s =~ /\A(true|t|yes|y|1)\z/i
           true
         else
           false
@@ -219,7 +269,7 @@ module SwaggerClient
       when /\AArray<(?<inner_type>.+)>\z/
         inner_type = Regexp.last_match[:inner_type]
         value.map { |v| _deserialize(inner_type, v) }
-      when /\AHash<(?<k_type>.+), (?<v_type>.+)>\z/
+      when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
         {}.tap do |hash|

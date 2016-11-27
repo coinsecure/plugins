@@ -51,29 +51,33 @@ SWGSuccCoinRefDataResponse::~SWGSuccCoinRefDataResponse() {
 void
 SWGSuccCoinRefDataResponse::init() {
     success = false;
-message = new QList<SWGSuccCoinRefData*>();
-method = new QString("");
-title = new QString("");
-time = NULL;
+    message = new QList<SWGSuccCoinRefData*>();
+    method = new QString("");
+    title = new QString("");
+    time = NULL;
 }
 
 void
 SWGSuccCoinRefDataResponse::cleanup() {
     
-if(message != NULL) {
+
+    if(message != nullptr) {
         QList<SWGSuccCoinRefData*>* arr = message;
         foreach(SWGSuccCoinRefData* o, *arr) {
             delete o;
         }
         delete message;
     }
-if(method != NULL) {
+
+    if(method != nullptr) {
         delete method;
     }
-if(title != NULL) {
+
+    if(title != nullptr) {
         delete title;
     }
-if(time != NULL) {
+
+    if(time != nullptr) {
         delete time;
     }
 }
@@ -89,11 +93,13 @@ SWGSuccCoinRefDataResponse::fromJson(QString &json) {
 
 void
 SWGSuccCoinRefDataResponse::fromJsonObject(QJsonObject &pJson) {
-    setValue(&success, pJson["success"], "bool", "");
-setValue(&message, pJson["message"], "QList", "SWGSuccCoinRefData");
-setValue(&method, pJson["method"], "QString", "QString");
-setValue(&title, pJson["title"], "QString", "QString");
-setValue(&time, pJson["time"], "QDateTime", "QDateTime");
+    ::Swagger::setValue(&success, pJson["success"], "bool", "");
+    
+    ::Swagger::setValue(&message, pJson["message"], "QList", "SWGSuccCoinRefData");
+    
+    ::Swagger::setValue(&method, pJson["method"], "QString", "QString");
+    ::Swagger::setValue(&title, pJson["title"], "QString", "QString");
+    ::Swagger::setValue(&time, pJson["time"], "QDateTime", "QDateTime");
 }
 
 QString
@@ -109,30 +115,18 @@ SWGSuccCoinRefDataResponse::asJson ()
 QJsonObject*
 SWGSuccCoinRefDataResponse::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("success", QJsonValue(success));
 
-    
-    QList<SWGSuccCoinRefData*>* messageList = message;
     QJsonArray messageJsonArray;
     toJsonArray((QList<void*>*)message, &messageJsonArray, "message", "SWGSuccCoinRefData");
-
     obj->insert("message", messageJsonArray);
-    
 
-    
     toJsonValue(QString("method"), method, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("title"), title, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("time"), time, obj, QString("QDateTime"));
-    
-        
 
     return obj;
 }

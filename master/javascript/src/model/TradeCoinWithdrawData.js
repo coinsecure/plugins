@@ -54,8 +54,8 @@
    * @class
    * @param timeDetails {module:model/TimeData} 
    * @param address {String} 
-   * @param value {Integer} 
-   * @param fees {Integer} 
+   * @param value {Number} 
+   * @param fees {Number} 
    * @param withdrawID {String} 
    * @param txHash {String} 
    */
@@ -88,10 +88,10 @@
         obj['address'] = ApiClient.convertToType(data['address'], 'String');
       }
       if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'Integer');
+        obj['value'] = ApiClient.convertToType(data['value'], 'Number');
       }
       if (data.hasOwnProperty('fees')) {
-        obj['fees'] = ApiClient.convertToType(data['fees'], 'Integer');
+        obj['fees'] = ApiClient.convertToType(data['fees'], 'Number');
       }
       if (data.hasOwnProperty('withdrawID')) {
         obj['withdrawID'] = ApiClient.convertToType(data['withdrawID'], 'String');
@@ -112,11 +112,11 @@
    */
   exports.prototype['address'] = undefined;
   /**
-   * @member {Integer} value
+   * @member {Number} value
    */
   exports.prototype['value'] = undefined;
   /**
-   * @member {Integer} fees
+   * @member {Number} fees
    */
   exports.prototype['fees'] = undefined;
   /**

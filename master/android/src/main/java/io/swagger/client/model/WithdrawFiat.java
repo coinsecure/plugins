@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class WithdrawFiat  {
+public class WithdrawFiat {
   
   @SerializedName("fiat")
   private Long fiat = null;
@@ -91,19 +89,19 @@ public class WithdrawFiat  {
       return false;
     }
     WithdrawFiat withdrawFiat = (WithdrawFiat) o;
-    return (fiat == null ? withdrawFiat.fiat == null : fiat.equals(withdrawFiat.fiat)) &&
-        (account == null ? withdrawFiat.account == null : account.equals(withdrawFiat.account)) &&
-        (msg == null ? withdrawFiat.msg == null : msg.equals(withdrawFiat.msg)) &&
-        (pin == null ? withdrawFiat.pin == null : pin.equals(withdrawFiat.pin));
+    return (this.fiat == null ? withdrawFiat.fiat == null : this.fiat.equals(withdrawFiat.fiat)) &&
+        (this.account == null ? withdrawFiat.account == null : this.account.equals(withdrawFiat.account)) &&
+        (this.msg == null ? withdrawFiat.msg == null : this.msg.equals(withdrawFiat.msg)) &&
+        (this.pin == null ? withdrawFiat.pin == null : this.pin.equals(withdrawFiat.pin));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (fiat == null ? 0: fiat.hashCode());
-    result = 31 * result + (account == null ? 0: account.hashCode());
-    result = 31 * result + (msg == null ? 0: msg.hashCode());
-    result = 31 * result + (pin == null ? 0: pin.hashCode());
+    result = 31 * result + (this.fiat == null ? 0: this.fiat.hashCode());
+    result = 31 * result + (this.account == null ? 0: this.account.hashCode());
+    result = 31 * result + (this.msg == null ? 0: this.msg.hashCode());
+    result = 31 * result + (this.pin == null ? 0: this.pin.hashCode());
     return result;
   }
 

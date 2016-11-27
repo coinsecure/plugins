@@ -199,6 +199,16 @@
         done();
       });
     });
+    describe('v1userexchangetrades', function() {
+      it('should call v1userexchangetrades successfully', function(done) {
+        //uncomment below and update the code to test v1userexchangetrades
+        //instance.v1userexchangetrades(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

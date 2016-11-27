@@ -52,7 +52,7 @@
    * Constructs a new <code>NewFiatBankDeposit</code>.
    * @alias module:model/NewFiatBankDeposit
    * @class
-   * @param amount {Integer} 
+   * @param amount {Number} 
    * @param message {String} 
    * @param bank {String} 
    * @param depType {String} 
@@ -78,7 +78,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('amount')) {
-        obj['amount'] = ApiClient.convertToType(data['amount'], 'Integer');
+        obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
@@ -94,7 +94,7 @@
   }
 
   /**
-   * @member {Integer} amount
+   * @member {Number} amount
    */
   exports.prototype['amount'] = undefined;
   /**

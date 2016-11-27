@@ -104,6 +104,8 @@ class ExchangeBankFiatDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -117,6 +119,9 @@ class ExchangeBankFiatDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankfiataccounts`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/accounts'.replace('{format}', 'json')
         path_params = {}
@@ -157,7 +162,10 @@ class ExchangeBankFiatDataApi(object):
                                             response_type='FiatBankDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatbalanceavailable(self, authorization, **kwargs):
         """
@@ -212,6 +220,8 @@ class ExchangeBankFiatDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -225,6 +235,9 @@ class ExchangeBankFiatDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankfiatbalanceavailable`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/balance/total'.replace('{format}', 'json')
         path_params = {}
@@ -265,7 +278,10 @@ class ExchangeBankFiatDataApi(object):
                                             response_type='RateDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatbalancepending(self, authorization, **kwargs):
         """
@@ -320,6 +336,8 @@ class ExchangeBankFiatDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -333,6 +351,9 @@ class ExchangeBankFiatDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankfiatbalancepending`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/balance/pending'.replace('{format}', 'json')
         path_params = {}
@@ -373,7 +394,10 @@ class ExchangeBankFiatDataApi(object):
                                             response_type='RateDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatbalancetotal(self, authorization, **kwargs):
         """
@@ -428,6 +452,8 @@ class ExchangeBankFiatDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -441,6 +467,9 @@ class ExchangeBankFiatDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankfiatbalancetotal`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/balance/available'.replace('{format}', 'json')
         path_params = {}
@@ -481,7 +510,10 @@ class ExchangeBankFiatDataApi(object):
                                             response_type='RateDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatdepositcancelled(self, authorization, **kwargs):
         """
@@ -544,6 +576,8 @@ class ExchangeBankFiatDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -557,6 +591,9 @@ class ExchangeBankFiatDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankfiatdepositcancelled`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/deposit/cancelled'.replace('{format}', 'json')
         path_params = {}
@@ -605,7 +642,10 @@ class ExchangeBankFiatDataApi(object):
                                             response_type='FiatDepDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatdepositunverified(self, authorization, **kwargs):
         """
@@ -668,6 +708,8 @@ class ExchangeBankFiatDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -681,6 +723,9 @@ class ExchangeBankFiatDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankfiatdepositunverified`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/deposit/unverified'.replace('{format}', 'json')
         path_params = {}
@@ -729,7 +774,10 @@ class ExchangeBankFiatDataApi(object):
                                             response_type='FiatDepDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatdepositverified(self, authorization, **kwargs):
         """
@@ -792,6 +840,8 @@ class ExchangeBankFiatDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -805,6 +855,9 @@ class ExchangeBankFiatDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankfiatdepositverified`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/deposit/verified'.replace('{format}', 'json')
         path_params = {}
@@ -853,7 +906,10 @@ class ExchangeBankFiatDataApi(object):
                                             response_type='FiatDepDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatwithdrawcancelled(self, authorization, **kwargs):
         """
@@ -916,6 +972,8 @@ class ExchangeBankFiatDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -929,6 +987,9 @@ class ExchangeBankFiatDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankfiatwithdrawcancelled`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/withdraw/cancelled'.replace('{format}', 'json')
         path_params = {}
@@ -977,7 +1038,10 @@ class ExchangeBankFiatDataApi(object):
                                             response_type='FiatWithDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatwithdrawcompleted(self, authorization, **kwargs):
         """
@@ -1040,6 +1104,8 @@ class ExchangeBankFiatDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1053,6 +1119,9 @@ class ExchangeBankFiatDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankfiatwithdrawcompleted`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/withdraw/completed'.replace('{format}', 'json')
         path_params = {}
@@ -1101,7 +1170,10 @@ class ExchangeBankFiatDataApi(object):
                                             response_type='FiatWithDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatwithdrawunverified(self, authorization, **kwargs):
         """
@@ -1164,6 +1236,8 @@ class ExchangeBankFiatDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1177,6 +1251,9 @@ class ExchangeBankFiatDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankfiatwithdrawunverified`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/withdraw/unverified'.replace('{format}', 'json')
         path_params = {}
@@ -1225,7 +1302,10 @@ class ExchangeBankFiatDataApi(object):
                                             response_type='FiatWithDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankfiatwithdrawverified(self, authorization, **kwargs):
         """
@@ -1288,6 +1368,8 @@ class ExchangeBankFiatDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1301,6 +1383,9 @@ class ExchangeBankFiatDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankfiatwithdrawverified`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/fiat/withdraw/verified'.replace('{format}', 'json')
         path_params = {}
@@ -1349,4 +1434,7 @@ class ExchangeBankFiatDataApi(object):
                                             response_type='FiatWithDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)

@@ -18,7 +18,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"pendingCoinBalance": @"pendingCoinBalance", @"pendingFiatBalance": @"pendingFiatBalance", @"availableCoinBalance": @"availableCoinBalance", @"availableFiatBalance": @"availableFiatBalance", @"totalCoinBalance": @"totalCoinBalance", @"totalFiatBalance": @"totalFiatBalance", @"coinFeePercentage": @"coinFeePercentage", @"fiatFeePercentage": @"fiatFeePercentage", @"bankLinkStatus": @"bankLinkStatus", @"hasTradeNetki": @"hasTradeNetki", @"tradeNetkiName": @"tradeNetkiName", @"tradeNetkiAddress": @"tradeNetkiAddress" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"pendingCoinBalance": @"pendingCoinBalance", @"pendingFiatBalance": @"pendingFiatBalance", @"availableCoinBalance": @"availableCoinBalance", @"availableFiatBalance": @"availableFiatBalance", @"totalCoinBalance": @"totalCoinBalance", @"totalFiatBalance": @"totalFiatBalance", @"coinFeePercentage": @"coinFeePercentage", @"fiatFeePercentage": @"fiatFeePercentage", @"bankLinkStatus": @"bankLinkStatus", @"hasTradeNetki": @"hasTradeNetki", @"tradeNetkiName": @"tradeNetkiName", @"tradeNetkiAddress": @"tradeNetkiAddress" }];
 }
 
 /**

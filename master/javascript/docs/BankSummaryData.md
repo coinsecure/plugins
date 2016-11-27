@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pendingCoinBalance** | **Integer** |  | 
-**pendingFiatBalance** | **Integer** |  | 
-**availableCoinBalance** | **Integer** |  | 
-**availableFiatBalance** | **Integer** |  | 
-**totalCoinBalance** | **Integer** |  | 
-**totalFiatBalance** | **Integer** |  | 
+**pendingCoinBalance** | **Number** |  | 
+**pendingFiatBalance** | **Number** |  | 
+**availableCoinBalance** | **Number** |  | 
+**availableFiatBalance** | **Number** |  | 
+**totalCoinBalance** | **Number** |  | 
+**totalFiatBalance** | **Number** |  | 
 **coinFeePercentage** | **Number** |  | 
 **fiatFeePercentage** | **Number** |  | 
 **bankLinkStatus** | **String** |  | 

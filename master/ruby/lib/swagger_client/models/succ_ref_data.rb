@@ -113,6 +113,34 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @ref_percent.nil?
+        invalid_properties.push("invalid value for 'ref_percent', ref_percent cannot be nil.")
+      end
+
+      if @time.nil?
+        invalid_properties.push("invalid value for 'time', time cannot be nil.")
+      end
+
+      if @ref_id.nil?
+        invalid_properties.push("invalid value for 'ref_id', ref_id cannot be nil.")
+      end
+
+      if @email_verified.nil?
+        invalid_properties.push("invalid value for 'email_verified', email_verified cannot be nil.")
+      end
+
+      if @kyc_complete.nil?
+        invalid_properties.push("invalid value for 'kyc_complete', kyc_complete cannot be nil.")
+      end
+
+      if @btc_earned.nil?
+        invalid_properties.push("invalid value for 'btc_earned', btc_earned cannot be nil.")
+      end
+
+      if @fiat_earned.nil?
+        invalid_properties.push("invalid value for 'fiat_earned', fiat_earned cannot be nil.")
+      end
+
       return invalid_properties
     end
 
@@ -161,7 +189,7 @@ module SwaggerClient
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
       self.class.swagger_types.each_pair do |key, type|
-        if type =~ /^Array<(.*)>/i
+        if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
@@ -192,7 +220,7 @@ module SwaggerClient
       when :Float
         value.to_f
       when :BOOLEAN
-        if value.to_s =~ /^(true|t|yes|y|1)$/i
+        if value.to_s =~ /\A(true|t|yes|y|1)\z/i
           true
         else
           false
@@ -203,7 +231,7 @@ module SwaggerClient
       when /\AArray<(?<inner_type>.+)>\z/
         inner_type = Regexp.last_match[:inner_type]
         value.map { |v| _deserialize(inner_type, v) }
-      when /\AHash<(?<k_type>.+), (?<v_type>.+)>\z/
+      when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
         {}.tap do |hash|

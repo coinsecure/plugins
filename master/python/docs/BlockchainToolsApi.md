@@ -1,6 +1,6 @@
 # swagger_client.BlockchainToolsApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,6 +17,7 @@ Searches for a Bitcoin Address, Netki Wallet Name or Transaction ID.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -32,7 +33,7 @@ try:
     api_response = api_instance.v1bitcoinsearch_address(any, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BlockchainToolsApi->v1bitcoinsearch_address: %s\n" % e
+    print("Exception when calling BlockchainToolsApi->v1bitcoinsearch_address: %s\n" % e)
 ```
 
 ### Parameters
@@ -66,6 +67,7 @@ Searches for a Number of Confirmations on a transaction ID.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -81,7 +83,7 @@ try:
     api_response = api_instance.v1bitcoinsearch_txid(txid, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BlockchainToolsApi->v1bitcoinsearch_txid: %s\n" % e
+    print("Exception when calling BlockchainToolsApi->v1bitcoinsearch_txid: %s\n" % e)
 ```
 
 ### Parameters

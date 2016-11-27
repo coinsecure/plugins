@@ -51,4 +51,6 @@
 
 @property(nonatomic) NSString* accountType;
 
+@property(nonatomic) NSString* accountID;
+
 @end

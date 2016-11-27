@@ -53,12 +53,12 @@
    * @alias module:model/SuccRefData
    * @class
    * @param refPercent {Number} 
-   * @param time {Integer} 
+   * @param time {Number} 
    * @param refID {String} 
    * @param emailVerified {Boolean} 
    * @param kycComplete {Boolean} 
-   * @param btcEarned {Integer} 
-   * @param fiatEarned {Integer} 
+   * @param btcEarned {Number} 
+   * @param fiatEarned {Number} 
    */
   var exports = function(refPercent, time, refID, emailVerified, kycComplete, btcEarned, fiatEarned) {
     var _this = this;
@@ -87,7 +87,7 @@
         obj['refPercent'] = ApiClient.convertToType(data['refPercent'], 'Number');
       }
       if (data.hasOwnProperty('time')) {
-        obj['time'] = ApiClient.convertToType(data['time'], 'Integer');
+        obj['time'] = ApiClient.convertToType(data['time'], 'Number');
       }
       if (data.hasOwnProperty('refID')) {
         obj['refID'] = ApiClient.convertToType(data['refID'], 'String');
@@ -99,10 +99,10 @@
         obj['kycComplete'] = ApiClient.convertToType(data['kycComplete'], 'Boolean');
       }
       if (data.hasOwnProperty('btcEarned')) {
-        obj['btcEarned'] = ApiClient.convertToType(data['btcEarned'], 'Integer');
+        obj['btcEarned'] = ApiClient.convertToType(data['btcEarned'], 'Number');
       }
       if (data.hasOwnProperty('fiatEarned')) {
-        obj['fiatEarned'] = ApiClient.convertToType(data['fiatEarned'], 'Integer');
+        obj['fiatEarned'] = ApiClient.convertToType(data['fiatEarned'], 'Number');
       }
     }
     return obj;
@@ -113,7 +113,7 @@
    */
   exports.prototype['refPercent'] = undefined;
   /**
-   * @member {Integer} time
+   * @member {Number} time
    */
   exports.prototype['time'] = undefined;
   /**
@@ -131,11 +131,11 @@
    */
   exports.prototype['kycComplete'] = false;
   /**
-   * @member {Integer} btcEarned
+   * @member {Number} btcEarned
    */
   exports.prototype['btcEarned'] = undefined;
   /**
-   * @member {Integer} fiatEarned
+   * @member {Number} fiatEarned
    */
   exports.prototype['fiatEarned'] = undefined;
 

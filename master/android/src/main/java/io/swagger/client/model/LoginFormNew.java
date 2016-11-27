@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class LoginFormNew  {
+public class LoginFormNew {
   
   @SerializedName("email")
   private String email = null;
@@ -103,21 +101,21 @@ public class LoginFormNew  {
       return false;
     }
     LoginFormNew loginFormNew = (LoginFormNew) o;
-    return (email == null ? loginFormNew.email == null : email.equals(loginFormNew.email)) &&
-        (token == null ? loginFormNew.token == null : token.equals(loginFormNew.token)) &&
-        (password == null ? loginFormNew.password == null : password.equals(loginFormNew.password)) &&
-        (gcmCode == null ? loginFormNew.gcmCode == null : gcmCode.equals(loginFormNew.gcmCode)) &&
-        (pin == null ? loginFormNew.pin == null : pin.equals(loginFormNew.pin));
+    return (this.email == null ? loginFormNew.email == null : this.email.equals(loginFormNew.email)) &&
+        (this.token == null ? loginFormNew.token == null : this.token.equals(loginFormNew.token)) &&
+        (this.password == null ? loginFormNew.password == null : this.password.equals(loginFormNew.password)) &&
+        (this.gcmCode == null ? loginFormNew.gcmCode == null : this.gcmCode.equals(loginFormNew.gcmCode)) &&
+        (this.pin == null ? loginFormNew.pin == null : this.pin.equals(loginFormNew.pin));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (email == null ? 0: email.hashCode());
-    result = 31 * result + (token == null ? 0: token.hashCode());
-    result = 31 * result + (password == null ? 0: password.hashCode());
-    result = 31 * result + (gcmCode == null ? 0: gcmCode.hashCode());
-    result = 31 * result + (pin == null ? 0: pin.hashCode());
+    result = 31 * result + (this.email == null ? 0: this.email.hashCode());
+    result = 31 * result + (this.token == null ? 0: this.token.hashCode());
+    result = 31 * result + (this.password == null ? 0: this.password.hashCode());
+    result = 31 * result + (this.gcmCode == null ? 0: this.gcmCode.hashCode());
+    result = 31 * result + (this.pin == null ? 0: this.pin.hashCode());
     return result;
   }
 

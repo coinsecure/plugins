@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **String** |  | 
-**time** | **Integer** |  | 
+**time** | **Number** |  | 
 **info** | **String** |  | 
 **netki** | **String** |  | 
 

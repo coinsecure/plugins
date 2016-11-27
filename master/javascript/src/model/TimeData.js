@@ -52,9 +52,9 @@
    * Constructs a new <code>TimeData</code>.
    * @alias module:model/TimeData
    * @class
-   * @param time {Integer} 
-   * @param verifiedTime {Integer} 
-   * @param completedTime {Integer} 
+   * @param time {Number} 
+   * @param verifiedTime {Number} 
+   * @param completedTime {Number} 
    */
   var exports = function(time, verifiedTime, completedTime) {
     var _this = this;
@@ -76,28 +76,28 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('time')) {
-        obj['time'] = ApiClient.convertToType(data['time'], 'Integer');
+        obj['time'] = ApiClient.convertToType(data['time'], 'Number');
       }
       if (data.hasOwnProperty('verifiedTime')) {
-        obj['verifiedTime'] = ApiClient.convertToType(data['verifiedTime'], 'Integer');
+        obj['verifiedTime'] = ApiClient.convertToType(data['verifiedTime'], 'Number');
       }
       if (data.hasOwnProperty('completedTime')) {
-        obj['completedTime'] = ApiClient.convertToType(data['completedTime'], 'Integer');
+        obj['completedTime'] = ApiClient.convertToType(data['completedTime'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} time
+   * @member {Number} time
    */
   exports.prototype['time'] = undefined;
   /**
-   * @member {Integer} verifiedTime
+   * @member {Number} verifiedTime
    */
   exports.prototype['verifiedTime'] = undefined;
   /**
-   * @member {Integer} completedTime
+   * @member {Number} completedTime
    */
   exports.prototype['completedTime'] = undefined;
 

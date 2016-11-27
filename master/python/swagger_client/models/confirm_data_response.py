@@ -63,6 +63,7 @@ class ConfirmDataResponse(object):
         self._title = title
         self._time = time
 
+
     @property
     def success(self):
         """
@@ -83,6 +84,8 @@ class ConfirmDataResponse(object):
         :param success: The success of this ConfirmDataResponse.
         :type: bool
         """
+        if success is None:
+            raise ValueError("Invalid value for `success`, must not be `None`")
 
         self._success = success
 
@@ -106,6 +109,8 @@ class ConfirmDataResponse(object):
         :param message: The message of this ConfirmDataResponse.
         :type: ConfirmData
         """
+        if message is None:
+            raise ValueError("Invalid value for `message`, must not be `None`")
 
         self._message = message
 
@@ -129,6 +134,8 @@ class ConfirmDataResponse(object):
         :param method: The method of this ConfirmDataResponse.
         :type: str
         """
+        if method is None:
+            raise ValueError("Invalid value for `method`, must not be `None`")
 
         self._method = method
 
@@ -152,6 +159,8 @@ class ConfirmDataResponse(object):
         :param title: The title of this ConfirmDataResponse.
         :type: str
         """
+        if title is None:
+            raise ValueError("Invalid value for `title`, must not be `None`")
 
         self._title = title
 
@@ -175,6 +184,8 @@ class ConfirmDataResponse(object):
         :param time: The time of this ConfirmDataResponse.
         :type: datetime
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 

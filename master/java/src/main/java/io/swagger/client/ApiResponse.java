@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * API response returned by API call.
  *
- * @param T The type of data that is deserialized from response body
+ * @param <T> The type of data that is deserialized from response body
  */
 public class ApiResponse<T> {
     final private int statusCode;

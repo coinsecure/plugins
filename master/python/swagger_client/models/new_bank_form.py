@@ -72,6 +72,7 @@ class NewBankForm(object):
         self._phone = phone
         self._otp = otp
 
+
     @property
     def acct_nick(self):
         """
@@ -92,6 +93,8 @@ class NewBankForm(object):
         :param acct_nick: The acct_nick of this NewBankForm.
         :type: str
         """
+        if acct_nick is None:
+            raise ValueError("Invalid value for `acct_nick`, must not be `None`")
 
         self._acct_nick = acct_nick
 
@@ -115,6 +118,8 @@ class NewBankForm(object):
         :param name: The name of this NewBankForm.
         :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")
 
         self._name = name
 
@@ -138,6 +143,8 @@ class NewBankForm(object):
         :param ban: The ban of this NewBankForm.
         :type: str
         """
+        if ban is None:
+            raise ValueError("Invalid value for `ban`, must not be `None`")
 
         self._ban = ban
 
@@ -161,6 +168,8 @@ class NewBankForm(object):
         :param ifsc: The ifsc of this NewBankForm.
         :type: str
         """
+        if ifsc is None:
+            raise ValueError("Invalid value for `ifsc`, must not be `None`")
 
         self._ifsc = ifsc
 
@@ -207,6 +216,8 @@ class NewBankForm(object):
         :param ban_type: The ban_type of this NewBankForm.
         :type: str
         """
+        if ban_type is None:
+            raise ValueError("Invalid value for `ban_type`, must not be `None`")
 
         self._ban_type = ban_type
 
@@ -230,6 +241,8 @@ class NewBankForm(object):
         :param phone: The phone of this NewBankForm.
         :type: str
         """
+        if phone is None:
+            raise ValueError("Invalid value for `phone`, must not be `None`")
 
         self._phone = phone
 
@@ -253,6 +266,8 @@ class NewBankForm(object):
         :param otp: The otp of this NewBankForm.
         :type: str
         """
+        if otp is None:
+            raise ValueError("Invalid value for `otp`, must not be `None`")
 
         self._otp = otp
 

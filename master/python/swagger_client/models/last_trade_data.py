@@ -60,6 +60,7 @@ class LastTradeData(object):
         self._vol = vol
         self._ord_type = ord_type
 
+
     @property
     def time(self):
         """
@@ -80,6 +81,8 @@ class LastTradeData(object):
         :param time: The time of this LastTradeData.
         :type: int
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 
@@ -103,6 +106,8 @@ class LastTradeData(object):
         :param avg_rate: The avg_rate of this LastTradeData.
         :type: int
         """
+        if avg_rate is None:
+            raise ValueError("Invalid value for `avg_rate`, must not be `None`")
 
         self._avg_rate = avg_rate
 
@@ -126,6 +131,8 @@ class LastTradeData(object):
         :param vol: The vol of this LastTradeData.
         :type: int
         """
+        if vol is None:
+            raise ValueError("Invalid value for `vol`, must not be `None`")
 
         self._vol = vol
 
@@ -149,6 +156,8 @@ class LastTradeData(object):
         :param ord_type: The ord_type of this LastTradeData.
         :type: str
         """
+        if ord_type is None:
+            raise ValueError("Invalid value for `ord_type`, must not be `None`")
 
         self._ord_type = ord_type
 

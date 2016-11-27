@@ -52,15 +52,15 @@
    * Constructs a new <code>SuccessTickerResponse</code>.
    * @alias module:model/SuccessTickerResponse
    * @class
-   * @param lastPrice {Integer} 
-   * @param timestamp {Integer} 
-   * @param bid {Integer} 
-   * @param ask {Integer} 
-   * @param fiatVolume {Integer} 
-   * @param coinVolume {Integer} 
-   * @param open {Integer} 
-   * @param high {Integer} 
-   * @param low {Integer} 
+   * @param lastPrice {Number} 
+   * @param timestamp {Number} 
+   * @param bid {Number} 
+   * @param ask {Number} 
+   * @param fiatVolume {Number} 
+   * @param coinVolume {Number} 
+   * @param open {Number} 
+   * @param high {Number} 
+   * @param low {Number} 
    */
   var exports = function(lastPrice, timestamp, bid, ask, fiatVolume, coinVolume, open, high, low) {
     var _this = this;
@@ -88,70 +88,70 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('lastPrice')) {
-        obj['lastPrice'] = ApiClient.convertToType(data['lastPrice'], 'Integer');
+        obj['lastPrice'] = ApiClient.convertToType(data['lastPrice'], 'Number');
       }
       if (data.hasOwnProperty('timestamp')) {
-        obj['timestamp'] = ApiClient.convertToType(data['timestamp'], 'Integer');
+        obj['timestamp'] = ApiClient.convertToType(data['timestamp'], 'Number');
       }
       if (data.hasOwnProperty('bid')) {
-        obj['bid'] = ApiClient.convertToType(data['bid'], 'Integer');
+        obj['bid'] = ApiClient.convertToType(data['bid'], 'Number');
       }
       if (data.hasOwnProperty('ask')) {
-        obj['ask'] = ApiClient.convertToType(data['ask'], 'Integer');
+        obj['ask'] = ApiClient.convertToType(data['ask'], 'Number');
       }
       if (data.hasOwnProperty('fiatVolume')) {
-        obj['fiatVolume'] = ApiClient.convertToType(data['fiatVolume'], 'Integer');
+        obj['fiatVolume'] = ApiClient.convertToType(data['fiatVolume'], 'Number');
       }
       if (data.hasOwnProperty('coinVolume')) {
-        obj['coinVolume'] = ApiClient.convertToType(data['coinVolume'], 'Integer');
+        obj['coinVolume'] = ApiClient.convertToType(data['coinVolume'], 'Number');
       }
       if (data.hasOwnProperty('open')) {
-        obj['open'] = ApiClient.convertToType(data['open'], 'Integer');
+        obj['open'] = ApiClient.convertToType(data['open'], 'Number');
       }
       if (data.hasOwnProperty('high')) {
-        obj['high'] = ApiClient.convertToType(data['high'], 'Integer');
+        obj['high'] = ApiClient.convertToType(data['high'], 'Number');
       }
       if (data.hasOwnProperty('low')) {
-        obj['low'] = ApiClient.convertToType(data['low'], 'Integer');
+        obj['low'] = ApiClient.convertToType(data['low'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} lastPrice
+   * @member {Number} lastPrice
    */
   exports.prototype['lastPrice'] = undefined;
   /**
-   * @member {Integer} timestamp
+   * @member {Number} timestamp
    */
   exports.prototype['timestamp'] = undefined;
   /**
-   * @member {Integer} bid
+   * @member {Number} bid
    */
   exports.prototype['bid'] = undefined;
   /**
-   * @member {Integer} ask
+   * @member {Number} ask
    */
   exports.prototype['ask'] = undefined;
   /**
-   * @member {Integer} fiatVolume
+   * @member {Number} fiatVolume
    */
   exports.prototype['fiatVolume'] = undefined;
   /**
-   * @member {Integer} coinVolume
+   * @member {Number} coinVolume
    */
   exports.prototype['coinVolume'] = undefined;
   /**
-   * @member {Integer} open
+   * @member {Number} open
    */
   exports.prototype['open'] = undefined;
   /**
-   * @member {Integer} high
+   * @member {Number} high
    */
   exports.prototype['high'] = undefined;
   /**
-   * @member {Integer} low
+   * @member {Number} low
    */
   exports.prototype['low'] = undefined;
 

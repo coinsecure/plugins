@@ -58,7 +58,7 @@ public:
     void /v1/exchange/bank/summary(QString* authorization, QString* accept);
     void /v1/exchange/user/coin/fee(QString* authorization, QString* accept);
     void /v1/exchange/user/fiat/fee(QString* authorization, QString* accept);
-    void /v1/netki/search/NetkiName(QString* netkiName, QString* accept);
+    void /v1/netki/search/NetkiName(QString* netki_name, QString* accept);
     void /v1/user/exchange/kycs(QString* authorization, QString* accept);
     void /v1/user/exchange/referral/coin/paid(QString* authorization, QString* accept);
     void /v1/user/exchange/referral/coin/successful(QString* authorization, QString* accept);

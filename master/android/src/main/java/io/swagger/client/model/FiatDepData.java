@@ -25,13 +25,11 @@
 package io.swagger.client.model;
 
 import io.swagger.client.model.TimeDataCoin;
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class FiatDepData  {
+public class FiatDepData {
   
   @SerializedName("timeDetails")
   private TimeDataCoin timeDetails = null;
@@ -104,21 +102,21 @@ public class FiatDepData  {
       return false;
     }
     FiatDepData fiatDepData = (FiatDepData) o;
-    return (timeDetails == null ? fiatDepData.timeDetails == null : timeDetails.equals(fiatDepData.timeDetails)) &&
-        (depositID == null ? fiatDepData.depositID == null : depositID.equals(fiatDepData.depositID)) &&
-        (value == null ? fiatDepData.value == null : value.equals(fiatDepData.value)) &&
-        (account == null ? fiatDepData.account == null : account.equals(fiatDepData.account)) &&
-        (reason == null ? fiatDepData.reason == null : reason.equals(fiatDepData.reason));
+    return (this.timeDetails == null ? fiatDepData.timeDetails == null : this.timeDetails.equals(fiatDepData.timeDetails)) &&
+        (this.depositID == null ? fiatDepData.depositID == null : this.depositID.equals(fiatDepData.depositID)) &&
+        (this.value == null ? fiatDepData.value == null : this.value.equals(fiatDepData.value)) &&
+        (this.account == null ? fiatDepData.account == null : this.account.equals(fiatDepData.account)) &&
+        (this.reason == null ? fiatDepData.reason == null : this.reason.equals(fiatDepData.reason));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (timeDetails == null ? 0: timeDetails.hashCode());
-    result = 31 * result + (depositID == null ? 0: depositID.hashCode());
-    result = 31 * result + (value == null ? 0: value.hashCode());
-    result = 31 * result + (account == null ? 0: account.hashCode());
-    result = 31 * result + (reason == null ? 0: reason.hashCode());
+    result = 31 * result + (this.timeDetails == null ? 0: this.timeDetails.hashCode());
+    result = 31 * result + (this.depositID == null ? 0: this.depositID.hashCode());
+    result = 31 * result + (this.value == null ? 0: this.value.hashCode());
+    result = 31 * result + (this.account == null ? 0: this.account.hashCode());
+    result = 31 * result + (this.reason == null ? 0: this.reason.hashCode());
     return result;
   }
 

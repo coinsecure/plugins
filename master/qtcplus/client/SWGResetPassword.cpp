@@ -51,20 +51,23 @@ SWGResetPassword::~SWGResetPassword() {
 void
 SWGResetPassword::init() {
     token = new QString("");
-password = new QString("");
-repeatPassword = new QString("");
+    password = new QString("");
+    repeat_password = new QString("");
 }
 
 void
 SWGResetPassword::cleanup() {
-    if(token != NULL) {
+    
+    if(token != nullptr) {
         delete token;
     }
-if(password != NULL) {
+
+    if(password != nullptr) {
         delete password;
     }
-if(repeatPassword != NULL) {
-        delete repeatPassword;
+
+    if(repeat_password != nullptr) {
+        delete repeat_password;
     }
 }
 
@@ -79,9 +82,9 @@ SWGResetPassword::fromJson(QString &json) {
 
 void
 SWGResetPassword::fromJsonObject(QJsonObject &pJson) {
-    setValue(&token, pJson["token"], "QString", "QString");
-setValue(&password, pJson["password"], "QString", "QString");
-setValue(&repeatPassword, pJson["repeatPassword"], "QString", "QString");
+    ::Swagger::setValue(&token, pJson["token"], "QString", "QString");
+    ::Swagger::setValue(&password, pJson["password"], "QString", "QString");
+    ::Swagger::setValue(&repeat_password, pJson["repeat_password"], "QString", "QString");
 }
 
 QString
@@ -98,20 +101,11 @@ QJsonObject*
 SWGResetPassword::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("token"), token, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("password"), password, obj, QString("QString"));
-    
-        
 
-    
-    toJsonValue(QString("repeatPassword"), repeatPassword, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("repeat_password"), repeat_password, obj, QString("QString"));
 
     return obj;
 }
@@ -136,11 +130,11 @@ SWGResetPassword::setPassword(QString* password) {
 
 QString*
 SWGResetPassword::getRepeatPassword() {
-    return repeatPassword;
+    return repeat_password;
 }
 void
-SWGResetPassword::setRepeatPassword(QString* repeatPassword) {
-    this->repeatPassword = repeatPassword;
+SWGResetPassword::setRepeatPassword(QString* repeat_password) {
+    this->repeat_password = repeat_password;
 }
 
 

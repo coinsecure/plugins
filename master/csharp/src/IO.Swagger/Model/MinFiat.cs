@@ -24,12 +24,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 
 namespace IO.Swagger.Model
 {
@@ -37,7 +39,7 @@ namespace IO.Swagger.Model
     /// MinFiat
     /// </summary>
     [DataContract]
-    public partial class MinFiat :  IEquatable<MinFiat>
+    public partial class MinFiat :  IEquatable<MinFiat>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MinFiat" /> class.
@@ -47,25 +49,25 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MinFiat" /> class.
         /// </summary>
-        /// <param name="_MinFiat">_MinFiat (required).</param>
-        public MinFiat(long? _MinFiat = null)
+        /// <param name="MaxFiat">MaxFiat (required).</param>
+        public MinFiat(long? MaxFiat = null)
         {
-            // to ensure "_MinFiat" is required (not null)
-            if (_MinFiat == null)
+            // to ensure "MaxFiat" is required (not null)
+            if (MaxFiat == null)
             {
-                throw new InvalidDataException("_MinFiat is a required property for MinFiat and cannot be null");
+                throw new InvalidDataException("MaxFiat is a required property for MinFiat and cannot be null");
             }
             else
             {
-                this._MinFiat = _MinFiat;
+                this.MaxFiat = MaxFiat;
             }
         }
         
         /// <summary>
-        /// Gets or Sets _MinFiat
+        /// Gets or Sets MaxFiat
         /// </summary>
-        [DataMember(Name="minFiat", EmitDefaultValue=false)]
-        public long? _MinFiat { get; set; }
+        [DataMember(Name="maxFiat", EmitDefaultValue=false)]
+        public long? MaxFiat { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -74,7 +76,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class MinFiat {\n");
-            sb.Append("  _MinFiat: ").Append(_MinFiat).Append("\n");
+            sb.Append("  MaxFiat: ").Append(MaxFiat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -112,9 +114,9 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this._MinFiat == other._MinFiat ||
-                    this._MinFiat != null &&
-                    this._MinFiat.Equals(other._MinFiat)
+                    this.MaxFiat == other.MaxFiat ||
+                    this.MaxFiat != null &&
+                    this.MaxFiat.Equals(other.MaxFiat)
                 );
         }
 
@@ -129,10 +131,15 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this._MinFiat != null)
-                    hash = hash * 59 + this._MinFiat.GetHashCode();
+                if (this.MaxFiat != null)
+                    hash = hash * 59 + this.MaxFiat.GetHashCode();
                 return hash;
             }
+        }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        { 
+            yield break;
         }
     }
 

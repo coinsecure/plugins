@@ -63,6 +63,7 @@ class StandardTickerResultData(object):
         self._title = title
         self._time = time
 
+
     @property
     def success(self):
         """
@@ -83,6 +84,8 @@ class StandardTickerResultData(object):
         :param success: The success of this StandardTickerResultData.
         :type: bool
         """
+        if success is None:
+            raise ValueError("Invalid value for `success`, must not be `None`")
 
         self._success = success
 
@@ -106,6 +109,8 @@ class StandardTickerResultData(object):
         :param message: The message of this StandardTickerResultData.
         :type: SuccessTickerResponse
         """
+        if message is None:
+            raise ValueError("Invalid value for `message`, must not be `None`")
 
         self._message = message
 
@@ -129,6 +134,8 @@ class StandardTickerResultData(object):
         :param method: The method of this StandardTickerResultData.
         :type: str
         """
+        if method is None:
+            raise ValueError("Invalid value for `method`, must not be `None`")
 
         self._method = method
 
@@ -152,6 +159,8 @@ class StandardTickerResultData(object):
         :param title: The title of this StandardTickerResultData.
         :type: str
         """
+        if title is None:
+            raise ValueError("Invalid value for `title`, must not be `None`")
 
         self._title = title
 
@@ -175,6 +184,8 @@ class StandardTickerResultData(object):
         :param time: The time of this StandardTickerResultData.
         :type: datetime
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 

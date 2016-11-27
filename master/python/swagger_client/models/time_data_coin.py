@@ -54,6 +54,7 @@ class TimeDataCoin(object):
         self._time = time
         self._verified_time = verified_time
 
+
     @property
     def time(self):
         """
@@ -74,6 +75,8 @@ class TimeDataCoin(object):
         :param time: The time of this TimeDataCoin.
         :type: int
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 
@@ -97,6 +100,8 @@ class TimeDataCoin(object):
         :param verified_time: The verified_time of this TimeDataCoin.
         :type: int
         """
+        if verified_time is None:
+            raise ValueError("Invalid value for `verified_time`, must not be `None`")
 
         self._verified_time = verified_time
 

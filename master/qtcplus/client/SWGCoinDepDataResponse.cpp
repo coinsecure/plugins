@@ -51,29 +51,33 @@ SWGCoinDepDataResponse::~SWGCoinDepDataResponse() {
 void
 SWGCoinDepDataResponse::init() {
     success = false;
-message = new QList<SWGCoinDepData*>();
-method = new QString("");
-title = new QString("");
-time = NULL;
+    message = new QList<SWGCoinDepData*>();
+    method = new QString("");
+    title = new QString("");
+    time = NULL;
 }
 
 void
 SWGCoinDepDataResponse::cleanup() {
     
-if(message != NULL) {
+
+    if(message != nullptr) {
         QList<SWGCoinDepData*>* arr = message;
         foreach(SWGCoinDepData* o, *arr) {
             delete o;
         }
         delete message;
     }
-if(method != NULL) {
+
+    if(method != nullptr) {
         delete method;
     }
-if(title != NULL) {
+
+    if(title != nullptr) {
         delete title;
     }
-if(time != NULL) {
+
+    if(time != nullptr) {
         delete time;
     }
 }
@@ -89,11 +93,13 @@ SWGCoinDepDataResponse::fromJson(QString &json) {
 
 void
 SWGCoinDepDataResponse::fromJsonObject(QJsonObject &pJson) {
-    setValue(&success, pJson["success"], "bool", "");
-setValue(&message, pJson["message"], "QList", "SWGCoinDepData");
-setValue(&method, pJson["method"], "QString", "QString");
-setValue(&title, pJson["title"], "QString", "QString");
-setValue(&time, pJson["time"], "QDateTime", "QDateTime");
+    ::Swagger::setValue(&success, pJson["success"], "bool", "");
+    
+    ::Swagger::setValue(&message, pJson["message"], "QList", "SWGCoinDepData");
+    
+    ::Swagger::setValue(&method, pJson["method"], "QString", "QString");
+    ::Swagger::setValue(&title, pJson["title"], "QString", "QString");
+    ::Swagger::setValue(&time, pJson["time"], "QDateTime", "QDateTime");
 }
 
 QString
@@ -109,30 +115,18 @@ SWGCoinDepDataResponse::asJson ()
 QJsonObject*
 SWGCoinDepDataResponse::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("success", QJsonValue(success));
 
-    
-    QList<SWGCoinDepData*>* messageList = message;
     QJsonArray messageJsonArray;
     toJsonArray((QList<void*>*)message, &messageJsonArray, "message", "SWGCoinDepData");
-
     obj->insert("message", messageJsonArray);
-    
 
-    
     toJsonValue(QString("method"), method, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("title"), title, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("time"), time, obj, QString("QDateTime"));
-    
-        
 
     return obj;
 }

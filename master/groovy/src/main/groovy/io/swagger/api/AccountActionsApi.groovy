@@ -13,6 +13,7 @@ import io.swagger.model.StandardInitiateLoginResultData
 import io.swagger.model.Email
 import io.swagger.model.SuccessResult
 import io.swagger.model.SignupForm
+import io.swagger.model.StandardVerifySignupResultData
 import io.swagger.model.File
 import io.swagger.model.NetkiNameAddress
 import io.swagger.model.Address
@@ -22,7 +23,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class AccountActionsApi {
-    String basePath = "https://api.coinsecure.in"
+    String basePath = "https://api.coinsecure.in/"
     String versionPath = "/api/v1"
 
     def v1login ( LoginFormNew body, String accept, Closure onSuccess, Closure onFailure)  {
@@ -107,6 +108,27 @@ class AccountActionsApi {
         invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams,
                     "POST", "",
                     SuccessResult.class )
+                    
+    }
+    def v1signupverifyToken ( String token, String accept, Closure onSuccess, Closure onFailure)  {
+        // create path and map variables
+        String resourcePath = "/v1/signup/verify/{token}"
+
+        // query params
+        def queryParams = [:]
+        def headerParams = [:]
+    
+        // verify required params are set
+        if (token == null) {
+            throw new RuntimeException("missing required params token")
+        }
+
+        
+        headerParams.put("accept", accept)
+
+        invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams,
+                    "PUT", "",
+                    StandardVerifySignupResultData.class )
                     
     }
     def v1userbankotpNumber ( String number, String authorization, String accept, Closure onSuccess, Closure onFailure)  {

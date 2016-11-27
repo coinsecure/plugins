@@ -79,7 +79,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1exchangebanksummary";
+        throw new Error("Missing the required parameter 'authorization' when calling v1exchangebanksummary");
       }
 
 
@@ -174,7 +174,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1exchangeuserfiatfee";
+        throw new Error("Missing the required parameter 'authorization' when calling v1exchangeuserfiatfee");
       }
 
 
@@ -224,7 +224,7 @@
 
       // verify the required parameter 'netkiName' is set
       if (netkiName == undefined || netkiName == null) {
-        throw "Missing the required parameter 'netkiName' when calling v1netkisearchNetkiName";
+        throw new Error("Missing the required parameter 'netkiName' when calling v1netkisearchNetkiName");
       }
 
 
@@ -274,7 +274,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangekycs";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangekycs");
       }
 
 
@@ -324,7 +324,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangereferralcoinpaid";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangereferralcoinpaid");
       }
 
 
@@ -374,7 +374,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangereferralcoinsuccessful";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangereferralcoinsuccessful");
       }
 
 
@@ -424,7 +424,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangereferralfiatpaid";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangereferralfiatpaid");
       }
 
 
@@ -474,7 +474,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangereferrals";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangereferrals");
       }
 
 
@@ -524,7 +524,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangetradesummary";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangetradesummary");
       }
 
 
@@ -574,7 +574,7 @@
 
       // verify the required parameter 'token' is set
       if (token == undefined || token == null) {
-        throw "Missing the required parameter 'token' when calling v1userlogintokenToken";
+        throw new Error("Missing the required parameter 'token' when calling v1userlogintokenToken");
       }
 
 
@@ -624,7 +624,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1usersummary";
+        throw new Error("Missing the required parameter 'authorization' when calling v1usersummary");
       }
 
 
@@ -674,7 +674,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userwalletsummary";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userwalletsummary");
       }
 
 

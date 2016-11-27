@@ -25,11 +25,10 @@
 package io.swagger.client.model
 
 
-
-
 case class SuccessLoginResponse (
   success: Boolean,
-email: String,
-message: String,
-keyType: String,
-keyNeeded: String)
+  email: String,
+  message: String,
+  keyType: String,
+  keyNeeded: String
+)

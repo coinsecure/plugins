@@ -51,17 +51,19 @@ SWGSendExchange::~SWGSendExchange() {
 void
 SWGSendExchange::init() {
     amt = 0L;
-walletID = new QString("");
-msg = new QString("");
+    wallet_id = new QString("");
+    msg = new QString("");
 }
 
 void
 SWGSendExchange::cleanup() {
     
-if(walletID != NULL) {
-        delete walletID;
+
+    if(wallet_id != nullptr) {
+        delete wallet_id;
     }
-if(msg != NULL) {
+
+    if(msg != nullptr) {
         delete msg;
     }
 }
@@ -77,9 +79,9 @@ SWGSendExchange::fromJson(QString &json) {
 
 void
 SWGSendExchange::fromJsonObject(QJsonObject &pJson) {
-    setValue(&amt, pJson["amt"], "qint64", "");
-setValue(&walletID, pJson["walletID"], "QString", "QString");
-setValue(&msg, pJson["msg"], "QString", "QString");
+    ::Swagger::setValue(&amt, pJson["amt"], "qint64", "");
+    ::Swagger::setValue(&wallet_id, pJson["wallet_id"], "QString", "QString");
+    ::Swagger::setValue(&msg, pJson["msg"], "QString", "QString");
 }
 
 QString
@@ -95,17 +97,12 @@ SWGSendExchange::asJson ()
 QJsonObject*
 SWGSendExchange::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("amt", QJsonValue(amt));
 
-    
-    toJsonValue(QString("walletID"), walletID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("wallet_id"), wallet_id, obj, QString("QString"));
 
-    
     toJsonValue(QString("msg"), msg, obj, QString("QString"));
-    
-        
 
     return obj;
 }
@@ -120,12 +117,12 @@ SWGSendExchange::setAmt(qint64 amt) {
 }
 
 QString*
-SWGSendExchange::getWalletID() {
-    return walletID;
+SWGSendExchange::getWalletId() {
+    return wallet_id;
 }
 void
-SWGSendExchange::setWalletID(QString* walletID) {
-    this->walletID = walletID;
+SWGSendExchange::setWalletId(QString* wallet_id) {
+    this->wallet_id = wallet_id;
 }
 
 QString*

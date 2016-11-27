@@ -25,9 +25,8 @@
 package io.swagger.client.model
 
 
-
-
 case class CodeCountryMobile (
   code: String,
-countryCode: String,
-phoneNumber: String)
+  countryCode: String,
+  phoneNumber: String
+)

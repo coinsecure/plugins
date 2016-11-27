@@ -1,6 +1,6 @@
 # swagger_client.WalletDataApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,6 +25,7 @@ Gets a List of Users Bitcoin Deposit Addresses.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -41,7 +42,7 @@ try:
     api_response = api_instance.v1userwalletcoinaddress_wallet_id(wallet_id, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletDataApi->v1userwalletcoinaddress_wallet_id: %s\n" % e
+    print("Exception when calling WalletDataApi->v1userwalletcoinaddress_wallet_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -76,6 +77,7 @@ Gets your Confirmed Wallet Bitcoin Transactions.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -92,7 +94,7 @@ try:
     api_response = api_instance.v1userwalletcoindepositconfirmed_wallet_id(wallet_id, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletDataApi->v1userwalletcoindepositconfirmed_wallet_id: %s\n" % e
+    print("Exception when calling WalletDataApi->v1userwalletcoindepositconfirmed_wallet_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -127,6 +129,7 @@ Gets the total confirmed transactions across all accounts and addresses
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -142,7 +145,7 @@ try:
     api_response = api_instance.v1userwalletcoindepositconfirmedall(authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletDataApi->v1userwalletcoindepositconfirmedall: %s\n" % e
+    print("Exception when calling WalletDataApi->v1userwalletcoindepositconfirmedall: %s\n" % e)
 ```
 
 ### Parameters
@@ -176,6 +179,7 @@ Gets the unconfirmed transactions on an account/ wallet.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -191,7 +195,7 @@ try:
     # Unconfirmed Transactions in Wallet
     api_instance.v1userwalletcoindepositunconfirmed_wallet_id(wallet_id, authorization, accept=accept)
 except ApiException as e:
-    print "Exception when calling WalletDataApi->v1userwalletcoindepositunconfirmed_wallet_id: %s\n" % e
+    print("Exception when calling WalletDataApi->v1userwalletcoindepositunconfirmed_wallet_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -226,6 +230,7 @@ Gets the total unconfirmed transactions across all accounts and addresses
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -240,7 +245,7 @@ try:
     # All Unconfirmed Deposits
     api_instance.v1userwalletcoindepositunconfirmedall(authorization=authorization, accept=accept)
 except ApiException as e:
-    print "Exception when calling WalletDataApi->v1userwalletcoindepositunconfirmedall: %s\n" % e
+    print("Exception when calling WalletDataApi->v1userwalletcoindepositunconfirmedall: %s\n" % e)
 ```
 
 ### Parameters
@@ -274,6 +279,7 @@ Gets a List of Users Wallets.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -289,7 +295,7 @@ try:
     api_response = api_instance.v1userwalletcoinwallets(authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletDataApi->v1userwalletcoinwallets: %s\n" % e
+    print("Exception when calling WalletDataApi->v1userwalletcoinwallets: %s\n" % e)
 ```
 
 ### Parameters
@@ -323,6 +329,7 @@ Gets a List of Unverified Coin Withdrawals. The value and fees are in satoshis.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -338,7 +345,7 @@ try:
     api_response = api_instance.v1walletwithdrawcancelled(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletDataApi->v1walletwithdrawcancelled: %s\n" % e
+    print("Exception when calling WalletDataApi->v1walletwithdrawcancelled: %s\n" % e)
 ```
 
 ### Parameters
@@ -372,6 +379,7 @@ Gets a List of Unverified Coin Withdrawals. The value and fees are in satoshis.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -387,7 +395,7 @@ try:
     api_response = api_instance.v1walletwithdrawcompleted(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletDataApi->v1walletwithdrawcompleted: %s\n" % e
+    print("Exception when calling WalletDataApi->v1walletwithdrawcompleted: %s\n" % e)
 ```
 
 ### Parameters
@@ -421,6 +429,7 @@ Gets a List of Unverified Coin Withdrawals. The value and fees are in satoshis.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -436,7 +445,7 @@ try:
     api_response = api_instance.v1walletwithdrawunverified(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletDataApi->v1walletwithdrawunverified: %s\n" % e
+    print("Exception when calling WalletDataApi->v1walletwithdrawunverified: %s\n" % e)
 ```
 
 ### Parameters
@@ -470,6 +479,7 @@ Gets a List of Unverified Coin Withdrawals. The value and fees are in satoshis.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -485,7 +495,7 @@ try:
     api_response = api_instance.v1walletwithdrawverified(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletDataApi->v1walletwithdrawverified: %s\n" % e
+    print("Exception when calling WalletDataApi->v1walletwithdrawverified: %s\n" % e)
 ```
 
 ### Parameters

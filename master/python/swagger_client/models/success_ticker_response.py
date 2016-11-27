@@ -75,6 +75,7 @@ class SuccessTickerResponse(object):
         self._high = high
         self._low = low
 
+
     @property
     def last_price(self):
         """
@@ -95,6 +96,8 @@ class SuccessTickerResponse(object):
         :param last_price: The last_price of this SuccessTickerResponse.
         :type: int
         """
+        if last_price is None:
+            raise ValueError("Invalid value for `last_price`, must not be `None`")
 
         self._last_price = last_price
 
@@ -118,6 +121,8 @@ class SuccessTickerResponse(object):
         :param timestamp: The timestamp of this SuccessTickerResponse.
         :type: int
         """
+        if timestamp is None:
+            raise ValueError("Invalid value for `timestamp`, must not be `None`")
 
         self._timestamp = timestamp
 
@@ -141,6 +146,8 @@ class SuccessTickerResponse(object):
         :param bid: The bid of this SuccessTickerResponse.
         :type: int
         """
+        if bid is None:
+            raise ValueError("Invalid value for `bid`, must not be `None`")
 
         self._bid = bid
 
@@ -164,6 +171,8 @@ class SuccessTickerResponse(object):
         :param ask: The ask of this SuccessTickerResponse.
         :type: int
         """
+        if ask is None:
+            raise ValueError("Invalid value for `ask`, must not be `None`")
 
         self._ask = ask
 
@@ -187,6 +196,8 @@ class SuccessTickerResponse(object):
         :param fiat_volume: The fiat_volume of this SuccessTickerResponse.
         :type: int
         """
+        if fiat_volume is None:
+            raise ValueError("Invalid value for `fiat_volume`, must not be `None`")
 
         self._fiat_volume = fiat_volume
 
@@ -210,6 +221,8 @@ class SuccessTickerResponse(object):
         :param coin_volume: The coin_volume of this SuccessTickerResponse.
         :type: int
         """
+        if coin_volume is None:
+            raise ValueError("Invalid value for `coin_volume`, must not be `None`")
 
         self._coin_volume = coin_volume
 
@@ -233,6 +246,8 @@ class SuccessTickerResponse(object):
         :param open: The open of this SuccessTickerResponse.
         :type: int
         """
+        if open is None:
+            raise ValueError("Invalid value for `open`, must not be `None`")
 
         self._open = open
 
@@ -256,6 +271,8 @@ class SuccessTickerResponse(object):
         :param high: The high of this SuccessTickerResponse.
         :type: int
         """
+        if high is None:
+            raise ValueError("Invalid value for `high`, must not be `None`")
 
         self._high = high
 
@@ -279,6 +296,8 @@ class SuccessTickerResponse(object):
         :param low: The low of this SuccessTickerResponse.
         :type: int
         """
+        if low is None:
+            raise ValueError("Invalid value for `low`, must not be `None`")
 
         self._low = low
 

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **refPercent** | **Number** |  | 
-**time** | **Integer** |  | 
+**time** | **Number** |  | 
 **refID** | **String** |  | 
 
 

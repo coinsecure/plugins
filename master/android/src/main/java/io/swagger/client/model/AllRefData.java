@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class AllRefData  {
+public class AllRefData {
   
   @SerializedName("refPercent")
   private Double refPercent = null;
@@ -79,17 +77,17 @@ public class AllRefData  {
       return false;
     }
     AllRefData allRefData = (AllRefData) o;
-    return (refPercent == null ? allRefData.refPercent == null : refPercent.equals(allRefData.refPercent)) &&
-        (time == null ? allRefData.time == null : time.equals(allRefData.time)) &&
-        (refID == null ? allRefData.refID == null : refID.equals(allRefData.refID));
+    return (this.refPercent == null ? allRefData.refPercent == null : this.refPercent.equals(allRefData.refPercent)) &&
+        (this.time == null ? allRefData.time == null : this.time.equals(allRefData.time)) &&
+        (this.refID == null ? allRefData.refID == null : this.refID.equals(allRefData.refID));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (refPercent == null ? 0: refPercent.hashCode());
-    result = 31 * result + (time == null ? 0: time.hashCode());
-    result = 31 * result + (refID == null ? 0: refID.hashCode());
+    result = 31 * result + (this.refPercent == null ? 0: this.refPercent.hashCode());
+    result = 31 * result + (this.time == null ? 0: this.time.hashCode());
+    result = 31 * result + (this.refID == null ? 0: this.refID.hashCode());
     return result;
   }
 

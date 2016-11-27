@@ -55,25 +55,31 @@ public:
     SWGWalletSummaryData* fromJson(QString &jsonString);
 
     qint64 getWalletConfirmedBalance();
-    void setWalletConfirmedBalance(qint64 walletConfirmedBalance);
-qint64 getWalletUncofirmedBalance();
-    void setWalletUncofirmedBalance(qint64 walletUncofirmedBalance);
-bool getHasWalletNetki();
-    void setHasWalletNetki(bool hasWalletNetki);
-QString* getWalletNetki();
-    void setWalletNetki(QString* walletNetki);
-QString* getWalletNetkiAddress();
-    void setWalletNetkiAddress(QString* walletNetkiAddress);
-QString* getWalletNetkiWalletId();
-    void setWalletNetkiWalletId(QString* walletNetkiWalletId);
+    void setWalletConfirmedBalance(qint64 wallet_confirmed_balance);
+
+    qint64 getWalletUncofirmedBalance();
+    void setWalletUncofirmedBalance(qint64 wallet_uncofirmed_balance);
+
+    bool getHasWalletNetki();
+    void setHasWalletNetki(bool has_wallet_netki);
+
+    QString* getWalletNetki();
+    void setWalletNetki(QString* wallet_netki);
+
+    QString* getWalletNetkiAddress();
+    void setWalletNetkiAddress(QString* wallet_netki_address);
+
+    QString* getWalletNetkiWalletId();
+    void setWalletNetkiWalletId(QString* wallet_netki_wallet_id);
+
 
 private:
-    qint64 walletConfirmedBalance;
-qint64 walletUncofirmedBalance;
-bool hasWalletNetki;
-QString* walletNetki;
-QString* walletNetkiAddress;
-QString* walletNetkiWalletId;
+    qint64 wallet_confirmed_balance;
+    qint64 wallet_uncofirmed_balance;
+    bool has_wallet_netki;
+    QString* wallet_netki;
+    QString* wallet_netki_address;
+    QString* wallet_netki_wallet_id;
 };
 
 } /* namespace Swagger */

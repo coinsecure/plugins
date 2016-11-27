@@ -50,7 +50,7 @@ SWGMinFiat::~SWGMinFiat() {
 
 void
 SWGMinFiat::init() {
-    minFiat = 0L;
+    max_fiat = 0L;
 }
 
 void
@@ -69,7 +69,7 @@ SWGMinFiat::fromJson(QString &json) {
 
 void
 SWGMinFiat::fromJsonObject(QJsonObject &pJson) {
-    setValue(&minFiat, pJson["minFiat"], "qint64", "");
+    ::Swagger::setValue(&max_fiat, pJson["max_fiat"], "qint64", "");
 }
 
 QString
@@ -85,18 +85,19 @@ SWGMinFiat::asJson ()
 QJsonObject*
 SWGMinFiat::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
-    obj->insert("minFiat", QJsonValue(minFiat));
+    
+    obj->insert("max_fiat", QJsonValue(max_fiat));
 
     return obj;
 }
 
 qint64
-SWGMinFiat::getMinFiat() {
-    return minFiat;
+SWGMinFiat::getMaxFiat() {
+    return max_fiat;
 }
 void
-SWGMinFiat::setMinFiat(qint64 minFiat) {
-    this->minFiat = minFiat;
+SWGMinFiat::setMaxFiat(qint64 max_fiat) {
+    this->max_fiat = max_fiat;
 }
 
 

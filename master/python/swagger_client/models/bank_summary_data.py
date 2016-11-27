@@ -84,6 +84,7 @@ class BankSummaryData(object):
         self._trade_netki_name = trade_netki_name
         self._trade_netki_address = trade_netki_address
 
+
     @property
     def pending_coin_balance(self):
         """
@@ -104,6 +105,8 @@ class BankSummaryData(object):
         :param pending_coin_balance: The pending_coin_balance of this BankSummaryData.
         :type: int
         """
+        if pending_coin_balance is None:
+            raise ValueError("Invalid value for `pending_coin_balance`, must not be `None`")
 
         self._pending_coin_balance = pending_coin_balance
 
@@ -127,6 +130,8 @@ class BankSummaryData(object):
         :param pending_fiat_balance: The pending_fiat_balance of this BankSummaryData.
         :type: int
         """
+        if pending_fiat_balance is None:
+            raise ValueError("Invalid value for `pending_fiat_balance`, must not be `None`")
 
         self._pending_fiat_balance = pending_fiat_balance
 
@@ -150,6 +155,8 @@ class BankSummaryData(object):
         :param available_coin_balance: The available_coin_balance of this BankSummaryData.
         :type: int
         """
+        if available_coin_balance is None:
+            raise ValueError("Invalid value for `available_coin_balance`, must not be `None`")
 
         self._available_coin_balance = available_coin_balance
 
@@ -173,6 +180,8 @@ class BankSummaryData(object):
         :param available_fiat_balance: The available_fiat_balance of this BankSummaryData.
         :type: int
         """
+        if available_fiat_balance is None:
+            raise ValueError("Invalid value for `available_fiat_balance`, must not be `None`")
 
         self._available_fiat_balance = available_fiat_balance
 
@@ -196,6 +205,8 @@ class BankSummaryData(object):
         :param total_coin_balance: The total_coin_balance of this BankSummaryData.
         :type: int
         """
+        if total_coin_balance is None:
+            raise ValueError("Invalid value for `total_coin_balance`, must not be `None`")
 
         self._total_coin_balance = total_coin_balance
 
@@ -219,6 +230,8 @@ class BankSummaryData(object):
         :param total_fiat_balance: The total_fiat_balance of this BankSummaryData.
         :type: int
         """
+        if total_fiat_balance is None:
+            raise ValueError("Invalid value for `total_fiat_balance`, must not be `None`")
 
         self._total_fiat_balance = total_fiat_balance
 
@@ -242,6 +255,8 @@ class BankSummaryData(object):
         :param coin_fee_percentage: The coin_fee_percentage of this BankSummaryData.
         :type: float
         """
+        if coin_fee_percentage is None:
+            raise ValueError("Invalid value for `coin_fee_percentage`, must not be `None`")
 
         self._coin_fee_percentage = coin_fee_percentage
 
@@ -265,6 +280,8 @@ class BankSummaryData(object):
         :param fiat_fee_percentage: The fiat_fee_percentage of this BankSummaryData.
         :type: float
         """
+        if fiat_fee_percentage is None:
+            raise ValueError("Invalid value for `fiat_fee_percentage`, must not be `None`")
 
         self._fiat_fee_percentage = fiat_fee_percentage
 
@@ -288,6 +305,8 @@ class BankSummaryData(object):
         :param bank_link_status: The bank_link_status of this BankSummaryData.
         :type: str
         """
+        if bank_link_status is None:
+            raise ValueError("Invalid value for `bank_link_status`, must not be `None`")
 
         self._bank_link_status = bank_link_status
 
@@ -311,6 +330,8 @@ class BankSummaryData(object):
         :param has_trade_netki: The has_trade_netki of this BankSummaryData.
         :type: bool
         """
+        if has_trade_netki is None:
+            raise ValueError("Invalid value for `has_trade_netki`, must not be `None`")
 
         self._has_trade_netki = has_trade_netki
 
@@ -334,6 +355,8 @@ class BankSummaryData(object):
         :param trade_netki_name: The trade_netki_name of this BankSummaryData.
         :type: str
         """
+        if trade_netki_name is None:
+            raise ValueError("Invalid value for `trade_netki_name`, must not be `None`")
 
         self._trade_netki_name = trade_netki_name
 
@@ -357,6 +380,8 @@ class BankSummaryData(object):
         :param trade_netki_address: The trade_netki_address of this BankSummaryData.
         :type: str
         """
+        if trade_netki_address is None:
+            raise ValueError("Invalid value for `trade_netki_address`, must not be `None`")
 
         self._trade_netki_address = trade_netki_address
 

@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**maxVol** | **Integer** |  | 
+**maxVol** | **Number** |  | 
 
 

@@ -265,6 +265,78 @@ public class AccountActionsAPI: APIBase {
     }
 
     /**
+     Verifies an Email token for Signup .
+     
+     - parameter token: (path)  
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    public class func v1signupverifyToken(token token: String, completion: ((data: StandardVerifySignupResultData?, error: ErrorType?) -> Void)) {
+        v1signupverifyTokenWithRequestBuilder(token: token).execute { (response, error) -> Void in
+            completion(data: response?.body, error: error);
+        }
+    }
+
+
+    /**
+     Verifies an Email token for Signup .
+     - PUT /v1/signup/verify/{token}
+     - Creates a new Coinsecure Account.
+     - examples: [{contentType=application/json, example={
+  "method" : "aeiou",
+  "success" : true,
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "loginMessage" : "aeiou",
+    "validTill" : 123456789,
+    "loginToken" : "aeiou",
+    "message" : "aeiou"
+  },
+  "title" : "aeiou"
+}}, {contentType=application/xml, example=<null>
+  <success>true</success>
+  <method>string</method>
+  <title>string</title>
+  <time>2000-01-23T04:56:07.000Z</time>
+</null>}]
+     - examples: [{contentType=application/json, example={
+  "method" : "aeiou",
+  "success" : true,
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : {
+    "loginMessage" : "aeiou",
+    "validTill" : 123456789,
+    "loginToken" : "aeiou",
+    "message" : "aeiou"
+  },
+  "title" : "aeiou"
+}}, {contentType=application/xml, example=<null>
+  <success>true</success>
+  <method>string</method>
+  <title>string</title>
+  <time>2000-01-23T04:56:07.000Z</time>
+</null>}]
+     
+     - parameter token: (path)  
+
+     - returns: RequestBuilder<StandardVerifySignupResultData> 
+     */
+    public class func v1signupverifyTokenWithRequestBuilder(token token: String) -> RequestBuilder<StandardVerifySignupResultData> {
+        var path = "/v1/signup/verify/{token}"
+        path = path.stringByReplacingOccurrencesOfString("{token}", withString: "\(token)", options: .LiteralSearch, range: nil)
+        let URLString = SwaggerClientAPI.basePath + path
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
+ 
+        let convertedParameters = APIHelper.convertBoolToString(parameters)
+ 
+        let requestBuilder: RequestBuilder<StandardVerifySignupResultData>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: URLString, parameters: convertedParameters, isBody: true)
+    }
+
+    /**
      Send OTP for Bank Link
      
      - parameter number: (path)  
@@ -347,7 +419,7 @@ public class AccountActionsAPI: APIBase {
      - parameter acctType: (form) Please enter your Coinsecure account type. Allowable Values are Personal or Company. 
      - parameter banType: (form) Please enter your Bank account type. Allowable Values are Savings or Current. 
      - parameter phone: (form) Please enter your Valid Phone Number. 
-     - parameter otp: (form) Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. 
+     - parameter otp: (form) Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. 
      - parameter file: (form) Enter a valid image, pdf or zip file under 5 MB in size. 
      - parameter message: (form) Please enter an optional message if needed. (optional)
      - parameter completion: completion handler to receive the data and the error objects
@@ -396,7 +468,7 @@ public class AccountActionsAPI: APIBase {
      - parameter acctType: (form) Please enter your Coinsecure account type. Allowable Values are Personal or Company. 
      - parameter banType: (form) Please enter your Bank account type. Allowable Values are Savings or Current. 
      - parameter phone: (form) Please enter your Valid Phone Number. 
-     - parameter otp: (form) Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. 
+     - parameter otp: (form) Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. 
      - parameter file: (form) Enter a valid image, pdf or zip file under 5 MB in size. 
      - parameter message: (form) Please enter an optional message if needed. (optional)
 

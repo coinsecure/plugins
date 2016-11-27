@@ -106,6 +106,8 @@ class WalletDataApi(object):
         all_params = ['wallet_id', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -119,6 +121,9 @@ class WalletDataApi(object):
         # verify the required parameter 'wallet_id' is set
         if ('wallet_id' not in params) or (params['wallet_id'] is None):
             raise ValueError("Missing the required parameter `wallet_id` when calling `v1userwalletcoinaddress_wallet_id`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/wallet/coin/address/{walletID}'.replace('{format}', 'json')
         path_params = {}
@@ -161,7 +166,10 @@ class WalletDataApi(object):
                                             response_type='WalletAddressDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userwalletcoindepositconfirmed_wallet_id(self, wallet_id, **kwargs):
         """
@@ -218,6 +226,8 @@ class WalletDataApi(object):
         all_params = ['wallet_id', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -231,6 +241,9 @@ class WalletDataApi(object):
         # verify the required parameter 'wallet_id' is set
         if ('wallet_id' not in params) or (params['wallet_id'] is None):
             raise ValueError("Missing the required parameter `wallet_id` when calling `v1userwalletcoindepositconfirmed_wallet_id`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/wallet/coin/deposit/confirmed/{walletID}'.replace('{format}', 'json')
         path_params = {}
@@ -273,7 +286,10 @@ class WalletDataApi(object):
                                             response_type='WalletAddressDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userwalletcoindepositconfirmedall(self, **kwargs):
         """
@@ -328,6 +344,8 @@ class WalletDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -338,6 +356,9 @@ class WalletDataApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/wallet/coin/deposit/confirmed/all'.replace('{format}', 'json')
         path_params = {}
@@ -378,7 +399,10 @@ class WalletDataApi(object):
                                             response_type='WalletAddressDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userwalletcoindepositunconfirmed_wallet_id(self, wallet_id, authorization, **kwargs):
         """
@@ -435,6 +459,8 @@ class WalletDataApi(object):
         all_params = ['wallet_id', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -451,6 +477,9 @@ class WalletDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userwalletcoindepositunconfirmed_wallet_id`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/wallet/coin/deposit/unconfirmed/{walletID}'.replace('{format}', 'json')
         path_params = {}
@@ -493,7 +522,10 @@ class WalletDataApi(object):
                                             response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userwalletcoindepositunconfirmedall(self, **kwargs):
         """
@@ -548,6 +580,8 @@ class WalletDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -558,6 +592,9 @@ class WalletDataApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/wallet/coin/deposit/unconfirmed/all'.replace('{format}', 'json')
         path_params = {}
@@ -598,7 +635,10 @@ class WalletDataApi(object):
                                             response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userwalletcoinwallets(self, **kwargs):
         """
@@ -653,6 +693,8 @@ class WalletDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -663,6 +705,9 @@ class WalletDataApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/wallet/coin/wallets'.replace('{format}', 'json')
         path_params = {}
@@ -703,7 +748,10 @@ class WalletDataApi(object):
                                             response_type='WalletsDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1walletwithdrawcancelled(self, authorization, **kwargs):
         """
@@ -758,6 +806,8 @@ class WalletDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -771,6 +821,9 @@ class WalletDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1walletwithdrawcancelled`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/wallet/coin/withdraw/cancelled'.replace('{format}', 'json')
         path_params = {}
@@ -811,7 +864,10 @@ class WalletDataApi(object):
                                             response_type='WalletCoinWithdrawDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1walletwithdrawcompleted(self, authorization, **kwargs):
         """
@@ -866,6 +922,8 @@ class WalletDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -879,6 +937,9 @@ class WalletDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1walletwithdrawcompleted`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/wallet/coin/withdraw/completed'.replace('{format}', 'json')
         path_params = {}
@@ -919,7 +980,10 @@ class WalletDataApi(object):
                                             response_type='WalletCoinWithdrawDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1walletwithdrawunverified(self, authorization, **kwargs):
         """
@@ -974,6 +1038,8 @@ class WalletDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -987,6 +1053,9 @@ class WalletDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1walletwithdrawunverified`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/wallet/coin/withdraw/unverified'.replace('{format}', 'json')
         path_params = {}
@@ -1027,7 +1096,10 @@ class WalletDataApi(object):
                                             response_type='WalletCoinWithdrawDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1walletwithdrawverified(self, authorization, **kwargs):
         """
@@ -1082,6 +1154,8 @@ class WalletDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1095,6 +1169,9 @@ class WalletDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1walletwithdrawverified`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/wallet/coin/withdraw/verified'.replace('{format}', 'json')
         path_params = {}
@@ -1135,4 +1212,7 @@ class WalletDataApi(object):
                                             response_type='WalletCoinWithdrawDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)

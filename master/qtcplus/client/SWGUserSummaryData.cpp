@@ -50,31 +50,36 @@ SWGUserSummaryData::~SWGUserSummaryData() {
 
 void
 SWGUserSummaryData::init() {
-    kycStatus = new QString("");
-bankLinkStatus = new QString("");
-tradeReady = new QString("");
-isDisabledAccount = false;
-faSecure = new QString("");
-hasPhone = new QString("");
+    kyc_status = new QString("");
+    bank_link_status = new QString("");
+    trade_ready = new QString("");
+    is_disabled_account = false;
+    fa_secure = new QString("");
+    has_phone = new QString("");
 }
 
 void
 SWGUserSummaryData::cleanup() {
-    if(kycStatus != NULL) {
-        delete kycStatus;
-    }
-if(bankLinkStatus != NULL) {
-        delete bankLinkStatus;
-    }
-if(tradeReady != NULL) {
-        delete tradeReady;
+    
+    if(kyc_status != nullptr) {
+        delete kyc_status;
     }
 
-if(faSecure != NULL) {
-        delete faSecure;
+    if(bank_link_status != nullptr) {
+        delete bank_link_status;
     }
-if(hasPhone != NULL) {
-        delete hasPhone;
+
+    if(trade_ready != nullptr) {
+        delete trade_ready;
+    }
+
+
+    if(fa_secure != nullptr) {
+        delete fa_secure;
+    }
+
+    if(has_phone != nullptr) {
+        delete has_phone;
     }
 }
 
@@ -89,12 +94,12 @@ SWGUserSummaryData::fromJson(QString &json) {
 
 void
 SWGUserSummaryData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&kycStatus, pJson["kycStatus"], "QString", "QString");
-setValue(&bankLinkStatus, pJson["bankLinkStatus"], "QString", "QString");
-setValue(&tradeReady, pJson["tradeReady"], "QString", "QString");
-setValue(&isDisabledAccount, pJson["isDisabledAccount"], "bool", "");
-setValue(&faSecure, pJson["faSecure"], "QString", "QString");
-setValue(&hasPhone, pJson["hasPhone"], "QString", "QString");
+    ::Swagger::setValue(&kyc_status, pJson["kyc_status"], "QString", "QString");
+    ::Swagger::setValue(&bank_link_status, pJson["bank_link_status"], "QString", "QString");
+    ::Swagger::setValue(&trade_ready, pJson["trade_ready"], "QString", "QString");
+    ::Swagger::setValue(&is_disabled_account, pJson["is_disabled_account"], "bool", "");
+    ::Swagger::setValue(&fa_secure, pJson["fa_secure"], "QString", "QString");
+    ::Swagger::setValue(&has_phone, pJson["has_phone"], "QString", "QString");
 }
 
 QString
@@ -111,87 +116,73 @@ QJsonObject*
 SWGUserSummaryData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
-    toJsonValue(QString("kycStatus"), kycStatus, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("kyc_status"), kyc_status, obj, QString("QString"));
 
-    
-    toJsonValue(QString("bankLinkStatus"), bankLinkStatus, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("bank_link_status"), bank_link_status, obj, QString("QString"));
 
-    
-    toJsonValue(QString("tradeReady"), tradeReady, obj, QString("QString"));
-    
-        
-obj->insert("isDisabledAccount", QJsonValue(isDisabledAccount));
+    toJsonValue(QString("trade_ready"), trade_ready, obj, QString("QString"));
 
-    
-    toJsonValue(QString("faSecure"), faSecure, obj, QString("QString"));
-    
-        
+    obj->insert("is_disabled_account", QJsonValue(is_disabled_account));
 
-    
-    toJsonValue(QString("hasPhone"), hasPhone, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("fa_secure"), fa_secure, obj, QString("QString"));
+
+    toJsonValue(QString("has_phone"), has_phone, obj, QString("QString"));
 
     return obj;
 }
 
 QString*
 SWGUserSummaryData::getKycStatus() {
-    return kycStatus;
+    return kyc_status;
 }
 void
-SWGUserSummaryData::setKycStatus(QString* kycStatus) {
-    this->kycStatus = kycStatus;
+SWGUserSummaryData::setKycStatus(QString* kyc_status) {
+    this->kyc_status = kyc_status;
 }
 
 QString*
 SWGUserSummaryData::getBankLinkStatus() {
-    return bankLinkStatus;
+    return bank_link_status;
 }
 void
-SWGUserSummaryData::setBankLinkStatus(QString* bankLinkStatus) {
-    this->bankLinkStatus = bankLinkStatus;
+SWGUserSummaryData::setBankLinkStatus(QString* bank_link_status) {
+    this->bank_link_status = bank_link_status;
 }
 
 QString*
 SWGUserSummaryData::getTradeReady() {
-    return tradeReady;
+    return trade_ready;
 }
 void
-SWGUserSummaryData::setTradeReady(QString* tradeReady) {
-    this->tradeReady = tradeReady;
+SWGUserSummaryData::setTradeReady(QString* trade_ready) {
+    this->trade_ready = trade_ready;
 }
 
 bool
 SWGUserSummaryData::getIsDisabledAccount() {
-    return isDisabledAccount;
+    return is_disabled_account;
 }
 void
-SWGUserSummaryData::setIsDisabledAccount(bool isDisabledAccount) {
-    this->isDisabledAccount = isDisabledAccount;
+SWGUserSummaryData::setIsDisabledAccount(bool is_disabled_account) {
+    this->is_disabled_account = is_disabled_account;
 }
 
 QString*
 SWGUserSummaryData::getFaSecure() {
-    return faSecure;
+    return fa_secure;
 }
 void
-SWGUserSummaryData::setFaSecure(QString* faSecure) {
-    this->faSecure = faSecure;
+SWGUserSummaryData::setFaSecure(QString* fa_secure) {
+    this->fa_secure = fa_secure;
 }
 
 QString*
 SWGUserSummaryData::getHasPhone() {
-    return hasPhone;
+    return has_phone;
 }
 void
-SWGUserSummaryData::setHasPhone(QString* hasPhone) {
-    this->hasPhone = hasPhone;
+SWGUserSummaryData::setHasPhone(QString* has_phone) {
+    this->has_phone = has_phone;
 }
 
 

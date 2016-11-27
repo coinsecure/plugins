@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**min_fiat** | **Integer** |  | 
+**max_fiat** | **Integer** |  | 
 
 

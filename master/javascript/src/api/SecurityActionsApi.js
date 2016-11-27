@@ -80,7 +80,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1mfaauthyinitiate";
+        throw new Error("Missing the required parameter 'body' when calling v1mfaauthyinitiate");
       }
 
 
@@ -221,7 +221,7 @@
 
       // verify the required parameter 'code' is set
       if (code == undefined || code == null) {
-        throw "Missing the required parameter 'code' when calling v1usermfaauthydisableCode";
+        throw new Error("Missing the required parameter 'code' when calling v1usermfaauthydisableCode");
       }
 
 
@@ -273,7 +273,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1usermfaauthyinitiateenable";
+        throw new Error("Missing the required parameter 'body' when calling v1usermfaauthyinitiateenable");
       }
 
 
@@ -369,7 +369,7 @@
 
       // verify the required parameter 'code' is set
       if (code == undefined || code == null) {
-        throw "Missing the required parameter 'code' when calling v1usermfagadisableCode";
+        throw new Error("Missing the required parameter 'code' when calling v1usermfagadisableCode");
       }
 
 
@@ -421,7 +421,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1usermfagainitiateenable";
+        throw new Error("Missing the required parameter 'body' when calling v1usermfagainitiateenable");
       }
 
 
@@ -472,7 +472,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userpasswordchange";
+        throw new Error("Missing the required parameter 'body' when calling v1userpasswordchange");
       }
 
 
@@ -522,7 +522,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userpasswordreset";
+        throw new Error("Missing the required parameter 'body' when calling v1userpasswordreset");
       }
 
 

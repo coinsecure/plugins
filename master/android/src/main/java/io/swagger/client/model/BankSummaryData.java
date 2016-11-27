@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class BankSummaryData  {
+public class BankSummaryData {
   
   @SerializedName("pendingCoinBalance")
   private Long pendingCoinBalance = null;
@@ -187,35 +185,35 @@ public class BankSummaryData  {
       return false;
     }
     BankSummaryData bankSummaryData = (BankSummaryData) o;
-    return (pendingCoinBalance == null ? bankSummaryData.pendingCoinBalance == null : pendingCoinBalance.equals(bankSummaryData.pendingCoinBalance)) &&
-        (pendingFiatBalance == null ? bankSummaryData.pendingFiatBalance == null : pendingFiatBalance.equals(bankSummaryData.pendingFiatBalance)) &&
-        (availableCoinBalance == null ? bankSummaryData.availableCoinBalance == null : availableCoinBalance.equals(bankSummaryData.availableCoinBalance)) &&
-        (availableFiatBalance == null ? bankSummaryData.availableFiatBalance == null : availableFiatBalance.equals(bankSummaryData.availableFiatBalance)) &&
-        (totalCoinBalance == null ? bankSummaryData.totalCoinBalance == null : totalCoinBalance.equals(bankSummaryData.totalCoinBalance)) &&
-        (totalFiatBalance == null ? bankSummaryData.totalFiatBalance == null : totalFiatBalance.equals(bankSummaryData.totalFiatBalance)) &&
-        (coinFeePercentage == null ? bankSummaryData.coinFeePercentage == null : coinFeePercentage.equals(bankSummaryData.coinFeePercentage)) &&
-        (fiatFeePercentage == null ? bankSummaryData.fiatFeePercentage == null : fiatFeePercentage.equals(bankSummaryData.fiatFeePercentage)) &&
-        (bankLinkStatus == null ? bankSummaryData.bankLinkStatus == null : bankLinkStatus.equals(bankSummaryData.bankLinkStatus)) &&
-        (hasTradeNetki == null ? bankSummaryData.hasTradeNetki == null : hasTradeNetki.equals(bankSummaryData.hasTradeNetki)) &&
-        (tradeNetkiName == null ? bankSummaryData.tradeNetkiName == null : tradeNetkiName.equals(bankSummaryData.tradeNetkiName)) &&
-        (tradeNetkiAddress == null ? bankSummaryData.tradeNetkiAddress == null : tradeNetkiAddress.equals(bankSummaryData.tradeNetkiAddress));
+    return (this.pendingCoinBalance == null ? bankSummaryData.pendingCoinBalance == null : this.pendingCoinBalance.equals(bankSummaryData.pendingCoinBalance)) &&
+        (this.pendingFiatBalance == null ? bankSummaryData.pendingFiatBalance == null : this.pendingFiatBalance.equals(bankSummaryData.pendingFiatBalance)) &&
+        (this.availableCoinBalance == null ? bankSummaryData.availableCoinBalance == null : this.availableCoinBalance.equals(bankSummaryData.availableCoinBalance)) &&
+        (this.availableFiatBalance == null ? bankSummaryData.availableFiatBalance == null : this.availableFiatBalance.equals(bankSummaryData.availableFiatBalance)) &&
+        (this.totalCoinBalance == null ? bankSummaryData.totalCoinBalance == null : this.totalCoinBalance.equals(bankSummaryData.totalCoinBalance)) &&
+        (this.totalFiatBalance == null ? bankSummaryData.totalFiatBalance == null : this.totalFiatBalance.equals(bankSummaryData.totalFiatBalance)) &&
+        (this.coinFeePercentage == null ? bankSummaryData.coinFeePercentage == null : this.coinFeePercentage.equals(bankSummaryData.coinFeePercentage)) &&
+        (this.fiatFeePercentage == null ? bankSummaryData.fiatFeePercentage == null : this.fiatFeePercentage.equals(bankSummaryData.fiatFeePercentage)) &&
+        (this.bankLinkStatus == null ? bankSummaryData.bankLinkStatus == null : this.bankLinkStatus.equals(bankSummaryData.bankLinkStatus)) &&
+        (this.hasTradeNetki == null ? bankSummaryData.hasTradeNetki == null : this.hasTradeNetki.equals(bankSummaryData.hasTradeNetki)) &&
+        (this.tradeNetkiName == null ? bankSummaryData.tradeNetkiName == null : this.tradeNetkiName.equals(bankSummaryData.tradeNetkiName)) &&
+        (this.tradeNetkiAddress == null ? bankSummaryData.tradeNetkiAddress == null : this.tradeNetkiAddress.equals(bankSummaryData.tradeNetkiAddress));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (pendingCoinBalance == null ? 0: pendingCoinBalance.hashCode());
-    result = 31 * result + (pendingFiatBalance == null ? 0: pendingFiatBalance.hashCode());
-    result = 31 * result + (availableCoinBalance == null ? 0: availableCoinBalance.hashCode());
-    result = 31 * result + (availableFiatBalance == null ? 0: availableFiatBalance.hashCode());
-    result = 31 * result + (totalCoinBalance == null ? 0: totalCoinBalance.hashCode());
-    result = 31 * result + (totalFiatBalance == null ? 0: totalFiatBalance.hashCode());
-    result = 31 * result + (coinFeePercentage == null ? 0: coinFeePercentage.hashCode());
-    result = 31 * result + (fiatFeePercentage == null ? 0: fiatFeePercentage.hashCode());
-    result = 31 * result + (bankLinkStatus == null ? 0: bankLinkStatus.hashCode());
-    result = 31 * result + (hasTradeNetki == null ? 0: hasTradeNetki.hashCode());
-    result = 31 * result + (tradeNetkiName == null ? 0: tradeNetkiName.hashCode());
-    result = 31 * result + (tradeNetkiAddress == null ? 0: tradeNetkiAddress.hashCode());
+    result = 31 * result + (this.pendingCoinBalance == null ? 0: this.pendingCoinBalance.hashCode());
+    result = 31 * result + (this.pendingFiatBalance == null ? 0: this.pendingFiatBalance.hashCode());
+    result = 31 * result + (this.availableCoinBalance == null ? 0: this.availableCoinBalance.hashCode());
+    result = 31 * result + (this.availableFiatBalance == null ? 0: this.availableFiatBalance.hashCode());
+    result = 31 * result + (this.totalCoinBalance == null ? 0: this.totalCoinBalance.hashCode());
+    result = 31 * result + (this.totalFiatBalance == null ? 0: this.totalFiatBalance.hashCode());
+    result = 31 * result + (this.coinFeePercentage == null ? 0: this.coinFeePercentage.hashCode());
+    result = 31 * result + (this.fiatFeePercentage == null ? 0: this.fiatFeePercentage.hashCode());
+    result = 31 * result + (this.bankLinkStatus == null ? 0: this.bankLinkStatus.hashCode());
+    result = 31 * result + (this.hasTradeNetki == null ? 0: this.hasTradeNetki.hashCode());
+    result = 31 * result + (this.tradeNetkiName == null ? 0: this.tradeNetkiName.hashCode());
+    result = 31 * result + (this.tradeNetkiAddress == null ? 0: this.tradeNetkiAddress.hashCode());
     return result;
   }
 

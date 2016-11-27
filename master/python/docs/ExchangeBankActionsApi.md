@@ -1,6 +1,6 @@
 # swagger_client.ExchangeBankActionsApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,6 +26,7 @@ The code for verifying the withdrawal can be called from /v1/exchange/bank/coin/
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -42,7 +43,7 @@ try:
     api_response = api_instance.v1userexchangebankcoinwithdrawinitiate(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawinitiate: %s\n" % e
+    print("Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawinitiate: %s\n" % e)
 ```
 
 ### Parameters
@@ -77,6 +78,7 @@ Gets Coin Unverified Withdraws Codes to call and apply on /v1/user/exchange/bank
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -93,7 +95,7 @@ try:
     api_response = api_instance.v1userexchangebankcoinwithdrawnew_verifycode(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawnew_verifycode: %s\n" % e
+    print("Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawnew_verifycode: %s\n" % e)
 ```
 
 ### Parameters
@@ -128,6 +130,7 @@ Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/excha
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -144,7 +147,7 @@ try:
     api_response = api_instance.v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id(withdraw_id, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id: %s\n" % e
+    print("Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawunverifiedcancel_withdraw_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -179,6 +182,7 @@ Verifies an unverified withdrawal. You can get the code from /v1/user/exchange/b
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -195,7 +199,7 @@ try:
     api_response = api_instance.v1userexchangebankcoinwithdrawverify(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawverify: %s\n" % e
+    print("Exception when calling ExchangeBankActionsApi->v1userexchangebankcoinwithdrawverify: %s\n" % e)
 ```
 
 ### Parameters
@@ -230,6 +234,7 @@ Submits a New Bank Link on KYC Verified Accounts.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -246,7 +251,7 @@ try:
     api_response = api_instance.v1userexchangebankfiataccountnew(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiataccountnew: %s\n" % e
+    print("Exception when calling ExchangeBankActionsApi->v1userexchangebankfiataccountnew: %s\n" % e)
 ```
 
 ### Parameters
@@ -281,6 +286,7 @@ Cancels an unverified Exchange Fiat Deposit.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -297,7 +303,7 @@ try:
     api_response = api_instance.v1userexchangebankfiatdepositcancel_deposit_id(deposit_id, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatdepositcancel_deposit_id: %s\n" % e
+    print("Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatdepositcancel_deposit_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -332,6 +338,7 @@ Submits an unverified fiat deposit. No action will occur unless user cancels or 
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -348,7 +355,7 @@ try:
     api_response = api_instance.v1userexchangebankfiatdepositnew(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatdepositnew: %s\n" % e
+    print("Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatdepositnew: %s\n" % e)
 ```
 
 ### Parameters
@@ -383,6 +390,7 @@ The code for verifying the withdrawal can be called from /v1/user/exchange/bank/
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -399,7 +407,7 @@ try:
     api_response = api_instance.v1userexchangebankfiatwithdrawinitiate(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawinitiate: %s\n" % e
+    print("Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawinitiate: %s\n" % e)
 ```
 
 ### Parameters
@@ -434,6 +442,7 @@ Gets Fiat Unverified Withdraws Codes to call and apply on /v1/user/exchange/bank
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -450,7 +459,7 @@ try:
     api_response = api_instance.v1userexchangebankfiatwithdrawnew_verifycode(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawnew_verifycode: %s\n" % e
+    print("Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawnew_verifycode: %s\n" % e)
 ```
 
 ### Parameters
@@ -485,6 +494,7 @@ Cancels an unverified withdrawal. You can get the WithdrawID from /v1/user/excha
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -501,7 +511,7 @@ try:
     api_response = api_instance.v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id(withdraw_id, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id: %s\n" % e
+    print("Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawunverifiedcancel_withdraw_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -536,6 +546,7 @@ Verifies an unverified withdrawal. You can get the code from /v1/user/exchange/b
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -552,7 +563,7 @@ try:
     api_response = api_instance.v1userexchangebankfiatwithdrawverify(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawverify: %s\n" % e
+    print("Exception when calling ExchangeBankActionsApi->v1userexchangebankfiatwithdrawverify: %s\n" % e)
 ```
 
 ### Parameters

@@ -1,6 +1,6 @@
 # SWGExchangeTradeDataApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**v1userexchangebidcancelled**](SWGExchangeTradeDataApi.md#v1userexchangebidcancelled) | **GET** /v1/user/exchange/bid/cancelled | Cancelled User Buy Orders
 [**v1userexchangebidcompleted**](SWGExchangeTradeDataApi.md#v1userexchangebidcompleted) | **GET** /v1/user/exchange/bid/completed | Completed User Buy Orders
 [**v1userexchangebidpending**](SWGExchangeTradeDataApi.md#v1userexchangebidpending) | **GET** /v1/user/exchange/bid/pending | Pending User Buy Orders
+[**v1userexchangetrades**](SWGExchangeTradeDataApi.md#v1userexchangetrades) | **GET** /v1/exchange/trades | Completed Exchange Trades
 
 
 # **v1exchangeasklow**
@@ -748,6 +749,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SWGOrderDataResponse***](SWGOrderDataResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1userexchangetrades**
+```objc
+-(NSNumber*) v1userexchangetradesWithFrom: (NSNumber*) from
+    to: (NSNumber*) to
+    max: (NSNumber*) max
+    offset: (NSNumber*) offset
+    accept: (NSString*) accept
+        completionHandler: (void (^)(SWGRateVolTimeTypeDataResponse* output, NSError* error)) handler;
+```
+
+Completed Exchange Trades
+
+Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+
+### Example 
+```objc
+
+NSNumber* from = @0; // From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional) (default to 0)
+NSNumber* to = @9223372036854776000; // To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional) (default to 9223372036854776000)
+NSNumber* max = @10; // Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional) (default to 10)
+NSNumber* offset = @0; // Offset defaults to 0 if input is invalid. (Optional) (optional) (default to 0)
+NSString* accept = @"accept_example"; // JSON, XML or CSV can be returned (Optional) (optional)
+
+SWGExchangeTradeDataApi*apiInstance = [[SWGExchangeTradeDataApi alloc] init];
+
+// Completed Exchange Trades
+[apiInstance v1userexchangetradesWithFrom:from
+              to:to
+              max:max
+              offset:offset
+              accept:accept
+          completionHandler: ^(SWGRateVolTimeTypeDataResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SWGExchangeTradeDataApi->v1userexchangetrades: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **NSNumber***| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **NSNumber***| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **NSNumber***| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **NSNumber***| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **accept** | **NSString***| JSON, XML or CSV can be returned (Optional) | [optional] 
+
+### Return type
+
+[**SWGRateVolTimeTypeDataResponse***](SWGRateVolTimeTypeDataResponse.md)
 
 ### Authorization
 

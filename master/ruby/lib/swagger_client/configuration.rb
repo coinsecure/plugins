@@ -136,7 +136,7 @@ module SwaggerClient
     def initialize
       @scheme = 'https'
       @host = 'api.coinsecure.in'
-      @base_path = ''
+      @base_path = '/'
       @api_key = {}
       @api_key_prefix = {}
       @timeout = 0

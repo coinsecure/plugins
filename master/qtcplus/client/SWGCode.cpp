@@ -55,7 +55,8 @@ SWGCode::init() {
 
 void
 SWGCode::cleanup() {
-    if(code != NULL) {
+    
+    if(code != nullptr) {
         delete code;
     }
 }
@@ -71,7 +72,7 @@ SWGCode::fromJson(QString &json) {
 
 void
 SWGCode::fromJsonObject(QJsonObject &pJson) {
-    setValue(&code, pJson["code"], "QString", "QString");
+    ::Swagger::setValue(&code, pJson["code"], "QString", "QString");
 }
 
 QString
@@ -88,10 +89,7 @@ QJsonObject*
 SWGCode::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("code"), code, obj, QString("QString"));
-    
-        
 
     return obj;
 }

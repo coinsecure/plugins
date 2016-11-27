@@ -271,6 +271,66 @@ module SwaggerClient
       return data, status_code, headers
     end
 
+    # Verifies an Email token for Signup .
+    # Creates a new Coinsecure Account.
+    # @param token 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :accept JSON, XML or CSV can be returned (Optional)
+    # @return [StandardVerifySignupResultData]
+    def v1signupverify_token(token, opts = {})
+      data, _status_code, _headers = v1signupverify_token_with_http_info(token, opts)
+      return data
+    end
+
+    # Verifies an Email token for Signup .
+    # Creates a new Coinsecure Account.
+    # @param token 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :accept JSON, XML or CSV can be returned (Optional)
+    # @return [Array<(StandardVerifySignupResultData, Fixnum, Hash)>] StandardVerifySignupResultData data, response status code and response headers
+    def v1signupverify_token_with_http_info(token, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AccountActionsApi.v1signupverify_token ..."
+      end
+      # verify the required parameter 'token' is set
+      fail ArgumentError, "Missing the required parameter 'token' when calling AccountActionsApi.v1signupverify_token" if token.nil?
+      # resource path
+      local_var_path = "/v1/signup/verify/{token}".sub('{format}','json').sub('{' + 'token' + '}', token.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      local_header_accept = ['application/json', 'application/xml', 'application/csv']
+      local_header_accept_result = @api_client.select_header_accept(local_header_accept) and header_params['Accept'] = local_header_accept_result
+
+      # HTTP header 'Content-Type'
+      local_header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(local_header_content_type)
+      header_params[:'accept'] = opts[:'accept'] if !opts[:'accept'].nil?
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'StandardVerifySignupResultData')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountActionsApi#v1signupverify_token\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Send OTP for Bank Link
     # Send OTP for an additional Bank Link.
     # @param number 
@@ -344,7 +404,7 @@ module SwaggerClient
     # @param acct_type Please enter your Coinsecure account type. Allowable Values are Personal or Company.
     # @param ban_type Please enter your Bank account type. Allowable Values are Savings or Current.
     # @param phone Please enter your Valid Phone Number.
-    # @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.
+    # @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.
     # @param file Enter a valid image, pdf or zip file under 5 MB in size.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :authorization Enter a valid Api Key.
@@ -366,7 +426,7 @@ module SwaggerClient
     # @param acct_type Please enter your Coinsecure account type. Allowable Values are Personal or Company.
     # @param ban_type Please enter your Bank account type. Allowable Values are Savings or Current.
     # @param phone Please enter your Valid Phone Number.
-    # @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.
+    # @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.
     # @param file Enter a valid image, pdf or zip file under 5 MB in size.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :authorization Enter a valid Api Key.

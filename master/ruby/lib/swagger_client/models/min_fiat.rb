@@ -26,20 +26,20 @@ require 'date'
 module SwaggerClient
 
   class MinFiat
-    attr_accessor :min_fiat
+    attr_accessor :max_fiat
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'min_fiat' => :'minFiat'
+        :'max_fiat' => :'maxFiat'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'min_fiat' => :'Integer'
+        :'max_fiat' => :'Integer'
       }
     end
 
@@ -51,8 +51,8 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'minFiat')
-        self.min_fiat = attributes[:'minFiat']
+      if attributes.has_key?(:'maxFiat')
+        self.max_fiat = attributes[:'maxFiat']
       end
 
     end
@@ -61,13 +61,17 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @max_fiat.nil?
+        invalid_properties.push("invalid value for 'max_fiat', max_fiat cannot be nil.")
+      end
+
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @min_fiat.nil?
+      return false if @max_fiat.nil?
       return true
     end
 
@@ -76,7 +80,7 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          min_fiat == o.min_fiat
+          max_fiat == o.max_fiat
     end
 
     # @see the `==` method
@@ -88,7 +92,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [min_fiat].hash
+      [max_fiat].hash
     end
 
     # Builds the object from hash
@@ -97,7 +101,7 @@ module SwaggerClient
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
       self.class.swagger_types.each_pair do |key, type|
-        if type =~ /^Array<(.*)>/i
+        if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
@@ -128,7 +132,7 @@ module SwaggerClient
       when :Float
         value.to_f
       when :BOOLEAN
-        if value.to_s =~ /^(true|t|yes|y|1)$/i
+        if value.to_s =~ /\A(true|t|yes|y|1)\z/i
           true
         else
           false
@@ -139,7 +143,7 @@ module SwaggerClient
       when /\AArray<(?<inner_type>.+)>\z/
         inner_type = Regexp.last_match[:inner_type]
         value.map { |v| _deserialize(inner_type, v) }
-      when /\AHash<(?<k_type>.+), (?<v_type>.+)>\z/
+      when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
         {}.tap do |hash|

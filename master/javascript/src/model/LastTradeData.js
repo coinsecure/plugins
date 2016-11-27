@@ -52,9 +52,9 @@
    * Constructs a new <code>LastTradeData</code>.
    * @alias module:model/LastTradeData
    * @class
-   * @param time {Integer} 
-   * @param avgRate {Integer} 
-   * @param vol {Integer} 
+   * @param time {Number} 
+   * @param avgRate {Number} 
+   * @param vol {Number} 
    * @param ordType {String} 
    */
   var exports = function(time, avgRate, vol, ordType) {
@@ -78,13 +78,13 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('time')) {
-        obj['time'] = ApiClient.convertToType(data['time'], 'Integer');
+        obj['time'] = ApiClient.convertToType(data['time'], 'Number');
       }
       if (data.hasOwnProperty('avgRate')) {
-        obj['avgRate'] = ApiClient.convertToType(data['avgRate'], 'Integer');
+        obj['avgRate'] = ApiClient.convertToType(data['avgRate'], 'Number');
       }
       if (data.hasOwnProperty('vol')) {
-        obj['vol'] = ApiClient.convertToType(data['vol'], 'Integer');
+        obj['vol'] = ApiClient.convertToType(data['vol'], 'Number');
       }
       if (data.hasOwnProperty('ordType')) {
         obj['ordType'] = ApiClient.convertToType(data['ordType'], 'String');
@@ -94,15 +94,15 @@
   }
 
   /**
-   * @member {Integer} time
+   * @member {Number} time
    */
   exports.prototype['time'] = undefined;
   /**
-   * @member {Integer} avgRate
+   * @member {Number} avgRate
    */
   exports.prototype['avgRate'] = undefined;
   /**
-   * @member {Integer} vol
+   * @member {Number} vol
    */
   exports.prototype['vol'] = undefined;
   /**

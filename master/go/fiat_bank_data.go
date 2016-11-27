@@ -41,4 +41,6 @@ type FiatBankData struct {
 	AccountNick string `json:"accountNick,omitempty"`
 
 	AccountType string `json:"accountType,omitempty"`
+
+	AccountID string `json:"accountID,omitempty"`
 }

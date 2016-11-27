@@ -55,28 +55,35 @@ public:
     SWGSuccRefData* fromJson(QString &jsonString);
 
     double getRefPercent();
-    void setRefPercent(double refPercent);
-qint64 getTime();
+    void setRefPercent(double ref_percent);
+
+    qint64 getTime();
     void setTime(qint64 time);
-QString* getRefID();
-    void setRefID(QString* refID);
-bool getEmailVerified();
-    void setEmailVerified(bool emailVerified);
-bool getKycComplete();
-    void setKycComplete(bool kycComplete);
-qint64 getBtcEarned();
-    void setBtcEarned(qint64 btcEarned);
-qint64 getFiatEarned();
-    void setFiatEarned(qint64 fiatEarned);
+
+    QString* getRefId();
+    void setRefId(QString* ref_id);
+
+    bool getEmailVerified();
+    void setEmailVerified(bool email_verified);
+
+    bool getKycComplete();
+    void setKycComplete(bool kyc_complete);
+
+    qint64 getBtcEarned();
+    void setBtcEarned(qint64 btc_earned);
+
+    qint64 getFiatEarned();
+    void setFiatEarned(qint64 fiat_earned);
+
 
 private:
-    double refPercent;
-qint64 time;
-QString* refID;
-bool emailVerified;
-bool kycComplete;
-qint64 btcEarned;
-qint64 fiatEarned;
+    double ref_percent;
+    qint64 time;
+    QString* ref_id;
+    bool email_verified;
+    bool kyc_complete;
+    qint64 btc_earned;
+    qint64 fiat_earned;
 };
 
 } /* namespace Swagger */

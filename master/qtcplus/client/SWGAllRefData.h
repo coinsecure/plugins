@@ -55,16 +55,19 @@ public:
     SWGAllRefData* fromJson(QString &jsonString);
 
     double getRefPercent();
-    void setRefPercent(double refPercent);
-qint64 getTime();
+    void setRefPercent(double ref_percent);
+
+    qint64 getTime();
     void setTime(qint64 time);
-QString* getRefID();
-    void setRefID(QString* refID);
+
+    QString* getRefId();
+    void setRefId(QString* ref_id);
+
 
 private:
-    double refPercent;
-qint64 time;
-QString* refID;
+    double ref_percent;
+    qint64 time;
+    QString* ref_id;
 };
 
 } /* namespace Swagger */

@@ -34,6 +34,7 @@
 #include <QJsonObject>
 
 
+#include "SWGObject.h"
 #include <QString>
 
 #include "SWGObject.h"
@@ -54,23 +55,32 @@ public:
     void fromJsonObject(QJsonObject &json);
     SWGSendCoinWallet* fromJson(QString &jsonString);
 
-    QString* getWalletID();
-    void setWalletID(QString* walletID);
-qint64 getAmt();
+    QString* getWalletId();
+    void setWalletId(QString* wallet_id);
+
+    qint64 getAmt();
     void setAmt(qint64 amt);
-QString* getToAddr();
-    void setToAddr(QString* toAddr);
-QString* getMsg();
+
+    QString* getToAddr();
+    void setToAddr(QString* to_addr);
+
+    QString* getMsg();
     void setMsg(QString* msg);
-QString* getPin();
+
+    QString* getPin();
     void setPin(QString* pin);
 
+    SWGObject* getFees();
+    void setFees(SWGObject* fees);
+
+
 private:
-    QString* walletID;
-qint64 amt;
-QString* toAddr;
-QString* msg;
-QString* pin;
+    QString* wallet_id;
+    qint64 amt;
+    QString* to_addr;
+    QString* msg;
+    QString* pin;
+    SWGObject* fees;
 };
 
 } /* namespace Swagger */

@@ -31,6 +31,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
   "success" : true,
   "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
+    "accountID" : "aeiou",
     "bankID" : "aeiou",
     "accountType" : "aeiou",
     "updateTime" : 123456789,
@@ -53,6 +54,7 @@ public class ExchangeBankFiatDataAPI: APIBase {
   "success" : true,
   "time" : "2000-01-23T04:56:07.000+00:00",
   "message" : [ {
+    "accountID" : "aeiou",
     "bankID" : "aeiou",
     "accountType" : "aeiou",
     "updateTime" : 123456789,

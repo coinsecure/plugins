@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -31,12 +31,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.TimeKYCData;
 
-
 /**
  * KYCData
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-21T18:38:01.890Z")
-public class KYCData   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-27T22:11:57.435Z")
+public class KYCData {
   @SerializedName("timeDetails")
   private TimeKYCData timeDetails = null;
 
@@ -193,20 +192,21 @@ public class KYCData   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    KYCData kYCData = (KYCData) o;
-    return Objects.equals(this.timeDetails, kYCData.timeDetails) &&
-        Objects.equals(this.kycID, kYCData.kycID) &&
-        Objects.equals(this.firstName, kYCData.firstName) &&
-        Objects.equals(this.lastName, kYCData.lastName) &&
-        Objects.equals(this.status, kYCData.status) &&
-        Objects.equals(this.userType, kYCData.userType) &&
-        Objects.equals(this.info, kYCData.info);
+    KYCData kyCData = (KYCData) o;
+    return Objects.equals(this.timeDetails, kyCData.timeDetails) &&
+        Objects.equals(this.kycID, kyCData.kycID) &&
+        Objects.equals(this.firstName, kyCData.firstName) &&
+        Objects.equals(this.lastName, kyCData.lastName) &&
+        Objects.equals(this.status, kyCData.status) &&
+        Objects.equals(this.userType, kyCData.userType) &&
+        Objects.equals(this.info, kyCData.info);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(timeDetails, kycID, firstName, lastName, status, userType, info);
   }
+
 
   @Override
   public String toString() {
@@ -234,5 +234,6 @@ public class KYCData   {
     }
     return o.toString().replace("\n", "\n    ");
   }
+  
 }
 

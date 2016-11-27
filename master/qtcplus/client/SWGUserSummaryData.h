@@ -55,25 +55,31 @@ public:
     SWGUserSummaryData* fromJson(QString &jsonString);
 
     QString* getKycStatus();
-    void setKycStatus(QString* kycStatus);
-QString* getBankLinkStatus();
-    void setBankLinkStatus(QString* bankLinkStatus);
-QString* getTradeReady();
-    void setTradeReady(QString* tradeReady);
-bool getIsDisabledAccount();
-    void setIsDisabledAccount(bool isDisabledAccount);
-QString* getFaSecure();
-    void setFaSecure(QString* faSecure);
-QString* getHasPhone();
-    void setHasPhone(QString* hasPhone);
+    void setKycStatus(QString* kyc_status);
+
+    QString* getBankLinkStatus();
+    void setBankLinkStatus(QString* bank_link_status);
+
+    QString* getTradeReady();
+    void setTradeReady(QString* trade_ready);
+
+    bool getIsDisabledAccount();
+    void setIsDisabledAccount(bool is_disabled_account);
+
+    QString* getFaSecure();
+    void setFaSecure(QString* fa_secure);
+
+    QString* getHasPhone();
+    void setHasPhone(QString* has_phone);
+
 
 private:
-    QString* kycStatus;
-QString* bankLinkStatus;
-QString* tradeReady;
-bool isDisabledAccount;
-QString* faSecure;
-QString* hasPhone;
+    QString* kyc_status;
+    QString* bank_link_status;
+    QString* trade_ready;
+    bool is_disabled_account;
+    QString* fa_secure;
+    QString* has_phone;
 };
 
 } /* namespace Swagger */

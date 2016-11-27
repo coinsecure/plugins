@@ -52,7 +52,7 @@
    * Constructs a new <code>SendCoin</code>.
    * @alias module:model/SendCoin
    * @class
-   * @param satoshis {Integer} 
+   * @param satoshis {Number} 
    * @param toAddr {String} 
    */
   var exports = function(satoshis, toAddr) {
@@ -60,6 +60,7 @@
 
     _this['satoshis'] = satoshis;
     _this['toAddr'] = toAddr;
+
 
 
   };
@@ -76,7 +77,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('satoshis')) {
-        obj['satoshis'] = ApiClient.convertToType(data['satoshis'], 'Integer');
+        obj['satoshis'] = ApiClient.convertToType(data['satoshis'], 'Number');
       }
       if (data.hasOwnProperty('toAddr')) {
         obj['toAddr'] = ApiClient.convertToType(data['toAddr'], 'String');
@@ -87,12 +88,15 @@
       if (data.hasOwnProperty('pin')) {
         obj['pin'] = ApiClient.convertToType(data['pin'], 'String');
       }
+      if (data.hasOwnProperty('fees')) {
+        obj['fees'] = ApiClient.convertToType(data['fees'], Object);
+      }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} satoshis
+   * @member {Number} satoshis
    */
   exports.prototype['satoshis'] = undefined;
   /**
@@ -107,6 +111,10 @@
    * @member {String} pin
    */
   exports.prototype['pin'] = undefined;
+  /**
+   * @member {Object} fees
+   */
+  exports.prototype['fees'] = undefined;
 
 
 

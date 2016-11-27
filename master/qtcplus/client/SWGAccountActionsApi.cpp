@@ -220,6 +220,51 @@ SWGAccountActionsApi::/v1/signupCallback(HttpRequestWorker * worker) {
     
 }
 void
+SWGAccountActionsApi::/v1/signup/verify/Token(QString* token, QString* accept) {
+    QString fullPath;
+    fullPath.append(this->host).append(this->basePath).append("/v1/signup/verify/{token}");
+
+    QString tokenPathParam("{"); tokenPathParam.append("token").append("}");
+    fullPath.replace(tokenPathParam, stringValue(token));
+
+
+    HttpRequestWorker *worker = new HttpRequestWorker();
+    HttpRequestInput input(fullPath, "PUT");
+
+    
+
+
+    // TODO: add header support
+
+    connect(worker,
+            &HttpRequestWorker::on_execution_finished,
+            this,
+            &SWGAccountActionsApi::/v1/signup/verify/TokenCallback);
+
+    worker->execute(&input);
+}
+
+void
+SWGAccountActionsApi::/v1/signup/verify/TokenCallback(HttpRequestWorker * worker) {
+    QString msg;
+    if (worker->error_type == QNetworkReply::NoError) {
+        msg = QString("Success! %1 bytes").arg(worker->response.length());
+    }
+    else {
+        msg = "Error: " + worker->error_str;
+    }
+
+    
+        QString json(worker->response);
+    SWGStandardVerifySignupResultData* output = static_cast<SWGStandardVerifySignupResultData*>(create(json, QString("SWGStandardVerifySignupResultData")));
+    
+
+    worker->deleteLater();
+
+    emit /v1/signup/verify/TokenSignal(output);
+    
+}
+void
 SWGAccountActionsApi::/v1/user/bank/otp/Number(QString* number, QString* authorization, QString* accept) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/user/bank/otp/{number}");
@@ -266,7 +311,7 @@ SWGAccountActionsApi::/v1/user/bank/otp/NumberCallback(HttpRequestWorker * worke
     
 }
 void
-SWGAccountActionsApi::/v1/user/exchange/kyc(QString* panNumber, QString* acctNick, QString* name, QString* ban, QString* ifsc, QString* acctType, QString* banType, QString* phone, QString* otp, SWGHttpRequestInputFileElement* file, QString* authorization, QString* message, QString* accept) {
+SWGAccountActionsApi::/v1/user/exchange/kyc(QString* pan_number, QString* acct_nick, QString* name, QString* ban, QString* ifsc, QString* acct_type, QString* ban_type, QString* phone, QString* otp, SWGHttpRequestInputFileElement* file, QString* authorization, QString* message, QString* accept) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/user/exchange/kyc");
 
@@ -275,37 +320,37 @@ SWGAccountActionsApi::/v1/user/exchange/kyc(QString* panNumber, QString* acctNic
     HttpRequestWorker *worker = new HttpRequestWorker();
     HttpRequestInput input(fullPath, "PUT");
 
-    if (panNumber != NULL) {
-        input.add_var("panNumber", *panNumber);
+    if (pan_number != nullptr) {
+        input.add_var("panNumber", *pan_number);
     }
-if (acctNick != NULL) {
-        input.add_var("acctNick", *acctNick);
+if (acct_nick != nullptr) {
+        input.add_var("acctNick", *acct_nick);
     }
-if (name != NULL) {
+if (name != nullptr) {
         input.add_var("name", *name);
     }
-if (ban != NULL) {
+if (ban != nullptr) {
         input.add_var("ban", *ban);
     }
-if (ifsc != NULL) {
+if (ifsc != nullptr) {
         input.add_var("ifsc", *ifsc);
     }
-if (acctType != NULL) {
-        input.add_var("acctType", *acctType);
+if (acct_type != nullptr) {
+        input.add_var("acctType", *acct_type);
     }
-if (message != NULL) {
+if (message != nullptr) {
         input.add_var("message", *message);
     }
-if (banType != NULL) {
-        input.add_var("banType", *banType);
+if (ban_type != nullptr) {
+        input.add_var("banType", *ban_type);
     }
-if (phone != NULL) {
+if (phone != nullptr) {
         input.add_var("phone", *phone);
     }
-if (otp != NULL) {
+if (otp != nullptr) {
         input.add_var("otp", *otp);
     }
-if (file != NULL) {
+if (file != nullptr) {
         input.add_file("file", (*file).local_filename, (*file).request_filename, (*file).mime_type);
     }
 
@@ -571,12 +616,12 @@ SWGAccountActionsApi::/v1/user/netki/updateCallback(HttpRequestWorker * worker) 
     
 }
 void
-SWGAccountActionsApi::/v1/user/profile/image/delete/NetkiName(QString* netkiName, QString* authorization, QString* accept) {
+SWGAccountActionsApi::/v1/user/profile/image/delete/NetkiName(QString* netki_name, QString* authorization, QString* accept) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/user/profile/image/delete/{netkiName}");
 
-    QString netkiNamePathParam("{"); netkiNamePathParam.append("netkiName").append("}");
-    fullPath.replace(netkiNamePathParam, stringValue(netkiName));
+    QString netki_namePathParam("{"); netki_namePathParam.append("netkiName").append("}");
+    fullPath.replace(netki_namePathParam, stringValue(netki_name));
 
 
     HttpRequestWorker *worker = new HttpRequestWorker();
@@ -617,7 +662,7 @@ SWGAccountActionsApi::/v1/user/profile/image/delete/NetkiNameCallback(HttpReques
     
 }
 void
-SWGAccountActionsApi::/v1/user/profile/image/update(QString* netkiName, bool isPublic, SWGHttpRequestInputFileElement* file, QString* authorization, QString* accept) {
+SWGAccountActionsApi::/v1/user/profile/image/update(QString* netki_name, bool is_public, SWGHttpRequestInputFileElement* file, QString* authorization, QString* accept) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/user/profile/image/update");
 
@@ -626,13 +671,13 @@ SWGAccountActionsApi::/v1/user/profile/image/update(QString* netkiName, bool isP
     HttpRequestWorker *worker = new HttpRequestWorker();
     HttpRequestInput input(fullPath, "POST");
 
-    if (netkiName != NULL) {
-        input.add_var("netkiName", *netkiName);
+    if (netki_name != nullptr) {
+        input.add_var("netkiName", *netki_name);
     }
-if (isPublic != NULL) {
-        input.add_var("isPublic", *isPublic);
+if (is_public != nullptr) {
+        input.add_var("isPublic", *is_public);
     }
-if (file != NULL) {
+if (file != nullptr) {
         input.add_file("file", (*file).local_filename, (*file).request_filename, (*file).mime_type);
     }
 

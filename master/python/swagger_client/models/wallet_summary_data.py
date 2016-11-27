@@ -66,6 +66,7 @@ class WalletSummaryData(object):
         self._wallet_netki_address = wallet_netki_address
         self._wallet_netki_wallet_id = wallet_netki_wallet_id
 
+
     @property
     def wallet_confirmed_balance(self):
         """
@@ -86,6 +87,8 @@ class WalletSummaryData(object):
         :param wallet_confirmed_balance: The wallet_confirmed_balance of this WalletSummaryData.
         :type: int
         """
+        if wallet_confirmed_balance is None:
+            raise ValueError("Invalid value for `wallet_confirmed_balance`, must not be `None`")
 
         self._wallet_confirmed_balance = wallet_confirmed_balance
 
@@ -109,6 +112,8 @@ class WalletSummaryData(object):
         :param wallet_uncofirmed_balance: The wallet_uncofirmed_balance of this WalletSummaryData.
         :type: int
         """
+        if wallet_uncofirmed_balance is None:
+            raise ValueError("Invalid value for `wallet_uncofirmed_balance`, must not be `None`")
 
         self._wallet_uncofirmed_balance = wallet_uncofirmed_balance
 
@@ -132,6 +137,8 @@ class WalletSummaryData(object):
         :param has_wallet_netki: The has_wallet_netki of this WalletSummaryData.
         :type: bool
         """
+        if has_wallet_netki is None:
+            raise ValueError("Invalid value for `has_wallet_netki`, must not be `None`")
 
         self._has_wallet_netki = has_wallet_netki
 
@@ -155,6 +162,8 @@ class WalletSummaryData(object):
         :param wallet_netki: The wallet_netki of this WalletSummaryData.
         :type: str
         """
+        if wallet_netki is None:
+            raise ValueError("Invalid value for `wallet_netki`, must not be `None`")
 
         self._wallet_netki = wallet_netki
 
@@ -178,6 +187,8 @@ class WalletSummaryData(object):
         :param wallet_netki_address: The wallet_netki_address of this WalletSummaryData.
         :type: str
         """
+        if wallet_netki_address is None:
+            raise ValueError("Invalid value for `wallet_netki_address`, must not be `None`")
 
         self._wallet_netki_address = wallet_netki_address
 
@@ -201,6 +212,8 @@ class WalletSummaryData(object):
         :param wallet_netki_wallet_id: The wallet_netki_wallet_id of this WalletSummaryData.
         :type: str
         """
+        if wallet_netki_wallet_id is None:
+            raise ValueError("Invalid value for `wallet_netki_wallet_id`, must not be `None`")
 
         self._wallet_netki_wallet_id = wallet_netki_wallet_id
 

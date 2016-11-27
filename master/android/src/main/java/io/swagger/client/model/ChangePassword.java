@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class ChangePassword  {
+public class ChangePassword {
   
   @SerializedName("password")
   private String password = null;
@@ -67,15 +65,15 @@ public class ChangePassword  {
       return false;
     }
     ChangePassword changePassword = (ChangePassword) o;
-    return (password == null ? changePassword.password == null : password.equals(changePassword.password)) &&
-        (repeatPassword == null ? changePassword.repeatPassword == null : repeatPassword.equals(changePassword.repeatPassword));
+    return (this.password == null ? changePassword.password == null : this.password.equals(changePassword.password)) &&
+        (this.repeatPassword == null ? changePassword.repeatPassword == null : this.repeatPassword.equals(changePassword.repeatPassword));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (password == null ? 0: password.hashCode());
-    result = 31 * result + (repeatPassword == null ? 0: repeatPassword.hashCode());
+    result = 31 * result + (this.password == null ? 0: this.password.hashCode());
+    result = 31 * result + (this.repeatPassword == null ? 0: this.repeatPassword.hashCode());
     return result;
   }
 

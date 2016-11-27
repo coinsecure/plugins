@@ -36,6 +36,7 @@
 #include "SWGSuccessResult.h"
 #include "SWGEmail.h"
 #include "SWGSignupForm.h"
+#include "SWGStandardVerifySignupResultData.h"
 #include "SWGHttpRequest.h"
 #include "SWGNetkiNameAddress.h"
 #include "SWGAddress.h"
@@ -60,15 +61,16 @@ public:
     void /v1/login/initiate(SWGLoginId body, QString* accept);
     void /v1/login/password/forgot(SWGEmail body, QString* accept);
     void /v1/signup(SWGSignupForm body, QString* accept);
+    void /v1/signup/verify/Token(QString* token, QString* accept);
     void /v1/user/bank/otp/Number(QString* number, QString* authorization, QString* accept);
-    void /v1/user/exchange/kyc(QString* panNumber, QString* acctNick, QString* name, QString* ban, QString* ifsc, QString* acctType, QString* banType, QString* phone, QString* otp, SWGHttpRequestInputFileElement* file, QString* authorization, QString* message, QString* accept);
+    void /v1/user/exchange/kyc(QString* pan_number, QString* acct_nick, QString* name, QString* ban, QString* ifsc, QString* acct_type, QString* ban_type, QString* phone, QString* otp, SWGHttpRequestInputFileElement* file, QString* authorization, QString* message, QString* accept);
     void /v1/user/gcm/Code(QString* code, QString* authorization, QString* accept);
     void /v1/user/kyc/otp/Number(QString* number, QString* authorization, QString* accept);
     void /v1/user/logout(QString* authorization, QString* accept);
     void /v1/user/netki/create(SWGNetkiNameAddress body, QString* authorization, QString* accept);
     void /v1/user/netki/update(SWGAddress body, QString* authorization, QString* accept);
-    void /v1/user/profile/image/delete/NetkiName(QString* netkiName, QString* authorization, QString* accept);
-    void /v1/user/profile/image/update(QString* netkiName, bool isPublic, SWGHttpRequestInputFileElement* file, QString* authorization, QString* accept);
+    void /v1/user/profile/image/delete/NetkiName(QString* netki_name, QString* authorization, QString* accept);
+    void /v1/user/profile/image/update(QString* netki_name, bool is_public, SWGHttpRequestInputFileElement* file, QString* authorization, QString* accept);
     void /v1/user/profile/phone(SWGNumberOtp body, QString* authorization, QString* accept);
     void /v1/user/profile/phone/Number(QString* authorization, QString* accept);
     void /v1/user/profile/phone/otp/Number(QString* number, QString* authorization, QString* accept);
@@ -78,6 +80,7 @@ private:
     void /v1/login/initiateCallback (HttpRequestWorker * worker);
     void /v1/login/password/forgotCallback (HttpRequestWorker * worker);
     void /v1/signupCallback (HttpRequestWorker * worker);
+    void /v1/signup/verify/TokenCallback (HttpRequestWorker * worker);
     void /v1/user/bank/otp/NumberCallback (HttpRequestWorker * worker);
     void /v1/user/exchange/kycCallback (HttpRequestWorker * worker);
     void /v1/user/gcm/CodeCallback (HttpRequestWorker * worker);
@@ -96,6 +99,7 @@ signals:
     void /v1/login/initiateSignal(SWGStandardInitiateLoginResultData* summary);
     void /v1/login/password/forgotSignal(SWGSuccessResult* summary);
     void /v1/signupSignal(SWGSuccessResult* summary);
+    void /v1/signup/verify/TokenSignal(SWGStandardVerifySignupResultData* summary);
     void /v1/user/bank/otp/NumberSignal(SWGStandardInitiateLoginResultData* summary);
     void /v1/user/exchange/kycSignal(SWGSuccessResult* summary);
     void /v1/user/gcm/CodeSignal(SWGSuccessResult* summary);

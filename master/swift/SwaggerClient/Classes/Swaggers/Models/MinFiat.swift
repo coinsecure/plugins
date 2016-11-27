@@ -9,14 +9,14 @@ import Foundation
 
 
 public class MinFiat: JSONEncodable {
-    public var minFiat: Int64?
+    public var maxFiat: Int64?
 
     public init() {}
 
     // MARK: JSONEncodable
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
-        nillableDictionary["minFiat"] = self.minFiat?.encodeToJSON()
+        nillableDictionary["maxFiat"] = self.maxFiat?.encodeToJSON()
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary
     }

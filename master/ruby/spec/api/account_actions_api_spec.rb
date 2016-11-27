@@ -95,6 +95,19 @@ describe 'AccountActionsApi' do
     end
   end
 
+  # unit tests for v1signupverify_token
+  # Verifies an Email token for Signup .
+  # Creates a new Coinsecure Account.
+  # @param token 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :accept JSON, XML or CSV can be returned (Optional)
+  # @return [StandardVerifySignupResultData]
+  describe 'v1signupverify_token test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for v1userbankotp_number
   # Send OTP for Bank Link
   # Send OTP for an additional Bank Link.
@@ -120,7 +133,7 @@ describe 'AccountActionsApi' do
   # @param acct_type Please enter your Coinsecure account type. Allowable Values are Personal or Company.
   # @param ban_type Please enter your Bank account type. Allowable Values are Savings or Current.
   # @param phone Please enter your Valid Phone Number.
-  # @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.
+  # @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.
   # @param file Enter a valid image, pdf or zip file under 5 MB in size.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :authorization Enter a valid Api Key.

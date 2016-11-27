@@ -56,24 +56,30 @@ public:
 
     qint64 getTime();
     void setTime(qint64 time);
-qint64 getVol();
+
+    qint64 getVol();
     void setVol(qint64 vol);
-qint64 getRate();
+
+    qint64 getRate();
     void setRate(qint64 rate);
-QString* getOrderID();
-    void setOrderID(QString* orderID);
-QString* getStatus();
+
+    QString* getOrderId();
+    void setOrderId(QString* order_id);
+
+    QString* getStatus();
     void setStatus(QString* status);
-QString* getHumanTime();
+
+    QString* getHumanTime();
     void setHumanTime(QString* human_time);
+
 
 private:
     qint64 time;
-qint64 vol;
-qint64 rate;
-QString* orderID;
-QString* status;
-QString* human_time;
+    qint64 vol;
+    qint64 rate;
+    QString* order_id;
+    QString* status;
+    QString* human_time;
 };
 
 } /* namespace Swagger */

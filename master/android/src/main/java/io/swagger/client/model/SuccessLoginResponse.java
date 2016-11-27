@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class SuccessLoginResponse  {
+public class SuccessLoginResponse {
   
   @SerializedName("success")
   private Boolean success = null;
@@ -103,21 +101,21 @@ public class SuccessLoginResponse  {
       return false;
     }
     SuccessLoginResponse successLoginResponse = (SuccessLoginResponse) o;
-    return (success == null ? successLoginResponse.success == null : success.equals(successLoginResponse.success)) &&
-        (email == null ? successLoginResponse.email == null : email.equals(successLoginResponse.email)) &&
-        (message == null ? successLoginResponse.message == null : message.equals(successLoginResponse.message)) &&
-        (keyType == null ? successLoginResponse.keyType == null : keyType.equals(successLoginResponse.keyType)) &&
-        (keyNeeded == null ? successLoginResponse.keyNeeded == null : keyNeeded.equals(successLoginResponse.keyNeeded));
+    return (this.success == null ? successLoginResponse.success == null : this.success.equals(successLoginResponse.success)) &&
+        (this.email == null ? successLoginResponse.email == null : this.email.equals(successLoginResponse.email)) &&
+        (this.message == null ? successLoginResponse.message == null : this.message.equals(successLoginResponse.message)) &&
+        (this.keyType == null ? successLoginResponse.keyType == null : this.keyType.equals(successLoginResponse.keyType)) &&
+        (this.keyNeeded == null ? successLoginResponse.keyNeeded == null : this.keyNeeded.equals(successLoginResponse.keyNeeded));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (success == null ? 0: success.hashCode());
-    result = 31 * result + (email == null ? 0: email.hashCode());
-    result = 31 * result + (message == null ? 0: message.hashCode());
-    result = 31 * result + (keyType == null ? 0: keyType.hashCode());
-    result = 31 * result + (keyNeeded == null ? 0: keyNeeded.hashCode());
+    result = 31 * result + (this.success == null ? 0: this.success.hashCode());
+    result = 31 * result + (this.email == null ? 0: this.email.hashCode());
+    result = 31 * result + (this.message == null ? 0: this.message.hashCode());
+    result = 31 * result + (this.keyType == null ? 0: this.keyType.hashCode());
+    result = 31 * result + (this.keyNeeded == null ? 0: this.keyNeeded.hashCode());
     return result;
   }
 

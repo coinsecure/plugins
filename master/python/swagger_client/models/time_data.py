@@ -57,6 +57,7 @@ class TimeData(object):
         self._verified_time = verified_time
         self._completed_time = completed_time
 
+
     @property
     def time(self):
         """
@@ -77,6 +78,8 @@ class TimeData(object):
         :param time: The time of this TimeData.
         :type: int
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 
@@ -100,6 +103,8 @@ class TimeData(object):
         :param verified_time: The verified_time of this TimeData.
         :type: int
         """
+        if verified_time is None:
+            raise ValueError("Invalid value for `verified_time`, must not be `None`")
 
         self._verified_time = verified_time
 
@@ -123,6 +128,8 @@ class TimeData(object):
         :param completed_time: The completed_time of this TimeData.
         :type: int
         """
+        if completed_time is None:
+            raise ValueError("Invalid value for `completed_time`, must not be `None`")
 
         self._completed_time = completed_time
 

@@ -79,6 +79,8 @@
 #import "SWGRateDiffDataResponse.h"
 #import "SWGRateVolData.h"
 #import "SWGRateVolDataResponse.h"
+#import "SWGRateVolTimeTypeData.h"
+#import "SWGRateVolTimeTypeDataResponse.h"
 #import "SWGResetPassword.h"
 #import "SWGSendCoin.h"
 #import "SWGSendCoinWallet.h"
@@ -87,6 +89,7 @@
 #import "SWGStandardInitiateLoginResultData.h"
 #import "SWGStandardLoginResultData.h"
 #import "SWGStandardTickerResultData.h"
+#import "SWGStandardVerifySignupResultData.h"
 #import "SWGSuccCoinRefData.h"
 #import "SWGSuccCoinRefDataResponse.h"
 #import "SWGSuccRefData.h"
@@ -99,6 +102,7 @@
 #import "SWGSuccessOrderDataResponse.h"
 #import "SWGSuccessResult.h"
 #import "SWGSuccessTickerResponse.h"
+#import "SWGSuccessVerifySignupResponse.h"
 #import "SWGTimeData.h"
 #import "SWGTimeDataCoin.h"
 #import "SWGTimeKYCData.h"
@@ -184,7 +188,7 @@ extern NSString *const SWGResponseObjectErrorKey;
 /**
  * Sets the client reachability, this may be overridden by the reachability manager if reachability changes
  *
- * @param The client reachability.
+ * @param status The client reachability status.
  */
 +(void) setReachabilityStatus:(AFNetworkReachabilityStatus) status;
 
@@ -240,7 +244,7 @@ extern NSString *const SWGResponseObjectErrorKey;
 /**
  * Updates header parameters and query parameters for authentication
  *
- * @param headers The header parameter will be udpated, passed by pointer to pointer.
+ * @param headers The header parameter will be updated, passed by pointer to pointer.
  * @param querys The query parameters will be updated, passed by pointer to pointer.
  * @param authSettings The authentication names NSArray.
  */

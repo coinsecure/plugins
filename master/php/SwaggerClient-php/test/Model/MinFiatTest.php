@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -49,7 +49,7 @@ namespace Swagger\Client;
 /**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class MinFiatTest extends \PHPUnit_Framework_TestCase
@@ -96,9 +96,9 @@ class MinFiatTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "min_fiat"
+     * Test attribute "max_fiat"
      */
-    public function testPropertyMinFiat()
+    public function testPropertyMaxFiat()
     {
 
     }

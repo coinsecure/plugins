@@ -6,7 +6,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,9 +40,9 @@
 
 namespace Swagger\Client\Api;
 
-use \Swagger\Client\Configuration;
 use \Swagger\Client\ApiClient;
 use \Swagger\Client\ApiException;
+use \Swagger\Client\Configuration;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -51,12 +51,11 @@ use \Swagger\Client\ObjectSerializer;
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class WalletActionsApi
 {
-
     /**
      * API Client
      *
@@ -71,9 +70,9 @@ class WalletActionsApi
      */
     public function __construct(\Swagger\Client\ApiClient $apiClient = null)
     {
-        if ($apiClient == null) {
+        if ($apiClient === null) {
             $apiClient = new ApiClient();
-            $apiClient->getConfig()->setHost('https://api.coinsecure.in');
+            $apiClient->getConfig()->setHost('https://api.coinsecure.in/');
         }
 
         $this->apiClient = $apiClient;
@@ -110,8 +109,8 @@ class WalletActionsApi
      * @param \Swagger\Client\Model\NewAddress $body  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\WalletAddressDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\WalletAddressDataResponse
      */
     public function v1userwalletcoinaddressnew($body, $authorization = null, $accept = null)
     {
@@ -127,8 +126,8 @@ class WalletActionsApi
      * @param \Swagger\Client\Model\NewAddress $body  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\WalletAddressDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\WalletAddressDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userwalletcoinaddressnewWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -139,14 +138,14 @@ class WalletActionsApi
         // parse inputs
         $resourcePath = "/v1/user/wallet/coin/address/new";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -183,7 +182,7 @@ class WalletActionsApi
                 '/v1/user/wallet/coin/address/new'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\WalletAddressDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\WalletAddressDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -208,8 +207,8 @@ class WalletActionsApi
      * @param \Swagger\Client\Model\NewWallet $body  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\WalletAddressDataResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\WalletAddressDataResponse
      */
     public function v1userwalletcoinnew($body, $authorization = null, $accept = null)
     {
@@ -225,8 +224,8 @@ class WalletActionsApi
      * @param \Swagger\Client\Model\NewWallet $body  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\WalletAddressDataResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\WalletAddressDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userwalletcoinnewWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -237,14 +236,14 @@ class WalletActionsApi
         // parse inputs
         $resourcePath = "/v1/user/wallet/coin/new";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -281,7 +280,7 @@ class WalletActionsApi
                 '/v1/user/wallet/coin/new'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\WalletAddressDataResponse', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\WalletAddressDataResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -306,8 +305,8 @@ class WalletActionsApi
      * @param \Swagger\Client\Model\SendCoinWallet $body  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userwalletcoinwithdrawinitiate($body, $authorization = null, $accept = null)
     {
@@ -323,8 +322,8 @@ class WalletActionsApi
      * @param \Swagger\Client\Model\SendCoinWallet $body  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userwalletcoinwithdrawinitiateWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -335,14 +334,14 @@ class WalletActionsApi
         // parse inputs
         $resourcePath = "/v1/user/wallet/coin/withdraw/initiate";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -379,7 +378,7 @@ class WalletActionsApi
                 '/v1/user/wallet/coin/withdraw/initiate'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -404,8 +403,8 @@ class WalletActionsApi
      * @param \Swagger\Client\Model\SendExchange $body  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userwalletcoinwithdrawsendToExchange($body, $authorization = null, $accept = null)
     {
@@ -421,8 +420,8 @@ class WalletActionsApi
      * @param \Swagger\Client\Model\SendExchange $body  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userwalletcoinwithdrawsendToExchangeWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -433,14 +432,14 @@ class WalletActionsApi
         // parse inputs
         $resourcePath = "/v1/user/wallet/coin/withdraw/sendToExchange";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -477,7 +476,7 @@ class WalletActionsApi
                 '/v1/user/wallet/coin/withdraw/sendToExchange'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -502,8 +501,8 @@ class WalletActionsApi
      * @param string $withdraw_id  (required)
      * @param string $authorization Enter a valid Api Key. (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userwalletcoinwithdrawunverifiedcancelWithdrawID($withdraw_id, $authorization, $accept = null)
     {
@@ -519,8 +518,8 @@ class WalletActionsApi
      * @param string $withdraw_id  (required)
      * @param string $authorization Enter a valid Api Key. (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userwalletcoinwithdrawunverifiedcancelWithdrawIDWithHttpInfo($withdraw_id, $authorization, $accept = null)
     {
@@ -535,14 +534,14 @@ class WalletActionsApi
         // parse inputs
         $resourcePath = "/v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID}";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -582,7 +581,7 @@ class WalletActionsApi
                 '/v1/user/wallet/coin/withdraw/unverified/cancel/{withdrawID}'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -607,8 +606,8 @@ class WalletActionsApi
      * @param string $authorization Enter a valid Api Key. (required)
      * @param \Swagger\Client\Model\Code $body  (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userwalletcoinwithdrawverify($authorization, $body, $accept = null)
     {
@@ -624,8 +623,8 @@ class WalletActionsApi
      * @param string $authorization Enter a valid Api Key. (required)
      * @param \Swagger\Client\Model\Code $body  (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userwalletcoinwithdrawverifyWithHttpInfo($authorization, $body, $accept = null)
     {
@@ -640,14 +639,14 @@ class WalletActionsApi
         // parse inputs
         $resourcePath = "/v1/user/wallet/coin/withdraw/verify";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -684,7 +683,7 @@ class WalletActionsApi
                 '/v1/user/wallet/coin/withdraw/verify'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -709,8 +708,8 @@ class WalletActionsApi
      * @param \Swagger\Client\Model\WithdrawID $body You can get unverified withdraw ID&#39;s from /v1/exchange/bank/coin/withdrawVerifycode (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1walletcoinwithdrawnewVerifycode($body, $authorization = null, $accept = null)
     {
@@ -726,8 +725,8 @@ class WalletActionsApi
      * @param \Swagger\Client\Model\WithdrawID $body You can get unverified withdraw ID&#39;s from /v1/exchange/bank/coin/withdrawVerifycode (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1walletcoinwithdrawnewVerifycodeWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -738,14 +737,14 @@ class WalletActionsApi
         // parse inputs
         $resourcePath = "/v1/wallet/coin/withdraw/newVerifycode";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -782,7 +781,7 @@ class WalletActionsApi
                 '/v1/wallet/coin/withdraw/newVerifycode'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -798,5 +797,4 @@ class WalletActionsApi
             throw $e;
         }
     }
-
 }

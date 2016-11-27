@@ -56,22 +56,27 @@ public:
     SWGFiatDepData* fromJson(QString &jsonString);
 
     SWGTimeDataCoin* getTimeDetails();
-    void setTimeDetails(SWGTimeDataCoin* timeDetails);
-QString* getDepositID();
-    void setDepositID(QString* depositID);
-qint64 getValue();
+    void setTimeDetails(SWGTimeDataCoin* time_details);
+
+    QString* getDepositId();
+    void setDepositId(QString* deposit_id);
+
+    qint64 getValue();
     void setValue(qint64 value);
-QString* getAccount();
+
+    QString* getAccount();
     void setAccount(QString* account);
-QString* getReason();
+
+    QString* getReason();
     void setReason(QString* reason);
 
+
 private:
-    SWGTimeDataCoin* timeDetails;
-QString* depositID;
-qint64 value;
-QString* account;
-QString* reason;
+    SWGTimeDataCoin* time_details;
+    QString* deposit_id;
+    qint64 value;
+    QString* account;
+    QString* reason;
 };
 
 } /* namespace Swagger */

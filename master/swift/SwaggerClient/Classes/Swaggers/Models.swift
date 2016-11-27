@@ -10,18 +10,22 @@ protocol JSONEncodable {
     func encodeToJSON() -> AnyObject
 }
 
+public enum ErrorResponse : ErrorType {
+    case Error(Int, NSData?, ErrorType)
+}
+
 public class Response<T> {
     public let statusCode: Int
     public let header: [String: String]
-    public let body: T
+    public let body: T?
 
-    public init(statusCode: Int, header: [String: String], body: T) {
+    public init(statusCode: Int, header: [String: String], body: T?) {
         self.statusCode = statusCode
         self.header = header
         self.body = body
     }
 
-    public convenience init(response: NSHTTPURLResponse, body: T) {
+    public convenience init(response: NSHTTPURLResponse, body: T?) {
         let rawHeader = response.allHeaderFields
         var header = [String:String]()
         for (key, value) in rawHeader {
@@ -407,6 +411,7 @@ class Decoders {
                 instance.accountNumber = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["accountNumber"])
                 instance.accountNick = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["accountNick"])
                 instance.accountType = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["accountType"])
+                instance.accountID = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["accountID"])
                 return instance
             }
 
@@ -643,7 +648,7 @@ class Decoders {
             Decoders.addDecoder(clazz: MinFiat.self) { (source: AnyObject) -> MinFiat in
                 let sourceDictionary = source as! [NSObject:AnyObject]
                 let instance = MinFiat()
-                instance.minFiat = Decoders.decodeOptional(clazz: Int64.self, source: sourceDictionary["minFiat"])
+                instance.maxFiat = Decoders.decodeOptional(clazz: Int64.self, source: sourceDictionary["maxFiat"])
                 return instance
             }
 
@@ -866,6 +871,39 @@ class Decoders {
             }
 
 
+            // Decoder for [RateVolTimeTypeData]
+            Decoders.addDecoder(clazz: [RateVolTimeTypeData].self) { (source: AnyObject) -> [RateVolTimeTypeData] in
+                return Decoders.decode(clazz: [RateVolTimeTypeData].self, source: source)
+            }
+            // Decoder for RateVolTimeTypeData
+            Decoders.addDecoder(clazz: RateVolTimeTypeData.self) { (source: AnyObject) -> RateVolTimeTypeData in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = RateVolTimeTypeData()
+                instance.time = Decoders.decodeOptional(clazz: Int64.self, source: sourceDictionary["time"])
+                instance.rate = Decoders.decodeOptional(clazz: Int64.self, source: sourceDictionary["rate"])
+                instance.vol = Decoders.decodeOptional(clazz: Int64.self, source: sourceDictionary["vol"])
+                instance.ordType = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["ordType"])
+                return instance
+            }
+
+
+            // Decoder for [RateVolTimeTypeDataResponse]
+            Decoders.addDecoder(clazz: [RateVolTimeTypeDataResponse].self) { (source: AnyObject) -> [RateVolTimeTypeDataResponse] in
+                return Decoders.decode(clazz: [RateVolTimeTypeDataResponse].self, source: source)
+            }
+            // Decoder for RateVolTimeTypeDataResponse
+            Decoders.addDecoder(clazz: RateVolTimeTypeDataResponse.self) { (source: AnyObject) -> RateVolTimeTypeDataResponse in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = RateVolTimeTypeDataResponse()
+                instance.success = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["success"])
+                instance.message = Decoders.decodeOptional(clazz: Array.self, source: sourceDictionary["message"])
+                instance.method = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["method"])
+                instance.title = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["title"])
+                instance.time = Decoders.decodeOptional(clazz: NSDate.self, source: sourceDictionary["time"])
+                return instance
+            }
+
+
             // Decoder for [ResetPassword]
             Decoders.addDecoder(clazz: [ResetPassword].self) { (source: AnyObject) -> [ResetPassword] in
                 return Decoders.decode(clazz: [ResetPassword].self, source: source)
@@ -893,6 +931,7 @@ class Decoders {
                 instance.toAddr = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["toAddr"])
                 instance.msg = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["msg"])
                 instance.pin = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["pin"])
+                instance.fees = Decoders.decodeOptional(clazz: AnyObject.self, source: sourceDictionary["fees"])
                 return instance
             }
 
@@ -910,6 +949,7 @@ class Decoders {
                 instance.toAddr = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["toAddr"])
                 instance.msg = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["msg"])
                 instance.pin = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["pin"])
+                instance.fees = Decoders.decodeOptional(clazz: AnyObject.self, source: sourceDictionary["fees"])
                 return instance
             }
 
@@ -990,6 +1030,23 @@ class Decoders {
                 let instance = StandardTickerResultData()
                 instance.success = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["success"])
                 instance.message = Decoders.decodeOptional(clazz: SuccessTickerResponse.self, source: sourceDictionary["message"])
+                instance.method = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["method"])
+                instance.title = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["title"])
+                instance.time = Decoders.decodeOptional(clazz: NSDate.self, source: sourceDictionary["time"])
+                return instance
+            }
+
+
+            // Decoder for [StandardVerifySignupResultData]
+            Decoders.addDecoder(clazz: [StandardVerifySignupResultData].self) { (source: AnyObject) -> [StandardVerifySignupResultData] in
+                return Decoders.decode(clazz: [StandardVerifySignupResultData].self, source: source)
+            }
+            // Decoder for StandardVerifySignupResultData
+            Decoders.addDecoder(clazz: StandardVerifySignupResultData.self) { (source: AnyObject) -> StandardVerifySignupResultData in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = StandardVerifySignupResultData()
+                instance.success = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["success"])
+                instance.message = Decoders.decodeOptional(clazz: SuccessVerifySignupResponse.self, source: sourceDictionary["message"])
                 instance.method = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["method"])
                 instance.title = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["title"])
                 instance.time = Decoders.decodeOptional(clazz: NSDate.self, source: sourceDictionary["time"])
@@ -1203,6 +1260,22 @@ class Decoders {
                 instance.open = Decoders.decodeOptional(clazz: Int64.self, source: sourceDictionary["open"])
                 instance.high = Decoders.decodeOptional(clazz: Int64.self, source: sourceDictionary["high"])
                 instance.low = Decoders.decodeOptional(clazz: Int64.self, source: sourceDictionary["low"])
+                return instance
+            }
+
+
+            // Decoder for [SuccessVerifySignupResponse]
+            Decoders.addDecoder(clazz: [SuccessVerifySignupResponse].self) { (source: AnyObject) -> [SuccessVerifySignupResponse] in
+                return Decoders.decode(clazz: [SuccessVerifySignupResponse].self, source: source)
+            }
+            // Decoder for SuccessVerifySignupResponse
+            Decoders.addDecoder(clazz: SuccessVerifySignupResponse.self) { (source: AnyObject) -> SuccessVerifySignupResponse in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = SuccessVerifySignupResponse()
+                instance.message = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["message"])
+                instance.validTill = Decoders.decodeOptional(clazz: Int64.self, source: sourceDictionary["validTill"])
+                instance.loginMessage = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["loginMessage"])
+                instance.loginToken = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["loginToken"])
                 return instance
             }
 

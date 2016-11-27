@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -100,7 +100,7 @@ public class JSON {
      *
      * @param <T> Type
      * @param body The JSON string
-     * @param returnType The type to deserialize inot
+     * @param returnType The type to deserialize into
      * @return The deserialized Java object
      */
     @SuppressWarnings("unchecked")
@@ -162,10 +162,9 @@ class DateAdapter implements JsonSerializer<Date>, JsonDeserializer<Date> {
      *
      * @param json Json element
      * @param date Type
-     * @param typeOfSrc Type
      * @param context Json Serialization Context
      * @return Date
-     * @throw JsonParseException if fail to parse
+     * @throws JsonParseException if fail to parse
      */
     @Override
     public Date deserialize(JsonElement json, Type date, JsonDeserializationContext context) throws JsonParseException {

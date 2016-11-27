@@ -90,6 +90,27 @@
   ([body optional-params]
    (:data (v1signup-with-http-info body optional-params))))
 
+(defn v1signupverify-token-with-http-info
+  "Verifies an Email token for Signup .
+  Creates a new Coinsecure Account."
+  ([token ] (v1signupverify-token-with-http-info token nil))
+  ([token {:keys [accept ]}]
+   (call-api "/v1/signup/verify/{token}" :put
+             {:path-params   {"token" token }
+              :header-params {"accept" accept }
+              :query-params  {}
+              :form-params   {}
+              :content-types ["application/json"]
+              :accepts       ["application/json" "application/xml" "application/csv"]
+              :auth-names    []})))
+
+(defn v1signupverify-token
+  "Verifies an Email token for Signup .
+  Creates a new Coinsecure Account."
+  ([token ] (v1signupverify-token token nil))
+  ([token optional-params]
+   (:data (v1signupverify-token-with-http-info token optional-params))))
+
 (defn v1userbankotp-number-with-http-info
   "Send OTP for Bank Link
   Send OTP for an additional Bank Link."

@@ -56,25 +56,31 @@ public:
     SWGTradeCoinWithdrawData* fromJson(QString &jsonString);
 
     SWGTimeData* getTimeDetails();
-    void setTimeDetails(SWGTimeData* timeDetails);
-QString* getAddress();
+    void setTimeDetails(SWGTimeData* time_details);
+
+    QString* getAddress();
     void setAddress(QString* address);
-qint64 getValue();
+
+    qint64 getValue();
     void setValue(qint64 value);
-qint64 getFees();
+
+    qint64 getFees();
     void setFees(qint64 fees);
-QString* getWithdrawID();
-    void setWithdrawID(QString* withdrawID);
-QString* getTxHash();
-    void setTxHash(QString* txHash);
+
+    QString* getWithdrawId();
+    void setWithdrawId(QString* withdraw_id);
+
+    QString* getTxHash();
+    void setTxHash(QString* tx_hash);
+
 
 private:
-    SWGTimeData* timeDetails;
-QString* address;
-qint64 value;
-qint64 fees;
-QString* withdrawID;
-QString* txHash;
+    SWGTimeData* time_details;
+    QString* address;
+    qint64 value;
+    qint64 fees;
+    QString* withdraw_id;
+    QString* tx_hash;
 };
 
 } /* namespace Swagger */

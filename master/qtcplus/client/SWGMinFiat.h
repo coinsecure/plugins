@@ -53,11 +53,12 @@ public:
     void fromJsonObject(QJsonObject &json);
     SWGMinFiat* fromJson(QString &jsonString);
 
-    qint64 getMinFiat();
-    void setMinFiat(qint64 minFiat);
+    qint64 getMaxFiat();
+    void setMaxFiat(qint64 max_fiat);
+
 
 private:
-    qint64 minFiat;
+    qint64 max_fiat;
 };
 
 } /* namespace Swagger */

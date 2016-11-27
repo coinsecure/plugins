@@ -52,8 +52,8 @@
    * Constructs a new <code>TimeKYCData</code>.
    * @alias module:model/TimeKYCData
    * @class
-   * @param time {Integer} 
-   * @param updateTime {Integer} 
+   * @param time {Number} 
+   * @param updateTime {Number} 
    */
   var exports = function(time, updateTime) {
     var _this = this;
@@ -74,21 +74,21 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('time')) {
-        obj['time'] = ApiClient.convertToType(data['time'], 'Integer');
+        obj['time'] = ApiClient.convertToType(data['time'], 'Number');
       }
       if (data.hasOwnProperty('updateTime')) {
-        obj['updateTime'] = ApiClient.convertToType(data['updateTime'], 'Integer');
+        obj['updateTime'] = ApiClient.convertToType(data['updateTime'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} time
+   * @member {Number} time
    */
   exports.prototype['time'] = undefined;
   /**
-   * @member {Integer} updateTime
+   * @member {Number} updateTime
    */
   exports.prototype['updateTime'] = undefined;
 

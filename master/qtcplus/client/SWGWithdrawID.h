@@ -54,11 +54,12 @@ public:
     void fromJsonObject(QJsonObject &json);
     SWGWithdrawID* fromJson(QString &jsonString);
 
-    QString* getWithdrawID();
-    void setWithdrawID(QString* withdrawID);
+    QString* getWithdrawId();
+    void setWithdrawId(QString* withdraw_id);
+
 
 private:
-    QString* withdrawID;
+    QString* withdraw_id;
 };
 
 } /* namespace Swagger */

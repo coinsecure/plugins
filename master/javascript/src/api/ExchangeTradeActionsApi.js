@@ -79,7 +79,7 @@
 
       // verify the required parameter 'orderID' is set
       if (orderID == undefined || orderID == null) {
-        throw "Missing the required parameter 'orderID' when calling v1userexchangeaskcancelOrderID";
+        throw new Error("Missing the required parameter 'orderID' when calling v1userexchangeaskcancelOrderID");
       }
 
 
@@ -130,7 +130,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userexchangeasknew";
+        throw new Error("Missing the required parameter 'body' when calling v1userexchangeasknew");
       }
 
 
@@ -180,7 +180,7 @@
 
       // verify the required parameter 'orderID' is set
       if (orderID == undefined || orderID == null) {
-        throw "Missing the required parameter 'orderID' when calling v1userexchangebidcancelOrderID";
+        throw new Error("Missing the required parameter 'orderID' when calling v1userexchangebidcancelOrderID");
       }
 
 
@@ -231,7 +231,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userexchangebidnew";
+        throw new Error("Missing the required parameter 'body' when calling v1userexchangebidnew");
       }
 
 
@@ -282,7 +282,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userexchangeinstantbuy";
+        throw new Error("Missing the required parameter 'body' when calling v1userexchangeinstantbuy");
       }
 
 
@@ -333,7 +333,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userexchangeinstantsell";
+        throw new Error("Missing the required parameter 'body' when calling v1userexchangeinstantsell");
       }
 
 

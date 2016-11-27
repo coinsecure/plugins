@@ -50,34 +50,39 @@ SWGSuccCoinRefData::~SWGSuccCoinRefData() {
 
 void
 SWGSuccCoinRefData::init() {
-    refPercent = 0.0;
-time = 0L;
-orderID = new QString("");
-refID = new QString("");
-tradeID = new QString("");
-newUserIDMasked = new QString("");
-depositID = new QString("");
-amtPaid = 0L;
+    ref_percent = 0.0;
+    time = 0L;
+    order_id = new QString("");
+    ref_id = new QString("");
+    trade_id = new QString("");
+    new_user_id_masked = new QString("");
+    deposit_id = new QString("");
+    amt_paid = 0L;
 }
 
 void
 SWGSuccCoinRefData::cleanup() {
     
 
-if(orderID != NULL) {
-        delete orderID;
+
+    if(order_id != nullptr) {
+        delete order_id;
     }
-if(refID != NULL) {
-        delete refID;
+
+    if(ref_id != nullptr) {
+        delete ref_id;
     }
-if(tradeID != NULL) {
-        delete tradeID;
+
+    if(trade_id != nullptr) {
+        delete trade_id;
     }
-if(newUserIDMasked != NULL) {
-        delete newUserIDMasked;
+
+    if(new_user_id_masked != nullptr) {
+        delete new_user_id_masked;
     }
-if(depositID != NULL) {
-        delete depositID;
+
+    if(deposit_id != nullptr) {
+        delete deposit_id;
     }
 
 }
@@ -93,14 +98,14 @@ SWGSuccCoinRefData::fromJson(QString &json) {
 
 void
 SWGSuccCoinRefData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&refPercent, pJson["refPercent"], "double", "");
-setValue(&time, pJson["time"], "qint64", "");
-setValue(&orderID, pJson["orderID"], "QString", "QString");
-setValue(&refID, pJson["refID"], "QString", "QString");
-setValue(&tradeID, pJson["tradeID"], "QString", "QString");
-setValue(&newUserIDMasked, pJson["newUserIDMasked"], "QString", "QString");
-setValue(&depositID, pJson["depositID"], "QString", "QString");
-setValue(&amtPaid, pJson["amtPaid"], "qint64", "");
+    ::Swagger::setValue(&ref_percent, pJson["ref_percent"], "double", "");
+    ::Swagger::setValue(&time, pJson["time"], "qint64", "");
+    ::Swagger::setValue(&order_id, pJson["order_id"], "QString", "QString");
+    ::Swagger::setValue(&ref_id, pJson["ref_id"], "QString", "QString");
+    ::Swagger::setValue(&trade_id, pJson["trade_id"], "QString", "QString");
+    ::Swagger::setValue(&new_user_id_masked, pJson["new_user_id_masked"], "QString", "QString");
+    ::Swagger::setValue(&deposit_id, pJson["deposit_id"], "QString", "QString");
+    ::Swagger::setValue(&amt_paid, pJson["amt_paid"], "qint64", "");
 }
 
 QString
@@ -116,45 +121,33 @@ SWGSuccCoinRefData::asJson ()
 QJsonObject*
 SWGSuccCoinRefData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
-    obj->insert("refPercent", QJsonValue(refPercent));
-obj->insert("time", QJsonValue(time));
+    
+    obj->insert("ref_percent", QJsonValue(ref_percent));
 
-    
-    toJsonValue(QString("orderID"), orderID, obj, QString("QString"));
-    
-        
+    obj->insert("time", QJsonValue(time));
 
-    
-    toJsonValue(QString("refID"), refID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("order_id"), order_id, obj, QString("QString"));
 
-    
-    toJsonValue(QString("tradeID"), tradeID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("ref_id"), ref_id, obj, QString("QString"));
 
-    
-    toJsonValue(QString("newUserIDMasked"), newUserIDMasked, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("trade_id"), trade_id, obj, QString("QString"));
 
-    
-    toJsonValue(QString("depositID"), depositID, obj, QString("QString"));
-    
-        
-obj->insert("amtPaid", QJsonValue(amtPaid));
+    toJsonValue(QString("new_user_id_masked"), new_user_id_masked, obj, QString("QString"));
+
+    toJsonValue(QString("deposit_id"), deposit_id, obj, QString("QString"));
+
+    obj->insert("amt_paid", QJsonValue(amt_paid));
 
     return obj;
 }
 
 double
 SWGSuccCoinRefData::getRefPercent() {
-    return refPercent;
+    return ref_percent;
 }
 void
-SWGSuccCoinRefData::setRefPercent(double refPercent) {
-    this->refPercent = refPercent;
+SWGSuccCoinRefData::setRefPercent(double ref_percent) {
+    this->ref_percent = ref_percent;
 }
 
 qint64
@@ -167,57 +160,57 @@ SWGSuccCoinRefData::setTime(qint64 time) {
 }
 
 QString*
-SWGSuccCoinRefData::getOrderID() {
-    return orderID;
+SWGSuccCoinRefData::getOrderId() {
+    return order_id;
 }
 void
-SWGSuccCoinRefData::setOrderID(QString* orderID) {
-    this->orderID = orderID;
+SWGSuccCoinRefData::setOrderId(QString* order_id) {
+    this->order_id = order_id;
 }
 
 QString*
-SWGSuccCoinRefData::getRefID() {
-    return refID;
+SWGSuccCoinRefData::getRefId() {
+    return ref_id;
 }
 void
-SWGSuccCoinRefData::setRefID(QString* refID) {
-    this->refID = refID;
+SWGSuccCoinRefData::setRefId(QString* ref_id) {
+    this->ref_id = ref_id;
 }
 
 QString*
-SWGSuccCoinRefData::getTradeID() {
-    return tradeID;
+SWGSuccCoinRefData::getTradeId() {
+    return trade_id;
 }
 void
-SWGSuccCoinRefData::setTradeID(QString* tradeID) {
-    this->tradeID = tradeID;
+SWGSuccCoinRefData::setTradeId(QString* trade_id) {
+    this->trade_id = trade_id;
 }
 
 QString*
-SWGSuccCoinRefData::getNewUserIDMasked() {
-    return newUserIDMasked;
+SWGSuccCoinRefData::getNewUserIdMasked() {
+    return new_user_id_masked;
 }
 void
-SWGSuccCoinRefData::setNewUserIDMasked(QString* newUserIDMasked) {
-    this->newUserIDMasked = newUserIDMasked;
+SWGSuccCoinRefData::setNewUserIdMasked(QString* new_user_id_masked) {
+    this->new_user_id_masked = new_user_id_masked;
 }
 
 QString*
-SWGSuccCoinRefData::getDepositID() {
-    return depositID;
+SWGSuccCoinRefData::getDepositId() {
+    return deposit_id;
 }
 void
-SWGSuccCoinRefData::setDepositID(QString* depositID) {
-    this->depositID = depositID;
+SWGSuccCoinRefData::setDepositId(QString* deposit_id) {
+    this->deposit_id = deposit_id;
 }
 
 qint64
 SWGSuccCoinRefData::getAmtPaid() {
-    return amtPaid;
+    return amt_paid;
 }
 void
-SWGSuccCoinRefData::setAmtPaid(qint64 amtPaid) {
-    this->amtPaid = amtPaid;
+SWGSuccCoinRefData::setAmtPaid(qint64 amt_paid) {
+    this->amt_paid = amt_paid;
 }
 
 

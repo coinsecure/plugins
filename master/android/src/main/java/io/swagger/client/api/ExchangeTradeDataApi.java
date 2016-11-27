@@ -42,6 +42,7 @@ import io.swagger.client.model.LastTradeDataResponse;
 import io.swagger.client.model.RateDiffDataResponse;
 import io.swagger.client.model.StandardTickerResultData;
 import io.swagger.client.model.OrderDataResponse;
+import io.swagger.client.model.RateVolTimeTypeDataResponse;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -54,7 +55,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
 public class ExchangeTradeDataApi {
-  String basePath = "https://api.coinsecure.in";
+  String basePath = "https://api.coinsecure.in/";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {
@@ -1939,6 +1940,145 @@ public class ExchangeTradeDataApi {
           public void onResponse(String localVarResponse) {
             try {
               responseListener.onResponse((OrderDataResponse) ApiInvoker.deserialize(localVarResponse,  "", OrderDataResponse.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
+  * Completed Exchange Trades
+  * Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+   * @param from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
+   * @param to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
+   * @param max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
+   * @param offset Offset defaults to 0 if input is invalid. (Optional)
+   * @param accept JSON, XML or CSV can be returned (Optional)
+   * @return RateVolTimeTypeDataResponse
+  */
+  public RateVolTimeTypeDataResponse v1userexchangetrades (Long from, Long to, Integer max, Long offset, String accept) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+     Object postBody = null;
+  
+
+  // create path and map variables
+  String path = "/v1/exchange/trades".replaceAll("\\{format\\}","json");
+
+  // query params
+  List<Pair> queryParams = new ArrayList<Pair>();
+      // header params
+      Map<String, String> headerParams = new HashMap<String, String>();
+      // form params
+      Map<String, String> formParams = new HashMap<String, String>();
+
+          queryParams.addAll(ApiInvoker.parameterToPairs("", "from", from));
+          queryParams.addAll(ApiInvoker.parameterToPairs("", "to", to));
+          queryParams.addAll(ApiInvoker.parameterToPairs("", "max", max));
+          queryParams.addAll(ApiInvoker.parameterToPairs("", "offset", offset));
+
+          headerParams.put("accept", ApiInvoker.parameterToString(accept));
+
+      String[] contentTypes = {
+  "application/json"
+      };
+      String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+      if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+  
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+      } else {
+      // normal form params
+        }
+
+      String[] authNames = new String[] {  };
+
+      try {
+        String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
+        if(localVarResponse != null){
+           return (RateVolTimeTypeDataResponse) ApiInvoker.deserialize(localVarResponse, "", RateVolTimeTypeDataResponse.class);
+        } else {
+           return null;
+        }
+      } catch (ApiException ex) {
+         throw ex;
+      } catch (InterruptedException ex) {
+         throw ex;
+      } catch (ExecutionException ex) {
+         if(ex.getCause() instanceof VolleyError) {
+	    VolleyError volleyError = (VolleyError)ex.getCause();
+	    if (volleyError.networkResponse != null) {
+	       throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+	    }
+         }
+         throw ex;
+      } catch (TimeoutException ex) {
+         throw ex;
+      }
+  }
+
+      /**
+   * Completed Exchange Trades
+   * Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+   * @param from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)   * @param to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)   * @param max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)   * @param offset Offset defaults to 0 if input is invalid. (Optional)   * @param accept JSON, XML or CSV can be returned (Optional)
+  */
+  public void v1userexchangetrades (Long from, Long to, Integer max, Long offset, String accept, final Response.Listener<RateVolTimeTypeDataResponse> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = null;
+
+  
+
+    // create path and map variables
+    String path = "/v1/exchange/trades".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "from", from));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "to", to));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "max", max));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "offset", offset));
+
+    headerParams.put("accept", ApiInvoker.parameterToString(accept));
+
+    String[] contentTypes = {
+      "application/json"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+      String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((RateVolTimeTypeDataResponse) ApiInvoker.deserialize(localVarResponse,  "", RateVolTimeTypeDataResponse.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

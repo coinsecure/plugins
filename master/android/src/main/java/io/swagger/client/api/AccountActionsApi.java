@@ -43,6 +43,7 @@ import io.swagger.client.model.StandardInitiateLoginResultData;
 import io.swagger.client.model.Email;
 import io.swagger.client.model.SuccessResult;
 import io.swagger.client.model.SignupForm;
+import io.swagger.client.model.StandardVerifySignupResultData;
 import java.io.File;
 import io.swagger.client.model.NetkiNameAddress;
 import io.swagger.client.model.Address;
@@ -59,7 +60,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
 public class AccountActionsApi {
-  String basePath = "https://api.coinsecure.in";
+  String basePath = "https://api.coinsecure.in/";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {
@@ -639,6 +640,146 @@ public class AccountActionsApi {
     }
   }
   /**
+  * Verifies an Email token for Signup .
+  * Creates a new Coinsecure Account.
+   * @param token 
+   * @param accept JSON, XML or CSV can be returned (Optional)
+   * @return StandardVerifySignupResultData
+  */
+  public StandardVerifySignupResultData v1signupverifyToken (String token, String accept) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+     Object postBody = null;
+  
+      // verify the required parameter 'token' is set
+      if (token == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'token' when calling v1signupverifyToken",
+      new ApiException(400, "Missing the required parameter 'token' when calling v1signupverifyToken"));
+      }
+  
+
+  // create path and map variables
+  String path = "/v1/signup/verify/{token}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "token" + "\\}", apiInvoker.escapeString(token.toString()));
+
+  // query params
+  List<Pair> queryParams = new ArrayList<Pair>();
+      // header params
+      Map<String, String> headerParams = new HashMap<String, String>();
+      // form params
+      Map<String, String> formParams = new HashMap<String, String>();
+
+
+          headerParams.put("accept", ApiInvoker.parameterToString(accept));
+
+      String[] contentTypes = {
+  "application/json"
+      };
+      String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+      if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+  
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+      } else {
+      // normal form params
+        }
+
+      String[] authNames = new String[] {  };
+
+      try {
+        String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
+        if(localVarResponse != null){
+           return (StandardVerifySignupResultData) ApiInvoker.deserialize(localVarResponse, "", StandardVerifySignupResultData.class);
+        } else {
+           return null;
+        }
+      } catch (ApiException ex) {
+         throw ex;
+      } catch (InterruptedException ex) {
+         throw ex;
+      } catch (ExecutionException ex) {
+         if(ex.getCause() instanceof VolleyError) {
+	    VolleyError volleyError = (VolleyError)ex.getCause();
+	    if (volleyError.networkResponse != null) {
+	       throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+	    }
+         }
+         throw ex;
+      } catch (TimeoutException ex) {
+         throw ex;
+      }
+  }
+
+      /**
+   * Verifies an Email token for Signup .
+   * Creates a new Coinsecure Account.
+   * @param token    * @param accept JSON, XML or CSV can be returned (Optional)
+  */
+  public void v1signupverifyToken (String token, String accept, final Response.Listener<StandardVerifySignupResultData> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = null;
+
+  
+    // verify the required parameter 'token' is set
+    if (token == null) {
+       VolleyError error = new VolleyError("Missing the required parameter 'token' when calling v1signupverifyToken",
+         new ApiException(400, "Missing the required parameter 'token' when calling v1signupverifyToken"));
+    }
+    
+
+    // create path and map variables
+    String path = "/v1/signup/verify/{token}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "token" + "\\}", apiInvoker.escapeString(token.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+    headerParams.put("accept", ApiInvoker.parameterToString(accept));
+
+    String[] contentTypes = {
+      "application/json"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+      String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((StandardVerifySignupResultData) ApiInvoker.deserialize(localVarResponse,  "", StandardVerifySignupResultData.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
   * Send OTP for Bank Link
   * Send OTP for an additional Bank Link.
    * @param number 
@@ -792,7 +933,7 @@ public class AccountActionsApi {
    * @param acctType Please enter your Coinsecure account type. Allowable Values are Personal or Company.
    * @param banType Please enter your Bank account type. Allowable Values are Savings or Current.
    * @param phone Please enter your Valid Phone Number.
-   * @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.
+   * @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.
    * @param file Enter a valid image, pdf or zip file under 5 MB in size.
    * @param authorization Enter a valid Api Key.
    * @param message Please enter an optional message if needed.
@@ -977,7 +1118,7 @@ formParams.put("otp", ApiInvoker.parameterToString(otp));
       /**
    * Submits a New Bank Link and initial KYC Documents.
    * Submits a New Bank Link and initial KYC Documents.
-   * @param panNumber Please enter your Pan Card Number   * @param acctNick Please enter an Account NickName   * @param name Please enter your Name as it appears on your Bank account.   * @param ban Please enter your Bank account number.   * @param ifsc Please enter your IFSC Code.   * @param acctType Please enter your Coinsecure account type. Allowable Values are Personal or Company.   * @param banType Please enter your Bank account type. Allowable Values are Savings or Current.   * @param phone Please enter your Valid Phone Number.   * @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.   * @param file Enter a valid image, pdf or zip file under 5 MB in size.   * @param authorization Enter a valid Api Key.   * @param message Please enter an optional message if needed.   * @param accept JSON, XML or CSV can be returned (Optional)
+   * @param panNumber Please enter your Pan Card Number   * @param acctNick Please enter an Account NickName   * @param name Please enter your Name as it appears on your Bank account.   * @param ban Please enter your Bank account number.   * @param ifsc Please enter your IFSC Code.   * @param acctType Please enter your Coinsecure account type. Allowable Values are Personal or Company.   * @param banType Please enter your Bank account type. Allowable Values are Savings or Current.   * @param phone Please enter your Valid Phone Number.   * @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.   * @param file Enter a valid image, pdf or zip file under 5 MB in size.   * @param authorization Enter a valid Api Key.   * @param message Please enter an optional message if needed.   * @param accept JSON, XML or CSV can be returned (Optional)
   */
   public void v1userexchangekyc (String panNumber, String acctNick, String name, String ban, String ifsc, String acctType, String banType, String phone, String otp, File file, String authorization, String message, String accept, final Response.Listener<SuccessResult> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;

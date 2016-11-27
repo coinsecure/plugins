@@ -4,11 +4,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **String** |  | 
-**balance** | **Integer** |  | 
-**totalReceived** | **Integer** |  | 
-**unconfirmedBalance** | **Integer** |  | 
-**unconfirmedTxApperances** | **Integer** |  | 
-**txApperances** | **Integer** |  | 
+**balance** | **Number** |  | 
+**totalReceived** | **Number** |  | 
+**unconfirmedBalance** | **Number** |  | 
+**unconfirmedTxApperances** | **Number** |  | 
+**txApperances** | **Number** |  | 
 **transactions** | **[String]** |  | 
 
 

@@ -60,6 +60,7 @@ class SuccessInitiateLoginResponse(object):
         self._mfa = mfa
         self._token = token
 
+
     @property
     def info(self):
         """
@@ -80,6 +81,8 @@ class SuccessInitiateLoginResponse(object):
         :param info: The info of this SuccessInitiateLoginResponse.
         :type: str
         """
+        if info is None:
+            raise ValueError("Invalid value for `info`, must not be `None`")
 
         self._info = info
 
@@ -103,6 +106,8 @@ class SuccessInitiateLoginResponse(object):
         :param valid_till: The valid_till of this SuccessInitiateLoginResponse.
         :type: int
         """
+        if valid_till is None:
+            raise ValueError("Invalid value for `valid_till`, must not be `None`")
 
         self._valid_till = valid_till
 
@@ -126,6 +131,8 @@ class SuccessInitiateLoginResponse(object):
         :param mfa: The mfa of this SuccessInitiateLoginResponse.
         :type: str
         """
+        if mfa is None:
+            raise ValueError("Invalid value for `mfa`, must not be `None`")
 
         self._mfa = mfa
 
@@ -149,6 +156,8 @@ class SuccessInitiateLoginResponse(object):
         :param token: The token of this SuccessInitiateLoginResponse.
         :type: str
         """
+        if token is None:
+            raise ValueError("Invalid value for `token`, must not be `None`")
 
         self._token = token
 

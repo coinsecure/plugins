@@ -51,21 +51,24 @@ SWGSuccessInitiateLoginResponse::~SWGSuccessInitiateLoginResponse() {
 void
 SWGSuccessInitiateLoginResponse::init() {
     info = new QString("");
-validTill = 0L;
-mfa = new QString("");
-token = new QString("");
+    valid_till = 0L;
+    mfa = new QString("");
+    token = new QString("");
 }
 
 void
 SWGSuccessInitiateLoginResponse::cleanup() {
-    if(info != NULL) {
+    
+    if(info != nullptr) {
         delete info;
     }
 
-if(mfa != NULL) {
+
+    if(mfa != nullptr) {
         delete mfa;
     }
-if(token != NULL) {
+
+    if(token != nullptr) {
         delete token;
     }
 }
@@ -81,10 +84,10 @@ SWGSuccessInitiateLoginResponse::fromJson(QString &json) {
 
 void
 SWGSuccessInitiateLoginResponse::fromJsonObject(QJsonObject &pJson) {
-    setValue(&info, pJson["info"], "QString", "QString");
-setValue(&validTill, pJson["validTill"], "qint64", "");
-setValue(&mfa, pJson["mfa"], "QString", "QString");
-setValue(&token, pJson["token"], "QString", "QString");
+    ::Swagger::setValue(&info, pJson["info"], "QString", "QString");
+    ::Swagger::setValue(&valid_till, pJson["valid_till"], "qint64", "");
+    ::Swagger::setValue(&mfa, pJson["mfa"], "QString", "QString");
+    ::Swagger::setValue(&token, pJson["token"], "QString", "QString");
 }
 
 QString
@@ -101,21 +104,13 @@ QJsonObject*
 SWGSuccessInitiateLoginResponse::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("info"), info, obj, QString("QString"));
-    
-        
-obj->insert("validTill", QJsonValue(validTill));
 
-    
+    obj->insert("valid_till", QJsonValue(valid_till));
+
     toJsonValue(QString("mfa"), mfa, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("token"), token, obj, QString("QString"));
-    
-        
 
     return obj;
 }
@@ -131,11 +126,11 @@ SWGSuccessInitiateLoginResponse::setInfo(QString* info) {
 
 qint64
 SWGSuccessInitiateLoginResponse::getValidTill() {
-    return validTill;
+    return valid_till;
 }
 void
-SWGSuccessInitiateLoginResponse::setValidTill(qint64 validTill) {
-    this->validTill = validTill;
+SWGSuccessInitiateLoginResponse::setValidTill(qint64 valid_till) {
+    this->valid_till = valid_till;
 }
 
 QString*

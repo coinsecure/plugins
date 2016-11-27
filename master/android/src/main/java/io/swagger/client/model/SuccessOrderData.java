@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class SuccessOrderData  {
+public class SuccessOrderData {
   
   @SerializedName("time")
   private Long time = null;
@@ -115,23 +113,23 @@ public class SuccessOrderData  {
       return false;
     }
     SuccessOrderData successOrderData = (SuccessOrderData) o;
-    return (time == null ? successOrderData.time == null : time.equals(successOrderData.time)) &&
-        (vol == null ? successOrderData.vol == null : vol.equals(successOrderData.vol)) &&
-        (rate == null ? successOrderData.rate == null : rate.equals(successOrderData.rate)) &&
-        (orderID == null ? successOrderData.orderID == null : orderID.equals(successOrderData.orderID)) &&
-        (status == null ? successOrderData.status == null : status.equals(successOrderData.status)) &&
-        (humanTime == null ? successOrderData.humanTime == null : humanTime.equals(successOrderData.humanTime));
+    return (this.time == null ? successOrderData.time == null : this.time.equals(successOrderData.time)) &&
+        (this.vol == null ? successOrderData.vol == null : this.vol.equals(successOrderData.vol)) &&
+        (this.rate == null ? successOrderData.rate == null : this.rate.equals(successOrderData.rate)) &&
+        (this.orderID == null ? successOrderData.orderID == null : this.orderID.equals(successOrderData.orderID)) &&
+        (this.status == null ? successOrderData.status == null : this.status.equals(successOrderData.status)) &&
+        (this.humanTime == null ? successOrderData.humanTime == null : this.humanTime.equals(successOrderData.humanTime));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (time == null ? 0: time.hashCode());
-    result = 31 * result + (vol == null ? 0: vol.hashCode());
-    result = 31 * result + (rate == null ? 0: rate.hashCode());
-    result = 31 * result + (orderID == null ? 0: orderID.hashCode());
-    result = 31 * result + (status == null ? 0: status.hashCode());
-    result = 31 * result + (humanTime == null ? 0: humanTime.hashCode());
+    result = 31 * result + (this.time == null ? 0: this.time.hashCode());
+    result = 31 * result + (this.vol == null ? 0: this.vol.hashCode());
+    result = 31 * result + (this.rate == null ? 0: this.rate.hashCode());
+    result = 31 * result + (this.orderID == null ? 0: this.orderID.hashCode());
+    result = 31 * result + (this.status == null ? 0: this.status.hashCode());
+    result = 31 * result + (this.humanTime == null ? 0: this.humanTime.hashCode());
     return result;
   }
 

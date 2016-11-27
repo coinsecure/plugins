@@ -51,22 +51,25 @@ SWGNewFiatBankDeposit::~SWGNewFiatBankDeposit() {
 void
 SWGNewFiatBankDeposit::init() {
     amount = 0L;
-message = new QString("");
-bank = new QString("");
-depType = new QString("");
+    message = new QString("");
+    bank = new QString("");
+    dep_type = new QString("");
 }
 
 void
 SWGNewFiatBankDeposit::cleanup() {
     
-if(message != NULL) {
+
+    if(message != nullptr) {
         delete message;
     }
-if(bank != NULL) {
+
+    if(bank != nullptr) {
         delete bank;
     }
-if(depType != NULL) {
-        delete depType;
+
+    if(dep_type != nullptr) {
+        delete dep_type;
     }
 }
 
@@ -81,10 +84,10 @@ SWGNewFiatBankDeposit::fromJson(QString &json) {
 
 void
 SWGNewFiatBankDeposit::fromJsonObject(QJsonObject &pJson) {
-    setValue(&amount, pJson["amount"], "qint64", "");
-setValue(&message, pJson["message"], "QString", "QString");
-setValue(&bank, pJson["bank"], "QString", "QString");
-setValue(&depType, pJson["depType"], "QString", "QString");
+    ::Swagger::setValue(&amount, pJson["amount"], "qint64", "");
+    ::Swagger::setValue(&message, pJson["message"], "QString", "QString");
+    ::Swagger::setValue(&bank, pJson["bank"], "QString", "QString");
+    ::Swagger::setValue(&dep_type, pJson["dep_type"], "QString", "QString");
 }
 
 QString
@@ -100,22 +103,14 @@ SWGNewFiatBankDeposit::asJson ()
 QJsonObject*
 SWGNewFiatBankDeposit::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("amount", QJsonValue(amount));
 
-    
     toJsonValue(QString("message"), message, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("bank"), bank, obj, QString("QString"));
-    
-        
 
-    
-    toJsonValue(QString("depType"), depType, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("dep_type"), dep_type, obj, QString("QString"));
 
     return obj;
 }
@@ -149,11 +144,11 @@ SWGNewFiatBankDeposit::setBank(QString* bank) {
 
 QString*
 SWGNewFiatBankDeposit::getDepType() {
-    return depType;
+    return dep_type;
 }
 void
-SWGNewFiatBankDeposit::setDepType(QString* depType) {
-    this->depType = depType;
+SWGNewFiatBankDeposit::setDepType(QString* dep_type) {
+    this->dep_type = dep_type;
 }
 
 

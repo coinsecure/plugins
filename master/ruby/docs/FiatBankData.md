@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **account_number** | **String** |  | 
 **account_nick** | **String** |  | 
 **account_type** | **String** |  | 
+**account_id** | **String** |  | 
 
 

@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -47,10 +47,10 @@ use \ArrayAccess;
  * ValidAddressSearchData Class Doc Comment
  *
  * @category    Class */
-/** 
+/**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class ValidAddressSearchData implements ArrayAccess
@@ -65,7 +65,7 @@ class ValidAddressSearchData implements ArrayAccess
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
-    protected static $swaggerTypes = array(
+    protected static $swaggerTypes = [
         'address' => 'string',
         'balance' => 'int',
         'total_received' => 'int',
@@ -73,7 +73,7 @@ class ValidAddressSearchData implements ArrayAccess
         'unconfirmed_tx_apperances' => 'int',
         'tx_apperances' => 'int',
         'transactions' => 'string[]'
-    );
+    ];
 
     public static function swaggerTypes()
     {
@@ -84,7 +84,7 @@ class ValidAddressSearchData implements ArrayAccess
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
-    protected static $attributeMap = array(
+    protected static $attributeMap = [
         'address' => 'address',
         'balance' => 'balance',
         'total_received' => 'totalReceived',
@@ -92,18 +92,14 @@ class ValidAddressSearchData implements ArrayAccess
         'unconfirmed_tx_apperances' => 'unconfirmedTxApperances',
         'tx_apperances' => 'txApperances',
         'transactions' => 'transactions'
-    );
+    ];
 
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      * @var string[]
      */
-    protected static $setters = array(
+    protected static $setters = [
         'address' => 'setAddress',
         'balance' => 'setBalance',
         'total_received' => 'setTotalReceived',
@@ -111,18 +107,14 @@ class ValidAddressSearchData implements ArrayAccess
         'unconfirmed_tx_apperances' => 'setUnconfirmedTxApperances',
         'tx_apperances' => 'setTxApperances',
         'transactions' => 'setTransactions'
-    );
+    ];
 
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
      * @var string[]
      */
-    protected static $getters = array(
+    protected static $getters = [
         'address' => 'getAddress',
         'balance' => 'getBalance',
         'total_received' => 'getTotalReceived',
@@ -130,7 +122,17 @@ class ValidAddressSearchData implements ArrayAccess
         'unconfirmed_tx_apperances' => 'getUnconfirmedTxApperances',
         'tx_apperances' => 'getTxApperances',
         'transactions' => 'getTransactions'
-    );
+    ];
+
+    public static function attributeMap()
+    {
+        return self::$attributeMap;
+    }
+
+    public static function setters()
+    {
+        return self::$setters;
+    }
 
     public static function getters()
     {
@@ -145,11 +147,11 @@ class ValidAddressSearchData implements ArrayAccess
      * Associative array for storing property values
      * @var mixed[]
      */
-    protected $container = array();
+    protected $container = [];
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property values initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -169,7 +171,7 @@ class ValidAddressSearchData implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = array();
+        $invalid_properties = [];
         if ($this->container['address'] === null) {
             $invalid_properties[] = "'address' can't be null";
         }
@@ -431,5 +433,3 @@ class ValidAddressSearchData implements ArrayAccess
         return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -40,7 +40,7 @@ import java.util.Date
 
 import scala.collection.mutable.HashMap
 
-class BlockchainToolsApi(val defBasePath: String = "https://api.coinsecure.in",
+class BlockchainToolsApi(val defBasePath: String = "https://api.coinsecure.in/",
                         defApiInvoker: ApiInvoker = ApiInvoker) {
   var basePath = defBasePath
   var apiInvoker = defApiInvoker
@@ -54,30 +54,28 @@ class BlockchainToolsApi(val defBasePath: String = "https://api.coinsecure.in",
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return ValidAddressSearchDataResponse
    */
-  def v1BitcoinSearchAddress (any: String, accept: String) : Option[ValidAddressSearchDataResponse] = {
+  def v1BitcoinSearchAddress(any: String, accept: Option[String] = None): Option[ValidAddressSearchDataResponse] = {
     // create path and map variables
-    val path = "/v1/bitcoin/search/{any}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "any" + "\\}",apiInvoker.escape(any))
+    val path = "/v1/bitcoin/search/{any}".replaceAll("\\{format\\}", "json").replaceAll("\\{" + "any" + "\\}",apiInvoker.escape(any))
 
-
-    val contentTypes = List("application/json", "application/json")
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "accept" -> accept
+    if (any == null) throw new Exception("Missing required parameter 'any' when calling BlockchainToolsApi->v1BitcoinSearchAddress")
+
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -99,30 +97,28 @@ class BlockchainToolsApi(val defBasePath: String = "https://api.coinsecure.in",
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return ConfirmDataResponse
    */
-  def v1BitcoinSearchTxid (txid: String, accept: String) : Option[ConfirmDataResponse] = {
+  def v1BitcoinSearchTxid(txid: String, accept: Option[String] = None): Option[ConfirmDataResponse] = {
     // create path and map variables
-    val path = "/v1/bitcoin/search/confirmation/{txid}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "txid" + "\\}",apiInvoker.escape(txid))
+    val path = "/v1/bitcoin/search/confirmation/{txid}".replaceAll("\\{format\\}", "json").replaceAll("\\{" + "txid" + "\\}",apiInvoker.escape(txid))
 
-
-    val contentTypes = List("application/json", "application/json")
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "accept" -> accept
+    if (txid == null) throw new Exception("Missing required parameter 'txid' when calling BlockchainToolsApi->v1BitcoinSearchTxid")
+
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {

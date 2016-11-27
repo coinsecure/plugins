@@ -104,6 +104,8 @@ class AccountActionsApi(object):
         all_params = ['body', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -117,6 +119,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1login`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/login'.replace('{format}', 'json')
         path_params = {}
@@ -157,7 +162,10 @@ class AccountActionsApi(object):
                                             response_type='StandardLoginResultData',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1logininitiate(self, body, **kwargs):
         """
@@ -212,6 +220,8 @@ class AccountActionsApi(object):
         all_params = ['body', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -225,6 +235,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1logininitiate`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/login/initiate'.replace('{format}', 'json')
         path_params = {}
@@ -265,7 +278,10 @@ class AccountActionsApi(object):
                                             response_type='StandardInitiateLoginResultData',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1loginpasswordforgot(self, body, **kwargs):
         """
@@ -320,6 +336,8 @@ class AccountActionsApi(object):
         all_params = ['body', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -333,6 +351,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1loginpasswordforgot`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/login/password/forgot'.replace('{format}', 'json')
         path_params = {}
@@ -373,7 +394,10 @@ class AccountActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1signup(self, body, **kwargs):
         """
@@ -428,6 +452,8 @@ class AccountActionsApi(object):
         all_params = ['body', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -441,6 +467,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1signup`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/signup'.replace('{format}', 'json')
         path_params = {}
@@ -481,7 +510,126 @@ class AccountActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
+
+    def v1signupverify_token(self, token, **kwargs):
+        """
+        Verifies an Email token for Signup .
+        Creates a new Coinsecure Account.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.v1signupverify_token(token, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str token:  (required)
+        :param str accept: JSON, XML or CSV can be returned (Optional)
+        :return: StandardVerifySignupResultData
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.v1signupverify_token_with_http_info(token, **kwargs)
+        else:
+            (data) = self.v1signupverify_token_with_http_info(token, **kwargs)
+            return data
+
+    def v1signupverify_token_with_http_info(self, token, **kwargs):
+        """
+        Verifies an Email token for Signup .
+        Creates a new Coinsecure Account.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.v1signupverify_token_with_http_info(token, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str token:  (required)
+        :param str accept: JSON, XML or CSV can be returned (Optional)
+        :return: StandardVerifySignupResultData
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['token', 'accept']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method v1signupverify_token" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'token' is set
+        if ('token' not in params) or (params['token'] is None):
+            raise ValueError("Missing the required parameter `token` when calling `v1signupverify_token`")
+
+
+        collection_formats = {}
+
+        resource_path = '/v1/signup/verify/{token}'.replace('{format}', 'json')
+        path_params = {}
+        if 'token' in params:
+            path_params['token'] = params['token']
+
+        query_params = {}
+
+        header_params = {}
+        if 'accept' in params:
+            header_params['accept'] = params['accept']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/xml', 'application/csv'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='StandardVerifySignupResultData',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'),
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userbankotp_number(self, number, **kwargs):
         """
@@ -538,6 +686,8 @@ class AccountActionsApi(object):
         all_params = ['number', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -551,6 +701,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'number' is set
         if ('number' not in params) or (params['number'] is None):
             raise ValueError("Missing the required parameter `number` when calling `v1userbankotp_number`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/bank/otp/{number}'.replace('{format}', 'json')
         path_params = {}
@@ -593,7 +746,10 @@ class AccountActionsApi(object):
                                             response_type='StandardInitiateLoginResultData',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangekyc(self, pan_number, acct_nick, name, ban, ifsc, acct_type, ban_type, phone, otp, file, **kwargs):
         """
@@ -618,7 +774,7 @@ class AccountActionsApi(object):
         :param str acct_type: Please enter your Coinsecure account type. Allowable Values are Personal or Company. (required)
         :param str ban_type: Please enter your Bank account type. Allowable Values are Savings or Current. (required)
         :param str phone: Please enter your Valid Phone Number. (required)
-        :param str otp: Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. (required)
+        :param str otp: Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. (required)
         :param file file: Enter a valid image, pdf or zip file under 5 MB in size. (required)
         :param str authorization: Enter a valid Api Key.
         :param str message: Please enter an optional message if needed.
@@ -657,7 +813,7 @@ class AccountActionsApi(object):
         :param str acct_type: Please enter your Coinsecure account type. Allowable Values are Personal or Company. (required)
         :param str ban_type: Please enter your Bank account type. Allowable Values are Savings or Current. (required)
         :param str phone: Please enter your Valid Phone Number. (required)
-        :param str otp: Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. (required)
+        :param str otp: Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. (required)
         :param file file: Enter a valid image, pdf or zip file under 5 MB in size. (required)
         :param str authorization: Enter a valid Api Key.
         :param str message: Please enter an optional message if needed.
@@ -670,6 +826,8 @@ class AccountActionsApi(object):
         all_params = ['pan_number', 'acct_nick', 'name', 'ban', 'ifsc', 'acct_type', 'ban_type', 'phone', 'otp', 'file', 'authorization', 'message', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -710,6 +868,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'file' is set
         if ('file' not in params) or (params['file'] is None):
             raise ValueError("Missing the required parameter `file` when calling `v1userexchangekyc`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/kyc'.replace('{format}', 'json')
         path_params = {}
@@ -772,7 +933,10 @@ class AccountActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1usergcm_code(self, code, **kwargs):
         """
@@ -829,6 +993,8 @@ class AccountActionsApi(object):
         all_params = ['code', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -842,6 +1008,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'code' is set
         if ('code' not in params) or (params['code'] is None):
             raise ValueError("Missing the required parameter `code` when calling `v1usergcm_code`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/gcm/{code}'.replace('{format}', 'json')
         path_params = {}
@@ -884,7 +1053,10 @@ class AccountActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userkycotp_number(self, number, **kwargs):
         """
@@ -941,6 +1113,8 @@ class AccountActionsApi(object):
         all_params = ['number', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -954,6 +1128,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'number' is set
         if ('number' not in params) or (params['number'] is None):
             raise ValueError("Missing the required parameter `number` when calling `v1userkycotp_number`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/kyc/otp/{number}'.replace('{format}', 'json')
         path_params = {}
@@ -996,7 +1173,10 @@ class AccountActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userlogout(self, **kwargs):
         """
@@ -1051,6 +1231,8 @@ class AccountActionsApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1061,6 +1243,9 @@ class AccountActionsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/logout'.replace('{format}', 'json')
         path_params = {}
@@ -1101,7 +1286,10 @@ class AccountActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1usernetkicreate(self, body, **kwargs):
         """
@@ -1158,6 +1346,8 @@ class AccountActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1171,6 +1361,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1usernetkicreate`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/netki/create'.replace('{format}', 'json')
         path_params = {}
@@ -1213,7 +1406,10 @@ class AccountActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1usernetkiupdate(self, body, **kwargs):
         """
@@ -1270,6 +1466,8 @@ class AccountActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1283,6 +1481,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1usernetkiupdate`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/netki/update'.replace('{format}', 'json')
         path_params = {}
@@ -1325,7 +1526,10 @@ class AccountActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userprofileimagedelete_netki_name(self, netki_name, **kwargs):
         """
@@ -1382,6 +1586,8 @@ class AccountActionsApi(object):
         all_params = ['netki_name', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1395,6 +1601,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'netki_name' is set
         if ('netki_name' not in params) or (params['netki_name'] is None):
             raise ValueError("Missing the required parameter `netki_name` when calling `v1userprofileimagedelete_netki_name`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/profile/image/delete/{netkiName}'.replace('{format}', 'json')
         path_params = {}
@@ -1437,7 +1646,10 @@ class AccountActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userprofileimageupdate(self, netki_name, is_public, file, **kwargs):
         """
@@ -1498,6 +1710,8 @@ class AccountActionsApi(object):
         all_params = ['netki_name', 'is_public', 'file', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1517,6 +1731,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'file' is set
         if ('file' not in params) or (params['file'] is None):
             raise ValueError("Missing the required parameter `file` when calling `v1userprofileimageupdate`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/profile/image/update'.replace('{format}', 'json')
         path_params = {}
@@ -1563,7 +1780,10 @@ class AccountActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userprofilephone(self, body, **kwargs):
         """
@@ -1620,6 +1840,8 @@ class AccountActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1633,6 +1855,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userprofilephone`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/profile/phone/new'.replace('{format}', 'json')
         path_params = {}
@@ -1675,7 +1900,10 @@ class AccountActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userprofilephone_number(self, **kwargs):
         """
@@ -1730,6 +1958,8 @@ class AccountActionsApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1740,6 +1970,9 @@ class AccountActionsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/profile/phone/delete'.replace('{format}', 'json')
         path_params = {}
@@ -1780,7 +2013,10 @@ class AccountActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userprofilephoneotp_number(self, number, **kwargs):
         """
@@ -1837,6 +2073,8 @@ class AccountActionsApi(object):
         all_params = ['number', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1850,6 +2088,9 @@ class AccountActionsApi(object):
         # verify the required parameter 'number' is set
         if ('number' not in params) or (params['number'] is None):
             raise ValueError("Missing the required parameter `number` when calling `v1userprofilephoneotp_number`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/profile/phone/otp/{number}'.replace('{format}', 'json')
         path_params = {}
@@ -1892,4 +2133,7 @@ class AccountActionsApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)

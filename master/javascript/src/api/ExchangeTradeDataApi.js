@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/RateDataResponse', 'model/FailResult', 'model/RateVolDataResponse', 'model/LastTradeDataResponse', 'model/RateDiffDataResponse', 'model/StandardTickerResultData', 'model/OrderDataResponse'], factory);
+    define(['ApiClient', 'model/RateDataResponse', 'model/FailResult', 'model/RateVolDataResponse', 'model/LastTradeDataResponse', 'model/RateDiffDataResponse', 'model/StandardTickerResultData', 'model/OrderDataResponse', 'model/RateVolTimeTypeDataResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/RateDataResponse'), require('../model/FailResult'), require('../model/RateVolDataResponse'), require('../model/LastTradeDataResponse'), require('../model/RateDiffDataResponse'), require('../model/StandardTickerResultData'), require('../model/OrderDataResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/RateDataResponse'), require('../model/FailResult'), require('../model/RateVolDataResponse'), require('../model/LastTradeDataResponse'), require('../model/RateDiffDataResponse'), require('../model/StandardTickerResultData'), require('../model/OrderDataResponse'), require('../model/RateVolTimeTypeDataResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CoinsecureApiDocumentation) {
       root.CoinsecureApiDocumentation = {};
     }
-    root.CoinsecureApiDocumentation.ExchangeTradeDataApi = factory(root.CoinsecureApiDocumentation.ApiClient, root.CoinsecureApiDocumentation.RateDataResponse, root.CoinsecureApiDocumentation.FailResult, root.CoinsecureApiDocumentation.RateVolDataResponse, root.CoinsecureApiDocumentation.LastTradeDataResponse, root.CoinsecureApiDocumentation.RateDiffDataResponse, root.CoinsecureApiDocumentation.StandardTickerResultData, root.CoinsecureApiDocumentation.OrderDataResponse);
+    root.CoinsecureApiDocumentation.ExchangeTradeDataApi = factory(root.CoinsecureApiDocumentation.ApiClient, root.CoinsecureApiDocumentation.RateDataResponse, root.CoinsecureApiDocumentation.FailResult, root.CoinsecureApiDocumentation.RateVolDataResponse, root.CoinsecureApiDocumentation.LastTradeDataResponse, root.CoinsecureApiDocumentation.RateDiffDataResponse, root.CoinsecureApiDocumentation.StandardTickerResultData, root.CoinsecureApiDocumentation.OrderDataResponse, root.CoinsecureApiDocumentation.RateVolTimeTypeDataResponse);
   }
-}(this, function(ApiClient, RateDataResponse, FailResult, RateVolDataResponse, LastTradeDataResponse, RateDiffDataResponse, StandardTickerResultData, OrderDataResponse) {
+}(this, function(ApiClient, RateDataResponse, FailResult, RateVolDataResponse, LastTradeDataResponse, RateDiffDataResponse, StandardTickerResultData, OrderDataResponse, RateVolTimeTypeDataResponse) {
   'use strict';
 
   /**
@@ -423,7 +423,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangeaskcancelled";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangeaskcancelled");
       }
 
 
@@ -463,10 +463,10 @@
      * Returns all completed Sell Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeTradeDataApi~v1userexchangeaskcompletedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrderDataResponse}
@@ -477,7 +477,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangeaskcompleted";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangeaskcompleted");
       }
 
 
@@ -531,7 +531,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangeaskpending";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangeaskpending");
       }
 
 
@@ -581,7 +581,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebidcancelled";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebidcancelled");
       }
 
 
@@ -631,7 +631,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebidcompleted";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebidcompleted");
       }
 
 
@@ -681,7 +681,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebidpending";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebidpending");
       }
 
 
@@ -703,6 +703,57 @@
 
       return this.apiClient.callApi(
         '/v1/user/exchange/bid/pending', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the v1userexchangetrades operation.
+     * @callback module:api/ExchangeTradeDataApi~v1userexchangetradesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/RateVolTimeTypeDataResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Completed Exchange Trades
+     * Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
+     * @param {module:api/ExchangeTradeDataApi~v1userexchangetradesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/RateVolTimeTypeDataResponse}
+     */
+    this.v1userexchangetrades = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'from': opts['from'],
+        'to': opts['to'],
+        'max': opts['max'],
+        'offset': opts['offset']
+      };
+      var headerParams = {
+        'accept': opts['accept']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json', 'application/xml', 'application/csv'];
+      var returnType = RateVolTimeTypeDataResponse;
+
+      return this.apiClient.callApi(
+        '/v1/exchange/trades', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -50,26 +50,30 @@ SWGFiatDepData::~SWGFiatDepData() {
 
 void
 SWGFiatDepData::init() {
-    timeDetails = new SWGTimeDataCoin();
-depositID = new QString("");
-value = 0L;
-account = new QString("");
-reason = new QString("");
+    time_details = new SWGTimeDataCoin();
+    deposit_id = new QString("");
+    value = 0L;
+    account = new QString("");
+    reason = new QString("");
 }
 
 void
 SWGFiatDepData::cleanup() {
-    if(timeDetails != NULL) {
-        delete timeDetails;
-    }
-if(depositID != NULL) {
-        delete depositID;
+    
+    if(time_details != nullptr) {
+        delete time_details;
     }
 
-if(account != NULL) {
+    if(deposit_id != nullptr) {
+        delete deposit_id;
+    }
+
+
+    if(account != nullptr) {
         delete account;
     }
-if(reason != NULL) {
+
+    if(reason != nullptr) {
         delete reason;
     }
 }
@@ -85,11 +89,11 @@ SWGFiatDepData::fromJson(QString &json) {
 
 void
 SWGFiatDepData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&timeDetails, pJson["timeDetails"], "SWGTimeDataCoin", "SWGTimeDataCoin");
-setValue(&depositID, pJson["depositID"], "QString", "QString");
-setValue(&value, pJson["value"], "qint64", "");
-setValue(&account, pJson["account"], "QString", "QString");
-setValue(&reason, pJson["reason"], "QString", "QString");
+    ::Swagger::setValue(&time_details, pJson["time_details"], "SWGTimeDataCoin", "SWGTimeDataCoin");
+    ::Swagger::setValue(&deposit_id, pJson["deposit_id"], "QString", "QString");
+    ::Swagger::setValue(&value, pJson["value"], "qint64", "");
+    ::Swagger::setValue(&account, pJson["account"], "QString", "QString");
+    ::Swagger::setValue(&reason, pJson["reason"], "QString", "QString");
 }
 
 QString
@@ -106,46 +110,35 @@ QJsonObject*
 SWGFiatDepData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
-    toJsonValue(QString("timeDetails"), timeDetails, obj, QString("SWGTimeDataCoin"));
-    
-        
+    toJsonValue(QString("time_details"), time_details, obj, QString("SWGTimeDataCoin"));
 
-    
-    toJsonValue(QString("depositID"), depositID, obj, QString("QString"));
-    
-        
-obj->insert("value", QJsonValue(value));
+    toJsonValue(QString("deposit_id"), deposit_id, obj, QString("QString"));
 
-    
+    obj->insert("value", QJsonValue(value));
+
     toJsonValue(QString("account"), account, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("reason"), reason, obj, QString("QString"));
-    
-        
 
     return obj;
 }
 
 SWGTimeDataCoin*
 SWGFiatDepData::getTimeDetails() {
-    return timeDetails;
+    return time_details;
 }
 void
-SWGFiatDepData::setTimeDetails(SWGTimeDataCoin* timeDetails) {
-    this->timeDetails = timeDetails;
+SWGFiatDepData::setTimeDetails(SWGTimeDataCoin* time_details) {
+    this->time_details = time_details;
 }
 
 QString*
-SWGFiatDepData::getDepositID() {
-    return depositID;
+SWGFiatDepData::getDepositId() {
+    return deposit_id;
 }
 void
-SWGFiatDepData::setDepositID(QString* depositID) {
-    this->depositID = depositID;
+SWGFiatDepData::setDepositId(QString* deposit_id) {
+    this->deposit_id = deposit_id;
 }
 
 qint64

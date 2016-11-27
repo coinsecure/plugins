@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**time** | **Integer** |  | 
-**rate** | **Integer** |  | 
-**vol** | **Integer** |  | 
+**time** | **Number** |  | 
+**rate** | **Number** |  | 
+**vol** | **Number** |  | 
 **orderID** | **String** |  | 
 **status** | **String** |  | 
 

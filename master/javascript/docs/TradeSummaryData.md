@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**completedAsksSum** | **Integer** |  | 
-**completedBidsSum** | **Integer** |  | 
-**completedAsksCount** | **Integer** |  | 
-**completedBidsCount** | **Integer** |  | 
-**pendingAsksCount** | **Integer** |  | 
-**pendingBidsCount** | **Integer** |  | 
+**completedAsksSum** | **Number** |  | 
+**completedBidsSum** | **Number** |  | 
+**completedAsksCount** | **Number** |  | 
+**completedBidsCount** | **Number** |  | 
+**pendingAsksCount** | **Number** |  | 
+**pendingBidsCount** | **Number** |  | 
 
 

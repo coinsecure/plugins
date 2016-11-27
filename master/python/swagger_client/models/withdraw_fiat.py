@@ -60,6 +60,7 @@ class WithdrawFiat(object):
         self._msg = msg
         self._pin = pin
 
+
     @property
     def fiat(self):
         """
@@ -80,6 +81,8 @@ class WithdrawFiat(object):
         :param fiat: The fiat of this WithdrawFiat.
         :type: int
         """
+        if fiat is None:
+            raise ValueError("Invalid value for `fiat`, must not be `None`")
 
         self._fiat = fiat
 
@@ -103,6 +106,8 @@ class WithdrawFiat(object):
         :param account: The account of this WithdrawFiat.
         :type: str
         """
+        if account is None:
+            raise ValueError("Invalid value for `account`, must not be `None`")
 
         self._account = account
 

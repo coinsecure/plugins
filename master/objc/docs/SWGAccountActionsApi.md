@@ -1,6 +1,6 @@
 # SWGAccountActionsApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**v1logininitiate**](SWGAccountActionsApi.md#v1logininitiate) | **POST** /v1/login/initiate | Initiate Login
 [**v1loginpasswordforgot**](SWGAccountActionsApi.md#v1loginpasswordforgot) | **POST** /v1/login/password/forgot | Sends an email with a password reset token
 [**v1signup**](SWGAccountActionsApi.md#v1signup) | **POST** /v1/signup | Creates a new Unverified Account.
+[**v1signupverifyToken**](SWGAccountActionsApi.md#v1signupverifytoken) | **PUT** /v1/signup/verify/{token} | Verifies an Email token for Signup .
 [**v1userbankotpNumber**](SWGAccountActionsApi.md#v1userbankotpnumber) | **GET** /v1/user/bank/otp/{number} | Send OTP for Bank Link
 [**v1userexchangekyc**](SWGAccountActionsApi.md#v1userexchangekyc) | **PUT** /v1/user/exchange/kyc | Submits a New Bank Link and initial KYC Documents.
 [**v1usergcmCode**](SWGAccountActionsApi.md#v1usergcmcode) | **DELETE** /v1/user/gcm/{code} | Delete GCM Code
@@ -238,6 +239,60 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **v1signupverifyToken**
+```objc
+-(NSNumber*) v1signupverifyTokenWithToken: (NSString*) token
+    accept: (NSString*) accept
+        completionHandler: (void (^)(SWGStandardVerifySignupResultData* output, NSError* error)) handler;
+```
+
+Verifies an Email token for Signup .
+
+Creates a new Coinsecure Account.
+
+### Example 
+```objc
+
+NSString* token = @"token_example"; // 
+NSString* accept = @"accept_example"; // JSON, XML or CSV can be returned (Optional) (optional)
+
+SWGAccountActionsApi*apiInstance = [[SWGAccountActionsApi alloc] init];
+
+// Verifies an Email token for Signup .
+[apiInstance v1signupverifyTokenWithToken:token
+              accept:accept
+          completionHandler: ^(SWGStandardVerifySignupResultData* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SWGAccountActionsApi->v1signupverifyToken: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **NSString***|  | 
+ **accept** | **NSString***| JSON, XML or CSV can be returned (Optional) | [optional] 
+
+### Return type
+
+[**SWGStandardVerifySignupResultData***](SWGStandardVerifySignupResultData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **v1userbankotpNumber**
 ```objc
 -(NSNumber*) v1userbankotpNumberWithNumber: (NSString*) number
@@ -329,7 +384,7 @@ NSString* ifsc = @"ifsc_example"; // Please enter your IFSC Code.
 NSString* acctType = @"acctType_example"; // Please enter your Coinsecure account type. Allowable Values are Personal or Company.
 NSString* banType = @"banType_example"; // Please enter your Bank account type. Allowable Values are Savings or Current.
 NSString* phone = @"phone_example"; // Please enter your Valid Phone Number.
-NSString* otp = @"otp_example"; // Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.
+NSString* otp = @"otp_example"; // Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.
 NSURL* file = [NSURL fileURLWithPath:@"/path/to/file.txt"]; // Enter a valid image, pdf or zip file under 5 MB in size.
 NSString* authorization = @"authorization_example"; // Enter a valid Api Key. (optional)
 NSString* message = @"message_example"; // Please enter an optional message if needed. (optional)
@@ -373,7 +428,7 @@ Name | Type | Description  | Notes
  **acctType** | **NSString***| Please enter your Coinsecure account type. Allowable Values are Personal or Company. | 
  **banType** | **NSString***| Please enter your Bank account type. Allowable Values are Savings or Current. | 
  **phone** | **NSString***| Please enter your Valid Phone Number. | 
- **otp** | **NSString***| Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. | 
+ **otp** | **NSString***| Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. | 
  **file** | **NSURL***| Enter a valid image, pdf or zip file under 5 MB in size. | 
  **authorization** | **NSString***| Enter a valid Api Key. | [optional] 
  **message** | **NSString***| Please enter an optional message if needed. | [optional] 

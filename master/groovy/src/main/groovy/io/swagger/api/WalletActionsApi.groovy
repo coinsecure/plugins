@@ -19,7 +19,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class WalletActionsApi {
-    String basePath = "https://api.coinsecure.in"
+    String basePath = "https://api.coinsecure.in/"
     String versionPath = "/api/v1"
 
     def v1userwalletcoinaddressnew ( NewAddress body, String authorization, String accept, Closure onSuccess, Closure onFailure)  {

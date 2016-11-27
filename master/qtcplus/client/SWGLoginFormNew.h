@@ -56,21 +56,26 @@ public:
 
     QString* getEmail();
     void setEmail(QString* email);
-QString* getToken();
+
+    QString* getToken();
     void setToken(QString* token);
-QString* getPassword();
+
+    QString* getPassword();
     void setPassword(QString* password);
-QString* getGcmCode();
-    void setGcmCode(QString* gcmCode);
-QString* getPin();
+
+    QString* getGcmCode();
+    void setGcmCode(QString* gcm_code);
+
+    QString* getPin();
     void setPin(QString* pin);
+
 
 private:
     QString* email;
-QString* token;
-QString* password;
-QString* gcmCode;
-QString* pin;
+    QString* token;
+    QString* password;
+    QString* gcm_code;
+    QString* pin;
 };
 
 } /* namespace Swagger */

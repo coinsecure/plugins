@@ -63,6 +63,7 @@ class CoinDepDataResponse(object):
         self._title = title
         self._time = time
 
+
     @property
     def success(self):
         """
@@ -83,6 +84,8 @@ class CoinDepDataResponse(object):
         :param success: The success of this CoinDepDataResponse.
         :type: bool
         """
+        if success is None:
+            raise ValueError("Invalid value for `success`, must not be `None`")
 
         self._success = success
 
@@ -106,6 +109,8 @@ class CoinDepDataResponse(object):
         :param message: The message of this CoinDepDataResponse.
         :type: list[CoinDepData]
         """
+        if message is None:
+            raise ValueError("Invalid value for `message`, must not be `None`")
 
         self._message = message
 
@@ -129,6 +134,8 @@ class CoinDepDataResponse(object):
         :param method: The method of this CoinDepDataResponse.
         :type: str
         """
+        if method is None:
+            raise ValueError("Invalid value for `method`, must not be `None`")
 
         self._method = method
 
@@ -152,6 +159,8 @@ class CoinDepDataResponse(object):
         :param title: The title of this CoinDepDataResponse.
         :type: str
         """
+        if title is None:
+            raise ValueError("Invalid value for `title`, must not be `None`")
 
         self._title = title
 
@@ -175,6 +184,8 @@ class CoinDepDataResponse(object):
         :param time: The time of this CoinDepDataResponse.
         :type: datetime
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 

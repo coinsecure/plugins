@@ -52,8 +52,8 @@
    * Constructs a new <code>TimeDataCoin</code>.
    * @alias module:model/TimeDataCoin
    * @class
-   * @param time {Integer} 
-   * @param verifiedTime {Integer} 
+   * @param time {Number} 
+   * @param verifiedTime {Number} 
    */
   var exports = function(time, verifiedTime) {
     var _this = this;
@@ -74,21 +74,21 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('time')) {
-        obj['time'] = ApiClient.convertToType(data['time'], 'Integer');
+        obj['time'] = ApiClient.convertToType(data['time'], 'Number');
       }
       if (data.hasOwnProperty('verifiedTime')) {
-        obj['verifiedTime'] = ApiClient.convertToType(data['verifiedTime'], 'Integer');
+        obj['verifiedTime'] = ApiClient.convertToType(data['verifiedTime'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} time
+   * @member {Number} time
    */
   exports.prototype['time'] = undefined;
   /**
-   * @member {Integer} verifiedTime
+   * @member {Number} verifiedTime
    */
   exports.prototype['verifiedTime'] = undefined;
 

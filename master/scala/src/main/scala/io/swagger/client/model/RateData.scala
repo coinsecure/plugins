@@ -25,7 +25,6 @@
 package io.swagger.client.model
 
 
-
-
 case class RateData (
-  rate: Long)
+  rate: Long
+)

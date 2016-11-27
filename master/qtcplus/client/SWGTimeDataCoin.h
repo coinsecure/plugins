@@ -55,12 +55,14 @@ public:
 
     qint64 getTime();
     void setTime(qint64 time);
-qint64 getVerifiedTime();
-    void setVerifiedTime(qint64 verifiedTime);
+
+    qint64 getVerifiedTime();
+    void setVerifiedTime(qint64 verified_time);
+
 
 private:
     qint64 time;
-qint64 verifiedTime;
+    qint64 verified_time;
 };
 
 } /* namespace Swagger */

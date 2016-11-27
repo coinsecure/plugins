@@ -51,21 +51,24 @@ SWGWithdrawFiat::~SWGWithdrawFiat() {
 void
 SWGWithdrawFiat::init() {
     fiat = 0L;
-account = new QString("");
-msg = new QString("");
-pin = new QString("");
+    account = new QString("");
+    msg = new QString("");
+    pin = new QString("");
 }
 
 void
 SWGWithdrawFiat::cleanup() {
     
-if(account != NULL) {
+
+    if(account != nullptr) {
         delete account;
     }
-if(msg != NULL) {
+
+    if(msg != nullptr) {
         delete msg;
     }
-if(pin != NULL) {
+
+    if(pin != nullptr) {
         delete pin;
     }
 }
@@ -81,10 +84,10 @@ SWGWithdrawFiat::fromJson(QString &json) {
 
 void
 SWGWithdrawFiat::fromJsonObject(QJsonObject &pJson) {
-    setValue(&fiat, pJson["fiat"], "qint64", "");
-setValue(&account, pJson["account"], "QString", "QString");
-setValue(&msg, pJson["msg"], "QString", "QString");
-setValue(&pin, pJson["pin"], "QString", "QString");
+    ::Swagger::setValue(&fiat, pJson["fiat"], "qint64", "");
+    ::Swagger::setValue(&account, pJson["account"], "QString", "QString");
+    ::Swagger::setValue(&msg, pJson["msg"], "QString", "QString");
+    ::Swagger::setValue(&pin, pJson["pin"], "QString", "QString");
 }
 
 QString
@@ -100,22 +103,14 @@ SWGWithdrawFiat::asJson ()
 QJsonObject*
 SWGWithdrawFiat::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("fiat", QJsonValue(fiat));
 
-    
     toJsonValue(QString("account"), account, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("msg"), msg, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("pin"), pin, obj, QString("QString"));
-    
-        
 
     return obj;
 }

@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class WalletAddressData  {
+public class WalletAddressData {
   
   @SerializedName("walletID")
   private String walletID = null;
@@ -115,23 +113,23 @@ public class WalletAddressData  {
       return false;
     }
     WalletAddressData walletAddressData = (WalletAddressData) o;
-    return (walletID == null ? walletAddressData.walletID == null : walletID.equals(walletAddressData.walletID)) &&
-        (address == null ? walletAddressData.address == null : address.equals(walletAddressData.address)) &&
-        (time == null ? walletAddressData.time == null : time.equals(walletAddressData.time)) &&
-        (info == null ? walletAddressData.info == null : info.equals(walletAddressData.info)) &&
-        (minConf == null ? walletAddressData.minConf == null : minConf.equals(walletAddressData.minConf)) &&
-        (netki == null ? walletAddressData.netki == null : netki.equals(walletAddressData.netki));
+    return (this.walletID == null ? walletAddressData.walletID == null : this.walletID.equals(walletAddressData.walletID)) &&
+        (this.address == null ? walletAddressData.address == null : this.address.equals(walletAddressData.address)) &&
+        (this.time == null ? walletAddressData.time == null : this.time.equals(walletAddressData.time)) &&
+        (this.info == null ? walletAddressData.info == null : this.info.equals(walletAddressData.info)) &&
+        (this.minConf == null ? walletAddressData.minConf == null : this.minConf.equals(walletAddressData.minConf)) &&
+        (this.netki == null ? walletAddressData.netki == null : this.netki.equals(walletAddressData.netki));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (walletID == null ? 0: walletID.hashCode());
-    result = 31 * result + (address == null ? 0: address.hashCode());
-    result = 31 * result + (time == null ? 0: time.hashCode());
-    result = 31 * result + (info == null ? 0: info.hashCode());
-    result = 31 * result + (minConf == null ? 0: minConf.hashCode());
-    result = 31 * result + (netki == null ? 0: netki.hashCode());
+    result = 31 * result + (this.walletID == null ? 0: this.walletID.hashCode());
+    result = 31 * result + (this.address == null ? 0: this.address.hashCode());
+    result = 31 * result + (this.time == null ? 0: this.time.hashCode());
+    result = 31 * result + (this.info == null ? 0: this.info.hashCode());
+    result = 31 * result + (this.minConf == null ? 0: this.minConf.hashCode());
+    result = 31 * result + (this.netki == null ? 0: this.netki.hashCode());
     return result;
   }
 

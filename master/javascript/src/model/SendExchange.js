@@ -52,7 +52,7 @@
    * Constructs a new <code>SendExchange</code>.
    * @alias module:model/SendExchange
    * @class
-   * @param amt {Integer} 
+   * @param amt {Number} 
    * @param walletID {String} 
    */
   var exports = function(amt, walletID) {
@@ -75,7 +75,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('amt')) {
-        obj['amt'] = ApiClient.convertToType(data['amt'], 'Integer');
+        obj['amt'] = ApiClient.convertToType(data['amt'], 'Number');
       }
       if (data.hasOwnProperty('walletID')) {
         obj['walletID'] = ApiClient.convertToType(data['walletID'], 'String');
@@ -88,7 +88,7 @@
   }
 
   /**
-   * @member {Integer} amt
+   * @member {Number} amt
    */
   exports.prototype['amt'] = undefined;
   /**

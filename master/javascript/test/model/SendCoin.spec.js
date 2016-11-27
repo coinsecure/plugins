@@ -89,6 +89,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fees (base name: "fees")', function() {
+      // uncomment below and update the code to test the property fees
+      //var instane = new CoinsecureApiDocumentation.SendCoin();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

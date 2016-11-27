@@ -16,7 +16,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class ExchangeTradeActionsApi {
-    String basePath = "https://api.coinsecure.in"
+    String basePath = "https://api.coinsecure.in/"
     String versionPath = "/api/v1"
 
     def v1userexchangeaskcancelOrderID ( String orderID, String authorization, Closure onSuccess, Closure onFailure)  {

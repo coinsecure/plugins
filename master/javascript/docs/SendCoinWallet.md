@@ -4,9 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **walletID** | **String** |  | 
-**amt** | **Integer** |  | 
+**amt** | **Number** |  | 
 **toAddr** | **String** |  | 
 **msg** | **String** |  | [optional] 
 **pin** | **String** |  | [optional] 
+**fees** | **Object** |  | [optional] 
 
 

@@ -57,6 +57,7 @@ public:
     QString* getAddress();
     void setAddress(QString* address);
 
+
 private:
     QString* address;
 };

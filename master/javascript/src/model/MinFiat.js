@@ -52,12 +52,12 @@
    * Constructs a new <code>MinFiat</code>.
    * @alias module:model/MinFiat
    * @class
-   * @param minFiat {Integer} 
+   * @param maxFiat {Number} 
    */
-  var exports = function(minFiat) {
+  var exports = function(maxFiat) {
     var _this = this;
 
-    _this['minFiat'] = minFiat;
+    _this['maxFiat'] = maxFiat;
   };
 
   /**
@@ -71,17 +71,17 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('minFiat')) {
-        obj['minFiat'] = ApiClient.convertToType(data['minFiat'], 'Integer');
+      if (data.hasOwnProperty('maxFiat')) {
+        obj['maxFiat'] = ApiClient.convertToType(data['maxFiat'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} minFiat
+   * @member {Number} maxFiat
    */
-  exports.prototype['minFiat'] = undefined;
+  exports.prototype['maxFiat'] = undefined;
 
 
 

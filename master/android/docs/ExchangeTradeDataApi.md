@@ -1,6 +1,6 @@
 # ExchangeTradeDataApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**v1userexchangebidcancelled**](ExchangeTradeDataApi.md#v1userexchangebidcancelled) | **GET** /v1/user/exchange/bid/cancelled | Cancelled User Buy Orders
 [**v1userexchangebidcompleted**](ExchangeTradeDataApi.md#v1userexchangebidcompleted) | **GET** /v1/user/exchange/bid/completed | Completed User Buy Orders
 [**v1userexchangebidpending**](ExchangeTradeDataApi.md#v1userexchangebidpending) | **GET** /v1/user/exchange/bid/pending | Pending User Buy Orders
+[**v1userexchangetrades**](ExchangeTradeDataApi.md#v1userexchangetrades) | **GET** /v1/exchange/trades | Completed Exchange Trades
 
 
 <a name="v1exchangeasklow"></a>
@@ -632,6 +633,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrderDataResponse**](OrderDataResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+<a name="v1userexchangetrades"></a>
+# **v1userexchangetrades**
+> RateVolTimeTypeDataResponse v1userexchangetrades(from, to, max, offset, accept)
+
+Completed Exchange Trades
+
+Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.api.ExchangeTradeDataApi;
+
+ExchangeTradeDataApi apiInstance = new ExchangeTradeDataApi();
+Long from = 0L; // Long | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
+Long to = 9223372036854776000L; // Long | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
+Integer max = 10; // Integer | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
+Long offset = 0L; // Long | Offset defaults to 0 if input is invalid. (Optional)
+String accept = "accept_example"; // String | JSON, XML or CSV can be returned (Optional)
+try {
+    RateVolTimeTypeDataResponse result = apiInstance.v1userexchangetrades(from, to, max, offset, accept);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExchangeTradeDataApi#v1userexchangetrades");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **Long**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **Long**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **Integer**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **Long**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional]
+
+### Return type
+
+[**RateVolTimeTypeDataResponse**](RateVolTimeTypeDataResponse.md)
 
 ### Authorization
 

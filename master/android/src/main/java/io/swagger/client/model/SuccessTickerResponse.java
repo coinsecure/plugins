@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class SuccessTickerResponse  {
+public class SuccessTickerResponse {
   
   @SerializedName("lastPrice")
   private Long lastPrice = null;
@@ -151,29 +149,29 @@ public class SuccessTickerResponse  {
       return false;
     }
     SuccessTickerResponse successTickerResponse = (SuccessTickerResponse) o;
-    return (lastPrice == null ? successTickerResponse.lastPrice == null : lastPrice.equals(successTickerResponse.lastPrice)) &&
-        (timestamp == null ? successTickerResponse.timestamp == null : timestamp.equals(successTickerResponse.timestamp)) &&
-        (bid == null ? successTickerResponse.bid == null : bid.equals(successTickerResponse.bid)) &&
-        (ask == null ? successTickerResponse.ask == null : ask.equals(successTickerResponse.ask)) &&
-        (fiatVolume == null ? successTickerResponse.fiatVolume == null : fiatVolume.equals(successTickerResponse.fiatVolume)) &&
-        (coinVolume == null ? successTickerResponse.coinVolume == null : coinVolume.equals(successTickerResponse.coinVolume)) &&
-        (open == null ? successTickerResponse.open == null : open.equals(successTickerResponse.open)) &&
-        (high == null ? successTickerResponse.high == null : high.equals(successTickerResponse.high)) &&
-        (low == null ? successTickerResponse.low == null : low.equals(successTickerResponse.low));
+    return (this.lastPrice == null ? successTickerResponse.lastPrice == null : this.lastPrice.equals(successTickerResponse.lastPrice)) &&
+        (this.timestamp == null ? successTickerResponse.timestamp == null : this.timestamp.equals(successTickerResponse.timestamp)) &&
+        (this.bid == null ? successTickerResponse.bid == null : this.bid.equals(successTickerResponse.bid)) &&
+        (this.ask == null ? successTickerResponse.ask == null : this.ask.equals(successTickerResponse.ask)) &&
+        (this.fiatVolume == null ? successTickerResponse.fiatVolume == null : this.fiatVolume.equals(successTickerResponse.fiatVolume)) &&
+        (this.coinVolume == null ? successTickerResponse.coinVolume == null : this.coinVolume.equals(successTickerResponse.coinVolume)) &&
+        (this.open == null ? successTickerResponse.open == null : this.open.equals(successTickerResponse.open)) &&
+        (this.high == null ? successTickerResponse.high == null : this.high.equals(successTickerResponse.high)) &&
+        (this.low == null ? successTickerResponse.low == null : this.low.equals(successTickerResponse.low));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (lastPrice == null ? 0: lastPrice.hashCode());
-    result = 31 * result + (timestamp == null ? 0: timestamp.hashCode());
-    result = 31 * result + (bid == null ? 0: bid.hashCode());
-    result = 31 * result + (ask == null ? 0: ask.hashCode());
-    result = 31 * result + (fiatVolume == null ? 0: fiatVolume.hashCode());
-    result = 31 * result + (coinVolume == null ? 0: coinVolume.hashCode());
-    result = 31 * result + (open == null ? 0: open.hashCode());
-    result = 31 * result + (high == null ? 0: high.hashCode());
-    result = 31 * result + (low == null ? 0: low.hashCode());
+    result = 31 * result + (this.lastPrice == null ? 0: this.lastPrice.hashCode());
+    result = 31 * result + (this.timestamp == null ? 0: this.timestamp.hashCode());
+    result = 31 * result + (this.bid == null ? 0: this.bid.hashCode());
+    result = 31 * result + (this.ask == null ? 0: this.ask.hashCode());
+    result = 31 * result + (this.fiatVolume == null ? 0: this.fiatVolume.hashCode());
+    result = 31 * result + (this.coinVolume == null ? 0: this.coinVolume.hashCode());
+    result = 31 * result + (this.open == null ? 0: this.open.hashCode());
+    result = 31 * result + (this.high == null ? 0: this.high.hashCode());
+    result = 31 * result + (this.low == null ? 0: this.low.hashCode());
     return result;
   }
 

@@ -57,6 +57,7 @@ class AllRefData(object):
         self._time = time
         self._ref_id = ref_id
 
+
     @property
     def ref_percent(self):
         """
@@ -77,6 +78,8 @@ class AllRefData(object):
         :param ref_percent: The ref_percent of this AllRefData.
         :type: float
         """
+        if ref_percent is None:
+            raise ValueError("Invalid value for `ref_percent`, must not be `None`")
 
         self._ref_percent = ref_percent
 
@@ -100,6 +103,8 @@ class AllRefData(object):
         :param time: The time of this AllRefData.
         :type: int
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 
@@ -123,6 +128,8 @@ class AllRefData(object):
         :param ref_id: The ref_id of this AllRefData.
         :type: str
         """
+        if ref_id is None:
+            raise ValueError("Invalid value for `ref_id`, must not be `None`")
 
         self._ref_id = ref_id
 

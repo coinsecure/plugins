@@ -72,6 +72,7 @@ class SuccCoinRefData(object):
         self._deposit_id = deposit_id
         self._amt_paid = amt_paid
 
+
     @property
     def ref_percent(self):
         """
@@ -92,6 +93,8 @@ class SuccCoinRefData(object):
         :param ref_percent: The ref_percent of this SuccCoinRefData.
         :type: float
         """
+        if ref_percent is None:
+            raise ValueError("Invalid value for `ref_percent`, must not be `None`")
 
         self._ref_percent = ref_percent
 
@@ -115,6 +118,8 @@ class SuccCoinRefData(object):
         :param time: The time of this SuccCoinRefData.
         :type: int
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 
@@ -138,6 +143,8 @@ class SuccCoinRefData(object):
         :param order_id: The order_id of this SuccCoinRefData.
         :type: str
         """
+        if order_id is None:
+            raise ValueError("Invalid value for `order_id`, must not be `None`")
 
         self._order_id = order_id
 
@@ -161,6 +168,8 @@ class SuccCoinRefData(object):
         :param ref_id: The ref_id of this SuccCoinRefData.
         :type: str
         """
+        if ref_id is None:
+            raise ValueError("Invalid value for `ref_id`, must not be `None`")
 
         self._ref_id = ref_id
 
@@ -184,6 +193,8 @@ class SuccCoinRefData(object):
         :param trade_id: The trade_id of this SuccCoinRefData.
         :type: str
         """
+        if trade_id is None:
+            raise ValueError("Invalid value for `trade_id`, must not be `None`")
 
         self._trade_id = trade_id
 
@@ -207,6 +218,8 @@ class SuccCoinRefData(object):
         :param new_user_id_masked: The new_user_id_masked of this SuccCoinRefData.
         :type: str
         """
+        if new_user_id_masked is None:
+            raise ValueError("Invalid value for `new_user_id_masked`, must not be `None`")
 
         self._new_user_id_masked = new_user_id_masked
 
@@ -230,6 +243,8 @@ class SuccCoinRefData(object):
         :param deposit_id: The deposit_id of this SuccCoinRefData.
         :type: str
         """
+        if deposit_id is None:
+            raise ValueError("Invalid value for `deposit_id`, must not be `None`")
 
         self._deposit_id = deposit_id
 
@@ -253,6 +268,8 @@ class SuccCoinRefData(object):
         :param amt_paid: The amt_paid of this SuccCoinRefData.
         :type: int
         """
+        if amt_paid is None:
+            raise ValueError("Invalid value for `amt_paid`, must not be `None`")
 
         self._amt_paid = amt_paid
 

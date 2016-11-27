@@ -48,10 +48,10 @@ public:
     QString host;
     QString basePath;
 
-    void /v1/user/wallet/coin/address/WalletID(QString* walletID, QString* authorization, QString* accept);
-    void /v1/user/wallet/coin/deposit/confirmed/WalletID(QString* walletID, QString* authorization, QString* accept);
+    void /v1/user/wallet/coin/address/WalletID(QString* wallet_id, QString* authorization, QString* accept);
+    void /v1/user/wallet/coin/deposit/confirmed/WalletID(QString* wallet_id, QString* authorization, QString* accept);
     void /v1/user/wallet/coin/deposit/confirmed/all(QString* authorization, QString* accept);
-    void /v1/user/wallet/coin/deposit/unconfirmed/WalletID(QString* walletID, QString* authorization, QString* accept);
+    void /v1/user/wallet/coin/deposit/unconfirmed/WalletID(QString* wallet_id, QString* authorization, QString* accept);
     void /v1/user/wallet/coin/deposit/unconfirmed/all(QString* authorization, QString* accept);
     void /v1/user/wallet/coin/wallets(QString* authorization, QString* accept);
     void /v1/wallet/withdraw/cancelled(QString* authorization, QString* accept);

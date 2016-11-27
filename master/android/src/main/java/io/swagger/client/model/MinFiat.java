@@ -24,25 +24,23 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class MinFiat  {
+public class MinFiat {
   
-  @SerializedName("minFiat")
-  private Long minFiat = null;
+  @SerializedName("maxFiat")
+  private Long maxFiat = null;
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public Long getMinFiat() {
-    return minFiat;
+  public Long getMaxFiat() {
+    return maxFiat;
   }
-  public void setMinFiat(Long minFiat) {
-    this.minFiat = minFiat;
+  public void setMaxFiat(Long maxFiat) {
+    this.maxFiat = maxFiat;
   }
 
 
@@ -55,13 +53,13 @@ public class MinFiat  {
       return false;
     }
     MinFiat minFiat = (MinFiat) o;
-    return (minFiat == null ? minFiat.minFiat == null : minFiat.equals(minFiat.minFiat));
+    return (this.maxFiat == null ? minFiat.maxFiat == null : this.maxFiat.equals(minFiat.maxFiat));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (minFiat == null ? 0: minFiat.hashCode());
+    result = 31 * result + (this.maxFiat == null ? 0: this.maxFiat.hashCode());
     return result;
   }
 
@@ -70,7 +68,7 @@ public class MinFiat  {
     StringBuilder sb = new StringBuilder();
     sb.append("class MinFiat {\n");
     
-    sb.append("  minFiat: ").append(minFiat).append("\n");
+    sb.append("  maxFiat: ").append(maxFiat).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

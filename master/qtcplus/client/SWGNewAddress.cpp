@@ -50,16 +50,18 @@ SWGNewAddress::~SWGNewAddress() {
 
 void
 SWGNewAddress::init() {
-    walletID = new QString("");
-info = new QString("");
+    wallet_id = new QString("");
+    info = new QString("");
 }
 
 void
 SWGNewAddress::cleanup() {
-    if(walletID != NULL) {
-        delete walletID;
+    
+    if(wallet_id != nullptr) {
+        delete wallet_id;
     }
-if(info != NULL) {
+
+    if(info != nullptr) {
         delete info;
     }
 }
@@ -75,8 +77,8 @@ SWGNewAddress::fromJson(QString &json) {
 
 void
 SWGNewAddress::fromJsonObject(QJsonObject &pJson) {
-    setValue(&walletID, pJson["walletID"], "QString", "QString");
-setValue(&info, pJson["info"], "QString", "QString");
+    ::Swagger::setValue(&wallet_id, pJson["wallet_id"], "QString", "QString");
+    ::Swagger::setValue(&info, pJson["info"], "QString", "QString");
 }
 
 QString
@@ -93,26 +95,20 @@ QJsonObject*
 SWGNewAddress::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
-    toJsonValue(QString("walletID"), walletID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("wallet_id"), wallet_id, obj, QString("QString"));
 
-    
     toJsonValue(QString("info"), info, obj, QString("QString"));
-    
-        
 
     return obj;
 }
 
 QString*
-SWGNewAddress::getWalletID() {
-    return walletID;
+SWGNewAddress::getWalletId() {
+    return wallet_id;
 }
 void
-SWGNewAddress::setWalletID(QString* walletID) {
-    this->walletID = walletID;
+SWGNewAddress::setWalletId(QString* wallet_id) {
+    this->wallet_id = wallet_id;
 }
 
 QString*

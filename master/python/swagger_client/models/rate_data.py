@@ -51,6 +51,7 @@ class RateData(object):
 
         self._rate = rate
 
+
     @property
     def rate(self):
         """
@@ -71,6 +72,8 @@ class RateData(object):
         :param rate: The rate of this RateData.
         :type: int
         """
+        if rate is None:
+            raise ValueError("Invalid value for `rate`, must not be `None`")
 
         self._rate = rate
 

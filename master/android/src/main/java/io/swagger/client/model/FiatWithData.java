@@ -25,13 +25,11 @@
 package io.swagger.client.model;
 
 import io.swagger.client.model.TimeDataCoin;
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class FiatWithData  {
+public class FiatWithData {
   
   @SerializedName("timeDetails")
   private TimeDataCoin timeDetails = null;
@@ -104,21 +102,21 @@ public class FiatWithData  {
       return false;
     }
     FiatWithData fiatWithData = (FiatWithData) o;
-    return (timeDetails == null ? fiatWithData.timeDetails == null : timeDetails.equals(fiatWithData.timeDetails)) &&
-        (withdrawID == null ? fiatWithData.withdrawID == null : withdrawID.equals(fiatWithData.withdrawID)) &&
-        (value == null ? fiatWithData.value == null : value.equals(fiatWithData.value)) &&
-        (account == null ? fiatWithData.account == null : account.equals(fiatWithData.account)) &&
-        (reason == null ? fiatWithData.reason == null : reason.equals(fiatWithData.reason));
+    return (this.timeDetails == null ? fiatWithData.timeDetails == null : this.timeDetails.equals(fiatWithData.timeDetails)) &&
+        (this.withdrawID == null ? fiatWithData.withdrawID == null : this.withdrawID.equals(fiatWithData.withdrawID)) &&
+        (this.value == null ? fiatWithData.value == null : this.value.equals(fiatWithData.value)) &&
+        (this.account == null ? fiatWithData.account == null : this.account.equals(fiatWithData.account)) &&
+        (this.reason == null ? fiatWithData.reason == null : this.reason.equals(fiatWithData.reason));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (timeDetails == null ? 0: timeDetails.hashCode());
-    result = 31 * result + (withdrawID == null ? 0: withdrawID.hashCode());
-    result = 31 * result + (value == null ? 0: value.hashCode());
-    result = 31 * result + (account == null ? 0: account.hashCode());
-    result = 31 * result + (reason == null ? 0: reason.hashCode());
+    result = 31 * result + (this.timeDetails == null ? 0: this.timeDetails.hashCode());
+    result = 31 * result + (this.withdrawID == null ? 0: this.withdrawID.hashCode());
+    result = 31 * result + (this.value == null ? 0: this.value.hashCode());
+    result = 31 * result + (this.account == null ? 0: this.account.hashCode());
+    result = 31 * result + (this.reason == null ? 0: this.reason.hashCode());
     return result;
   }
 

@@ -44,7 +44,7 @@ import java.util.Date
 
 import scala.collection.mutable.HashMap
 
-class SecurityActionsApi(val defBasePath: String = "https://api.coinsecure.in",
+class SecurityActionsApi(val defBasePath: String = "https://api.coinsecure.in/",
                         defApiInvoker: ApiInvoker = ApiInvoker) {
   var basePath = defBasePath
   var apiInvoker = defApiInvoker
@@ -59,31 +59,29 @@ class SecurityActionsApi(val defBasePath: String = "https://api.coinsecure.in",
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccessResult
    */
-  def v1MfaAuthyInitiate (body: MethodCountryMobile, authorization: String, accept: String) : Option[SuccessResult] = {
+  def v1MfaAuthyInitiate(body: MethodCountryMobile, authorization: Option[String] = None, accept: Option[String] = None): Option[SuccessResult] = {
     // create path and map variables
-    val path = "/v1/mfa/authy/initiate".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/mfa/authy/initiate".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
     if (body == null) throw new Exception("Missing required parameter 'body' when calling SecurityActionsApi->v1MfaAuthyInitiate")
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = body
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -105,29 +103,27 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccessResult
    */
-  def v1MfaGaInitiate (authorization: String, accept: String) : Option[SuccessResult] = {
+  def v1MfaGaInitiate(authorization: Option[String] = None, accept: Option[String] = None): Option[SuccessResult] = {
     // create path and map variables
-    val path = "/v1/mfa/ga/initiate".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/mfa/ga/initiate".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -149,29 +145,27 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccessResult
    */
-  def v1UserMfaAuthyCall (authorization: String, accept: String) : Option[SuccessResult] = {
+  def v1UserMfaAuthyCall(authorization: Option[String] = None, accept: Option[String] = None): Option[SuccessResult] = {
     // create path and map variables
-    val path = "/v1/mfa/authy/call".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/mfa/authy/call".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -194,31 +188,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccessResult
    */
-  def v1UserMfaAuthyDisableCode (code: String, authorization: String, accept: String) : Option[SuccessResult] = {
+  def v1UserMfaAuthyDisableCode(code: String, authorization: Option[String] = None, accept: Option[String] = None): Option[SuccessResult] = {
     // create path and map variables
-    val path = "/v1/user/mfa/authy/disable/{code}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "code" + "\\}",apiInvoker.escape(code))
+    val path = "/v1/user/mfa/authy/disable/{code}".replaceAll("\\{format\\}", "json").replaceAll("\\{" + "code" + "\\}",apiInvoker.escape(code))
 
-
-    val contentTypes = List("application/json", "application/json")
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    if (code == null) throw new Exception("Missing required parameter 'code' when calling SecurityActionsApi->v1UserMfaAuthyDisableCode")
+
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -241,31 +233,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccessResult
    */
-  def v1UserMfaAuthyInitiateEnable (body: CodeCountryMobile, authorization: String, accept: String) : Option[SuccessResult] = {
+  def v1UserMfaAuthyInitiateEnable(body: CodeCountryMobile, authorization: Option[String] = None, accept: Option[String] = None): Option[SuccessResult] = {
     // create path and map variables
-    val path = "/v1/user/mfa/authy/initiate/enable".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/mfa/authy/initiate/enable".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
     if (body == null) throw new Exception("Missing required parameter 'body' when calling SecurityActionsApi->v1UserMfaAuthyInitiateEnable")
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = body
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -287,29 +277,27 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccessResult
    */
-  def v1UserMfaAuthySms (authorization: String, accept: String) : Option[SuccessResult] = {
+  def v1UserMfaAuthySms(authorization: Option[String] = None, accept: Option[String] = None): Option[SuccessResult] = {
     // create path and map variables
-    val path = "/v1/mfa/authy/sms".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/mfa/authy/sms".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -332,31 +320,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccessResult
    */
-  def v1UserMfaGaDisableCode (code: String, authorization: String, accept: String) : Option[SuccessResult] = {
+  def v1UserMfaGaDisableCode(code: String, authorization: Option[String] = None, accept: Option[String] = None): Option[SuccessResult] = {
     // create path and map variables
-    val path = "/v1/user/mfa/ga/disable/{code}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "code" + "\\}",apiInvoker.escape(code))
+    val path = "/v1/user/mfa/ga/disable/{code}".replaceAll("\\{format\\}", "json").replaceAll("\\{" + "code" + "\\}",apiInvoker.escape(code))
 
-
-    val contentTypes = List("application/json", "application/json")
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    if (code == null) throw new Exception("Missing required parameter 'code' when calling SecurityActionsApi->v1UserMfaGaDisableCode")
+
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -379,31 +365,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccessResult
    */
-  def v1UserMfaGaInitiateEnable (body: Code, authorization: String, accept: String) : Option[SuccessResult] = {
+  def v1UserMfaGaInitiateEnable(body: Code, authorization: Option[String] = None, accept: Option[String] = None): Option[SuccessResult] = {
     // create path and map variables
-    val path = "/v1/user/mfa/ga/initiate/enable".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/mfa/ga/initiate/enable".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
     if (body == null) throw new Exception("Missing required parameter 'body' when calling SecurityActionsApi->v1UserMfaGaInitiateEnable")
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = body
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -426,31 +410,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccessResult
    */
-  def v1UserPasswordChange (body: ChangePassword, authorization: String, accept: String) : Option[SuccessResult] = {
+  def v1UserPasswordChange(body: ChangePassword, authorization: Option[String] = None, accept: Option[String] = None): Option[SuccessResult] = {
     // create path and map variables
-    val path = "/v1/user/password/change".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/password/change".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
     if (body == null) throw new Exception("Missing required parameter 'body' when calling SecurityActionsApi->v1UserPasswordChange")
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = body
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -472,30 +454,28 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccessResult
    */
-  def v1UserPasswordReset (body: ResetPassword, accept: String) : Option[SuccessResult] = {
+  def v1UserPasswordReset(body: ResetPassword, accept: Option[String] = None): Option[SuccessResult] = {
     // create path and map variables
-    val path = "/v1/user/password/reset".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/password/reset".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
     if (body == null) throw new Exception("Missing required parameter 'body' when calling SecurityActionsApi->v1UserPasswordReset")
 
-        
-    headerParams += "accept" -> accept
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = body
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {

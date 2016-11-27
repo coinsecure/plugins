@@ -1,6 +1,6 @@
 # AccountActionsApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**v1logininitiate**](AccountActionsApi.md#v1logininitiate) | **POST** /v1/login/initiate | Initiate Login
 [**v1loginpasswordforgot**](AccountActionsApi.md#v1loginpasswordforgot) | **POST** /v1/login/password/forgot | Sends an email with a password reset token
 [**v1signup**](AccountActionsApi.md#v1signup) | **POST** /v1/signup | Creates a new Unverified Account.
+[**v1signupverifyToken**](AccountActionsApi.md#v1signupverifyToken) | **PUT** /v1/signup/verify/{token} | Verifies an Email token for Signup .
 [**v1userbankotpNumber**](AccountActionsApi.md#v1userbankotpNumber) | **GET** /v1/user/bank/otp/{number} | Send OTP for Bank Link
 [**v1userexchangekyc**](AccountActionsApi.md#v1userexchangekyc) | **PUT** /v1/user/exchange/kyc | Submits a New Bank Link and initial KYC Documents.
 [**v1usergcmCode**](AccountActionsApi.md#v1usergcmCode) | **DELETE** /v1/user/gcm/{code} | Delete GCM Code
@@ -210,6 +211,53 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json, application/xml, application/csv
 
+<a name="v1signupverifyToken"></a>
+# **v1signupverifyToken**
+> StandardVerifySignupResultData v1signupverifyToken(token, accept)
+
+Verifies an Email token for Signup .
+
+Creates a new Coinsecure Account.
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.AccountActionsApi;
+
+
+AccountActionsApi apiInstance = new AccountActionsApi();
+String token = "token_example"; // String | 
+String accept = "accept_example"; // String | JSON, XML or CSV can be returned (Optional)
+try {
+    StandardVerifySignupResultData result = apiInstance.v1signupverifyToken(token, accept);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccountActionsApi#v1signupverifyToken");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **String**|  |
+ **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional]
+
+### Return type
+
+[**StandardVerifySignupResultData**](StandardVerifySignupResultData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
 <a name="v1userbankotpNumber"></a>
 # **v1userbankotpNumber**
 > StandardInitiateLoginResultData v1userbankotpNumber(number, authorization, accept)
@@ -283,7 +331,7 @@ String ifsc = "ifsc_example"; // String | Please enter your IFSC Code.
 String acctType = "acctType_example"; // String | Please enter your Coinsecure account type. Allowable Values are Personal or Company.
 String banType = "banType_example"; // String | Please enter your Bank account type. Allowable Values are Savings or Current.
 String phone = "phone_example"; // String | Please enter your Valid Phone Number.
-String otp = "otp_example"; // String | Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.
+String otp = "otp_example"; // String | Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.
 File file = new File("/path/to/file.txt"); // File | Enter a valid image, pdf or zip file under 5 MB in size.
 String authorization = "authorization_example"; // String | Enter a valid Api Key.
 String message = "message_example"; // String | Please enter an optional message if needed.
@@ -309,7 +357,7 @@ Name | Type | Description  | Notes
  **acctType** | **String**| Please enter your Coinsecure account type. Allowable Values are Personal or Company. |
  **banType** | **String**| Please enter your Bank account type. Allowable Values are Savings or Current. |
  **phone** | **String**| Please enter your Valid Phone Number. |
- **otp** | **String**| Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. |
+ **otp** | **String**| Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. |
  **file** | **File**| Enter a valid image, pdf or zip file under 5 MB in size. |
  **authorization** | **String**| Enter a valid Api Key. | [optional]
  **message** | **String**| Please enter an optional message if needed. | [optional]

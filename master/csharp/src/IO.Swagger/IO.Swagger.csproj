@@ -24,7 +24,7 @@ limitations under the License.
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A30C531E-2909-489E-B626-5547C90DE69D}</ProjectGuid>
+    <ProjectGuid>{D3CF9767-9567-4047-AF69-BC1A9A843C6F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IO.Swagger</RootNamespace>
@@ -54,6 +54,7 @@ limitations under the License.
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
@@ -70,13 +71,14 @@ limitations under the License.
         <HintPath Condition="Exists('..\..\packages')">..\..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
       <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
     </Reference>
+    
   </ItemGroup>
   <ItemGroup>
     <Compile Include="**\*.cs"/>
   </ItemGroup>
   <ItemGroup>
       <None Include="packages.config" />
+      
   </ItemGroup>
-  <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
-</Project>
+  <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" /></Project>
 

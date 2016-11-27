@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class SuccessInitiateLoginResponse  {
+public class SuccessInitiateLoginResponse {
   
   @SerializedName("info")
   private String info = null;
@@ -91,19 +89,19 @@ public class SuccessInitiateLoginResponse  {
       return false;
     }
     SuccessInitiateLoginResponse successInitiateLoginResponse = (SuccessInitiateLoginResponse) o;
-    return (info == null ? successInitiateLoginResponse.info == null : info.equals(successInitiateLoginResponse.info)) &&
-        (validTill == null ? successInitiateLoginResponse.validTill == null : validTill.equals(successInitiateLoginResponse.validTill)) &&
-        (mfa == null ? successInitiateLoginResponse.mfa == null : mfa.equals(successInitiateLoginResponse.mfa)) &&
-        (token == null ? successInitiateLoginResponse.token == null : token.equals(successInitiateLoginResponse.token));
+    return (this.info == null ? successInitiateLoginResponse.info == null : this.info.equals(successInitiateLoginResponse.info)) &&
+        (this.validTill == null ? successInitiateLoginResponse.validTill == null : this.validTill.equals(successInitiateLoginResponse.validTill)) &&
+        (this.mfa == null ? successInitiateLoginResponse.mfa == null : this.mfa.equals(successInitiateLoginResponse.mfa)) &&
+        (this.token == null ? successInitiateLoginResponse.token == null : this.token.equals(successInitiateLoginResponse.token));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (info == null ? 0: info.hashCode());
-    result = 31 * result + (validTill == null ? 0: validTill.hashCode());
-    result = 31 * result + (mfa == null ? 0: mfa.hashCode());
-    result = 31 * result + (token == null ? 0: token.hashCode());
+    result = 31 * result + (this.info == null ? 0: this.info.hashCode());
+    result = 31 * result + (this.validTill == null ? 0: this.validTill.hashCode());
+    result = 31 * result + (this.mfa == null ? 0: this.mfa.hashCode());
+    result = 31 * result + (this.token == null ? 0: this.token.hashCode());
     return result;
   }
 

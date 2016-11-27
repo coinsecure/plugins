@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class SuccCoinRefData  {
+public class SuccCoinRefData {
   
   @SerializedName("refPercent")
   private Double refPercent = null;
@@ -139,27 +137,27 @@ public class SuccCoinRefData  {
       return false;
     }
     SuccCoinRefData succCoinRefData = (SuccCoinRefData) o;
-    return (refPercent == null ? succCoinRefData.refPercent == null : refPercent.equals(succCoinRefData.refPercent)) &&
-        (time == null ? succCoinRefData.time == null : time.equals(succCoinRefData.time)) &&
-        (orderID == null ? succCoinRefData.orderID == null : orderID.equals(succCoinRefData.orderID)) &&
-        (refID == null ? succCoinRefData.refID == null : refID.equals(succCoinRefData.refID)) &&
-        (tradeID == null ? succCoinRefData.tradeID == null : tradeID.equals(succCoinRefData.tradeID)) &&
-        (newUserIDMasked == null ? succCoinRefData.newUserIDMasked == null : newUserIDMasked.equals(succCoinRefData.newUserIDMasked)) &&
-        (depositID == null ? succCoinRefData.depositID == null : depositID.equals(succCoinRefData.depositID)) &&
-        (amtPaid == null ? succCoinRefData.amtPaid == null : amtPaid.equals(succCoinRefData.amtPaid));
+    return (this.refPercent == null ? succCoinRefData.refPercent == null : this.refPercent.equals(succCoinRefData.refPercent)) &&
+        (this.time == null ? succCoinRefData.time == null : this.time.equals(succCoinRefData.time)) &&
+        (this.orderID == null ? succCoinRefData.orderID == null : this.orderID.equals(succCoinRefData.orderID)) &&
+        (this.refID == null ? succCoinRefData.refID == null : this.refID.equals(succCoinRefData.refID)) &&
+        (this.tradeID == null ? succCoinRefData.tradeID == null : this.tradeID.equals(succCoinRefData.tradeID)) &&
+        (this.newUserIDMasked == null ? succCoinRefData.newUserIDMasked == null : this.newUserIDMasked.equals(succCoinRefData.newUserIDMasked)) &&
+        (this.depositID == null ? succCoinRefData.depositID == null : this.depositID.equals(succCoinRefData.depositID)) &&
+        (this.amtPaid == null ? succCoinRefData.amtPaid == null : this.amtPaid.equals(succCoinRefData.amtPaid));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (refPercent == null ? 0: refPercent.hashCode());
-    result = 31 * result + (time == null ? 0: time.hashCode());
-    result = 31 * result + (orderID == null ? 0: orderID.hashCode());
-    result = 31 * result + (refID == null ? 0: refID.hashCode());
-    result = 31 * result + (tradeID == null ? 0: tradeID.hashCode());
-    result = 31 * result + (newUserIDMasked == null ? 0: newUserIDMasked.hashCode());
-    result = 31 * result + (depositID == null ? 0: depositID.hashCode());
-    result = 31 * result + (amtPaid == null ? 0: amtPaid.hashCode());
+    result = 31 * result + (this.refPercent == null ? 0: this.refPercent.hashCode());
+    result = 31 * result + (this.time == null ? 0: this.time.hashCode());
+    result = 31 * result + (this.orderID == null ? 0: this.orderID.hashCode());
+    result = 31 * result + (this.refID == null ? 0: this.refID.hashCode());
+    result = 31 * result + (this.tradeID == null ? 0: this.tradeID.hashCode());
+    result = 31 * result + (this.newUserIDMasked == null ? 0: this.newUserIDMasked.hashCode());
+    result = 31 * result + (this.depositID == null ? 0: this.depositID.hashCode());
+    result = 31 * result + (this.amtPaid == null ? 0: this.amtPaid.hashCode());
     return result;
   }
 

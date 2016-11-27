@@ -56,28 +56,35 @@ public:
     SWGKYCData* fromJson(QString &jsonString);
 
     SWGTimeKYCData* getTimeDetails();
-    void setTimeDetails(SWGTimeKYCData* timeDetails);
-QString* getKycID();
-    void setKycID(QString* kycID);
-QString* getFirstName();
-    void setFirstName(QString* firstName);
-QString* getLastName();
-    void setLastName(QString* lastName);
-QString* getStatus();
+    void setTimeDetails(SWGTimeKYCData* time_details);
+
+    QString* getKycId();
+    void setKycId(QString* kyc_id);
+
+    QString* getFirstName();
+    void setFirstName(QString* first_name);
+
+    QString* getLastName();
+    void setLastName(QString* last_name);
+
+    QString* getStatus();
     void setStatus(QString* status);
-QString* getUserType();
-    void setUserType(QString* userType);
-QString* getInfo();
+
+    QString* getUserType();
+    void setUserType(QString* user_type);
+
+    QString* getInfo();
     void setInfo(QString* info);
 
+
 private:
-    SWGTimeKYCData* timeDetails;
-QString* kycID;
-QString* firstName;
-QString* lastName;
-QString* status;
-QString* userType;
-QString* info;
+    SWGTimeKYCData* time_details;
+    QString* kyc_id;
+    QString* first_name;
+    QString* last_name;
+    QString* status;
+    QString* user_type;
+    QString* info;
 };
 
 } /* namespace Swagger */

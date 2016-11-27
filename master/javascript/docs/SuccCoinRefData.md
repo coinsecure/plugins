@@ -4,12 +4,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **refPercent** | **Number** |  | 
-**time** | **Integer** |  | 
+**time** | **Number** |  | 
 **orderID** | **String** |  | 
 **refID** | **String** |  | 
 **tradeID** | **String** |  | 
 **newUserIDMasked** | **String** |  | 
 **depositID** | **String** |  | 
-**amtPaid** | **Integer** |  | 
+**amtPaid** | **Number** |  | 
 
 

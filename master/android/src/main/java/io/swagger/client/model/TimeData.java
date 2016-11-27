@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class TimeData  {
+public class TimeData {
   
   @SerializedName("time")
   private Long time = null;
@@ -79,17 +77,17 @@ public class TimeData  {
       return false;
     }
     TimeData timeData = (TimeData) o;
-    return (time == null ? timeData.time == null : time.equals(timeData.time)) &&
-        (verifiedTime == null ? timeData.verifiedTime == null : verifiedTime.equals(timeData.verifiedTime)) &&
-        (completedTime == null ? timeData.completedTime == null : completedTime.equals(timeData.completedTime));
+    return (this.time == null ? timeData.time == null : this.time.equals(timeData.time)) &&
+        (this.verifiedTime == null ? timeData.verifiedTime == null : this.verifiedTime.equals(timeData.verifiedTime)) &&
+        (this.completedTime == null ? timeData.completedTime == null : this.completedTime.equals(timeData.completedTime));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (time == null ? 0: time.hashCode());
-    result = 31 * result + (verifiedTime == null ? 0: verifiedTime.hashCode());
-    result = 31 * result + (completedTime == null ? 0: completedTime.hashCode());
+    result = 31 * result + (this.time == null ? 0: this.time.hashCode());
+    result = 31 * result + (this.verifiedTime == null ? 0: this.verifiedTime.hashCode());
+    result = 31 * result + (this.completedTime == null ? 0: this.completedTime.hashCode());
     return result;
   }
 

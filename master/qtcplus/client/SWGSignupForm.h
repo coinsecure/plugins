@@ -56,21 +56,26 @@ public:
 
     QString* getName();
     void setName(QString* name);
-QString* getEmail();
+
+    QString* getEmail();
     void setEmail(QString* email);
-QString* getPassword();
+
+    QString* getPassword();
     void setPassword(QString* password);
-QString* getRepeatPassword();
-    void setRepeatPassword(QString* repeatPassword);
-QString* getRefID();
-    void setRefID(QString* refID);
+
+    QString* getRepeatPassword();
+    void setRepeatPassword(QString* repeat_password);
+
+    QString* getRefId();
+    void setRefId(QString* ref_id);
+
 
 private:
     QString* name;
-QString* email;
-QString* password;
-QString* repeatPassword;
-QString* refID;
+    QString* email;
+    QString* password;
+    QString* repeat_password;
+    QString* ref_id;
 };
 
 } /* namespace Swagger */

@@ -51,25 +51,29 @@ SWGConfirmDataResponse::~SWGConfirmDataResponse() {
 void
 SWGConfirmDataResponse::init() {
     success = false;
-message = new SWGConfirmData();
-method = new QString("");
-title = new QString("");
-time = NULL;
+    message = new SWGConfirmData();
+    method = new QString("");
+    title = new QString("");
+    time = NULL;
 }
 
 void
 SWGConfirmDataResponse::cleanup() {
     
-if(message != NULL) {
+
+    if(message != nullptr) {
         delete message;
     }
-if(method != NULL) {
+
+    if(method != nullptr) {
         delete method;
     }
-if(title != NULL) {
+
+    if(title != nullptr) {
         delete title;
     }
-if(time != NULL) {
+
+    if(time != nullptr) {
         delete time;
     }
 }
@@ -85,11 +89,11 @@ SWGConfirmDataResponse::fromJson(QString &json) {
 
 void
 SWGConfirmDataResponse::fromJsonObject(QJsonObject &pJson) {
-    setValue(&success, pJson["success"], "bool", "");
-setValue(&message, pJson["message"], "SWGConfirmData", "SWGConfirmData");
-setValue(&method, pJson["method"], "QString", "QString");
-setValue(&title, pJson["title"], "QString", "QString");
-setValue(&time, pJson["time"], "QDateTime", "QDateTime");
+    ::Swagger::setValue(&success, pJson["success"], "bool", "");
+    ::Swagger::setValue(&message, pJson["message"], "SWGConfirmData", "SWGConfirmData");
+    ::Swagger::setValue(&method, pJson["method"], "QString", "QString");
+    ::Swagger::setValue(&title, pJson["title"], "QString", "QString");
+    ::Swagger::setValue(&time, pJson["time"], "QDateTime", "QDateTime");
 }
 
 QString
@@ -105,27 +109,16 @@ SWGConfirmDataResponse::asJson ()
 QJsonObject*
 SWGConfirmDataResponse::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("success", QJsonValue(success));
 
-    
     toJsonValue(QString("message"), message, obj, QString("SWGConfirmData"));
-    
-        
 
-    
     toJsonValue(QString("method"), method, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("title"), title, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("time"), time, obj, QString("QDateTime"));
-    
-        
 
     return obj;
 }

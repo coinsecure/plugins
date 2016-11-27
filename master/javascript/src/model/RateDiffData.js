@@ -52,8 +52,8 @@
    * Constructs a new <code>RateDiffData</code>.
    * @alias module:model/RateDiffData
    * @class
-   * @param rate {Integer} 
-   * @param difference {Integer} 
+   * @param rate {Number} 
+   * @param difference {Number} 
    */
   var exports = function(rate, difference) {
     var _this = this;
@@ -74,21 +74,21 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('rate')) {
-        obj['rate'] = ApiClient.convertToType(data['rate'], 'Integer');
+        obj['rate'] = ApiClient.convertToType(data['rate'], 'Number');
       }
       if (data.hasOwnProperty('difference')) {
-        obj['difference'] = ApiClient.convertToType(data['difference'], 'Integer');
+        obj['difference'] = ApiClient.convertToType(data['difference'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} rate
+   * @member {Number} rate
    */
   exports.prototype['rate'] = undefined;
   /**
-   * @member {Integer} difference
+   * @member {Number} difference
    */
   exports.prototype['difference'] = undefined;
 

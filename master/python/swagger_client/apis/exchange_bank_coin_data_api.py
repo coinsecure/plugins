@@ -104,6 +104,8 @@ class ExchangeBankCoinDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -117,6 +119,9 @@ class ExchangeBankCoinDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankcoinaddresses`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/addresses'.replace('{format}', 'json')
         path_params = {}
@@ -157,7 +162,10 @@ class ExchangeBankCoinDataApi(object):
                                             response_type='TradeAddressDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankcoinbalanceavailable(self, authorization, **kwargs):
         """
@@ -212,6 +220,8 @@ class ExchangeBankCoinDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -225,6 +235,9 @@ class ExchangeBankCoinDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankcoinbalanceavailable`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/balance/total'.replace('{format}', 'json')
         path_params = {}
@@ -265,7 +278,10 @@ class ExchangeBankCoinDataApi(object):
                                             response_type='VolDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankcoinbalancepending(self, authorization, **kwargs):
         """
@@ -320,6 +336,8 @@ class ExchangeBankCoinDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -333,6 +351,9 @@ class ExchangeBankCoinDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankcoinbalancepending`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/balance/pending'.replace('{format}', 'json')
         path_params = {}
@@ -373,7 +394,10 @@ class ExchangeBankCoinDataApi(object):
                                             response_type='VolDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankcoinbalancetotal(self, authorization, **kwargs):
         """
@@ -428,6 +452,8 @@ class ExchangeBankCoinDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -441,6 +467,9 @@ class ExchangeBankCoinDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankcoinbalancetotal`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/balance/available'.replace('{format}', 'json')
         path_params = {}
@@ -481,7 +510,10 @@ class ExchangeBankCoinDataApi(object):
                                             response_type='VolDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankcoindepositcancelled(self, authorization, **kwargs):
         """
@@ -544,6 +576,8 @@ class ExchangeBankCoinDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -557,6 +591,9 @@ class ExchangeBankCoinDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankcoindepositcancelled`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/deposit/cancelled'.replace('{format}', 'json')
         path_params = {}
@@ -605,7 +642,10 @@ class ExchangeBankCoinDataApi(object):
                                             response_type='CoinDepDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankcoindepositunverified(self, authorization, **kwargs):
         """
@@ -668,6 +708,8 @@ class ExchangeBankCoinDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -681,6 +723,9 @@ class ExchangeBankCoinDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankcoindepositunverified`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/deposit/unverified'.replace('{format}', 'json')
         path_params = {}
@@ -729,7 +774,10 @@ class ExchangeBankCoinDataApi(object):
                                             response_type='CoinDepDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankcoindepositverified(self, authorization, **kwargs):
         """
@@ -792,6 +840,8 @@ class ExchangeBankCoinDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -805,6 +855,9 @@ class ExchangeBankCoinDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankcoindepositverified`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/deposit/verified'.replace('{format}', 'json')
         path_params = {}
@@ -853,7 +906,10 @@ class ExchangeBankCoinDataApi(object):
                                             response_type='CoinDepDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankcoinwithdrawcancelled(self, authorization, **kwargs):
         """
@@ -916,6 +972,8 @@ class ExchangeBankCoinDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -929,6 +987,9 @@ class ExchangeBankCoinDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankcoinwithdrawcancelled`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/withdraw/cancelled'.replace('{format}', 'json')
         path_params = {}
@@ -977,7 +1038,10 @@ class ExchangeBankCoinDataApi(object):
                                             response_type='TradeCoinWithdrawDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankcoinwithdrawcompleted(self, authorization, **kwargs):
         """
@@ -1040,6 +1104,8 @@ class ExchangeBankCoinDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1053,6 +1119,9 @@ class ExchangeBankCoinDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankcoinwithdrawcompleted`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/withdraw/completed'.replace('{format}', 'json')
         path_params = {}
@@ -1101,7 +1170,10 @@ class ExchangeBankCoinDataApi(object):
                                             response_type='TradeCoinWithdrawDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankcoinwithdrawunverified(self, authorization, **kwargs):
         """
@@ -1164,6 +1236,8 @@ class ExchangeBankCoinDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1177,6 +1251,9 @@ class ExchangeBankCoinDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankcoinwithdrawunverified`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/withdraw/unverified'.replace('{format}', 'json')
         path_params = {}
@@ -1225,7 +1302,10 @@ class ExchangeBankCoinDataApi(object):
                                             response_type='TradeCoinWithdrawDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebankcoinwithdrawverified(self, authorization, **kwargs):
         """
@@ -1288,6 +1368,8 @@ class ExchangeBankCoinDataApi(object):
         all_params = ['authorization', '_from', 'to', 'max', 'offset', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1301,6 +1383,9 @@ class ExchangeBankCoinDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangebankcoinwithdrawverified`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/coin/withdraw/verified'.replace('{format}', 'json')
         path_params = {}
@@ -1349,4 +1434,7 @@ class ExchangeBankCoinDataApi(object):
                                             response_type='TradeCoinWithdrawDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)

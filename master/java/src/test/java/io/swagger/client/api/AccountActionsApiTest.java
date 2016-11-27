@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -34,6 +34,7 @@ import io.swagger.client.model.StandardInitiateLoginResultData;
 import io.swagger.client.model.Email;
 import io.swagger.client.model.SuccessResult;
 import io.swagger.client.model.SignupForm;
+import io.swagger.client.model.StandardVerifySignupResultData;
 import java.io.File;
 import io.swagger.client.model.NetkiNameAddress;
 import io.swagger.client.model.Address;
@@ -117,6 +118,23 @@ public class AccountActionsApiTest {
         SignupForm body = null;
         String accept = null;
         // SuccessResult response = api.v1signup(body, accept);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Verifies an Email token for Signup .
+     *
+     * Creates a new Coinsecure Account.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void v1signupverifyTokenTest() throws ApiException {
+        String token = null;
+        String accept = null;
+        // StandardVerifySignupResultData response = api.v1signupverifyToken(token, accept);
 
         // TODO: test validations
     }

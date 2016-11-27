@@ -53,11 +53,11 @@
    * @alias module:model/ValidAddressSearchData
    * @class
    * @param address {String} 
-   * @param balance {Integer} 
-   * @param totalReceived {Integer} 
-   * @param unconfirmedBalance {Integer} 
-   * @param unconfirmedTxApperances {Integer} 
-   * @param txApperances {Integer} 
+   * @param balance {Number} 
+   * @param totalReceived {Number} 
+   * @param unconfirmedBalance {Number} 
+   * @param unconfirmedTxApperances {Number} 
+   * @param txApperances {Number} 
    * @param transactions {Array.<String>} 
    */
   var exports = function(address, balance, totalReceived, unconfirmedBalance, unconfirmedTxApperances, txApperances, transactions) {
@@ -87,19 +87,19 @@
         obj['address'] = ApiClient.convertToType(data['address'], 'String');
       }
       if (data.hasOwnProperty('balance')) {
-        obj['balance'] = ApiClient.convertToType(data['balance'], 'Integer');
+        obj['balance'] = ApiClient.convertToType(data['balance'], 'Number');
       }
       if (data.hasOwnProperty('totalReceived')) {
-        obj['totalReceived'] = ApiClient.convertToType(data['totalReceived'], 'Integer');
+        obj['totalReceived'] = ApiClient.convertToType(data['totalReceived'], 'Number');
       }
       if (data.hasOwnProperty('unconfirmedBalance')) {
-        obj['unconfirmedBalance'] = ApiClient.convertToType(data['unconfirmedBalance'], 'Integer');
+        obj['unconfirmedBalance'] = ApiClient.convertToType(data['unconfirmedBalance'], 'Number');
       }
       if (data.hasOwnProperty('unconfirmedTxApperances')) {
-        obj['unconfirmedTxApperances'] = ApiClient.convertToType(data['unconfirmedTxApperances'], 'Integer');
+        obj['unconfirmedTxApperances'] = ApiClient.convertToType(data['unconfirmedTxApperances'], 'Number');
       }
       if (data.hasOwnProperty('txApperances')) {
-        obj['txApperances'] = ApiClient.convertToType(data['txApperances'], 'Integer');
+        obj['txApperances'] = ApiClient.convertToType(data['txApperances'], 'Number');
       }
       if (data.hasOwnProperty('transactions')) {
         obj['transactions'] = ApiClient.convertToType(data['transactions'], ['String']);
@@ -113,23 +113,23 @@
    */
   exports.prototype['address'] = undefined;
   /**
-   * @member {Integer} balance
+   * @member {Number} balance
    */
   exports.prototype['balance'] = undefined;
   /**
-   * @member {Integer} totalReceived
+   * @member {Number} totalReceived
    */
   exports.prototype['totalReceived'] = undefined;
   /**
-   * @member {Integer} unconfirmedBalance
+   * @member {Number} unconfirmedBalance
    */
   exports.prototype['unconfirmedBalance'] = undefined;
   /**
-   * @member {Integer} unconfirmedTxApperances
+   * @member {Number} unconfirmedTxApperances
    */
   exports.prototype['unconfirmedTxApperances'] = undefined;
   /**
-   * @member {Integer} txApperances
+   * @member {Number} txApperances
    */
   exports.prototype['txApperances'] = undefined;
   /**

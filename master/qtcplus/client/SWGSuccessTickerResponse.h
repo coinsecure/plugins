@@ -54,34 +54,43 @@ public:
     SWGSuccessTickerResponse* fromJson(QString &jsonString);
 
     qint64 getLastPrice();
-    void setLastPrice(qint64 lastPrice);
-qint64 getTimestamp();
+    void setLastPrice(qint64 last_price);
+
+    qint64 getTimestamp();
     void setTimestamp(qint64 timestamp);
-qint64 getBid();
+
+    qint64 getBid();
     void setBid(qint64 bid);
-qint64 getAsk();
+
+    qint64 getAsk();
     void setAsk(qint64 ask);
-qint64 getFiatVolume();
-    void setFiatVolume(qint64 fiatVolume);
-qint64 getCoinVolume();
-    void setCoinVolume(qint64 coinVolume);
-qint64 getOpen();
+
+    qint64 getFiatVolume();
+    void setFiatVolume(qint64 fiat_volume);
+
+    qint64 getCoinVolume();
+    void setCoinVolume(qint64 coin_volume);
+
+    qint64 getOpen();
     void setOpen(qint64 open);
-qint64 getHigh();
+
+    qint64 getHigh();
     void setHigh(qint64 high);
-qint64 getLow();
+
+    qint64 getLow();
     void setLow(qint64 low);
 
+
 private:
-    qint64 lastPrice;
-qint64 timestamp;
-qint64 bid;
-qint64 ask;
-qint64 fiatVolume;
-qint64 coinVolume;
-qint64 open;
-qint64 high;
-qint64 low;
+    qint64 last_price;
+    qint64 timestamp;
+    qint64 bid;
+    qint64 ask;
+    qint64 fiat_volume;
+    qint64 coin_volume;
+    qint64 open;
+    qint64 high;
+    qint64 low;
 };
 
 } /* namespace Swagger */

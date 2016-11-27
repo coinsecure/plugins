@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **info** | **String** |  | 
-**validTill** | **Integer** |  | 
+**validTill** | **Number** |  | 
 **mfa** | **String** |  | 
 **token** | **String** |  | 
 

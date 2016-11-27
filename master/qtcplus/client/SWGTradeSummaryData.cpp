@@ -50,12 +50,12 @@ SWGTradeSummaryData::~SWGTradeSummaryData() {
 
 void
 SWGTradeSummaryData::init() {
-    completedAsksSum = 0L;
-completedBidsSum = 0L;
-completedAsksCount = 0L;
-completedBidsCount = 0L;
-pendingAsksCount = 0L;
-pendingBidsCount = 0L;
+    completed_asks_sum = 0L;
+    completed_bids_sum = 0L;
+    completed_asks_count = 0L;
+    completed_bids_count = 0L;
+    pending_asks_count = 0L;
+    pending_bids_count = 0L;
 }
 
 void
@@ -79,12 +79,12 @@ SWGTradeSummaryData::fromJson(QString &json) {
 
 void
 SWGTradeSummaryData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&completedAsksSum, pJson["completedAsksSum"], "qint64", "");
-setValue(&completedBidsSum, pJson["completedBidsSum"], "qint64", "");
-setValue(&completedAsksCount, pJson["completedAsksCount"], "qint64", "");
-setValue(&completedBidsCount, pJson["completedBidsCount"], "qint64", "");
-setValue(&pendingAsksCount, pJson["pendingAsksCount"], "qint64", "");
-setValue(&pendingBidsCount, pJson["pendingBidsCount"], "qint64", "");
+    ::Swagger::setValue(&completed_asks_sum, pJson["completed_asks_sum"], "qint64", "");
+    ::Swagger::setValue(&completed_bids_sum, pJson["completed_bids_sum"], "qint64", "");
+    ::Swagger::setValue(&completed_asks_count, pJson["completed_asks_count"], "qint64", "");
+    ::Swagger::setValue(&completed_bids_count, pJson["completed_bids_count"], "qint64", "");
+    ::Swagger::setValue(&pending_asks_count, pJson["pending_asks_count"], "qint64", "");
+    ::Swagger::setValue(&pending_bids_count, pJson["pending_bids_count"], "qint64", "");
 }
 
 QString
@@ -100,68 +100,74 @@ SWGTradeSummaryData::asJson ()
 QJsonObject*
 SWGTradeSummaryData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
-    obj->insert("completedAsksSum", QJsonValue(completedAsksSum));
-obj->insert("completedBidsSum", QJsonValue(completedBidsSum));
-obj->insert("completedAsksCount", QJsonValue(completedAsksCount));
-obj->insert("completedBidsCount", QJsonValue(completedBidsCount));
-obj->insert("pendingAsksCount", QJsonValue(pendingAsksCount));
-obj->insert("pendingBidsCount", QJsonValue(pendingBidsCount));
+    
+    obj->insert("completed_asks_sum", QJsonValue(completed_asks_sum));
+
+    obj->insert("completed_bids_sum", QJsonValue(completed_bids_sum));
+
+    obj->insert("completed_asks_count", QJsonValue(completed_asks_count));
+
+    obj->insert("completed_bids_count", QJsonValue(completed_bids_count));
+
+    obj->insert("pending_asks_count", QJsonValue(pending_asks_count));
+
+    obj->insert("pending_bids_count", QJsonValue(pending_bids_count));
 
     return obj;
 }
 
 qint64
 SWGTradeSummaryData::getCompletedAsksSum() {
-    return completedAsksSum;
+    return completed_asks_sum;
 }
 void
-SWGTradeSummaryData::setCompletedAsksSum(qint64 completedAsksSum) {
-    this->completedAsksSum = completedAsksSum;
+SWGTradeSummaryData::setCompletedAsksSum(qint64 completed_asks_sum) {
+    this->completed_asks_sum = completed_asks_sum;
 }
 
 qint64
 SWGTradeSummaryData::getCompletedBidsSum() {
-    return completedBidsSum;
+    return completed_bids_sum;
 }
 void
-SWGTradeSummaryData::setCompletedBidsSum(qint64 completedBidsSum) {
-    this->completedBidsSum = completedBidsSum;
+SWGTradeSummaryData::setCompletedBidsSum(qint64 completed_bids_sum) {
+    this->completed_bids_sum = completed_bids_sum;
 }
 
 qint64
 SWGTradeSummaryData::getCompletedAsksCount() {
-    return completedAsksCount;
+    return completed_asks_count;
 }
 void
-SWGTradeSummaryData::setCompletedAsksCount(qint64 completedAsksCount) {
-    this->completedAsksCount = completedAsksCount;
+SWGTradeSummaryData::setCompletedAsksCount(qint64 completed_asks_count) {
+    this->completed_asks_count = completed_asks_count;
 }
 
 qint64
 SWGTradeSummaryData::getCompletedBidsCount() {
-    return completedBidsCount;
+    return completed_bids_count;
 }
 void
-SWGTradeSummaryData::setCompletedBidsCount(qint64 completedBidsCount) {
-    this->completedBidsCount = completedBidsCount;
+SWGTradeSummaryData::setCompletedBidsCount(qint64 completed_bids_count) {
+    this->completed_bids_count = completed_bids_count;
 }
 
 qint64
 SWGTradeSummaryData::getPendingAsksCount() {
-    return pendingAsksCount;
+    return pending_asks_count;
 }
 void
-SWGTradeSummaryData::setPendingAsksCount(qint64 pendingAsksCount) {
-    this->pendingAsksCount = pendingAsksCount;
+SWGTradeSummaryData::setPendingAsksCount(qint64 pending_asks_count) {
+    this->pending_asks_count = pending_asks_count;
 }
 
 qint64
 SWGTradeSummaryData::getPendingBidsCount() {
-    return pendingBidsCount;
+    return pending_bids_count;
 }
 void
-SWGTradeSummaryData::setPendingBidsCount(qint64 pendingBidsCount) {
-    this->pendingBidsCount = pendingBidsCount;
+SWGTradeSummaryData::setPendingBidsCount(qint64 pending_bids_count) {
+    this->pending_bids_count = pending_bids_count;
 }
 
 

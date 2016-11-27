@@ -129,6 +129,29 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of SuccessResult</returns>
         ApiResponse<SuccessResult> V1signupWithHttpInfo (SignupForm body, string accept = null);
         /// <summary>
+        /// Verifies an Email token for Signup .
+        /// </summary>
+        /// <remarks>
+        /// Creates a new Coinsecure Account.
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token"></param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>StandardVerifySignupResultData</returns>
+        StandardVerifySignupResultData V1signupverifyToken (string token, string accept = null);
+
+        /// <summary>
+        /// Verifies an Email token for Signup .
+        /// </summary>
+        /// <remarks>
+        /// Creates a new Coinsecure Account.
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token"></param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>ApiResponse of StandardVerifySignupResultData</returns>
+        ApiResponse<StandardVerifySignupResultData> V1signupverifyTokenWithHttpInfo (string token, string accept = null);
+        /// <summary>
         /// Send OTP for Bank Link
         /// </summary>
         /// <remarks>
@@ -168,7 +191,7 @@ namespace IO.Swagger.Api
         /// <param name="acctType">Please enter your Coinsecure account type. Allowable Values are Personal or Company.</param>
         /// <param name="banType">Please enter your Bank account type. Allowable Values are Savings or Current.</param>
         /// <param name="phone">Please enter your Valid Phone Number.</param>
-        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.</param>
+        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.</param>
         /// <param name="file">Enter a valid image, pdf or zip file under 5 MB in size.</param>
         /// <param name="authorization">Enter a valid Api Key. (optional)</param>
         /// <param name="message">Please enter an optional message if needed. (optional)</param>
@@ -191,7 +214,7 @@ namespace IO.Swagger.Api
         /// <param name="acctType">Please enter your Coinsecure account type. Allowable Values are Personal or Company.</param>
         /// <param name="banType">Please enter your Bank account type. Allowable Values are Savings or Current.</param>
         /// <param name="phone">Please enter your Valid Phone Number.</param>
-        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.</param>
+        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.</param>
         /// <param name="file">Enter a valid image, pdf or zip file under 5 MB in size.</param>
         /// <param name="authorization">Enter a valid Api Key. (optional)</param>
         /// <param name="message">Please enter an optional message if needed. (optional)</param>
@@ -543,6 +566,29 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (SuccessResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<SuccessResult>> V1signupAsyncWithHttpInfo (SignupForm body, string accept = null);
         /// <summary>
+        /// Verifies an Email token for Signup .
+        /// </summary>
+        /// <remarks>
+        /// Creates a new Coinsecure Account.
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token"></param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>Task of StandardVerifySignupResultData</returns>
+        System.Threading.Tasks.Task<StandardVerifySignupResultData> V1signupverifyTokenAsync (string token, string accept = null);
+
+        /// <summary>
+        /// Verifies an Email token for Signup .
+        /// </summary>
+        /// <remarks>
+        /// Creates a new Coinsecure Account.
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token"></param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>Task of ApiResponse (StandardVerifySignupResultData)</returns>
+        System.Threading.Tasks.Task<ApiResponse<StandardVerifySignupResultData>> V1signupverifyTokenAsyncWithHttpInfo (string token, string accept = null);
+        /// <summary>
         /// Send OTP for Bank Link
         /// </summary>
         /// <remarks>
@@ -582,7 +628,7 @@ namespace IO.Swagger.Api
         /// <param name="acctType">Please enter your Coinsecure account type. Allowable Values are Personal or Company.</param>
         /// <param name="banType">Please enter your Bank account type. Allowable Values are Savings or Current.</param>
         /// <param name="phone">Please enter your Valid Phone Number.</param>
-        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.</param>
+        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.</param>
         /// <param name="file">Enter a valid image, pdf or zip file under 5 MB in size.</param>
         /// <param name="authorization">Enter a valid Api Key. (optional)</param>
         /// <param name="message">Please enter an optional message if needed. (optional)</param>
@@ -605,7 +651,7 @@ namespace IO.Swagger.Api
         /// <param name="acctType">Please enter your Coinsecure account type. Allowable Values are Personal or Company.</param>
         /// <param name="banType">Please enter your Bank account type. Allowable Values are Savings or Current.</param>
         /// <param name="phone">Please enter your Valid Phone Number.</param>
-        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.</param>
+        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.</param>
         /// <param name="file">Enter a valid image, pdf or zip file under 5 MB in size.</param>
         /// <param name="authorization">Enter a valid Api Key. (optional)</param>
         /// <param name="message">Please enter an optional message if needed. (optional)</param>
@@ -1643,6 +1689,159 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// Verifies an Email token for Signup . Creates a new Coinsecure Account.
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token"></param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>StandardVerifySignupResultData</returns>
+        public StandardVerifySignupResultData V1signupverifyToken (string token, string accept = null)
+        {
+             ApiResponse<StandardVerifySignupResultData> localVarResponse = V1signupverifyTokenWithHttpInfo(token, accept);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Verifies an Email token for Signup . Creates a new Coinsecure Account.
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token"></param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>ApiResponse of StandardVerifySignupResultData</returns>
+        public ApiResponse< StandardVerifySignupResultData > V1signupverifyTokenWithHttpInfo (string token, string accept = null)
+        {
+            // verify the required parameter 'token' is set
+            if (token == null)
+                throw new ApiException(400, "Missing required parameter 'token' when calling AccountActionsApi->V1signupverifyToken");
+
+            var localVarPath = "/v1/signup/verify/{token}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json", 
+                "application/xml", 
+                "application/csv"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (token != null) localVarPathParams.Add("token", Configuration.ApiClient.ParameterToString(token)); // path parameter
+            if (accept != null) localVarHeaderParams.Add("accept", Configuration.ApiClient.ParameterToString(accept)); // header parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V1signupverifyToken", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<StandardVerifySignupResultData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (StandardVerifySignupResultData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(StandardVerifySignupResultData)));
+            
+        }
+
+        /// <summary>
+        /// Verifies an Email token for Signup . Creates a new Coinsecure Account.
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token"></param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>Task of StandardVerifySignupResultData</returns>
+        public async System.Threading.Tasks.Task<StandardVerifySignupResultData> V1signupverifyTokenAsync (string token, string accept = null)
+        {
+             ApiResponse<StandardVerifySignupResultData> localVarResponse = await V1signupverifyTokenAsyncWithHttpInfo(token, accept);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Verifies an Email token for Signup . Creates a new Coinsecure Account.
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="token"></param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>Task of ApiResponse (StandardVerifySignupResultData)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<StandardVerifySignupResultData>> V1signupverifyTokenAsyncWithHttpInfo (string token, string accept = null)
+        {
+            // verify the required parameter 'token' is set
+            if (token == null)
+                throw new ApiException(400, "Missing required parameter 'token' when calling AccountActionsApi->V1signupverifyToken");
+
+            var localVarPath = "/v1/signup/verify/{token}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json", 
+                "application/xml", 
+                "application/csv"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (token != null) localVarPathParams.Add("token", Configuration.ApiClient.ParameterToString(token)); // path parameter
+            if (accept != null) localVarHeaderParams.Add("accept", Configuration.ApiClient.ParameterToString(accept)); // header parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V1signupverifyToken", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<StandardVerifySignupResultData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (StandardVerifySignupResultData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(StandardVerifySignupResultData)));
+            
+        }
+
+        /// <summary>
         /// Send OTP for Bank Link Send OTP for an additional Bank Link.
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1813,7 +2012,7 @@ namespace IO.Swagger.Api
         /// <param name="acctType">Please enter your Coinsecure account type. Allowable Values are Personal or Company.</param>
         /// <param name="banType">Please enter your Bank account type. Allowable Values are Savings or Current.</param>
         /// <param name="phone">Please enter your Valid Phone Number.</param>
-        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.</param>
+        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.</param>
         /// <param name="file">Enter a valid image, pdf or zip file under 5 MB in size.</param>
         /// <param name="authorization">Enter a valid Api Key. (optional)</param>
         /// <param name="message">Please enter an optional message if needed. (optional)</param>
@@ -1837,7 +2036,7 @@ namespace IO.Swagger.Api
         /// <param name="acctType">Please enter your Coinsecure account type. Allowable Values are Personal or Company.</param>
         /// <param name="banType">Please enter your Bank account type. Allowable Values are Savings or Current.</param>
         /// <param name="phone">Please enter your Valid Phone Number.</param>
-        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.</param>
+        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.</param>
         /// <param name="file">Enter a valid image, pdf or zip file under 5 MB in size.</param>
         /// <param name="authorization">Enter a valid Api Key. (optional)</param>
         /// <param name="message">Please enter an optional message if needed. (optional)</param>
@@ -1949,7 +2148,7 @@ namespace IO.Swagger.Api
         /// <param name="acctType">Please enter your Coinsecure account type. Allowable Values are Personal or Company.</param>
         /// <param name="banType">Please enter your Bank account type. Allowable Values are Savings or Current.</param>
         /// <param name="phone">Please enter your Valid Phone Number.</param>
-        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.</param>
+        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.</param>
         /// <param name="file">Enter a valid image, pdf or zip file under 5 MB in size.</param>
         /// <param name="authorization">Enter a valid Api Key. (optional)</param>
         /// <param name="message">Please enter an optional message if needed. (optional)</param>
@@ -1974,7 +2173,7 @@ namespace IO.Swagger.Api
         /// <param name="acctType">Please enter your Coinsecure account type. Allowable Values are Personal or Company.</param>
         /// <param name="banType">Please enter your Bank account type. Allowable Values are Savings or Current.</param>
         /// <param name="phone">Please enter your Valid Phone Number.</param>
-        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.</param>
+        /// <param name="otp">Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.</param>
         /// <param name="file">Enter a valid image, pdf or zip file under 5 MB in size.</param>
         /// <param name="authorization">Enter a valid Api Key. (optional)</param>
         /// <param name="message">Please enter an optional message if needed. (optional)</param>

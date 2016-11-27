@@ -80,7 +80,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userexchangebankcoinwithdrawinitiate";
+        throw new Error("Missing the required parameter 'body' when calling v1userexchangebankcoinwithdrawinitiate");
       }
 
 
@@ -131,7 +131,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userexchangebankcoinwithdrawnewVerifycode";
+        throw new Error("Missing the required parameter 'body' when calling v1userexchangebankcoinwithdrawnewVerifycode");
       }
 
 
@@ -182,7 +182,7 @@
 
       // verify the required parameter 'withdrawID' is set
       if (withdrawID == undefined || withdrawID == null) {
-        throw "Missing the required parameter 'withdrawID' when calling v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID";
+        throw new Error("Missing the required parameter 'withdrawID' when calling v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID");
       }
 
 
@@ -234,7 +234,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userexchangebankcoinwithdrawverify";
+        throw new Error("Missing the required parameter 'body' when calling v1userexchangebankcoinwithdrawverify");
       }
 
 
@@ -285,7 +285,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userexchangebankfiataccountnew";
+        throw new Error("Missing the required parameter 'body' when calling v1userexchangebankfiataccountnew");
       }
 
 
@@ -336,7 +336,7 @@
 
       // verify the required parameter 'depositID' is set
       if (depositID == undefined || depositID == null) {
-        throw "Missing the required parameter 'depositID' when calling v1userexchangebankfiatdepositcancelDepositID";
+        throw new Error("Missing the required parameter 'depositID' when calling v1userexchangebankfiatdepositcancelDepositID");
       }
 
 
@@ -388,7 +388,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userexchangebankfiatdepositnew";
+        throw new Error("Missing the required parameter 'body' when calling v1userexchangebankfiatdepositnew");
       }
 
 
@@ -439,7 +439,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userexchangebankfiatwithdrawinitiate";
+        throw new Error("Missing the required parameter 'body' when calling v1userexchangebankfiatwithdrawinitiate");
       }
 
 
@@ -490,7 +490,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userexchangebankfiatwithdrawnewVerifycode";
+        throw new Error("Missing the required parameter 'body' when calling v1userexchangebankfiatwithdrawnewVerifycode");
       }
 
 
@@ -541,7 +541,7 @@
 
       // verify the required parameter 'withdrawID' is set
       if (withdrawID == undefined || withdrawID == null) {
-        throw "Missing the required parameter 'withdrawID' when calling v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID";
+        throw new Error("Missing the required parameter 'withdrawID' when calling v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID");
       }
 
 
@@ -593,7 +593,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userexchangebankfiatwithdrawverify";
+        throw new Error("Missing the required parameter 'body' when calling v1userexchangebankfiatwithdrawverify");
       }
 
 

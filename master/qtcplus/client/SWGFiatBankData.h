@@ -56,33 +56,46 @@ public:
 
     qint64 getTime();
     void setTime(qint64 time);
-QString* getStatus();
+
+    QString* getStatus();
     void setStatus(QString* status);
-qint64 getUpdateTime();
-    void setUpdateTime(qint64 updateTime);
-QString* getUpdateMessage();
-    void setUpdateMessage(QString* updateMessage);
-QString* getBankID();
-    void setBankID(QString* bankID);
-QString* getInfo();
+
+    qint64 getUpdateTime();
+    void setUpdateTime(qint64 update_time);
+
+    QString* getUpdateMessage();
+    void setUpdateMessage(QString* update_message);
+
+    QString* getBankId();
+    void setBankId(QString* bank_id);
+
+    QString* getInfo();
     void setInfo(QString* info);
-QString* getAccountNumber();
-    void setAccountNumber(QString* accountNumber);
-QString* getAccountNick();
-    void setAccountNick(QString* accountNick);
-QString* getAccountType();
-    void setAccountType(QString* accountType);
+
+    QString* getAccountNumber();
+    void setAccountNumber(QString* account_number);
+
+    QString* getAccountNick();
+    void setAccountNick(QString* account_nick);
+
+    QString* getAccountType();
+    void setAccountType(QString* account_type);
+
+    QString* getAccountId();
+    void setAccountId(QString* account_id);
+
 
 private:
     qint64 time;
-QString* status;
-qint64 updateTime;
-QString* updateMessage;
-QString* bankID;
-QString* info;
-QString* accountNumber;
-QString* accountNick;
-QString* accountType;
+    QString* status;
+    qint64 update_time;
+    QString* update_message;
+    QString* bank_id;
+    QString* info;
+    QString* account_number;
+    QString* account_nick;
+    QString* account_type;
+    QString* account_id;
 };
 
 } /* namespace Swagger */

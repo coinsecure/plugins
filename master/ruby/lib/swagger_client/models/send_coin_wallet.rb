@@ -36,6 +36,8 @@ module SwaggerClient
 
     attr_accessor :pin
 
+    attr_accessor :fees
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -44,7 +46,8 @@ module SwaggerClient
         :'amt' => :'amt',
         :'to_addr' => :'toAddr',
         :'msg' => :'msg',
-        :'pin' => :'pin'
+        :'pin' => :'pin',
+        :'fees' => :'fees'
       }
     end
 
@@ -55,7 +58,8 @@ module SwaggerClient
         :'amt' => :'Integer',
         :'to_addr' => :'String',
         :'msg' => :'String',
-        :'pin' => :'String'
+        :'pin' => :'String',
+        :'fees' => :'Object'
       }
     end
 
@@ -87,12 +91,28 @@ module SwaggerClient
         self.pin = attributes[:'pin']
       end
 
+      if attributes.has_key?(:'fees')
+        self.fees = attributes[:'fees']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @wallet_id.nil?
+        invalid_properties.push("invalid value for 'wallet_id', wallet_id cannot be nil.")
+      end
+
+      if @amt.nil?
+        invalid_properties.push("invalid value for 'amt', amt cannot be nil.")
+      end
+
+      if @to_addr.nil?
+        invalid_properties.push("invalid value for 'to_addr', to_addr cannot be nil.")
+      end
+
       return invalid_properties
     end
 
@@ -114,7 +134,8 @@ module SwaggerClient
           amt == o.amt &&
           to_addr == o.to_addr &&
           msg == o.msg &&
-          pin == o.pin
+          pin == o.pin &&
+          fees == o.fees
     end
 
     # @see the `==` method
@@ -126,7 +147,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [wallet_id, amt, to_addr, msg, pin].hash
+      [wallet_id, amt, to_addr, msg, pin, fees].hash
     end
 
     # Builds the object from hash
@@ -135,7 +156,7 @@ module SwaggerClient
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
       self.class.swagger_types.each_pair do |key, type|
-        if type =~ /^Array<(.*)>/i
+        if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not
           if attributes[self.class.attribute_map[key]].is_a?(Array)
@@ -166,7 +187,7 @@ module SwaggerClient
       when :Float
         value.to_f
       when :BOOLEAN
-        if value.to_s =~ /^(true|t|yes|y|1)$/i
+        if value.to_s =~ /\A(true|t|yes|y|1)\z/i
           true
         else
           false
@@ -177,7 +198,7 @@ module SwaggerClient
       when /\AArray<(?<inner_type>.+)>\z/
         inner_type = Regexp.last_match[:inner_type]
         value.map { |v| _deserialize(inner_type, v) }
-      when /\AHash<(?<k_type>.+), (?<v_type>.+)>\z/
+      when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
         {}.tap do |hash|

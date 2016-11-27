@@ -52,12 +52,12 @@
    * Constructs a new <code>BankSummaryData</code>.
    * @alias module:model/BankSummaryData
    * @class
-   * @param pendingCoinBalance {Integer} 
-   * @param pendingFiatBalance {Integer} 
-   * @param availableCoinBalance {Integer} 
-   * @param availableFiatBalance {Integer} 
-   * @param totalCoinBalance {Integer} 
-   * @param totalFiatBalance {Integer} 
+   * @param pendingCoinBalance {Number} 
+   * @param pendingFiatBalance {Number} 
+   * @param availableCoinBalance {Number} 
+   * @param availableFiatBalance {Number} 
+   * @param totalCoinBalance {Number} 
+   * @param totalFiatBalance {Number} 
    * @param coinFeePercentage {Number} 
    * @param fiatFeePercentage {Number} 
    * @param bankLinkStatus {String} 
@@ -94,22 +94,22 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('pendingCoinBalance')) {
-        obj['pendingCoinBalance'] = ApiClient.convertToType(data['pendingCoinBalance'], 'Integer');
+        obj['pendingCoinBalance'] = ApiClient.convertToType(data['pendingCoinBalance'], 'Number');
       }
       if (data.hasOwnProperty('pendingFiatBalance')) {
-        obj['pendingFiatBalance'] = ApiClient.convertToType(data['pendingFiatBalance'], 'Integer');
+        obj['pendingFiatBalance'] = ApiClient.convertToType(data['pendingFiatBalance'], 'Number');
       }
       if (data.hasOwnProperty('availableCoinBalance')) {
-        obj['availableCoinBalance'] = ApiClient.convertToType(data['availableCoinBalance'], 'Integer');
+        obj['availableCoinBalance'] = ApiClient.convertToType(data['availableCoinBalance'], 'Number');
       }
       if (data.hasOwnProperty('availableFiatBalance')) {
-        obj['availableFiatBalance'] = ApiClient.convertToType(data['availableFiatBalance'], 'Integer');
+        obj['availableFiatBalance'] = ApiClient.convertToType(data['availableFiatBalance'], 'Number');
       }
       if (data.hasOwnProperty('totalCoinBalance')) {
-        obj['totalCoinBalance'] = ApiClient.convertToType(data['totalCoinBalance'], 'Integer');
+        obj['totalCoinBalance'] = ApiClient.convertToType(data['totalCoinBalance'], 'Number');
       }
       if (data.hasOwnProperty('totalFiatBalance')) {
-        obj['totalFiatBalance'] = ApiClient.convertToType(data['totalFiatBalance'], 'Integer');
+        obj['totalFiatBalance'] = ApiClient.convertToType(data['totalFiatBalance'], 'Number');
       }
       if (data.hasOwnProperty('coinFeePercentage')) {
         obj['coinFeePercentage'] = ApiClient.convertToType(data['coinFeePercentage'], 'Number');
@@ -134,27 +134,27 @@
   }
 
   /**
-   * @member {Integer} pendingCoinBalance
+   * @member {Number} pendingCoinBalance
    */
   exports.prototype['pendingCoinBalance'] = undefined;
   /**
-   * @member {Integer} pendingFiatBalance
+   * @member {Number} pendingFiatBalance
    */
   exports.prototype['pendingFiatBalance'] = undefined;
   /**
-   * @member {Integer} availableCoinBalance
+   * @member {Number} availableCoinBalance
    */
   exports.prototype['availableCoinBalance'] = undefined;
   /**
-   * @member {Integer} availableFiatBalance
+   * @member {Number} availableFiatBalance
    */
   exports.prototype['availableFiatBalance'] = undefined;
   /**
-   * @member {Integer} totalCoinBalance
+   * @member {Number} totalCoinBalance
    */
   exports.prototype['totalCoinBalance'] = undefined;
   /**
-   * @member {Integer} totalFiatBalance
+   * @member {Number} totalFiatBalance
    */
   exports.prototype['totalFiatBalance'] = undefined;
   /**

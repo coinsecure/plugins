@@ -41,7 +41,7 @@ import java.util.Date
 
 import scala.collection.mutable.HashMap
 
-class WalletDataApi(val defBasePath: String = "https://api.coinsecure.in",
+class WalletDataApi(val defBasePath: String = "https://api.coinsecure.in/",
                         defApiInvoker: ApiInvoker = ApiInvoker) {
   var basePath = defBasePath
   var apiInvoker = defApiInvoker
@@ -56,31 +56,29 @@ class WalletDataApi(val defBasePath: String = "https://api.coinsecure.in",
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return WalletAddressDataResponse
    */
-  def v1UserWalletCoinAddressWalletID (walletID: String, authorization: String, accept: String) : Option[WalletAddressDataResponse] = {
+  def v1UserWalletCoinAddressWalletID(walletID: String, authorization: Option[String] = None, accept: Option[String] = None): Option[WalletAddressDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/wallet/coin/address/{walletID}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "walletID" + "\\}",apiInvoker.escape(walletID))
+    val path = "/v1/user/wallet/coin/address/{walletID}".replaceAll("\\{format\\}", "json").replaceAll("\\{" + "walletID" + "\\}",apiInvoker.escape(walletID))
 
-
-    val contentTypes = List("application/json", "application/json")
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    if (walletID == null) throw new Exception("Missing required parameter 'walletID' when calling WalletDataApi->v1UserWalletCoinAddressWalletID")
+
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -102,29 +100,27 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return WalletAddressDataResponse
    */
-  def v1UserWalletCoinDepositConfirmedAll (authorization: String, accept: String) : Option[WalletAddressDataResponse] = {
+  def v1UserWalletCoinDepositConfirmedAll(authorization: Option[String] = None, accept: Option[String] = None): Option[WalletAddressDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/wallet/coin/deposit/confirmed/all".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/wallet/coin/deposit/confirmed/all".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -147,31 +143,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return WalletAddressDataResponse
    */
-  def v1UserWalletCoinDepositConfirmedWalletID (walletID: String, authorization: String, accept: String) : Option[WalletAddressDataResponse] = {
+  def v1UserWalletCoinDepositConfirmedWalletID(walletID: String, authorization: Option[String] = None, accept: Option[String] = None): Option[WalletAddressDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/wallet/coin/deposit/confirmed/{walletID}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "walletID" + "\\}",apiInvoker.escape(walletID))
+    val path = "/v1/user/wallet/coin/deposit/confirmed/{walletID}".replaceAll("\\{format\\}", "json").replaceAll("\\{" + "walletID" + "\\}",apiInvoker.escape(walletID))
 
-
-    val contentTypes = List("application/json", "application/json")
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    if (walletID == null) throw new Exception("Missing required parameter 'walletID' when calling WalletDataApi->v1UserWalletCoinDepositConfirmedWalletID")
+
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -193,29 +187,27 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return void
    */
-  def v1UserWalletCoinDepositUnconfirmedAll (authorization: String, accept: String)  = {
+  def v1UserWalletCoinDepositUnconfirmedAll(authorization: Option[String] = None, accept: Option[String] = None) = {
     // create path and map variables
-    val path = "/v1/user/wallet/coin/deposit/unconfirmed/all".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/wallet/coin/deposit/unconfirmed/all".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -237,31 +229,31 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return void
    */
-  def v1UserWalletCoinDepositUnconfirmedWalletID (walletID: String, authorization: String, accept: String)  = {
+  def v1UserWalletCoinDepositUnconfirmedWalletID(walletID: String, authorization: String, accept: Option[String] = None) = {
     // create path and map variables
-    val path = "/v1/user/wallet/coin/deposit/unconfirmed/{walletID}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "walletID" + "\\}",apiInvoker.escape(walletID))
+    val path = "/v1/user/wallet/coin/deposit/unconfirmed/{walletID}".replaceAll("\\{format\\}", "json").replaceAll("\\{" + "walletID" + "\\}",apiInvoker.escape(walletID))
 
-
-    val contentTypes = List("application/json", "application/json")
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (walletID == null) throw new Exception("Missing required parameter 'walletID' when calling WalletDataApi->v1UserWalletCoinDepositUnconfirmedWalletID")
+
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling WalletDataApi->v1UserWalletCoinDepositUnconfirmedWalletID")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -282,29 +274,27 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return WalletsDataResponse
    */
-  def v1UserWalletCoinWallets (authorization: String, accept: String) : Option[WalletsDataResponse] = {
+  def v1UserWalletCoinWallets(authorization: Option[String] = None, accept: Option[String] = None): Option[WalletsDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/wallet/coin/wallets".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/wallet/coin/wallets".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -326,29 +316,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return WalletCoinWithdrawDataResponse
    */
-  def v1WalletWithdrawCancelled (authorization: String, accept: String) : Option[WalletCoinWithdrawDataResponse] = {
+  def v1WalletWithdrawCancelled(authorization: String, accept: Option[String] = None): Option[WalletCoinWithdrawDataResponse] = {
     // create path and map variables
-    val path = "/v1/wallet/coin/withdraw/cancelled".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/wallet/coin/withdraw/cancelled".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling WalletDataApi->v1WalletWithdrawCancelled")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -370,29 +360,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return WalletCoinWithdrawDataResponse
    */
-  def v1WalletWithdrawCompleted (authorization: String, accept: String) : Option[WalletCoinWithdrawDataResponse] = {
+  def v1WalletWithdrawCompleted(authorization: String, accept: Option[String] = None): Option[WalletCoinWithdrawDataResponse] = {
     // create path and map variables
-    val path = "/v1/wallet/coin/withdraw/completed".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/wallet/coin/withdraw/completed".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling WalletDataApi->v1WalletWithdrawCompleted")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -414,29 +404,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return WalletCoinWithdrawDataResponse
    */
-  def v1WalletWithdrawUnverified (authorization: String, accept: String) : Option[WalletCoinWithdrawDataResponse] = {
+  def v1WalletWithdrawUnverified(authorization: String, accept: Option[String] = None): Option[WalletCoinWithdrawDataResponse] = {
     // create path and map variables
-    val path = "/v1/wallet/coin/withdraw/unverified".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/wallet/coin/withdraw/unverified".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling WalletDataApi->v1WalletWithdrawUnverified")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -458,29 +448,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return WalletCoinWithdrawDataResponse
    */
-  def v1WalletWithdrawVerified (authorization: String, accept: String) : Option[WalletCoinWithdrawDataResponse] = {
+  def v1WalletWithdrawVerified(authorization: String, accept: Option[String] = None): Option[WalletCoinWithdrawDataResponse] = {
     // create path and map variables
-    val path = "/v1/wallet/coin/withdraw/verified".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/wallet/coin/withdraw/verified".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling WalletDataApi->v1WalletWithdrawVerified")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {

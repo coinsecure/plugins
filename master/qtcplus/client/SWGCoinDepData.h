@@ -56,25 +56,31 @@ public:
     SWGCoinDepData* fromJson(QString &jsonString);
 
     SWGTimeDataCoin* getTimeDetails();
-    void setTimeDetails(SWGTimeDataCoin* timeDetails);
-QString* getAddress();
+    void setTimeDetails(SWGTimeDataCoin* time_details);
+
+    QString* getAddress();
     void setAddress(QString* address);
-qint64 getValue();
+
+    qint64 getValue();
     void setValue(qint64 value);
-QString* getTxHash();
-    void setTxHash(QString* txHash);
-QString* getDepositID();
-    void setDepositID(QString* depositID);
-QString* getReason();
+
+    QString* getTxHash();
+    void setTxHash(QString* tx_hash);
+
+    QString* getDepositId();
+    void setDepositId(QString* deposit_id);
+
+    QString* getReason();
     void setReason(QString* reason);
 
+
 private:
-    SWGTimeDataCoin* timeDetails;
-QString* address;
-qint64 value;
-QString* txHash;
-QString* depositID;
-QString* reason;
+    SWGTimeDataCoin* time_details;
+    QString* address;
+    qint64 value;
+    QString* tx_hash;
+    QString* deposit_id;
+    QString* reason;
 };
 
 } /* namespace Swagger */

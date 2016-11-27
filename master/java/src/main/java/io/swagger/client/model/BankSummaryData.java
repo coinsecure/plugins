@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -30,12 +30,11 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-
 /**
  * BankSummaryData
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-21T18:38:01.890Z")
-public class BankSummaryData   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-27T22:11:57.435Z")
+public class BankSummaryData {
   @SerializedName("pendingCoinBalance")
   private Long pendingCoinBalance = null;
 
@@ -317,6 +316,7 @@ public class BankSummaryData   {
     return Objects.hash(pendingCoinBalance, pendingFiatBalance, availableCoinBalance, availableFiatBalance, totalCoinBalance, totalFiatBalance, coinFeePercentage, fiatFeePercentage, bankLinkStatus, hasTradeNetki, tradeNetkiName, tradeNetkiAddress);
   }
 
+
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -348,5 +348,6 @@ public class BankSummaryData   {
     }
     return o.toString().replace("\n", "\n    ");
   }
+  
 }
 

@@ -24,12 +24,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 
 namespace IO.Swagger.Model
 {
@@ -37,7 +39,7 @@ namespace IO.Swagger.Model
     /// MethodCountryMobile
     /// </summary>
     [DataContract]
-    public partial class MethodCountryMobile :  IEquatable<MethodCountryMobile>
+    public partial class MethodCountryMobile :  IEquatable<MethodCountryMobile>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MethodCountryMobile" /> class.
@@ -150,6 +152,11 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.PhoneNumber.GetHashCode();
                 return hash;
             }
+        }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        { 
+            yield break;
         }
     }
 

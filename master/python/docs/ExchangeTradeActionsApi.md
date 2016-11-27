@@ -1,6 +1,6 @@
 # swagger_client.ExchangeTradeActionsApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,7 @@ Cancels a BTC Sell Order. Orders can only be cancelled if they are in a pending 
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -36,7 +37,7 @@ try:
     api_response = api_instance.v1userexchangeaskcancel_order_id(order_id, authorization=authorization)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeActionsApi->v1userexchangeaskcancel_order_id: %s\n" % e
+    print("Exception when calling ExchangeTradeActionsApi->v1userexchangeaskcancel_order_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -70,6 +71,7 @@ Creates a BTC Sell Order. If the order cannot be fulfilled completely, data can 
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -86,7 +88,7 @@ try:
     api_response = api_instance.v1userexchangeasknew(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeActionsApi->v1userexchangeasknew: %s\n" % e
+    print("Exception when calling ExchangeTradeActionsApi->v1userexchangeasknew: %s\n" % e)
 ```
 
 ### Parameters
@@ -121,6 +123,7 @@ Cancels a BTC Buy Order. Orders can only be cancelled if they are in a pending s
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -136,7 +139,7 @@ try:
     api_response = api_instance.v1userexchangebidcancel_order_id(order_id, authorization=authorization)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeActionsApi->v1userexchangebidcancel_order_id: %s\n" % e
+    print("Exception when calling ExchangeTradeActionsApi->v1userexchangebidcancel_order_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -170,6 +173,7 @@ Creates a BTC Buy Order. If the order cannot be fulfilled completely, data can b
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -186,7 +190,7 @@ try:
     api_response = api_instance.v1userexchangebidnew(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeActionsApi->v1userexchangebidnew: %s\n" % e
+    print("Exception when calling ExchangeTradeActionsApi->v1userexchangebidnew: %s\n" % e)
 ```
 
 ### Parameters
@@ -221,6 +225,7 @@ Instantly buys BTC at the closest rate found. This tool will sell at any rate ne
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -237,7 +242,7 @@ try:
     api_response = api_instance.v1userexchangeinstantbuy(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeActionsApi->v1userexchangeinstantbuy: %s\n" % e
+    print("Exception when calling ExchangeTradeActionsApi->v1userexchangeinstantbuy: %s\n" % e)
 ```
 
 ### Parameters
@@ -272,6 +277,7 @@ Instantly sells BTC at the closest rate found. This tool will sell at any rate n
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -288,7 +294,7 @@ try:
     api_response = api_instance.v1userexchangeinstantsell(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeTradeActionsApi->v1userexchangeinstantsell: %s\n" % e
+    print("Exception when calling ExchangeTradeActionsApi->v1userexchangeinstantsell: %s\n" % e)
 ```
 
 ### Parameters

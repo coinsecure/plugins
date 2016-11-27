@@ -25,6 +25,7 @@
 package io.swagger.client;
 
 import com.android.volley.Cache;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Network;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -42,6 +43,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -233,6 +235,7 @@ public class ApiInvoker {
   }
 
   public static ApiInvoker getInstance() {
+    if (INSTANCE == null) initializeInstance();
     return INSTANCE;
   }
 
@@ -241,7 +244,11 @@ public class ApiInvoker {
   }
 
   public String escapeString(String str) {
-    return str;
+    try {
+      return URLEncoder.encode(str, "UTF-8");
+    } catch (UnsupportedEncodingException e) {
+      return str;
+    }
   }
 
   public static Object deserialize(String json, String containerType, Class cls) throws ApiException {
@@ -497,7 +504,12 @@ public class ApiInvoker {
           } else {
              request = new PatchRequest(url, headers, null, null, stringRequest, errorListener);
           }
-       }
+    }
+
+    if (request != null) {
+        request.setRetryPolicy(new DefaultRetryPolicy((int)TimeUnit.SECONDS.toMillis(this.connectionTimeout), DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+    }
+
     return request;
   }
 

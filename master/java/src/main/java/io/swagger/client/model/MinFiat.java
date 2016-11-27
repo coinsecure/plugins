@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -30,31 +30,30 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-
 /**
  * MinFiat
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-08-21T18:38:01.890Z")
-public class MinFiat   {
-  @SerializedName("minFiat")
-  private Long minFiat = null;
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-27T22:11:57.435Z")
+public class MinFiat {
+  @SerializedName("maxFiat")
+  private Long maxFiat = null;
 
-  public MinFiat minFiat(Long minFiat) {
-    this.minFiat = minFiat;
+  public MinFiat maxFiat(Long maxFiat) {
+    this.maxFiat = maxFiat;
     return this;
   }
 
    /**
-   * Get minFiat
-   * @return minFiat
+   * Get maxFiat
+   * @return maxFiat
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public Long getMinFiat() {
-    return minFiat;
+  public Long getMaxFiat() {
+    return maxFiat;
   }
 
-  public void setMinFiat(Long minFiat) {
-    this.minFiat = minFiat;
+  public void setMaxFiat(Long maxFiat) {
+    this.maxFiat = maxFiat;
   }
 
 
@@ -67,20 +66,21 @@ public class MinFiat   {
       return false;
     }
     MinFiat minFiat = (MinFiat) o;
-    return Objects.equals(this.minFiat, minFiat.minFiat);
+    return Objects.equals(this.maxFiat, minFiat.maxFiat);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(minFiat);
+    return Objects.hash(maxFiat);
   }
+
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MinFiat {\n");
     
-    sb.append("    minFiat: ").append(toIndentedString(minFiat)).append("\n");
+    sb.append("    maxFiat: ").append(toIndentedString(maxFiat)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -95,5 +95,6 @@ public class MinFiat   {
     }
     return o.toString().replace("\n", "\n    ");
   }
+  
 }
 

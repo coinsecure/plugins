@@ -1,6 +1,6 @@
 # IO.Swagger.Api.AccountActionsApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**V1logininitiate**](AccountActionsApi.md#v1logininitiate) | **POST** /v1/login/initiate | Initiate Login
 [**V1loginpasswordforgot**](AccountActionsApi.md#v1loginpasswordforgot) | **POST** /v1/login/password/forgot | Sends an email with a password reset token
 [**V1signup**](AccountActionsApi.md#v1signup) | **POST** /v1/signup | Creates a new Unverified Account.
+[**V1signupverifyToken**](AccountActionsApi.md#v1signupverifytoken) | **PUT** /v1/signup/verify/{token} | Verifies an Email token for Signup .
 [**V1userbankotpNumber**](AccountActionsApi.md#v1userbankotpnumber) | **GET** /v1/user/bank/otp/{number} | Send OTP for Bank Link
 [**V1userexchangekyc**](AccountActionsApi.md#v1userexchangekyc) | **PUT** /v1/user/exchange/kyc | Submits a New Bank Link and initial KYC Documents.
 [**V1usergcmCode**](AccountActionsApi.md#v1usergcmcode) | **DELETE** /v1/user/gcm/{code} | Delete GCM Code
@@ -278,6 +279,70 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="v1signupverifytoken"></a>
+# **V1signupverifyToken**
+> StandardVerifySignupResultData V1signupverifyToken (string token, string accept = null)
+
+Verifies an Email token for Signup .
+
+Creates a new Coinsecure Account.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class V1signupverifyTokenExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountActionsApi();
+            var token = token_example;  // string | 
+            var accept = accept_example;  // string | JSON, XML or CSV can be returned (Optional) (optional) 
+
+            try
+            {
+                // Verifies an Email token for Signup .
+                StandardVerifySignupResultData result = apiInstance.V1signupverifyToken(token, accept);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountActionsApi.V1signupverifyToken: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**|  | 
+ **accept** | **string**| JSON, XML or CSV can be returned (Optional) | [optional] 
+
+### Return type
+
+[**StandardVerifySignupResultData**](StandardVerifySignupResultData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="v1userbankotpnumber"></a>
 # **V1userbankotpNumber**
 > StandardInitiateLoginResultData V1userbankotpNumber (string number, string authorization = null, string accept = null)
@@ -376,7 +441,7 @@ namespace Example
             var acctType = acctType_example;  // string | Please enter your Coinsecure account type. Allowable Values are Personal or Company.
             var banType = banType_example;  // string | Please enter your Bank account type. Allowable Values are Savings or Current.
             var phone = phone_example;  // string | Please enter your Valid Phone Number.
-            var otp = otp_example;  // string | Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.
+            var otp = otp_example;  // string | Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.
             var file = new System.IO.Stream(); // System.IO.Stream | Enter a valid image, pdf or zip file under 5 MB in size.
             var authorization = authorization_example;  // string | Enter a valid Api Key. (optional) 
             var message = message_example;  // string | Please enter an optional message if needed. (optional) 
@@ -409,7 +474,7 @@ Name | Type | Description  | Notes
  **acctType** | **string**| Please enter your Coinsecure account type. Allowable Values are Personal or Company. | 
  **banType** | **string**| Please enter your Bank account type. Allowable Values are Savings or Current. | 
  **phone** | **string**| Please enter your Valid Phone Number. | 
- **otp** | **string**| Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. | 
+ **otp** | **string**| Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. | 
  **file** | **System.IO.Stream**| Enter a valid image, pdf or zip file under 5 MB in size. | 
  **authorization** | **string**| Enter a valid Api Key. | [optional] 
  **message** | **string**| Please enter an optional message if needed. | [optional] 

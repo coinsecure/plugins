@@ -51,6 +51,7 @@ class DoubleData(object):
 
         self._percent = percent
 
+
     @property
     def percent(self):
         """
@@ -71,6 +72,8 @@ class DoubleData(object):
         :param percent: The percent of this DoubleData.
         :type: float
         """
+        if percent is None:
+            raise ValueError("Invalid value for `percent`, must not be `None`")
 
         self._percent = percent
 

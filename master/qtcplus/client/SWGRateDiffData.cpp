@@ -51,7 +51,7 @@ SWGRateDiffData::~SWGRateDiffData() {
 void
 SWGRateDiffData::init() {
     rate = 0L;
-difference = 0L;
+    difference = 0L;
 }
 
 void
@@ -71,8 +71,8 @@ SWGRateDiffData::fromJson(QString &json) {
 
 void
 SWGRateDiffData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&rate, pJson["rate"], "qint64", "");
-setValue(&difference, pJson["difference"], "qint64", "");
+    ::Swagger::setValue(&rate, pJson["rate"], "qint64", "");
+    ::Swagger::setValue(&difference, pJson["difference"], "qint64", "");
 }
 
 QString
@@ -88,8 +88,10 @@ SWGRateDiffData::asJson ()
 QJsonObject*
 SWGRateDiffData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("rate", QJsonValue(rate));
-obj->insert("difference", QJsonValue(difference));
+
+    obj->insert("difference", QJsonValue(difference));
 
     return obj;
 }

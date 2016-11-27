@@ -59,21 +59,26 @@ public:
 
     bool getSuccess();
     void setSuccess(bool success);
-QList<SWGFiatBankData*>* getMessage();
+
+    QList<SWGFiatBankData*>* getMessage();
     void setMessage(QList<SWGFiatBankData*>* message);
-QString* getMethod();
+
+    QString* getMethod();
     void setMethod(QString* method);
-QString* getTitle();
+
+    QString* getTitle();
     void setTitle(QString* title);
-QDateTime* getTime();
+
+    QDateTime* getTime();
     void setTime(QDateTime* time);
+
 
 private:
     bool success;
-QList<SWGFiatBankData*>* message;
-QString* method;
-QString* title;
-QDateTime* time;
+    QList<SWGFiatBankData*>* message;
+    QString* method;
+    QString* title;
+    QDateTime* time;
 };
 
 } /* namespace Swagger */

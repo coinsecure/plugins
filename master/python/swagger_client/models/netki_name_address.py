@@ -54,6 +54,7 @@ class NetkiNameAddress(object):
         self._netki_name = netki_name
         self._address = address
 
+
     @property
     def netki_name(self):
         """

@@ -1,6 +1,6 @@
 # swagger_client.ExchangeBankCoinDataApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,6 +26,7 @@ Gets a List of Users Exchange Bitcoin Deposit Addresses.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -41,7 +42,7 @@ try:
     api_response = api_instance.v1userexchangebankcoinaddresses(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinaddresses: %s\n" % e
+    print("Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinaddresses: %s\n" % e)
 ```
 
 ### Parameters
@@ -75,6 +76,7 @@ Returns balance which is in Available for Trades. The response is in satoshis.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -90,7 +92,7 @@ try:
     api_response = api_instance.v1userexchangebankcoinbalanceavailable(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinbalanceavailable: %s\n" % e
+    print("Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinbalanceavailable: %s\n" % e)
 ```
 
 ### Parameters
@@ -124,6 +126,7 @@ Returns in-trade or pending coin balance in satoshi.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -139,7 +142,7 @@ try:
     api_response = api_instance.v1userexchangebankcoinbalancepending(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinbalancepending: %s\n" % e
+    print("Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinbalancepending: %s\n" % e)
 ```
 
 ### Parameters
@@ -173,6 +176,7 @@ Returns users total coin balance in satoshis. Pending + Available
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -188,7 +192,7 @@ try:
     api_response = api_instance.v1userexchangebankcoinbalancetotal(authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinbalancetotal: %s\n" % e
+    print("Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinbalancetotal: %s\n" % e)
 ```
 
 ### Parameters
@@ -222,6 +226,7 @@ Gets a List of Cancelled Exchange Coin Deposits. The value and fees are in paisa
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -241,7 +246,7 @@ try:
     api_response = api_instance.v1userexchangebankcoindepositcancelled(authorization, _from=_from, to=to, max=max, offset=offset, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoindepositcancelled: %s\n" % e
+    print("Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoindepositcancelled: %s\n" % e)
 ```
 
 ### Parameters
@@ -279,6 +284,7 @@ Gets a List of Unverified Exchange Coin Deposits. The value and fees are in pais
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -298,7 +304,7 @@ try:
     api_response = api_instance.v1userexchangebankcoindepositunverified(authorization, _from=_from, to=to, max=max, offset=offset, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoindepositunverified: %s\n" % e
+    print("Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoindepositunverified: %s\n" % e)
 ```
 
 ### Parameters
@@ -336,6 +342,7 @@ Gets a List of Verified Exchange Coin Deposits. The value and fees are in paisa.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -355,7 +362,7 @@ try:
     api_response = api_instance.v1userexchangebankcoindepositverified(authorization, _from=_from, to=to, max=max, offset=offset, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoindepositverified: %s\n" % e
+    print("Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoindepositverified: %s\n" % e)
 ```
 
 ### Parameters
@@ -393,6 +400,7 @@ Gets a List of Cancelled Coin Withdrawals. The value and fees are in satoshis.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -412,7 +420,7 @@ try:
     api_response = api_instance.v1userexchangebankcoinwithdrawcancelled(authorization, _from=_from, to=to, max=max, offset=offset, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinwithdrawcancelled: %s\n" % e
+    print("Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinwithdrawcancelled: %s\n" % e)
 ```
 
 ### Parameters
@@ -450,6 +458,7 @@ Gets a List of Completed Coin Withdrawals. The value and fees are in satoshis.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -469,7 +478,7 @@ try:
     api_response = api_instance.v1userexchangebankcoinwithdrawcompleted(authorization, _from=_from, to=to, max=max, offset=offset, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinwithdrawcompleted: %s\n" % e
+    print("Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinwithdrawcompleted: %s\n" % e)
 ```
 
 ### Parameters
@@ -507,6 +516,7 @@ Gets a List of Unverified Exchange Coin Withdrawals. The value and fees are in s
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -526,7 +536,7 @@ try:
     api_response = api_instance.v1userexchangebankcoinwithdrawunverified(authorization, _from=_from, to=to, max=max, offset=offset, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinwithdrawunverified: %s\n" % e
+    print("Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinwithdrawunverified: %s\n" % e)
 ```
 
 ### Parameters
@@ -564,6 +574,7 @@ Gets a List of Verified Exchange Coin Withdrawals. The value and fees are in sat
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -583,7 +594,7 @@ try:
     api_response = api_instance.v1userexchangebankcoinwithdrawverified(authorization, _from=_from, to=to, max=max, offset=offset, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinwithdrawverified: %s\n" % e
+    print("Exception when calling ExchangeBankCoinDataApi->v1userexchangebankcoinwithdrawverified: %s\n" % e)
 ```
 
 ### Parameters

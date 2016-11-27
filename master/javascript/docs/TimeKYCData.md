@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**time** | **Integer** |  | 
-**updateTime** | **Integer** |  | 
+**time** | **Number** |  | 
+**updateTime** | **Number** |  | 
 
 

@@ -79,7 +79,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankfiataccounts";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankfiataccounts");
       }
 
 
@@ -129,7 +129,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankfiatbalanceavailable";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankfiatbalanceavailable");
       }
 
 
@@ -179,7 +179,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankfiatbalancepending";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankfiatbalancepending");
       }
 
 
@@ -229,7 +229,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankfiatbalancetotal";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankfiatbalancetotal");
       }
 
 
@@ -269,10 +269,10 @@
      * Gets a List of Cancelled Exchange Fiat Deposits. The value and fees are in paisa.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankFiatDataApi~v1userexchangebankfiatdepositcancelledCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FiatDepDataResponse}
@@ -283,7 +283,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankfiatdepositcancelled";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankfiatdepositcancelled");
       }
 
 
@@ -327,10 +327,10 @@
      * Gets a List of Unverified Exchange Fiat Deposits. The value and fees are in paisa.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankFiatDataApi~v1userexchangebankfiatdepositunverifiedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FiatDepDataResponse}
@@ -341,7 +341,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankfiatdepositunverified";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankfiatdepositunverified");
       }
 
 
@@ -385,10 +385,10 @@
      * Gets a List of Verified Exchange Fiat Deposits. The value and fees are in paisa.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankFiatDataApi~v1userexchangebankfiatdepositverifiedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FiatDepDataResponse}
@@ -399,7 +399,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankfiatdepositverified";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankfiatdepositverified");
       }
 
 
@@ -443,10 +443,10 @@
      * Gets a List of Cancelled Exchange Fiat Withdrawals. The fiat value is in paisa.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankFiatDataApi~v1userexchangebankfiatwithdrawcancelledCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FiatWithDataResponse}
@@ -457,7 +457,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankfiatwithdrawcancelled";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankfiatwithdrawcancelled");
       }
 
 
@@ -501,10 +501,10 @@
      * Gets a List of Completed Exchange Fiat Withdrawals. The fiat value is in paisa.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankFiatDataApi~v1userexchangebankfiatwithdrawcompletedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FiatWithDataResponse}
@@ -515,7 +515,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankfiatwithdrawcompleted";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankfiatwithdrawcompleted");
       }
 
 
@@ -559,10 +559,10 @@
      * Gets a List of Unverified Exchange Fiat Withdrawals. The fiat value is in paisa.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankFiatDataApi~v1userexchangebankfiatwithdrawunverifiedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FiatWithDataResponse}
@@ -573,7 +573,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankfiatwithdrawunverified";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankfiatwithdrawunverified");
       }
 
 
@@ -617,10 +617,10 @@
      * Gets a List of Verified Exchange Fiat Withdrawals. The fiat value is in paisa.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankFiatDataApi~v1userexchangebankfiatwithdrawverifiedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FiatWithDataResponse}
@@ -631,7 +631,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankfiatwithdrawverified";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankfiatwithdrawverified");
       }
 
 

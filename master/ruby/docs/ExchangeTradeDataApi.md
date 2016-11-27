@@ -1,6 +1,6 @@
 # SwaggerClient::ExchangeTradeDataApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**v1userexchangebidcancelled**](ExchangeTradeDataApi.md#v1userexchangebidcancelled) | **GET** /v1/user/exchange/bid/cancelled | Cancelled User Buy Orders
 [**v1userexchangebidcompleted**](ExchangeTradeDataApi.md#v1userexchangebidcompleted) | **GET** /v1/user/exchange/bid/completed | Completed User Buy Orders
 [**v1userexchangebidpending**](ExchangeTradeDataApi.md#v1userexchangebidpending) | **GET** /v1/user/exchange/bid/pending | Pending User Buy Orders
+[**v1userexchangetrades**](ExchangeTradeDataApi.md#v1userexchangetrades) | **GET** /v1/exchange/trades | Completed Exchange Trades
 
 
 # **v1exchangeasklow**
@@ -706,6 +707,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrderDataResponse**](OrderDataResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+
+
+# **v1userexchangetrades**
+> RateVolTimeTypeDataResponse v1userexchangetrades(opts)
+
+Completed Exchange Trades
+
+Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+
+api_instance = SwaggerClient::ExchangeTradeDataApi.new
+
+opts = { 
+  from: 0, # Integer | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
+  to: 9223372036854776000, # Integer | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
+  max: 10, # Integer | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
+  offset: 0, # Integer | Offset defaults to 0 if input is invalid. (Optional)
+  accept: "accept_example" # String | JSON, XML or CSV can be returned (Optional)
+}
+
+begin
+  #Completed Exchange Trades
+  result = api_instance.v1userexchangetrades(opts)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling ExchangeTradeDataApi->v1userexchangetrades: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **Integer**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **Integer**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **Integer**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **Integer**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
+
+### Return type
+
+[**RateVolTimeTypeDataResponse**](RateVolTimeTypeDataResponse.md)
 
 ### Authorization
 

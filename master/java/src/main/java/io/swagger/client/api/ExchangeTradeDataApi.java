@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -45,6 +45,7 @@ import io.swagger.client.model.LastTradeDataResponse;
 import io.swagger.client.model.RateDiffDataResponse;
 import io.swagger.client.model.StandardTickerResultData;
 import io.swagger.client.model.OrderDataResponse;
+import io.swagger.client.model.RateVolTimeTypeDataResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -1590,6 +1591,129 @@ public class ExchangeTradeDataApi {
 
         com.squareup.okhttp.Call call = v1userexchangebidpendingCall(authorization, accept, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<OrderDataResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /* Build call for v1userexchangetrades */
+    private com.squareup.okhttp.Call v1userexchangetradesCall(Long from, Long to, Integer max, Long offset, String accept, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+
+        // create path and map variables
+        String localVarPath = "/v1/exchange/trades".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (from != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "from", from));
+        if (to != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "to", to));
+        if (max != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "max", max));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (accept != null)
+        localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json", "application/xml", "application/csv"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    /**
+     * Completed Exchange Trades
+     * Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+     * @param from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)
+     * @param to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)
+     * @param max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
+     * @param offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
+     * @param accept JSON, XML or CSV can be returned (Optional) (optional)
+     * @return RateVolTimeTypeDataResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public RateVolTimeTypeDataResponse v1userexchangetrades(Long from, Long to, Integer max, Long offset, String accept) throws ApiException {
+        ApiResponse<RateVolTimeTypeDataResponse> resp = v1userexchangetradesWithHttpInfo(from, to, max, offset, accept);
+        return resp.getData();
+    }
+
+    /**
+     * Completed Exchange Trades
+     * Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+     * @param from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)
+     * @param to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)
+     * @param max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
+     * @param offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
+     * @param accept JSON, XML or CSV can be returned (Optional) (optional)
+     * @return ApiResponse&lt;RateVolTimeTypeDataResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<RateVolTimeTypeDataResponse> v1userexchangetradesWithHttpInfo(Long from, Long to, Integer max, Long offset, String accept) throws ApiException {
+        com.squareup.okhttp.Call call = v1userexchangetradesCall(from, to, max, offset, accept, null, null);
+        Type localVarReturnType = new TypeToken<RateVolTimeTypeDataResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Completed Exchange Trades (asynchronously)
+     * Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+     * @param from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)
+     * @param to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)
+     * @param max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
+     * @param offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
+     * @param accept JSON, XML or CSV can be returned (Optional) (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call v1userexchangetradesAsync(Long from, Long to, Integer max, Long offset, String accept, final ApiCallback<RateVolTimeTypeDataResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = v1userexchangetradesCall(from, to, max, offset, accept, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<RateVolTimeTypeDataResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

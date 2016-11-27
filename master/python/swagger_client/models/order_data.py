@@ -63,6 +63,7 @@ class OrderData(object):
         self._order_id = order_id
         self._status = status
 
+
     @property
     def time(self):
         """
@@ -83,6 +84,8 @@ class OrderData(object):
         :param time: The time of this OrderData.
         :type: int
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 
@@ -106,6 +109,8 @@ class OrderData(object):
         :param rate: The rate of this OrderData.
         :type: int
         """
+        if rate is None:
+            raise ValueError("Invalid value for `rate`, must not be `None`")
 
         self._rate = rate
 
@@ -129,6 +134,8 @@ class OrderData(object):
         :param vol: The vol of this OrderData.
         :type: int
         """
+        if vol is None:
+            raise ValueError("Invalid value for `vol`, must not be `None`")
 
         self._vol = vol
 
@@ -152,6 +159,8 @@ class OrderData(object):
         :param order_id: The order_id of this OrderData.
         :type: str
         """
+        if order_id is None:
+            raise ValueError("Invalid value for `order_id`, must not be `None`")
 
         self._order_id = order_id
 
@@ -175,6 +184,8 @@ class OrderData(object):
         :param status: The status of this OrderData.
         :type: str
         """
+        if status is None:
+            raise ValueError("Invalid value for `status`, must not be `None`")
 
         self._status = status
 

@@ -856,5 +856,73 @@ module SwaggerClient
       end
       return data, status_code, headers
     end
+
+    # Completed Exchange Trades
+    # Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+    # @option opts [Integer] :to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+    # @option opts [Integer] :max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+    # @option opts [Integer] :offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+    # @option opts [String] :accept JSON, XML or CSV can be returned (Optional)
+    # @return [RateVolTimeTypeDataResponse]
+    def v1userexchangetrades(opts = {})
+      data, _status_code, _headers = v1userexchangetrades_with_http_info(opts)
+      return data
+    end
+
+    # Completed Exchange Trades
+    # Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
+    # @option opts [Integer] :to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
+    # @option opts [Integer] :max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
+    # @option opts [Integer] :offset Offset defaults to 0 if input is invalid. (Optional)
+    # @option opts [String] :accept JSON, XML or CSV can be returned (Optional)
+    # @return [Array<(RateVolTimeTypeDataResponse, Fixnum, Hash)>] RateVolTimeTypeDataResponse data, response status code and response headers
+    def v1userexchangetrades_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ExchangeTradeDataApi.v1userexchangetrades ..."
+      end
+      # resource path
+      local_var_path = "/v1/exchange/trades".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+      query_params[:'from'] = opts[:'from'] if !opts[:'from'].nil?
+      query_params[:'to'] = opts[:'to'] if !opts[:'to'].nil?
+      query_params[:'max'] = opts[:'max'] if !opts[:'max'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      local_header_accept = ['application/json', 'application/xml', 'application/csv']
+      local_header_accept_result = @api_client.select_header_accept(local_header_accept) and header_params['Accept'] = local_header_accept_result
+
+      # HTTP header 'Content-Type'
+      local_header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(local_header_content_type)
+      header_params[:'accept'] = opts[:'accept'] if !opts[:'accept'].nil?
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'RateVolTimeTypeDataResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ExchangeTradeDataApi#v1userexchangetrades\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
   end
 end

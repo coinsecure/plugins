@@ -25,13 +25,11 @@
 package io.swagger.client.model;
 
 import io.swagger.client.model.TimeKYCData;
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class KYCData  {
+public class KYCData {
   
   @SerializedName("timeDetails")
   private TimeKYCData timeDetails = null;
@@ -128,25 +126,25 @@ public class KYCData  {
       return false;
     }
     KYCData kYCData = (KYCData) o;
-    return (timeDetails == null ? kYCData.timeDetails == null : timeDetails.equals(kYCData.timeDetails)) &&
-        (kycID == null ? kYCData.kycID == null : kycID.equals(kYCData.kycID)) &&
-        (firstName == null ? kYCData.firstName == null : firstName.equals(kYCData.firstName)) &&
-        (lastName == null ? kYCData.lastName == null : lastName.equals(kYCData.lastName)) &&
-        (status == null ? kYCData.status == null : status.equals(kYCData.status)) &&
-        (userType == null ? kYCData.userType == null : userType.equals(kYCData.userType)) &&
-        (info == null ? kYCData.info == null : info.equals(kYCData.info));
+    return (this.timeDetails == null ? kYCData.timeDetails == null : this.timeDetails.equals(kYCData.timeDetails)) &&
+        (this.kycID == null ? kYCData.kycID == null : this.kycID.equals(kYCData.kycID)) &&
+        (this.firstName == null ? kYCData.firstName == null : this.firstName.equals(kYCData.firstName)) &&
+        (this.lastName == null ? kYCData.lastName == null : this.lastName.equals(kYCData.lastName)) &&
+        (this.status == null ? kYCData.status == null : this.status.equals(kYCData.status)) &&
+        (this.userType == null ? kYCData.userType == null : this.userType.equals(kYCData.userType)) &&
+        (this.info == null ? kYCData.info == null : this.info.equals(kYCData.info));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (timeDetails == null ? 0: timeDetails.hashCode());
-    result = 31 * result + (kycID == null ? 0: kycID.hashCode());
-    result = 31 * result + (firstName == null ? 0: firstName.hashCode());
-    result = 31 * result + (lastName == null ? 0: lastName.hashCode());
-    result = 31 * result + (status == null ? 0: status.hashCode());
-    result = 31 * result + (userType == null ? 0: userType.hashCode());
-    result = 31 * result + (info == null ? 0: info.hashCode());
+    result = 31 * result + (this.timeDetails == null ? 0: this.timeDetails.hashCode());
+    result = 31 * result + (this.kycID == null ? 0: this.kycID.hashCode());
+    result = 31 * result + (this.firstName == null ? 0: this.firstName.hashCode());
+    result = 31 * result + (this.lastName == null ? 0: this.lastName.hashCode());
+    result = 31 * result + (this.status == null ? 0: this.status.hashCode());
+    result = 31 * result + (this.userType == null ? 0: this.userType.hashCode());
+    result = 31 * result + (this.info == null ? 0: this.info.hashCode());
     return result;
   }
 

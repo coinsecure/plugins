@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class ConfirmData  {
+public class ConfirmData {
   
   @SerializedName("confirmations")
   private Long confirmations = null;
@@ -55,13 +53,13 @@ public class ConfirmData  {
       return false;
     }
     ConfirmData confirmData = (ConfirmData) o;
-    return (confirmations == null ? confirmData.confirmations == null : confirmations.equals(confirmData.confirmations));
+    return (this.confirmations == null ? confirmData.confirmations == null : this.confirmations.equals(confirmData.confirmations));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (confirmations == null ? 0: confirmations.hashCode());
+    result = 31 * result + (this.confirmations == null ? 0: this.confirmations.hashCode());
     return result;
   }
 

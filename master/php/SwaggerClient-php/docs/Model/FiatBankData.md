@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **account_number** | **string** |  | 
 **account_nick** | **string** |  | 
 **account_type** | **string** |  | 
+**account_id** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

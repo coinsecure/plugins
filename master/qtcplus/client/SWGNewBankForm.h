@@ -56,30 +56,38 @@ public:
 
     QString* getAcctNick();
     void setAcctNick(QString* acct_nick);
-QString* getName();
+
+    QString* getName();
     void setName(QString* name);
-QString* getBan();
+
+    QString* getBan();
     void setBan(QString* ban);
-QString* getIfsc();
+
+    QString* getIfsc();
     void setIfsc(QString* ifsc);
-QString* getMessage();
+
+    QString* getMessage();
     void setMessage(QString* message);
-QString* getBanType();
-    void setBanType(QString* banType);
-QString* getPhone();
+
+    QString* getBanType();
+    void setBanType(QString* ban_type);
+
+    QString* getPhone();
     void setPhone(QString* phone);
-QString* getOtp();
+
+    QString* getOtp();
     void setOtp(QString* otp);
+
 
 private:
     QString* acct_nick;
-QString* name;
-QString* ban;
-QString* ifsc;
-QString* message;
-QString* banType;
-QString* phone;
-QString* otp;
+    QString* name;
+    QString* ban;
+    QString* ifsc;
+    QString* message;
+    QString* ban_type;
+    QString* phone;
+    QString* otp;
 };
 
 } /* namespace Swagger */

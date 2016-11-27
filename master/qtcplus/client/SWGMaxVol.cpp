@@ -50,7 +50,7 @@ SWGMaxVol::~SWGMaxVol() {
 
 void
 SWGMaxVol::init() {
-    maxVol = 0L;
+    max_vol = 0L;
 }
 
 void
@@ -69,7 +69,7 @@ SWGMaxVol::fromJson(QString &json) {
 
 void
 SWGMaxVol::fromJsonObject(QJsonObject &pJson) {
-    setValue(&maxVol, pJson["maxVol"], "qint64", "");
+    ::Swagger::setValue(&max_vol, pJson["max_vol"], "qint64", "");
 }
 
 QString
@@ -85,18 +85,19 @@ SWGMaxVol::asJson ()
 QJsonObject*
 SWGMaxVol::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
-    obj->insert("maxVol", QJsonValue(maxVol));
+    
+    obj->insert("max_vol", QJsonValue(max_vol));
 
     return obj;
 }
 
 qint64
 SWGMaxVol::getMaxVol() {
-    return maxVol;
+    return max_vol;
 }
 void
-SWGMaxVol::setMaxVol(qint64 maxVol) {
-    this->maxVol = maxVol;
+SWGMaxVol::setMaxVol(qint64 max_vol) {
+    this->max_vol = max_vol;
 }
 
 

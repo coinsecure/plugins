@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **walletID** | **String** |  | 
 **name** | **String** |  | 
-**coinBalance** | **Integer** |  | 
-**time** | **Integer** |  | 
+**coinBalance** | **Number** |  | 
+**time** | **Number** |  | 
 **info** | **String** |  | 
 **netki** | **String** |  | 
 

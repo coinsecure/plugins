@@ -57,27 +57,34 @@ public:
 
     QString* getAddress();
     void setAddress(QString* address);
-qint64 getBalance();
+
+    qint64 getBalance();
     void setBalance(qint64 balance);
-qint64 getTotalReceived();
-    void setTotalReceived(qint64 totalReceived);
-qint64 getUnconfirmedBalance();
-    void setUnconfirmedBalance(qint64 unconfirmedBalance);
-qint32 getUnconfirmedTxApperances();
-    void setUnconfirmedTxApperances(qint32 unconfirmedTxApperances);
-qint32 getTxApperances();
-    void setTxApperances(qint32 txApperances);
-QList<QString*>* getTransactions();
+
+    qint64 getTotalReceived();
+    void setTotalReceived(qint64 total_received);
+
+    qint64 getUnconfirmedBalance();
+    void setUnconfirmedBalance(qint64 unconfirmed_balance);
+
+    qint32 getUnconfirmedTxApperances();
+    void setUnconfirmedTxApperances(qint32 unconfirmed_tx_apperances);
+
+    qint32 getTxApperances();
+    void setTxApperances(qint32 tx_apperances);
+
+    QList<QString*>* getTransactions();
     void setTransactions(QList<QString*>* transactions);
+
 
 private:
     QString* address;
-qint64 balance;
-qint64 totalReceived;
-qint64 unconfirmedBalance;
-qint32 unconfirmedTxApperances;
-qint32 txApperances;
-QList<QString*>* transactions;
+    qint64 balance;
+    qint64 total_received;
+    qint64 unconfirmed_balance;
+    qint32 unconfirmed_tx_apperances;
+    qint32 tx_apperances;
+    QList<QString*>* transactions;
 };
 
 } /* namespace Swagger */

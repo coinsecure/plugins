@@ -80,7 +80,7 @@ public class AccountActionsApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -88,6 +88,7 @@ Class | Method | HTTP request | Description
 *AccountActionsApi* | [**v1logininitiate**](docs/AccountActionsApi.md#v1logininitiate) | **POST** /v1/login/initiate | Initiate Login
 *AccountActionsApi* | [**v1loginpasswordforgot**](docs/AccountActionsApi.md#v1loginpasswordforgot) | **POST** /v1/login/password/forgot | Sends an email with a password reset token
 *AccountActionsApi* | [**v1signup**](docs/AccountActionsApi.md#v1signup) | **POST** /v1/signup | Creates a new Unverified Account.
+*AccountActionsApi* | [**v1signupverifyToken**](docs/AccountActionsApi.md#v1signupverifyToken) | **PUT** /v1/signup/verify/{token} | Verifies an Email token for Signup .
 *AccountActionsApi* | [**v1userbankotpNumber**](docs/AccountActionsApi.md#v1userbankotpNumber) | **GET** /v1/user/bank/otp/{number} | Send OTP for Bank Link
 *AccountActionsApi* | [**v1userexchangekyc**](docs/AccountActionsApi.md#v1userexchangekyc) | **PUT** /v1/user/exchange/kyc | Submits a New Bank Link and initial KYC Documents.
 *AccountActionsApi* | [**v1usergcmCode**](docs/AccountActionsApi.md#v1usergcmCode) | **DELETE** /v1/user/gcm/{code} | Delete GCM Code
@@ -168,6 +169,7 @@ Class | Method | HTTP request | Description
 *ExchangeTradeDataApi* | [**v1userexchangebidcancelled**](docs/ExchangeTradeDataApi.md#v1userexchangebidcancelled) | **GET** /v1/user/exchange/bid/cancelled | Cancelled User Buy Orders
 *ExchangeTradeDataApi* | [**v1userexchangebidcompleted**](docs/ExchangeTradeDataApi.md#v1userexchangebidcompleted) | **GET** /v1/user/exchange/bid/completed | Completed User Buy Orders
 *ExchangeTradeDataApi* | [**v1userexchangebidpending**](docs/ExchangeTradeDataApi.md#v1userexchangebidpending) | **GET** /v1/user/exchange/bid/pending | Pending User Buy Orders
+*ExchangeTradeDataApi* | [**v1userexchangetrades**](docs/ExchangeTradeDataApi.md#v1userexchangetrades) | **GET** /v1/exchange/trades | Completed Exchange Trades
 *SecurityActionsApi* | [**v1mfaauthyinitiate**](docs/SecurityActionsApi.md#v1mfaauthyinitiate) | **POST** /v1/mfa/authy/initiate | Initiate Authy Registration.
 *SecurityActionsApi* | [**v1mfagainitiate**](docs/SecurityActionsApi.md#v1mfagainitiate) | **POST** /v1/mfa/ga/initiate | Initiate GA Registration.
 *SecurityActionsApi* | [**v1usermfaauthycall**](docs/SecurityActionsApi.md#v1usermfaauthycall) | **GET** /v1/mfa/authy/call | Authy Call Code
@@ -245,6 +247,8 @@ Class | Method | HTTP request | Description
  - [RateDiffDataResponse](docs/RateDiffDataResponse.md)
  - [RateVolData](docs/RateVolData.md)
  - [RateVolDataResponse](docs/RateVolDataResponse.md)
+ - [RateVolTimeTypeData](docs/RateVolTimeTypeData.md)
+ - [RateVolTimeTypeDataResponse](docs/RateVolTimeTypeDataResponse.md)
  - [ResetPassword](docs/ResetPassword.md)
  - [SendCoin](docs/SendCoin.md)
  - [SendCoinWallet](docs/SendCoinWallet.md)
@@ -253,6 +257,7 @@ Class | Method | HTTP request | Description
  - [StandardInitiateLoginResultData](docs/StandardInitiateLoginResultData.md)
  - [StandardLoginResultData](docs/StandardLoginResultData.md)
  - [StandardTickerResultData](docs/StandardTickerResultData.md)
+ - [StandardVerifySignupResultData](docs/StandardVerifySignupResultData.md)
  - [SuccCoinRefData](docs/SuccCoinRefData.md)
  - [SuccCoinRefDataResponse](docs/SuccCoinRefDataResponse.md)
  - [SuccRefData](docs/SuccRefData.md)
@@ -265,6 +270,7 @@ Class | Method | HTTP request | Description
  - [SuccessOrderDataResponse](docs/SuccessOrderDataResponse.md)
  - [SuccessResult](docs/SuccessResult.md)
  - [SuccessTickerResponse](docs/SuccessTickerResponse.md)
+ - [SuccessVerifySignupResponse](docs/SuccessVerifySignupResponse.md)
  - [TimeData](docs/TimeData.md)
  - [TimeDataCoin](docs/TimeDataCoin.md)
  - [TimeKYCData](docs/TimeKYCData.md)
@@ -299,7 +305,7 @@ Authentication schemes defined for the API:
 
 ## Recommendation
 
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issue.
+It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
 

@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class TradeAddressData  {
+public class TradeAddressData {
   
   @SerializedName("address")
   private String address = null;
@@ -91,19 +89,19 @@ public class TradeAddressData  {
       return false;
     }
     TradeAddressData tradeAddressData = (TradeAddressData) o;
-    return (address == null ? tradeAddressData.address == null : address.equals(tradeAddressData.address)) &&
-        (time == null ? tradeAddressData.time == null : time.equals(tradeAddressData.time)) &&
-        (info == null ? tradeAddressData.info == null : info.equals(tradeAddressData.info)) &&
-        (netki == null ? tradeAddressData.netki == null : netki.equals(tradeAddressData.netki));
+    return (this.address == null ? tradeAddressData.address == null : this.address.equals(tradeAddressData.address)) &&
+        (this.time == null ? tradeAddressData.time == null : this.time.equals(tradeAddressData.time)) &&
+        (this.info == null ? tradeAddressData.info == null : this.info.equals(tradeAddressData.info)) &&
+        (this.netki == null ? tradeAddressData.netki == null : this.netki.equals(tradeAddressData.netki));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (address == null ? 0: address.hashCode());
-    result = 31 * result + (time == null ? 0: time.hashCode());
-    result = 31 * result + (info == null ? 0: info.hashCode());
-    result = 31 * result + (netki == null ? 0: netki.hashCode());
+    result = 31 * result + (this.address == null ? 0: this.address.hashCode());
+    result = 31 * result + (this.time == null ? 0: this.time.hashCode());
+    result = 31 * result + (this.info == null ? 0: this.info.hashCode());
+    result = 31 * result + (this.netki == null ? 0: this.netki.hashCode());
     return result;
   }
 

@@ -6,7 +6,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,9 +40,9 @@
 
 namespace Swagger\Client\Api;
 
-use \Swagger\Client\Configuration;
 use \Swagger\Client\ApiClient;
 use \Swagger\Client\ApiException;
+use \Swagger\Client\Configuration;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -51,12 +51,11 @@ use \Swagger\Client\ObjectSerializer;
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class SecurityActionsApi
 {
-
     /**
      * API Client
      *
@@ -71,9 +70,9 @@ class SecurityActionsApi
      */
     public function __construct(\Swagger\Client\ApiClient $apiClient = null)
     {
-        if ($apiClient == null) {
+        if ($apiClient === null) {
             $apiClient = new ApiClient();
-            $apiClient->getConfig()->setHost('https://api.coinsecure.in');
+            $apiClient->getConfig()->setHost('https://api.coinsecure.in/');
         }
 
         $this->apiClient = $apiClient;
@@ -110,8 +109,8 @@ class SecurityActionsApi
      * @param \Swagger\Client\Model\MethodCountryMobile $body Please Send Valid Json as below. (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1mfaauthyinitiate($body, $authorization = null, $accept = null)
     {
@@ -127,8 +126,8 @@ class SecurityActionsApi
      * @param \Swagger\Client\Model\MethodCountryMobile $body Please Send Valid Json as below. (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1mfaauthyinitiateWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -139,14 +138,14 @@ class SecurityActionsApi
         // parse inputs
         $resourcePath = "/v1/mfa/authy/initiate";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -183,7 +182,7 @@ class SecurityActionsApi
                 '/v1/mfa/authy/initiate'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -207,8 +206,8 @@ class SecurityActionsApi
      *
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1mfagainitiate($authorization = null, $accept = null)
     {
@@ -223,22 +222,22 @@ class SecurityActionsApi
      *
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1mfagainitiateWithHttpInfo($authorization = null, $accept = null)
     {
         // parse inputs
         $resourcePath = "/v1/mfa/ga/initiate";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -270,7 +269,7 @@ class SecurityActionsApi
                 '/v1/mfa/ga/initiate'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -294,8 +293,8 @@ class SecurityActionsApi
      *
      * @param string $authorization Login Token or any Apikey to be added as Authorization in header (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1usermfaauthycall($authorization = null, $accept = null)
     {
@@ -310,22 +309,22 @@ class SecurityActionsApi
      *
      * @param string $authorization Login Token or any Apikey to be added as Authorization in header (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1usermfaauthycallWithHttpInfo($authorization = null, $accept = null)
     {
         // parse inputs
         $resourcePath = "/v1/mfa/authy/call";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -357,7 +356,7 @@ class SecurityActionsApi
                 '/v1/mfa/authy/call'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -382,8 +381,8 @@ class SecurityActionsApi
      * @param string $code  (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1usermfaauthydisableCode($code, $authorization = null, $accept = null)
     {
@@ -399,8 +398,8 @@ class SecurityActionsApi
      * @param string $code  (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1usermfaauthydisableCodeWithHttpInfo($code, $authorization = null, $accept = null)
     {
@@ -411,14 +410,14 @@ class SecurityActionsApi
         // parse inputs
         $resourcePath = "/v1/user/mfa/authy/disable/{code}";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -458,7 +457,7 @@ class SecurityActionsApi
                 '/v1/user/mfa/authy/disable/{code}'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -483,8 +482,8 @@ class SecurityActionsApi
      * @param \Swagger\Client\Model\CodeCountryMobile $body Please Send Valid Json as below. (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1usermfaauthyinitiateenable($body, $authorization = null, $accept = null)
     {
@@ -500,8 +499,8 @@ class SecurityActionsApi
      * @param \Swagger\Client\Model\CodeCountryMobile $body Please Send Valid Json as below. (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1usermfaauthyinitiateenableWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -512,14 +511,14 @@ class SecurityActionsApi
         // parse inputs
         $resourcePath = "/v1/user/mfa/authy/initiate/enable";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -556,7 +555,7 @@ class SecurityActionsApi
                 '/v1/user/mfa/authy/initiate/enable'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -580,8 +579,8 @@ class SecurityActionsApi
      *
      * @param string $authorization Login Token or any Apikey to be added as Authorization in header (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1usermfaauthysms($authorization = null, $accept = null)
     {
@@ -596,22 +595,22 @@ class SecurityActionsApi
      *
      * @param string $authorization Login Token or any Apikey to be added as Authorization in header (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1usermfaauthysmsWithHttpInfo($authorization = null, $accept = null)
     {
         // parse inputs
         $resourcePath = "/v1/mfa/authy/sms";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -643,7 +642,7 @@ class SecurityActionsApi
                 '/v1/mfa/authy/sms'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -668,8 +667,8 @@ class SecurityActionsApi
      * @param string $code  (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1usermfagadisableCode($code, $authorization = null, $accept = null)
     {
@@ -685,8 +684,8 @@ class SecurityActionsApi
      * @param string $code  (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1usermfagadisableCodeWithHttpInfo($code, $authorization = null, $accept = null)
     {
@@ -697,14 +696,14 @@ class SecurityActionsApi
         // parse inputs
         $resourcePath = "/v1/user/mfa/ga/disable/{code}";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -744,7 +743,7 @@ class SecurityActionsApi
                 '/v1/user/mfa/ga/disable/{code}'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -769,8 +768,8 @@ class SecurityActionsApi
      * @param \Swagger\Client\Model\Code $body Please Send Valid Json as below. (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1usermfagainitiateenable($body, $authorization = null, $accept = null)
     {
@@ -786,8 +785,8 @@ class SecurityActionsApi
      * @param \Swagger\Client\Model\Code $body Please Send Valid Json as below. (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1usermfagainitiateenableWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -798,14 +797,14 @@ class SecurityActionsApi
         // parse inputs
         $resourcePath = "/v1/user/mfa/ga/initiate/enable";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -842,7 +841,7 @@ class SecurityActionsApi
                 '/v1/user/mfa/ga/initiate/enable'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -867,8 +866,8 @@ class SecurityActionsApi
      * @param \Swagger\Client\Model\ChangePassword $body  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userpasswordchange($body, $authorization = null, $accept = null)
     {
@@ -884,8 +883,8 @@ class SecurityActionsApi
      * @param \Swagger\Client\Model\ChangePassword $body  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userpasswordchangeWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -896,14 +895,14 @@ class SecurityActionsApi
         // parse inputs
         $resourcePath = "/v1/user/password/change";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -940,7 +939,7 @@ class SecurityActionsApi
                 '/v1/user/password/change'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -964,8 +963,8 @@ class SecurityActionsApi
      *
      * @param \Swagger\Client\Model\ResetPassword $body Please Send Valid Json as below. (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userpasswordreset($body, $accept = null)
     {
@@ -980,8 +979,8 @@ class SecurityActionsApi
      *
      * @param \Swagger\Client\Model\ResetPassword $body Please Send Valid Json as below. (required)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userpasswordresetWithHttpInfo($body, $accept = null)
     {
@@ -992,14 +991,14 @@ class SecurityActionsApi
         // parse inputs
         $resourcePath = "/v1/user/password/reset";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($accept !== null) {
@@ -1032,7 +1031,7 @@ class SecurityActionsApi
                 '/v1/user/password/reset'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1048,5 +1047,4 @@ class SecurityActionsApi
             throw $e;
         }
     }
-
 }

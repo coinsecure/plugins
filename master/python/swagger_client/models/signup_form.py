@@ -63,6 +63,7 @@ class SignupForm(object):
         self._repeat_password = repeat_password
         self._ref_id = ref_id
 
+
     @property
     def name(self):
         """
@@ -83,6 +84,8 @@ class SignupForm(object):
         :param name: The name of this SignupForm.
         :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")
 
         self._name = name
 
@@ -106,6 +109,8 @@ class SignupForm(object):
         :param email: The email of this SignupForm.
         :type: str
         """
+        if email is None:
+            raise ValueError("Invalid value for `email`, must not be `None`")
 
         self._email = email
 
@@ -129,6 +134,8 @@ class SignupForm(object):
         :param password: The password of this SignupForm.
         :type: str
         """
+        if password is None:
+            raise ValueError("Invalid value for `password`, must not be `None`")
 
         self._password = password
 
@@ -152,6 +159,8 @@ class SignupForm(object):
         :param repeat_password: The repeat_password of this SignupForm.
         :type: str
         """
+        if repeat_password is None:
+            raise ValueError("Invalid value for `repeat_password`, must not be `None`")
 
         self._repeat_password = repeat_password
 

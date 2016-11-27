@@ -53,7 +53,7 @@
    * @alias module:model/SendCoinWallet
    * @class
    * @param walletID {String} 
-   * @param amt {Integer} 
+   * @param amt {Number} 
    * @param toAddr {String} 
    */
   var exports = function(walletID, amt, toAddr) {
@@ -62,6 +62,7 @@
     _this['walletID'] = walletID;
     _this['amt'] = amt;
     _this['toAddr'] = toAddr;
+
 
 
   };
@@ -81,7 +82,7 @@
         obj['walletID'] = ApiClient.convertToType(data['walletID'], 'String');
       }
       if (data.hasOwnProperty('amt')) {
-        obj['amt'] = ApiClient.convertToType(data['amt'], 'Integer');
+        obj['amt'] = ApiClient.convertToType(data['amt'], 'Number');
       }
       if (data.hasOwnProperty('toAddr')) {
         obj['toAddr'] = ApiClient.convertToType(data['toAddr'], 'String');
@@ -92,6 +93,9 @@
       if (data.hasOwnProperty('pin')) {
         obj['pin'] = ApiClient.convertToType(data['pin'], 'String');
       }
+      if (data.hasOwnProperty('fees')) {
+        obj['fees'] = ApiClient.convertToType(data['fees'], Object);
+      }
     }
     return obj;
   }
@@ -101,7 +105,7 @@
    */
   exports.prototype['walletID'] = undefined;
   /**
-   * @member {Integer} amt
+   * @member {Number} amt
    */
   exports.prototype['amt'] = undefined;
   /**
@@ -116,6 +120,10 @@
    * @member {String} pin
    */
   exports.prototype['pin'] = undefined;
+  /**
+   * @member {Object} fees
+   */
+  exports.prototype['fees'] = undefined;
 
 
 

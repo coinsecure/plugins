@@ -1,6 +1,6 @@
 # swagger_client.WalletActionsApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,6 +22,7 @@ Generates a New Bitcoin Address to store coins.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -38,7 +39,7 @@ try:
     api_response = api_instance.v1userwalletcoinaddressnew(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletActionsApi->v1userwalletcoinaddressnew: %s\n" % e
+    print("Exception when calling WalletActionsApi->v1userwalletcoinaddressnew: %s\n" % e)
 ```
 
 ### Parameters
@@ -73,6 +74,7 @@ Creates a New wallet to store addresses. This method also creates a single defau
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -89,7 +91,7 @@ try:
     api_response = api_instance.v1userwalletcoinnew(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletActionsApi->v1userwalletcoinnew: %s\n" % e
+    print("Exception when calling WalletActionsApi->v1userwalletcoinnew: %s\n" % e)
 ```
 
 ### Parameters
@@ -124,6 +126,7 @@ The code for verifying the withdrawal can be called from /v1/wallet/withdrawVeri
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -140,7 +143,7 @@ try:
     api_response = api_instance.v1userwalletcoinwithdrawinitiate(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletActionsApi->v1userwalletcoinwithdrawinitiate: %s\n" % e
+    print("Exception when calling WalletActionsApi->v1userwalletcoinwithdrawinitiate: %s\n" % e)
 ```
 
 ### Parameters
@@ -175,6 +178,7 @@ This function transfers funds to yout Exchange Balance without the need for any 
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -191,7 +195,7 @@ try:
     api_response = api_instance.v1userwalletcoinwithdrawsend_to_exchange(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletActionsApi->v1userwalletcoinwithdrawsend_to_exchange: %s\n" % e
+    print("Exception when calling WalletActionsApi->v1userwalletcoinwithdrawsend_to_exchange: %s\n" % e)
 ```
 
 ### Parameters
@@ -226,6 +230,7 @@ Cancels an unverified withdrawal. You can get the code from /wallet/unverifiedWi
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -242,7 +247,7 @@ try:
     api_response = api_instance.v1userwalletcoinwithdrawunverifiedcancel_withdraw_id(withdraw_id, authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletActionsApi->v1userwalletcoinwithdrawunverifiedcancel_withdraw_id: %s\n" % e
+    print("Exception when calling WalletActionsApi->v1userwalletcoinwithdrawunverifiedcancel_withdraw_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -277,6 +282,7 @@ Verifies an unverified withdrawal. You can get the code from /v1/wallet/coin/wit
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -293,7 +299,7 @@ try:
     api_response = api_instance.v1userwalletcoinwithdrawverify(authorization, body, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletActionsApi->v1userwalletcoinwithdrawverify: %s\n" % e
+    print("Exception when calling WalletActionsApi->v1userwalletcoinwithdrawverify: %s\n" % e)
 ```
 
 ### Parameters
@@ -328,6 +334,7 @@ Gets Coin Unverified Withdraws Codes to call and apply on /v1/wallet/coin/withdr
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -344,7 +351,7 @@ try:
     api_response = api_instance.v1walletcoinwithdrawnew_verifycode(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling WalletActionsApi->v1walletcoinwithdrawnew_verifycode: %s\n" % e
+    print("Exception when calling WalletActionsApi->v1walletcoinwithdrawnew_verifycode: %s\n" % e)
 ```
 
 ### Parameters

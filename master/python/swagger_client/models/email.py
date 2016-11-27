@@ -51,6 +51,7 @@ class Email(object):
 
         self._email = email
 
+
     @property
     def email(self):
         """
@@ -71,6 +72,8 @@ class Email(object):
         :param email: The email of this Email.
         :type: str
         """
+        if email is None:
+            raise ValueError("Invalid value for `email`, must not be `None`")
 
         self._email = email
 

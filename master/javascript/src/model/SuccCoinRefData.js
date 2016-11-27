@@ -53,13 +53,13 @@
    * @alias module:model/SuccCoinRefData
    * @class
    * @param refPercent {Number} 
-   * @param time {Integer} 
+   * @param time {Number} 
    * @param orderID {String} 
    * @param refID {String} 
    * @param tradeID {String} 
    * @param newUserIDMasked {String} 
    * @param depositID {String} 
-   * @param amtPaid {Integer} 
+   * @param amtPaid {Number} 
    */
   var exports = function(refPercent, time, orderID, refID, tradeID, newUserIDMasked, depositID, amtPaid) {
     var _this = this;
@@ -89,7 +89,7 @@
         obj['refPercent'] = ApiClient.convertToType(data['refPercent'], 'Number');
       }
       if (data.hasOwnProperty('time')) {
-        obj['time'] = ApiClient.convertToType(data['time'], 'Integer');
+        obj['time'] = ApiClient.convertToType(data['time'], 'Number');
       }
       if (data.hasOwnProperty('orderID')) {
         obj['orderID'] = ApiClient.convertToType(data['orderID'], 'String');
@@ -107,7 +107,7 @@
         obj['depositID'] = ApiClient.convertToType(data['depositID'], 'String');
       }
       if (data.hasOwnProperty('amtPaid')) {
-        obj['amtPaid'] = ApiClient.convertToType(data['amtPaid'], 'Integer');
+        obj['amtPaid'] = ApiClient.convertToType(data['amtPaid'], 'Number');
       }
     }
     return obj;
@@ -118,7 +118,7 @@
    */
   exports.prototype['refPercent'] = undefined;
   /**
-   * @member {Integer} time
+   * @member {Number} time
    */
   exports.prototype['time'] = undefined;
   /**
@@ -142,7 +142,7 @@
    */
   exports.prototype['depositID'] = undefined;
   /**
-   * @member {Integer} amtPaid
+   * @member {Number} amtPaid
    */
   exports.prototype['amtPaid'] = undefined;
 

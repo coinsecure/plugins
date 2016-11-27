@@ -50,9 +50,9 @@ public:
     QString host;
     QString basePath;
 
-    void /v1/user/exchange/ask/cancel/OrderID(QString* orderID, QString* authorization);
+    void /v1/user/exchange/ask/cancel/OrderID(QString* order_id, QString* authorization);
     void /v1/user/exchange/ask/new(SWGRateVolData body, QString* authorization, QString* accept);
-    void /v1/user/exchange/bid/cancel/OrderID(QString* orderID, QString* authorization);
+    void /v1/user/exchange/bid/cancel/OrderID(QString* order_id, QString* authorization);
     void /v1/user/exchange/bid/new(SWGRateVolData body, QString* authorization, QString* accept);
     void /v1/user/exchange/instant/buy(SWGMinFiat body, QString* authorization, QString* accept);
     void /v1/user/exchange/instant/sell(SWGMaxVol body, QString* authorization, QString* accept);

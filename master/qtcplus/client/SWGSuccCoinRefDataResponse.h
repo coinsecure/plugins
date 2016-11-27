@@ -59,21 +59,26 @@ public:
 
     bool getSuccess();
     void setSuccess(bool success);
-QList<SWGSuccCoinRefData*>* getMessage();
+
+    QList<SWGSuccCoinRefData*>* getMessage();
     void setMessage(QList<SWGSuccCoinRefData*>* message);
-QString* getMethod();
+
+    QString* getMethod();
     void setMethod(QString* method);
-QString* getTitle();
+
+    QString* getTitle();
     void setTitle(QString* title);
-QDateTime* getTime();
+
+    QDateTime* getTime();
     void setTime(QDateTime* time);
+
 
 private:
     bool success;
-QList<SWGSuccCoinRefData*>* message;
-QString* method;
-QString* title;
-QDateTime* time;
+    QList<SWGSuccCoinRefData*>* message;
+    QString* method;
+    QString* title;
+    QDateTime* time;
 };
 
 } /* namespace Swagger */

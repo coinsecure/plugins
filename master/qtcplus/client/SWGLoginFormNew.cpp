@@ -51,27 +51,32 @@ SWGLoginFormNew::~SWGLoginFormNew() {
 void
 SWGLoginFormNew::init() {
     email = new QString("");
-token = new QString("");
-password = new QString("");
-gcmCode = new QString("");
-pin = new QString("");
+    token = new QString("");
+    password = new QString("");
+    gcm_code = new QString("");
+    pin = new QString("");
 }
 
 void
 SWGLoginFormNew::cleanup() {
-    if(email != NULL) {
+    
+    if(email != nullptr) {
         delete email;
     }
-if(token != NULL) {
+
+    if(token != nullptr) {
         delete token;
     }
-if(password != NULL) {
+
+    if(password != nullptr) {
         delete password;
     }
-if(gcmCode != NULL) {
-        delete gcmCode;
+
+    if(gcm_code != nullptr) {
+        delete gcm_code;
     }
-if(pin != NULL) {
+
+    if(pin != nullptr) {
         delete pin;
     }
 }
@@ -87,11 +92,11 @@ SWGLoginFormNew::fromJson(QString &json) {
 
 void
 SWGLoginFormNew::fromJsonObject(QJsonObject &pJson) {
-    setValue(&email, pJson["email"], "QString", "QString");
-setValue(&token, pJson["token"], "QString", "QString");
-setValue(&password, pJson["password"], "QString", "QString");
-setValue(&gcmCode, pJson["gcmCode"], "QString", "QString");
-setValue(&pin, pJson["pin"], "QString", "QString");
+    ::Swagger::setValue(&email, pJson["email"], "QString", "QString");
+    ::Swagger::setValue(&token, pJson["token"], "QString", "QString");
+    ::Swagger::setValue(&password, pJson["password"], "QString", "QString");
+    ::Swagger::setValue(&gcm_code, pJson["gcm_code"], "QString", "QString");
+    ::Swagger::setValue(&pin, pJson["pin"], "QString", "QString");
 }
 
 QString
@@ -108,30 +113,15 @@ QJsonObject*
 SWGLoginFormNew::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("email"), email, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("token"), token, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("password"), password, obj, QString("QString"));
-    
-        
 
-    
-    toJsonValue(QString("gcmCode"), gcmCode, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("gcm_code"), gcm_code, obj, QString("QString"));
 
-    
     toJsonValue(QString("pin"), pin, obj, QString("QString"));
-    
-        
 
     return obj;
 }
@@ -165,11 +155,11 @@ SWGLoginFormNew::setPassword(QString* password) {
 
 QString*
 SWGLoginFormNew::getGcmCode() {
-    return gcmCode;
+    return gcm_code;
 }
 void
-SWGLoginFormNew::setGcmCode(QString* gcmCode) {
-    this->gcmCode = gcmCode;
+SWGLoginFormNew::setGcmCode(QString* gcm_code) {
+    this->gcm_code = gcm_code;
 }
 
 QString*

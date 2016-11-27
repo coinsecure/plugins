@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class LastTradeData  {
+public class LastTradeData {
   
   @SerializedName("time")
   private Long time = null;
@@ -91,19 +89,19 @@ public class LastTradeData  {
       return false;
     }
     LastTradeData lastTradeData = (LastTradeData) o;
-    return (time == null ? lastTradeData.time == null : time.equals(lastTradeData.time)) &&
-        (avgRate == null ? lastTradeData.avgRate == null : avgRate.equals(lastTradeData.avgRate)) &&
-        (vol == null ? lastTradeData.vol == null : vol.equals(lastTradeData.vol)) &&
-        (ordType == null ? lastTradeData.ordType == null : ordType.equals(lastTradeData.ordType));
+    return (this.time == null ? lastTradeData.time == null : this.time.equals(lastTradeData.time)) &&
+        (this.avgRate == null ? lastTradeData.avgRate == null : this.avgRate.equals(lastTradeData.avgRate)) &&
+        (this.vol == null ? lastTradeData.vol == null : this.vol.equals(lastTradeData.vol)) &&
+        (this.ordType == null ? lastTradeData.ordType == null : this.ordType.equals(lastTradeData.ordType));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (time == null ? 0: time.hashCode());
-    result = 31 * result + (avgRate == null ? 0: avgRate.hashCode());
-    result = 31 * result + (vol == null ? 0: vol.hashCode());
-    result = 31 * result + (ordType == null ? 0: ordType.hashCode());
+    result = 31 * result + (this.time == null ? 0: this.time.hashCode());
+    result = 31 * result + (this.avgRate == null ? 0: this.avgRate.hashCode());
+    result = 31 * result + (this.vol == null ? 0: this.vol.hashCode());
+    result = 31 * result + (this.ordType == null ? 0: this.ordType.hashCode());
     return result;
   }
 

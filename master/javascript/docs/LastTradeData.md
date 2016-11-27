@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**time** | **Integer** |  | 
-**avgRate** | **Integer** |  | 
-**vol** | **Integer** |  | 
+**time** | **Number** |  | 
+**avgRate** | **Number** |  | 
+**vol** | **Number** |  | 
 **ordType** | **String** |  | 
 
 

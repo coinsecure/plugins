@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -47,10 +47,10 @@ use \ArrayAccess;
  * WalletAddressData Class Doc Comment
  *
  * @category    Class */
-/** 
+/**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class WalletAddressData implements ArrayAccess
@@ -65,14 +65,14 @@ class WalletAddressData implements ArrayAccess
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
-    protected static $swaggerTypes = array(
+    protected static $swaggerTypes = [
         'wallet_id' => 'string',
         'address' => 'string',
         'time' => 'int',
         'info' => 'string',
         'min_conf' => 'int',
         'netki' => 'string'
-    );
+    ];
 
     public static function swaggerTypes()
     {
@@ -83,50 +83,52 @@ class WalletAddressData implements ArrayAccess
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
-    protected static $attributeMap = array(
+    protected static $attributeMap = [
         'wallet_id' => 'walletID',
         'address' => 'address',
         'time' => 'time',
         'info' => 'info',
         'min_conf' => 'minConf',
         'netki' => 'netki'
-    );
+    ];
 
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      * @var string[]
      */
-    protected static $setters = array(
+    protected static $setters = [
         'wallet_id' => 'setWalletId',
         'address' => 'setAddress',
         'time' => 'setTime',
         'info' => 'setInfo',
         'min_conf' => 'setMinConf',
         'netki' => 'setNetki'
-    );
+    ];
 
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
      * @var string[]
      */
-    protected static $getters = array(
+    protected static $getters = [
         'wallet_id' => 'getWalletId',
         'address' => 'getAddress',
         'time' => 'getTime',
         'info' => 'getInfo',
         'min_conf' => 'getMinConf',
         'netki' => 'getNetki'
-    );
+    ];
+
+    public static function attributeMap()
+    {
+        return self::$attributeMap;
+    }
+
+    public static function setters()
+    {
+        return self::$setters;
+    }
 
     public static function getters()
     {
@@ -141,11 +143,11 @@ class WalletAddressData implements ArrayAccess
      * Associative array for storing property values
      * @var mixed[]
      */
-    protected $container = array();
+    protected $container = [];
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property values initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -164,7 +166,7 @@ class WalletAddressData implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = array();
+        $invalid_properties = [];
         if ($this->container['wallet_id'] === null) {
             $invalid_properties[] = "'wallet_id' can't be null";
         }
@@ -399,5 +401,3 @@ class WalletAddressData implements ArrayAccess
         return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -14,6 +14,7 @@ public class SendCoinWallet: JSONEncodable {
     public var toAddr: String?
     public var msg: String?
     public var pin: String?
+    public var fees: AnyObject?
 
     public init() {}
 
@@ -25,6 +26,7 @@ public class SendCoinWallet: JSONEncodable {
         nillableDictionary["toAddr"] = self.toAddr
         nillableDictionary["msg"] = self.msg
         nillableDictionary["pin"] = self.pin
+        nillableDictionary["fees"] = self.fees
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary
     }

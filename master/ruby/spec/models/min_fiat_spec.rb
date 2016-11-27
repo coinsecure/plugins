@@ -43,7 +43,7 @@ describe 'MinFiat' do
       expect(@instance).to be_instance_of(SwaggerClient::MinFiat)
     end
   end
-  describe 'test attribute "min_fiat"' do
+  describe 'test attribute "max_fiat"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

@@ -69,7 +69,7 @@ SWGDoubleData::fromJson(QString &json) {
 
 void
 SWGDoubleData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&percent, pJson["percent"], "double", "");
+    ::Swagger::setValue(&percent, pJson["percent"], "double", "");
 }
 
 QString
@@ -85,6 +85,7 @@ SWGDoubleData::asJson ()
 QJsonObject*
 SWGDoubleData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("percent", QJsonValue(percent));
 
     return obj;

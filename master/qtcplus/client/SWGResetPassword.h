@@ -56,15 +56,18 @@ public:
 
     QString* getToken();
     void setToken(QString* token);
-QString* getPassword();
+
+    QString* getPassword();
     void setPassword(QString* password);
-QString* getRepeatPassword();
-    void setRepeatPassword(QString* repeatPassword);
+
+    QString* getRepeatPassword();
+    void setRepeatPassword(QString* repeat_password);
+
 
 private:
     QString* token;
-QString* password;
-QString* repeatPassword;
+    QString* password;
+    QString* repeat_password;
 };
 
 } /* namespace Swagger */

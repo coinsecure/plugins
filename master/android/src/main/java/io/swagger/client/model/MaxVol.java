@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class MaxVol  {
+public class MaxVol {
   
   @SerializedName("maxVol")
   private Long maxVol = null;
@@ -55,13 +53,13 @@ public class MaxVol  {
       return false;
     }
     MaxVol maxVol = (MaxVol) o;
-    return (maxVol == null ? maxVol.maxVol == null : maxVol.equals(maxVol.maxVol));
+    return (this.maxVol == null ? maxVol.maxVol == null : this.maxVol.equals(maxVol.maxVol));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (maxVol == null ? 0: maxVol.hashCode());
+    result = 31 * result + (this.maxVol == null ? 0: this.maxVol.hashCode());
     return result;
   }
 

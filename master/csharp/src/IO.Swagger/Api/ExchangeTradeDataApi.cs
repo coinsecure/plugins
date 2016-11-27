@@ -350,6 +350,35 @@ namespace IO.Swagger.Api
         /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
         /// <returns>ApiResponse of OrderDataResponse</returns>
         ApiResponse<OrderDataResponse> V1userexchangebidpendingWithHttpInfo (string authorization, string accept = null);
+        /// <summary>
+        /// Completed Exchange Trades
+        /// </summary>
+        /// <remarks>
+        /// Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from">From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)</param>
+        /// <param name="to">To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)</param>
+        /// <param name="max">Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)</param>
+        /// <param name="offset">Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)</param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>RateVolTimeTypeDataResponse</returns>
+        RateVolTimeTypeDataResponse V1userexchangetrades (long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null);
+
+        /// <summary>
+        /// Completed Exchange Trades
+        /// </summary>
+        /// <remarks>
+        /// Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from">From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)</param>
+        /// <param name="to">To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)</param>
+        /// <param name="max">Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)</param>
+        /// <param name="offset">Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)</param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>ApiResponse of RateVolTimeTypeDataResponse</returns>
+        ApiResponse<RateVolTimeTypeDataResponse> V1userexchangetradesWithHttpInfo (long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -666,6 +695,35 @@ namespace IO.Swagger.Api
         /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
         /// <returns>Task of ApiResponse (OrderDataResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrderDataResponse>> V1userexchangebidpendingAsyncWithHttpInfo (string authorization, string accept = null);
+        /// <summary>
+        /// Completed Exchange Trades
+        /// </summary>
+        /// <remarks>
+        /// Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from">From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)</param>
+        /// <param name="to">To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)</param>
+        /// <param name="max">Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)</param>
+        /// <param name="offset">Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)</param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>Task of RateVolTimeTypeDataResponse</returns>
+        System.Threading.Tasks.Task<RateVolTimeTypeDataResponse> V1userexchangetradesAsync (long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null);
+
+        /// <summary>
+        /// Completed Exchange Trades
+        /// </summary>
+        /// <remarks>
+        /// Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from">From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)</param>
+        /// <param name="to">To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)</param>
+        /// <param name="max">Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)</param>
+        /// <param name="offset">Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)</param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>Task of ApiResponse (RateVolTimeTypeDataResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RateVolTimeTypeDataResponse>> V1userexchangetradesAsyncWithHttpInfo (long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null);
         #endregion Asynchronous Operations
     }
 
@@ -2845,6 +2903,171 @@ namespace IO.Swagger.Api
             return new ApiResponse<OrderDataResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (OrderDataResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrderDataResponse)));
+            
+        }
+
+        /// <summary>
+        /// Completed Exchange Trades Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from">From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)</param>
+        /// <param name="to">To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)</param>
+        /// <param name="max">Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)</param>
+        /// <param name="offset">Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)</param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>RateVolTimeTypeDataResponse</returns>
+        public RateVolTimeTypeDataResponse V1userexchangetrades (long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
+        {
+             ApiResponse<RateVolTimeTypeDataResponse> localVarResponse = V1userexchangetradesWithHttpInfo(from, to, max, offset, accept);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Completed Exchange Trades Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from">From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)</param>
+        /// <param name="to">To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)</param>
+        /// <param name="max">Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)</param>
+        /// <param name="offset">Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)</param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>ApiResponse of RateVolTimeTypeDataResponse</returns>
+        public ApiResponse< RateVolTimeTypeDataResponse > V1userexchangetradesWithHttpInfo (long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
+        {
+
+            var localVarPath = "/v1/exchange/trades";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json", 
+                "application/xml", 
+                "application/csv"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (from != null) localVarQueryParams.Add("from", Configuration.ApiClient.ParameterToString(from)); // query parameter
+            if (to != null) localVarQueryParams.Add("to", Configuration.ApiClient.ParameterToString(to)); // query parameter
+            if (max != null) localVarQueryParams.Add("max", Configuration.ApiClient.ParameterToString(max)); // query parameter
+            if (offset != null) localVarQueryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
+            if (accept != null) localVarHeaderParams.Add("accept", Configuration.ApiClient.ParameterToString(accept)); // header parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V1userexchangetrades", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<RateVolTimeTypeDataResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (RateVolTimeTypeDataResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RateVolTimeTypeDataResponse)));
+            
+        }
+
+        /// <summary>
+        /// Completed Exchange Trades Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from">From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)</param>
+        /// <param name="to">To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)</param>
+        /// <param name="max">Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)</param>
+        /// <param name="offset">Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)</param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>Task of RateVolTimeTypeDataResponse</returns>
+        public async System.Threading.Tasks.Task<RateVolTimeTypeDataResponse> V1userexchangetradesAsync (long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
+        {
+             ApiResponse<RateVolTimeTypeDataResponse> localVarResponse = await V1userexchangetradesAsyncWithHttpInfo(from, to, max, offset, accept);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Completed Exchange Trades Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="from">From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)</param>
+        /// <param name="to">To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)</param>
+        /// <param name="max">Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)</param>
+        /// <param name="offset">Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)</param>
+        /// <param name="accept">JSON, XML or CSV can be returned (Optional) (optional)</param>
+        /// <returns>Task of ApiResponse (RateVolTimeTypeDataResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<RateVolTimeTypeDataResponse>> V1userexchangetradesAsyncWithHttpInfo (long? from = null, long? to = null, int? max = null, long? offset = null, string accept = null)
+        {
+
+            var localVarPath = "/v1/exchange/trades";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json", 
+                "application/xml", 
+                "application/csv"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (from != null) localVarQueryParams.Add("from", Configuration.ApiClient.ParameterToString(from)); // query parameter
+            if (to != null) localVarQueryParams.Add("to", Configuration.ApiClient.ParameterToString(to)); // query parameter
+            if (max != null) localVarQueryParams.Add("max", Configuration.ApiClient.ParameterToString(max)); // query parameter
+            if (offset != null) localVarQueryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
+            if (accept != null) localVarHeaderParams.Add("accept", Configuration.ApiClient.ParameterToString(accept)); // header parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V1userexchangetrades", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<RateVolTimeTypeDataResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (RateVolTimeTypeDataResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RateVolTimeTypeDataResponse)));
             
         }
 

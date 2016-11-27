@@ -54,6 +54,7 @@ limitations under the License.
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
@@ -86,7 +87,7 @@ limitations under the License.
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\IO.Swagger\IO.Swagger.csproj">
-          <Project>{A30C531E-2909-489E-B626-5547C90DE69D}</Project>
+          <Project>{D3CF9767-9567-4047-AF69-BC1A9A843C6F}</Project>
           <Name>IO.Swagger</Name>
       </ProjectReference>
   </ItemGroup>

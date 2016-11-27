@@ -50,15 +50,15 @@ SWGSuccessTickerResponse::~SWGSuccessTickerResponse() {
 
 void
 SWGSuccessTickerResponse::init() {
-    lastPrice = 0L;
-timestamp = 0L;
-bid = 0L;
-ask = 0L;
-fiatVolume = 0L;
-coinVolume = 0L;
-open = 0L;
-high = 0L;
-low = 0L;
+    last_price = 0L;
+    timestamp = 0L;
+    bid = 0L;
+    ask = 0L;
+    fiat_volume = 0L;
+    coin_volume = 0L;
+    open = 0L;
+    high = 0L;
+    low = 0L;
 }
 
 void
@@ -85,15 +85,15 @@ SWGSuccessTickerResponse::fromJson(QString &json) {
 
 void
 SWGSuccessTickerResponse::fromJsonObject(QJsonObject &pJson) {
-    setValue(&lastPrice, pJson["lastPrice"], "qint64", "");
-setValue(&timestamp, pJson["timestamp"], "qint64", "");
-setValue(&bid, pJson["bid"], "qint64", "");
-setValue(&ask, pJson["ask"], "qint64", "");
-setValue(&fiatVolume, pJson["fiatVolume"], "qint64", "");
-setValue(&coinVolume, pJson["coinVolume"], "qint64", "");
-setValue(&open, pJson["open"], "qint64", "");
-setValue(&high, pJson["high"], "qint64", "");
-setValue(&low, pJson["low"], "qint64", "");
+    ::Swagger::setValue(&last_price, pJson["last_price"], "qint64", "");
+    ::Swagger::setValue(&timestamp, pJson["timestamp"], "qint64", "");
+    ::Swagger::setValue(&bid, pJson["bid"], "qint64", "");
+    ::Swagger::setValue(&ask, pJson["ask"], "qint64", "");
+    ::Swagger::setValue(&fiat_volume, pJson["fiat_volume"], "qint64", "");
+    ::Swagger::setValue(&coin_volume, pJson["coin_volume"], "qint64", "");
+    ::Swagger::setValue(&open, pJson["open"], "qint64", "");
+    ::Swagger::setValue(&high, pJson["high"], "qint64", "");
+    ::Swagger::setValue(&low, pJson["low"], "qint64", "");
 }
 
 QString
@@ -109,26 +109,35 @@ SWGSuccessTickerResponse::asJson ()
 QJsonObject*
 SWGSuccessTickerResponse::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
-    obj->insert("lastPrice", QJsonValue(lastPrice));
-obj->insert("timestamp", QJsonValue(timestamp));
-obj->insert("bid", QJsonValue(bid));
-obj->insert("ask", QJsonValue(ask));
-obj->insert("fiatVolume", QJsonValue(fiatVolume));
-obj->insert("coinVolume", QJsonValue(coinVolume));
-obj->insert("open", QJsonValue(open));
-obj->insert("high", QJsonValue(high));
-obj->insert("low", QJsonValue(low));
+    
+    obj->insert("last_price", QJsonValue(last_price));
+
+    obj->insert("timestamp", QJsonValue(timestamp));
+
+    obj->insert("bid", QJsonValue(bid));
+
+    obj->insert("ask", QJsonValue(ask));
+
+    obj->insert("fiat_volume", QJsonValue(fiat_volume));
+
+    obj->insert("coin_volume", QJsonValue(coin_volume));
+
+    obj->insert("open", QJsonValue(open));
+
+    obj->insert("high", QJsonValue(high));
+
+    obj->insert("low", QJsonValue(low));
 
     return obj;
 }
 
 qint64
 SWGSuccessTickerResponse::getLastPrice() {
-    return lastPrice;
+    return last_price;
 }
 void
-SWGSuccessTickerResponse::setLastPrice(qint64 lastPrice) {
-    this->lastPrice = lastPrice;
+SWGSuccessTickerResponse::setLastPrice(qint64 last_price) {
+    this->last_price = last_price;
 }
 
 qint64
@@ -160,20 +169,20 @@ SWGSuccessTickerResponse::setAsk(qint64 ask) {
 
 qint64
 SWGSuccessTickerResponse::getFiatVolume() {
-    return fiatVolume;
+    return fiat_volume;
 }
 void
-SWGSuccessTickerResponse::setFiatVolume(qint64 fiatVolume) {
-    this->fiatVolume = fiatVolume;
+SWGSuccessTickerResponse::setFiatVolume(qint64 fiat_volume) {
+    this->fiat_volume = fiat_volume;
 }
 
 qint64
 SWGSuccessTickerResponse::getCoinVolume() {
-    return coinVolume;
+    return coin_volume;
 }
 void
-SWGSuccessTickerResponse::setCoinVolume(qint64 coinVolume) {
-    this->coinVolume = coinVolume;
+SWGSuccessTickerResponse::setCoinVolume(qint64 coin_volume) {
+    this->coin_volume = coin_volume;
 }
 
 qint64

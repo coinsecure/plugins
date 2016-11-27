@@ -104,6 +104,8 @@ class ExchangeTradeActionsApi(object):
         all_params = ['order_id', 'authorization']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -117,6 +119,9 @@ class ExchangeTradeActionsApi(object):
         # verify the required parameter 'order_id' is set
         if ('order_id' not in params) or (params['order_id'] is None):
             raise ValueError("Missing the required parameter `order_id` when calling `v1userexchangeaskcancel_order_id`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/ask/cancel/{orderID}'.replace('{format}', 'json')
         path_params = {}
@@ -157,7 +162,10 @@ class ExchangeTradeActionsApi(object):
                                             response_type='SuccessCancelDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangeasknew(self, body, **kwargs):
         """
@@ -214,6 +222,8 @@ class ExchangeTradeActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -227,6 +237,9 @@ class ExchangeTradeActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userexchangeasknew`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/ask/new'.replace('{format}', 'json')
         path_params = {}
@@ -269,7 +282,10 @@ class ExchangeTradeActionsApi(object):
                                             response_type='SuccessOrderDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebidcancel_order_id(self, order_id, **kwargs):
         """
@@ -324,6 +340,8 @@ class ExchangeTradeActionsApi(object):
         all_params = ['order_id', 'authorization']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -337,6 +355,9 @@ class ExchangeTradeActionsApi(object):
         # verify the required parameter 'order_id' is set
         if ('order_id' not in params) or (params['order_id'] is None):
             raise ValueError("Missing the required parameter `order_id` when calling `v1userexchangebidcancel_order_id`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bid/cancel/{orderID}'.replace('{format}', 'json')
         path_params = {}
@@ -377,7 +398,10 @@ class ExchangeTradeActionsApi(object):
                                             response_type='SuccessCancelDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangebidnew(self, body, **kwargs):
         """
@@ -434,6 +458,8 @@ class ExchangeTradeActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -447,6 +473,9 @@ class ExchangeTradeActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userexchangebidnew`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bid/new'.replace('{format}', 'json')
         path_params = {}
@@ -489,7 +518,10 @@ class ExchangeTradeActionsApi(object):
                                             response_type='SuccessOrderDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangeinstantbuy(self, body, **kwargs):
         """
@@ -546,6 +578,8 @@ class ExchangeTradeActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -559,6 +593,9 @@ class ExchangeTradeActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userexchangeinstantbuy`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/instant/buy'.replace('{format}', 'json')
         path_params = {}
@@ -601,7 +638,10 @@ class ExchangeTradeActionsApi(object):
                                             response_type='SuccessOrderDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangeinstantsell(self, body, **kwargs):
         """
@@ -658,6 +698,8 @@ class ExchangeTradeActionsApi(object):
         all_params = ['body', 'authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -671,6 +713,9 @@ class ExchangeTradeActionsApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `v1userexchangeinstantsell`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/instant/sell'.replace('{format}', 'json')
         path_params = {}
@@ -713,4 +758,7 @@ class ExchangeTradeActionsApi(object):
                                             response_type='SuccessOrderDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)

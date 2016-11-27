@@ -60,17 +60,17 @@ namespace IO.Swagger.Client
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default configuration and base path (https://api.coinsecure.in).
+        /// with default configuration and base path (https://api.coinsecure.in/).
         /// </summary>
         public ApiClient()
         {
             Configuration = Configuration.Default;
-            RestClient = new RestClient("https://api.coinsecure.in");
+            RestClient = new RestClient("https://api.coinsecure.in/");
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (https://api.coinsecure.in).
+        /// with default base path (https://api.coinsecure.in/).
         /// </summary>
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config = null)
@@ -80,7 +80,7 @@ namespace IO.Swagger.Client
             else
                 Configuration = config;
 
-            RestClient = new RestClient("https://api.coinsecure.in");
+            RestClient = new RestClient("https://api.coinsecure.in/");
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace IO.Swagger.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "https://api.coinsecure.in")
+        public ApiClient(String basePath = "https://api.coinsecure.in/")
         {
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");

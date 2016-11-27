@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fiat** | **Integer** |  | 
+**fiat** | **Number** |  | 
 **account** | **String** |  | 
 **msg** | **String** |  | [optional] 
 **pin** | **String** |  | [optional] 

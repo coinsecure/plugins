@@ -69,7 +69,7 @@ SWGConfirmData::fromJson(QString &json) {
 
 void
 SWGConfirmData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&confirmations, pJson["confirmations"], "qint64", "");
+    ::Swagger::setValue(&confirmations, pJson["confirmations"], "qint64", "");
 }
 
 QString
@@ -85,6 +85,7 @@ SWGConfirmData::asJson ()
 QJsonObject*
 SWGConfirmData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("confirmations", QJsonValue(confirmations));
 
     return obj;

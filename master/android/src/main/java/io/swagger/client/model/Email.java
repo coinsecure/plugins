@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class Email  {
+public class Email {
   
   @SerializedName("email")
   private String email = null;
@@ -55,13 +53,13 @@ public class Email  {
       return false;
     }
     Email email = (Email) o;
-    return (email == null ? email.email == null : email.equals(email.email));
+    return (this.email == null ? email.email == null : this.email.equals(email.email));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (email == null ? 0: email.hashCode());
+    result = 31 * result + (this.email == null ? 0: this.email.hashCode());
     return result;
   }
 

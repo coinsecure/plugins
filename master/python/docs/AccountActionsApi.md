@@ -1,6 +1,6 @@
 # swagger_client.AccountActionsApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**v1logininitiate**](AccountActionsApi.md#v1logininitiate) | **POST** /v1/login/initiate | Initiate Login
 [**v1loginpasswordforgot**](AccountActionsApi.md#v1loginpasswordforgot) | **POST** /v1/login/password/forgot | Sends an email with a password reset token
 [**v1signup**](AccountActionsApi.md#v1signup) | **POST** /v1/signup | Creates a new Unverified Account.
+[**v1signupverify_token**](AccountActionsApi.md#v1signupverify_token) | **PUT** /v1/signup/verify/{token} | Verifies an Email token for Signup .
 [**v1userbankotp_number**](AccountActionsApi.md#v1userbankotp_number) | **GET** /v1/user/bank/otp/{number} | Send OTP for Bank Link
 [**v1userexchangekyc**](AccountActionsApi.md#v1userexchangekyc) | **PUT** /v1/user/exchange/kyc | Submits a New Bank Link and initial KYC Documents.
 [**v1usergcm_code**](AccountActionsApi.md#v1usergcm_code) | **DELETE** /v1/user/gcm/{code} | Delete GCM Code
@@ -31,6 +32,7 @@ Creates a Login Instance and returns an API Key
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -46,7 +48,7 @@ try:
     api_response = api_instance.v1login(body, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1login: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1login: %s\n" % e)
 ```
 
 ### Parameters
@@ -80,6 +82,7 @@ Sends an Email with a Verification Link.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -95,7 +98,7 @@ try:
     api_response = api_instance.v1logininitiate(body, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1logininitiate: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1logininitiate: %s\n" % e)
 ```
 
 ### Parameters
@@ -129,6 +132,7 @@ Sends an email with a password reset token
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -144,7 +148,7 @@ try:
     api_response = api_instance.v1loginpasswordforgot(body, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1loginpasswordforgot: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1loginpasswordforgot: %s\n" % e)
 ```
 
 ### Parameters
@@ -178,6 +182,7 @@ Creates a new Unverified Account.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -193,7 +198,7 @@ try:
     api_response = api_instance.v1signup(body, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1signup: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1signup: %s\n" % e)
 ```
 
 ### Parameters
@@ -218,6 +223,56 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **v1signupverify_token**
+> StandardVerifySignupResultData v1signupverify_token(token, accept=accept)
+
+Verifies an Email token for Signup .
+
+Creates a new Coinsecure Account.
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.AccountActionsApi()
+token = 'token_example' # str | 
+accept = 'accept_example' # str | JSON, XML or CSV can be returned (Optional) (optional)
+
+try: 
+    # Verifies an Email token for Signup .
+    api_response = api_instance.v1signupverify_token(token, accept=accept)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountActionsApi->v1signupverify_token: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **str**|  | 
+ **accept** | **str**| JSON, XML or CSV can be returned (Optional) | [optional] 
+
+### Return type
+
+[**StandardVerifySignupResultData**](StandardVerifySignupResultData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml, application/csv
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **v1userbankotp_number**
 > StandardInitiateLoginResultData v1userbankotp_number(number, authorization=authorization, accept=accept)
 
@@ -227,6 +282,7 @@ Send OTP for an additional Bank Link.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -243,7 +299,7 @@ try:
     api_response = api_instance.v1userbankotp_number(number, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1userbankotp_number: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1userbankotp_number: %s\n" % e)
 ```
 
 ### Parameters
@@ -278,6 +334,7 @@ Submits a New Bank Link and initial KYC Documents.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -293,7 +350,7 @@ ifsc = 'ifsc_example' # str | Please enter your IFSC Code.
 acct_type = 'acct_type_example' # str | Please enter your Coinsecure account type. Allowable Values are Personal or Company.
 ban_type = 'ban_type_example' # str | Please enter your Bank account type. Allowable Values are Savings or Current.
 phone = 'phone_example' # str | Please enter your Valid Phone Number.
-otp = 'otp_example' # str | Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.
+otp = 'otp_example' # str | Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.
 file = '/path/to/file.txt' # file | Enter a valid image, pdf or zip file under 5 MB in size.
 authorization = 'authorization_example' # str | Enter a valid Api Key. (optional)
 message = 'message_example' # str | Please enter an optional message if needed. (optional)
@@ -304,7 +361,7 @@ try:
     api_response = api_instance.v1userexchangekyc(pan_number, acct_nick, name, ban, ifsc, acct_type, ban_type, phone, otp, file, authorization=authorization, message=message, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1userexchangekyc: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1userexchangekyc: %s\n" % e)
 ```
 
 ### Parameters
@@ -319,7 +376,7 @@ Name | Type | Description  | Notes
  **acct_type** | **str**| Please enter your Coinsecure account type. Allowable Values are Personal or Company. | 
  **ban_type** | **str**| Please enter your Bank account type. Allowable Values are Savings or Current. | 
  **phone** | **str**| Please enter your Valid Phone Number. | 
- **otp** | **str**| Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. | 
+ **otp** | **str**| Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. | 
  **file** | **file**| Enter a valid image, pdf or zip file under 5 MB in size. | 
  **authorization** | **str**| Enter a valid Api Key. | [optional] 
  **message** | **str**| Please enter an optional message if needed. | [optional] 
@@ -349,6 +406,7 @@ Delete GCM Code and associated API Key.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -365,7 +423,7 @@ try:
     api_response = api_instance.v1usergcm_code(code, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1usergcm_code: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1usergcm_code: %s\n" % e)
 ```
 
 ### Parameters
@@ -400,6 +458,7 @@ Send OTP for KYC Link.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -416,7 +475,7 @@ try:
     api_response = api_instance.v1userkycotp_number(number, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1userkycotp_number: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1userkycotp_number: %s\n" % e)
 ```
 
 ### Parameters
@@ -451,6 +510,7 @@ Logs out user and Deletes the api key and associated session data.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -466,7 +526,7 @@ try:
     api_response = api_instance.v1userlogout(authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1userlogout: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1userlogout: %s\n" % e)
 ```
 
 ### Parameters
@@ -500,6 +560,7 @@ Creates a new Netki Wallet Name.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -516,7 +577,7 @@ try:
     api_response = api_instance.v1usernetkicreate(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1usernetkicreate: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1usernetkicreate: %s\n" % e)
 ```
 
 ### Parameters
@@ -551,6 +612,7 @@ Updates the address on an existing wallet name.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -567,7 +629,7 @@ try:
     api_response = api_instance.v1usernetkiupdate(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1usernetkiupdate: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1usernetkiupdate: %s\n" % e)
 ```
 
 ### Parameters
@@ -602,6 +664,7 @@ Deletes a profile Image.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -618,7 +681,7 @@ try:
     api_response = api_instance.v1userprofileimagedelete_netki_name(netki_name, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1userprofileimagedelete_netki_name: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1userprofileimagedelete_netki_name: %s\n" % e)
 ```
 
 ### Parameters
@@ -653,6 +716,7 @@ Updates Profile Image and allows public or private options for netki profile pag
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -671,7 +735,7 @@ try:
     api_response = api_instance.v1userprofileimageupdate(netki_name, is_public, file, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1userprofileimageupdate: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1userprofileimageupdate: %s\n" % e)
 ```
 
 ### Parameters
@@ -708,6 +772,7 @@ Set a New Profile Phone Number.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -724,7 +789,7 @@ try:
     api_response = api_instance.v1userprofilephone(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1userprofilephone: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1userprofilephone: %s\n" % e)
 ```
 
 ### Parameters
@@ -759,6 +824,7 @@ Delete Profile Phone Number.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -774,7 +840,7 @@ try:
     api_response = api_instance.v1userprofilephone_number(authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1userprofilephone_number: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1userprofilephone_number: %s\n" % e)
 ```
 
 ### Parameters
@@ -808,6 +874,7 @@ Send OTP for Profile Phone addition or updation.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -824,7 +891,7 @@ try:
     api_response = api_instance.v1userprofilephoneotp_number(number, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountActionsApi->v1userprofilephoneotp_number: %s\n" % e
+    print("Exception when calling AccountActionsApi->v1userprofilephoneotp_number: %s\n" % e)
 ```
 
 ### Parameters

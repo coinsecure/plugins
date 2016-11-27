@@ -50,17 +50,18 @@ SWGAllRefData::~SWGAllRefData() {
 
 void
 SWGAllRefData::init() {
-    refPercent = 0.0;
-time = 0L;
-refID = new QString("");
+    ref_percent = 0.0;
+    time = 0L;
+    ref_id = new QString("");
 }
 
 void
 SWGAllRefData::cleanup() {
     
 
-if(refID != NULL) {
-        delete refID;
+
+    if(ref_id != nullptr) {
+        delete ref_id;
     }
 }
 
@@ -75,9 +76,9 @@ SWGAllRefData::fromJson(QString &json) {
 
 void
 SWGAllRefData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&refPercent, pJson["refPercent"], "double", "");
-setValue(&time, pJson["time"], "qint64", "");
-setValue(&refID, pJson["refID"], "QString", "QString");
+    ::Swagger::setValue(&ref_percent, pJson["ref_percent"], "double", "");
+    ::Swagger::setValue(&time, pJson["time"], "qint64", "");
+    ::Swagger::setValue(&ref_id, pJson["ref_id"], "QString", "QString");
 }
 
 QString
@@ -93,24 +94,23 @@ SWGAllRefData::asJson ()
 QJsonObject*
 SWGAllRefData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
-    obj->insert("refPercent", QJsonValue(refPercent));
-obj->insert("time", QJsonValue(time));
+    
+    obj->insert("ref_percent", QJsonValue(ref_percent));
 
-    
-    toJsonValue(QString("refID"), refID, obj, QString("QString"));
-    
-        
+    obj->insert("time", QJsonValue(time));
+
+    toJsonValue(QString("ref_id"), ref_id, obj, QString("QString"));
 
     return obj;
 }
 
 double
 SWGAllRefData::getRefPercent() {
-    return refPercent;
+    return ref_percent;
 }
 void
-SWGAllRefData::setRefPercent(double refPercent) {
-    this->refPercent = refPercent;
+SWGAllRefData::setRefPercent(double ref_percent) {
+    this->ref_percent = ref_percent;
 }
 
 qint64
@@ -123,12 +123,12 @@ SWGAllRefData::setTime(qint64 time) {
 }
 
 QString*
-SWGAllRefData::getRefID() {
-    return refID;
+SWGAllRefData::getRefId() {
+    return ref_id;
 }
 void
-SWGAllRefData::setRefID(QString* refID) {
-    this->refID = refID;
+SWGAllRefData::setRefId(QString* ref_id) {
+    this->ref_id = ref_id;
 }
 
 

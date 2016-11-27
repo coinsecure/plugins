@@ -50,36 +50,43 @@ SWGKYCData::~SWGKYCData() {
 
 void
 SWGKYCData::init() {
-    timeDetails = new SWGTimeKYCData();
-kycID = new QString("");
-firstName = new QString("");
-lastName = new QString("");
-status = new QString("");
-userType = new QString("");
-info = new QString("");
+    time_details = new SWGTimeKYCData();
+    kyc_id = new QString("");
+    first_name = new QString("");
+    last_name = new QString("");
+    status = new QString("");
+    user_type = new QString("");
+    info = new QString("");
 }
 
 void
 SWGKYCData::cleanup() {
-    if(timeDetails != NULL) {
-        delete timeDetails;
+    
+    if(time_details != nullptr) {
+        delete time_details;
     }
-if(kycID != NULL) {
-        delete kycID;
+
+    if(kyc_id != nullptr) {
+        delete kyc_id;
     }
-if(firstName != NULL) {
-        delete firstName;
+
+    if(first_name != nullptr) {
+        delete first_name;
     }
-if(lastName != NULL) {
-        delete lastName;
+
+    if(last_name != nullptr) {
+        delete last_name;
     }
-if(status != NULL) {
+
+    if(status != nullptr) {
         delete status;
     }
-if(userType != NULL) {
-        delete userType;
+
+    if(user_type != nullptr) {
+        delete user_type;
     }
-if(info != NULL) {
+
+    if(info != nullptr) {
         delete info;
     }
 }
@@ -95,13 +102,13 @@ SWGKYCData::fromJson(QString &json) {
 
 void
 SWGKYCData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&timeDetails, pJson["timeDetails"], "SWGTimeKYCData", "SWGTimeKYCData");
-setValue(&kycID, pJson["kycID"], "QString", "QString");
-setValue(&firstName, pJson["firstName"], "QString", "QString");
-setValue(&lastName, pJson["lastName"], "QString", "QString");
-setValue(&status, pJson["status"], "QString", "QString");
-setValue(&userType, pJson["userType"], "QString", "QString");
-setValue(&info, pJson["info"], "QString", "QString");
+    ::Swagger::setValue(&time_details, pJson["time_details"], "SWGTimeKYCData", "SWGTimeKYCData");
+    ::Swagger::setValue(&kyc_id, pJson["kyc_id"], "QString", "QString");
+    ::Swagger::setValue(&first_name, pJson["first_name"], "QString", "QString");
+    ::Swagger::setValue(&last_name, pJson["last_name"], "QString", "QString");
+    ::Swagger::setValue(&status, pJson["status"], "QString", "QString");
+    ::Swagger::setValue(&user_type, pJson["user_type"], "QString", "QString");
+    ::Swagger::setValue(&info, pJson["info"], "QString", "QString");
 }
 
 QString
@@ -118,78 +125,57 @@ QJsonObject*
 SWGKYCData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
-    toJsonValue(QString("timeDetails"), timeDetails, obj, QString("SWGTimeKYCData"));
-    
-        
+    toJsonValue(QString("time_details"), time_details, obj, QString("SWGTimeKYCData"));
 
-    
-    toJsonValue(QString("kycID"), kycID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("kyc_id"), kyc_id, obj, QString("QString"));
 
-    
-    toJsonValue(QString("firstName"), firstName, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("first_name"), first_name, obj, QString("QString"));
 
-    
-    toJsonValue(QString("lastName"), lastName, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("last_name"), last_name, obj, QString("QString"));
 
-    
     toJsonValue(QString("status"), status, obj, QString("QString"));
-    
-        
 
-    
-    toJsonValue(QString("userType"), userType, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("user_type"), user_type, obj, QString("QString"));
 
-    
     toJsonValue(QString("info"), info, obj, QString("QString"));
-    
-        
 
     return obj;
 }
 
 SWGTimeKYCData*
 SWGKYCData::getTimeDetails() {
-    return timeDetails;
+    return time_details;
 }
 void
-SWGKYCData::setTimeDetails(SWGTimeKYCData* timeDetails) {
-    this->timeDetails = timeDetails;
+SWGKYCData::setTimeDetails(SWGTimeKYCData* time_details) {
+    this->time_details = time_details;
 }
 
 QString*
-SWGKYCData::getKycID() {
-    return kycID;
+SWGKYCData::getKycId() {
+    return kyc_id;
 }
 void
-SWGKYCData::setKycID(QString* kycID) {
-    this->kycID = kycID;
+SWGKYCData::setKycId(QString* kyc_id) {
+    this->kyc_id = kyc_id;
 }
 
 QString*
 SWGKYCData::getFirstName() {
-    return firstName;
+    return first_name;
 }
 void
-SWGKYCData::setFirstName(QString* firstName) {
-    this->firstName = firstName;
+SWGKYCData::setFirstName(QString* first_name) {
+    this->first_name = first_name;
 }
 
 QString*
 SWGKYCData::getLastName() {
-    return lastName;
+    return last_name;
 }
 void
-SWGKYCData::setLastName(QString* lastName) {
-    this->lastName = lastName;
+SWGKYCData::setLastName(QString* last_name) {
+    this->last_name = last_name;
 }
 
 QString*
@@ -203,11 +189,11 @@ SWGKYCData::setStatus(QString* status) {
 
 QString*
 SWGKYCData::getUserType() {
-    return userType;
+    return user_type;
 }
 void
-SWGKYCData::setUserType(QString* userType) {
-    this->userType = userType;
+SWGKYCData::setUserType(QString* user_type) {
+    this->user_type = user_type;
 }
 
 QString*

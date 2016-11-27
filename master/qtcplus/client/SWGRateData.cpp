@@ -69,7 +69,7 @@ SWGRateData::fromJson(QString &json) {
 
 void
 SWGRateData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&rate, pJson["rate"], "qint64", "");
+    ::Swagger::setValue(&rate, pJson["rate"], "qint64", "");
 }
 
 QString
@@ -85,6 +85,7 @@ SWGRateData::asJson ()
 QJsonObject*
 SWGRateData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("rate", QJsonValue(rate));
 
     return obj;

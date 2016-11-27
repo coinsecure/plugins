@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class ResetPassword  {
+public class ResetPassword {
   
   @SerializedName("token")
   private String token = null;
@@ -79,17 +77,17 @@ public class ResetPassword  {
       return false;
     }
     ResetPassword resetPassword = (ResetPassword) o;
-    return (token == null ? resetPassword.token == null : token.equals(resetPassword.token)) &&
-        (password == null ? resetPassword.password == null : password.equals(resetPassword.password)) &&
-        (repeatPassword == null ? resetPassword.repeatPassword == null : repeatPassword.equals(resetPassword.repeatPassword));
+    return (this.token == null ? resetPassword.token == null : this.token.equals(resetPassword.token)) &&
+        (this.password == null ? resetPassword.password == null : this.password.equals(resetPassword.password)) &&
+        (this.repeatPassword == null ? resetPassword.repeatPassword == null : this.repeatPassword.equals(resetPassword.repeatPassword));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (token == null ? 0: token.hashCode());
-    result = 31 * result + (password == null ? 0: password.hashCode());
-    result = 31 * result + (repeatPassword == null ? 0: repeatPassword.hashCode());
+    result = 31 * result + (this.token == null ? 0: this.token.hashCode());
+    result = 31 * result + (this.password == null ? 0: this.password.hashCode());
+    result = 31 * result + (this.repeatPassword == null ? 0: this.repeatPassword.hashCode());
     return result;
   }
 

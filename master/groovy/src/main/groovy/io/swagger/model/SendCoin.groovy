@@ -13,6 +13,8 @@ class SendCoin {
     String msg = null
 
     String pin = null
+
+    Object fees = null
   
 
 }

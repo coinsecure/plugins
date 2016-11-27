@@ -7,6 +7,7 @@
 #import "SWGSuccessResult.h"
 #import "SWGEmail.h"
 #import "SWGSignupForm.h"
+#import "SWGStandardVerifySignupResultData.h"
 #import "SWGNetkiNameAddress.h"
 #import "SWGAddress.h"
 #import "SWGNumberOtp.h"
@@ -105,6 +106,21 @@ extern NSInteger kSWGAccountActionsApiMissingParamErrorCode;
     completionHandler: (void (^)(SWGSuccessResult* output, NSError* error)) handler;
 
 
+/// Verifies an Email token for Signup .
+/// Creates a new Coinsecure Account.
+///
+/// @param token 
+/// @param accept JSON, XML or CSV can be returned (Optional) (optional)
+/// 
+///  code:200 message:"Successful Request",
+///  code:400 message:"Bad Request"
+///
+/// @return SWGStandardVerifySignupResultData*
+-(NSNumber*) v1signupverifyTokenWithToken: (NSString*) token
+    accept: (NSString*) accept
+    completionHandler: (void (^)(SWGStandardVerifySignupResultData* output, NSError* error)) handler;
+
+
 /// Send OTP for Bank Link
 /// Send OTP for an additional Bank Link.
 ///
@@ -136,7 +152,7 @@ extern NSInteger kSWGAccountActionsApiMissingParamErrorCode;
 /// @param acctType Please enter your Coinsecure account type. Allowable Values are Personal or Company.
 /// @param banType Please enter your Bank account type. Allowable Values are Savings or Current.
 /// @param phone Please enter your Valid Phone Number.
-/// @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.
+/// @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.
 /// @param file Enter a valid image, pdf or zip file under 5 MB in size.
 /// @param authorization Enter a valid Api Key. (optional)
 /// @param message Please enter an optional message if needed. (optional)

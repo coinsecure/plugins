@@ -51,6 +51,7 @@ class Code(object):
 
         self._code = code
 
+
     @property
     def code(self):
         """
@@ -71,6 +72,8 @@ class Code(object):
         :param code: The code of this Code.
         :type: str
         """
+        if code is None:
+            raise ValueError("Invalid value for `code`, must not be `None`")
 
         self._code = code
 

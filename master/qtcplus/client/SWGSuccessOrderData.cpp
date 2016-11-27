@@ -51,11 +51,11 @@ SWGSuccessOrderData::~SWGSuccessOrderData() {
 void
 SWGSuccessOrderData::init() {
     time = 0L;
-vol = 0L;
-rate = 0L;
-orderID = new QString("");
-status = new QString("");
-human_time = new QString("");
+    vol = 0L;
+    rate = 0L;
+    order_id = new QString("");
+    status = new QString("");
+    human_time = new QString("");
 }
 
 void
@@ -63,13 +63,16 @@ SWGSuccessOrderData::cleanup() {
     
 
 
-if(orderID != NULL) {
-        delete orderID;
+
+    if(order_id != nullptr) {
+        delete order_id;
     }
-if(status != NULL) {
+
+    if(status != nullptr) {
         delete status;
     }
-if(human_time != NULL) {
+
+    if(human_time != nullptr) {
         delete human_time;
     }
 }
@@ -85,12 +88,12 @@ SWGSuccessOrderData::fromJson(QString &json) {
 
 void
 SWGSuccessOrderData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&time, pJson["time"], "qint64", "");
-setValue(&vol, pJson["vol"], "qint64", "");
-setValue(&rate, pJson["rate"], "qint64", "");
-setValue(&orderID, pJson["orderID"], "QString", "QString");
-setValue(&status, pJson["status"], "QString", "QString");
-setValue(&human_time, pJson["human_time"], "QString", "QString");
+    ::Swagger::setValue(&time, pJson["time"], "qint64", "");
+    ::Swagger::setValue(&vol, pJson["vol"], "qint64", "");
+    ::Swagger::setValue(&rate, pJson["rate"], "qint64", "");
+    ::Swagger::setValue(&order_id, pJson["order_id"], "QString", "QString");
+    ::Swagger::setValue(&status, pJson["status"], "QString", "QString");
+    ::Swagger::setValue(&human_time, pJson["human_time"], "QString", "QString");
 }
 
 QString
@@ -106,24 +109,18 @@ SWGSuccessOrderData::asJson ()
 QJsonObject*
 SWGSuccessOrderData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("time", QJsonValue(time));
-obj->insert("vol", QJsonValue(vol));
-obj->insert("rate", QJsonValue(rate));
 
-    
-    toJsonValue(QString("orderID"), orderID, obj, QString("QString"));
-    
-        
+    obj->insert("vol", QJsonValue(vol));
 
-    
+    obj->insert("rate", QJsonValue(rate));
+
+    toJsonValue(QString("order_id"), order_id, obj, QString("QString"));
+
     toJsonValue(QString("status"), status, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("human_time"), human_time, obj, QString("QString"));
-    
-        
 
     return obj;
 }
@@ -156,12 +153,12 @@ SWGSuccessOrderData::setRate(qint64 rate) {
 }
 
 QString*
-SWGSuccessOrderData::getOrderID() {
-    return orderID;
+SWGSuccessOrderData::getOrderId() {
+    return order_id;
 }
 void
-SWGSuccessOrderData::setOrderID(QString* orderID) {
-    this->orderID = orderID;
+SWGSuccessOrderData::setOrderId(QString* order_id) {
+    this->order_id = order_id;
 }
 
 QString*

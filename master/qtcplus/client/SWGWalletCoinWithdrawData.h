@@ -56,28 +56,35 @@ public:
     SWGWalletCoinWithdrawData* fromJson(QString &jsonString);
 
     SWGTimeData* getTimeDetails();
-    void setTimeDetails(SWGTimeData* timeDetails);
-QString* getTxID();
-    void setTxID(QString* txID);
-QString* getMessage();
+    void setTimeDetails(SWGTimeData* time_details);
+
+    QString* getTxId();
+    void setTxId(QString* tx_id);
+
+    QString* getMessage();
     void setMessage(QString* message);
-qint64 getSatoshis();
+
+    qint64 getSatoshis();
     void setSatoshis(qint64 satoshis);
-QString* getWalletID();
-    void setWalletID(QString* walletID);
-QString* getWithdrawID();
-    void setWithdrawID(QString* withdrawID);
-QString* getSentTo();
-    void setSentTo(QString* sentTo);
+
+    QString* getWalletId();
+    void setWalletId(QString* wallet_id);
+
+    QString* getWithdrawId();
+    void setWithdrawId(QString* withdraw_id);
+
+    QString* getSentTo();
+    void setSentTo(QString* sent_to);
+
 
 private:
-    SWGTimeData* timeDetails;
-QString* txID;
-QString* message;
-qint64 satoshis;
-QString* walletID;
-QString* withdrawID;
-QString* sentTo;
+    SWGTimeData* time_details;
+    QString* tx_id;
+    QString* message;
+    qint64 satoshis;
+    QString* wallet_id;
+    QString* withdraw_id;
+    QString* sent_to;
 };
 
 } /* namespace Swagger */

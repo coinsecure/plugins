@@ -54,14 +54,16 @@ public:
     void fromJsonObject(QJsonObject &json);
     SWGNewAddress* fromJson(QString &jsonString);
 
-    QString* getWalletID();
-    void setWalletID(QString* walletID);
-QString* getInfo();
+    QString* getWalletId();
+    void setWalletId(QString* wallet_id);
+
+    QString* getInfo();
     void setInfo(QString* info);
 
+
 private:
-    QString* walletID;
-QString* info;
+    QString* wallet_id;
+    QString* info;
 };
 
 } /* namespace Swagger */

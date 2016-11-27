@@ -57,6 +57,7 @@ class SendExchange(object):
         self._wallet_id = wallet_id
         self._msg = msg
 
+
     @property
     def amt(self):
         """
@@ -77,6 +78,8 @@ class SendExchange(object):
         :param amt: The amt of this SendExchange.
         :type: int
         """
+        if amt is None:
+            raise ValueError("Invalid value for `amt`, must not be `None`")
 
         self._amt = amt
 
@@ -100,6 +103,8 @@ class SendExchange(object):
         :param wallet_id: The wallet_id of this SendExchange.
         :type: str
         """
+        if wallet_id is None:
+            raise ValueError("Invalid value for `wallet_id`, must not be `None`")
 
         self._wallet_id = wallet_id
 

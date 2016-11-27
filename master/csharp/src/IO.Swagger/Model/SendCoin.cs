@@ -24,12 +24,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 
 namespace IO.Swagger.Model
 {
@@ -37,7 +39,7 @@ namespace IO.Swagger.Model
     /// SendCoin
     /// </summary>
     [DataContract]
-    public partial class SendCoin :  IEquatable<SendCoin>
+    public partial class SendCoin :  IEquatable<SendCoin>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SendCoin" /> class.
@@ -51,7 +53,8 @@ namespace IO.Swagger.Model
         /// <param name="ToAddr">ToAddr (required).</param>
         /// <param name="Msg">Msg.</param>
         /// <param name="Pin">Pin.</param>
-        public SendCoin(long? Satoshis = null, string ToAddr = null, string Msg = null, string Pin = null)
+        /// <param name="Fees">Fees.</param>
+        public SendCoin(long? Satoshis = null, string ToAddr = null, string Msg = null, string Pin = null, Object Fees = null)
         {
             // to ensure "Satoshis" is required (not null)
             if (Satoshis == null)
@@ -73,6 +76,7 @@ namespace IO.Swagger.Model
             }
             this.Msg = Msg;
             this.Pin = Pin;
+            this.Fees = Fees;
         }
         
         /// <summary>
@@ -96,6 +100,11 @@ namespace IO.Swagger.Model
         [DataMember(Name="pin", EmitDefaultValue=false)]
         public string Pin { get; set; }
         /// <summary>
+        /// Gets or Sets Fees
+        /// </summary>
+        [DataMember(Name="fees", EmitDefaultValue=false)]
+        public Object Fees { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -107,6 +116,7 @@ namespace IO.Swagger.Model
             sb.Append("  ToAddr: ").Append(ToAddr).Append("\n");
             sb.Append("  Msg: ").Append(Msg).Append("\n");
             sb.Append("  Pin: ").Append(Pin).Append("\n");
+            sb.Append("  Fees: ").Append(Fees).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -162,6 +172,11 @@ namespace IO.Swagger.Model
                     this.Pin == other.Pin ||
                     this.Pin != null &&
                     this.Pin.Equals(other.Pin)
+                ) && 
+                (
+                    this.Fees == other.Fees ||
+                    this.Fees != null &&
+                    this.Fees.Equals(other.Fees)
                 );
         }
 
@@ -184,8 +199,15 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.Msg.GetHashCode();
                 if (this.Pin != null)
                     hash = hash * 59 + this.Pin.GetHashCode();
+                if (this.Fees != null)
+                    hash = hash * 59 + this.Fees.GetHashCode();
                 return hash;
             }
+        }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        { 
+            yield break;
         }
     }
 

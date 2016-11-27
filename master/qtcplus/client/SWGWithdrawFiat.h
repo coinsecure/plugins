@@ -56,18 +56,22 @@ public:
 
     qint64 getFiat();
     void setFiat(qint64 fiat);
-QString* getAccount();
+
+    QString* getAccount();
     void setAccount(QString* account);
-QString* getMsg();
+
+    QString* getMsg();
     void setMsg(QString* msg);
-QString* getPin();
+
+    QString* getPin();
     void setPin(QString* pin);
+
 
 private:
     qint64 fiat;
-QString* account;
-QString* msg;
-QString* pin;
+    QString* account;
+    QString* msg;
+    QString* pin;
 };
 
 } /* namespace Swagger */

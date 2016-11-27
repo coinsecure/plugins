@@ -51,6 +51,7 @@ class VolData(object):
 
         self._vol = vol
 
+
     @property
     def vol(self):
         """
@@ -71,6 +72,8 @@ class VolData(object):
         :param vol: The vol of this VolData.
         :type: int
         """
+        if vol is None:
+            raise ValueError("Invalid value for `vol`, must not be `None`")
 
         self._vol = vol
 

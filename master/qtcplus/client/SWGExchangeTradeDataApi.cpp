@@ -679,4 +679,79 @@ SWGExchangeTradeDataApi::/v1/user/exchange/bid/pendingCallback(HttpRequestWorker
     emit /v1/user/exchange/bid/pendingSignal(output);
     
 }
+void
+SWGExchangeTradeDataApi::/v1/user/exchange/trades(qint64 from, qint64 to, qint32 max, qint64 offset, QString* accept) {
+    QString fullPath;
+    fullPath.append(this->host).append(this->basePath).append("/v1/exchange/trades");
+
+
+    if (fullPath.indexOf("?") > 0) 
+      fullPath.append("&");
+    else 
+      fullPath.append("?");
+    fullPath.append(QUrl::toPercentEncoding("from"))
+        .append("=")
+        .append(QUrl::toPercentEncoding(stringValue(from)));
+
+    if (fullPath.indexOf("?") > 0) 
+      fullPath.append("&");
+    else 
+      fullPath.append("?");
+    fullPath.append(QUrl::toPercentEncoding("to"))
+        .append("=")
+        .append(QUrl::toPercentEncoding(stringValue(to)));
+
+    if (fullPath.indexOf("?") > 0) 
+      fullPath.append("&");
+    else 
+      fullPath.append("?");
+    fullPath.append(QUrl::toPercentEncoding("max"))
+        .append("=")
+        .append(QUrl::toPercentEncoding(stringValue(max)));
+
+    if (fullPath.indexOf("?") > 0) 
+      fullPath.append("&");
+    else 
+      fullPath.append("?");
+    fullPath.append(QUrl::toPercentEncoding("offset"))
+        .append("=")
+        .append(QUrl::toPercentEncoding(stringValue(offset)));
+
+
+    HttpRequestWorker *worker = new HttpRequestWorker();
+    HttpRequestInput input(fullPath, "GET");
+
+    
+
+
+    // TODO: add header support
+
+    connect(worker,
+            &HttpRequestWorker::on_execution_finished,
+            this,
+            &SWGExchangeTradeDataApi::/v1/user/exchange/tradesCallback);
+
+    worker->execute(&input);
+}
+
+void
+SWGExchangeTradeDataApi::/v1/user/exchange/tradesCallback(HttpRequestWorker * worker) {
+    QString msg;
+    if (worker->error_type == QNetworkReply::NoError) {
+        msg = QString("Success! %1 bytes").arg(worker->response.length());
+    }
+    else {
+        msg = "Error: " + worker->error_str;
+    }
+
+    
+        QString json(worker->response);
+    SWGRateVolTimeTypeDataResponse* output = static_cast<SWGRateVolTimeTypeDataResponse*>(create(json, QString("SWGRateVolTimeTypeDataResponse")));
+    
+
+    worker->deleteLater();
+
+    emit /v1/user/exchange/tradesSignal(output);
+    
+}
 } /* namespace Swagger */

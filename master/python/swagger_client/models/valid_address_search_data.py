@@ -69,6 +69,7 @@ class ValidAddressSearchData(object):
         self._tx_apperances = tx_apperances
         self._transactions = transactions
 
+
     @property
     def address(self):
         """
@@ -89,6 +90,8 @@ class ValidAddressSearchData(object):
         :param address: The address of this ValidAddressSearchData.
         :type: str
         """
+        if address is None:
+            raise ValueError("Invalid value for `address`, must not be `None`")
 
         self._address = address
 
@@ -112,6 +115,8 @@ class ValidAddressSearchData(object):
         :param balance: The balance of this ValidAddressSearchData.
         :type: int
         """
+        if balance is None:
+            raise ValueError("Invalid value for `balance`, must not be `None`")
 
         self._balance = balance
 
@@ -135,6 +140,8 @@ class ValidAddressSearchData(object):
         :param total_received: The total_received of this ValidAddressSearchData.
         :type: int
         """
+        if total_received is None:
+            raise ValueError("Invalid value for `total_received`, must not be `None`")
 
         self._total_received = total_received
 
@@ -158,6 +165,8 @@ class ValidAddressSearchData(object):
         :param unconfirmed_balance: The unconfirmed_balance of this ValidAddressSearchData.
         :type: int
         """
+        if unconfirmed_balance is None:
+            raise ValueError("Invalid value for `unconfirmed_balance`, must not be `None`")
 
         self._unconfirmed_balance = unconfirmed_balance
 
@@ -181,6 +190,8 @@ class ValidAddressSearchData(object):
         :param unconfirmed_tx_apperances: The unconfirmed_tx_apperances of this ValidAddressSearchData.
         :type: int
         """
+        if unconfirmed_tx_apperances is None:
+            raise ValueError("Invalid value for `unconfirmed_tx_apperances`, must not be `None`")
 
         self._unconfirmed_tx_apperances = unconfirmed_tx_apperances
 
@@ -204,6 +215,8 @@ class ValidAddressSearchData(object):
         :param tx_apperances: The tx_apperances of this ValidAddressSearchData.
         :type: int
         """
+        if tx_apperances is None:
+            raise ValueError("Invalid value for `tx_apperances`, must not be `None`")
 
         self._tx_apperances = tx_apperances
 
@@ -227,6 +240,8 @@ class ValidAddressSearchData(object):
         :param transactions: The transactions of this ValidAddressSearchData.
         :type: list[str]
         """
+        if transactions is None:
+            raise ValueError("Invalid value for `transactions`, must not be `None`")
 
         self._transactions = transactions
 

@@ -1,6 +1,6 @@
 # CoinsecureApiDocumentation.ExchangeBankFiatDataApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -234,10 +234,10 @@ var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 var authorization = "authorization_example"; // String | API object to be added
 
 var opts = { 
-  'from': 0, // Integer | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
-  'to': 9223372036854776000, // Integer | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
-  'max': 10, // Integer | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
-  'offset': 0, // Integer | Offset defaults to 0 if input is invalid. (Optional)
+  'from': 0, // Number | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
+  'to': 9223372036854776000, // Number | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
+  'max': 10, // Number | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
+  'offset': 0, // Number | Offset defaults to 0 if input is invalid. (Optional)
   'accept': "accept_example" // String | JSON, XML or CSV can be returned (Optional)
 };
 
@@ -256,10 +256,10 @@ apiInstance.v1userexchangebankfiatdepositcancelled(authorization, opts, callback
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **String**| API object to be added | 
- **from** | **Integer**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
- **to** | **Integer**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
- **max** | **Integer**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
- **offset** | **Integer**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **from** | **Number**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **Number**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **Number**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **Number**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
@@ -292,10 +292,10 @@ var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 var authorization = "authorization_example"; // String | API object to be added
 
 var opts = { 
-  'from': 0, // Integer | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
-  'to': 9223372036854776000, // Integer | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
-  'max': 10, // Integer | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
-  'offset': 0, // Integer | Offset defaults to 0 if input is invalid. (Optional)
+  'from': 0, // Number | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
+  'to': 9223372036854776000, // Number | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
+  'max': 10, // Number | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
+  'offset': 0, // Number | Offset defaults to 0 if input is invalid. (Optional)
   'accept': "accept_example" // String | JSON, XML or CSV can be returned (Optional)
 };
 
@@ -314,10 +314,10 @@ apiInstance.v1userexchangebankfiatdepositunverified(authorization, opts, callbac
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **String**| API object to be added | 
- **from** | **Integer**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
- **to** | **Integer**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
- **max** | **Integer**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
- **offset** | **Integer**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **from** | **Number**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **Number**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **Number**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **Number**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
@@ -350,10 +350,10 @@ var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 var authorization = "authorization_example"; // String | API object to be added
 
 var opts = { 
-  'from': 0, // Integer | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
-  'to': 9223372036854776000, // Integer | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
-  'max': 10, // Integer | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
-  'offset': 0, // Integer | Offset defaults to 0 if input is invalid. (Optional)
+  'from': 0, // Number | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
+  'to': 9223372036854776000, // Number | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
+  'max': 10, // Number | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
+  'offset': 0, // Number | Offset defaults to 0 if input is invalid. (Optional)
   'accept': "accept_example" // String | JSON, XML or CSV can be returned (Optional)
 };
 
@@ -372,10 +372,10 @@ apiInstance.v1userexchangebankfiatdepositverified(authorization, opts, callback)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **String**| API object to be added | 
- **from** | **Integer**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
- **to** | **Integer**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
- **max** | **Integer**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
- **offset** | **Integer**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **from** | **Number**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **Number**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **Number**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **Number**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
@@ -408,10 +408,10 @@ var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 var authorization = "authorization_example"; // String | API object to be added
 
 var opts = { 
-  'from': 0, // Integer | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
-  'to': 9223372036854776000, // Integer | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
-  'max': 10, // Integer | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
-  'offset': 0, // Integer | Offset defaults to 0 if input is invalid. (Optional)
+  'from': 0, // Number | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
+  'to': 9223372036854776000, // Number | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
+  'max': 10, // Number | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
+  'offset': 0, // Number | Offset defaults to 0 if input is invalid. (Optional)
   'accept': "accept_example" // String | JSON, XML or CSV can be returned (Optional)
 };
 
@@ -430,10 +430,10 @@ apiInstance.v1userexchangebankfiatwithdrawcancelled(authorization, opts, callbac
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **String**| API object to be added | 
- **from** | **Integer**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
- **to** | **Integer**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
- **max** | **Integer**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
- **offset** | **Integer**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **from** | **Number**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **Number**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **Number**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **Number**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
@@ -466,10 +466,10 @@ var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 var authorization = "authorization_example"; // String | API object to be added
 
 var opts = { 
-  'from': 0, // Integer | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
-  'to': 9223372036854776000, // Integer | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
-  'max': 10, // Integer | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
-  'offset': 0, // Integer | Offset defaults to 0 if input is invalid. (Optional)
+  'from': 0, // Number | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
+  'to': 9223372036854776000, // Number | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
+  'max': 10, // Number | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
+  'offset': 0, // Number | Offset defaults to 0 if input is invalid. (Optional)
   'accept': "accept_example" // String | JSON, XML or CSV can be returned (Optional)
 };
 
@@ -488,10 +488,10 @@ apiInstance.v1userexchangebankfiatwithdrawcompleted(authorization, opts, callbac
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **String**| API object to be added | 
- **from** | **Integer**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
- **to** | **Integer**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
- **max** | **Integer**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
- **offset** | **Integer**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **from** | **Number**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **Number**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **Number**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **Number**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
@@ -524,10 +524,10 @@ var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 var authorization = "authorization_example"; // String | API object to be added
 
 var opts = { 
-  'from': 0, // Integer | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
-  'to': 9223372036854776000, // Integer | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
-  'max': 10, // Integer | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
-  'offset': 0, // Integer | Offset defaults to 0 if input is invalid. (Optional)
+  'from': 0, // Number | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
+  'to': 9223372036854776000, // Number | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
+  'max': 10, // Number | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
+  'offset': 0, // Number | Offset defaults to 0 if input is invalid. (Optional)
   'accept': "accept_example" // String | JSON, XML or CSV can be returned (Optional)
 };
 
@@ -546,10 +546,10 @@ apiInstance.v1userexchangebankfiatwithdrawunverified(authorization, opts, callba
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **String**| API object to be added | 
- **from** | **Integer**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
- **to** | **Integer**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
- **max** | **Integer**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
- **offset** | **Integer**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **from** | **Number**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **Number**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **Number**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **Number**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type
@@ -582,10 +582,10 @@ var apiInstance = new CoinsecureApiDocumentation.ExchangeBankFiatDataApi();
 var authorization = "authorization_example"; // String | API object to be added
 
 var opts = { 
-  'from': 0, // Integer | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
-  'to': 9223372036854776000, // Integer | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
-  'max': 10, // Integer | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
-  'offset': 0, // Integer | Offset defaults to 0 if input is invalid. (Optional)
+  'from': 0, // Number | From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional)
+  'to': 9223372036854776000, // Number | To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional)
+  'max': 10, // Number | Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional)
+  'offset': 0, // Number | Offset defaults to 0 if input is invalid. (Optional)
   'accept': "accept_example" // String | JSON, XML or CSV can be returned (Optional)
 };
 
@@ -604,10 +604,10 @@ apiInstance.v1userexchangebankfiatwithdrawverified(authorization, opts, callback
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **String**| API object to be added | 
- **from** | **Integer**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
- **to** | **Integer**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
- **max** | **Integer**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
- **offset** | **Integer**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
+ **from** | **Number**| From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) | [optional] [default to 0]
+ **to** | **Number**| To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) | [optional] [default to 9223372036854776000]
+ **max** | **Number**| Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) | [optional] [default to 10]
+ **offset** | **Number**| Offset defaults to 0 if input is invalid. (Optional) | [optional] [default to 0]
  **accept** | **String**| JSON, XML or CSV can be returned (Optional) | [optional] 
 
 ### Return type

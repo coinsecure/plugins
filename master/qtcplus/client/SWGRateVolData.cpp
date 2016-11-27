@@ -51,7 +51,7 @@ SWGRateVolData::~SWGRateVolData() {
 void
 SWGRateVolData::init() {
     rate = 0L;
-vol = 0L;
+    vol = 0L;
 }
 
 void
@@ -71,8 +71,8 @@ SWGRateVolData::fromJson(QString &json) {
 
 void
 SWGRateVolData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&rate, pJson["rate"], "qint64", "");
-setValue(&vol, pJson["vol"], "qint64", "");
+    ::Swagger::setValue(&rate, pJson["rate"], "qint64", "");
+    ::Swagger::setValue(&vol, pJson["vol"], "qint64", "");
 }
 
 QString
@@ -88,8 +88,10 @@ SWGRateVolData::asJson ()
 QJsonObject*
 SWGRateVolData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("rate", QJsonValue(rate));
-obj->insert("vol", QJsonValue(vol));
+
+    obj->insert("vol", QJsonValue(vol));
 
     return obj;
 }

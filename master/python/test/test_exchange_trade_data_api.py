@@ -154,6 +154,14 @@ class TestExchangeTradeDataApi(unittest.TestCase):
         """
         pass
 
+    def test_v1userexchangetrades(self):
+        """
+        Test case for v1userexchangetrades
+
+        Completed Exchange Trades
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

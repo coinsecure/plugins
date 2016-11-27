@@ -58,21 +58,26 @@ public:
 
     bool getSuccess();
     void setSuccess(bool success);
-SWGValidAddressSearchData* getMessage();
+
+    SWGValidAddressSearchData* getMessage();
     void setMessage(SWGValidAddressSearchData* message);
-QString* getMethod();
+
+    QString* getMethod();
     void setMethod(QString* method);
-QString* getTitle();
+
+    QString* getTitle();
     void setTitle(QString* title);
-QDateTime* getTime();
+
+    QDateTime* getTime();
     void setTime(QDateTime* time);
+
 
 private:
     bool success;
-SWGValidAddressSearchData* message;
-QString* method;
-QString* title;
-QDateTime* time;
+    SWGValidAddressSearchData* message;
+    QString* method;
+    QString* title;
+    QDateTime* time;
 };
 
 } /* namespace Swagger */

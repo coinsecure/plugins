@@ -51,28 +51,33 @@ SWGSignupForm::~SWGSignupForm() {
 void
 SWGSignupForm::init() {
     name = new QString("");
-email = new QString("");
-password = new QString("");
-repeatPassword = new QString("");
-refID = new QString("");
+    email = new QString("");
+    password = new QString("");
+    repeat_password = new QString("");
+    ref_id = new QString("");
 }
 
 void
 SWGSignupForm::cleanup() {
-    if(name != NULL) {
+    
+    if(name != nullptr) {
         delete name;
     }
-if(email != NULL) {
+
+    if(email != nullptr) {
         delete email;
     }
-if(password != NULL) {
+
+    if(password != nullptr) {
         delete password;
     }
-if(repeatPassword != NULL) {
-        delete repeatPassword;
+
+    if(repeat_password != nullptr) {
+        delete repeat_password;
     }
-if(refID != NULL) {
-        delete refID;
+
+    if(ref_id != nullptr) {
+        delete ref_id;
     }
 }
 
@@ -87,11 +92,11 @@ SWGSignupForm::fromJson(QString &json) {
 
 void
 SWGSignupForm::fromJsonObject(QJsonObject &pJson) {
-    setValue(&name, pJson["name"], "QString", "QString");
-setValue(&email, pJson["email"], "QString", "QString");
-setValue(&password, pJson["password"], "QString", "QString");
-setValue(&repeatPassword, pJson["repeatPassword"], "QString", "QString");
-setValue(&refID, pJson["refID"], "QString", "QString");
+    ::Swagger::setValue(&name, pJson["name"], "QString", "QString");
+    ::Swagger::setValue(&email, pJson["email"], "QString", "QString");
+    ::Swagger::setValue(&password, pJson["password"], "QString", "QString");
+    ::Swagger::setValue(&repeat_password, pJson["repeat_password"], "QString", "QString");
+    ::Swagger::setValue(&ref_id, pJson["ref_id"], "QString", "QString");
 }
 
 QString
@@ -108,30 +113,15 @@ QJsonObject*
 SWGSignupForm::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("name"), name, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("email"), email, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("password"), password, obj, QString("QString"));
-    
-        
 
-    
-    toJsonValue(QString("repeatPassword"), repeatPassword, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("repeat_password"), repeat_password, obj, QString("QString"));
 
-    
-    toJsonValue(QString("refID"), refID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("ref_id"), ref_id, obj, QString("QString"));
 
     return obj;
 }
@@ -165,20 +155,20 @@ SWGSignupForm::setPassword(QString* password) {
 
 QString*
 SWGSignupForm::getRepeatPassword() {
-    return repeatPassword;
+    return repeat_password;
 }
 void
-SWGSignupForm::setRepeatPassword(QString* repeatPassword) {
-    this->repeatPassword = repeatPassword;
+SWGSignupForm::setRepeatPassword(QString* repeat_password) {
+    this->repeat_password = repeat_password;
 }
 
 QString*
-SWGSignupForm::getRefID() {
-    return refID;
+SWGSignupForm::getRefId() {
+    return ref_id;
 }
 void
-SWGSignupForm::setRefID(QString* refID) {
-    this->refID = refID;
+SWGSignupForm::setRefId(QString* ref_id) {
+    this->ref_id = ref_id;
 }
 
 

@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/FailResult', 'model/LoginFormNew', 'model/StandardLoginResultData', 'model/LoginId', 'model/StandardInitiateLoginResultData', 'model/Email', 'model/SuccessResult', 'model/SignupForm', 'model/NetkiNameAddress', 'model/Address', 'model/NumberOtp'], factory);
+    define(['ApiClient', 'model/FailResult', 'model/LoginFormNew', 'model/StandardLoginResultData', 'model/LoginId', 'model/StandardInitiateLoginResultData', 'model/Email', 'model/SuccessResult', 'model/SignupForm', 'model/StandardVerifySignupResultData', 'model/NetkiNameAddress', 'model/Address', 'model/NumberOtp'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/FailResult'), require('../model/LoginFormNew'), require('../model/StandardLoginResultData'), require('../model/LoginId'), require('../model/StandardInitiateLoginResultData'), require('../model/Email'), require('../model/SuccessResult'), require('../model/SignupForm'), require('../model/NetkiNameAddress'), require('../model/Address'), require('../model/NumberOtp'));
+    module.exports = factory(require('../ApiClient'), require('../model/FailResult'), require('../model/LoginFormNew'), require('../model/StandardLoginResultData'), require('../model/LoginId'), require('../model/StandardInitiateLoginResultData'), require('../model/Email'), require('../model/SuccessResult'), require('../model/SignupForm'), require('../model/StandardVerifySignupResultData'), require('../model/NetkiNameAddress'), require('../model/Address'), require('../model/NumberOtp'));
   } else {
     // Browser globals (root is window)
     if (!root.CoinsecureApiDocumentation) {
       root.CoinsecureApiDocumentation = {};
     }
-    root.CoinsecureApiDocumentation.AccountActionsApi = factory(root.CoinsecureApiDocumentation.ApiClient, root.CoinsecureApiDocumentation.FailResult, root.CoinsecureApiDocumentation.LoginFormNew, root.CoinsecureApiDocumentation.StandardLoginResultData, root.CoinsecureApiDocumentation.LoginId, root.CoinsecureApiDocumentation.StandardInitiateLoginResultData, root.CoinsecureApiDocumentation.Email, root.CoinsecureApiDocumentation.SuccessResult, root.CoinsecureApiDocumentation.SignupForm, root.CoinsecureApiDocumentation.NetkiNameAddress, root.CoinsecureApiDocumentation.Address, root.CoinsecureApiDocumentation.NumberOtp);
+    root.CoinsecureApiDocumentation.AccountActionsApi = factory(root.CoinsecureApiDocumentation.ApiClient, root.CoinsecureApiDocumentation.FailResult, root.CoinsecureApiDocumentation.LoginFormNew, root.CoinsecureApiDocumentation.StandardLoginResultData, root.CoinsecureApiDocumentation.LoginId, root.CoinsecureApiDocumentation.StandardInitiateLoginResultData, root.CoinsecureApiDocumentation.Email, root.CoinsecureApiDocumentation.SuccessResult, root.CoinsecureApiDocumentation.SignupForm, root.CoinsecureApiDocumentation.StandardVerifySignupResultData, root.CoinsecureApiDocumentation.NetkiNameAddress, root.CoinsecureApiDocumentation.Address, root.CoinsecureApiDocumentation.NumberOtp);
   }
-}(this, function(ApiClient, FailResult, LoginFormNew, StandardLoginResultData, LoginId, StandardInitiateLoginResultData, Email, SuccessResult, SignupForm, NetkiNameAddress, Address, NumberOtp) {
+}(this, function(ApiClient, FailResult, LoginFormNew, StandardLoginResultData, LoginId, StandardInitiateLoginResultData, Email, SuccessResult, SignupForm, StandardVerifySignupResultData, NetkiNameAddress, Address, NumberOtp) {
   'use strict';
 
   /**
@@ -79,7 +79,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1login";
+        throw new Error("Missing the required parameter 'body' when calling v1login");
       }
 
 
@@ -128,7 +128,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1logininitiate";
+        throw new Error("Missing the required parameter 'body' when calling v1logininitiate");
       }
 
 
@@ -177,7 +177,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1loginpasswordforgot";
+        throw new Error("Missing the required parameter 'body' when calling v1loginpasswordforgot");
       }
 
 
@@ -226,7 +226,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1signup";
+        throw new Error("Missing the required parameter 'body' when calling v1signup");
       }
 
 
@@ -247,6 +247,56 @@
 
       return this.apiClient.callApi(
         '/v1/signup', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the v1signupverifyToken operation.
+     * @callback module:api/AccountActionsApi~v1signupverifyTokenCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/StandardVerifySignupResultData} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Verifies an Email token for Signup .
+     * Creates a new Coinsecure Account.
+     * @param {String} token 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
+     * @param {module:api/AccountActionsApi~v1signupverifyTokenCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/StandardVerifySignupResultData}
+     */
+    this.v1signupverifyToken = function(token, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'token' is set
+      if (token == undefined || token == null) {
+        throw new Error("Missing the required parameter 'token' when calling v1signupverifyToken");
+      }
+
+
+      var pathParams = {
+        'token': token
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'accept': opts['accept']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json', 'application/xml', 'application/csv'];
+      var returnType = StandardVerifySignupResultData;
+
+      return this.apiClient.callApi(
+        '/v1/signup/verify/{token}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -276,7 +326,7 @@
 
       // verify the required parameter '_number' is set
       if (_number == undefined || _number == null) {
-        throw "Missing the required parameter '_number' when calling v1userbankotpNumber";
+        throw new Error("Missing the required parameter '_number' when calling v1userbankotpNumber");
       }
 
 
@@ -323,7 +373,7 @@
      * @param {String} acctType Please enter your Coinsecure account type. Allowable Values are Personal or Company.
      * @param {String} banType Please enter your Bank account type. Allowable Values are Savings or Current.
      * @param {String} phone Please enter your Valid Phone Number.
-     * @param {String} otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number.
+     * @param {String} otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number.
      * @param {File} file Enter a valid image, pdf or zip file under 5 MB in size.
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Enter a valid Api Key.
@@ -338,52 +388,52 @@
 
       // verify the required parameter 'panNumber' is set
       if (panNumber == undefined || panNumber == null) {
-        throw "Missing the required parameter 'panNumber' when calling v1userexchangekyc";
+        throw new Error("Missing the required parameter 'panNumber' when calling v1userexchangekyc");
       }
 
       // verify the required parameter 'acctNick' is set
       if (acctNick == undefined || acctNick == null) {
-        throw "Missing the required parameter 'acctNick' when calling v1userexchangekyc";
+        throw new Error("Missing the required parameter 'acctNick' when calling v1userexchangekyc");
       }
 
       // verify the required parameter 'name' is set
       if (name == undefined || name == null) {
-        throw "Missing the required parameter 'name' when calling v1userexchangekyc";
+        throw new Error("Missing the required parameter 'name' when calling v1userexchangekyc");
       }
 
       // verify the required parameter 'ban' is set
       if (ban == undefined || ban == null) {
-        throw "Missing the required parameter 'ban' when calling v1userexchangekyc";
+        throw new Error("Missing the required parameter 'ban' when calling v1userexchangekyc");
       }
 
       // verify the required parameter 'ifsc' is set
       if (ifsc == undefined || ifsc == null) {
-        throw "Missing the required parameter 'ifsc' when calling v1userexchangekyc";
+        throw new Error("Missing the required parameter 'ifsc' when calling v1userexchangekyc");
       }
 
       // verify the required parameter 'acctType' is set
       if (acctType == undefined || acctType == null) {
-        throw "Missing the required parameter 'acctType' when calling v1userexchangekyc";
+        throw new Error("Missing the required parameter 'acctType' when calling v1userexchangekyc");
       }
 
       // verify the required parameter 'banType' is set
       if (banType == undefined || banType == null) {
-        throw "Missing the required parameter 'banType' when calling v1userexchangekyc";
+        throw new Error("Missing the required parameter 'banType' when calling v1userexchangekyc");
       }
 
       // verify the required parameter 'phone' is set
       if (phone == undefined || phone == null) {
-        throw "Missing the required parameter 'phone' when calling v1userexchangekyc";
+        throw new Error("Missing the required parameter 'phone' when calling v1userexchangekyc");
       }
 
       // verify the required parameter 'otp' is set
       if (otp == undefined || otp == null) {
-        throw "Missing the required parameter 'otp' when calling v1userexchangekyc";
+        throw new Error("Missing the required parameter 'otp' when calling v1userexchangekyc");
       }
 
       // verify the required parameter 'file' is set
       if (file == undefined || file == null) {
-        throw "Missing the required parameter 'file' when calling v1userexchangekyc";
+        throw new Error("Missing the required parameter 'file' when calling v1userexchangekyc");
       }
 
 
@@ -445,7 +495,7 @@
 
       // verify the required parameter 'code' is set
       if (code == undefined || code == null) {
-        throw "Missing the required parameter 'code' when calling v1usergcmCode";
+        throw new Error("Missing the required parameter 'code' when calling v1usergcmCode");
       }
 
 
@@ -497,7 +547,7 @@
 
       // verify the required parameter '_number' is set
       if (_number == undefined || _number == null) {
-        throw "Missing the required parameter '_number' when calling v1userkycotpNumber";
+        throw new Error("Missing the required parameter '_number' when calling v1userkycotpNumber");
       }
 
 
@@ -594,7 +644,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1usernetkicreate";
+        throw new Error("Missing the required parameter 'body' when calling v1usernetkicreate");
       }
 
 
@@ -645,7 +695,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1usernetkiupdate";
+        throw new Error("Missing the required parameter 'body' when calling v1usernetkiupdate");
       }
 
 
@@ -696,7 +746,7 @@
 
       // verify the required parameter 'netkiName' is set
       if (netkiName == undefined || netkiName == null) {
-        throw "Missing the required parameter 'netkiName' when calling v1userprofileimagedeleteNetkiName";
+        throw new Error("Missing the required parameter 'netkiName' when calling v1userprofileimagedeleteNetkiName");
       }
 
 
@@ -750,17 +800,17 @@
 
       // verify the required parameter 'netkiName' is set
       if (netkiName == undefined || netkiName == null) {
-        throw "Missing the required parameter 'netkiName' when calling v1userprofileimageupdate";
+        throw new Error("Missing the required parameter 'netkiName' when calling v1userprofileimageupdate");
       }
 
       // verify the required parameter 'isPublic' is set
       if (isPublic == undefined || isPublic == null) {
-        throw "Missing the required parameter 'isPublic' when calling v1userprofileimageupdate";
+        throw new Error("Missing the required parameter 'isPublic' when calling v1userprofileimageupdate");
       }
 
       // verify the required parameter 'file' is set
       if (file == undefined || file == null) {
-        throw "Missing the required parameter 'file' when calling v1userprofileimageupdate";
+        throw new Error("Missing the required parameter 'file' when calling v1userprofileimageupdate");
       }
 
 
@@ -814,7 +864,7 @@
 
       // verify the required parameter 'body' is set
       if (body == undefined || body == null) {
-        throw "Missing the required parameter 'body' when calling v1userprofilephone";
+        throw new Error("Missing the required parameter 'body' when calling v1userprofilephone");
       }
 
 
@@ -910,7 +960,7 @@
 
       // verify the required parameter '_number' is set
       if (_number == undefined || _number == null) {
-        throw "Missing the required parameter '_number' when calling v1userprofilephoneotpNumber";
+        throw new Error("Missing the required parameter '_number' when calling v1userprofilephoneotpNumber");
       }
 
 

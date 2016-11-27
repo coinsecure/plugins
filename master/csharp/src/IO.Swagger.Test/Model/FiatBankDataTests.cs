@@ -148,6 +148,14 @@ namespace IO.Swagger.Test
         {
             // TODO unit test for the property 'AccountType'
         }
+        /// <summary>
+        /// Test the property 'AccountID'
+        /// </summary>
+        [Test]
+        public void AccountIDTest()
+        {
+            // TODO unit test for the property 'AccountID'
+        }
 
     }
 

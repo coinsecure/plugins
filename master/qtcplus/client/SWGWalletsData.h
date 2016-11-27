@@ -54,26 +54,32 @@ public:
     void fromJsonObject(QJsonObject &json);
     SWGWalletsData* fromJson(QString &jsonString);
 
-    QString* getWalletID();
-    void setWalletID(QString* walletID);
-QString* getName();
+    QString* getWalletId();
+    void setWalletId(QString* wallet_id);
+
+    QString* getName();
     void setName(QString* name);
-qint64 getCoinBalance();
-    void setCoinBalance(qint64 coinBalance);
-qint64 getTime();
+
+    qint64 getCoinBalance();
+    void setCoinBalance(qint64 coin_balance);
+
+    qint64 getTime();
     void setTime(qint64 time);
-QString* getInfo();
+
+    QString* getInfo();
     void setInfo(QString* info);
-QString* getNetki();
+
+    QString* getNetki();
     void setNetki(QString* netki);
 
+
 private:
-    QString* walletID;
-QString* name;
-qint64 coinBalance;
-qint64 time;
-QString* info;
-QString* netki;
+    QString* wallet_id;
+    QString* name;
+    qint64 coin_balance;
+    qint64 time;
+    QString* info;
+    QString* netki;
 };
 
 } /* namespace Swagger */

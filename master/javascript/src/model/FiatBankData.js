@@ -52,17 +52,18 @@
    * Constructs a new <code>FiatBankData</code>.
    * @alias module:model/FiatBankData
    * @class
-   * @param time {Integer} 
+   * @param time {Number} 
    * @param status {String} 
-   * @param updateTime {Integer} 
+   * @param updateTime {Number} 
    * @param updateMessage {String} 
    * @param bankID {String} 
    * @param info {String} 
    * @param accountNumber {String} 
    * @param accountNick {String} 
    * @param accountType {String} 
+   * @param accountID {String} 
    */
-  var exports = function(time, status, updateTime, updateMessage, bankID, info, accountNumber, accountNick, accountType) {
+  var exports = function(time, status, updateTime, updateMessage, bankID, info, accountNumber, accountNick, accountType, accountID) {
     var _this = this;
 
     _this['time'] = time;
@@ -74,6 +75,7 @@
     _this['accountNumber'] = accountNumber;
     _this['accountNick'] = accountNick;
     _this['accountType'] = accountType;
+    _this['accountID'] = accountID;
   };
 
   /**
@@ -88,13 +90,13 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('time')) {
-        obj['time'] = ApiClient.convertToType(data['time'], 'Integer');
+        obj['time'] = ApiClient.convertToType(data['time'], 'Number');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
       if (data.hasOwnProperty('updateTime')) {
-        obj['updateTime'] = ApiClient.convertToType(data['updateTime'], 'Integer');
+        obj['updateTime'] = ApiClient.convertToType(data['updateTime'], 'Number');
       }
       if (data.hasOwnProperty('updateMessage')) {
         obj['updateMessage'] = ApiClient.convertToType(data['updateMessage'], 'String');
@@ -114,12 +116,15 @@
       if (data.hasOwnProperty('accountType')) {
         obj['accountType'] = ApiClient.convertToType(data['accountType'], 'String');
       }
+      if (data.hasOwnProperty('accountID')) {
+        obj['accountID'] = ApiClient.convertToType(data['accountID'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} time
+   * @member {Number} time
    */
   exports.prototype['time'] = undefined;
   /**
@@ -127,7 +132,7 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * @member {Integer} updateTime
+   * @member {Number} updateTime
    */
   exports.prototype['updateTime'] = undefined;
   /**
@@ -154,6 +159,10 @@
    * @member {String} accountType
    */
   exports.prototype['accountType'] = undefined;
+  /**
+   * @member {String} accountID
+   */
+  exports.prototype['accountID'] = undefined;
 
 
 

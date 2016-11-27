@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class FiatBankData  {
+public class FiatBankData {
   
   @SerializedName("time")
   private Long time = null;
@@ -50,6 +48,8 @@ public class FiatBankData  {
   private String accountNick = null;
   @SerializedName("accountType")
   private String accountType = null;
+  @SerializedName("accountID")
+  private String accountID = null;
 
   /**
    **/
@@ -141,6 +141,16 @@ public class FiatBankData  {
     this.accountType = accountType;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public String getAccountID() {
+    return accountID;
+  }
+  public void setAccountID(String accountID) {
+    this.accountID = accountID;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -151,29 +161,31 @@ public class FiatBankData  {
       return false;
     }
     FiatBankData fiatBankData = (FiatBankData) o;
-    return (time == null ? fiatBankData.time == null : time.equals(fiatBankData.time)) &&
-        (status == null ? fiatBankData.status == null : status.equals(fiatBankData.status)) &&
-        (updateTime == null ? fiatBankData.updateTime == null : updateTime.equals(fiatBankData.updateTime)) &&
-        (updateMessage == null ? fiatBankData.updateMessage == null : updateMessage.equals(fiatBankData.updateMessage)) &&
-        (bankID == null ? fiatBankData.bankID == null : bankID.equals(fiatBankData.bankID)) &&
-        (info == null ? fiatBankData.info == null : info.equals(fiatBankData.info)) &&
-        (accountNumber == null ? fiatBankData.accountNumber == null : accountNumber.equals(fiatBankData.accountNumber)) &&
-        (accountNick == null ? fiatBankData.accountNick == null : accountNick.equals(fiatBankData.accountNick)) &&
-        (accountType == null ? fiatBankData.accountType == null : accountType.equals(fiatBankData.accountType));
+    return (this.time == null ? fiatBankData.time == null : this.time.equals(fiatBankData.time)) &&
+        (this.status == null ? fiatBankData.status == null : this.status.equals(fiatBankData.status)) &&
+        (this.updateTime == null ? fiatBankData.updateTime == null : this.updateTime.equals(fiatBankData.updateTime)) &&
+        (this.updateMessage == null ? fiatBankData.updateMessage == null : this.updateMessage.equals(fiatBankData.updateMessage)) &&
+        (this.bankID == null ? fiatBankData.bankID == null : this.bankID.equals(fiatBankData.bankID)) &&
+        (this.info == null ? fiatBankData.info == null : this.info.equals(fiatBankData.info)) &&
+        (this.accountNumber == null ? fiatBankData.accountNumber == null : this.accountNumber.equals(fiatBankData.accountNumber)) &&
+        (this.accountNick == null ? fiatBankData.accountNick == null : this.accountNick.equals(fiatBankData.accountNick)) &&
+        (this.accountType == null ? fiatBankData.accountType == null : this.accountType.equals(fiatBankData.accountType)) &&
+        (this.accountID == null ? fiatBankData.accountID == null : this.accountID.equals(fiatBankData.accountID));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (time == null ? 0: time.hashCode());
-    result = 31 * result + (status == null ? 0: status.hashCode());
-    result = 31 * result + (updateTime == null ? 0: updateTime.hashCode());
-    result = 31 * result + (updateMessage == null ? 0: updateMessage.hashCode());
-    result = 31 * result + (bankID == null ? 0: bankID.hashCode());
-    result = 31 * result + (info == null ? 0: info.hashCode());
-    result = 31 * result + (accountNumber == null ? 0: accountNumber.hashCode());
-    result = 31 * result + (accountNick == null ? 0: accountNick.hashCode());
-    result = 31 * result + (accountType == null ? 0: accountType.hashCode());
+    result = 31 * result + (this.time == null ? 0: this.time.hashCode());
+    result = 31 * result + (this.status == null ? 0: this.status.hashCode());
+    result = 31 * result + (this.updateTime == null ? 0: this.updateTime.hashCode());
+    result = 31 * result + (this.updateMessage == null ? 0: this.updateMessage.hashCode());
+    result = 31 * result + (this.bankID == null ? 0: this.bankID.hashCode());
+    result = 31 * result + (this.info == null ? 0: this.info.hashCode());
+    result = 31 * result + (this.accountNumber == null ? 0: this.accountNumber.hashCode());
+    result = 31 * result + (this.accountNick == null ? 0: this.accountNick.hashCode());
+    result = 31 * result + (this.accountType == null ? 0: this.accountType.hashCode());
+    result = 31 * result + (this.accountID == null ? 0: this.accountID.hashCode());
     return result;
   }
 
@@ -191,6 +203,7 @@ public class FiatBankData  {
     sb.append("  accountNumber: ").append(accountNumber).append("\n");
     sb.append("  accountNick: ").append(accountNick).append("\n");
     sb.append("  accountType: ").append(accountType).append("\n");
+    sb.append("  accountID: ").append(accountID).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

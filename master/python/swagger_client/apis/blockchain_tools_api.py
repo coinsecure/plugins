@@ -104,6 +104,8 @@ class BlockchainToolsApi(object):
         all_params = ['any', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -117,6 +119,9 @@ class BlockchainToolsApi(object):
         # verify the required parameter 'any' is set
         if ('any' not in params) or (params['any'] is None):
             raise ValueError("Missing the required parameter `any` when calling `v1bitcoinsearch_address`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/bitcoin/search/{any}'.replace('{format}', 'json')
         path_params = {}
@@ -157,7 +162,10 @@ class BlockchainToolsApi(object):
                                             response_type='ValidAddressSearchDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1bitcoinsearch_txid(self, txid, **kwargs):
         """
@@ -212,6 +220,8 @@ class BlockchainToolsApi(object):
         all_params = ['txid', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -225,6 +235,9 @@ class BlockchainToolsApi(object):
         # verify the required parameter 'txid' is set
         if ('txid' not in params) or (params['txid'] is None):
             raise ValueError("Missing the required parameter `txid` when calling `v1bitcoinsearch_txid`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/bitcoin/search/confirmation/{txid}'.replace('{format}', 'json')
         path_params = {}
@@ -265,4 +278,7 @@ class BlockchainToolsApi(object):
                                             response_type='ConfirmDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)

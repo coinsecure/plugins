@@ -51,17 +51,18 @@ SWGValidAddressSearchData::~SWGValidAddressSearchData() {
 void
 SWGValidAddressSearchData::init() {
     address = new QString("");
-balance = 0L;
-totalReceived = 0L;
-unconfirmedBalance = 0L;
-unconfirmedTxApperances = 0;
-txApperances = 0;
-transactions = new QList<QString*>();
+    balance = 0L;
+    total_received = 0L;
+    unconfirmed_balance = 0L;
+    unconfirmed_tx_apperances = 0;
+    tx_apperances = 0;
+    transactions = new QList<QString*>();
 }
 
 void
 SWGValidAddressSearchData::cleanup() {
-    if(address != NULL) {
+    
+    if(address != nullptr) {
         delete address;
     }
 
@@ -69,7 +70,8 @@ SWGValidAddressSearchData::cleanup() {
 
 
 
-if(transactions != NULL) {
+
+    if(transactions != nullptr) {
         QList<QString*>* arr = transactions;
         foreach(QString* o, *arr) {
             delete o;
@@ -89,13 +91,15 @@ SWGValidAddressSearchData::fromJson(QString &json) {
 
 void
 SWGValidAddressSearchData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&address, pJson["address"], "QString", "QString");
-setValue(&balance, pJson["balance"], "qint64", "");
-setValue(&totalReceived, pJson["totalReceived"], "qint64", "");
-setValue(&unconfirmedBalance, pJson["unconfirmedBalance"], "qint64", "");
-setValue(&unconfirmedTxApperances, pJson["unconfirmedTxApperances"], "qint32", "");
-setValue(&txApperances, pJson["txApperances"], "qint32", "");
-setValue(&transactions, pJson["transactions"], "QList", "QString");
+    ::Swagger::setValue(&address, pJson["address"], "QString", "QString");
+    ::Swagger::setValue(&balance, pJson["balance"], "qint64", "");
+    ::Swagger::setValue(&total_received, pJson["total_received"], "qint64", "");
+    ::Swagger::setValue(&unconfirmed_balance, pJson["unconfirmed_balance"], "qint64", "");
+    ::Swagger::setValue(&unconfirmed_tx_apperances, pJson["unconfirmed_tx_apperances"], "qint32", "");
+    ::Swagger::setValue(&tx_apperances, pJson["tx_apperances"], "qint32", "");
+    
+    ::Swagger::setValue(&transactions, pJson["transactions"], "QList", "QString");
+    
 }
 
 QString
@@ -112,23 +116,21 @@ QJsonObject*
 SWGValidAddressSearchData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("address"), address, obj, QString("QString"));
-    
-        
-obj->insert("balance", QJsonValue(balance));
-obj->insert("totalReceived", QJsonValue(totalReceived));
-obj->insert("unconfirmedBalance", QJsonValue(unconfirmedBalance));
-obj->insert("unconfirmedTxApperances", QJsonValue(unconfirmedTxApperances));
-obj->insert("txApperances", QJsonValue(txApperances));
 
-    
-    QList<QString*>* transactionsList = transactions;
+    obj->insert("balance", QJsonValue(balance));
+
+    obj->insert("total_received", QJsonValue(total_received));
+
+    obj->insert("unconfirmed_balance", QJsonValue(unconfirmed_balance));
+
+    obj->insert("unconfirmed_tx_apperances", QJsonValue(unconfirmed_tx_apperances));
+
+    obj->insert("tx_apperances", QJsonValue(tx_apperances));
+
     QJsonArray transactionsJsonArray;
     toJsonArray((QList<void*>*)transactions, &transactionsJsonArray, "transactions", "QString");
-
     obj->insert("transactions", transactionsJsonArray);
-    
 
     return obj;
 }
@@ -153,38 +155,38 @@ SWGValidAddressSearchData::setBalance(qint64 balance) {
 
 qint64
 SWGValidAddressSearchData::getTotalReceived() {
-    return totalReceived;
+    return total_received;
 }
 void
-SWGValidAddressSearchData::setTotalReceived(qint64 totalReceived) {
-    this->totalReceived = totalReceived;
+SWGValidAddressSearchData::setTotalReceived(qint64 total_received) {
+    this->total_received = total_received;
 }
 
 qint64
 SWGValidAddressSearchData::getUnconfirmedBalance() {
-    return unconfirmedBalance;
+    return unconfirmed_balance;
 }
 void
-SWGValidAddressSearchData::setUnconfirmedBalance(qint64 unconfirmedBalance) {
-    this->unconfirmedBalance = unconfirmedBalance;
+SWGValidAddressSearchData::setUnconfirmedBalance(qint64 unconfirmed_balance) {
+    this->unconfirmed_balance = unconfirmed_balance;
 }
 
 qint32
 SWGValidAddressSearchData::getUnconfirmedTxApperances() {
-    return unconfirmedTxApperances;
+    return unconfirmed_tx_apperances;
 }
 void
-SWGValidAddressSearchData::setUnconfirmedTxApperances(qint32 unconfirmedTxApperances) {
-    this->unconfirmedTxApperances = unconfirmedTxApperances;
+SWGValidAddressSearchData::setUnconfirmedTxApperances(qint32 unconfirmed_tx_apperances) {
+    this->unconfirmed_tx_apperances = unconfirmed_tx_apperances;
 }
 
 qint32
 SWGValidAddressSearchData::getTxApperances() {
-    return txApperances;
+    return tx_apperances;
 }
 void
-SWGValidAddressSearchData::setTxApperances(qint32 txApperances) {
-    this->txApperances = txApperances;
+SWGValidAddressSearchData::setTxApperances(qint32 tx_apperances) {
+    this->tx_apperances = tx_apperances;
 }
 
 QList<QString*>*

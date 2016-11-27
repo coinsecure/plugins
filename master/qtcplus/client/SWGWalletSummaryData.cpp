@@ -50,12 +50,12 @@ SWGWalletSummaryData::~SWGWalletSummaryData() {
 
 void
 SWGWalletSummaryData::init() {
-    walletConfirmedBalance = 0L;
-walletUncofirmedBalance = 0L;
-hasWalletNetki = false;
-walletNetki = new QString("");
-walletNetkiAddress = new QString("");
-walletNetkiWalletId = new QString("");
+    wallet_confirmed_balance = 0L;
+    wallet_uncofirmed_balance = 0L;
+    has_wallet_netki = false;
+    wallet_netki = new QString("");
+    wallet_netki_address = new QString("");
+    wallet_netki_wallet_id = new QString("");
 }
 
 void
@@ -63,14 +63,17 @@ SWGWalletSummaryData::cleanup() {
     
 
 
-if(walletNetki != NULL) {
-        delete walletNetki;
+
+    if(wallet_netki != nullptr) {
+        delete wallet_netki;
     }
-if(walletNetkiAddress != NULL) {
-        delete walletNetkiAddress;
+
+    if(wallet_netki_address != nullptr) {
+        delete wallet_netki_address;
     }
-if(walletNetkiWalletId != NULL) {
-        delete walletNetkiWalletId;
+
+    if(wallet_netki_wallet_id != nullptr) {
+        delete wallet_netki_wallet_id;
     }
 }
 
@@ -85,12 +88,12 @@ SWGWalletSummaryData::fromJson(QString &json) {
 
 void
 SWGWalletSummaryData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&walletConfirmedBalance, pJson["walletConfirmedBalance"], "qint64", "");
-setValue(&walletUncofirmedBalance, pJson["walletUncofirmedBalance"], "qint64", "");
-setValue(&hasWalletNetki, pJson["hasWalletNetki"], "bool", "");
-setValue(&walletNetki, pJson["walletNetki"], "QString", "QString");
-setValue(&walletNetkiAddress, pJson["walletNetkiAddress"], "QString", "QString");
-setValue(&walletNetkiWalletId, pJson["walletNetkiWalletId"], "QString", "QString");
+    ::Swagger::setValue(&wallet_confirmed_balance, pJson["wallet_confirmed_balance"], "qint64", "");
+    ::Swagger::setValue(&wallet_uncofirmed_balance, pJson["wallet_uncofirmed_balance"], "qint64", "");
+    ::Swagger::setValue(&has_wallet_netki, pJson["has_wallet_netki"], "bool", "");
+    ::Swagger::setValue(&wallet_netki, pJson["wallet_netki"], "QString", "QString");
+    ::Swagger::setValue(&wallet_netki_address, pJson["wallet_netki_address"], "QString", "QString");
+    ::Swagger::setValue(&wallet_netki_wallet_id, pJson["wallet_netki_wallet_id"], "QString", "QString");
 }
 
 QString
@@ -106,80 +109,74 @@ SWGWalletSummaryData::asJson ()
 QJsonObject*
 SWGWalletSummaryData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
-    obj->insert("walletConfirmedBalance", QJsonValue(walletConfirmedBalance));
-obj->insert("walletUncofirmedBalance", QJsonValue(walletUncofirmedBalance));
-obj->insert("hasWalletNetki", QJsonValue(hasWalletNetki));
+    
+    obj->insert("wallet_confirmed_balance", QJsonValue(wallet_confirmed_balance));
 
-    
-    toJsonValue(QString("walletNetki"), walletNetki, obj, QString("QString"));
-    
-        
+    obj->insert("wallet_uncofirmed_balance", QJsonValue(wallet_uncofirmed_balance));
 
-    
-    toJsonValue(QString("walletNetkiAddress"), walletNetkiAddress, obj, QString("QString"));
-    
-        
+    obj->insert("has_wallet_netki", QJsonValue(has_wallet_netki));
 
-    
-    toJsonValue(QString("walletNetkiWalletId"), walletNetkiWalletId, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("wallet_netki"), wallet_netki, obj, QString("QString"));
+
+    toJsonValue(QString("wallet_netki_address"), wallet_netki_address, obj, QString("QString"));
+
+    toJsonValue(QString("wallet_netki_wallet_id"), wallet_netki_wallet_id, obj, QString("QString"));
 
     return obj;
 }
 
 qint64
 SWGWalletSummaryData::getWalletConfirmedBalance() {
-    return walletConfirmedBalance;
+    return wallet_confirmed_balance;
 }
 void
-SWGWalletSummaryData::setWalletConfirmedBalance(qint64 walletConfirmedBalance) {
-    this->walletConfirmedBalance = walletConfirmedBalance;
+SWGWalletSummaryData::setWalletConfirmedBalance(qint64 wallet_confirmed_balance) {
+    this->wallet_confirmed_balance = wallet_confirmed_balance;
 }
 
 qint64
 SWGWalletSummaryData::getWalletUncofirmedBalance() {
-    return walletUncofirmedBalance;
+    return wallet_uncofirmed_balance;
 }
 void
-SWGWalletSummaryData::setWalletUncofirmedBalance(qint64 walletUncofirmedBalance) {
-    this->walletUncofirmedBalance = walletUncofirmedBalance;
+SWGWalletSummaryData::setWalletUncofirmedBalance(qint64 wallet_uncofirmed_balance) {
+    this->wallet_uncofirmed_balance = wallet_uncofirmed_balance;
 }
 
 bool
 SWGWalletSummaryData::getHasWalletNetki() {
-    return hasWalletNetki;
+    return has_wallet_netki;
 }
 void
-SWGWalletSummaryData::setHasWalletNetki(bool hasWalletNetki) {
-    this->hasWalletNetki = hasWalletNetki;
+SWGWalletSummaryData::setHasWalletNetki(bool has_wallet_netki) {
+    this->has_wallet_netki = has_wallet_netki;
 }
 
 QString*
 SWGWalletSummaryData::getWalletNetki() {
-    return walletNetki;
+    return wallet_netki;
 }
 void
-SWGWalletSummaryData::setWalletNetki(QString* walletNetki) {
-    this->walletNetki = walletNetki;
+SWGWalletSummaryData::setWalletNetki(QString* wallet_netki) {
+    this->wallet_netki = wallet_netki;
 }
 
 QString*
 SWGWalletSummaryData::getWalletNetkiAddress() {
-    return walletNetkiAddress;
+    return wallet_netki_address;
 }
 void
-SWGWalletSummaryData::setWalletNetkiAddress(QString* walletNetkiAddress) {
-    this->walletNetkiAddress = walletNetkiAddress;
+SWGWalletSummaryData::setWalletNetkiAddress(QString* wallet_netki_address) {
+    this->wallet_netki_address = wallet_netki_address;
 }
 
 QString*
 SWGWalletSummaryData::getWalletNetkiWalletId() {
-    return walletNetkiWalletId;
+    return wallet_netki_wallet_id;
 }
 void
-SWGWalletSummaryData::setWalletNetkiWalletId(QString* walletNetkiWalletId) {
-    this->walletNetkiWalletId = walletNetkiWalletId;
+SWGWalletSummaryData::setWalletNetkiWalletId(QString* wallet_netki_wallet_id) {
+    this->wallet_netki_wallet_id = wallet_netki_wallet_id;
 }
 
 

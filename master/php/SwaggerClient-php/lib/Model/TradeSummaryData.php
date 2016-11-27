@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -47,10 +47,10 @@ use \ArrayAccess;
  * TradeSummaryData Class Doc Comment
  *
  * @category    Class */
-/** 
+/**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class TradeSummaryData implements ArrayAccess
@@ -65,14 +65,14 @@ class TradeSummaryData implements ArrayAccess
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
-    protected static $swaggerTypes = array(
+    protected static $swaggerTypes = [
         'completed_asks_sum' => 'int',
         'completed_bids_sum' => 'int',
         'completed_asks_count' => 'int',
         'completed_bids_count' => 'int',
         'pending_asks_count' => 'int',
         'pending_bids_count' => 'int'
-    );
+    ];
 
     public static function swaggerTypes()
     {
@@ -83,50 +83,52 @@ class TradeSummaryData implements ArrayAccess
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
-    protected static $attributeMap = array(
+    protected static $attributeMap = [
         'completed_asks_sum' => 'completedAsksSum',
         'completed_bids_sum' => 'completedBidsSum',
         'completed_asks_count' => 'completedAsksCount',
         'completed_bids_count' => 'completedBidsCount',
         'pending_asks_count' => 'pendingAsksCount',
         'pending_bids_count' => 'pendingBidsCount'
-    );
+    ];
 
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      * @var string[]
      */
-    protected static $setters = array(
+    protected static $setters = [
         'completed_asks_sum' => 'setCompletedAsksSum',
         'completed_bids_sum' => 'setCompletedBidsSum',
         'completed_asks_count' => 'setCompletedAsksCount',
         'completed_bids_count' => 'setCompletedBidsCount',
         'pending_asks_count' => 'setPendingAsksCount',
         'pending_bids_count' => 'setPendingBidsCount'
-    );
+    ];
 
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
      * @var string[]
      */
-    protected static $getters = array(
+    protected static $getters = [
         'completed_asks_sum' => 'getCompletedAsksSum',
         'completed_bids_sum' => 'getCompletedBidsSum',
         'completed_asks_count' => 'getCompletedAsksCount',
         'completed_bids_count' => 'getCompletedBidsCount',
         'pending_asks_count' => 'getPendingAsksCount',
         'pending_bids_count' => 'getPendingBidsCount'
-    );
+    ];
+
+    public static function attributeMap()
+    {
+        return self::$attributeMap;
+    }
+
+    public static function setters()
+    {
+        return self::$setters;
+    }
 
     public static function getters()
     {
@@ -141,11 +143,11 @@ class TradeSummaryData implements ArrayAccess
      * Associative array for storing property values
      * @var mixed[]
      */
-    protected $container = array();
+    protected $container = [];
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property values initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -164,7 +166,7 @@ class TradeSummaryData implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = array();
+        $invalid_properties = [];
         if ($this->container['completed_asks_sum'] === null) {
             $invalid_properties[] = "'completed_asks_sum' can't be null";
         }
@@ -399,5 +401,3 @@ class TradeSummaryData implements ArrayAccess
         return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

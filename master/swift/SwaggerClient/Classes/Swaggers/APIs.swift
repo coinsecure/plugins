@@ -7,7 +7,7 @@
 import Foundation
 
 public class SwaggerClientAPI {
-    public static var basePath = "https://api.coinsecure.in"
+    public static var basePath = "https://api.coinsecure.in/"
     public static var credential: NSURLCredential?
     public static var customHeaders: [String:String] = [:]  
     static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()

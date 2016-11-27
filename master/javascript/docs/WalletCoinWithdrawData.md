@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **timeDetails** | [**TimeData**](TimeData.md) |  | 
 **txID** | **String** |  | 
 **message** | **String** |  | 
-**satoshis** | **Integer** |  | 
+**satoshis** | **Number** |  | 
 **walletID** | **String** |  | 
 **withdrawID** | **String** |  | 
 **sentTo** | **String** |  | 

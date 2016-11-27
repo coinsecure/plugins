@@ -54,7 +54,7 @@
    * @class
    * @param timeDetails {module:model/TimeDataCoin} 
    * @param withdrawID {String} 
-   * @param value {Integer} 
+   * @param value {Number} 
    * @param account {String} 
    * @param reason {String} 
    */
@@ -86,7 +86,7 @@
         obj['withdrawID'] = ApiClient.convertToType(data['withdrawID'], 'String');
       }
       if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'Integer');
+        obj['value'] = ApiClient.convertToType(data['value'], 'Number');
       }
       if (data.hasOwnProperty('account')) {
         obj['account'] = ApiClient.convertToType(data['account'], 'String');
@@ -107,7 +107,7 @@
    */
   exports.prototype['withdrawID'] = undefined;
   /**
-   * @member {Integer} value
+   * @member {Number} value
    */
   exports.prototype['value'] = undefined;
   /**

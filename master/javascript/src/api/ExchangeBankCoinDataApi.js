@@ -79,7 +79,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankcoinaddresses";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankcoinaddresses");
       }
 
 
@@ -129,7 +129,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankcoinbalanceavailable";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankcoinbalanceavailable");
       }
 
 
@@ -179,7 +179,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankcoinbalancepending";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankcoinbalancepending");
       }
 
 
@@ -229,7 +229,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankcoinbalancetotal";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankcoinbalancetotal");
       }
 
 
@@ -269,10 +269,10 @@
      * Gets a List of Cancelled Exchange Coin Deposits. The value and fees are in paisa.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankCoinDataApi~v1userexchangebankcoindepositcancelledCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CoinDepDataResponse}
@@ -283,7 +283,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankcoindepositcancelled";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankcoindepositcancelled");
       }
 
 
@@ -327,10 +327,10 @@
      * Gets a List of Unverified Exchange Coin Deposits. The value and fees are in paisa.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankCoinDataApi~v1userexchangebankcoindepositunverifiedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CoinDepDataResponse}
@@ -341,7 +341,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankcoindepositunverified";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankcoindepositunverified");
       }
 
 
@@ -385,10 +385,10 @@
      * Gets a List of Verified Exchange Coin Deposits. The value and fees are in paisa.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankCoinDataApi~v1userexchangebankcoindepositverifiedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CoinDepDataResponse}
@@ -399,7 +399,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankcoindepositverified";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankcoindepositverified");
       }
 
 
@@ -443,10 +443,10 @@
      * Gets a List of Cancelled Coin Withdrawals. The value and fees are in satoshis.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankCoinDataApi~v1userexchangebankcoinwithdrawcancelledCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TradeCoinWithdrawDataResponse}
@@ -457,7 +457,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankcoinwithdrawcancelled";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankcoinwithdrawcancelled");
       }
 
 
@@ -501,10 +501,10 @@
      * Gets a List of Completed Coin Withdrawals. The value and fees are in satoshis.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankCoinDataApi~v1userexchangebankcoinwithdrawcompletedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TradeCoinWithdrawDataResponse}
@@ -515,7 +515,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankcoinwithdrawcompleted";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankcoinwithdrawcompleted");
       }
 
 
@@ -559,10 +559,10 @@
      * Gets a List of Unverified Exchange Coin Withdrawals. The value and fees are in satoshis.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankCoinDataApi~v1userexchangebankcoinwithdrawunverifiedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TradeCoinWithdrawDataResponse}
@@ -573,7 +573,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankcoinwithdrawunverified";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankcoinwithdrawunverified");
       }
 
 
@@ -617,10 +617,10 @@
      * Gets a List of Verified Exchange Coin Withdrawals. The value and fees are in satoshis.
      * @param {String} authorization API object to be added
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
-     * @param {Integer} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
-     * @param {Integer} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
-     * @param {Integer} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
+     * @param {Number} opts.from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (default to 0)
+     * @param {Number} opts.to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (default to 9223372036854776000)
+     * @param {Number} opts.max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (default to 10)
+     * @param {Number} opts.offset Offset defaults to 0 if input is invalid. (Optional) (default to 0)
      * @param {String} opts.accept JSON, XML or CSV can be returned (Optional)
      * @param {module:api/ExchangeBankCoinDataApi~v1userexchangebankcoinwithdrawverifiedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TradeCoinWithdrawDataResponse}
@@ -631,7 +631,7 @@
 
       // verify the required parameter 'authorization' is set
       if (authorization == undefined || authorization == null) {
-        throw "Missing the required parameter 'authorization' when calling v1userexchangebankcoinwithdrawverified";
+        throw new Error("Missing the required parameter 'authorization' when calling v1userexchangebankcoinwithdrawverified");
       }
 
 

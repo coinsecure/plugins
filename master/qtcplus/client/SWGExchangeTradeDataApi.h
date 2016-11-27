@@ -35,6 +35,7 @@
 #include "SWGRateDiffDataResponse.h"
 #include "SWGStandardTickerResultData.h"
 #include "SWGOrderDataResponse.h"
+#include "SWGRateVolTimeTypeDataResponse.h"
 
 #include <QObject>
 
@@ -65,6 +66,7 @@ public:
     void /v1/user/exchange/bid/cancelled(QString* authorization, QString* accept);
     void /v1/user/exchange/bid/completed(QString* authorization, QString* accept);
     void /v1/user/exchange/bid/pending(QString* authorization, QString* accept);
+    void /v1/user/exchange/trades(qint64 from, qint64 to, qint32 max, qint64 offset, QString* accept);
     
 private:
     void /v1/exchange/ask/lowCallback (HttpRequestWorker * worker);
@@ -81,6 +83,7 @@ private:
     void /v1/user/exchange/bid/cancelledCallback (HttpRequestWorker * worker);
     void /v1/user/exchange/bid/completedCallback (HttpRequestWorker * worker);
     void /v1/user/exchange/bid/pendingCallback (HttpRequestWorker * worker);
+    void /v1/user/exchange/tradesCallback (HttpRequestWorker * worker);
     
 signals:
     void /v1/exchange/ask/lowSignal(SWGRateDataResponse* summary);
@@ -97,6 +100,7 @@ signals:
     void /v1/user/exchange/bid/cancelledSignal(SWGOrderDataResponse* summary);
     void /v1/user/exchange/bid/completedSignal(SWGOrderDataResponse* summary);
     void /v1/user/exchange/bid/pendingSignal(SWGOrderDataResponse* summary);
+    void /v1/user/exchange/tradesSignal(SWGRateVolTimeTypeDataResponse* summary);
     
 };
 }

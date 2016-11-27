@@ -51,10 +51,10 @@ SWGOrderData::~SWGOrderData() {
 void
 SWGOrderData::init() {
     time = 0L;
-rate = 0L;
-vol = 0L;
-orderID = new QString("");
-status = new QString("");
+    rate = 0L;
+    vol = 0L;
+    order_id = new QString("");
+    status = new QString("");
 }
 
 void
@@ -62,10 +62,12 @@ SWGOrderData::cleanup() {
     
 
 
-if(orderID != NULL) {
-        delete orderID;
+
+    if(order_id != nullptr) {
+        delete order_id;
     }
-if(status != NULL) {
+
+    if(status != nullptr) {
         delete status;
     }
 }
@@ -81,11 +83,11 @@ SWGOrderData::fromJson(QString &json) {
 
 void
 SWGOrderData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&time, pJson["time"], "qint64", "");
-setValue(&rate, pJson["rate"], "qint64", "");
-setValue(&vol, pJson["vol"], "qint64", "");
-setValue(&orderID, pJson["orderID"], "QString", "QString");
-setValue(&status, pJson["status"], "QString", "QString");
+    ::Swagger::setValue(&time, pJson["time"], "qint64", "");
+    ::Swagger::setValue(&rate, pJson["rate"], "qint64", "");
+    ::Swagger::setValue(&vol, pJson["vol"], "qint64", "");
+    ::Swagger::setValue(&order_id, pJson["order_id"], "QString", "QString");
+    ::Swagger::setValue(&status, pJson["status"], "QString", "QString");
 }
 
 QString
@@ -101,19 +103,16 @@ SWGOrderData::asJson ()
 QJsonObject*
 SWGOrderData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("time", QJsonValue(time));
-obj->insert("rate", QJsonValue(rate));
-obj->insert("vol", QJsonValue(vol));
 
-    
-    toJsonValue(QString("orderID"), orderID, obj, QString("QString"));
-    
-        
+    obj->insert("rate", QJsonValue(rate));
 
-    
+    obj->insert("vol", QJsonValue(vol));
+
+    toJsonValue(QString("order_id"), order_id, obj, QString("QString"));
+
     toJsonValue(QString("status"), status, obj, QString("QString"));
-    
-        
 
     return obj;
 }
@@ -146,12 +145,12 @@ SWGOrderData::setVol(qint64 vol) {
 }
 
 QString*
-SWGOrderData::getOrderID() {
-    return orderID;
+SWGOrderData::getOrderId() {
+    return order_id;
 }
 void
-SWGOrderData::setOrderID(QString* orderID) {
-    this->orderID = orderID;
+SWGOrderData::setOrderId(QString* order_id) {
+    this->order_id = order_id;
 }
 
 QString*

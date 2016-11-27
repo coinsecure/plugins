@@ -104,6 +104,8 @@ class AccountDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -117,6 +119,9 @@ class AccountDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1exchangebanksummary`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/bank/summary'.replace('{format}', 'json')
         path_params = {}
@@ -157,7 +162,10 @@ class AccountDataApi(object):
                                             response_type='BankSummaryDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1exchangeusercoinfee(self, **kwargs):
         """
@@ -212,6 +220,8 @@ class AccountDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -222,6 +232,9 @@ class AccountDataApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/coin/fee'.replace('{format}', 'json')
         path_params = {}
@@ -262,7 +275,10 @@ class AccountDataApi(object):
                                             response_type='DoubleDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1exchangeuserfiatfee(self, authorization, **kwargs):
         """
@@ -317,6 +333,8 @@ class AccountDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -330,6 +348,9 @@ class AccountDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1exchangeuserfiatfee`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/fiat/fee'.replace('{format}', 'json')
         path_params = {}
@@ -370,7 +391,10 @@ class AccountDataApi(object):
                                             response_type='DoubleDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1netkisearch_netki_name(self, netki_name, **kwargs):
         """
@@ -425,6 +449,8 @@ class AccountDataApi(object):
         all_params = ['netki_name', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -438,6 +464,9 @@ class AccountDataApi(object):
         # verify the required parameter 'netki_name' is set
         if ('netki_name' not in params) or (params['netki_name'] is None):
             raise ValueError("Missing the required parameter `netki_name` when calling `v1netkisearch_netki_name`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/netki/search/{netkiName}'.replace('{format}', 'json')
         path_params = {}
@@ -478,7 +507,10 @@ class AccountDataApi(object):
                                             response_type='DoubleDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangekycs(self, authorization, **kwargs):
         """
@@ -533,6 +565,8 @@ class AccountDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -546,6 +580,9 @@ class AccountDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangekycs`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/kycs'.replace('{format}', 'json')
         path_params = {}
@@ -586,7 +623,10 @@ class AccountDataApi(object):
                                             response_type='KYCDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangereferralcoinpaid(self, authorization, **kwargs):
         """
@@ -641,6 +681,8 @@ class AccountDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -654,6 +696,9 @@ class AccountDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangereferralcoinpaid`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/referral/coin/paid'.replace('{format}', 'json')
         path_params = {}
@@ -694,7 +739,10 @@ class AccountDataApi(object):
                                             response_type='SuccCoinRefDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangereferralcoinsuccessful(self, authorization, **kwargs):
         """
@@ -749,6 +797,8 @@ class AccountDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -762,6 +812,9 @@ class AccountDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangereferralcoinsuccessful`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/referral/coin/successful'.replace('{format}', 'json')
         path_params = {}
@@ -802,7 +855,10 @@ class AccountDataApi(object):
                                             response_type='SuccRefDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangereferralfiatpaid(self, authorization, **kwargs):
         """
@@ -857,6 +913,8 @@ class AccountDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -870,6 +928,9 @@ class AccountDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangereferralfiatpaid`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/referral/fiat/paid'.replace('{format}', 'json')
         path_params = {}
@@ -910,7 +971,10 @@ class AccountDataApi(object):
                                             response_type='SuccCoinRefDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangereferrals(self, authorization, **kwargs):
         """
@@ -965,6 +1029,8 @@ class AccountDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -978,6 +1044,9 @@ class AccountDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangereferrals`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/referrals'.replace('{format}', 'json')
         path_params = {}
@@ -1018,7 +1087,10 @@ class AccountDataApi(object):
                                             response_type='AllRefDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userexchangetradesummary(self, authorization, **kwargs):
         """
@@ -1073,6 +1145,8 @@ class AccountDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1086,6 +1160,9 @@ class AccountDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userexchangetradesummary`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/exchange/trade/summary'.replace('{format}', 'json')
         path_params = {}
@@ -1126,7 +1203,10 @@ class AccountDataApi(object):
                                             response_type='TradeSummaryDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userlogintoken_token(self, token, **kwargs):
         """
@@ -1181,6 +1261,8 @@ class AccountDataApi(object):
         all_params = ['token', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1194,6 +1276,9 @@ class AccountDataApi(object):
         # verify the required parameter 'token' is set
         if ('token' not in params) or (params['token'] is None):
             raise ValueError("Missing the required parameter `token` when calling `v1userlogintoken_token`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/login/token/{token}'.replace('{format}', 'json')
         path_params = {}
@@ -1234,7 +1319,10 @@ class AccountDataApi(object):
                                             response_type='SuccessResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1usersummary(self, authorization, **kwargs):
         """
@@ -1289,6 +1377,8 @@ class AccountDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1302,6 +1392,9 @@ class AccountDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1usersummary`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/summary'.replace('{format}', 'json')
         path_params = {}
@@ -1342,7 +1435,10 @@ class AccountDataApi(object):
                                             response_type='UserSummaryDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)
 
     def v1userwalletsummary(self, authorization, **kwargs):
         """
@@ -1397,6 +1493,8 @@ class AccountDataApi(object):
         all_params = ['authorization', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -1410,6 +1508,9 @@ class AccountDataApi(object):
         # verify the required parameter 'authorization' is set
         if ('authorization' not in params) or (params['authorization'] is None):
             raise ValueError("Missing the required parameter `authorization` when calling `v1userwalletsummary`")
+
+
+        collection_formats = {}
 
         resource_path = '/v1/user/wallet/summary'.replace('{format}', 'json')
         path_params = {}
@@ -1450,4 +1551,7 @@ class AccountDataApi(object):
                                             response_type='WalletSummaryDataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
-                                            _return_http_data_only=params.get('_return_http_data_only'))
+                                            _return_http_data_only=params.get('_return_http_data_only'),
+                                            _preload_content=params.get('_preload_content', True),
+                                            _request_timeout=params.get('_request_timeout'),
+                                            collection_formats=collection_formats)

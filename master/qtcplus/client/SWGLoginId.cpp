@@ -50,13 +50,14 @@ SWGLoginId::~SWGLoginId() {
 
 void
 SWGLoginId::init() {
-    loginID = new QString("");
+    login_id = new QString("");
 }
 
 void
 SWGLoginId::cleanup() {
-    if(loginID != NULL) {
-        delete loginID;
+    
+    if(login_id != nullptr) {
+        delete login_id;
     }
 }
 
@@ -71,7 +72,7 @@ SWGLoginId::fromJson(QString &json) {
 
 void
 SWGLoginId::fromJsonObject(QJsonObject &pJson) {
-    setValue(&loginID, pJson["loginID"], "QString", "QString");
+    ::Swagger::setValue(&login_id, pJson["login_id"], "QString", "QString");
 }
 
 QString
@@ -88,21 +89,18 @@ QJsonObject*
 SWGLoginId::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
-    toJsonValue(QString("loginID"), loginID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("login_id"), login_id, obj, QString("QString"));
 
     return obj;
 }
 
 QString*
-SWGLoginId::getLoginID() {
-    return loginID;
+SWGLoginId::getLoginId() {
+    return login_id;
 }
 void
-SWGLoginId::setLoginID(QString* loginID) {
-    this->loginID = loginID;
+SWGLoginId::setLoginId(QString* login_id) {
+    this->login_id = login_id;
 }
 
 

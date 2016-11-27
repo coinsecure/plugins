@@ -55,13 +55,15 @@ public:
     SWGNewWallet* fromJson(QString &jsonString);
 
     QString* getWalletName();
-    void setWalletName(QString* walletName);
-QString* getInfo();
+    void setWalletName(QString* wallet_name);
+
+    QString* getInfo();
     void setInfo(QString* info);
 
+
 private:
-    QString* walletName;
-QString* info;
+    QString* wallet_name;
+    QString* info;
 };
 
 } /* namespace Swagger */

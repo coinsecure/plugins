@@ -66,6 +66,7 @@ class CoinDepData(object):
         self._deposit_id = deposit_id
         self._reason = reason
 
+
     @property
     def time_details(self):
         """
@@ -86,6 +87,8 @@ class CoinDepData(object):
         :param time_details: The time_details of this CoinDepData.
         :type: TimeDataCoin
         """
+        if time_details is None:
+            raise ValueError("Invalid value for `time_details`, must not be `None`")
 
         self._time_details = time_details
 
@@ -109,6 +112,8 @@ class CoinDepData(object):
         :param address: The address of this CoinDepData.
         :type: str
         """
+        if address is None:
+            raise ValueError("Invalid value for `address`, must not be `None`")
 
         self._address = address
 
@@ -132,6 +137,8 @@ class CoinDepData(object):
         :param value: The value of this CoinDepData.
         :type: int
         """
+        if value is None:
+            raise ValueError("Invalid value for `value`, must not be `None`")
 
         self._value = value
 
@@ -155,6 +162,8 @@ class CoinDepData(object):
         :param tx_hash: The tx_hash of this CoinDepData.
         :type: str
         """
+        if tx_hash is None:
+            raise ValueError("Invalid value for `tx_hash`, must not be `None`")
 
         self._tx_hash = tx_hash
 
@@ -178,6 +187,8 @@ class CoinDepData(object):
         :param deposit_id: The deposit_id of this CoinDepData.
         :type: str
         """
+        if deposit_id is None:
+            raise ValueError("Invalid value for `deposit_id`, must not be `None`")
 
         self._deposit_id = deposit_id
 
@@ -201,6 +212,8 @@ class CoinDepData(object):
         :param reason: The reason of this CoinDepData.
         :type: str
         """
+        if reason is None:
+            raise ValueError("Invalid value for `reason`, must not be `None`")
 
         self._reason = reason
 

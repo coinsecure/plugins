@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -47,10 +47,10 @@ use \ArrayAccess;
  * LoginFormNew Class Doc Comment
  *
  * @category    Class */
-/** 
+/**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class LoginFormNew implements ArrayAccess
@@ -65,13 +65,13 @@ class LoginFormNew implements ArrayAccess
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
-    protected static $swaggerTypes = array(
+    protected static $swaggerTypes = [
         'email' => 'string',
         'token' => 'string',
         'password' => 'string',
         'gcm_code' => 'string',
         'pin' => 'string'
-    );
+    ];
 
     public static function swaggerTypes()
     {
@@ -82,47 +82,49 @@ class LoginFormNew implements ArrayAccess
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
-    protected static $attributeMap = array(
+    protected static $attributeMap = [
         'email' => 'email',
         'token' => 'token',
         'password' => 'password',
         'gcm_code' => 'gcmCode',
         'pin' => 'pin'
-    );
+    ];
+
+
+    /**
+     * Array of attributes to setter functions (for deserialization of responses)
+     * @var string[]
+     */
+    protected static $setters = [
+        'email' => 'setEmail',
+        'token' => 'setToken',
+        'password' => 'setPassword',
+        'gcm_code' => 'setGcmCode',
+        'pin' => 'setPin'
+    ];
+
+
+    /**
+     * Array of attributes to getter functions (for serialization of requests)
+     * @var string[]
+     */
+    protected static $getters = [
+        'email' => 'getEmail',
+        'token' => 'getToken',
+        'password' => 'getPassword',
+        'gcm_code' => 'getGcmCode',
+        'pin' => 'getPin'
+    ];
 
     public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     * @var string[]
-     */
-    protected static $setters = array(
-        'email' => 'setEmail',
-        'token' => 'setToken',
-        'password' => 'setPassword',
-        'gcm_code' => 'setGcmCode',
-        'pin' => 'setPin'
-    );
-
     public static function setters()
     {
         return self::$setters;
     }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     * @var string[]
-     */
-    protected static $getters = array(
-        'email' => 'getEmail',
-        'token' => 'getToken',
-        'password' => 'getPassword',
-        'gcm_code' => 'getGcmCode',
-        'pin' => 'getPin'
-    );
 
     public static function getters()
     {
@@ -137,11 +139,11 @@ class LoginFormNew implements ArrayAccess
      * Associative array for storing property values
      * @var mixed[]
      */
-    protected $container = array();
+    protected $container = [];
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property values initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -159,7 +161,7 @@ class LoginFormNew implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = array();
+        $invalid_properties = [];
         if ($this->container['email'] === null) {
             $invalid_properties[] = "'email' can't be null";
         }
@@ -355,5 +357,3 @@ class LoginFormNew implements ArrayAccess
         return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -63,6 +63,7 @@ class FiatDepData(object):
         self._account = account
         self._reason = reason
 
+
     @property
     def time_details(self):
         """
@@ -83,6 +84,8 @@ class FiatDepData(object):
         :param time_details: The time_details of this FiatDepData.
         :type: TimeDataCoin
         """
+        if time_details is None:
+            raise ValueError("Invalid value for `time_details`, must not be `None`")
 
         self._time_details = time_details
 
@@ -106,6 +109,8 @@ class FiatDepData(object):
         :param deposit_id: The deposit_id of this FiatDepData.
         :type: str
         """
+        if deposit_id is None:
+            raise ValueError("Invalid value for `deposit_id`, must not be `None`")
 
         self._deposit_id = deposit_id
 
@@ -129,6 +134,8 @@ class FiatDepData(object):
         :param value: The value of this FiatDepData.
         :type: int
         """
+        if value is None:
+            raise ValueError("Invalid value for `value`, must not be `None`")
 
         self._value = value
 
@@ -152,6 +159,8 @@ class FiatDepData(object):
         :param account: The account of this FiatDepData.
         :type: str
         """
+        if account is None:
+            raise ValueError("Invalid value for `account`, must not be `None`")
 
         self._account = account
 
@@ -175,6 +184,8 @@ class FiatDepData(object):
         :param reason: The reason of this FiatDepData.
         :type: str
         """
+        if reason is None:
+            raise ValueError("Invalid value for `reason`, must not be `None`")
 
         self._reason = reason
 

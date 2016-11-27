@@ -970,4 +970,86 @@ public class ExchangeTradeDataAPI: APIBase {
         return requestBuilder.init(method: "GET", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
 
+    /**
+     Completed Exchange Trades
+     
+     - parameter from: (query) From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)
+     - parameter to: (query) To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)
+     - parameter max: (query) Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
+     - parameter offset: (query) Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    public class func v1userexchangetrades(from from: Int64? = nil, to: Int64? = nil, max: Int32? = nil, offset: Int64? = nil, completion: ((data: RateVolTimeTypeDataResponse?, error: ErrorType?) -> Void)) {
+        v1userexchangetradesWithRequestBuilder(from: from, to: to, max: max, offset: offset).execute { (response, error) -> Void in
+            completion(data: response?.body, error: error);
+        }
+    }
+
+
+    /**
+     Completed Exchange Trades
+     - GET /v1/exchange/trades
+     - Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+     - examples: [{contentType=application/json, example={
+  "method" : "aeiou",
+  "success" : true,
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : [ {
+    "vol" : 123456789,
+    "rate" : 123456789,
+    "time" : 123456789,
+    "ordType" : "aeiou"
+  } ],
+  "title" : "aeiou"
+}}, {contentType=application/xml, example=<null>
+  <success>true</success>
+  <method>string</method>
+  <title>string</title>
+  <time>2000-01-23T04:56:07.000Z</time>
+</null>}]
+     - examples: [{contentType=application/json, example={
+  "method" : "aeiou",
+  "success" : true,
+  "time" : "2000-01-23T04:56:07.000+00:00",
+  "message" : [ {
+    "vol" : 123456789,
+    "rate" : 123456789,
+    "time" : 123456789,
+    "ordType" : "aeiou"
+  } ],
+  "title" : "aeiou"
+}}, {contentType=application/xml, example=<null>
+  <success>true</success>
+  <method>string</method>
+  <title>string</title>
+  <time>2000-01-23T04:56:07.000Z</time>
+</null>}]
+     
+     - parameter from: (query) From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)
+     - parameter to: (query) To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)
+     - parameter max: (query) Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
+     - parameter offset: (query) Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
+
+     - returns: RequestBuilder<RateVolTimeTypeDataResponse> 
+     */
+    public class func v1userexchangetradesWithRequestBuilder(from from: Int64? = nil, to: Int64? = nil, max: Int32? = nil, offset: Int64? = nil) -> RequestBuilder<RateVolTimeTypeDataResponse> {
+        let path = "/v1/exchange/trades"
+        let URLString = SwaggerClientAPI.basePath + path
+
+        let nillableParameters: [String:AnyObject?] = [
+            "from": from?.encodeToJSON(),
+            "to": to?.encodeToJSON(),
+            "max": max?.encodeToJSON(),
+            "offset": offset?.encodeToJSON()
+        ]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
+ 
+        let convertedParameters = APIHelper.convertBoolToString(parameters)
+ 
+        let requestBuilder: RequestBuilder<RateVolTimeTypeDataResponse>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: URLString, parameters: convertedParameters, isBody: false)
+    }
+
 }

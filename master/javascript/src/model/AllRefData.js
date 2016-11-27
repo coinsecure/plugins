@@ -53,7 +53,7 @@
    * @alias module:model/AllRefData
    * @class
    * @param refPercent {Number} 
-   * @param time {Integer} 
+   * @param time {Number} 
    * @param refID {String} 
    */
   var exports = function(refPercent, time, refID) {
@@ -79,7 +79,7 @@
         obj['refPercent'] = ApiClient.convertToType(data['refPercent'], 'Number');
       }
       if (data.hasOwnProperty('time')) {
-        obj['time'] = ApiClient.convertToType(data['time'], 'Integer');
+        obj['time'] = ApiClient.convertToType(data['time'], 'Number');
       }
       if (data.hasOwnProperty('refID')) {
         obj['refID'] = ApiClient.convertToType(data['refID'], 'String');
@@ -93,7 +93,7 @@
    */
   exports.prototype['refPercent'] = undefined;
   /**
-   * @member {Integer} time
+   * @member {Number} time
    */
   exports.prototype['time'] = undefined;
   /**

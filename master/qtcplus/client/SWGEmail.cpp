@@ -55,7 +55,8 @@ SWGEmail::init() {
 
 void
 SWGEmail::cleanup() {
-    if(email != NULL) {
+    
+    if(email != nullptr) {
         delete email;
     }
 }
@@ -71,7 +72,7 @@ SWGEmail::fromJson(QString &json) {
 
 void
 SWGEmail::fromJsonObject(QJsonObject &pJson) {
-    setValue(&email, pJson["email"], "QString", "QString");
+    ::Swagger::setValue(&email, pJson["email"], "QString", "QString");
 }
 
 QString
@@ -88,10 +89,7 @@ QJsonObject*
 SWGEmail::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("email"), email, obj, QString("QString"));
-    
-        
 
     return obj;
 }

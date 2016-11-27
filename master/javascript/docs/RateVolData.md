@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rate** | **Integer** |  | 
-**vol** | **Integer** |  | 
+**rate** | **Number** |  | 
+**vol** | **Number** |  | 
 
 

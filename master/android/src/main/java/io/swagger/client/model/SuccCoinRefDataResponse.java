@@ -27,13 +27,11 @@ package io.swagger.client.model;
 import io.swagger.client.model.SuccCoinRefData;
 import java.util.*;
 import java.util.Date;
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class SuccCoinRefDataResponse  {
+public class SuccCoinRefDataResponse {
   
   @SerializedName("success")
   private Boolean success = null;
@@ -107,21 +105,21 @@ public class SuccCoinRefDataResponse  {
       return false;
     }
     SuccCoinRefDataResponse succCoinRefDataResponse = (SuccCoinRefDataResponse) o;
-    return (success == null ? succCoinRefDataResponse.success == null : success.equals(succCoinRefDataResponse.success)) &&
-        (message == null ? succCoinRefDataResponse.message == null : message.equals(succCoinRefDataResponse.message)) &&
-        (method == null ? succCoinRefDataResponse.method == null : method.equals(succCoinRefDataResponse.method)) &&
-        (title == null ? succCoinRefDataResponse.title == null : title.equals(succCoinRefDataResponse.title)) &&
-        (time == null ? succCoinRefDataResponse.time == null : time.equals(succCoinRefDataResponse.time));
+    return (this.success == null ? succCoinRefDataResponse.success == null : this.success.equals(succCoinRefDataResponse.success)) &&
+        (this.message == null ? succCoinRefDataResponse.message == null : this.message.equals(succCoinRefDataResponse.message)) &&
+        (this.method == null ? succCoinRefDataResponse.method == null : this.method.equals(succCoinRefDataResponse.method)) &&
+        (this.title == null ? succCoinRefDataResponse.title == null : this.title.equals(succCoinRefDataResponse.title)) &&
+        (this.time == null ? succCoinRefDataResponse.time == null : this.time.equals(succCoinRefDataResponse.time));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (success == null ? 0: success.hashCode());
-    result = 31 * result + (message == null ? 0: message.hashCode());
-    result = 31 * result + (method == null ? 0: method.hashCode());
-    result = 31 * result + (title == null ? 0: title.hashCode());
-    result = 31 * result + (time == null ? 0: time.hashCode());
+    result = 31 * result + (this.success == null ? 0: this.success.hashCode());
+    result = 31 * result + (this.message == null ? 0: this.message.hashCode());
+    result = 31 * result + (this.method == null ? 0: this.method.hashCode());
+    result = 31 * result + (this.title == null ? 0: this.title.hashCode());
+    result = 31 * result + (this.time == null ? 0: this.time.hashCode());
     return result;
   }
 

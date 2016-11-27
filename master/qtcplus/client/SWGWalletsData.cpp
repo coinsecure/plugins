@@ -50,28 +50,32 @@ SWGWalletsData::~SWGWalletsData() {
 
 void
 SWGWalletsData::init() {
-    walletID = new QString("");
-name = new QString("");
-coinBalance = 0L;
-time = 0L;
-info = new QString("");
-netki = new QString("");
+    wallet_id = new QString("");
+    name = new QString("");
+    coin_balance = 0L;
+    time = 0L;
+    info = new QString("");
+    netki = new QString("");
 }
 
 void
 SWGWalletsData::cleanup() {
-    if(walletID != NULL) {
-        delete walletID;
+    
+    if(wallet_id != nullptr) {
+        delete wallet_id;
     }
-if(name != NULL) {
+
+    if(name != nullptr) {
         delete name;
     }
 
 
-if(info != NULL) {
+
+    if(info != nullptr) {
         delete info;
     }
-if(netki != NULL) {
+
+    if(netki != nullptr) {
         delete netki;
     }
 }
@@ -87,12 +91,12 @@ SWGWalletsData::fromJson(QString &json) {
 
 void
 SWGWalletsData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&walletID, pJson["walletID"], "QString", "QString");
-setValue(&name, pJson["name"], "QString", "QString");
-setValue(&coinBalance, pJson["coinBalance"], "qint64", "");
-setValue(&time, pJson["time"], "qint64", "");
-setValue(&info, pJson["info"], "QString", "QString");
-setValue(&netki, pJson["netki"], "QString", "QString");
+    ::Swagger::setValue(&wallet_id, pJson["wallet_id"], "QString", "QString");
+    ::Swagger::setValue(&name, pJson["name"], "QString", "QString");
+    ::Swagger::setValue(&coin_balance, pJson["coin_balance"], "qint64", "");
+    ::Swagger::setValue(&time, pJson["time"], "qint64", "");
+    ::Swagger::setValue(&info, pJson["info"], "QString", "QString");
+    ::Swagger::setValue(&netki, pJson["netki"], "QString", "QString");
 }
 
 QString
@@ -109,38 +113,28 @@ QJsonObject*
 SWGWalletsData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
-    toJsonValue(QString("walletID"), walletID, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("wallet_id"), wallet_id, obj, QString("QString"));
 
-    
     toJsonValue(QString("name"), name, obj, QString("QString"));
-    
-        
-obj->insert("coinBalance", QJsonValue(coinBalance));
-obj->insert("time", QJsonValue(time));
 
-    
+    obj->insert("coin_balance", QJsonValue(coin_balance));
+
+    obj->insert("time", QJsonValue(time));
+
     toJsonValue(QString("info"), info, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("netki"), netki, obj, QString("QString"));
-    
-        
 
     return obj;
 }
 
 QString*
-SWGWalletsData::getWalletID() {
-    return walletID;
+SWGWalletsData::getWalletId() {
+    return wallet_id;
 }
 void
-SWGWalletsData::setWalletID(QString* walletID) {
-    this->walletID = walletID;
+SWGWalletsData::setWalletId(QString* wallet_id) {
+    this->wallet_id = wallet_id;
 }
 
 QString*
@@ -154,11 +148,11 @@ SWGWalletsData::setName(QString* name) {
 
 qint64
 SWGWalletsData::getCoinBalance() {
-    return coinBalance;
+    return coin_balance;
 }
 void
-SWGWalletsData::setCoinBalance(qint64 coinBalance) {
-    this->coinBalance = coinBalance;
+SWGWalletsData::setCoinBalance(qint64 coin_balance) {
+    this->coin_balance = coin_balance;
 }
 
 qint64

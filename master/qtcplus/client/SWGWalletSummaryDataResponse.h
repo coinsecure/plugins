@@ -58,21 +58,26 @@ public:
 
     bool getSuccess();
     void setSuccess(bool success);
-SWGWalletSummaryData* getMessage();
+
+    SWGWalletSummaryData* getMessage();
     void setMessage(SWGWalletSummaryData* message);
-QString* getMethod();
+
+    QString* getMethod();
     void setMethod(QString* method);
-QString* getTitle();
+
+    QString* getTitle();
     void setTitle(QString* title);
-QDateTime* getTime();
+
+    QDateTime* getTime();
     void setTime(QDateTime* time);
+
 
 private:
     bool success;
-SWGWalletSummaryData* message;
-QString* method;
-QString* title;
-QDateTime* time;
+    SWGWalletSummaryData* message;
+    QString* method;
+    QString* title;
+    QDateTime* time;
 };
 
 } /* namespace Swagger */

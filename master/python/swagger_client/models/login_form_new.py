@@ -63,6 +63,7 @@ class LoginFormNew(object):
         self._gcm_code = gcm_code
         self._pin = pin
 
+
     @property
     def email(self):
         """
@@ -83,6 +84,8 @@ class LoginFormNew(object):
         :param email: The email of this LoginFormNew.
         :type: str
         """
+        if email is None:
+            raise ValueError("Invalid value for `email`, must not be `None`")
 
         self._email = email
 
@@ -106,6 +109,8 @@ class LoginFormNew(object):
         :param token: The token of this LoginFormNew.
         :type: str
         """
+        if token is None:
+            raise ValueError("Invalid value for `token`, must not be `None`")
 
         self._token = token
 
@@ -129,6 +134,8 @@ class LoginFormNew(object):
         :param password: The password of this LoginFormNew.
         :type: str
         """
+        if password is None:
+            raise ValueError("Invalid value for `password`, must not be `None`")
 
         self._password = password
 

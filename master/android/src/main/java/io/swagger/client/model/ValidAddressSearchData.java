@@ -25,13 +25,11 @@
 package io.swagger.client.model;
 
 import java.util.*;
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class ValidAddressSearchData  {
+public class ValidAddressSearchData {
   
   @SerializedName("address")
   private String address = null;
@@ -128,25 +126,25 @@ public class ValidAddressSearchData  {
       return false;
     }
     ValidAddressSearchData validAddressSearchData = (ValidAddressSearchData) o;
-    return (address == null ? validAddressSearchData.address == null : address.equals(validAddressSearchData.address)) &&
-        (balance == null ? validAddressSearchData.balance == null : balance.equals(validAddressSearchData.balance)) &&
-        (totalReceived == null ? validAddressSearchData.totalReceived == null : totalReceived.equals(validAddressSearchData.totalReceived)) &&
-        (unconfirmedBalance == null ? validAddressSearchData.unconfirmedBalance == null : unconfirmedBalance.equals(validAddressSearchData.unconfirmedBalance)) &&
-        (unconfirmedTxApperances == null ? validAddressSearchData.unconfirmedTxApperances == null : unconfirmedTxApperances.equals(validAddressSearchData.unconfirmedTxApperances)) &&
-        (txApperances == null ? validAddressSearchData.txApperances == null : txApperances.equals(validAddressSearchData.txApperances)) &&
-        (transactions == null ? validAddressSearchData.transactions == null : transactions.equals(validAddressSearchData.transactions));
+    return (this.address == null ? validAddressSearchData.address == null : this.address.equals(validAddressSearchData.address)) &&
+        (this.balance == null ? validAddressSearchData.balance == null : this.balance.equals(validAddressSearchData.balance)) &&
+        (this.totalReceived == null ? validAddressSearchData.totalReceived == null : this.totalReceived.equals(validAddressSearchData.totalReceived)) &&
+        (this.unconfirmedBalance == null ? validAddressSearchData.unconfirmedBalance == null : this.unconfirmedBalance.equals(validAddressSearchData.unconfirmedBalance)) &&
+        (this.unconfirmedTxApperances == null ? validAddressSearchData.unconfirmedTxApperances == null : this.unconfirmedTxApperances.equals(validAddressSearchData.unconfirmedTxApperances)) &&
+        (this.txApperances == null ? validAddressSearchData.txApperances == null : this.txApperances.equals(validAddressSearchData.txApperances)) &&
+        (this.transactions == null ? validAddressSearchData.transactions == null : this.transactions.equals(validAddressSearchData.transactions));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (address == null ? 0: address.hashCode());
-    result = 31 * result + (balance == null ? 0: balance.hashCode());
-    result = 31 * result + (totalReceived == null ? 0: totalReceived.hashCode());
-    result = 31 * result + (unconfirmedBalance == null ? 0: unconfirmedBalance.hashCode());
-    result = 31 * result + (unconfirmedTxApperances == null ? 0: unconfirmedTxApperances.hashCode());
-    result = 31 * result + (txApperances == null ? 0: txApperances.hashCode());
-    result = 31 * result + (transactions == null ? 0: transactions.hashCode());
+    result = 31 * result + (this.address == null ? 0: this.address.hashCode());
+    result = 31 * result + (this.balance == null ? 0: this.balance.hashCode());
+    result = 31 * result + (this.totalReceived == null ? 0: this.totalReceived.hashCode());
+    result = 31 * result + (this.unconfirmedBalance == null ? 0: this.unconfirmedBalance.hashCode());
+    result = 31 * result + (this.unconfirmedTxApperances == null ? 0: this.unconfirmedTxApperances.hashCode());
+    result = 31 * result + (this.txApperances == null ? 0: this.txApperances.hashCode());
+    result = 31 * result + (this.transactions == null ? 0: this.transactions.hashCode());
     return result;
   }
 

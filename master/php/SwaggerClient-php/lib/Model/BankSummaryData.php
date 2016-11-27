@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -47,10 +47,10 @@ use \ArrayAccess;
  * BankSummaryData Class Doc Comment
  *
  * @category    Class */
-/** 
+/**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class BankSummaryData implements ArrayAccess
@@ -65,7 +65,7 @@ class BankSummaryData implements ArrayAccess
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
-    protected static $swaggerTypes = array(
+    protected static $swaggerTypes = [
         'pending_coin_balance' => 'int',
         'pending_fiat_balance' => 'int',
         'available_coin_balance' => 'int',
@@ -78,7 +78,7 @@ class BankSummaryData implements ArrayAccess
         'has_trade_netki' => 'bool',
         'trade_netki_name' => 'string',
         'trade_netki_address' => 'string'
-    );
+    ];
 
     public static function swaggerTypes()
     {
@@ -89,7 +89,7 @@ class BankSummaryData implements ArrayAccess
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
-    protected static $attributeMap = array(
+    protected static $attributeMap = [
         'pending_coin_balance' => 'pendingCoinBalance',
         'pending_fiat_balance' => 'pendingFiatBalance',
         'available_coin_balance' => 'availableCoinBalance',
@@ -102,18 +102,14 @@ class BankSummaryData implements ArrayAccess
         'has_trade_netki' => 'hasTradeNetki',
         'trade_netki_name' => 'tradeNetkiName',
         'trade_netki_address' => 'tradeNetkiAddress'
-    );
+    ];
 
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      * @var string[]
      */
-    protected static $setters = array(
+    protected static $setters = [
         'pending_coin_balance' => 'setPendingCoinBalance',
         'pending_fiat_balance' => 'setPendingFiatBalance',
         'available_coin_balance' => 'setAvailableCoinBalance',
@@ -126,18 +122,14 @@ class BankSummaryData implements ArrayAccess
         'has_trade_netki' => 'setHasTradeNetki',
         'trade_netki_name' => 'setTradeNetkiName',
         'trade_netki_address' => 'setTradeNetkiAddress'
-    );
+    ];
 
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
      * @var string[]
      */
-    protected static $getters = array(
+    protected static $getters = [
         'pending_coin_balance' => 'getPendingCoinBalance',
         'pending_fiat_balance' => 'getPendingFiatBalance',
         'available_coin_balance' => 'getAvailableCoinBalance',
@@ -150,7 +142,17 @@ class BankSummaryData implements ArrayAccess
         'has_trade_netki' => 'getHasTradeNetki',
         'trade_netki_name' => 'getTradeNetkiName',
         'trade_netki_address' => 'getTradeNetkiAddress'
-    );
+    ];
+
+    public static function attributeMap()
+    {
+        return self::$attributeMap;
+    }
+
+    public static function setters()
+    {
+        return self::$setters;
+    }
 
     public static function getters()
     {
@@ -165,11 +167,11 @@ class BankSummaryData implements ArrayAccess
      * Associative array for storing property values
      * @var mixed[]
      */
-    protected $container = array();
+    protected $container = [];
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property values initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -194,7 +196,7 @@ class BankSummaryData implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = array();
+        $invalid_properties = [];
         if ($this->container['pending_coin_balance'] === null) {
             $invalid_properties[] = "'pending_coin_balance' can't be null";
         }
@@ -591,5 +593,3 @@ class BankSummaryData implements ArrayAccess
         return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

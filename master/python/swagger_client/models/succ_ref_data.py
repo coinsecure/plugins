@@ -69,6 +69,7 @@ class SuccRefData(object):
         self._btc_earned = btc_earned
         self._fiat_earned = fiat_earned
 
+
     @property
     def ref_percent(self):
         """
@@ -89,6 +90,8 @@ class SuccRefData(object):
         :param ref_percent: The ref_percent of this SuccRefData.
         :type: float
         """
+        if ref_percent is None:
+            raise ValueError("Invalid value for `ref_percent`, must not be `None`")
 
         self._ref_percent = ref_percent
 
@@ -112,6 +115,8 @@ class SuccRefData(object):
         :param time: The time of this SuccRefData.
         :type: int
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 
@@ -135,6 +140,8 @@ class SuccRefData(object):
         :param ref_id: The ref_id of this SuccRefData.
         :type: str
         """
+        if ref_id is None:
+            raise ValueError("Invalid value for `ref_id`, must not be `None`")
 
         self._ref_id = ref_id
 
@@ -158,6 +165,8 @@ class SuccRefData(object):
         :param email_verified: The email_verified of this SuccRefData.
         :type: bool
         """
+        if email_verified is None:
+            raise ValueError("Invalid value for `email_verified`, must not be `None`")
 
         self._email_verified = email_verified
 
@@ -181,6 +190,8 @@ class SuccRefData(object):
         :param kyc_complete: The kyc_complete of this SuccRefData.
         :type: bool
         """
+        if kyc_complete is None:
+            raise ValueError("Invalid value for `kyc_complete`, must not be `None`")
 
         self._kyc_complete = kyc_complete
 
@@ -204,6 +215,8 @@ class SuccRefData(object):
         :param btc_earned: The btc_earned of this SuccRefData.
         :type: int
         """
+        if btc_earned is None:
+            raise ValueError("Invalid value for `btc_earned`, must not be `None`")
 
         self._btc_earned = btc_earned
 
@@ -227,6 +240,8 @@ class SuccRefData(object):
         :param fiat_earned: The fiat_earned of this SuccRefData.
         :type: int
         """
+        if fiat_earned is None:
+            raise ValueError("Invalid value for `fiat_earned`, must not be `None`")
 
         self._fiat_earned = fiat_earned
 

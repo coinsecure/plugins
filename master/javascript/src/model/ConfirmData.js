@@ -52,7 +52,7 @@
    * Constructs a new <code>ConfirmData</code>.
    * @alias module:model/ConfirmData
    * @class
-   * @param confirmations {Integer} 
+   * @param confirmations {Number} 
    */
   var exports = function(confirmations) {
     var _this = this;
@@ -72,14 +72,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('confirmations')) {
-        obj['confirmations'] = ApiClient.convertToType(data['confirmations'], 'Integer');
+        obj['confirmations'] = ApiClient.convertToType(data['confirmations'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} confirmations
+   * @member {Number} confirmations
    */
   exports.prototype['confirmations'] = undefined;
 

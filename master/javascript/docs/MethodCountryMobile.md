@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **method** | **String** |  | [optional] 
-**countryCode** | **Integer** |  | [optional] 
-**phoneNumber** | **Integer** |  | [optional] 
+**countryCode** | **Number** |  | [optional] 
+**phoneNumber** | **Number** |  | [optional] 
 
 

@@ -56,15 +56,18 @@ public:
 
     QString* getMethod();
     void setMethod(QString* method);
-qint32 getCountryCode();
-    void setCountryCode(qint32 countryCode);
-qint64 getPhoneNumber();
-    void setPhoneNumber(qint64 phoneNumber);
+
+    qint32 getCountryCode();
+    void setCountryCode(qint32 country_code);
+
+    qint64 getPhoneNumber();
+    void setPhoneNumber(qint64 phone_number);
+
 
 private:
     QString* method;
-qint32 countryCode;
-qint64 phoneNumber;
+    qint32 country_code;
+    qint64 phone_number;
 };
 
 } /* namespace Swagger */

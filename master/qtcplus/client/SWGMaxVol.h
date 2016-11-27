@@ -54,10 +54,11 @@ public:
     SWGMaxVol* fromJson(QString &jsonString);
 
     qint64 getMaxVol();
-    void setMaxVol(qint64 maxVol);
+    void setMaxVol(qint64 max_vol);
+
 
 private:
-    qint64 maxVol;
+    qint64 max_vol;
 };
 
 } /* namespace Swagger */

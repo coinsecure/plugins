@@ -26,13 +26,11 @@ package io.swagger.client.model;
 
 import io.swagger.client.model.RateData;
 import java.util.Date;
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class RateDataResponse  {
+public class RateDataResponse {
   
   @SerializedName("success")
   private Boolean success = null;
@@ -106,21 +104,21 @@ public class RateDataResponse  {
       return false;
     }
     RateDataResponse rateDataResponse = (RateDataResponse) o;
-    return (success == null ? rateDataResponse.success == null : success.equals(rateDataResponse.success)) &&
-        (message == null ? rateDataResponse.message == null : message.equals(rateDataResponse.message)) &&
-        (method == null ? rateDataResponse.method == null : method.equals(rateDataResponse.method)) &&
-        (title == null ? rateDataResponse.title == null : title.equals(rateDataResponse.title)) &&
-        (time == null ? rateDataResponse.time == null : time.equals(rateDataResponse.time));
+    return (this.success == null ? rateDataResponse.success == null : this.success.equals(rateDataResponse.success)) &&
+        (this.message == null ? rateDataResponse.message == null : this.message.equals(rateDataResponse.message)) &&
+        (this.method == null ? rateDataResponse.method == null : this.method.equals(rateDataResponse.method)) &&
+        (this.title == null ? rateDataResponse.title == null : this.title.equals(rateDataResponse.title)) &&
+        (this.time == null ? rateDataResponse.time == null : this.time.equals(rateDataResponse.time));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (success == null ? 0: success.hashCode());
-    result = 31 * result + (message == null ? 0: message.hashCode());
-    result = 31 * result + (method == null ? 0: method.hashCode());
-    result = 31 * result + (title == null ? 0: title.hashCode());
-    result = 31 * result + (time == null ? 0: time.hashCode());
+    result = 31 * result + (this.success == null ? 0: this.success.hashCode());
+    result = 31 * result + (this.message == null ? 0: this.message.hashCode());
+    result = 31 * result + (this.method == null ? 0: this.method.hashCode());
+    result = 31 * result + (this.title == null ? 0: this.title.hashCode());
+    result = 31 * result + (this.time == null ? 0: this.time.hashCode());
     return result;
   }
 

@@ -24,5 +24,5 @@ package swagger
 
 type MinFiat struct {
 
-	MinFiat int64 `json:"minFiat,omitempty"`
+	MaxFiat int64 `json:"maxFiat,omitempty"`
 }

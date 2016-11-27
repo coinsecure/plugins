@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 @Canonical
 class MinFiat {
 
-    Long minFiat = null
+    Long maxFiat = null
   
 
 }

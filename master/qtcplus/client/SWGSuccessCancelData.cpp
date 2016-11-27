@@ -51,7 +51,7 @@ SWGSuccessCancelData::~SWGSuccessCancelData() {
 void
 SWGSuccessCancelData::init() {
     vol = 0L;
-rate = 0L;
+    rate = 0L;
 }
 
 void
@@ -71,8 +71,8 @@ SWGSuccessCancelData::fromJson(QString &json) {
 
 void
 SWGSuccessCancelData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&vol, pJson["vol"], "qint64", "");
-setValue(&rate, pJson["rate"], "qint64", "");
+    ::Swagger::setValue(&vol, pJson["vol"], "qint64", "");
+    ::Swagger::setValue(&rate, pJson["rate"], "qint64", "");
 }
 
 QString
@@ -88,8 +88,10 @@ SWGSuccessCancelData::asJson ()
 QJsonObject*
 SWGSuccessCancelData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("vol", QJsonValue(vol));
-obj->insert("rate", QJsonValue(rate));
+
+    obj->insert("rate", QJsonValue(rate));
 
     return obj;
 }

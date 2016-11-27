@@ -57,6 +57,7 @@ public:
     QString* getCode();
     void setCode(QString* code);
 
+
 private:
     QString* code;
 };

@@ -56,6 +56,7 @@ public:
     double getPercent();
     void setPercent(double percent);
 
+
 private:
     double percent;
 };

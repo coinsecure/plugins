@@ -48,7 +48,7 @@ import java.util.Date
 
 import scala.collection.mutable.HashMap
 
-class AccountDataApi(val defBasePath: String = "https://api.coinsecure.in",
+class AccountDataApi(val defBasePath: String = "https://api.coinsecure.in/",
                         defApiInvoker: ApiInvoker = ApiInvoker) {
   var basePath = defBasePath
   var apiInvoker = defApiInvoker
@@ -62,29 +62,29 @@ class AccountDataApi(val defBasePath: String = "https://api.coinsecure.in",
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return BankSummaryDataResponse
    */
-  def v1ExchangeBankSummary (authorization: String, accept: String) : Option[BankSummaryDataResponse] = {
+  def v1ExchangeBankSummary(authorization: String, accept: Option[String] = None): Option[BankSummaryDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/bank/summary".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/bank/summary".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling AccountDataApi->v1ExchangeBankSummary")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -106,29 +106,27 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return DoubleDataResponse
    */
-  def v1ExchangeUserCoinFee (authorization: String, accept: String) : Option[DoubleDataResponse] = {
+  def v1ExchangeUserCoinFee(authorization: Option[String] = None, accept: Option[String] = None): Option[DoubleDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/coin/fee".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/coin/fee".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    
+    authorization.map(paramVal => headerParams += "Authorization" -> paramVal)
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -150,29 +148,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return DoubleDataResponse
    */
-  def v1ExchangeUserFiatFee (authorization: String, accept: String) : Option[DoubleDataResponse] = {
+  def v1ExchangeUserFiatFee(authorization: String, accept: Option[String] = None): Option[DoubleDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/fiat/fee".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/fiat/fee".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling AccountDataApi->v1ExchangeUserFiatFee")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -194,30 +192,28 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return DoubleDataResponse
    */
-  def v1NetkiSearchNetkiName (netkiName: String, accept: String) : Option[DoubleDataResponse] = {
+  def v1NetkiSearchNetkiName(netkiName: String, accept: Option[String] = None): Option[DoubleDataResponse] = {
     // create path and map variables
-    val path = "/v1/netki/search/{netkiName}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "netkiName" + "\\}",apiInvoker.escape(netkiName))
+    val path = "/v1/netki/search/{netkiName}".replaceAll("\\{format\\}", "json").replaceAll("\\{" + "netkiName" + "\\}",apiInvoker.escape(netkiName))
 
-
-    val contentTypes = List("application/json", "application/json")
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "accept" -> accept
+    if (netkiName == null) throw new Exception("Missing required parameter 'netkiName' when calling AccountDataApi->v1NetkiSearchNetkiName")
+
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -239,29 +235,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return KYCDataResponse
    */
-  def v1UserExchangeKycs (authorization: String, accept: String) : Option[KYCDataResponse] = {
+  def v1UserExchangeKycs(authorization: String, accept: Option[String] = None): Option[KYCDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/kycs".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/kycs".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling AccountDataApi->v1UserExchangeKycs")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -283,29 +279,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccCoinRefDataResponse
    */
-  def v1UserExchangeReferralCoinPaid (authorization: String, accept: String) : Option[SuccCoinRefDataResponse] = {
+  def v1UserExchangeReferralCoinPaid(authorization: String, accept: Option[String] = None): Option[SuccCoinRefDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/referral/coin/paid".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/referral/coin/paid".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling AccountDataApi->v1UserExchangeReferralCoinPaid")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -327,29 +323,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccRefDataResponse
    */
-  def v1UserExchangeReferralCoinSuccessful (authorization: String, accept: String) : Option[SuccRefDataResponse] = {
+  def v1UserExchangeReferralCoinSuccessful(authorization: String, accept: Option[String] = None): Option[SuccRefDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/referral/coin/successful".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/referral/coin/successful".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling AccountDataApi->v1UserExchangeReferralCoinSuccessful")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -371,29 +367,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccCoinRefDataResponse
    */
-  def v1UserExchangeReferralFiatPaid (authorization: String, accept: String) : Option[SuccCoinRefDataResponse] = {
+  def v1UserExchangeReferralFiatPaid(authorization: String, accept: Option[String] = None): Option[SuccCoinRefDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/referral/fiat/paid".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/referral/fiat/paid".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling AccountDataApi->v1UserExchangeReferralFiatPaid")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -415,29 +411,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return AllRefDataResponse
    */
-  def v1UserExchangeReferrals (authorization: String, accept: String) : Option[AllRefDataResponse] = {
+  def v1UserExchangeReferrals(authorization: String, accept: Option[String] = None): Option[AllRefDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/referrals".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/referrals".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling AccountDataApi->v1UserExchangeReferrals")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -459,29 +455,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return TradeSummaryDataResponse
    */
-  def v1UserExchangeTradeSummary (authorization: String, accept: String) : Option[TradeSummaryDataResponse] = {
+  def v1UserExchangeTradeSummary(authorization: String, accept: Option[String] = None): Option[TradeSummaryDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/exchange/trade/summary".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/exchange/trade/summary".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling AccountDataApi->v1UserExchangeTradeSummary")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -503,30 +499,28 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return SuccessResult
    */
-  def v1UserLoginTokenToken (token: String, accept: String) : Option[SuccessResult] = {
+  def v1UserLoginTokenToken(token: String, accept: Option[String] = None): Option[SuccessResult] = {
     // create path and map variables
-    val path = "/v1/user/login/token/{token}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "token" + "\\}",apiInvoker.escape(token))
+    val path = "/v1/user/login/token/{token}".replaceAll("\\{format\\}", "json").replaceAll("\\{" + "token" + "\\}",apiInvoker.escape(token))
 
-
-    val contentTypes = List("application/json", "application/json")
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
-    headerParams += "accept" -> accept
+    if (token == null) throw new Exception("Missing required parameter 'token' when calling AccountDataApi->v1UserLoginTokenToken")
+
+    
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -548,29 +542,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return UserSummaryDataResponse
    */
-  def v1UserSummary (authorization: String, accept: String) : Option[UserSummaryDataResponse] = {
+  def v1UserSummary(authorization: String, accept: Option[String] = None): Option[UserSummaryDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/summary".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/summary".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling AccountDataApi->v1UserSummary")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {
@@ -592,29 +586,29 @@ headerParams += "accept" -> accept
    * @param accept JSON, XML or CSV can be returned (Optional) (optional)
    * @return WalletSummaryDataResponse
    */
-  def v1UserWalletSummary (authorization: String, accept: String) : Option[WalletSummaryDataResponse] = {
+  def v1UserWalletSummary(authorization: String, accept: Option[String] = None): Option[WalletSummaryDataResponse] = {
     // create path and map variables
-    val path = "/v1/user/wallet/summary".replaceAll("\\{format\\}","json")
-    val contentTypes = List("application/json", "application/json")
+    val path = "/v1/user/wallet/summary".replaceAll("\\{format\\}", "json")
+
+    val contentTypes = List("application/json")
     val contentType = contentTypes(0)
 
-    // query params
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
     val formParams = new HashMap[String, String]
 
-        
+    if (authorization == null) throw new Exception("Missing required parameter 'authorization' when calling AccountDataApi->v1UserWalletSummary")
+
+    
     headerParams += "Authorization" -> authorization
-headerParams += "accept" -> accept
+    accept.map(paramVal => headerParams += "accept" -> paramVal)
 
     var postBody: AnyRef = null
 
-    if(contentType.startsWith("multipart/form-data")) {
-      val mp = new FormDataMultiPart()
-      
+    if (contentType.startsWith("multipart/form-data")) {
+      val mp = new FormDataMultiPart
       postBody = mp
-    }
-    else {
+    } else {
     }
 
     try {

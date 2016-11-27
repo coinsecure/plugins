@@ -55,43 +55,55 @@ public:
     SWGBankSummaryData* fromJson(QString &jsonString);
 
     qint64 getPendingCoinBalance();
-    void setPendingCoinBalance(qint64 pendingCoinBalance);
-qint64 getPendingFiatBalance();
-    void setPendingFiatBalance(qint64 pendingFiatBalance);
-qint64 getAvailableCoinBalance();
-    void setAvailableCoinBalance(qint64 availableCoinBalance);
-qint64 getAvailableFiatBalance();
-    void setAvailableFiatBalance(qint64 availableFiatBalance);
-qint64 getTotalCoinBalance();
-    void setTotalCoinBalance(qint64 totalCoinBalance);
-qint64 getTotalFiatBalance();
-    void setTotalFiatBalance(qint64 totalFiatBalance);
-double getCoinFeePercentage();
-    void setCoinFeePercentage(double coinFeePercentage);
-double getFiatFeePercentage();
-    void setFiatFeePercentage(double fiatFeePercentage);
-QString* getBankLinkStatus();
-    void setBankLinkStatus(QString* bankLinkStatus);
-bool getHasTradeNetki();
-    void setHasTradeNetki(bool hasTradeNetki);
-QString* getTradeNetkiName();
-    void setTradeNetkiName(QString* tradeNetkiName);
-QString* getTradeNetkiAddress();
-    void setTradeNetkiAddress(QString* tradeNetkiAddress);
+    void setPendingCoinBalance(qint64 pending_coin_balance);
+
+    qint64 getPendingFiatBalance();
+    void setPendingFiatBalance(qint64 pending_fiat_balance);
+
+    qint64 getAvailableCoinBalance();
+    void setAvailableCoinBalance(qint64 available_coin_balance);
+
+    qint64 getAvailableFiatBalance();
+    void setAvailableFiatBalance(qint64 available_fiat_balance);
+
+    qint64 getTotalCoinBalance();
+    void setTotalCoinBalance(qint64 total_coin_balance);
+
+    qint64 getTotalFiatBalance();
+    void setTotalFiatBalance(qint64 total_fiat_balance);
+
+    double getCoinFeePercentage();
+    void setCoinFeePercentage(double coin_fee_percentage);
+
+    double getFiatFeePercentage();
+    void setFiatFeePercentage(double fiat_fee_percentage);
+
+    QString* getBankLinkStatus();
+    void setBankLinkStatus(QString* bank_link_status);
+
+    bool getHasTradeNetki();
+    void setHasTradeNetki(bool has_trade_netki);
+
+    QString* getTradeNetkiName();
+    void setTradeNetkiName(QString* trade_netki_name);
+
+    QString* getTradeNetkiAddress();
+    void setTradeNetkiAddress(QString* trade_netki_address);
+
 
 private:
-    qint64 pendingCoinBalance;
-qint64 pendingFiatBalance;
-qint64 availableCoinBalance;
-qint64 availableFiatBalance;
-qint64 totalCoinBalance;
-qint64 totalFiatBalance;
-double coinFeePercentage;
-double fiatFeePercentage;
-QString* bankLinkStatus;
-bool hasTradeNetki;
-QString* tradeNetkiName;
-QString* tradeNetkiAddress;
+    qint64 pending_coin_balance;
+    qint64 pending_fiat_balance;
+    qint64 available_coin_balance;
+    qint64 available_fiat_balance;
+    qint64 total_coin_balance;
+    qint64 total_fiat_balance;
+    double coin_fee_percentage;
+    double fiat_fee_percentage;
+    QString* bank_link_status;
+    bool has_trade_netki;
+    QString* trade_netki_name;
+    QString* trade_netki_address;
 };
 
 } /* namespace Swagger */

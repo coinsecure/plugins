@@ -55,31 +55,39 @@ public:
     SWGSuccCoinRefData* fromJson(QString &jsonString);
 
     double getRefPercent();
-    void setRefPercent(double refPercent);
-qint64 getTime();
+    void setRefPercent(double ref_percent);
+
+    qint64 getTime();
     void setTime(qint64 time);
-QString* getOrderID();
-    void setOrderID(QString* orderID);
-QString* getRefID();
-    void setRefID(QString* refID);
-QString* getTradeID();
-    void setTradeID(QString* tradeID);
-QString* getNewUserIDMasked();
-    void setNewUserIDMasked(QString* newUserIDMasked);
-QString* getDepositID();
-    void setDepositID(QString* depositID);
-qint64 getAmtPaid();
-    void setAmtPaid(qint64 amtPaid);
+
+    QString* getOrderId();
+    void setOrderId(QString* order_id);
+
+    QString* getRefId();
+    void setRefId(QString* ref_id);
+
+    QString* getTradeId();
+    void setTradeId(QString* trade_id);
+
+    QString* getNewUserIdMasked();
+    void setNewUserIdMasked(QString* new_user_id_masked);
+
+    QString* getDepositId();
+    void setDepositId(QString* deposit_id);
+
+    qint64 getAmtPaid();
+    void setAmtPaid(qint64 amt_paid);
+
 
 private:
-    double refPercent;
-qint64 time;
-QString* orderID;
-QString* refID;
-QString* tradeID;
-QString* newUserIDMasked;
-QString* depositID;
-qint64 amtPaid;
+    double ref_percent;
+    qint64 time;
+    QString* order_id;
+    QString* ref_id;
+    QString* trade_id;
+    QString* new_user_id_masked;
+    QString* deposit_id;
+    qint64 amt_paid;
 };
 
 } /* namespace Swagger */

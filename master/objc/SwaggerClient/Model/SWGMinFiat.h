@@ -33,6 +33,6 @@
 @interface SWGMinFiat : SWGObject
 
 
-@property(nonatomic) NSNumber* minFiat;
+@property(nonatomic) NSNumber* maxFiat;
 
 @end

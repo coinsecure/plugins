@@ -51,39 +51,47 @@ SWGNewBankForm::~SWGNewBankForm() {
 void
 SWGNewBankForm::init() {
     acct_nick = new QString("");
-name = new QString("");
-ban = new QString("");
-ifsc = new QString("");
-message = new QString("");
-banType = new QString("");
-phone = new QString("");
-otp = new QString("");
+    name = new QString("");
+    ban = new QString("");
+    ifsc = new QString("");
+    message = new QString("");
+    ban_type = new QString("");
+    phone = new QString("");
+    otp = new QString("");
 }
 
 void
 SWGNewBankForm::cleanup() {
-    if(acct_nick != NULL) {
+    
+    if(acct_nick != nullptr) {
         delete acct_nick;
     }
-if(name != NULL) {
+
+    if(name != nullptr) {
         delete name;
     }
-if(ban != NULL) {
+
+    if(ban != nullptr) {
         delete ban;
     }
-if(ifsc != NULL) {
+
+    if(ifsc != nullptr) {
         delete ifsc;
     }
-if(message != NULL) {
+
+    if(message != nullptr) {
         delete message;
     }
-if(banType != NULL) {
-        delete banType;
+
+    if(ban_type != nullptr) {
+        delete ban_type;
     }
-if(phone != NULL) {
+
+    if(phone != nullptr) {
         delete phone;
     }
-if(otp != NULL) {
+
+    if(otp != nullptr) {
         delete otp;
     }
 }
@@ -99,14 +107,14 @@ SWGNewBankForm::fromJson(QString &json) {
 
 void
 SWGNewBankForm::fromJsonObject(QJsonObject &pJson) {
-    setValue(&acct_nick, pJson["acct_nick"], "QString", "QString");
-setValue(&name, pJson["name"], "QString", "QString");
-setValue(&ban, pJson["ban"], "QString", "QString");
-setValue(&ifsc, pJson["ifsc"], "QString", "QString");
-setValue(&message, pJson["message"], "QString", "QString");
-setValue(&banType, pJson["banType"], "QString", "QString");
-setValue(&phone, pJson["phone"], "QString", "QString");
-setValue(&otp, pJson["otp"], "QString", "QString");
+    ::Swagger::setValue(&acct_nick, pJson["acct_nick"], "QString", "QString");
+    ::Swagger::setValue(&name, pJson["name"], "QString", "QString");
+    ::Swagger::setValue(&ban, pJson["ban"], "QString", "QString");
+    ::Swagger::setValue(&ifsc, pJson["ifsc"], "QString", "QString");
+    ::Swagger::setValue(&message, pJson["message"], "QString", "QString");
+    ::Swagger::setValue(&ban_type, pJson["ban_type"], "QString", "QString");
+    ::Swagger::setValue(&phone, pJson["phone"], "QString", "QString");
+    ::Swagger::setValue(&otp, pJson["otp"], "QString", "QString");
 }
 
 QString
@@ -123,45 +131,21 @@ QJsonObject*
 SWGNewBankForm::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("acct_nick"), acct_nick, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("name"), name, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("ban"), ban, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("ifsc"), ifsc, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("message"), message, obj, QString("QString"));
-    
-        
 
-    
-    toJsonValue(QString("banType"), banType, obj, QString("QString"));
-    
-        
+    toJsonValue(QString("ban_type"), ban_type, obj, QString("QString"));
 
-    
     toJsonValue(QString("phone"), phone, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("otp"), otp, obj, QString("QString"));
-    
-        
 
     return obj;
 }
@@ -213,11 +197,11 @@ SWGNewBankForm::setMessage(QString* message) {
 
 QString*
 SWGNewBankForm::getBanType() {
-    return banType;
+    return ban_type;
 }
 void
-SWGNewBankForm::setBanType(QString* banType) {
-    this->banType = banType;
+SWGNewBankForm::setBanType(QString* ban_type) {
+    this->ban_type = ban_type;
 }
 
 QString*

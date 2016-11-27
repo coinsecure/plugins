@@ -25,12 +25,11 @@
 package io.swagger.client.model
 
 
-
-
 case class SuccessOrderData (
   time: Long,
-vol: Long,
-rate: Long,
-orderID: String,
-status: String,
-humanTime: String)
+  vol: Long,
+  rate: Long,
+  orderID: String,
+  status: String,
+  humanTime: String
+)

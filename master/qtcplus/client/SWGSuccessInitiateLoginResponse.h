@@ -56,18 +56,22 @@ public:
 
     QString* getInfo();
     void setInfo(QString* info);
-qint64 getValidTill();
-    void setValidTill(qint64 validTill);
-QString* getMfa();
+
+    qint64 getValidTill();
+    void setValidTill(qint64 valid_till);
+
+    QString* getMfa();
     void setMfa(QString* mfa);
-QString* getToken();
+
+    QString* getToken();
     void setToken(QString* token);
+
 
 private:
     QString* info;
-qint64 validTill;
-QString* mfa;
-QString* token;
+    qint64 valid_till;
+    QString* mfa;
+    QString* token;
 };
 
 } /* namespace Swagger */

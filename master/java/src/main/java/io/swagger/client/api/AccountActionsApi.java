@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -46,6 +46,7 @@ import io.swagger.client.model.StandardInitiateLoginResultData;
 import io.swagger.client.model.Email;
 import io.swagger.client.model.SuccessResult;
 import io.swagger.client.model.SignupForm;
+import io.swagger.client.model.StandardVerifySignupResultData;
 import java.io.File;
 import io.swagger.client.model.NetkiNameAddress;
 import io.swagger.client.model.Address;
@@ -520,6 +521,118 @@ public class AccountActionsApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+    /* Build call for v1signupverifyToken */
+    private com.squareup.okhttp.Call v1signupverifyTokenCall(String token, String accept, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // verify the required parameter 'token' is set
+        if (token == null) {
+            throw new ApiException("Missing the required parameter 'token' when calling v1signupverifyToken(Async)");
+        }
+        
+
+        // create path and map variables
+        String localVarPath = "/v1/signup/verify/{token}".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "token" + "\\}", apiClient.escapeString(token.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (accept != null)
+        localVarHeaderParams.put("accept", apiClient.parameterToString(accept));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json", "application/xml", "application/csv"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    /**
+     * Verifies an Email token for Signup .
+     * Creates a new Coinsecure Account.
+     * @param token  (required)
+     * @param accept JSON, XML or CSV can be returned (Optional) (optional)
+     * @return StandardVerifySignupResultData
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public StandardVerifySignupResultData v1signupverifyToken(String token, String accept) throws ApiException {
+        ApiResponse<StandardVerifySignupResultData> resp = v1signupverifyTokenWithHttpInfo(token, accept);
+        return resp.getData();
+    }
+
+    /**
+     * Verifies an Email token for Signup .
+     * Creates a new Coinsecure Account.
+     * @param token  (required)
+     * @param accept JSON, XML or CSV can be returned (Optional) (optional)
+     * @return ApiResponse&lt;StandardVerifySignupResultData&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<StandardVerifySignupResultData> v1signupverifyTokenWithHttpInfo(String token, String accept) throws ApiException {
+        com.squareup.okhttp.Call call = v1signupverifyTokenCall(token, accept, null, null);
+        Type localVarReturnType = new TypeToken<StandardVerifySignupResultData>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Verifies an Email token for Signup . (asynchronously)
+     * Creates a new Coinsecure Account.
+     * @param token  (required)
+     * @param accept JSON, XML or CSV can be returned (Optional) (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call v1signupverifyTokenAsync(String token, String accept, final ApiCallback<StandardVerifySignupResultData> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = v1signupverifyTokenCall(token, accept, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<StandardVerifySignupResultData>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /* Build call for v1userbankotpNumber */
     private com.squareup.okhttp.Call v1userbankotpNumberCall(String number, String authorization, String accept, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
@@ -766,7 +879,7 @@ public class AccountActionsApi {
      * @param acctType Please enter your Coinsecure account type. Allowable Values are Personal or Company. (required)
      * @param banType Please enter your Bank account type. Allowable Values are Savings or Current. (required)
      * @param phone Please enter your Valid Phone Number. (required)
-     * @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. (required)
+     * @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. (required)
      * @param file Enter a valid image, pdf or zip file under 5 MB in size. (required)
      * @param authorization Enter a valid Api Key. (optional)
      * @param message Please enter an optional message if needed. (optional)
@@ -790,7 +903,7 @@ public class AccountActionsApi {
      * @param acctType Please enter your Coinsecure account type. Allowable Values are Personal or Company. (required)
      * @param banType Please enter your Bank account type. Allowable Values are Savings or Current. (required)
      * @param phone Please enter your Valid Phone Number. (required)
-     * @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. (required)
+     * @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. (required)
      * @param file Enter a valid image, pdf or zip file under 5 MB in size. (required)
      * @param authorization Enter a valid Api Key. (optional)
      * @param message Please enter an optional message if needed. (optional)
@@ -815,7 +928,7 @@ public class AccountActionsApi {
      * @param acctType Please enter your Coinsecure account type. Allowable Values are Personal or Company. (required)
      * @param banType Please enter your Bank account type. Allowable Values are Savings or Current. (required)
      * @param phone Please enter your Valid Phone Number. (required)
-     * @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/bank/otp/:number. (required)
+     * @param otp Please enter your OTP from SMS. The code can be requested from /v1/user/kyc/otp/:number. (required)
      * @param file Enter a valid image, pdf or zip file under 5 MB in size. (required)
      * @param authorization Enter a valid Api Key. (optional)
      * @param message Please enter an optional message if needed. (optional)

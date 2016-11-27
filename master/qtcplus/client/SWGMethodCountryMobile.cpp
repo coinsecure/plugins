@@ -51,13 +51,14 @@ SWGMethodCountryMobile::~SWGMethodCountryMobile() {
 void
 SWGMethodCountryMobile::init() {
     method = new QString("");
-countryCode = 0;
-phoneNumber = 0L;
+    country_code = 0;
+    phone_number = 0L;
 }
 
 void
 SWGMethodCountryMobile::cleanup() {
-    if(method != NULL) {
+    
+    if(method != nullptr) {
         delete method;
     }
 
@@ -75,9 +76,9 @@ SWGMethodCountryMobile::fromJson(QString &json) {
 
 void
 SWGMethodCountryMobile::fromJsonObject(QJsonObject &pJson) {
-    setValue(&method, pJson["method"], "QString", "QString");
-setValue(&countryCode, pJson["countryCode"], "qint32", "");
-setValue(&phoneNumber, pJson["phoneNumber"], "qint64", "");
+    ::Swagger::setValue(&method, pJson["method"], "QString", "QString");
+    ::Swagger::setValue(&country_code, pJson["country_code"], "qint32", "");
+    ::Swagger::setValue(&phone_number, pJson["phone_number"], "qint64", "");
 }
 
 QString
@@ -94,12 +95,11 @@ QJsonObject*
 SWGMethodCountryMobile::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("method"), method, obj, QString("QString"));
-    
-        
-obj->insert("countryCode", QJsonValue(countryCode));
-obj->insert("phoneNumber", QJsonValue(phoneNumber));
+
+    obj->insert("country_code", QJsonValue(country_code));
+
+    obj->insert("phone_number", QJsonValue(phone_number));
 
     return obj;
 }
@@ -115,20 +115,20 @@ SWGMethodCountryMobile::setMethod(QString* method) {
 
 qint32
 SWGMethodCountryMobile::getCountryCode() {
-    return countryCode;
+    return country_code;
 }
 void
-SWGMethodCountryMobile::setCountryCode(qint32 countryCode) {
-    this->countryCode = countryCode;
+SWGMethodCountryMobile::setCountryCode(qint32 country_code) {
+    this->country_code = country_code;
 }
 
 qint64
 SWGMethodCountryMobile::getPhoneNumber() {
-    return phoneNumber;
+    return phone_number;
 }
 void
-SWGMethodCountryMobile::setPhoneNumber(qint64 phoneNumber) {
-    this->phoneNumber = phoneNumber;
+SWGMethodCountryMobile::setPhoneNumber(qint64 phone_number) {
+    this->phone_number = phone_number;
 }
 
 

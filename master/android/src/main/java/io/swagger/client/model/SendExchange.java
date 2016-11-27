@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class SendExchange  {
+public class SendExchange {
   
   @SerializedName("amt")
   private Long amt = null;
@@ -79,17 +77,17 @@ public class SendExchange  {
       return false;
     }
     SendExchange sendExchange = (SendExchange) o;
-    return (amt == null ? sendExchange.amt == null : amt.equals(sendExchange.amt)) &&
-        (walletID == null ? sendExchange.walletID == null : walletID.equals(sendExchange.walletID)) &&
-        (msg == null ? sendExchange.msg == null : msg.equals(sendExchange.msg));
+    return (this.amt == null ? sendExchange.amt == null : this.amt.equals(sendExchange.amt)) &&
+        (this.walletID == null ? sendExchange.walletID == null : this.walletID.equals(sendExchange.walletID)) &&
+        (this.msg == null ? sendExchange.msg == null : this.msg.equals(sendExchange.msg));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (amt == null ? 0: amt.hashCode());
-    result = 31 * result + (walletID == null ? 0: walletID.hashCode());
-    result = 31 * result + (msg == null ? 0: msg.hashCode());
+    result = 31 * result + (this.amt == null ? 0: this.amt.hashCode());
+    result = 31 * result + (this.walletID == null ? 0: this.walletID.hashCode());
+    result = 31 * result + (this.msg == null ? 0: this.msg.hashCode());
     return result;
   }
 

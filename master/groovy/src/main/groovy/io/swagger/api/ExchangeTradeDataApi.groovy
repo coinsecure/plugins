@@ -12,12 +12,13 @@ import io.swagger.model.LastTradeDataResponse
 import io.swagger.model.RateDiffDataResponse
 import io.swagger.model.StandardTickerResultData
 import io.swagger.model.OrderDataResponse
+import io.swagger.model.RateVolTimeTypeDataResponse
 
 import java.util.*;
 
 @Mixin(ApiUtils)
 class ExchangeTradeDataApi {
-    String basePath = "https://api.coinsecure.in"
+    String basePath = "https://api.coinsecure.in/"
     String versionPath = "/api/v1"
 
     def v1exchangeasklow ( String accept, Closure onSuccess, Closure onFailure)  {
@@ -294,6 +295,31 @@ if (!"null".equals(String.valueOf(offset)))
         invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams,
                     "GET", "",
                     OrderDataResponse.class )
+                    
+    }
+    def v1userexchangetrades ( Long from, Long to, Integer max, Long offset, String accept, Closure onSuccess, Closure onFailure)  {
+        // create path and map variables
+        String resourcePath = "/v1/exchange/trades"
+
+        // query params
+        def queryParams = [:]
+        def headerParams = [:]
+    
+
+        if (!"null".equals(String.valueOf(from)))
+            queryParams.put("from", String.valueOf(from))
+if (!"null".equals(String.valueOf(to)))
+            queryParams.put("to", String.valueOf(to))
+if (!"null".equals(String.valueOf(max)))
+            queryParams.put("max", String.valueOf(max))
+if (!"null".equals(String.valueOf(offset)))
+            queryParams.put("offset", String.valueOf(offset))
+
+        headerParams.put("accept", accept)
+
+        invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams,
+                    "GET", "",
+                    RateVolTimeTypeDataResponse.class )
                     
     }
 }

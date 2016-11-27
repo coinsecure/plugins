@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class TimeDataCoin  {
+public class TimeDataCoin {
   
   @SerializedName("time")
   private Long time = null;
@@ -67,15 +65,15 @@ public class TimeDataCoin  {
       return false;
     }
     TimeDataCoin timeDataCoin = (TimeDataCoin) o;
-    return (time == null ? timeDataCoin.time == null : time.equals(timeDataCoin.time)) &&
-        (verifiedTime == null ? timeDataCoin.verifiedTime == null : verifiedTime.equals(timeDataCoin.verifiedTime));
+    return (this.time == null ? timeDataCoin.time == null : this.time.equals(timeDataCoin.time)) &&
+        (this.verifiedTime == null ? timeDataCoin.verifiedTime == null : this.verifiedTime.equals(timeDataCoin.verifiedTime));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (time == null ? 0: time.hashCode());
-    result = 31 * result + (verifiedTime == null ? 0: verifiedTime.hashCode());
+    result = 31 * result + (this.time == null ? 0: this.time.hashCode());
+    result = 31 * result + (this.verifiedTime == null ? 0: this.verifiedTime.hashCode());
     return result;
   }
 

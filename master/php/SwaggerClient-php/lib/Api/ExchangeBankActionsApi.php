@@ -6,7 +6,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,9 +40,9 @@
 
 namespace Swagger\Client\Api;
 
-use \Swagger\Client\Configuration;
 use \Swagger\Client\ApiClient;
 use \Swagger\Client\ApiException;
+use \Swagger\Client\Configuration;
 use \Swagger\Client\ObjectSerializer;
 
 /**
@@ -51,12 +51,11 @@ use \Swagger\Client\ObjectSerializer;
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class ExchangeBankActionsApi
 {
-
     /**
      * API Client
      *
@@ -71,9 +70,9 @@ class ExchangeBankActionsApi
      */
     public function __construct(\Swagger\Client\ApiClient $apiClient = null)
     {
-        if ($apiClient == null) {
+        if ($apiClient === null) {
             $apiClient = new ApiClient();
-            $apiClient->getConfig()->setHost('https://api.coinsecure.in');
+            $apiClient->getConfig()->setHost('https://api.coinsecure.in/');
         }
 
         $this->apiClient = $apiClient;
@@ -110,8 +109,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\SendCoin $body Please send the form with valid inputs. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userexchangebankcoinwithdrawinitiate($body, $authorization = null, $accept = null)
     {
@@ -127,8 +126,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\SendCoin $body Please send the form with valid inputs. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankcoinwithdrawinitiateWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -139,14 +138,14 @@ class ExchangeBankActionsApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/coin/withdraw/initiate";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -183,7 +182,7 @@ class ExchangeBankActionsApi
                 '/v1/user/exchange/bank/coin/withdraw/initiate'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -208,8 +207,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\WithdrawID $body You can get unverified withdraw ID&#39;s from /v1/user/exchange/bank/coin/withdraw/unverified (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userexchangebankcoinwithdrawnewVerifycode($body, $authorization = null, $accept = null)
     {
@@ -225,8 +224,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\WithdrawID $body You can get unverified withdraw ID&#39;s from /v1/user/exchange/bank/coin/withdraw/unverified (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankcoinwithdrawnewVerifycodeWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -237,14 +236,14 @@ class ExchangeBankActionsApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/coin/withdraw/newVerifycode";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -281,7 +280,7 @@ class ExchangeBankActionsApi
                 '/v1/user/exchange/bank/coin/withdraw/newVerifycode'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -306,8 +305,8 @@ class ExchangeBankActionsApi
      * @param string $withdraw_id  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userexchangebankcoinwithdrawunverifiedcancelWithdrawID($withdraw_id, $authorization = null, $accept = null)
     {
@@ -323,8 +322,8 @@ class ExchangeBankActionsApi
      * @param string $withdraw_id  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankcoinwithdrawunverifiedcancelWithdrawIDWithHttpInfo($withdraw_id, $authorization = null, $accept = null)
     {
@@ -335,14 +334,14 @@ class ExchangeBankActionsApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID}";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -382,7 +381,7 @@ class ExchangeBankActionsApi
                 '/v1/user/exchange/bank/coin/withdraw/unverified/cancel/{withdrawID}'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -407,8 +406,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\Code $body You can get the code from /v1/user/exchange/bank/coin/withdraw/newVerifycode. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userexchangebankcoinwithdrawverify($body, $authorization = null, $accept = null)
     {
@@ -424,8 +423,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\Code $body You can get the code from /v1/user/exchange/bank/coin/withdraw/newVerifycode. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankcoinwithdrawverifyWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -436,14 +435,14 @@ class ExchangeBankActionsApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/coin/withdraw/verify";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -480,7 +479,7 @@ class ExchangeBankActionsApi
                 '/v1/user/exchange/bank/coin/withdraw/verify'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -505,8 +504,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\NewBankForm $body Please send the form with valid inputs. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userexchangebankfiataccountnew($body, $authorization = null, $accept = null)
     {
@@ -522,8 +521,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\NewBankForm $body Please send the form with valid inputs. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiataccountnewWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -534,14 +533,14 @@ class ExchangeBankActionsApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/account/new";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -578,7 +577,7 @@ class ExchangeBankActionsApi
                 '/v1/user/exchange/bank/fiat/account/new'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -603,8 +602,8 @@ class ExchangeBankActionsApi
      * @param string $deposit_id  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userexchangebankfiatdepositcancelDepositID($deposit_id, $authorization = null, $accept = null)
     {
@@ -620,8 +619,8 @@ class ExchangeBankActionsApi
      * @param string $deposit_id  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatdepositcancelDepositIDWithHttpInfo($deposit_id, $authorization = null, $accept = null)
     {
@@ -632,14 +631,14 @@ class ExchangeBankActionsApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/deposit/cancel/{depositID}";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -679,7 +678,7 @@ class ExchangeBankActionsApi
                 '/v1/user/exchange/bank/fiat/deposit/cancel/{depositID}'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -704,8 +703,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\NewFiatBankDeposit $body Please send the form with valid inputs. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userexchangebankfiatdepositnew($body, $authorization = null, $accept = null)
     {
@@ -721,8 +720,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\NewFiatBankDeposit $body Please send the form with valid inputs. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatdepositnewWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -733,14 +732,14 @@ class ExchangeBankActionsApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/deposit/new";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -777,7 +776,7 @@ class ExchangeBankActionsApi
                 '/v1/user/exchange/bank/fiat/deposit/new'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -802,8 +801,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\WithdrawFiat $body Please send the form with valid inputs. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userexchangebankfiatwithdrawinitiate($body, $authorization = null, $accept = null)
     {
@@ -819,8 +818,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\WithdrawFiat $body Please send the form with valid inputs. (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatwithdrawinitiateWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -831,14 +830,14 @@ class ExchangeBankActionsApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/withdraw/initiate";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -875,7 +874,7 @@ class ExchangeBankActionsApi
                 '/v1/user/exchange/bank/fiat/withdraw/initiate'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -900,8 +899,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\WithdrawID $body You can get unverified withdraw ID&#39;s from /v1/user/exchange/bank/fiat/withdraw/unverified (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userexchangebankfiatwithdrawnewVerifycode($body, $authorization = null, $accept = null)
     {
@@ -917,8 +916,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\WithdrawID $body You can get unverified withdraw ID&#39;s from /v1/user/exchange/bank/fiat/withdraw/unverified (required)
      * @param string $authorization API object to be added (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatwithdrawnewVerifycodeWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -929,14 +928,14 @@ class ExchangeBankActionsApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/withdraw/newVerifycode";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -973,7 +972,7 @@ class ExchangeBankActionsApi
                 '/v1/user/exchange/bank/fiat/withdraw/newVerifycode'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -998,8 +997,8 @@ class ExchangeBankActionsApi
      * @param string $withdraw_id  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userexchangebankfiatwithdrawunverifiedcancelWithdrawID($withdraw_id, $authorization = null, $accept = null)
     {
@@ -1015,8 +1014,8 @@ class ExchangeBankActionsApi
      * @param string $withdraw_id  (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatwithdrawunverifiedcancelWithdrawIDWithHttpInfo($withdraw_id, $authorization = null, $accept = null)
     {
@@ -1027,14 +1026,14 @@ class ExchangeBankActionsApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID}";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -1074,7 +1073,7 @@ class ExchangeBankActionsApi
                 '/v1/user/exchange/bank/fiat/withdraw/unverified/cancel/{withdrawID}'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1099,8 +1098,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\Code $body You can get the code from /v1/user/exchange/bank/fiat/withdraw/newVerifycode (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return \Swagger\Client\Model\SuccessResult
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SuccessResult
      */
     public function v1userexchangebankfiatwithdrawverify($body, $authorization = null, $accept = null)
     {
@@ -1116,8 +1115,8 @@ class ExchangeBankActionsApi
      * @param \Swagger\Client\Model\Code $body You can get the code from /v1/user/exchange/bank/fiat/withdraw/newVerifycode (required)
      * @param string $authorization Enter a valid Api Key. (optional)
      * @param string $accept JSON, XML or CSV can be returned (Optional) (optional)
-     * @return Array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SuccessResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1userexchangebankfiatwithdrawverifyWithHttpInfo($body, $authorization = null, $accept = null)
     {
@@ -1128,14 +1127,14 @@ class ExchangeBankActionsApi
         // parse inputs
         $resourcePath = "/v1/user/exchange/bank/fiat/withdraw/verify";
         $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json', 'application/xml', 'application/csv'));
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'application/csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json'));
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // header params
         if ($authorization !== null) {
@@ -1172,7 +1171,7 @@ class ExchangeBankActionsApi
                 '/v1/user/exchange/bank/fiat/withdraw/verify'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader);
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SuccessResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1188,5 +1187,4 @@ class ExchangeBankActionsApi
             throw $e;
         }
     }
-
 }

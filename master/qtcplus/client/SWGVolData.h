@@ -56,6 +56,7 @@ public:
     qint64 getVol();
     void setVol(qint64 vol);
 
+
 private:
     qint64 vol;
 };

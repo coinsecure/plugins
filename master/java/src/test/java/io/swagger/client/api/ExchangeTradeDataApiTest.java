@@ -1,4 +1,4 @@
-/**
+/*
  * Coinsecure Api Documentation
  * To generate an API key, please visit <a href='https://coinsecure.in/api' target='_new' class='homeapi'>https://coinsecure.in/api</a>.<br>Guidelines for use can be accessed at <a href='https://api.coinsecure.in/v1/guidelines'>https://api.coinsecure.in/v1/guidelines</a>.<br>Programming Language Libraries for use can be accessed at <a href='https://api.coinsecure.in/v1/code-libraries'>https://api.coinsecure.in/v1/code-libraries</a>.
  *
@@ -33,6 +33,7 @@ import io.swagger.client.model.LastTradeDataResponse;
 import io.swagger.client.model.RateDiffDataResponse;
 import io.swagger.client.model.StandardTickerResultData;
 import io.swagger.client.model.OrderDataResponse;
+import io.swagger.client.model.RateVolTimeTypeDataResponse;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -278,6 +279,26 @@ public class ExchangeTradeDataApiTest {
         String authorization = null;
         String accept = null;
         // OrderDataResponse response = api.v1userexchangebidpending(authorization, accept);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Completed Exchange Trades
+     *
+     * Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void v1userexchangetradesTest() throws ApiException {
+        Long from = null;
+        Long to = null;
+        Integer max = null;
+        Long offset = null;
+        String accept = null;
+        // RateVolTimeTypeDataResponse response = api.v1userexchangetrades(from, to, max, offset, accept);
 
         // TODO: test validations
     }

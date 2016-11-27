@@ -56,18 +56,22 @@ public:
 
     qint64 getTime();
     void setTime(qint64 time);
-qint64 getAvgRate();
-    void setAvgRate(qint64 avgRate);
-qint64 getVol();
+
+    qint64 getAvgRate();
+    void setAvgRate(qint64 avg_rate);
+
+    qint64 getVol();
     void setVol(qint64 vol);
-QString* getOrdType();
-    void setOrdType(QString* ordType);
+
+    QString* getOrdType();
+    void setOrdType(QString* ord_type);
+
 
 private:
     qint64 time;
-qint64 avgRate;
-qint64 vol;
-QString* ordType;
+    qint64 avg_rate;
+    qint64 vol;
+    QString* ord_type;
 };
 
 } /* namespace Swagger */

@@ -1,6 +1,6 @@
 # swagger_client.SecurityActionsApi
 
-All URIs are relative to *https://api.coinsecure.in*
+All URIs are relative to *https://api.coinsecure.in/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,6 +25,7 @@ Sends a Token via call or sms to begin the registration. This token needs to be 
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -41,7 +42,7 @@ try:
     api_response = api_instance.v1mfaauthyinitiate(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SecurityActionsApi->v1mfaauthyinitiate: %s\n" % e
+    print("Exception when calling SecurityActionsApi->v1mfaauthyinitiate: %s\n" % e)
 ```
 
 ### Parameters
@@ -76,6 +77,7 @@ Returns the Google Authenticator Secret and a QR code URL.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -91,7 +93,7 @@ try:
     api_response = api_instance.v1mfagainitiate(authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SecurityActionsApi->v1mfagainitiate: %s\n" % e
+    print("Exception when calling SecurityActionsApi->v1mfagainitiate: %s\n" % e)
 ```
 
 ### Parameters
@@ -125,6 +127,7 @@ Calls valid phone user with a code.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -140,7 +143,7 @@ try:
     api_response = api_instance.v1usermfaauthycall(authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SecurityActionsApi->v1usermfaauthycall: %s\n" % e
+    print("Exception when calling SecurityActionsApi->v1usermfaauthycall: %s\n" % e)
 ```
 
 ### Parameters
@@ -174,6 +177,7 @@ Disables users Authy
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -190,7 +194,7 @@ try:
     api_response = api_instance.v1usermfaauthydisable_code(code, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SecurityActionsApi->v1usermfaauthydisable_code: %s\n" % e
+    print("Exception when calling SecurityActionsApi->v1usermfaauthydisable_code: %s\n" % e)
 ```
 
 ### Parameters
@@ -225,6 +229,7 @@ Verifies and registers the user with verification code sent to sms or call from 
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -241,7 +246,7 @@ try:
     api_response = api_instance.v1usermfaauthyinitiateenable(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SecurityActionsApi->v1usermfaauthyinitiateenable: %s\n" % e
+    print("Exception when calling SecurityActionsApi->v1usermfaauthyinitiateenable: %s\n" % e)
 ```
 
 ### Parameters
@@ -276,6 +281,7 @@ Disables users Authy
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -291,7 +297,7 @@ try:
     api_response = api_instance.v1usermfaauthysms(authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SecurityActionsApi->v1usermfaauthysms: %s\n" % e
+    print("Exception when calling SecurityActionsApi->v1usermfaauthysms: %s\n" % e)
 ```
 
 ### Parameters
@@ -325,6 +331,7 @@ Disables users Google Authenticator 2FA
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -341,7 +348,7 @@ try:
     api_response = api_instance.v1usermfagadisable_code(code, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SecurityActionsApi->v1usermfagadisable_code: %s\n" % e
+    print("Exception when calling SecurityActionsApi->v1usermfagadisable_code: %s\n" % e)
 ```
 
 ### Parameters
@@ -376,6 +383,7 @@ Enables Google Authenticator 2FA with the code from /v1/mfa/ga/initiate.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -392,7 +400,7 @@ try:
     api_response = api_instance.v1usermfagainitiateenable(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SecurityActionsApi->v1usermfagainitiateenable: %s\n" % e
+    print("Exception when calling SecurityActionsApi->v1usermfagainitiateenable: %s\n" % e)
 ```
 
 ### Parameters
@@ -427,6 +435,7 @@ Changes an account Password.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -443,7 +452,7 @@ try:
     api_response = api_instance.v1userpasswordchange(body, authorization=authorization, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SecurityActionsApi->v1userpasswordchange: %s\n" % e
+    print("Exception when calling SecurityActionsApi->v1userpasswordchange: %s\n" % e)
 ```
 
 ### Parameters
@@ -478,6 +487,7 @@ Resets an account Password. Use forgotPassword to generate a token.
 
 ### Example 
 ```python
+from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -493,7 +503,7 @@ try:
     api_response = api_instance.v1userpasswordreset(body, accept=accept)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SecurityActionsApi->v1userpasswordreset: %s\n" % e
+    print("Exception when calling SecurityActionsApi->v1userpasswordreset: %s\n" % e)
 ```
 
 ### Parameters

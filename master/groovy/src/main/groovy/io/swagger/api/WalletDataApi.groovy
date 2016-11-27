@@ -14,7 +14,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class WalletDataApi {
-    String basePath = "https://api.coinsecure.in"
+    String basePath = "https://api.coinsecure.in/"
     String versionPath = "/api/v1"
 
     def v1userwalletcoinaddressWalletID ( String walletID, String authorization, String accept, Closure onSuccess, Closure onFailure)  {

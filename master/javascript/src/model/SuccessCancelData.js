@@ -52,8 +52,8 @@
    * Constructs a new <code>SuccessCancelData</code>.
    * @alias module:model/SuccessCancelData
    * @class
-   * @param vol {Integer} 
-   * @param rate {Integer} 
+   * @param vol {Number} 
+   * @param rate {Number} 
    */
   var exports = function(vol, rate) {
     var _this = this;
@@ -74,21 +74,21 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('vol')) {
-        obj['vol'] = ApiClient.convertToType(data['vol'], 'Integer');
+        obj['vol'] = ApiClient.convertToType(data['vol'], 'Number');
       }
       if (data.hasOwnProperty('rate')) {
-        obj['rate'] = ApiClient.convertToType(data['rate'], 'Integer');
+        obj['rate'] = ApiClient.convertToType(data['rate'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} vol
+   * @member {Number} vol
    */
   exports.prototype['vol'] = undefined;
   /**
-   * @member {Integer} rate
+   * @member {Number} rate
    */
   exports.prototype['rate'] = undefined;
 

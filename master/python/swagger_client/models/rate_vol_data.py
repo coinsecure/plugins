@@ -54,6 +54,7 @@ class RateVolData(object):
         self._rate = rate
         self._vol = vol
 
+
     @property
     def rate(self):
         """
@@ -74,6 +75,8 @@ class RateVolData(object):
         :param rate: The rate of this RateVolData.
         :type: int
         """
+        if rate is None:
+            raise ValueError("Invalid value for `rate`, must not be `None`")
 
         self._rate = rate
 
@@ -97,6 +100,8 @@ class RateVolData(object):
         :param vol: The vol of this RateVolData.
         :type: int
         """
+        if vol is None:
+            raise ValueError("Invalid value for `vol`, must not be `None`")
 
         self._vol = vol
 

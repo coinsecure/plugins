@@ -76,10 +76,10 @@
         obj['method'] = ApiClient.convertToType(data['method'], 'String');
       }
       if (data.hasOwnProperty('countryCode')) {
-        obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'Integer');
+        obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'Number');
       }
       if (data.hasOwnProperty('phoneNumber')) {
-        obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'Integer');
+        obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'Number');
       }
     }
     return obj;
@@ -90,11 +90,11 @@
    */
   exports.prototype['method'] = undefined;
   /**
-   * @member {Integer} countryCode
+   * @member {Number} countryCode
    */
   exports.prototype['countryCode'] = undefined;
   /**
-   * @member {Integer} phoneNumber
+   * @member {Number} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
 

@@ -57,6 +57,7 @@ class ResetPassword(object):
         self._password = password
         self._repeat_password = repeat_password
 
+
     @property
     def token(self):
         """

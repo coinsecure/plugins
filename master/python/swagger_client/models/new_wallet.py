@@ -54,6 +54,7 @@ class NewWallet(object):
         self._wallet_name = wallet_name
         self._info = info
 
+
     @property
     def wallet_name(self):
         """
@@ -74,6 +75,8 @@ class NewWallet(object):
         :param wallet_name: The wallet_name of this NewWallet.
         :type: str
         """
+        if wallet_name is None:
+            raise ValueError("Invalid value for `wallet_name`, must not be `None`")
 
         self._wallet_name = wallet_name
 
@@ -97,6 +100,8 @@ class NewWallet(object):
         :param info: The info of this NewWallet.
         :type: str
         """
+        if info is None:
+            raise ValueError("Invalid value for `info`, must not be `None`")
 
         self._info = info
 

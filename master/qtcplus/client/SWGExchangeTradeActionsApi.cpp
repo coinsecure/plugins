@@ -40,12 +40,12 @@ SWGExchangeTradeActionsApi::SWGExchangeTradeActionsApi(QString host, QString bas
 }
 
 void
-SWGExchangeTradeActionsApi::/v1/user/exchange/ask/cancel/OrderID(QString* orderID, QString* authorization) {
+SWGExchangeTradeActionsApi::/v1/user/exchange/ask/cancel/OrderID(QString* order_id, QString* authorization) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/user/exchange/ask/cancel/{orderID}");
 
-    QString orderIDPathParam("{"); orderIDPathParam.append("orderID").append("}");
-    fullPath.replace(orderIDPathParam, stringValue(orderID));
+    QString order_idPathParam("{"); order_idPathParam.append("orderID").append("}");
+    fullPath.replace(order_idPathParam, stringValue(order_id));
 
 
     HttpRequestWorker *worker = new HttpRequestWorker();
@@ -131,12 +131,12 @@ SWGExchangeTradeActionsApi::/v1/user/exchange/ask/newCallback(HttpRequestWorker 
     
 }
 void
-SWGExchangeTradeActionsApi::/v1/user/exchange/bid/cancel/OrderID(QString* orderID, QString* authorization) {
+SWGExchangeTradeActionsApi::/v1/user/exchange/bid/cancel/OrderID(QString* order_id, QString* authorization) {
     QString fullPath;
     fullPath.append(this->host).append(this->basePath).append("/v1/user/exchange/bid/cancel/{orderID}");
 
-    QString orderIDPathParam("{"); orderIDPathParam.append("orderID").append("}");
-    fullPath.replace(orderIDPathParam, stringValue(orderID));
+    QString order_idPathParam("{"); order_idPathParam.append("orderID").append("}");
+    fullPath.replace(order_idPathParam, stringValue(order_id));
 
 
     HttpRequestWorker *worker = new HttpRequestWorker();

@@ -51,15 +51,17 @@ SWGNumberOtp::~SWGNumberOtp() {
 void
 SWGNumberOtp::init() {
     number = new QString("");
-otp = new QString("");
+    otp = new QString("");
 }
 
 void
 SWGNumberOtp::cleanup() {
-    if(number != NULL) {
+    
+    if(number != nullptr) {
         delete number;
     }
-if(otp != NULL) {
+
+    if(otp != nullptr) {
         delete otp;
     }
 }
@@ -75,8 +77,8 @@ SWGNumberOtp::fromJson(QString &json) {
 
 void
 SWGNumberOtp::fromJsonObject(QJsonObject &pJson) {
-    setValue(&number, pJson["number"], "QString", "QString");
-setValue(&otp, pJson["otp"], "QString", "QString");
+    ::Swagger::setValue(&number, pJson["number"], "QString", "QString");
+    ::Swagger::setValue(&otp, pJson["otp"], "QString", "QString");
 }
 
 QString
@@ -93,15 +95,9 @@ QJsonObject*
 SWGNumberOtp::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
     
-    
     toJsonValue(QString("number"), number, obj, QString("QString"));
-    
-        
 
-    
     toJsonValue(QString("otp"), otp, obj, QString("QString"));
-    
-        
 
     return obj;
 }

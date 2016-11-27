@@ -25,13 +25,11 @@
 package io.swagger.client.model;
 
 import io.swagger.client.model.TimeData;
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class TradeCoinWithdrawData  {
+public class TradeCoinWithdrawData {
   
   @SerializedName("timeDetails")
   private TimeData timeDetails = null;
@@ -116,23 +114,23 @@ public class TradeCoinWithdrawData  {
       return false;
     }
     TradeCoinWithdrawData tradeCoinWithdrawData = (TradeCoinWithdrawData) o;
-    return (timeDetails == null ? tradeCoinWithdrawData.timeDetails == null : timeDetails.equals(tradeCoinWithdrawData.timeDetails)) &&
-        (address == null ? tradeCoinWithdrawData.address == null : address.equals(tradeCoinWithdrawData.address)) &&
-        (value == null ? tradeCoinWithdrawData.value == null : value.equals(tradeCoinWithdrawData.value)) &&
-        (fees == null ? tradeCoinWithdrawData.fees == null : fees.equals(tradeCoinWithdrawData.fees)) &&
-        (withdrawID == null ? tradeCoinWithdrawData.withdrawID == null : withdrawID.equals(tradeCoinWithdrawData.withdrawID)) &&
-        (txHash == null ? tradeCoinWithdrawData.txHash == null : txHash.equals(tradeCoinWithdrawData.txHash));
+    return (this.timeDetails == null ? tradeCoinWithdrawData.timeDetails == null : this.timeDetails.equals(tradeCoinWithdrawData.timeDetails)) &&
+        (this.address == null ? tradeCoinWithdrawData.address == null : this.address.equals(tradeCoinWithdrawData.address)) &&
+        (this.value == null ? tradeCoinWithdrawData.value == null : this.value.equals(tradeCoinWithdrawData.value)) &&
+        (this.fees == null ? tradeCoinWithdrawData.fees == null : this.fees.equals(tradeCoinWithdrawData.fees)) &&
+        (this.withdrawID == null ? tradeCoinWithdrawData.withdrawID == null : this.withdrawID.equals(tradeCoinWithdrawData.withdrawID)) &&
+        (this.txHash == null ? tradeCoinWithdrawData.txHash == null : this.txHash.equals(tradeCoinWithdrawData.txHash));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (timeDetails == null ? 0: timeDetails.hashCode());
-    result = 31 * result + (address == null ? 0: address.hashCode());
-    result = 31 * result + (value == null ? 0: value.hashCode());
-    result = 31 * result + (fees == null ? 0: fees.hashCode());
-    result = 31 * result + (withdrawID == null ? 0: withdrawID.hashCode());
-    result = 31 * result + (txHash == null ? 0: txHash.hashCode());
+    result = 31 * result + (this.timeDetails == null ? 0: this.timeDetails.hashCode());
+    result = 31 * result + (this.address == null ? 0: this.address.hashCode());
+    result = 31 * result + (this.value == null ? 0: this.value.hashCode());
+    result = 31 * result + (this.fees == null ? 0: this.fees.hashCode());
+    result = 31 * result + (this.withdrawID == null ? 0: this.withdrawID.hashCode());
+    result = 31 * result + (this.txHash == null ? 0: this.txHash.hashCode());
     return result;
   }
 

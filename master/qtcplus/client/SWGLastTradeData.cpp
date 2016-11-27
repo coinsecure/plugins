@@ -51,9 +51,9 @@ SWGLastTradeData::~SWGLastTradeData() {
 void
 SWGLastTradeData::init() {
     time = 0L;
-avgRate = 0L;
-vol = 0L;
-ordType = new QString("");
+    avg_rate = 0L;
+    vol = 0L;
+    ord_type = new QString("");
 }
 
 void
@@ -61,8 +61,9 @@ SWGLastTradeData::cleanup() {
     
 
 
-if(ordType != NULL) {
-        delete ordType;
+
+    if(ord_type != nullptr) {
+        delete ord_type;
     }
 }
 
@@ -77,10 +78,10 @@ SWGLastTradeData::fromJson(QString &json) {
 
 void
 SWGLastTradeData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&time, pJson["time"], "qint64", "");
-setValue(&avgRate, pJson["avgRate"], "qint64", "");
-setValue(&vol, pJson["vol"], "qint64", "");
-setValue(&ordType, pJson["ordType"], "QString", "QString");
+    ::Swagger::setValue(&time, pJson["time"], "qint64", "");
+    ::Swagger::setValue(&avg_rate, pJson["avg_rate"], "qint64", "");
+    ::Swagger::setValue(&vol, pJson["vol"], "qint64", "");
+    ::Swagger::setValue(&ord_type, pJson["ord_type"], "QString", "QString");
 }
 
 QString
@@ -96,14 +97,14 @@ SWGLastTradeData::asJson ()
 QJsonObject*
 SWGLastTradeData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
+    
     obj->insert("time", QJsonValue(time));
-obj->insert("avgRate", QJsonValue(avgRate));
-obj->insert("vol", QJsonValue(vol));
 
-    
-    toJsonValue(QString("ordType"), ordType, obj, QString("QString"));
-    
-        
+    obj->insert("avg_rate", QJsonValue(avg_rate));
+
+    obj->insert("vol", QJsonValue(vol));
+
+    toJsonValue(QString("ord_type"), ord_type, obj, QString("QString"));
 
     return obj;
 }
@@ -119,11 +120,11 @@ SWGLastTradeData::setTime(qint64 time) {
 
 qint64
 SWGLastTradeData::getAvgRate() {
-    return avgRate;
+    return avg_rate;
 }
 void
-SWGLastTradeData::setAvgRate(qint64 avgRate) {
-    this->avgRate = avgRate;
+SWGLastTradeData::setAvgRate(qint64 avg_rate) {
+    this->avg_rate = avg_rate;
 }
 
 qint64
@@ -137,11 +138,11 @@ SWGLastTradeData::setVol(qint64 vol) {
 
 QString*
 SWGLastTradeData::getOrdType() {
-    return ordType;
+    return ord_type;
 }
 void
-SWGLastTradeData::setOrdType(QString* ordType) {
-    this->ordType = ordType;
+SWGLastTradeData::setOrdType(QString* ord_type) {
+    this->ord_type = ord_type;
 }
 
 

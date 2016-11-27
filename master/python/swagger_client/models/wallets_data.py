@@ -66,6 +66,7 @@ class WalletsData(object):
         self._info = info
         self._netki = netki
 
+
     @property
     def wallet_id(self):
         """
@@ -86,6 +87,8 @@ class WalletsData(object):
         :param wallet_id: The wallet_id of this WalletsData.
         :type: str
         """
+        if wallet_id is None:
+            raise ValueError("Invalid value for `wallet_id`, must not be `None`")
 
         self._wallet_id = wallet_id
 
@@ -109,6 +112,8 @@ class WalletsData(object):
         :param name: The name of this WalletsData.
         :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")
 
         self._name = name
 
@@ -132,6 +137,8 @@ class WalletsData(object):
         :param coin_balance: The coin_balance of this WalletsData.
         :type: int
         """
+        if coin_balance is None:
+            raise ValueError("Invalid value for `coin_balance`, must not be `None`")
 
         self._coin_balance = coin_balance
 
@@ -155,6 +162,8 @@ class WalletsData(object):
         :param time: The time of this WalletsData.
         :type: int
         """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")
 
         self._time = time
 
@@ -178,6 +187,8 @@ class WalletsData(object):
         :param info: The info of this WalletsData.
         :type: str
         """
+        if info is None:
+            raise ValueError("Invalid value for `info`, must not be `None`")
 
         self._info = info
 
@@ -201,6 +212,8 @@ class WalletsData(object):
         :param netki: The netki of this WalletsData.
         :type: str
         """
+        if netki is None:
+            raise ValueError("Invalid value for `netki`, must not be `None`")
 
         self._netki = netki
 

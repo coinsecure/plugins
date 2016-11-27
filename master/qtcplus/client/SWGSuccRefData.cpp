@@ -50,21 +50,22 @@ SWGSuccRefData::~SWGSuccRefData() {
 
 void
 SWGSuccRefData::init() {
-    refPercent = 0.0;
-time = 0L;
-refID = new QString("");
-emailVerified = false;
-kycComplete = false;
-btcEarned = 0L;
-fiatEarned = 0L;
+    ref_percent = 0.0;
+    time = 0L;
+    ref_id = new QString("");
+    email_verified = false;
+    kyc_complete = false;
+    btc_earned = 0L;
+    fiat_earned = 0L;
 }
 
 void
 SWGSuccRefData::cleanup() {
     
 
-if(refID != NULL) {
-        delete refID;
+
+    if(ref_id != nullptr) {
+        delete ref_id;
     }
 
 
@@ -83,13 +84,13 @@ SWGSuccRefData::fromJson(QString &json) {
 
 void
 SWGSuccRefData::fromJsonObject(QJsonObject &pJson) {
-    setValue(&refPercent, pJson["refPercent"], "double", "");
-setValue(&time, pJson["time"], "qint64", "");
-setValue(&refID, pJson["refID"], "QString", "QString");
-setValue(&emailVerified, pJson["emailVerified"], "bool", "");
-setValue(&kycComplete, pJson["kycComplete"], "bool", "");
-setValue(&btcEarned, pJson["btcEarned"], "qint64", "");
-setValue(&fiatEarned, pJson["fiatEarned"], "qint64", "");
+    ::Swagger::setValue(&ref_percent, pJson["ref_percent"], "double", "");
+    ::Swagger::setValue(&time, pJson["time"], "qint64", "");
+    ::Swagger::setValue(&ref_id, pJson["ref_id"], "QString", "QString");
+    ::Swagger::setValue(&email_verified, pJson["email_verified"], "bool", "");
+    ::Swagger::setValue(&kyc_complete, pJson["kyc_complete"], "bool", "");
+    ::Swagger::setValue(&btc_earned, pJson["btc_earned"], "qint64", "");
+    ::Swagger::setValue(&fiat_earned, pJson["fiat_earned"], "qint64", "");
 }
 
 QString
@@ -105,28 +106,31 @@ SWGSuccRefData::asJson ()
 QJsonObject*
 SWGSuccRefData::asJsonObject() {
     QJsonObject* obj = new QJsonObject();
-    obj->insert("refPercent", QJsonValue(refPercent));
-obj->insert("time", QJsonValue(time));
+    
+    obj->insert("ref_percent", QJsonValue(ref_percent));
 
-    
-    toJsonValue(QString("refID"), refID, obj, QString("QString"));
-    
-        
-obj->insert("emailVerified", QJsonValue(emailVerified));
-obj->insert("kycComplete", QJsonValue(kycComplete));
-obj->insert("btcEarned", QJsonValue(btcEarned));
-obj->insert("fiatEarned", QJsonValue(fiatEarned));
+    obj->insert("time", QJsonValue(time));
+
+    toJsonValue(QString("ref_id"), ref_id, obj, QString("QString"));
+
+    obj->insert("email_verified", QJsonValue(email_verified));
+
+    obj->insert("kyc_complete", QJsonValue(kyc_complete));
+
+    obj->insert("btc_earned", QJsonValue(btc_earned));
+
+    obj->insert("fiat_earned", QJsonValue(fiat_earned));
 
     return obj;
 }
 
 double
 SWGSuccRefData::getRefPercent() {
-    return refPercent;
+    return ref_percent;
 }
 void
-SWGSuccRefData::setRefPercent(double refPercent) {
-    this->refPercent = refPercent;
+SWGSuccRefData::setRefPercent(double ref_percent) {
+    this->ref_percent = ref_percent;
 }
 
 qint64
@@ -139,48 +143,48 @@ SWGSuccRefData::setTime(qint64 time) {
 }
 
 QString*
-SWGSuccRefData::getRefID() {
-    return refID;
+SWGSuccRefData::getRefId() {
+    return ref_id;
 }
 void
-SWGSuccRefData::setRefID(QString* refID) {
-    this->refID = refID;
+SWGSuccRefData::setRefId(QString* ref_id) {
+    this->ref_id = ref_id;
 }
 
 bool
 SWGSuccRefData::getEmailVerified() {
-    return emailVerified;
+    return email_verified;
 }
 void
-SWGSuccRefData::setEmailVerified(bool emailVerified) {
-    this->emailVerified = emailVerified;
+SWGSuccRefData::setEmailVerified(bool email_verified) {
+    this->email_verified = email_verified;
 }
 
 bool
 SWGSuccRefData::getKycComplete() {
-    return kycComplete;
+    return kyc_complete;
 }
 void
-SWGSuccRefData::setKycComplete(bool kycComplete) {
-    this->kycComplete = kycComplete;
+SWGSuccRefData::setKycComplete(bool kyc_complete) {
+    this->kyc_complete = kyc_complete;
 }
 
 qint64
 SWGSuccRefData::getBtcEarned() {
-    return btcEarned;
+    return btc_earned;
 }
 void
-SWGSuccRefData::setBtcEarned(qint64 btcEarned) {
-    this->btcEarned = btcEarned;
+SWGSuccRefData::setBtcEarned(qint64 btc_earned) {
+    this->btc_earned = btc_earned;
 }
 
 qint64
 SWGSuccRefData::getFiatEarned() {
-    return fiatEarned;
+    return fiat_earned;
 }
 void
-SWGSuccRefData::setFiatEarned(qint64 fiatEarned) {
-    this->fiatEarned = fiatEarned;
+SWGSuccRefData::setFiatEarned(qint64 fiat_earned) {
+    this->fiat_earned = fiat_earned;
 }
 
 

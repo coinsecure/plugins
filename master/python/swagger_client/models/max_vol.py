@@ -51,6 +51,7 @@ class MaxVol(object):
 
         self._max_vol = max_vol
 
+
     @property
     def max_vol(self):
         """
@@ -71,6 +72,8 @@ class MaxVol(object):
         :param max_vol: The max_vol of this MaxVol.
         :type: int
         """
+        if max_vol is None:
+            raise ValueError("Invalid value for `max_vol`, must not be `None`")
 
         self._max_vol = max_vol
 

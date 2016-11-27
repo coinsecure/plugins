@@ -6,6 +6,7 @@
 #import "SWGRateDiffDataResponse.h"
 #import "SWGStandardTickerResultData.h"
 #import "SWGOrderDataResponse.h"
+#import "SWGRateVolTimeTypeDataResponse.h"
 #import "SWGApi.h"
 
 /**
@@ -240,6 +241,27 @@ extern NSInteger kSWGExchangeTradeDataApiMissingParamErrorCode;
 -(NSNumber*) v1userexchangebidpendingWithAuthorization: (NSString*) authorization
     accept: (NSString*) accept
     completionHandler: (void (^)(SWGOrderDataResponse* output, NSError* error)) handler;
+
+
+/// Completed Exchange Trades
+/// Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+///
+/// @param from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional) (default to 0)
+/// @param to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional) (default to 9223372036854776000)
+/// @param max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional) (default to 10)
+/// @param offset Offset defaults to 0 if input is invalid. (Optional) (optional) (default to 0)
+/// @param accept JSON, XML or CSV can be returned (Optional) (optional)
+/// 
+///  code:200 message:"Successful Request",
+///  code:400 message:"Bad Request"
+///
+/// @return SWGRateVolTimeTypeDataResponse*
+-(NSNumber*) v1userexchangetradesWithFrom: (NSNumber*) from
+    to: (NSNumber*) to
+    max: (NSNumber*) max
+    offset: (NSNumber*) offset
+    accept: (NSString*) accept
+    completionHandler: (void (^)(SWGRateVolTimeTypeDataResponse* output, NSError* error)) handler;
 
 
 

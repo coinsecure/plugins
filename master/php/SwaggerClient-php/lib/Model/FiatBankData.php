@@ -7,7 +7,7 @@
  * @category Class
  * @package  Swagger\Client
  * @author   http://github.com/swagger-api/swagger-codegen
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -47,10 +47,10 @@ use \ArrayAccess;
  * FiatBankData Class Doc Comment
  *
  * @category    Class */
-/** 
+/**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
- * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class FiatBankData implements ArrayAccess
@@ -65,7 +65,7 @@ class FiatBankData implements ArrayAccess
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
-    protected static $swaggerTypes = array(
+    protected static $swaggerTypes = [
         'time' => 'int',
         'status' => 'string',
         'update_time' => 'int',
@@ -74,8 +74,9 @@ class FiatBankData implements ArrayAccess
         'info' => 'string',
         'account_number' => 'string',
         'account_nick' => 'string',
-        'account_type' => 'string'
-    );
+        'account_type' => 'string',
+        'account_id' => 'string'
+    ];
 
     public static function swaggerTypes()
     {
@@ -86,7 +87,7 @@ class FiatBankData implements ArrayAccess
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
-    protected static $attributeMap = array(
+    protected static $attributeMap = [
         'time' => 'time',
         'status' => 'status',
         'update_time' => 'updateTime',
@@ -95,19 +96,16 @@ class FiatBankData implements ArrayAccess
         'info' => 'info',
         'account_number' => 'accountNumber',
         'account_nick' => 'accountNick',
-        'account_type' => 'accountType'
-    );
+        'account_type' => 'accountType',
+        'account_id' => 'accountID'
+    ];
 
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      * @var string[]
      */
-    protected static $setters = array(
+    protected static $setters = [
         'time' => 'setTime',
         'status' => 'setStatus',
         'update_time' => 'setUpdateTime',
@@ -116,19 +114,16 @@ class FiatBankData implements ArrayAccess
         'info' => 'setInfo',
         'account_number' => 'setAccountNumber',
         'account_nick' => 'setAccountNick',
-        'account_type' => 'setAccountType'
-    );
+        'account_type' => 'setAccountType',
+        'account_id' => 'setAccountId'
+    ];
 
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
      * @var string[]
      */
-    protected static $getters = array(
+    protected static $getters = [
         'time' => 'getTime',
         'status' => 'getStatus',
         'update_time' => 'getUpdateTime',
@@ -137,8 +132,19 @@ class FiatBankData implements ArrayAccess
         'info' => 'getInfo',
         'account_number' => 'getAccountNumber',
         'account_nick' => 'getAccountNick',
-        'account_type' => 'getAccountType'
-    );
+        'account_type' => 'getAccountType',
+        'account_id' => 'getAccountId'
+    ];
+
+    public static function attributeMap()
+    {
+        return self::$attributeMap;
+    }
+
+    public static function setters()
+    {
+        return self::$setters;
+    }
 
     public static function getters()
     {
@@ -153,11 +159,11 @@ class FiatBankData implements ArrayAccess
      * Associative array for storing property values
      * @var mixed[]
      */
-    protected $container = array();
+    protected $container = [];
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property values initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -170,6 +176,7 @@ class FiatBankData implements ArrayAccess
         $this->container['account_number'] = isset($data['account_number']) ? $data['account_number'] : null;
         $this->container['account_nick'] = isset($data['account_nick']) ? $data['account_nick'] : null;
         $this->container['account_type'] = isset($data['account_type']) ? $data['account_type'] : null;
+        $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
     }
 
     /**
@@ -179,7 +186,7 @@ class FiatBankData implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = array();
+        $invalid_properties = [];
         if ($this->container['time'] === null) {
             $invalid_properties[] = "'time' can't be null";
         }
@@ -206,6 +213,9 @@ class FiatBankData implements ArrayAccess
         }
         if ($this->container['account_type'] === null) {
             $invalid_properties[] = "'account_type' can't be null";
+        }
+        if ($this->container['account_id'] === null) {
+            $invalid_properties[] = "'account_id' can't be null";
         }
         return $invalid_properties;
     }
@@ -243,6 +253,9 @@ class FiatBankData implements ArrayAccess
             return false;
         }
         if ($this->container['account_type'] === null) {
+            return false;
+        }
+        if ($this->container['account_id'] === null) {
             return false;
         }
         return true;
@@ -437,6 +450,27 @@ class FiatBankData implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets account_id
+     * @return string
+     */
+    public function getAccountId()
+    {
+        return $this->container['account_id'];
+    }
+
+    /**
+     * Sets account_id
+     * @param string $account_id
+     * @return $this
+     */
+    public function setAccountId($account_id)
+    {
+        $this->container['account_id'] = $account_id;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -495,5 +529,3 @@ class FiatBankData implements ArrayAccess
         return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

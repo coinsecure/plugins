@@ -7,6 +7,7 @@
 #import "SWGRateDiffDataResponse.h"
 #import "SWGStandardTickerResultData.h"
 #import "SWGOrderDataResponse.h"
+#import "SWGRateVolTimeTypeDataResponse.h"
 
 
 @interface SWGExchangeTradeDataApi ()
@@ -1050,6 +1051,91 @@ NSInteger kSWGExchangeTradeDataApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((SWGOrderDataResponse*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// Completed Exchange Trades
+/// Returns all completed Orders in Json. The Rate is displayed in Paisa and Volume in Satoshis.
+///  @param from From date in Epoch, defaults to 0 if invalid input or greater than current time. (Optional) (optional, default to 0)
+///
+///  @param to To Date in Epoch, defaults to current time if invalid input or greater than current time. (Optional) (optional, default to 9223372036854776000)
+///
+///  @param max Max defaults to 10 if invalid input and defaults to 100 if greater than 100. (Optional) (optional, default to 10)
+///
+///  @param offset Offset defaults to 0 if input is invalid. (Optional) (optional, default to 0)
+///
+///  @param accept JSON, XML or CSV can be returned (Optional) (optional)
+///
+///  @returns SWGRateVolTimeTypeDataResponse*
+///
+-(NSNumber*) v1userexchangetradesWithFrom: (NSNumber*) from
+    to: (NSNumber*) to
+    max: (NSNumber*) max
+    offset: (NSNumber*) offset
+    accept: (NSString*) accept
+    completionHandler: (void (^)(SWGRateVolTimeTypeDataResponse* output, NSError* error)) handler {
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/exchange/trades"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (from != nil) {
+        queryParams[@"from"] = from;
+    }
+    if (to != nil) {
+        queryParams[@"to"] = to;
+    }
+    if (max != nil) {
+        queryParams[@"max"] = max;
+    }
+    if (offset != nil) {
+        queryParams[@"offset"] = offset;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (accept != nil) {
+        headerParams[@"accept"] = accept;
+    }
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json", @"application/xml", @"application/csv"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"SWGRateVolTimeTypeDataResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((SWGRateVolTimeTypeDataResponse*)data, error);
                                 }
                            }
           ];
